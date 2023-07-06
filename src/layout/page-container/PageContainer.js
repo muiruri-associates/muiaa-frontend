@@ -5,7 +5,7 @@ const PageContainer = ({ ...props }) => {
     main: "default",
     sidebar: "dark",
     header: "white",
-    skin: "light",
+    skin: "default",
   });
 
   useEffect(() => {

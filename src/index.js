@@ -5,7 +5,7 @@ import "./assets/scss/style-email.scss";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from './redux/store.js';
+import store  from "./app/store"
 import { Provider } from 'react-redux';
 
 

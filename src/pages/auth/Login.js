@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import Logo from "../../images/logo.png";
-import LogoDark from "../../images/logo-dark.png";
+import LogoDark from "../../images/logo.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
+import { useHistory } from "react-router-dom";
+import Success from "./Success";
+import Homepage from "../Homepage";
+import { toast } from 'react-toastify';
+
+
 import {
   Block,
   BlockContent,
@@ -17,23 +23,43 @@ import {
 import { Form, FormGroup, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useLogin } from "../../hooks/useLogin"
+import { useLoginMutation } from "../../redux/reducers/authApiSlice"
+import { useDispatch } from "react-redux";
+import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
+import { loginSuccess } from "../../redux/reducers/authSlice";
+
 
 
 const Login = () => {
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [passState, setPassState] = useState(false);
   const [errorVal, setError] = useState("");
-  const {login} = useLogin();
+  const [email, setEmail]= useState(null)
+  const [password, setPassword]= useState(null)
+  const [login, {isLoading}] = useLoginMutation();
+
+
+  const dispatch= useDispatch()
 
   const onFormSubmit = async (formData) => {
+    const {email, password}=formData
     setLoading(true);
     try {
-      await login(formData.name, formData.passcode); // Pass email and password to the login function
-      // Handle successful login
+      const data = await login(email,password).unwrap()// Pass email and password to the login function
+        //console.log(data)   
+      if(data){
+      const {user, token}= data
+      dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
+      setLoading(false)
+      history.push('/home')
+
+     }
+        
     } catch (error) {
+      console.log('error cant sign in')
+      setLoading(false)
       setError("Cannot login with credentials");
-      setLoading(false);
     }
   };
 
@@ -56,7 +82,7 @@ const Login = () => {
               <BlockContent>
                 <BlockTitle tag="h4">Sign-In</BlockTitle>
                 <BlockDes>
-                  <p>Access Dashlite using your email and passcode.</p>
+                  <p>Sign in to get access </p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -79,7 +105,8 @@ const Login = () => {
                   <input
                     type="text"
                     id="default-01"
-                    name="name"
+                    name="email"
+                    onChange={(e)=> setEmail(e.target.value)}
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your email address or username"
                     className="form-control-lg form-control"
@@ -93,7 +120,7 @@ const Login = () => {
                     Passcode
                   </label>
                   <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
-                    Forgot Code?
+                    Forgot Password?
                   </Link>
                 </div>
                 <div className="form-control-wrap">
@@ -112,9 +139,10 @@ const Login = () => {
                   <input
                     type={passState ? "text" : "password"}
                     id="password"
-                    name="passcode"
+                    name="password"
+                    onChange={(e)=> setPassword(e.target.value)}
                     ref={register({ required: "This field is required" })}
-                    placeholder="Enter your passcode"
+                    placeholder="Enter your password"
                     className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
                   />
                   {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
@@ -128,7 +156,7 @@ const Login = () => {
             </Form>
             <div className="form-note-s2 text-center pt-4">
               {" "}
-              New on our platform? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
+              New here? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
             </div>
             <div className="text-center pt-4 pb-3">
               <h6 className="overline-title overline-title-sap">
