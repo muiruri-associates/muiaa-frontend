@@ -43,10 +43,9 @@ const Login = () => {
   const dispatch= useDispatch()
 
   const onFormSubmit = async (formData) => {
-    const {email, password}=formData
     setLoading(true);
     try {
-      const data = await login(email,password).unwrap()// Pass email and password to the login function
+      const data = await login(formData).unwrap()// Pass email and password to the login function
         //console.log(data)   
       if(data){
       const {user, token}= data

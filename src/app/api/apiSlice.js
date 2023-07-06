@@ -3,7 +3,7 @@ import { loginSuccess, logOut } from '../../redux/reducers/authSlice';
 
 const baseQuery= fetchBaseQuery({
     baseUrl: 'https://muiaa-backend-api.onrender.com/api/v1/auth',
-    //credentials: 'include',
+    credentials: 'include',
     prepareHeaders: (headers, {getState})=>{
         const token = getState().auth.token;
         if (token){
