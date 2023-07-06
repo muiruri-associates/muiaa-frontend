@@ -32,8 +32,12 @@ const App = () => {
       <Route exact path={`${process.env.PUBLIC_URL}/invoice-print/:id`} component={InvoicePrint}></Route>
 
       {/* Helper pages */}
+      <Route path="/success" component={Success} />
+      <Route path="/home" component={Faq} />
+
+
+
       <Route exact path={`${process.env.PUBLIC_URL}/auths/terms`} component={Terms}></Route>
-      <Route exact path={`${process.env.PUBLIC_URL}/auths/faq`} component={Faq}></Route>
 
       <Route exact path={`${process.env.PUBLIC_URL}/invoice-print`} component={InvoicePrint}></Route>
 

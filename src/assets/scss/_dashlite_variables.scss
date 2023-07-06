@@ -7,7 +7,7 @@ $font-url: '../../../fonts';
 /////////    COLORS    ///////////
 //////////////////////////////////////
 $white:		#fff;
-$black: 	#000;
+$black: 	#1b2337;
 
 $light-100: #ebeef2; 
 $light-200: #e5e9f2; 
@@ -29,8 +29,8 @@ $red: 		#e85347;
 $yellow:	#f4bd0e;
 $green: 	#1ee0ac; 
 $cyan:		#09c2de;
-$blue:		#559bfb;
-$azure:		#1676fb;
+$blue:		#24354d;
+$azure:		#2a4161;
 $indigo:	#2c3782;
 $purple:	#816bff;
 $pink:		#ff63a5;
@@ -54,10 +54,10 @@ $base-dim:  		mix($base-color,$white, 8%);
 $accent-100:  		#eff1ff;
 $accent-200:  		#e3e7fe;
 $accent-300:  		#c4cefe;
-$accent-400:  		#9cabff;
-$accent-500:  		#798bff;
+$accent-400:  		#555b7c;
+$accent-500:  		#1e233f;
 
-$accent-color:  	#6576ff;
+$accent-color:  	#22295a;
 $accent-light:  	$accent-300;
 $accent-dark:  		#2c3782;
 $accent-dim:  	    #e3e7fe;
