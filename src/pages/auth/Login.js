@@ -48,10 +48,11 @@ const Login = () => {
       const data = await login(formData).unwrap()// Pass email and password to the login function
         //console.log(data)   
       if(data){
+      localStorage.setItem("accessToken", "token");
       const {user, token}= data
       dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
       setLoading(false)
-      history.push('/home')
+      history.push(`${process.env.PUBLIC_URL}/`)
 
      }
         

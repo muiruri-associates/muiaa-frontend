@@ -21,12 +21,12 @@ const menu = [
     active: false,
     subMenu: [
       {
-        text: 'Lenders',
-        link: '/lenders'
+        text: 'Lender Organizations',
+        link: '/lender-organizations'
       },
       {
-        text: 'Lenders',
-        link: '/lenders'
+        text: 'Lender Users',
+        link: '/lender-users'
       }
     ]
   },

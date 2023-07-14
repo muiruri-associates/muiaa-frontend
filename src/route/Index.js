@@ -6,7 +6,8 @@ import Clients from "../pages/main/Clients";
 
 import NioIconPage from "../pages/components/crafted-icons/NioIcon";
 import SVGIconPage from "../pages/components/crafted-icons/SvgIcons";
-import Lenders from "../pages/main/Lenders";
+import LenderOrganizations from "../pages/main/lender/LenderOrganizations";
+import LenderUsers from "../pages/main/lender/LenderUsers";
 import Loans from "../pages/main/Loans";
 import Dashboard from "../pages/main/Dashboard";
 
@@ -24,7 +25,8 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/nioicon`} component={NioIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/lenders`} component={Lenders}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>
         <Route component={RedirectAs404}></Route>

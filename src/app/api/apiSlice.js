@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { loginSuccess, logOut } from '../../redux/reducers/authSlice';
 
 const baseQuery= fetchBaseQuery({
-    baseUrl: 'https://muiaa-backend-api.onrender.com/api/v1/auth',
+    // baseUrl: 'https://muiaa-backend-api.onrender.com/api/v1/auth',
+    baseUrl: 'http://localhost:5000/api/v1/auth',
     credentials: 'include',
     prepareHeaders: (headers, {getState})=>{
         const token = getState().auth.token;
