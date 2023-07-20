@@ -46,10 +46,10 @@ const Login = () => {
     setLoading(true);
     try {
       const data = await login(formData).unwrap()// Pass email and password to the login function
-        //console.log(data)   
+      console.log(data)   
       if(data){
       const {user, token}= data
-      dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
+      dispatch(loginSuccess({loggedInUser:{user}, loggedInUserToken:{token}}))
       setLoading(false)
       history.push('/home')
 
@@ -118,7 +118,7 @@ const Login = () => {
                   <label className="form-label" htmlFor="password">
                     Passcode
                   </label>
-                  <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
+                  <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-forgot-password`}>
                     Forgot Password?
                   </Link>
                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo-dark.png";
 import PageContainer from "../../layout/page-container/PageContainer";
@@ -6,18 +7,24 @@ import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
 import { Block, BlockContent, BlockDes, BlockHead, BlockTitle, Button, PreviewCard } from "../../components/Component";
 import { FormGroup } from "reactstrap";
-
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useForgotPasswordMutation } from "../../redux/reducers/authApiSlice";
+import { useResetPasswordMutation } from "../../redux/reducers/authApiSlice";
 
-const ForgotPassword = () => {
-  const { handleSubmit, register } = useForm();
-  const [forgotPassword] = useForgotPasswordMutation();
+const ResetPassword = () => {
+  const location = useLocation(); 
+  console.log(location)
+
+  const { handleSubmit, register, errors, watch } = useForm();
+  const [resetPassword] = useResetPasswordMutation();
+  const newPassword = watch("password", "");
+  const token = new URLSearchParams(location.search).get("token") || "";
+
+
   const handleFormSubmit = async (formData)=> {
-    const {email}= formData;
+    const {passcode}= formData;
     try{
-    const data = await forgotPassword(email);
+    const data = await resetPassword({token, password});
     if (data.status==200){
       console.log("success check your email")
     }}
@@ -41,7 +48,7 @@ const ForgotPassword = () => {
               <BlockContent>
                 <BlockTitle tag="h5">Reset password</BlockTitle>
                 <BlockDes>
-                  <p>If you forgot your password, well, then we’ll email you instructions to reset your password.</p>
+                  <p>Input your new password </p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -49,22 +56,42 @@ const ForgotPassword = () => {
               <FormGroup>
                 <div className="form-label-group">
                   <label className="form-label" htmlFor="email">
-                    Email
+                    New Password
                   </label>
                 </div>
                 <input
-                  type="text"
-                  name= "email"
+                  type="password"
+                  name= "password"
                   className="form-control form-control-lg"
                   id="default-01"
-                  placeholder="Enter your email address"
+                  placeholder="Enter new password"
                   ref={register({ required: true })}
 
                 />
               </FormGroup>
               <FormGroup>
+                <div className="form-label-group">
+                  <label className="form-label" htmlFor="email">
+                    Confirm Password
+                  </label>
+                </div>
+                <input
+                  type="password"
+                  name= "passcode"
+                  className="form-control form-control-lg"
+                  id="default-02"
+                  placeholder=" enter matching password"
+                  ref={register({
+                    required: "This field is required",
+                    validate: (value) => value === newPassword || "Passwords do not match",
+                  })}
+                />
+                {errors.passcode && <span className="invalid">passwords do not match</span>}
+
+              </FormGroup>
+              <FormGroup>
                 <Button type="submit" color="primary" size="lg" className="btn-block" >
-                  Send Reset Link
+                  Generate New Password
                 </Button>
               </FormGroup>
             </form>
@@ -80,4 +107,4 @@ const ForgotPassword = () => {
     </React.Fragment>
   );
 };
-export default ForgotPassword;
+export default ResetPassword;

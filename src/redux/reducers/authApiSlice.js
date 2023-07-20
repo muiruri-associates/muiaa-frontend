@@ -22,15 +22,22 @@ export const authApiSlice = authApi.injectEndpoints({
               body: { email },
             }),
           }),
-          register: builder.mutation({
-            query: (user) => ({
+          signUp: builder.mutation({
+            query: (credentials) => ({
               url: '/register',
               method: 'POST',
-              body: user,
+              body: credentials,
+            }),
+          }),
+          resetPassword: builder.mutation({
+            query: (credentials) => ({
+              url: '/reset-password',
+              method: 'POST',
+              body: credentials,
             }),
           }),
     })
     
 })
 
-export const { useLoginMutation, useLogoutMutation, useForgotPasswordMutation, useRegisterMutation } = authApiSlice;
+export const { useLoginMutation, useLogoutMutation, useForgotPasswordMutation, useSignUpMutation, useResetPasswordMutation } = authApiSlice;

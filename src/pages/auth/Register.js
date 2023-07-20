@@ -17,15 +17,31 @@ import {
 import { Spinner, FormGroup } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useSignUpMutation } from "../../redux/reducers/authApiSlice";
 
 const Register = ({ history }) => {
+  const [signUp ] = useSignUpMutation();
+  const [error ,setError] = useState(null);
   const [passState, setPassState] = useState(false);
   const [loading, setLoading] = useState(false);
   const { errors, register, handleSubmit } = useForm();
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = async (formData) => {
     setLoading(true);
-    setTimeout(() => history.push(`${process.env.PUBLIC_URL}/auth-success`), 2000);
+    const credentials= formData
+    const {email, passcode} = credentials
+    const userData = {email, passcode}
+    try{
+      const data = await signUp(userData).unwrap()
+      if (data)
+       setTimeout(() => history.push(`${process.env.PUBLIC_URL}/auth-success`), 2000);
+
+    }
+    catch (error){
+      console.log(error.status)
+      setError('failed to register please try again!')
+      setLoading(false)
+    }
   };
   return (
     <React.Fragment>
@@ -38,12 +54,13 @@ const Register = ({ history }) => {
               <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
             </Link>
           </div>
+          {error && <p>{error}</p>}
           <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
             <BlockHead>
               <BlockContent>
                 <BlockTitle tag="h4">Register</BlockTitle>
                 <BlockDes>
-                  <p>Create New Dashlite Account</p>
+                  <p>Create a New Account </p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>

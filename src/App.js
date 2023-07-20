@@ -14,6 +14,7 @@ import Faq from "./pages/others/Faq";
 import Terms from "./pages/others/Terms";
 
 import Login from "./pages/auth/Login";
+import ResetPassword from "./pages/auth/ResetPassword"
 import Register from "./pages/auth/Register";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Success from "./pages/auth/Success";
@@ -24,7 +25,9 @@ const App = () => {
     <Switch>
       {/* Auth Pages */}
       <Route exact path={`${process.env.PUBLIC_URL}/auth-success`} component={Success}></Route>
-      <Route exact path={`${process.env.PUBLIC_URL}/auth-reset`} component={ForgotPassword}></Route>
+      <Route exact path={`${process.env.PUBLIC_URL}/auth-forgot-password`} component={ForgotPassword}></Route>
+      <Route exact path={`${process.env.PUBLIC_URL}/auth-reset-password`} component={ResetPassword}></Route>
+
       <Route exact path={`${process.env.PUBLIC_URL}/auth-register`} component={Register}></Route>
       <Route exact path={`${process.env.PUBLIC_URL}/auth-login`} component={Login}></Route>
 
