@@ -24,7 +24,7 @@ const ResetPassword = () => {
   const handleFormSubmit = async (formData)=> {
     const {passcode}= formData;
     try{
-    const data = await resetPassword({token, password});
+    const data = await resetPassword({token, passcode});
     if (data.status==200){
       console.log("success check your email")
     }}
