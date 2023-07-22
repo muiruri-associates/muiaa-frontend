@@ -1,4 +1,5 @@
 import React from "react";
+import {Button} from 'reactstrap'
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
@@ -16,8 +17,10 @@ import { DataTableData, dataTableColumns } from "./AllTableData";
 const GetAllLenderUsersDatatable = () => {
   return (
     <React.Fragment>
-      <Head title="Basic Tables" />
-      <Content page="component">
+    <Head title="Lender Users" />
+    <Content page="component">
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        {/* First BlockHead */}
         <BlockHead size="lg" wide="sm">
           <BlockHeadContent>
             <BackTo link="/" icon="arrow-left">
@@ -29,22 +32,29 @@ const GetAllLenderUsersDatatable = () => {
           </BlockHeadContent>
         </BlockHead>
 
+        {/* Second BlockHead */}
+        <BlockHead size="lg" wide="sm">
+          <BlockHeadContent>
+          <Button>Create User</Button>
+          </BlockHeadContent>
+        </BlockHead>
+      </div>
 
-        <Block size="lg">
-          <PreviewCard>
-            <ReactDataTable
-              data={DataTableData}
-              columns={dataTableColumns}
-              expandableRows
-              pagination
-              actions
-            />
-          </PreviewCard>
-        </Block>
-
-      </Content>
-    </React.Fragment>
-  );
+      <Block size="lg">
+        <PreviewCard>
+          <ReactDataTable
+            data={DataTableData}
+            columns={dataTableColumns}
+            expandableRows
+            pagination
+            actions
+          />
+        </PreviewCard>
+      </Block>
+    </Content>
+  </React.Fragment>
+);
 }
+
 
 export default GetAllLenderUsersDatatable

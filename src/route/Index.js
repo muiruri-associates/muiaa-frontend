@@ -7,9 +7,12 @@ import Clients from "../pages/main/Clients";
 import NioIconPage from "../pages/components/crafted-icons/NioIcon";
 import SVGIconPage from "../pages/components/crafted-icons/SvgIcons";
 import LenderOrganizations from "../pages/main/lender/LenderOrganizations";
+import CreateLenderOrganizations from "../pages/main/lender/CreateLenderOrganizations";
 import LenderUsers from "../pages/main/lender/LenderUsers";
 import Loans from "../pages/main/Loans";
 import Dashboard from "../pages/main/Dashboard";
+import ViewLenderOrganizationPage from "../pages/main/lender/ViewLenderOrganizationPage";
+// import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
 const Pages = () => {
@@ -26,6 +29,8 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>
