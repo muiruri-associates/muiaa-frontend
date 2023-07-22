@@ -12,6 +12,8 @@ import LenderUsers from "../pages/main/lender/LenderUsers";
 import Loans from "../pages/main/Loans";
 import Dashboard from "../pages/main/Dashboard";
 import ViewLenderOrganizationPage from "../pages/main/lender/ViewLenderOrganizationPage";
+import Roles from "../pages/main/accessControl/Roles";
+import Permissions from "../pages/main/accessControl/Permissions";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
@@ -33,6 +35,8 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/roles`} component={Roles}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/permissions`} component={Permissions}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>
         <Route component={RedirectAs404}></Route>
       </Switch>

@@ -45,6 +45,21 @@ const menu = [
       }
     ]
   },
+  {
+    icon: 'file-docs',
+    text: 'Access Controls',
+    active: false,
+    subMenu: [
+      {
+        text: 'Roles',
+        link: '/roles'
+      },
+      {
+        text: 'Permissions',
+        link: '/permissions'
+      }
+    ]
+  },
 ]
 
 export default menu
