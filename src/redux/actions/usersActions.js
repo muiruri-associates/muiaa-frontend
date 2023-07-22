@@ -16,14 +16,14 @@ import axios from 'axios';
 
 // createAsyncThunk generates pending, fulfilled and rejected action types
 // Define the async thunk for fetching all lender organizations
-export const fetchRoles = createAsyncThunk('roles/fetchRoles', async () => {
+export const fetchUsers = createAsyncThunk('roles/fetchRoles', async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/v1/admin/roles');
-    console.log('all roles', response)
+    const response = await axios.get('http://localhost:5000/api/v1/admin/users');
+    console.log('all users', response)
     return response.data;
   } catch (error) {
     // Handle any error that occurred during the API call
-    throw new Error('Error fetching roles');
+    throw new Error('Error fetching users');
   }
 });
 

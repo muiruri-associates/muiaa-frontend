@@ -8,12 +8,11 @@ const menu = [
     active: false,
     link: '/'
   },
-
   {
     icon: 'users',
-    text: 'Clients',
+    text: 'Users',
     active: false,
-    link: '/clients'
+    link: '/users'
   },
   {
     icon: 'tranx',

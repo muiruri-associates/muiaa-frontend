@@ -12,18 +12,18 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { rolesColumns } from "./AccessControlData";
+import { usersColumns } from "./UserData";
 import { Link } from "react-router-dom";
 
-import {fetchRoles} from "../../redux/actions/rolesActions";
+import {fetchUsers} from "../../redux/actions/usersActions";
 
-const RolesDatatable = () => {
+const UsersDatatable = () => {
   const dispatch = useDispatch();
-  const role = useSelector((state) => state.roles);
-  console.log("data on component", role);
+  const user = useSelector((state) => state.users);
+  console.log("data on component", user);
 
   useEffect(() => {
-    dispatch(fetchRoles());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   return (
@@ -38,7 +38,7 @@ const RolesDatatable = () => {
                 Back
               </BackTo>
               <BlockTitle tag="h2" className="fw-normal">
-                Roles
+                users
               </BlockTitle>
             </BlockHeadContent>
           </BlockHead>
@@ -48,7 +48,7 @@ const RolesDatatable = () => {
             <BlockHeadContent>
               <Button>
                 <Link to={`${process.env.PUBLIC_URL}/create-lender-organizations`}>
-                  Create Role
+                  Create user
                 </Link>
               </Button>
             </BlockHeadContent>
@@ -57,14 +57,14 @@ const RolesDatatable = () => {
 
         <Block size="lg">
           <PreviewCard>
-            {role.loading && <div>Loading...</div>}
-            {!role.loading && role.error ? (
-              <div>Error: {role.error}</div>
+            {user.loading && <div>Loading...</div>}
+            {!user.loading && user.error ? (
+              <div>Error: {user.error}</div>
             ) : null}
-            {!role.loading && role.roles?.length ? (
-              <ReactDataTable data={role.roles} columns={rolesColumns} pagination actions />
+            {!user.loading && user.users?.length ? (
+              <ReactDataTable data={user.users} columns={usersColumns} pagination actions />
             ) : (
-              <div>No Role found.</div>
+              <div>No user found.</div>
             )}
           </PreviewCard>
         </Block>
@@ -73,4 +73,4 @@ const RolesDatatable = () => {
   );
 };
 
-export default RolesDatatable;
+export default UsersDatatable;

@@ -20,19 +20,41 @@ const ActionsColumn = ({ row }) => {
   );
 };
 
-export const dataTableColumns = [
+
+export const usersColumns = [
   {
-    name: "Permission Name",
-    selector: (row) => row.name,
+    name: "Username",
+    selector: (row) => row.username,
     sortable: true,
     hide: "md",
   },
-];
-
-export const rolesColumns = [
   {
-    name: "Role Name",
-    selector: (row) => row.name,
+    name: "First Name",
+    selector: (row) => row.first_name,
+    sortable: true,
+    hide: "md",
+  },
+  {
+    name: "Last Name",
+    selector: (row) => row.last_name,
+    sortable: true,
+    hide: "md",
+  },
+  {
+    name: "Email",
+    selector: (row) => row.email,
+    sortable: true,
+    hide: "md",
+  },
+  {
+    name: "Roles",
+    selector: (row) => row.roles,
+    sortable: true,
+    hide: "md",
+  },
+  {
+    name: "Action",
+    cell: (row) => <ActionsColumn row={row} />,
     sortable: true,
     hide: "md",
   },

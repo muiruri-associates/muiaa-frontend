@@ -14,6 +14,7 @@ import Dashboard from "../pages/main/Dashboard";
 import ViewLenderOrganizationPage from "../pages/main/lender/ViewLenderOrganizationPage";
 import Roles from "../pages/main/accessControl/Roles";
 import Permissions from "../pages/main/accessControl/Permissions";
+import Users from "../pages/main/users/Users";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
@@ -34,7 +35,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/users`} component={Users}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/roles`} component={Roles}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/permissions`} component={Permissions}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>

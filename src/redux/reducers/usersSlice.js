@@ -1,28 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchRoles } from "../actions/rolesActions";
+import { fetchUsers } from "../actions/usersActions";
 
 const initialState = {
-  roles: [],
+  users: [],
   loading: false,
   error: null,
 };
 
-const rolesSlice = createSlice({
-  name: "role",
+const usersSlice = createSlice({
+  name: "user",
   initialState,
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRoles.pending, (state) => {
+      .addCase(fetchUsers.pending, (state) => {
         state.loading = true;
       })
-      .addCase(fetchRoles.fulfilled, (state, action) => {
+      .addCase(fetchUsers.fulfilled, (state, action) => {
         state.loading = false;
-        state.roles = action.payload;
+        state.users = action.payload;
         state.error = null;
       })
-      .addCase(fetchRoles.rejected, (state, action) => {
+      .addCase(fetchUsers.rejected, (state, action) => {
         state.loading = false;
-        state.roles = [];
+        state.users = [];
         state.error = action.error.message;
       })
       // Add case for createRole.pending
@@ -46,4 +46,4 @@ const rolesSlice = createSlice({
   },
 });
 
-export default rolesSlice.reducer;
+export default usersSlice.reducer;
