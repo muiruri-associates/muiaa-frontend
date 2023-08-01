@@ -15,6 +15,7 @@ import ViewLenderOrganizationPage from "../pages/main/lender/ViewLenderOrganizat
 import Roles from "../pages/main/accessControl/Roles";
 import Permissions from "../pages/main/accessControl/Permissions";
 import Users from "../pages/main/users/Users";
+import AddPermission from "../pages/main/accessControl/AddPermission";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
@@ -38,6 +39,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/users`} component={Users}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/roles`} component={Roles}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/permissions`} component={Permissions}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/permissions/create`} component={AddPermission}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>
         <Route component={RedirectAs404}></Route>
       </Switch>

@@ -47,7 +47,7 @@ const PermissionsDatatable = () => {
           <BlockHead size="lg" wide="sm">
             <BlockHeadContent>
               <Button>
-                <Link to={`${process.env.PUBLIC_URL}/create-lender-organizations`}>
+                <Link to={`${process.env.PUBLIC_URL}/permissions/create`}>
                   Create Permission
                 </Link>
               </Button>

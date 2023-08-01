@@ -2,17 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 
-// // create LenderOrg
+// create Permission
 
-// export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async (lenderOrgData) => {
-//   try {
-//     const response = await axios.post('http://localhost:5000/api/v1/admin/create-lender-org', lenderOrgData);
-//     console.log('new orgs', response)
-//     return response.data;
-//   } catch (error) {
-//     throw new Error('Error creating lender organization');
-//   }
-// });
+export const createPermissions = createAsyncThunk('lenderOrg/createPermissions', async (permissionsData) => {
+  try {
+    const response = await axios.post('http://localhost:5000/api/v1/admin/permissions', permissionsData);
+    console.log('new permissions>>', response)
+    return response.data;
+  } catch (error) {
+    throw new Error('Error creating permission');
+  }
+});
 
 // createAsyncThunk generates pending, fulfilled and rejected action types
 // Define the async thunk for fetching all lender organizations
@@ -42,4 +42,4 @@ export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions',
 
 
 // // Add other CRUD actions (create, update, delete) here if needed.
-// // For example, you can define createLenderOrg, updateLenderOrg, and deleteLenderOrg similarly.
+// // For example, you can define createPermissions, updateLenderOrg, and deleteLenderOrg similarly.
