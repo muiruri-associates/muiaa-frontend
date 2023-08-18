@@ -64,7 +64,7 @@ const PermissionsDatatable = () => {
             {!permission.loading && permission.permissions?.length ? (
               <ReactDataTable data={permission.permissions} columns={dataTableColumns} pagination actions />
             ) : (
-              <div>No lender organizations found.</div>
+              <div>No permissions found.</div>
             )}
           </PreviewCard>
         </Block>

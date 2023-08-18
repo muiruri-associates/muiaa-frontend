@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authApi } from './api/apiSlice';
 import authSliceReducer from '../redux/reducers/authSlice';
-import lenderOrgReducer from '../redux/reducers/lenderSlice';
+import lenderOrgReducer from '../redux/reducers/lenderOrgSlice';
 import permissionsReducer from '../redux/reducers/permissionsSlice';
 import rolesReducer from '../redux/reducers/rolesSlice';
 import usersReducer from '../redux/reducers/usersSlice';

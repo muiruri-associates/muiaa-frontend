@@ -27,6 +27,7 @@ import { useLoginMutation } from "../../redux/reducers/authApiSlice"
 import { useDispatch } from "react-redux";
 import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
 import { loginSuccess } from "../../redux/reducers/authSlice";
+import { login } from "../../redux/actions/authActions";
 
 
 
@@ -37,31 +38,49 @@ const Login = () => {
   const [errorVal, setError] = useState("");
   const [email, setEmail]= useState(null)
   const [password, setPassword]= useState(null)
-  const [login, {isLoading}] = useLoginMutation();
+  // const [login, {isLoading}] = useLoginMutation();
 
 
   const dispatch= useDispatch()
 
-  const onFormSubmit = async (formData) => {
-    setLoading(true);
-    try {
-      const data = await login(formData).unwrap()// Pass email and password to the login function
-        //console.log(data)   
-      if(data){
-      localStorage.setItem("accessToken", "token");
-      const {user, token}= data
-      dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
-      setLoading(false)
-      history.push(`${process.env.PUBLIC_URL}/`)
+  const onFormSubmit = () => {
 
-     }
-        
-    } catch (error) {
-      console.log('error cant sign in')
-      setLoading(false)
-      setError("Cannot login with credentials");
+    const loginData = {
+      email,
+      password
     }
-  };
+
+    dispatch(login(loginData)) // Dispatch the login action
+      .then((response) => {
+        // Handle successful login response if needed
+        history.push(`${process.env.PUBLIC_URL}/`)
+      })
+      .catch((error) => {
+        // Handle login error
+        console.log('error>>', error)
+      });
+  }
+
+  // const onFormSubmit = async (formData) => {
+  //   setLoading(true);
+  //   try {
+  //     const data = await login(formData).unwrap()// Pass email and password to the login function
+  //       //console.log(data)   
+  //     if(data){
+  //     localStorage.setItem("accessToken", "token");
+  //     const {user, token}= data
+  //     dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
+  //     setLoading(false)
+  //     history.push(`${process.env.PUBLIC_URL}/`)
+
+  //    }
+        
+  //   } catch (error) {
+  //     console.log('error cant sign in')
+  //     setLoading(false)
+  //     setError("Cannot login with credentials");
+  //   }
+  // };
 
   const { errors, register, handleSubmit } = useForm();
 

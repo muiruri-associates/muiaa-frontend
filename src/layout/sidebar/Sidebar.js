@@ -5,7 +5,7 @@ import Logo from "../logo/Logo";
 import Menu from "../menu/Menu";
 import Toggle from "./Toggle";
 
-const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, ...props }) => {
+const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, roles, ...props }) => {
   const [collapseSidebar, setSidebar] = useState(false);
   const [mouseEnter, setMouseEnter] = useState(false);
 
@@ -25,7 +25,7 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, ...props 
     [`is-${theme}`]: theme !== "white" && theme !== "light",
     [`${className}`]: className,
   });
-
+  const userRole = JSON.parse(localStorage.getItem("userRole")) || ""; // Default to empty string if not available
   return (
     <div className={classes}>
       <div className="nk-sidebar-element nk-sidebar-head">
@@ -45,7 +45,7 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, ...props 
       </div>
       <div className="nk-sidebar-content" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <SimpleBar className="nk-sidebar-menu">
-          <Menu sidebarToggle={sidebarToggle} mobileView={mobileView}/>
+          <Menu userRole={userRole} sidebarToggle={sidebarToggle} mobileView={mobileView}/>
         </SimpleBar>
       </div>
     </div>

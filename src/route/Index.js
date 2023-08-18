@@ -9,13 +9,14 @@ import SVGIconPage from "../pages/components/crafted-icons/SvgIcons";
 import LenderOrganizations from "../pages/main/lender/LenderOrganizations";
 import CreateLenderOrganizations from "../pages/main/lender/CreateLenderOrganizations";
 import LenderUsers from "../pages/main/lender/LenderUsers";
-import Loans from "../pages/main/Loans";
+import Loans from "../pages/main/loans/Loans";
 import Dashboard from "../pages/main/Dashboard";
 import ViewLenderOrganizationPage from "../pages/main/lender/ViewLenderOrganizationPage";
 import Roles from "../pages/main/accessControl/Roles";
 import Permissions from "../pages/main/accessControl/Permissions";
 import Users from "../pages/main/users/Users";
 import AddPermission from "../pages/main/accessControl/AddPermission";
+import CreateLenderUser from "../pages/main/lender/CreateLenderUser";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
@@ -34,6 +35,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/create-lender-user`} component={CreateLenderUser}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/users`} component={Users}></Route>

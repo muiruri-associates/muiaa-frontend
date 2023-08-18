@@ -13,12 +13,11 @@ import {
   ReactDataTable,
 } from "../../components/Component";
 import { DataTableData, dataTableColumns } from "./AllTableData";
-import { Link } from "react-router-dom";
 
-const GetAllLenderUsersDatatable = () => {
+const LoansDatatable = () => {
   return (
     <React.Fragment>
-    <Head title="Lender Users" />
+    <Head title="Loans" />
     <Content page="component">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         {/* First BlockHead */}
@@ -28,21 +27,10 @@ const GetAllLenderUsersDatatable = () => {
               Back
             </BackTo>
             <BlockTitle tag="h2" className="fw-normal">
-              Lender Users
+              Loans
             </BlockTitle>
           </BlockHeadContent>
-        </BlockHead>
-
-        {/* Second BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-          <Button>
-          <Link to={`${process.env.PUBLIC_URL}/create-lender-user`}>
-            Create LenderUser
-            </Link>
-          </Button>
-          </BlockHeadContent>
-        </BlockHead>
+        </BlockHead>  
       </div>
 
       <Block size="lg">
@@ -62,4 +50,4 @@ const GetAllLenderUsersDatatable = () => {
 }
 
 
-export default GetAllLenderUsersDatatable
+export default LoansDatatable
