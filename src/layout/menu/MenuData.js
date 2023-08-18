@@ -19,10 +19,31 @@ const menu = [
     roles: [ROLE.Admin]  // Example: Only users with 'admin' role can see this menu item
   },
   {
+    icon: 'file-docs',
+    text: 'Loans',
+    active: false,
+    link: '/loans',
+    roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
+  },
+  {
+    icon: 'file-docs',
+    text: 'Loans Applied',
+    active: false,
+    link: '/loans-applied',
+    roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
+  },
+  {
+    icon: 'users',
+    text: 'Leads',
+    active: false,
+    link: '/leads',
+    roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
+  },
+  {
     icon: 'tranx',
     text: 'Lenders',
     active: false,
-    roles: [ROLE.Admin, ROLE.Lender],
+    roles: [ROLE.Admin],
     subMenu: [
       {
         text: 'Lender Organizations',
@@ -33,13 +54,6 @@ const menu = [
         link: '/lender-users', // Example: Only users with 'lenderAdmin' role can see this sub-menu item
       }
     ]
-  },
-  {
-    icon: 'file-docs',
-    text: 'Loans',
-    active: false,
-    link: '/loans',
-    roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
   },
   {
     icon: 'file-docs',

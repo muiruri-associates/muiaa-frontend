@@ -207,7 +207,6 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
       return true; // Menu item is accessible to all
     }
     const allowedRoles = item.roles;
-    console.log('User rOle>>', userRole)
     return allowedRoles.includes(userRole);
   });
 
