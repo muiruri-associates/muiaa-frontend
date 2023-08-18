@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import Logo from "../../images/logo.png";
-import LogoDark from "../../images/logo-dark.png";
+import LogoDark from "../../images/logo.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
+import { useHistory } from "react-router-dom";
+import Success from "./Success";
+import Homepage from "../Homepage";
+import { toast } from 'react-toastify';
+
+
 import {
   Block,
   BlockContent,
@@ -17,33 +23,64 @@ import {
 import { Form, FormGroup, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useLoginMutation } from "../../redux/reducers/authApiSlice"
+import { useDispatch } from "react-redux";
+import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
+import { loginSuccess } from "../../redux/reducers/authSlice";
+import { login } from "../../redux/actions/authActions";
+
+
 
 const Login = () => {
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [passState, setPassState] = useState(false);
   const [errorVal, setError] = useState("");
+  const [email, setEmail]= useState(null)
+  const [password, setPassword]= useState(null)
+  // const [login, {isLoading}] = useLoginMutation();
 
-  const onFormSubmit = (formData) => {
-    setLoading(true);
-    const loginName = "info@softnio.com";
-    const pass = "123456";
-    if (formData.name === loginName && formData.passcode === pass) {
-      localStorage.setItem("accessToken", "token");
-      setTimeout(() => {
-        window.history.pushState(
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`,
-          "auth-login",
-          `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "/"}`
-        );
-        window.location.reload();
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        setError("Cannot login with credentials");
-        setLoading(false);
-      }, 2000);
+
+  const dispatch= useDispatch()
+
+  const onFormSubmit = () => {
+
+    const loginData = {
+      email,
+      password
     }
-  };
+
+    dispatch(login(loginData)) // Dispatch the login action
+      .then((response) => {
+        // Handle successful login response if needed
+        history.push(`${process.env.PUBLIC_URL}/`)
+      })
+      .catch((error) => {
+        // Handle login error
+        console.log('error>>', error)
+      });
+  }
+
+  // const onFormSubmit = async (formData) => {
+  //   setLoading(true);
+  //   try {
+  //     const data = await login(formData).unwrap()// Pass email and password to the login function
+  //       //console.log(data)   
+  //     if(data){
+  //     localStorage.setItem("accessToken", "token");
+  //     const {user, token}= data
+  //     dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
+  //     setLoading(false)
+  //     history.push(`${process.env.PUBLIC_URL}/`)
+
+  //    }
+        
+  //   } catch (error) {
+  //     console.log('error cant sign in')
+  //     setLoading(false)
+  //     setError("Cannot login with credentials");
+  //   }
+  // };
 
   const { errors, register, handleSubmit } = useForm();
 
@@ -64,7 +101,7 @@ const Login = () => {
               <BlockContent>
                 <BlockTitle tag="h4">Sign-In</BlockTitle>
                 <BlockDes>
-                  <p>Access Dashlite using your email and passcode.</p>
+                  <p>Sign in to get access </p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -87,9 +124,9 @@ const Login = () => {
                   <input
                     type="text"
                     id="default-01"
-                    name="name"
+                    name="email"
+                    onChange={(e)=> setEmail(e.target.value)}
                     ref={register({ required: "This field is required" })}
-                    defaultValue="info@softnio.com"
                     placeholder="Enter your email address or username"
                     className="form-control-lg form-control"
                   />
@@ -102,7 +139,7 @@ const Login = () => {
                     Passcode
                   </label>
                   <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
-                    Forgot Code?
+                    Forgot Password?
                   </Link>
                 </div>
                 <div className="form-control-wrap">
@@ -121,10 +158,10 @@ const Login = () => {
                   <input
                     type={passState ? "text" : "password"}
                     id="password"
-                    name="passcode"
-                    defaultValue="123456"
+                    name="password"
+                    onChange={(e)=> setPassword(e.target.value)}
                     ref={register({ required: "This field is required" })}
-                    placeholder="Enter your passcode"
+                    placeholder="Enter your password"
                     className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
                   />
                   {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
@@ -138,7 +175,7 @@ const Login = () => {
             </Form>
             <div className="form-note-s2 text-center pt-4">
               {" "}
-              New on our platform? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
+              New here? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
             </div>
             <div className="text-center pt-4 pb-3">
               <h6 className="overline-title overline-title-sap">

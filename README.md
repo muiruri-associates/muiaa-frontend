@@ -12,7 +12,7 @@
 1. Clone the repo using the command:
 
 ```sh
-  git clone https://github.com/muiruri-associates/muiaa-backend.git
+  git clone https://github.com/muiruri-associates/muiaa-frontend.git
 ```
 
 2. After cloning the project change to that directory

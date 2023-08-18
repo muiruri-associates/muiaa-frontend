@@ -30,7 +30,7 @@ const Faq = ({ ...props }) => {
               </BlockTitle>
               <BlockDes>
                 <p className="lead">
-                  Got a question? Can't find the answer you're looking for? Don't worry, drop us a line on our{" "}
+                  Have a question?{" "}
                   <a
                     href="#contact"
                     onClick={(ev) => {
@@ -137,7 +137,7 @@ const Faq = ({ ...props }) => {
                 </div>
                 <BlockContent>
                   <div className="nk-block-content-head px-lg-4">
-                    <h5>We’re here to help you!</h5>
+                    <h5>Want a Loan ?</h5>
                     <p className="text-soft">
                       Ask a question or file a support ticket, manage request, report an issues. Our support team will
                       get back to you by email.
@@ -146,7 +146,7 @@ const Faq = ({ ...props }) => {
                 </BlockContent>
                 <BlockContent className="flex-shrink-0">
                   <Button color="white" outline className="btn-outline-primary btn-dim">
-                    Get Support Now
+                    Apply Now!
                   </Button>
                 </BlockContent>
               </div>
