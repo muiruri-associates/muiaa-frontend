@@ -17,6 +17,9 @@ import Permissions from "../pages/main/accessControl/Permissions";
 import Users from "../pages/main/users/Users";
 import AddPermission from "../pages/main/accessControl/AddPermission";
 import CreateLenderUser from "../pages/main/lender/CreateLenderUser";
+import LoansApplied from "../pages/main/loans/LoansApplied";
+import Loan from "../pages/main/loans/Loan";
+import Leads from "../pages/main/leads/Leads";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
 
 
@@ -33,6 +36,9 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/nioicon`} component={NioIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/leads`} component={Leads}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/loans-applied`} component={LoansApplied}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/loan/:id`} component={Loan}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/create-lender-user`} component={CreateLenderUser}></Route>
