@@ -27,10 +27,10 @@ const LeadsDatatable = () => {
               Back
             </BackTo>
             <BlockTitle tag="h2" className="fw-normal">
-              Loans
+              Clients
             </BlockTitle>
           </BlockHeadContent>
-        </BlockHead>  
+        </BlockHead>
       </div>
 
       <Block size="lg">

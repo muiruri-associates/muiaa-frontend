@@ -1,23 +1,55 @@
-import { Button } from "reactstrap";
+import { Button, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import { Icon } from "../../components/Component";
 
 // const history = useHistory();
 // Custom component for the "Actions" column
 const ActionsColumn = ({ row }) => {
   const history = useHistory();
 
-  // Function to handle the view button click
-  const handleView = () => {
-    // Replace '/destination' with the path of the desired destination page
-    history.push(`Ksh. {process.env.PUBLIC_URL}/lender-organization/Ksh. {row._id}`);
-  };
-
   return (
-    <Button className="btn-dim" outline color="info" onClick={handleView}>
-      view
-    </Button>
+    <UncontrolledDropdown>
+        <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+          <Icon name="more-h"></Icon>
+        </DropdownToggle>
+        <DropdownMenu right>
+          <ul className="link-list-plain">
+            <li>
+              <DropdownItem
+                tag="a"
+                href={`${process.env.PUBLIC_URL}/loan/${row}.id`}
+              >
+                View
+              </DropdownItem>
+            </li>
+            <li>
+              <DropdownItem
+                tag="a"
+                href="#dropdownitem"
+                onClick={(ev) => {
+                  ev.preventDefault();
+                }}
+              >
+                Approve
+              </DropdownItem>
+            </li>
+            <li>
+              <DropdownItem
+                tag="a"
+                href="#dropdownitem"
+                onClick={(ev) => {
+                  ev.preventDefault();
+                }}
+              >
+                Reject
+              </DropdownItem>
+            </li>
+          </ul>
+        </DropdownMenu>
+      </UncontrolledDropdown>
   );
 };
+
 
 export const dataTableColumns = [
   {
@@ -45,6 +77,12 @@ export const dataTableColumns = [
     hide: "md",
   },
   {
+    name: "Rating",
+    selector: (row) => row.rating,
+    sortable: true,
+    hide: "md",
+  },
+  {
     name: "Status",
     selector: (row) => row.status,
     sortable: true,
@@ -64,6 +102,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 4.78",
     disbursed_on: "8/19/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -71,6 +110,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 3.71",
     disbursed_on: "7/28/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -78,6 +118,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 3.81",
     disbursed_on: "1/26/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -85,6 +126,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 4.71",
     disbursed_on: "12/9/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -92,6 +134,7 @@ export const DataTableData = [
     loan_type: "Buisness Loan",
     loan_amount: "Ksh. 5.23",
     disbursed_on: "1/27/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -99,6 +142,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 6.90",
     disbursed_on: "8/26/2022",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -106,6 +150,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 3.92",
     disbursed_on: "12/9/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -113,6 +158,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 1.52",
     disbursed_on: "7/11/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -120,6 +166,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 9.92",
     disbursed_on: "10/5/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -127,6 +174,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 2.78",
     disbursed_on: "7/8/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -134,6 +182,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 4.95",
     disbursed_on: "2/7/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -141,6 +190,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 5.68",
     disbursed_on: "2/27/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -148,6 +198,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 8.73",
     disbursed_on: "2/13/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -155,6 +206,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 3.54",
     disbursed_on: "7/10/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -162,6 +214,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 4.97",
     disbursed_on: "7/7/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -169,6 +222,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 5.95",
     disbursed_on: "4/24/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -176,6 +230,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 0.68",
     disbursed_on: "4/28/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -183,6 +238,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 3.28",
     disbursed_on: "8/15/2022",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -190,6 +246,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 3.22",
     disbursed_on: "5/20/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -197,6 +254,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 3.83",
     disbursed_on: "6/20/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -204,6 +262,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 5.37",
     disbursed_on: "10/3/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -211,6 +270,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 3.66",
     disbursed_on: "9/8/2022",
+    rating: 5,
     status: "pending",
   },
   {
@@ -218,6 +278,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 4.09",
     disbursed_on: "2/25/2023",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -225,6 +286,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 0.05",
     disbursed_on: "7/12/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -232,6 +294,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 2.68",
     disbursed_on: "2/12/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -239,6 +302,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 6.10",
     disbursed_on: "12/23/2022",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -246,6 +310,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 8.81",
     disbursed_on: "3/23/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -253,6 +318,7 @@ export const DataTableData = [
     loan_type: "Personal Loan",
     loan_amount: "Ksh. 7.44",
     disbursed_on: "9/5/2022",
+    rating: 5,
     status: "disbursed",
   },
   {
@@ -260,6 +326,7 @@ export const DataTableData = [
     loan_type: "Business Loan",
     loan_amount: "Ksh. 100000.52",
     disbursed_on: "5/25/2023",
+    rating: 5,
     status: "pending",
   },
   {
@@ -267,6 +334,7 @@ export const DataTableData = [
     loan_type: "Mortgage",
     loan_amount: "Ksh. 600000.71",
     disbursed_on: "1/15/2023",
+    rating: 5,
     status: "disbursed",
   },
 ];

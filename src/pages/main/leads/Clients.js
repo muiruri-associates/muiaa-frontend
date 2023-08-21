@@ -1,18 +1,18 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import LoansAppliedDatatable from "../../../mainComponents/Loans/LoansAppliedDatatable";
+import LeadsDatatable from "../../../mainComponents/Leads/LeadsDatatable";
 
-const LoansApplied = ({ ...props }) => {
+const Clients = ({ ...props }) => {
   return (
     <React.Fragment>
-      <Head title="Loans Applied" />
+      <Head title="Clients" />
       <Content>
         <p>Clients Page for general layout</p>
-        <LoansAppliedDatatable />
+        <LeadsDatatable />
       </Content>
     </React.Fragment>
   );
 };
 
-export default LoansApplied;
+export default Clients;
