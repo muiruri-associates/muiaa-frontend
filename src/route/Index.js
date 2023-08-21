@@ -33,22 +33,22 @@ const Pages = () => {
       <Switch>
         {/*Dashboards*/}
         
-        <Route exact path={`${process.env.PUBLIC_URL}/nioicon`} component={NioIconPage}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/leads`} component={Leads}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/loan/:id`} component={Loan}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/create-lender-user`} component={CreateLenderUser}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/lender-users`} component={LenderUsers}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/users`} component={Users}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/roles`} component={Roles}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/permissions`} component={Permissions}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/permissions/create`} component={AddPermission}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/`} component={Dashboard}></Route>
+        <Route exact path={`/nioicon`} component={NioIconPage}></Route>
+        <Route exact path={`/svg-icons`} component={SVGIconPage}></Route>
+        <Route exact path={`/loans`} component={Loans}></Route>
+        <Route exact path={`/leads`} component={Leads}></Route>
+        <Route exact path={`/clients`} component={Clients}></Route>
+        <Route exact path={`/loan/:id`} component={Loan}></Route>
+        <Route exact path={`/lender-organizations`} component={LenderOrganizations}></Route>
+        <Route exact path={`/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
+        <Route exact path={`/create-lender-user`} component={CreateLenderUser}></Route>
+        <Route exact path={`/lender-organization/:id`} component={ViewLenderOrganizationPage}></Route>
+        <Route exact path={`/lender-users`} component={LenderUsers}></Route>
+        <Route exact path={`/users`} component={Users}></Route>
+        <Route exact path={`/roles`} component={Roles}></Route>
+        <Route exact path={`/permissions`} component={Permissions}></Route>
+        <Route exact path={`/permissions/create`} component={AddPermission}></Route>
+        <Route exact path={`/`} component={Dashboard}></Route>
         <Route component={RedirectAs404}></Route>
       </Switch>
     </Suspense>
