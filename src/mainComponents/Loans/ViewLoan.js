@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Badge, Card } from "reactstrap";
+import { Card } from "reactstrap";
 import {
   Button,
   Block,
@@ -14,9 +14,9 @@ import {
   Row,
   Col,
 } from "../../components/Component";
-import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchLenderOrgById } from "../../redux/actions/lenderOrgActions";
+import { Link } from "react-router-dom";
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchLenderOrgById } from "../../redux/actions/lenderOrgActions";
 
 const ViewLoan = () => {
   // const { id } = useParams();
