@@ -26,17 +26,10 @@ const menu = [
     roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
   },
   {
-    icon: 'file-docs',
-    text: 'Loans Applied',
-    active: false,
-    link: '/loans-applied',
-    roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
-  },
-  {
     icon: 'users',
-    text: 'Leads',
+    text: 'My Clients',
     active: false,
-    link: '/leads',
+    link: '/clients',
     roles: [ROLE.Admin, ROLE.Lender]  // Example: Only users with 'admin' role can see this menu item
   },
   {

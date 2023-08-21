@@ -2,7 +2,7 @@ import React, { Suspense, useLayoutEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { RedirectAs404 } from "../utils/Utils";
 
-import Clients from "../pages/main/Clients";
+// import Clients from "../pages/main/Clients";
 
 import NioIconPage from "../pages/components/crafted-icons/NioIcon";
 import SVGIconPage from "../pages/components/crafted-icons/SvgIcons";
@@ -17,7 +17,7 @@ import Permissions from "../pages/main/accessControl/Permissions";
 import Users from "../pages/main/users/Users";
 import AddPermission from "../pages/main/accessControl/AddPermission";
 import CreateLenderUser from "../pages/main/lender/CreateLenderUser";
-import LoansApplied from "../pages/main/loans/LoansApplied";
+import Clients from "../pages/main/leads/Clients";
 import Loan from "../pages/main/loans/Loan";
 import Leads from "../pages/main/leads/Leads";
 // import CreateLenderOrganizations from "../mainComponents/LenderOrg/ViewLenderOrganizationPage";
@@ -37,7 +37,7 @@ const Pages = () => {
         <Route exact path={`${process.env.PUBLIC_URL}/svg-icons`} component={SVGIconPage}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/loans`} component={Loans}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/leads`} component={Leads}></Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/loans-applied`} component={LoansApplied}></Route>
+        <Route exact path={`${process.env.PUBLIC_URL}/clients`} component={Clients}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/loan/:id`} component={Loan}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/lender-organizations`} component={LenderOrganizations}></Route>
         <Route exact path={`${process.env.PUBLIC_URL}/create-lender-organizations`} component={CreateLenderOrganizations}></Route>
