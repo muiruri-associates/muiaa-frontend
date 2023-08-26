@@ -20,6 +20,8 @@ const User = () => {
   const handleSignout = () => {
     localStorage.removeItem('userRole');
     localStorage.removeItem('user');
+     // Redirect to the login page
+     window.location.href = '/auth-login'; 
   };
 
   return (
