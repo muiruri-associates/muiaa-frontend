@@ -5,9 +5,9 @@ import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
 import { useHistory } from "react-router-dom";
-import Success from "./Success";
-import Homepage from "../Homepage";
-import { toast } from 'react-toastify';
+// import Success from "./Success";
+// import Homepage from "../Homepage";
+// import { toast } from 'react-toastify';
 
 
 import {
@@ -23,16 +23,18 @@ import {
 import { Form, FormGroup, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { useLoginMutation } from "../../redux/reducers/authApiSlice"
+// import { useLoginMutation } from "../../redux/reducers/authApiSlice"
 import { useDispatch } from "react-redux";
-import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
-import { loginSuccess } from "../../redux/reducers/authSlice";
+// import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
+// import { loginSuccess } from "../../redux/reducers/authSlice";
 import { login } from "../../redux/actions/authActions";
 
 
 
 const Login = () => {
   const history = useHistory();
+  const dispatch = useDispatch()
+  
   const [loading, setLoading] = useState(false);
   const [passState, setPassState] = useState(false);
   const [errorVal, setError] = useState("");
@@ -41,7 +43,6 @@ const Login = () => {
   // const [login, {isLoading}] = useLoginMutation();
 
 
-  const dispatch= useDispatch()
 
   const onFormSubmit = () => {
 
@@ -53,7 +54,7 @@ const Login = () => {
     dispatch(login(loginData)) // Dispatch the login action
       .then((response) => {
         // Handle successful login response if needed
-        history.push(`${process.env.PUBLIC_URL}/`)
+        history.push(`/`)
       })
       .catch((error) => {
         // Handle login error
@@ -71,7 +72,7 @@ const Login = () => {
   //     const {user, token}= data
   //     dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
   //     setLoading(false)
-  //     history.push(`${process.env.PUBLIC_URL}/`)
+  //     history.push(`/`)
 
   //    }
         
@@ -90,7 +91,7 @@ const Login = () => {
       <PageContainer>
         <Block className="nk-block-middle nk-auth-body  wide-xs">
           <div className="brand-logo pb-4 text-center">
-            <Link to={process.env.PUBLIC_URL + "/"} className="logo-link">
+            <Link to={"/"} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
               <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
             </Link>
@@ -138,7 +139,7 @@ const Login = () => {
                   <label className="form-label" htmlFor="password">
                     Passcode
                   </label>
-                  <Link className="link link-primary link-sm" to={`${process.env.PUBLIC_URL}/auth-reset`}>
+                  <Link className="link link-primary link-sm" to={`/auth-reset`}>
                     Forgot Password?
                   </Link>
                 </div>
@@ -169,13 +170,14 @@ const Login = () => {
               </FormGroup>
               <FormGroup>
                 <Button size="lg" className="btn-block" type="submit" color="primary">
-                  {loading ? <Spinner size="sm" color="light" /> : "Sign in"}
+                  {/* {loading ? <Spinner size="sm" color="light" /> : "Sign in"} */}
+                  {loading ? 'Loading...' : 'Sign in'}
                 </Button>
               </FormGroup>
             </Form>
             <div className="form-note-s2 text-center pt-4">
               {" "}
-              New here? <Link to={`${process.env.PUBLIC_URL}/auth-register`}>Create an account</Link>
+              New here? <Link to={`/auth-register`}>Create an account</Link>
             </div>
             <div className="text-center pt-4 pb-3">
               <h6 className="overline-title overline-title-sap">

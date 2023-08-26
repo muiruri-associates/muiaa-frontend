@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Card } from "reactstrap";
@@ -44,6 +44,14 @@ const ViewLoan = () => {
   //   return <div>Lender organization not found.</div>;
   // }
 
+  const [isBlurred, setIsBlurred] = useState(true);
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  const unlockContent = () => {
+    setIsBlurred(false);
+    setIsUnlocked(true);
+  };
+
   return (
     <React.Fragment>
       <Head title="KYC Details - Regular"></Head>
@@ -64,7 +72,7 @@ const ViewLoan = () => {
               </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
-              <Link to={`${process.env.PUBLIC_URL}/loans`}>
+              <Link to={`/loans`}>
                 <Button color="light" outline className="bg-white d-none d-sm-inline-flex">
                   <Icon name="arrow-left"></Icon>
                   <span>Back</span>
@@ -122,29 +130,38 @@ const ViewLoan = () => {
                 </BlockHeadContent>
               </BlockHead>
 
-              <Card className="card-bordered">
-                <ul className="data-list is-compact">
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">ID Card Front</div>
-                      <div className="data-value">
-                        <a href="#" download>
-                          ID Front Side
-                        </a>
+              <Card
+                style={{
+                  filter: isBlurred ? "blur(5px)" : "none", 
+                }}
+                className="card-bordered"
+              >
+                {isBlurred ? (
+                  <ul className="data-list is-compact">
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">ID Card Front</div>
+                        <div className="data-value">
+                          <a href="#" download>
+                            ID Front Side
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">ID Card Back</div>
-                      <div className="data-value">
-                        <a href="#" download>
-                          ID Back Side
-                        </a>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">ID Card Back</div>
+                        <div className="data-value">
+                          <a href="#" download>
+                            ID Back Side
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                ) : (
+                  <p>Content not paid for</p>
+                )}
               </Card>
               <BlockHead>
                 <BlockHeadContent>
@@ -153,7 +170,13 @@ const ViewLoan = () => {
                 </BlockHeadContent>
               </BlockHead>
 
-              <Card className="card-bordered">
+              <Card
+                style={{
+                  filter: isBlurred ? "blur(5px)" : "none", 
+                }}
+                className="card-bordered"
+              >
+                {isBlurred ? (
                 <ul className="data-list is-compact">
                   <li className="data-item">
                     <div className="data-col">
@@ -170,13 +193,16 @@ const ViewLoan = () => {
                       <div className="data-label">Car Logbook</div>
                       <div className="data-value">
                         <a href="#" download>
-                        Car Logbook
+                          Car Logbook
                         </a>
                       </div>
                     </div>
                   </li>
                 </ul>
-                </Card>
+                 ) : (
+                  <p>Content not paid for</p>
+                )}
+              </Card>
             </Col>
 
             <Col lg="7">
@@ -186,7 +212,13 @@ const ViewLoan = () => {
                   <p>Basic info, like name, phone, address, country etc.</p>
                 </BlockHeadContent>
               </BlockHead>
-              <Card className="card-bordered">
+              <Card
+                style={{
+                  filter: isBlurred ? "blur(5px)" : "none", 
+                }}
+                className="card-bordered"
+              >
+                {isBlurred ? (
                 <ul className="data-list is-compact">
                   <li className="data-item">
                     <div className="data-col">
@@ -213,6 +245,9 @@ const ViewLoan = () => {
                     </div>
                   </li>
                 </ul>
+                ) : (
+                  <p>Content not paid for</p>
+                )}
               </Card>
               <BlockHead>
                 <BlockHeadContent>
@@ -221,7 +256,13 @@ const ViewLoan = () => {
                 </BlockHeadContent>
               </BlockHead>
 
-              <Card className="card-bordered">
+              <Card
+                style={{
+                  filter: isBlurred ? "blur(5px)" : "none", 
+                }}
+                className="card-bordered"
+              >
+                {isBlurred ? (
                 <ul className="data-list is-compact">
                   <li className="data-item">
                     <div className="data-col">
@@ -254,6 +295,9 @@ const ViewLoan = () => {
                     </div>
                   </li>
                 </ul>
+                ) : (
+                  <p>Content not paid for</p>
+                )}
               </Card>
             </Col>
           </Row>

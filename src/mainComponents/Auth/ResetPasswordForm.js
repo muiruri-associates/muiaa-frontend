@@ -3,7 +3,7 @@ import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
-import AuthFooter from "./AuthFooter";
+// import AuthFooter from "./AuthFooter";
 import {
   Block,
   BlockContent,
@@ -14,55 +14,55 @@ import {
   PreviewCard
 } from "../../components/Component";
 import { FormGroup } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { forgotPassword, login } from "../../redux/actions/authActions";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { ResetPassword } from "../../redux/actions/authActions";
+import { useDispatch } from "react-redux";
+import AuthFooter from "../../pages/auth/AuthFooter";
+import { resetPassword } from "../../redux/actions/authActions";
 
-const ForgotPassword = () => {
-  const history = useHistory();
+const ResetPasswordForm = () => {
   const dispatch = useDispatch()
 
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const token = searchParams.get('token');
+
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-
-    if (!email) {
-      toast.error("Please enter your email.", {
+  
+    if (!password) {
+      toast.error("Please enter your new password.", {
         position: toast.POSITION.TOP_RIGHT,
-        autoClose: 3000
+        autoClose: 3000,
       });
       return;
     }
-
-    // Basic email format validation
-  if (!/\S+@\S+\.\S+/.test(email)) {
-    toast.error("Please enter a valid email address.", {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 3000
-    });
-    return;
-  }
-
+  
     setLoading(true);
-    dispatch(forgotPassword(email))
+  
+    // Dispatch the resetPassword action with the password value
+    dispatch(resetPassword(password))
       .then(() => {
         setLoading(false);
-        toast.success("Reset Link has been sent successfully", {
+        // Handle success (show a success message or navigate to a different page)
+        toast.success("Password reset successful!", {
           position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000
+          autoClose: 3000,
         });
       })
       .catch((error) => {
         setLoading(false);
-        console.error("Forgot password error:", error);
+        // Handle error (show an error message)
+        toast.error("Password reset failed. Please try again.", {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 3000,
+        });
       });
   };
-
-  // Use toast notifications to display success or error messages
 
   return (
     <React.Fragment>
@@ -80,7 +80,7 @@ const ForgotPassword = () => {
               <BlockContent>
                 <BlockTitle tag="h5">Reset password</BlockTitle>
                 <BlockDes>
-                  <p>If you forgot your password, well, then we’ll email you instructions to reset your password.</p>
+                  <p>If you forgot your password, well, then we’ll password you instructions to reset your password.</p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -88,16 +88,16 @@ const ForgotPassword = () => {
               <FormGroup>
                 <div className="form-label-group">
                   <label className="form-label" htmlFor="default-01">
-                    Email
+                    Password
                   </label>
                 </div>
                 <input
-                  type="email"
+                  type="password"
                   className="form-control form-control-lg"
                   id="default-01"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your password address"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>
@@ -125,4 +125,4 @@ const ForgotPassword = () => {
     </React.Fragment>
   );
 };
-export default ForgotPassword;
+export default ResetPasswordForm;

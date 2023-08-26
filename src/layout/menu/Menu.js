@@ -3,7 +3,6 @@ import menu from "./MenuData";
 import Icon from "../../components/icon/Icon";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
-import { ROLE } from "../../constants/auth";
 
 const MenuHeading = ({ heading }) => {
   return (
@@ -233,60 +232,3 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
 };
 
 export default Menu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import MenuHeading from "./MenuHeading";
-// import MenuItem from "./MenuItem";
-// import menu from "./MenuData"; // Import your menu data
-
-// const Menu = ({ sidebarToggle, mobileView, userRoles }) => {
-//   // Filter the menu items based on user roles (if any)
-//   const allowedMenuItems = menu.filter(item => {
-//     if (!item.roles || item.roles.length === 0) {
-//       return true; // Menu item is accessible to all
-//     }
-
-//     const allowedRoles = item.roles;
-//     return userRoles.some(role => allowedRoles.includes(role));
-//   });
-
-//   return (
-//     <ul className="nk-menu">
-//       {allowedMenuItems.map(item =>
-//         item.heading ? (
-//           <MenuHeading heading={item.heading} key={item.heading} />
-//         ) : (
-//           <MenuItem
-//             key={item.text}
-//             link={item.link}
-//             icon={item.icon}
-//             text={item.text}
-//             sub={item.subMenu}
-//             badge={item.badge}
-//             sidebarToggle={sidebarToggle}
-//             mobileView={mobileView}
-//           />
-//         )
-//       )}
-//     </ul>
-//   );
-// };
-
-// export default Menu;

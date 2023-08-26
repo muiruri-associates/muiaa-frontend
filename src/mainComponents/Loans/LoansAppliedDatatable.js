@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from 'reactstrap'
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
@@ -30,7 +29,7 @@ const LoansAppliedDatatable = () => {
               Loans Applied
             </BlockTitle>
           </BlockHeadContent>
-        </BlockHead>  
+        </BlockHead>
       </div>
 
       <Block size="lg">
@@ -48,6 +47,5 @@ const LoansAppliedDatatable = () => {
   </React.Fragment>
 );
 }
-
 
 export default LoansAppliedDatatable

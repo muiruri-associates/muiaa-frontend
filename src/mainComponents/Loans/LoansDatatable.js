@@ -1,5 +1,4 @@
 import React from "react";
-import {Button} from 'reactstrap'
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
@@ -23,14 +22,11 @@ const LoansDatatable = () => {
         {/* First BlockHead */}
         <BlockHead size="lg" wide="sm">
           <BlockHeadContent>
-            <BackTo link="/" icon="arrow-left">
-              Back
-            </BackTo>
             <BlockTitle tag="h2" className="fw-normal">
               Loans
             </BlockTitle>
           </BlockHeadContent>
-        </BlockHead>  
+        </BlockHead>
       </div>
 
       <Block size="lg">
