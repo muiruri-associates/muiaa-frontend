@@ -14,7 +14,7 @@ const Success = () => {
       <PageContainer>
         <Block className="nk-block-middle nk-auth-body">
           <div className="brand-logo pb-5">
-            <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
+            <Link to={`/`} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
               <img className="logo-dark logo-img logo-img-lg" src={Logo} alt="logo-dark" />
             </Link>

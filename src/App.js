@@ -18,6 +18,7 @@ import Register from "./pages/auth/Register";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Success from "./pages/auth/Success";
 import InvoicePrint from "./pages/pre-built/invoice/InvoicePrint";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       <Route exact path={`/auth-reset`} component={ForgotPassword}></Route>
       <Route exact path={`/auth-register`} component={Register}></Route>
       <Route exact path={`/auth-login`} component={Login}></Route>
+      <Route exact path={`/reset-password`} component={ResetPassword}></Route>
 
       {/* Print Pages */}
       <Route exact path={`/invoice-print/:id`} component={InvoicePrint}></Route>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserAvatar from "../../../../components/user/UserAvatar";
 import { DropdownToggle, DropdownMenu, Dropdown } from "reactstrap";
 import { Icon } from "../../../../components/Component";
@@ -6,10 +6,20 @@ import { LinkList, LinkItem } from "../../../../components/links/Links";
 
 const User = () => {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null); 
   const toggle = () => setOpen((prevState) => !prevState);
 
+  useEffect(() => {
+    // Retrieve user data from local storage (assuming it's stored as JSON)
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   const handleSignout = () => {
-    localStorage.removeItem("accessToken");
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('user');
   };
 
   return (
@@ -25,8 +35,8 @@ const User = () => {
         <div className="user-toggle">
           <UserAvatar icon="user-alt" className="sm" />
           <div className="user-info d-none d-md-block">
-            <div className="user-status">Admin</div>
-            <div className="user-name dropdown-indicator">Admin Muiaa</div>
+            {/* <div className="user-status">{user?.roles || "Guest"}</div> */}
+            <div className="user-name dropdown-indicator">{user?.first_name || "Guest User"} {user?.last_name}</div>
           </div>
         </div>
       </DropdownToggle>
@@ -37,8 +47,8 @@ const User = () => {
               <span>AB</span>
             </div>
             <div className="user-info">
-              <span className="lead-text">Admin Muiaa</span>
-              <span className="sub-text">info@softnio.com</span>
+              <span className="lead-text">{user?.first_name || "Guest User"} {user?.last_name}</span>
+              <span className="sub-text">{user?.email || "guest@example.com"}</span>
             </div>
           </div>
         </div>
@@ -57,7 +67,7 @@ const User = () => {
         </div>
         <div className="dropdown-inner">
           <LinkList>
-            <a href={`${process.env.PUBLIC_URL}/auth-login`} onClick={handleSignout}>
+            <a href={`/auth-login`} onClick={handleSignout}>
               <Icon name="signout"></Icon>
               <span>Sign Out</span>
             </a>

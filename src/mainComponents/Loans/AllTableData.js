@@ -1,4 +1,4 @@
-import { Button, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import { Icon } from "../../components/Component";
 
@@ -17,7 +17,7 @@ const ActionsColumn = ({ row }) => {
             <li>
               <DropdownItem
                 tag="a"
-                href={`${process.env.PUBLIC_URL}/loan/${row}.id`}
+                href={'/loan/${row}.id'}
               >
                 View
               </DropdownItem>
