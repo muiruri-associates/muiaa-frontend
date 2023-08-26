@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async (lenderOrgData) => {
   try {
-    const response = await axios.post('http://localhost:5000/api/v1/admin/create-lender-org', lenderOrgData);
+    const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/admin/create-lender-org', lenderOrgData);
     console.log('new orgs', response)
     return response.data;
   } catch (error) {
@@ -18,7 +18,7 @@ export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', asy
 // Define the async thunk for fetching all lender organizations
 export const fetchData = createAsyncThunk('lenderOrg/fetchLenderOrg', async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/v1/admin/lender-orgs');
+    const response = await axios.get('https://muiaa-backend-api.onrender.com/api/v1/admin/lender-orgs');
     console.log('all orgs', response)
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById
   // Check if id is provided before making the API call
   try {
     console.log('id', id);
-    const response = await axios.get(`http://localhost:5000/api/v1/admin/lender-org/${id}`);
+    const response = await axios.get(`https://muiaa-backend-api.onrender.com/api/v1/admin/lender-org/${id}`);
     console.log('resp org id', response.data);
     return response.data;
   } catch (error) {

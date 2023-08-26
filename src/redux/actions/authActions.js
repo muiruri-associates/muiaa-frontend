@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const login = createAsyncThunk('auth/login', async (loginData) => {
   try {
-    const response = await axios.post('http://localhost:5000/api/v1/auth/login', loginData);
+    const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/auth/login', loginData);
     const userData = response.data; // Assuming the response contains user data including roles
     return userData;
   } catch (error) {
@@ -19,7 +19,7 @@ export const logout = () => {
 
 export const forgotPassword = createAsyncThunk('auth/forgot-password', async (email) => {
   try {
-    const response = await axios.post('http://localhost:5000/api/v1/auth/forgot-password', { email });
+    const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/auth/forgot-password', { email });
 console.log('response', response.data.status)
     if (response.data.status === "success") {
       return response.data; // You can return any relevant data from the response
@@ -33,7 +33,7 @@ console.log('response', response.data.status)
 
 export const resetPassword = createAsyncThunk('auth/reset-password', async (resetData) => {
   try {
-    const response = await axios.post('http://localhost:5000/api/v1/auth/reset-password', resetData);
+    const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/auth/reset-password', resetData);
     console.log('response', response.data.status)
     if (response.data.status === "success") {
       return response.data; // You can return any relevant data from the response
