@@ -18,7 +18,7 @@ import axios from 'axios';
 // Define the async thunk for fetching all lender organizations
 export const fetchRoles = createAsyncThunk('roles/fetchRoles', async () => {
   try {
-    const response = await axios.get('https://muiaa-backend-api.onrender.com/api/v1/api/v1/admin/roles');
+    const response = await axios.get('https://muiaa-backend-api.onrender.com/api/v1/admin/roles');
     console.log('all roles', response)
     return response.data;
   } catch (error) {
