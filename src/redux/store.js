@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { authApi } from './api/apiSlice';
-import authSliceReducer from '../redux/reducers/authSlice';
-import lenderOrgReducer from '../redux/reducers/lenderOrgSlice';
-import permissionsReducer from '../redux/reducers/permissionsSlice';
-import rolesReducer from '../redux/reducers/rolesSlice';
-import usersReducer from '../redux/reducers/usersSlice';
+import { authApi } from '../app/api/apiSlice';
+import authSliceReducer from './slices/authSlice';
+import lenderOrgReducer from './slices/lenderOrgSlice';
+import permissionsReducer from './slices/permissionsSlice';
+import rolesReducer from './slices/rolesSlice';
+import usersReducer from './slices/usersSlice';
+import loanReducer from './slices/loanSlice'
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     permissions: permissionsReducer,
     roles: rolesReducer,
     users: usersReducer,
+    loan: loanReducer
   },
   middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(authApi.middleware),
 });

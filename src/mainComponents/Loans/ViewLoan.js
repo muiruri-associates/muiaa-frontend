@@ -91,7 +91,7 @@ const ViewLoan = () => {
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">User Info</BlockTitle>
-                  <p>Submission date, approve date, status etc.</p>
+                  <p>Basic info, like name, phone, address, country etc.</p>
                 </BlockHeadContent>
               </BlockHead>
               <Card className="card-bordered">
@@ -126,7 +126,7 @@ const ViewLoan = () => {
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">User Documents</BlockTitle>
-                  <p>Here is user uploaded documents.</p>
+                  <p>Here are user uploaded documents.</p>
                 </BlockHeadContent>
               </BlockHead>
 
@@ -166,7 +166,7 @@ const ViewLoan = () => {
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">Asset Documents</BlockTitle>
-                  <p>Here is Asset Documents.</p>
+                  <p>Here are Asset Documents.</p>
                 </BlockHeadContent>
               </BlockHead>
 
@@ -208,8 +208,8 @@ const ViewLoan = () => {
             <Col lg="7">
               <BlockHead>
                 <BlockHeadContent>
-                  <BlockTitle tag="h5">Loan Details</BlockTitle>
-                  <p>Basic info, like name, phone, address, country etc.</p>
+                  <BlockTitle tag="h5">Loan Info</BlockTitle>
+                  <p>Loan Type, Loan Amount, Date Applied, Status</p>
                 </BlockHeadContent>
               </BlockHead>
               <Card
@@ -252,7 +252,7 @@ const ViewLoan = () => {
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">Income Documents</BlockTitle>
-                  <p>Here is Income documents.</p>
+                  <p>Here are Income documents.</p>
                 </BlockHeadContent>
               </BlockHead>
 

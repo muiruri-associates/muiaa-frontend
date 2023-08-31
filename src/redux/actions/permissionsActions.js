@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const createPermissions = createAsyncThunk('lenderOrg/createPermissions', async (permissionsData) => {
   try {
-    const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/admin/permissions', permissionsData);
+    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}v1/admin/permissions`, permissionsData);
     console.log('new permissions>>', response)
     return response.data;
   } catch (error) {
@@ -18,7 +18,7 @@ export const createPermissions = createAsyncThunk('lenderOrg/createPermissions',
 // Define the async thunk for fetching all lender organizations
 export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions', async () => {
   try {
-    const response = await axios.get('https://muiaa-backend-api.onrender.com/api/v1/admin/permissions');
+    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}v1/admin/permissions`);
     console.log('all permissions', response)
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions',
 //   // Check if id is provided before making the API call
 //   try {
 //     console.log('id', id);
-//     const response = await axios.get(`https://muiaa-backend-api.onrender.com/api/v1/admin/lender-org/${id}`);
+//     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}v1/admin/lender-org/${id}`);
 //     console.log('resp org id', response.data);
 //     return response.data;
 //   } catch (error) {

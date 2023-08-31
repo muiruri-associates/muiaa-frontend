@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async (lenderOrgData) => {
 //   try {
-//     const response = await axios.post('https://muiaa-backend-api.onrender.com/api/v1/admin/create-lender-org', lenderOrgData);
+//     const response = await axios.post('${process.env.REACT_APP_PRODUCTION}/v1/admin/create-lender-org', lenderOrgData);
 //     console.log('new orgs', response)
 //     return response.data;
 //   } catch (error) {
@@ -18,7 +18,7 @@ import axios from 'axios';
 // Define the async thunk for fetching all lender organizations
 export const fetchUsers = createAsyncThunk('roles/fetchRoles', async () => {
   try {
-    const response = await axios.get('https://muiaa-backend-api.onrender.com/api/v1/admin/users');
+    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/users`);
     console.log('all users', response)
     return response.data;
   } catch (error) {
@@ -32,7 +32,7 @@ export const fetchUsers = createAsyncThunk('roles/fetchRoles', async () => {
 //   // Check if id is provided before making the API call
 //   try {
 //     console.log('id', id);
-//     const response = await axios.get(`https://muiaa-backend-api.onrender.com/api/v1/admin/lender-org/${id}`);
+//     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/lender-org/${id}`);
 //     console.log('resp org id', response.data);
 //     return response.data;
 //   } catch (error) {
