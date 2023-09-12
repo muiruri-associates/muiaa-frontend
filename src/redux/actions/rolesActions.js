@@ -20,7 +20,7 @@ export const fetchRoles = createAsyncThunk('roles/fetchRoles', async () => {
   try {
     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/roles`);
     console.log('all roles', response)
-    return response.data;
+    return response.data.body;
   } catch (error) {
     // Handle any error that occurred during the API call
     throw new Error('Error fetching roles');

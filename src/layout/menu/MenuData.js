@@ -1,4 +1,4 @@
-import { ROLE } from './../../constants/auth';
+import { ROLE } from './../../constants/roles';
 
 const menu = [
   {

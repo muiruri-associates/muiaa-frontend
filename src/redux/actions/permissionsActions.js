@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export const createPermissions = createAsyncThunk('lenderOrg/createPermissions', async (permissionsData) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}v1/admin/permissions`, permissionsData);
+    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/v1/admin/permissions`, permissionsData);
     console.log('new permissions>>', response)
     return response.data;
   } catch (error) {
@@ -18,9 +18,9 @@ export const createPermissions = createAsyncThunk('lenderOrg/createPermissions',
 // Define the async thunk for fetching all lender organizations
 export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions', async () => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}v1/admin/permissions`);
+    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/permissions`);
     console.log('all permissions', response)
-    return response.data;
+    return response.data.body;
   } catch (error) {
     // Handle any error that occurred during the API call
     throw new Error('Error fetching permissions');

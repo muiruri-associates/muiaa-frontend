@@ -7,7 +7,7 @@ export const getAllLoanApplications = createAsyncThunk('loans/getAllLoanApplicat
   try {
     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/loans/loan-applications`);
     console.log('all loans', response)
-    return response.data;
+    return response.data.body;
   } catch (error) {
     // Handle any error that occurred during the API call
     throw new Error('Error fetching all loans');
@@ -21,7 +21,7 @@ export const getLoanApplicationById = createAsyncThunk('loans/getLoanApplication
     console.log('id', id);
     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/loan/loan-application/${id}`);
     console.log('resp loan id', response.data);
-    return response.data;
+    return response.data.body;
   } catch (error) {
     throw new Error('Error fetching loan application by ID');
   }

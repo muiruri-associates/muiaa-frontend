@@ -8,7 +8,7 @@ export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', asy
   try {
     const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/v1/admin/create-lender-org`, lenderOrgData);
     console.log('new orgs', response)
-    return response.data;
+    return response.data.body;
   } catch (error) {
     throw new Error('Error creating lender organization');
   }
@@ -19,8 +19,8 @@ export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', asy
 export const fetchData = createAsyncThunk('lenderOrg/fetchLenderOrg', async () => {
   try {
     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/lender-orgs`);
-    console.log('all orgs', response)
-    return response.data;
+    console.log('all orgs', response.data.body)
+    return response.data.body;
   } catch (error) {
     // Handle any error that occurred during the API call
     throw new Error('Error fetching lender organizations');
@@ -34,7 +34,7 @@ export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById
     console.log('id', id);
     const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/lender-org/${id}`);
     console.log('resp org id', response.data);
-    return response.data;
+    return response.data.body;
   } catch (error) {
     throw new Error('Error fetching lender organization by ID');
   }

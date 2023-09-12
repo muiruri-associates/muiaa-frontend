@@ -3,7 +3,6 @@ import { Route, Redirect } from "react-router-dom";
 
 const PrivateRoute = ({ exact, component: Component, allowedRoles, ...rest }) => {
   const isAuthenticated = localStorage.getItem("userRole"); // Check if user is authenticated
-
   const hasRequiredRoles = () => {
     if (!allowedRoles || allowedRoles.length === 0) {
       return true; // No specific roles required, allow access
@@ -21,7 +20,7 @@ const PrivateRoute = ({ exact, component: Component, allowedRoles, ...rest }) =>
         isAuthenticated && hasRequiredRoles() ? (
           <Component {...props} {...rest} />
         ) : (
-          <Redirect to={`/errors/504-modern`} />
+          <Redirect to={`/auth-login`} />
         )
       }
     />

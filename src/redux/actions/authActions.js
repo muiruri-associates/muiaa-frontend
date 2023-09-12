@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import axiosInstance from '../../app/api/api';
 
 export const login = createAsyncThunk('auth/login', async (loginData) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/v1/auth/login`, loginData);
+    const response = await axiosInstance.post(`/v1/auth/login`, loginData);
     const userData = response.data; // Assuming the response contains user data including roles
     return userData;
   } catch (error) {

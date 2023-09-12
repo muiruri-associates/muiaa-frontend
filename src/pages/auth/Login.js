@@ -23,10 +23,7 @@ import {
 import { Form, FormGroup, Spinner, Alert } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-// import { useLoginMutation } from "../../redux/reducers/authApiSlice"
 import { useDispatch } from "react-redux";
-// import { loggedInUser, loggedInUserToken } from "../../redux/reducers/authSlice";
-// import { loginSuccess } from "../../redux/reducers/authSlice";
 import { login } from "../../redux/actions/authActions";
 
 
@@ -40,48 +37,26 @@ const Login = () => {
   const [errorVal, setError] = useState("");
   const [email, setEmail]= useState(null)
   const [password, setPassword]= useState(null)
-  // const [login, {isLoading}] = useLoginMutation();
 
 
 
-  const onFormSubmit = () => {
+  const onFormSubmit = async () => {
+    setLoading(true); // Start loading
 
     const loginData = {
       email,
       password
+    };
+
+    try {
+      await dispatch(login(loginData));
+      history.push(`/`);
+    } catch (error) {
+      setError("Unable to login with credentials");
+    } finally {
+      setLoading(false); // Stop loading
     }
-
-    dispatch(login(loginData)) // Dispatch the login action
-      .then((response) => {
-        // Handle successful login response if needed
-        history.push(`/`)
-      })
-      .catch((error) => {
-        // Handle login error
-        console.log('error>>', error)
-      });
-  }
-
-  // const onFormSubmit = async (formData) => {
-  //   setLoading(true);
-  //   try {
-  //     const data = await login(formData).unwrap()// Pass email and password to the login function
-  //       //console.log(data)   
-  //     if(data){
-  //     localStorage.setItem("accessToken", "token");
-  //     const {user, token}= data
-  //     dispatch(loginSuccess({user:{loggedInUser}, token:{loggedInUserToken}}))
-  //     setLoading(false)
-  //     history.push(`/`)
-
-  //    }
-        
-  //   } catch (error) {
-  //     console.log('error cant sign in')
-  //     setLoading(false)
-  //     setError("Cannot login with credentials");
-  //   }
-  // };
+  };
 
   const { errors, register, handleSubmit } = useForm();
 
@@ -169,10 +144,9 @@ const Login = () => {
                 </div>
               </FormGroup>
               <FormGroup>
-                <Button size="lg" className="btn-block" type="submit" color="primary">
-                  {/* {loading ? <Spinner size="sm" color="light" /> : "Sign in"} */}
-                  {loading ? 'Loading...' : 'Sign in'}
-                </Button>
+              <Button size="lg" className="btn-block" type="submit" color="primary">
+          {loading ? <Spinner size="sm" color="light" /> : "Sign in"}
+        </Button>
               </FormGroup>
             </Form>
             <div className="form-note-s2 text-center pt-4">

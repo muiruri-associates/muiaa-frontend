@@ -3,6 +3,10 @@ import {login, forgotPassword, resetPassword} from '../actions/authActions'
 
 const initialState = {
   user: null,
+  userRole: null,
+  // accessToken: null,
+  // refreshToken: null,
+  isAuthenticated: false,
   loading: false,
   success: false,
   error: null,
@@ -19,9 +23,12 @@ const authSlice = createSlice({
     .addCase(login.fulfilled, (state, action) => {
       state.loading = false
       state.user = action.payload;
-      console.log('UserRole', action.payload.user)
-      localStorage.setItem('userRole', JSON.stringify(action.payload.user.roles[0]));
-      localStorage.setItem('user', JSON.stringify(action.payload.user));
+      // state.accessToken = action.payload.accessToken;
+      // state.refreshToken = action.payload.refreshToken;
+      state.isAuthenticated = true;
+      console.log('UserRole', action.payload.body.user.roles.name)
+      localStorage.setItem('userRole', JSON.stringify(action.payload.body.user.roles.name));
+      localStorage.setItem('user', JSON.stringify(action.payload.body.user));
       state.error = ''
     })
     .addCase(login.rejected, (state, action) => {

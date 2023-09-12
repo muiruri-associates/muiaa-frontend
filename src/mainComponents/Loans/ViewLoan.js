@@ -52,6 +52,18 @@ const ViewLoan = () => {
     setIsUnlocked(true);
   };
 
+  const placeholder = () => (
+    <p style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "#fff",
+      opacity: 0.7,
+    }}>This content is hidden. Unlock it to view.</p>
+  )
+
   return (
     <React.Fragment>
       <Head title="KYC Details - Regular"></Head>
@@ -136,7 +148,7 @@ const ViewLoan = () => {
                 }}
                 className="card-bordered"
               >
-                {isBlurred ? (
+                {isBlurred ? placeholder (
                   <ul className="data-list is-compact">
                     <li className="data-item">
                       <div className="data-col">
