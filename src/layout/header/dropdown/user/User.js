@@ -6,7 +6,7 @@ import { LinkList, LinkItem } from "../../../../components/links/Links";
 
 const User = () => {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null);
   const toggle = () => setOpen((prevState) => !prevState);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const User = () => {
         </div>
         <div className="dropdown-inner">
           <LinkList>
-            <LinkItem link="/user-profile-regular" icon="user-alt" onClick={toggle}>
+            <LinkItem link="/profile" icon="user-alt" onClick={toggle}>
               View Profile
             </LinkItem>
             <LinkItem link="/user-profile-setting" icon="setting-alt" onClick={toggle}>

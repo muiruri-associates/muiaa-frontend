@@ -9,7 +9,6 @@ import loanReducer from './slices/loanSlice'
 
 export const store = configureStore({
   reducer: {
-    [authApi.reducerPath]: authApi.reducer,
     auth: authSliceReducer,
     lenderOrg: lenderOrgReducer,
     permissions: permissionsReducer,
@@ -17,7 +16,6 @@ export const store = configureStore({
     users: usersReducer,
     loan: loanReducer
   },
-  middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(authApi.middleware),
 });
 
 export default store;

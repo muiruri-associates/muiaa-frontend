@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../../app/api/api';
 
 
 // create Permission
 
 export const createPermissions = createAsyncThunk('lenderOrg/createPermissions', async (permissionsData) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/v1/admin/permissions`, permissionsData);
+    const response = await axiosInstance.post(`/v1/admin/permissions`, permissionsData);
     console.log('new permissions>>', response)
     return response.data;
   } catch (error) {
@@ -18,7 +18,7 @@ export const createPermissions = createAsyncThunk('lenderOrg/createPermissions',
 // Define the async thunk for fetching all lender organizations
 export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions', async () => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/permissions`);
+    const response = await axiosInstance.get(`/v1/admin/permissions`);
     console.log('all permissions', response)
     return response.data.body;
   } catch (error) {

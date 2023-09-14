@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Head from "../../layout/head/Head";
 import DatePicker from "react-datepicker";
 import { Modal, ModalBody, FormGroup } from "reactstrap";
@@ -15,39 +15,12 @@ import {
   Button,
   RSelect,
 } from "../../components/Component";
-import { countryOptions, userData } from "./UserData";
-import { getDateStructured } from "../../utils/Utils";
 
-const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
+const UserProfileInfo = ({ sm, updateSm }) => {
   const [modalTab, setModalTab] = useState("1");
   const [userInfo, setUserInfo] = useState(userData[0]);
-  const [formData, setFormData] = useState({
-    name: "Abu Bin Ishtiak",
-    displayName: "Ishtiak",
-    phone: "818474958",
-    dob: "1980-08-10",
-    address: "2337 Kildeer Drive",
-    address2: "",
-    state: "Kentucky",
-    country: "Canada",
-  });
   const [modal, setModal] = useState(false);
 
-  useEffect(() => {
-    setProfileName(formData.name);
-  }, [formData, setProfileName]);
-
-  const onInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const submitForm = () => {
-    let submitData = {
-      ...formData,
-    };
-    setUserInfo(submitData);
-    setModal(false);
-  };
 
   return (
     <React.Fragment>
@@ -79,7 +52,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
           <div className="data-item" onClick={() => setModal(true)}>
             <div className="data-col">
               <span className="data-label">Full Name</span>
-              <span className="data-value">{userInfo.name}</span>
+              <span className="data-value">name</span>
             </div>
             <div className="data-col data-col-end">
               <span className="data-more">
@@ -90,7 +63,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
           <div className="data-item" onClick={() => setModal(true)}>
             <div className="data-col">
               <span className="data-label">Display Name</span>
-              <span className="data-value">{userInfo.displayName}</span>
+              <span className="data-value">dnamw</span>
             </div>
             <div className="data-col data-col-end">
               <span className="data-more">
@@ -112,7 +85,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
           <div className="data-item" onClick={() => setModal(true)}>
             <div className="data-col">
               <span className="data-label">Phone Number</span>
-              <span className="data-value text-soft">{userInfo.phone}</span>
+              <span className="data-value text-soft">pho</span>
             </div>
             <div className="data-col data-col-end">
               <span className="data-more">
@@ -123,7 +96,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
           <div className="data-item" onClick={() => setModal(true)}>
             <div className="data-col">
               <span className="data-label">Date of Birth</span>
-              <span className="data-value">{userInfo.dob}</span>
+              <span className="data-value">dob</span>
             </div>
             <div className="data-col data-col-end">
               <span className="data-more">
@@ -135,9 +108,9 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
             <div className="data-col">
               <span className="data-label">Address</span>
               <span className="data-value">
-                {userInfo.address},
+                address,
                 <br />
-                {userInfo.state}, {userInfo.country}
+                stat, country
               </span>
             </div>
             <div className="data-col data-col-end">
@@ -259,7 +232,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         className="form-control"
                         name="name"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.name}
+                        defaultValue="name"
                         placeholder="Enter Full name"
                       />
                     </FormGroup>
@@ -275,7 +248,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         className="form-control"
                         name="displayName"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.displayName}
+                        defaultValue="dname"
                         placeholder="Enter display name"
                       />
                     </FormGroup>
@@ -291,7 +264,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         className="form-control"
                         name="phone"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.phone}
+                        defaultValue="phone"
                         placeholder="Phone Number"
                       />
                     </FormGroup>
@@ -302,10 +275,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         Date of Birth
                       </label>
                       <DatePicker
-                        selected={new Date(formData.dob)}
                         className="form-control"
-                        onChange={(date) => setFormData({ ...formData, dob: getDateStructured(date) })}
-                        maxDate={new Date()}
                       />
                     </FormGroup>
                   </Col>
@@ -359,7 +329,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         id="address-l1"
                         name="address"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.address}
+                        defaultValue="add"
                         className="form-control"
                       />
                     </FormGroup>
@@ -374,7 +344,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         id="address-l2"
                         name="address2"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.address2}
+                        defaultValue="Add"
                         className="form-control"
                       />
                     </FormGroup>
@@ -389,7 +359,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                         id="address-st"
                         name="state"
                         onChange={(e) => onInputChange(e)}
-                        defaultValue={formData.state}
+                        defaultValue="add"
                         className="form-control"
                       />
                     </FormGroup>
@@ -402,13 +372,7 @@ const UserProfileInfo = ({ sm, updateSm, setProfileName }) => {
                       <RSelect
                         // options={countryOptions}
                         placeholder="Select a country"
-                        defaultValue={[
-                          {
-                            value: formData.country,
-                            label: formData.country,
-                          },
-                        ]}
-                        onChange={(e) => setFormData({ ...formData, country: e.value })}
+                        
                       />
                     </FormGroup>
                   </Col>

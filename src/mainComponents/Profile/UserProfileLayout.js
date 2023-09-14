@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from "react";
 import Content from "../../layout/content/Content";
-import UserProfileInfo from "./UserProfileInfo";
-// import UserProfileSettingPage from "./UserProfileSetting";
-// import UserProfileNotificationPage from "./UserProfileNotification";
-// import UserProfileActivityPage from "./UserProfileActivity";
-import { Route, Switch, Link } from "react-router-dom";
-import { Icon, UserAvatar } from "../../components/Component";
-import { findUpper } from "../../utils/Utils";
-import { Card, DropdownItem, UncontrolledDropdown, DropdownMenu, DropdownToggle, Nav, NavLink, NavItem } from "reactstrap";
+import { Block, Icon, UserAvatar } from "../../components/Component";
+import {
+  Card,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+  TabContent,
+  TabPane,
+} from "reactstrap";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
-  const [mobileView , setMobileView] = useState(false);
-  const [profileName, setProfileName] = useState("Abu Bin Ishtiak");
-  
-  
+  const [mobileView, setMobileView] = useState(false);
+  const [verticalTab, setVerticalTab] = useState("1");
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Retrieve user data from local storage (assuming it's stored as JSON)
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
   // function to change the design view under 990 px
   const viewChange = () => {
     if (window.innerWidth < 990) {
@@ -37,7 +47,7 @@ const UserProfileLayout = () => {
       window.removeEventListener("load", viewChange);
     };
   }, []);
-  
+
   return (
     <React.Fragment>
       <Content>
@@ -51,10 +61,10 @@ const UserProfileLayout = () => {
               <div className="card-inner-group">
                 <div className="card-inner">
                   <div className="user-card">
-                    <UserAvatar text={findUpper(profileName)} theme="primary" />
+                    <UserAvatar theme="primary" />
                     <div className="user-info">
-                      <span className="lead-text">{profileName}</span>
-                      <span className="sub-text">info@softnio.com</span>
+                      <span className="lead-text">{user?.first_name} {user?.last_name}</span>
+                      <span className="sub-text">{user?.email}</span>
                     </div>
                     <div className="user-action">
                       <UncontrolledDropdown>
@@ -93,96 +103,148 @@ const UserProfileLayout = () => {
                     </div>
                   </div>
                 </div>
-                <div className="card-inner">
-                  <div className="user-account-info py-0">
-                    <h6 className="overline-title-alt">Nio Wallet Account</h6>
-                    <div className="user-balance">
-                      12.395769 <small className="currency currency-btc">BTC</small>
-                    </div>
-                    <div className="user-balance-sub">
-                      Locked{" "}
-                      <span>
-                        0.344939 <span className="currency currency-btc">BTC</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
                 <div className="card-inner p-0">
-                  <ul className="link-list-menu">
-                    <li onClick={() => updateSm(false)}>
-                      <Link
-                        to={`/user-profile-info`}
-                        className={
-                          window.location.pathname === `/user-profile-info` ? "active" : ""
-                        }
+                  <ul className="nav link-list-menu border border-light round m-0">
+                    <li>
+                      <a
+                        href="#tab"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                          setVerticalTab("1");
+                        }}
                       >
-                        <Icon name="user-fill-c"></Icon>
-                        <span>Personal Information</span>
-                      </Link>
+                        Personal Information
+                      </a>
                     </li>
-                    <li onClick={() => updateSm(false)}>
-                      <Link
-                        to={`/user-profile-notification`}
-                        className={
-                          window.location.pathname === `/user-profile-notification`
-                            ? "active"
-                            : ""
-                        }
+                    <li>
+                      <a
+                        href="#tab"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                          setVerticalTab("2");
+                        }}
                       >
-                        <Icon name="bell-fill"></Icon>
-                        <span>Notification</span>
-                      </Link>
+                        Documents
+                      </a>
                     </li>
-                    <li onClick={() => updateSm(false)}>
-                      <Link
-                        to={`/user-profile-activity`}
-                        className={
-                          window.location.pathname === `/user-profile-activity` ? "active" : ""
-                        }
+                    <li>
+                      <a
+                        href="#tab"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                          setVerticalTab("3");
+                        }}
                       >
-                        <Icon name="activity-round-fill"></Icon>
-                        <span>Account Activity</span>
-                      </Link>
+                        Notifications
+                      </a>
                     </li>
-                    <li onClick={() => updateSm(false)}>
-                      <Link
-                        to={`/user-profile-setting`}
-                        className={
-                          window.location.pathname === `/user-profile-setting` ? "active" : ""
-                        }
+                    <li>
+                      <a
+                        href="#tab"
+                        onClick={(ev) => {
+                          ev.preventDefault();
+                          setVerticalTab("4");
+                        }}
                       >
-                        <Icon name="lock-alt-fill"></Icon>
-                        <span>Security Setting</span>
-                      </Link>
+                        Connect
+                      </a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="card-inner card-inner-lg">
-              {sm && mobileView && <div className="toggle-overlay" onClick={() => updateSm(!sm)}></div>}
-              <Switch>
-                <Route
-                  exact
-                  path={`/user-profile-info`}
-                  render={() => <UserProfileInfo updateSm={updateSm} sm={sm} />}
-                ></Route>
-                {/* <Route
-                  exact
-                  path={`/user-profile-notification`}
-                  render={() => <UserProfileNotificationPage updateSm={updateSm} sm={sm} />}
-                ></Route>
-                <Route
-                  exact
-                  path={`/user-profile-activity`}
-                  render={() => <UserProfileActivityPage updateSm={updateSm} sm={sm} />}
-                ></Route>
-                <Route
-                  exact
-                  path={`/user-profile-setting`}
-                  render={() => <UserProfileSettingPage updateSm={updateSm} sm={sm} />}
-                ></Route> */}
-              </Switch>
+              <TabContent activeTab={verticalTab}>
+                <TabPane tabId="1">
+                  <Block>
+                    <div className="nk-data data-list">
+                      <div className="data-head">
+                        <h6 className="overline-title">Basics</h6>
+                      </div>
+                      <div className="data-item">
+                        <div className="data-col">
+                          <span className="data-label">First Name</span>
+                          <span className="data-value">{user?.first_name}</span>
+                        </div>
+                      </div>
+                      <div className="data-item">
+                        <div className="data-col">
+                          <span className="data-label">Last Name</span>
+                          <span className="data-value">{user?.last_name}</span>
+                        </div>
+                      </div>
+                      <div className="data-item">
+                        <div className="data-col">
+                          <span className="data-label">Email</span>
+                          <span className="data-value">{user?.email}</span>
+                        </div>
+                      </div>
+                      <div className="data-item">
+                        <div className="data-col">
+                          <span className="data-label">Phone Number</span>
+                          <span className="data-value text-soft">{user?.phone_number}</span>
+                        </div>
+                      </div>
+                      <div className="data-item">
+                        <div className="data-col">
+                          <span className="data-label">Address</span>
+                          <span className="data-value">
+                            address,
+                            <br />
+                            stat, country
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Block>
+                </TabPane>
+                <TabPane tabId="2">
+                  <p>
+                    Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
+                    magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
+                    ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
+                    labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod
+                    do sint minim consectetur qui.
+                  </p>
+                  <p>
+                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
+                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
+                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                    excepteur ea incid.
+                  </p>
+                </TabPane>
+                <TabPane tabId="3">
+                  <p>
+                    Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
+                    laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
+                    Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna
+                    commodo est ea veniam consectetur.
+                  </p>
+                  <p>
+                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
+                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
+                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                    excepteur ea incid.
+                  </p>
+                </TabPane>
+                <TabPane tabId="4">
+                  <p>
+                    Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
+                    proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua
+                    amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa
+                    ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                  </p>
+                  <p>
+                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
+                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
+                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                    excepteur ea incid.
+                  </p>
+                </TabPane>
+              </TabContent>
             </div>
           </div>
         </Card>

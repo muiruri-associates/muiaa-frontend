@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import axiosInstance from '../../app/api/api';
 
 export const login = createAsyncThunk('auth/login', async (loginData) => {
@@ -20,7 +19,7 @@ export const logout = () => {
 
 export const forgotPassword = createAsyncThunk('auth/forgot-password', async (email) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/auth/forgot-password`, { email });
+    const response = await axiosInstance.post(`/v1/auth/forgot-password`, { email });
 console.log('response', response.data.status)
     if (response.data.status === "success") {
       return response.data; // You can return any relevant data from the response
@@ -34,7 +33,7 @@ console.log('response', response.data.status)
 
 export const resetPassword = createAsyncThunk('auth/reset-password', async (resetData) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/auth/reset-password`, resetData);
+    const response = await axiosInstance.post(`/v1/auth/reset-password`, resetData);
     console.log('response', response.data.status)
     if (response.data.status === "success") {
       return response.data; // You can return any relevant data from the response

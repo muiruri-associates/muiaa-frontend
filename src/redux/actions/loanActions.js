@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../../app/api/api';
 
 // createAsyncThunk generates pending, fulfilled and rejected action types
 // Define the async thunk for fetching all loan applications
 export const getAllLoanApplications = createAsyncThunk('loans/getAllLoanApplications', async () => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/loans/loan-applications`);
+    const response = await axiosInstance.get(`/v1/loans/loan-applications`);
     console.log('all loans', response)
     return response.data.body;
   } catch (error) {
@@ -19,7 +19,7 @@ export const getLoanApplicationById = createAsyncThunk('loans/getLoanApplication
   // Check if id is provided before making the API call
   try {
     console.log('id', id);
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/loan/loan-application/${id}`);
+    const response = await axiosInstance.get(`/v1/loan/loan-application/${id}`);
     console.log('resp loan id', response.data);
     return response.data.body;
   } catch (error) {

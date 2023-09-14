@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../../app/api/api';
 
 
 // // create LenderOrg
@@ -18,7 +18,7 @@ import axios from 'axios';
 // Define the async thunk for fetching all lender organizations
 export const fetchRoles = createAsyncThunk('roles/fetchRoles', async () => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/roles`);
+    const response = await axiosInstance.get(`/v1/admin/roles`);
     console.log('all roles', response)
     return response.data.body;
   } catch (error) {

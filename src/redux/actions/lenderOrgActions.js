@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import axiosInstance from '../../app/api/api';
 
 
 // create LenderOrg
 
 export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async (lenderOrgData) => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_PRODUCTION}/v1/admin/create-lender-org`, lenderOrgData);
+    const response = await axiosInstance.post(`/v1/admin/create-lender-org`, lenderOrgData);
     console.log('new orgs', response)
     return response.data.body;
   } catch (error) {
@@ -18,7 +18,7 @@ export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', asy
 // Define the async thunk for fetching all lender organizations
 export const fetchData = createAsyncThunk('lenderOrg/fetchLenderOrg', async () => {
   try {
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/lender-orgs`);
+    const response = await axiosInstance.get(`/v1/admin/lender-orgs`);
     console.log('all orgs', response.data.body)
     return response.data.body;
   } catch (error) {
@@ -32,7 +32,7 @@ export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById
   // Check if id is provided before making the API call
   try {
     console.log('id', id);
-    const response = await axios.get(`${process.env.REACT_APP_PRODUCTION}/v1/admin/lender-org/${id}`);
+    const response = await axiosInstance.get(`/v1/admin/lender-org/${id}`);
     console.log('resp org id', response.data);
     return response.data.body;
   } catch (error) {
