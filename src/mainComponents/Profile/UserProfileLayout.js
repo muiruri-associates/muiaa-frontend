@@ -10,6 +10,8 @@ import {
   TabContent,
   TabPane,
 } from "reactstrap";
+import UploadDocument from "./UploadDocument";
+import UserDocumentsTable from "./UserDocumentsTable";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
@@ -24,6 +26,9 @@ const UserProfileLayout = () => {
       setUser(JSON.parse(storedUser));
     }
   }, []);
+
+  // Function to check if the user is a lender (customize this logic as per your application)
+  const isLender = user && user.roles.name === "Lender";
 
   // function to change the design view under 990 px
   const viewChange = () => {
@@ -63,7 +68,9 @@ const UserProfileLayout = () => {
                   <div className="user-card">
                     <UserAvatar theme="primary" />
                     <div className="user-info">
-                      <span className="lead-text">{user?.first_name} {user?.last_name}</span>
+                      <span className="lead-text">
+                        {user?.first_name} {user?.last_name}
+                      </span>
                       <span className="sub-text">{user?.email}</span>
                     </div>
                     <div className="user-action">
@@ -116,39 +123,32 @@ const UserProfileLayout = () => {
                         Personal Information
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="#tab"
-                        onClick={(ev) => {
-                          ev.preventDefault();
-                          setVerticalTab("2");
-                        }}
-                      >
-                        Documents
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#tab"
-                        onClick={(ev) => {
-                          ev.preventDefault();
-                          setVerticalTab("3");
-                        }}
-                      >
-                        Notifications
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#tab"
-                        onClick={(ev) => {
-                          ev.preventDefault();
-                          setVerticalTab("4");
-                        }}
-                      >
-                        Connect
-                      </a>
-                    </li>
+                    {isLender && (
+                      <>
+                        <li>
+                          <a
+                            href="#tab"
+                            onClick={(ev) => {
+                              ev.preventDefault();
+                              setVerticalTab("2");
+                            }}
+                          >
+                            Upload Documents
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#tab"
+                            onClick={(ev) => {
+                              ev.preventDefault();
+                              setVerticalTab("3");
+                            }}
+                          >
+                            All Documents
+                          </a>
+                        </li>
+                      </>
+                    )}
                   </ul>
                 </div>
               </div>
@@ -198,52 +198,8 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">
-                  <p>
-                    Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
-                    magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
-                    ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                    labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod
-                    do sint minim consectetur qui.
-                  </p>
-                  <p>
-                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
-                    excepteur ea incid.
-                  </p>
-                </TabPane>
-                <TabPane tabId="3">
-                  <p>
-                    Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                    laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                    Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna
-                    commodo est ea veniam consectetur.
-                  </p>
-                  <p>
-                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
-                    excepteur ea incid.
-                  </p>
-                </TabPane>
-                <TabPane tabId="4">
-                  <p>
-                    Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                    proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua
-                    amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa
-                    ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
-                  </p>
-                  <p>
-                    Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                    incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                    occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                    voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
-                    excepteur ea incid.
-                  </p>
-                </TabPane>
+                <TabPane tabId="2">{isLender ? <UploadDocument /> : null}</TabPane>
+                <TabPane tabId="3">{isLender ? <UserDocumentsTable /> : null}</TabPane>
               </TabContent>
             </div>
           </div>

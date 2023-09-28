@@ -3,7 +3,7 @@ import Logo from "../../images/logo.jpg";
 import LogoDark from "../../images/logo-dark.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
-import AuthFooter from "./AuthFooter";
+import AuthFooter from "../../pages/auth/AuthFooter";
 import {
   Block,
   BlockContent,
@@ -18,7 +18,7 @@ import { Spinner, FormGroup } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-const Register = ({ history }) => {
+const RegisterLender = ({ history }) => {
   const [passState, setPassState] = useState(false);
   const [loading, setLoading] = useState(false);
   const { errors, register, handleSubmit } = useForm();
@@ -50,14 +50,30 @@ const Register = ({ history }) => {
             <form className="is-alter" onSubmit={handleSubmit(handleFormSubmit)}>
               <FormGroup>
                 <label className="form-label" htmlFor="name">
-                  Name
+                  First Name
                 </label>
                 <div className="form-control-wrap">
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Enter your name"
+                    placeholder="Enter your First Name"
+                    ref={register({ required: true })}
+                    className="form-control-lg form-control"
+                  />
+                  {errors.name && <p className="invalid">This field is required</p>}
+                </div>
+              </FormGroup>
+              <FormGroup>
+                <label className="form-label" htmlFor="name">
+                  Last Name
+                </label>
+                <div className="form-control-wrap">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your Last Name"
                     ref={register({ required: true })}
                     className="form-control-lg form-control"
                   />
@@ -67,7 +83,7 @@ const Register = ({ history }) => {
               <FormGroup>
                 <div className="form-label-group">
                   <label className="form-label" htmlFor="default-01">
-                    Email or Username
+                    Email
                   </label>
                 </div>
                 <div className="form-control-wrap">
@@ -78,7 +94,7 @@ const Register = ({ history }) => {
                     name="email"
                     ref={register({ required: true })}
                     className="form-control-lg form-control"
-                    placeholder="Enter your email address or username"
+                    placeholder="Enter your email address"
                   />
                   {errors.email && <p className="invalid">This field is required</p>}
                 </div>
@@ -86,7 +102,7 @@ const Register = ({ history }) => {
               <FormGroup>
                 <div className="form-label-group">
                   <label className="form-label" htmlFor="password">
-                    Passcode
+                    Password
                   </label>
                 </div>
                 <div className="form-control-wrap">
@@ -107,7 +123,7 @@ const Register = ({ history }) => {
                     id="password"
                     name="passcode"
                     ref={register({ required: "This field is required" })}
-                    placeholder="Enter your passcode"
+                    placeholder="Enter your Password"
                     className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
                   />
                   {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
@@ -162,4 +178,4 @@ const Register = ({ history }) => {
     </React.Fragment>
   );
 };
-export default Register;
+export default RegisterLender;

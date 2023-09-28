@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../../images/logo.png";
-import LogoDark from "../../images/logo.png";
+import Logo from "../../images/logo.jpg";
+import LogoDark from "../../images/logo.jpg";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
@@ -31,14 +31,12 @@ import { login } from "../../redux/actions/authActions";
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch()
-  
+
   const [loading, setLoading] = useState(false);
   const [passState, setPassState] = useState(false);
   const [errorVal, setError] = useState("");
   const [email, setEmail]= useState(null)
   const [password, setPassword]= useState(null)
-
-
 
   const onFormSubmit = async () => {
     setLoading(true); // Start loading

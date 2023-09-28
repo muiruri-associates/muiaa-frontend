@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Logo from "../../images/logo.png";
-import LogoDark from "../../images/logo.png";
+import Logo from "../../images/logo.jpg";
+import LogoDark from "../../images/logo.jpg";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 // import AuthFooter from "./AuthFooter";
@@ -114,7 +114,7 @@ const ResetPasswordForm = () => {
               </FormGroup>
             </form>
             <div className="form-note-s2 text-center pt-4">
-              <Link to={`/auth-login`}>
+              <Link to={`/login`}>
                 <strong>Return to login</strong>
               </Link>
             </div>

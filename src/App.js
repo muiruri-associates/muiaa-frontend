@@ -15,6 +15,7 @@ import Terms from "./pages/others/Terms";
 
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import LenderRegisterPage from './pages/auth/LenderRegisterPage';
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Success from "./pages/auth/Success";
 import InvoicePrint from "./pages/pre-built/invoice/InvoicePrint";
@@ -27,6 +28,7 @@ const App = () => {
       <Route exact path={`/auth-success`} component={Success}></Route>
       <Route exact path={`/auth-reset`} component={ForgotPassword}></Route>
       <Route exact path={`/auth-register`} component={Register}></Route>
+      <Route exact path={`/lender/register`} component={LenderRegisterPage}></Route>
       <Route exact path={`/auth-login`} component={Login}></Route>
       <Route exact path={`/reset-password`} component={ResetPassword}></Route>
 
