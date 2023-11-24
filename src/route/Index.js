@@ -22,6 +22,15 @@ const Loan = React.lazy(() => import("../pages/main/loans/Loan"));
 const Leads = React.lazy(() => import("../pages/main/leads/Leads"));
 const Profile = React.lazy(() => import("../pages/main/profile/Profile"));
 const UserProfileInfo = React.lazy(() => import("../mainComponents/Profile/UserProfileInfo"));
+const UploadsPage = React.lazy(() => import("./../pages/main/borrower/UploadsPage"));
+const TransactionsPage = React.lazy(() => import("./../pages/main/borrower/TransactionsPage"));
+const BorrowerLoansPage = React.lazy(() => import("./../pages/main/borrower/BorrowerLoansPage"));
+const RequestedLoansPage = React.lazy(() => import("./../pages/main/borrower/RequestedLoansPage"));
+const ApprovedLoansPage = React.lazy(() => import("./../pages/main/borrower/ApprovedLoansPage"));
+const PendingLoansPage = React.lazy(() => import("./../pages/main/borrower/PendingLoansPage"));
+const RejectedLoansPage = React.lazy(() => import("./../pages/main/borrower/RejectedLoansPage"));
+const ContactLenderPage = React.lazy(() => import("./../pages/main/borrower/ContactLenderPage"));
+
 
 const Pages = () => {
   useLayoutEffect(() => {
@@ -49,7 +58,15 @@ const Pages = () => {
         <PrivateRoute exact path={`/permissions/create`} component={AddPermission} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={`/profile`} component={Profile} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
         <PrivateRoute exact path={`/user-profile-info`} component={UserProfileInfo} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
-        <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
+        <PrivateRoute exact path={'/uploads'} component={UploadsPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/transactions'} component={TransactionsPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/requested-loans'} component={RequestedLoansPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/borrower-loans'} component={BorrowerLoansPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/approved-loans'} component={ApprovedLoansPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/pending-loans'} component={PendingLoansPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/rejected-loans'} component={RejectedLoansPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/contact-lender'} component={ContactLenderPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>
     </Suspense>

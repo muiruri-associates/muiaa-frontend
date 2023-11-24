@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../../images/logo.jpg";
-import LogoDark from "../../images/logo.jpg";
+import Logo from "../../images/logo.png";
+import LogoDark from "../../images/logo.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
@@ -46,14 +46,10 @@ const Login = () => {
       password
     };
 
-    try {
       await dispatch(login(loginData));
       history.push(`/`);
-    } catch (error) {
-      setError("Unable to login with credentials");
-    } finally {
-      setLoading(false); // Stop loading
-    }
+      // setError("Unable to login with credentials");
+
   };
 
   const { errors, register, handleSubmit } = useForm();

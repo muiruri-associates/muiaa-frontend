@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux"; // Import useSelector
 import { Form, FormGroup, Label, Row, Col, Button, Input } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
 import { createLenderOrg } from "../../redux/actions/lenderOrgActions";
 
+// Import the fetchData action
+import { fetchData } from "../../redux/actions/lenderOrgActions";
+
 const CreateLenderUserForm = () => {
   const dispatch = useDispatch();
+  const lenderOrg = useSelector((state) => state.lenderOrg);
 
   // State to manage form inputs
   const [selectedLenderOrg, setSelectedLenderOrg] = useState("");
@@ -14,6 +18,11 @@ const CreateLenderUserForm = () => {
 
   // State to manage form submission status
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    // Fetch organizations when the component mounts
+    dispatch(fetchData());
+  }, [dispatch]);
 
   // Function to handle lender organization selection
   const handleLenderOrgChange = (e) => {
@@ -24,7 +33,7 @@ const CreateLenderUserForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!selectedLenderOrg || !business_email ) {
+    if (!selectedLenderOrg || !business_email) {
       toast.error("Please fill out all fields.");
       return;
     }
@@ -36,7 +45,6 @@ const CreateLenderUserForm = () => {
 
     try {
       await dispatch(createLenderOrg(lenderOrgData));
-      console.log("data>>", lenderOrgData);
       setSelectedLenderOrg("");
       setBusiness_Email("");
       setIsSubmitted(true);
@@ -46,6 +54,7 @@ const CreateLenderUserForm = () => {
       toast.error("Error creating lender Org User.");
     }
   };
+
   return (
     <React.Fragment>
       <Block size="lg">
@@ -76,11 +85,13 @@ const CreateLenderUserForm = () => {
                       onChange={handleLenderOrgChange}
                     >
                       <option value="">Select an organization</option>
-                      <option value="1">Organization 1</option>
-                      <option value="2">Organization 2</option>
-                      <option value="3">Organization 3</option>
-                      <option value="4">Organization 4</option>
-                      <option value="5">Organization 5</option>
+                      {lenderOrg.lenderOrgs
+                        ? lenderOrg.lenderOrgs.map((org) => (
+                            <option key={org.id} value={org.id}>
+                              {org.business_name}
+                            </option>
+                          ))
+                        : null}
                     </Input>
                   </div>
                 </FormGroup>
