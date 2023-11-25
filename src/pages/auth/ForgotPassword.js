@@ -16,8 +16,8 @@ import {
 import { FormGroup } from "reactstrap";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { forgotPassword, login } from "../../redux/actions/authActions";
-import { useDispatch, useSelector } from "react-redux";
+import { forgotPassword } from "../../redux/actions/authActions";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const ForgotPassword = () => {
@@ -27,9 +27,9 @@ const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState(null)
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (!email) {
       toast.error("Please enter your email.", {
         position: toast.POSITION.TOP_RIGHT,
@@ -37,30 +37,32 @@ const ForgotPassword = () => {
       });
       return;
     }
-
+  
     // Basic email format validation
-  if (!/\S+@\S+\.\S+/.test(email)) {
-    toast.error("Please enter a valid email address.", {
-      position: toast.POSITION.TOP_RIGHT,
-      autoClose: 3000
-    });
-    return;
-  }
-
-    setLoading(true);
-    dispatch(forgotPassword(email))
-      .then(() => {
-        setLoading(false);
-        toast.success("Reset Link has been sent successfully", {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000
-        });
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.error("Forgot password error:", error);
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      toast.error("Please enter a valid email address.", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000
       });
+      return;
+    }
+  
+    setLoading(true);
+  
+    try {
+      await dispatch(forgotPassword(email));
+      setLoading(false);
+      toast.success("Reset link has been sent successfully", {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 3000
+      });
+    } catch (error) {
+      setLoading(false);
+      console.error("Forgot password error:", error);
+      // You might want to display an error message using toast.error() here
+    }
   };
+  
 
   // Use toast notifications to display success or error messages
 
@@ -78,7 +80,7 @@ const ForgotPassword = () => {
           <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
             <BlockHead>
               <BlockContent>
-                <BlockTitle tag="h5">Reset password</BlockTitle>
+                <BlockTitle tag="h5">Forgot password</BlockTitle>
                 <BlockDes>
                   <p>If you forgot your password, well, then we’ll email you instructions to reset your password.</p>
                 </BlockDes>

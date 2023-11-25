@@ -41,7 +41,7 @@ const RegisterLender = () => {
 
   const { errors, register, handleSubmit } = useForm();
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async () => {
     setLoading(true);
 
     const registerData = {

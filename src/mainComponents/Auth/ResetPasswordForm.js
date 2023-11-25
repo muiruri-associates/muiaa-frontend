@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
-// import AuthFooter from "./AuthFooter";
 import {
   Block,
   BlockContent,
@@ -16,7 +15,6 @@ import {
 import { FormGroup } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-// import { ResetPassword } from "../../redux/actions/authActions";
 import { useDispatch } from "react-redux";
 import AuthFooter from "../../pages/auth/AuthFooter";
 import { resetPassword } from "../../redux/actions/authActions";
@@ -29,39 +27,29 @@ const ResetPasswordForm = () => {
   const token = searchParams.get('token');
 
   const [loading, setLoading] = useState(false);
-  const [password, setPassword] = useState(null)
+  const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
 
-  const onFormSubmit = (e) => {
+  const onFormSubmit = async (e) => {
     e.preventDefault();
-  
-    if (!password) {
-      toast.error("Please enter your new password.", {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 3000,
-      });
-      return;
-    }
-  
     setLoading(true);
-  
-    // Dispatch the resetPassword action with the password value
-    dispatch(resetPassword(password))
-      .then(() => {
-        setLoading(false);
-        // Handle success (show a success message or navigate to a different page)
-        toast.success("Password reset successful!", {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000,
-        });
-      })
-      .catch((error) => {
-        setLoading(false);
-        // Handle error (show an error message)
-        toast.error("Password reset failed. Please try again.", {
-          position: toast.POSITION.TOP_RIGHT,
-          autoClose: 3000,
-        });
-      });
+
+    const newPassCredential = {
+      email,
+      resetPasswordToken: token,
+      newPassword
+    }
+
+    try {
+      await dispatch(resetPassword(newPassCredential));
+      setEmail("");
+      setNewPassword("");
+      toast.success("Password changed successfully!");
+    } catch (error) {
+      toast.error("Password reset failed");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -80,37 +68,53 @@ const ResetPasswordForm = () => {
               <BlockContent>
                 <BlockTitle tag="h5">Reset password</BlockTitle>
                 <BlockDes>
-                  <p>If you forgot your password, well, then we’ll password you instructions to reset your password.</p>
+                  <p>If you forgot your password, we'll send you instructions to reset it.</p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
-            <form>
+            <form onSubmit={onFormSubmit}>
+              <input type="hidden" name="resetPasswordToken" value={token} />
               <FormGroup>
                 <div className="form-label-group">
-                  <label className="form-label" htmlFor="default-01">
+                  <label className="form-label" htmlFor="email">
+                    Email
+                  </label>
+                </div>
+                <input
+                  type="email"
+                  className="form-control form-control-lg"
+                  id="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormGroup>
+              <FormGroup>
+                <div className="form-label-group">
+                  <label className="form-label" htmlFor="password">
                     Password
                   </label>
                 </div>
                 <input
                   type="password"
                   className="form-control form-control-lg"
-                  id="default-01"
-                  placeholder="Enter your password address"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  id="password"
+                  placeholder="Enter your new password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
                 />
               </FormGroup>
               <FormGroup>
-              <Button 
-                color="primary"
-                size="lg"
-                className="btn-block"
-                onClick={onFormSubmit}
-                disabled={loading} // Use the local 'loading' state
-              >
-                {loading ? 'Loading...' : 'Submit'}
-              </Button>
-                <ToastContainer /> {/* Add this to render toast notifications */}
+                <Button
+                  type="submit"
+                  color="primary"
+                  size="lg"
+                  className="btn-block"
+                  disabled={loading}
+                >
+                  {loading ? 'Loading...' : 'Submit'}
+                </Button>
+                <ToastContainer />
               </FormGroup>
             </form>
             <div className="form-note-s2 text-center pt-4">
@@ -125,4 +129,5 @@ const ResetPasswordForm = () => {
     </React.Fragment>
   );
 };
+
 export default ResetPasswordForm;

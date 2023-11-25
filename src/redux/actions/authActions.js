@@ -38,12 +38,10 @@ export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(regi
 export const forgotPassword = createAsyncThunk('auth/forgot-password', async(email) => {
     try {
         const response = await axiosInstance.post(`/v1/auth/forgot-password`, { email });
-        console.log('response', response.data.status)
-        if (response.data.status === "success") {
-            return response.data; // You can return any relevant data from the response
-        } else {
-            throw new Error('Forgot password request failed');
-        }
+        const message = response.data.body.message
+        console.log('response', response.data.statusCode)
+        console.log('message>>', message)
+        return message;
     } catch (error) {
         throw error; // Rethrow the error to be handled by Redux
     }
@@ -52,12 +50,10 @@ export const forgotPassword = createAsyncThunk('auth/forgot-password', async(ema
 export const resetPassword = createAsyncThunk('auth/reset-password', async(resetData) => {
     try {
         const response = await axiosInstance.post(`/v1/auth/reset-password`, resetData);
-        console.log('response', response.data.status)
-        if (response.data.status === "success") {
-            return response.data; // You can return any relevant data from the response
-        } else {
-            throw new Error('Password reset request failed');
-        }
+        const message = response.data.body.message
+        console.log('response>>', response)
+        console.log('Status>>', message)
+        return message;
     } catch (error) {
         throw error; // Rethrow the error to be handled by Redux
     }

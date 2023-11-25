@@ -77,7 +77,7 @@
               .addCase(forgotPassword.rejected, (state, action) => {
                   state.loading = false;
                   state.success = false;
-                  state.error = action.error.message;
+                  state.error = action.error.message || 'Forgot password failed';
               })
               .addCase(resetPassword.pending, (state) => {
                   state.loading = true;
