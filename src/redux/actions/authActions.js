@@ -18,6 +18,23 @@ export const logout = () => {
     // You might want to dispatch an action to clear user data from Redux state here
 };
 
+
+export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(registerData) => {
+    try {
+        const response = await axiosInstance.post(`/v1/lenders/register`, registerData);
+        if (response.statusCode === 200) {
+            const { data, message } = response.data.body;
+            console.log('reg data>>>>', response.data.body)
+            return { userData: data, message }; // Returning relevant data from the response
+        } else {
+            throw new Error('Registration failed');
+        }
+    } catch (error) {
+        throw error; // Rethrow the error to be handled by Redux
+    }
+});
+
+
 export const forgotPassword = createAsyncThunk('auth/forgot-password', async(email) => {
     try {
         const response = await axiosInstance.post(`/v1/auth/forgot-password`, { email });

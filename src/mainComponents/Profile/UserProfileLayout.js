@@ -28,7 +28,8 @@ const UserProfileLayout = () => {
   }, []);
 
   // Function to check if the user is a lender (customize this logic as per your application)
-  const isLender = user && user.roles.name === "Lender";
+  const isLender = user && user.role === "Lender";
+  const isUser = user && user.role === "User";
 
   // function to change the design view under 990 px
   const viewChange = () => {
@@ -59,9 +60,8 @@ const UserProfileLayout = () => {
         <Card className="card-bordered">
           <div className="card-aside-wrap">
             <div
-              className={`card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg ${
-                sm ? "content-active" : ""
-              }`}
+              className={`card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg ${sm ? "content-active" : ""
+                }`}
             >
               <div className="card-inner-group">
                 <div className="card-inner">
@@ -110,6 +110,24 @@ const UserProfileLayout = () => {
                     </div>
                   </div>
                 </div>
+                {isUser && (
+                  <>
+                    <div className="card-inner">
+                      <div className="user-account-info py-0">
+                        <h6 className="overline-title-alt">YOUR DTI SCORE</h6>
+                        <div className="user-balance">
+                          40%
+                        </div>
+                        <div className="user-balance-sub">
+                          Loans{" "}
+                          <span>
+                            0.344939
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
                 <div className="card-inner p-0">
                   <ul className="nav link-list-menu border border-light round m-0">
                     <li>
