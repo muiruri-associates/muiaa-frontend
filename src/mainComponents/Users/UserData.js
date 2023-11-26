@@ -42,6 +42,12 @@ export const usersColumns = [
     hide: "md",
   },
   {
+    name: "Role",
+    selector: (row) => row.roles,
+    sortable: true,
+    hide: "md",
+  },
+  {
     name: "Action",
     cell: (row) => <ActionsColumn row={row} />,
     sortable: true,

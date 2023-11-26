@@ -20,7 +20,7 @@ import {fetchPermissions} from "../../redux/actions/permissionsActions";
 const PermissionsDatatable = () => {
   const dispatch = useDispatch();
   const permission = useSelector((state) => state.permissions);
-  console.log("data on component", permission);
+  console.log("data on permission component", permission);
 
   useEffect(() => {
     dispatch(fetchPermissions());
