@@ -16,11 +16,13 @@ import { FormGroup } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import AuthFooter from "../../pages/auth/AuthFooter";
 import { resetPassword } from "../../redux/actions/authActions";
 
 const ResetPasswordForm = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const history = useHistory()
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -45,6 +47,7 @@ const ResetPasswordForm = () => {
       setEmail("");
       setNewPassword("");
       toast.success("Password changed successfully!");
+      history.push('/auth-login')
     } catch (error) {
       toast.error("Password reset failed");
     }

@@ -22,12 +22,7 @@ const ActionsColumn = ({ row }) => {
 
 
 export const usersColumns = [
-  {
-    name: "Username",
-    selector: (row) => row.username,
-    sortable: true,
-    hide: "md",
-  },
+
   {
     name: "First Name",
     selector: (row) => row.first_name,
@@ -43,12 +38,6 @@ export const usersColumns = [
   {
     name: "Email",
     selector: (row) => row.email,
-    sortable: true,
-    hide: "md",
-  },
-  {
-    name: "Roles",
-    selector: (row) => row.roles,
     sortable: true,
     hide: "md",
   },

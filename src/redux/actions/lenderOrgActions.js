@@ -4,7 +4,7 @@ import axiosInstance from '../../app/api/api';
 
 // create LenderOrg
 
-export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async(lenderOrgData, {getState}) => {
+export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', async(lenderOrgData, { getState }) => {
     try {
         const accessToken = getState().auth.accessToken; // Replace with your actual access tok
 
@@ -48,7 +48,7 @@ export const fetchData = createAsyncThunk('lenderOrg/fetchLenderOrg', async(_, {
 export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById', async(id, { getState }) => {
     // Check if id is provided before making the API call
     try {
-      const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
 
         // Set the Authorization header with the access token
         const config = {
