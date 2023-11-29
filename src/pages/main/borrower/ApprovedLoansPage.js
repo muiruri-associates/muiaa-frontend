@@ -1,13 +1,14 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
+import ApprovedLoansDatatable from './../../../mainComponents/Loans/ApprovedLoansDatatable';
 
 const ApprovedLoansPage = () => {
   return (
     <React.Fragment>
       <Head title="Approved Loans" />
       <Content>
-        <p>Approved Loans</p>
+        <ApprovedLoansDatatable />
       </Content>
     </React.Fragment>
   );

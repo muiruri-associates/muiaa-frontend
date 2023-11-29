@@ -5,7 +5,6 @@
       resetPassword,
       lenderRegister
   } from '../actions/authActions'
-  import { setAccessToken } from '../../app/api/api';
 
   const initialState = {
       user: {},

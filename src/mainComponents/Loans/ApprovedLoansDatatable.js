@@ -6,14 +6,13 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-  BlockDes,
   BackTo,
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { DataTableData, dataTableColumns } from "./AllTableData";
+import { ApprovedLoansData, ApprovedLoansColumns } from "./AllLoanData";
 
-const LoansAppliedDatatable = () => {
+const ApprovedLoansDatatable = () => {
   return (
     <React.Fragment>
     <Head title="Loans" />
@@ -26,7 +25,7 @@ const LoansAppliedDatatable = () => {
               Back
             </BackTo>
             <BlockTitle tag="h2" className="fw-normal">
-               Leads
+               Approved Loans
             </BlockTitle>
           </BlockHeadContent>
         </BlockHead>
@@ -35,8 +34,8 @@ const LoansAppliedDatatable = () => {
       <Block size="lg">
         <PreviewCard>
           <ReactDataTable
-            data={DataTableData}
-            columns={dataTableColumns}
+            data={ApprovedLoansData}
+            columns={ApprovedLoansColumns}
             expandableRows
             pagination
             actions
@@ -48,4 +47,4 @@ const LoansAppliedDatatable = () => {
 );
 }
 
-export default LoansAppliedDatatable
+export default ApprovedLoansDatatable

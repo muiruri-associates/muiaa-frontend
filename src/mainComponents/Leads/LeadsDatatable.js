@@ -12,9 +12,9 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { DataTableData, dataTableColumns } from "./AllTableData";
+import {MyLeadsDataTableData, dataTableColumns } from "./AllTableData";
 
-const LeadsDatatable = () => {
+const MyLeadsDatatable = () => {
   return (
     <React.Fragment>
     <Head title="Loans" />
@@ -27,7 +27,7 @@ const LeadsDatatable = () => {
               Back
             </BackTo>
             <BlockTitle tag="h2" className="fw-normal">
-              Clients
+              My Leads
             </BlockTitle>
           </BlockHeadContent>
         </BlockHead>
@@ -36,7 +36,7 @@ const LeadsDatatable = () => {
       <Block size="lg">
         <PreviewCard>
           <ReactDataTable
-            data={DataTableData}
+            data={MyLeadsDataTableData}
             columns={dataTableColumns}
             expandableRows
             pagination
@@ -50,4 +50,4 @@ const LeadsDatatable = () => {
 }
 
 
-export default LeadsDatatable
+export default MyLeadsDatatable

@@ -1,16 +1,17 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
+import LeadsDatatable from "../../../mainComponents/Leads/LeadsDatatable";
 
-const PendingLoansPage = () => {
+const Clients = () => {
   return (
     <React.Fragment>
-      <Head title="Pending Loans" />
+      <Head title="Clients" />
       <Content>
-        <p>Pending Loans</p>
+        <LeadsDatatable />
       </Content>
     </React.Fragment>
   );
 };
 
-export default PendingLoansPage;
+export default Clients;

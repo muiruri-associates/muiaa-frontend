@@ -1,18 +1,18 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import LoansAppliedDatatable from "../../../mainComponents/Loans/LoansAppliedDatatable";
+// import AllLeadsDatatable from "../../../mainComponents/Loans/AllLeadsDatatable";
+import  AllLeadsDatatable from "../../../mainComponents/Leads/AllLeadsDatatable";
 
-const LoansApplied = () => {
+const AllLeads = () => {
   return (
     <React.Fragment>
       <Head title="Loans Applied" />
       <Content>
-        <p>Clients Page for general layout</p>
-        <LoansAppliedDatatable />
+        <AllLeadsDatatable />
       </Content>
     </React.Fragment>
   );
 };
 
-export default LoansApplied;
+export default AllLeads;

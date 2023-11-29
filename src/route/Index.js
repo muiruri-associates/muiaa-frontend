@@ -17,9 +17,9 @@ const Permissions = React.lazy(() => import("../pages/main/accessControl/Permiss
 const Users = React.lazy(() => import("../pages/main/users/Users"));
 const AddPermission = React.lazy(() => import("../pages/main/accessControl/AddPermission"));
 const CreateLenderUser = React.lazy(() => import("../pages/main/lender/CreateLenderUser"));
-const Clients = React.lazy(() => import("../pages/main/leads/Clients"));
+const MyLeads = React.lazy(() => import("../pages/main/leads/MyLeads"));
 const Loan = React.lazy(() => import("../pages/main/loans/Loan"));
-const Leads = React.lazy(() => import("../pages/main/leads/Leads"));
+const AllLeads = React.lazy(() => import("../pages/main/leads/AllLeads"));
 const Profile = React.lazy(() => import("../pages/main/profile/Profile"));
 const UserProfileInfo = React.lazy(() => import("../mainComponents/Profile/UserProfileInfo"));
 const UploadsPage = React.lazy(() => import("./../pages/main/borrower/UploadsPage"));
@@ -27,7 +27,6 @@ const TransactionsPage = React.lazy(() => import("./../pages/main/borrower/Trans
 const BorrowerLoansPage = React.lazy(() => import("./../pages/main/borrower/BorrowerLoansPage"));
 const RequestedLoansPage = React.lazy(() => import("./../pages/main/borrower/RequestedLoansPage"));
 const ApprovedLoansPage = React.lazy(() => import("./../pages/main/borrower/ApprovedLoansPage"));
-const PendingLoansPage = React.lazy(() => import("./../pages/main/borrower/PendingLoansPage"));
 const RejectedLoansPage = React.lazy(() => import("./../pages/main/borrower/RejectedLoansPage"));
 const ContactLenderPage = React.lazy(() => import("./../pages/main/borrower/ContactLenderPage"));
 
@@ -44,8 +43,8 @@ const Pages = () => {
         <PrivateRoute exact path={`/nioicon`} component={NioIconPage} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={`/svg-icons`} component={SVGIconPage} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={`/loans`} component={Loans} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
-        <PrivateRoute exact path={`/leads`} component={Leads} allowedRoles={[ROLE.Lender]} />
-        <PrivateRoute exact path={`/clients`} component={Clients} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={`/leads`} component={AllLeads} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={`/my-leads`} component={MyLeads} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={`/loan/:id`} component={Loan} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
         <PrivateRoute exact path={`/lender-organizations`} component={LenderOrganizations} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={`/create-lender-organizations`} component={CreateLenderOrganizations} allowedRoles={[ROLE.Admin]} />
@@ -63,7 +62,6 @@ const Pages = () => {
         <PrivateRoute exact path={'/requested-loans'} component={RequestedLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/borrower-loans'} component={BorrowerLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/approved-loans'} component={ApprovedLoansPage} allowedRoles={[ROLE.User]} />
-        <PrivateRoute exact path={'/pending-loans'} component={PendingLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/rejected-loans'} component={RejectedLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/contact-lender'} component={ContactLenderPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />

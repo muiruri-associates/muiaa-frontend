@@ -6,28 +6,29 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-  BlockDes,
   BackTo,
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { DataTableData, dataTableColumns } from "./AllTableData";
+import { 
+  TransactionsColumns, TransactionsData
+} from "./TransactionsData";
 
-const LoansAppliedDatatable = () => {
+const TransactionsDatatable = () => {
   return (
     <React.Fragment>
-    <Head title="Loans" />
+    <Head title="Transactions" />
     <Content page="component">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         {/* First BlockHead */}
         <BlockHead size="lg" wide="sm">
           <BlockHeadContent>
+            <BlockTitle tag="h2" className="fw-normal">
+               Transactions
+            </BlockTitle>
             <BackTo link="/" icon="arrow-left">
               Back
             </BackTo>
-            <BlockTitle tag="h2" className="fw-normal">
-               Leads
-            </BlockTitle>
           </BlockHeadContent>
         </BlockHead>
       </div>
@@ -35,8 +36,8 @@ const LoansAppliedDatatable = () => {
       <Block size="lg">
         <PreviewCard>
           <ReactDataTable
-            data={DataTableData}
-            columns={dataTableColumns}
+            data={TransactionsData}
+            columns={TransactionsColumns}
             expandableRows
             pagination
             actions
@@ -48,4 +49,4 @@ const LoansAppliedDatatable = () => {
 );
 }
 
-export default LoansAppliedDatatable
+export default TransactionsDatatable
