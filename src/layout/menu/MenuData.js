@@ -77,6 +77,13 @@ const menu = [{
         roles: [ROLE.Lender]
     },
     {
+      icon: 'call',
+      text: 'Contact Borrowers',
+      active: false,
+      link: '/contact-user',
+      roles: [ROLE.Lender],
+  },
+    {
         icon: 'tranx',
         text: 'Lenders',
         active: false,
@@ -88,6 +95,25 @@ const menu = [{
             {
                 text: 'Lender Users',
                 link: '/lender-users',
+            }
+        ]
+    },
+    {
+        icon: 'coins',
+        text: 'Loan Applications',
+        active: false,
+        roles: [ROLE.Admin],
+        subMenu: [{
+                text: 'Personal Loans',
+                link: '/personal-loans',
+            },
+            {
+                text: 'Business Loans',
+                link: '/business-loans',
+            },
+            {
+                text: 'Mortgage',
+                link: '/mortgage',
             }
         ]
     },

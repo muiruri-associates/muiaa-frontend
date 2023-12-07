@@ -3,6 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import { RedirectAs404 } from "../utils/Utils";
 import { ROLE } from "../constants/roles";
 import PrivateRoute from "./PrivateRoute";
+import BusinessLoans from "../pages/main/loans/BusinessLoans";
+import PersonalLoan from "../pages/main/loans/PersonalLoans";
+import Mortgage from "../pages/main/loans/Mortgage";
 
 const NioIconPage = React.lazy(() => import("../pages/components/crafted-icons/NioIcon"));
 const SVGIconPage = React.lazy(() => import("../pages/components/crafted-icons/SvgIcons"));
@@ -29,6 +32,7 @@ const RequestedLoansPage = React.lazy(() => import("./../pages/main/borrower/Req
 const ApprovedLoansPage = React.lazy(() => import("./../pages/main/borrower/ApprovedLoansPage"));
 const RejectedLoansPage = React.lazy(() => import("./../pages/main/borrower/RejectedLoansPage"));
 const ContactLenderPage = React.lazy(() => import("./../pages/main/borrower/ContactLenderPage"));
+const ContactUserPage = React.lazy(() => import("./../pages/main/borrower/ContactUserPage"));
 
 
 const Pages = () => {
@@ -64,6 +68,10 @@ const Pages = () => {
         <PrivateRoute exact path={'/approved-loans'} component={ApprovedLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/rejected-loans'} component={RejectedLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/contact-lender'} component={ContactLenderPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/contact-user'} component={ContactUserPage} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/business-loans'} component={BusinessLoans} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/personal-loans'} component={PersonalLoan} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/mortgage'} component={Mortgage} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>

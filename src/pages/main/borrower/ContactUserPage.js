@@ -1,7 +1,7 @@
 import React from "react";
 import AppMessages from "../../app/messages/Messages";
 
-const ContactLenderPage = () => {
+const ContactUserPage = () => {
   return (
     <React.Fragment>
       <AppMessages/>
@@ -9,4 +9,4 @@ const ContactLenderPage = () => {
   );
 };
 
-export default ContactLenderPage;
+export default ContactUserPage;

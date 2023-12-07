@@ -22,13 +22,8 @@ export const logout = () => {
 export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(registerData) => {
     try {
         const response = await axiosInstance.post(`/v1/lenders/register`, registerData);
-        if (response.statusCode === 200) {
-            const { data, message } = response.data.body;
-            console.log('reg data>>>>', response.data.body)
-            return { userData: data, message }; // Returning relevant data from the response
-        } else {
-            throw new Error('Registration failed');
-        }
+        const userData = response.data
+        return userData
     } catch (error) {
         throw error; // Rethrow the error to be handled by Redux
     }

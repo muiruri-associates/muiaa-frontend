@@ -6,21 +6,21 @@ import MyLeadsDatatable from './LeadsDatatable';
 
 // const history = useHistory();
 // Custom component for the "Actions" column
-const ActionsColumn = ({ row }) => {
-  const history = useHistory();
+// const ActionsColumn = ({ row }) => {
+//   const history = useHistory();
 
-  // Function to handle the view button click
-  const handleView = () => {
-    // Replace '/destination' with the path of the desired destination page
-    history.push(`Ksh. {process.env.PUBLIC_URL}/lender-organization/Ksh. {row._id}`);
-  };
+//   // Function to handle the view button click
+//   const handleView = () => {
+//     // Replace '/destination' with the path of the desired destination page
+//     history.push(`Ksh. {process.env.PUBLIC_URL}/lender-organization/Ksh. {row._id}`);
+//   };
 
-  return (
-    <Button className="btn-dim" outline color="info" onClick={handleView}>
-      view
-    </Button>
-  );
-};
+//   return (
+//     <Button className="btn-dim" outline color="info" onClick={handleView}>
+//       view
+//     </Button>
+//   );
+// };
 const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableData, MyLeadsDataTableData, setMyLeadsDataTableData }) => {
   const history = useHistory();
 
@@ -38,14 +38,11 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
         updatedAllLeadsData.splice(index, 1);
         setAllLeadsDataTableData(updatedAllLeadsData);
 
-        console.log('MyLeadsDataTableData before:', MyLeadsDataTableData);
+        // Change the status of the selected item (assuming 'status' is the property to be changed)
+        selectedLead.status = 'Approved'; // Change status to 'Approved' or any other value
 
-
-        // Add the selected item to MyLeadsDataTableData
+        // Add the selected item with updated status to MyLeadsDataTableData
         setMyLeadsDataTableData([...MyLeadsDataTableData, selectedLead]);
-
-        console.log('MyLeadsDataTableData after:', MyLeadsDataTableData);
-
       }
     }
   };
@@ -138,7 +135,7 @@ export const dataTableColumns = [
   },
   {
     name: "Actions",
-    cell: (row) => <ActionsColumn row={row} />, // Use the custom component for rendering the "Actions" cell
+    cell: (row) => <LeadsActionsColumn row={row} />, // Use the custom component for rendering the "Actions" cell
     sortable: false,
     hide: "md",
   },
@@ -171,7 +168,7 @@ export const AllLeadsdataTableColumns = [
   },
   {
     name: "Rating",
-    selector: (row) => row.rating,
+    selector: (row) => row.status,
     sortable: true,
     hide: "md",
   },

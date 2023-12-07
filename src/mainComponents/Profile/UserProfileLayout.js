@@ -141,7 +141,7 @@ const UserProfileLayout = () => {
                         Personal Information
                       </a>
                     </li>
-                    {isLender && (
+                    {(isLender || isUser) && (
                       <>
                         <li>
                           <a
@@ -216,8 +216,8 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">{isLender ? <UploadDocument /> : null}</TabPane>
-                <TabPane tabId="3">{isLender ? <UserDocumentsTable /> : null}</TabPane>
+                <TabPane tabId="2">{(isLender || isUser)  ? <UploadDocument /> : null}</TabPane>
+                <TabPane tabId="3">{(isLender|| isUser) ? <UserDocumentsTable /> : null}</TabPane>
               </TabContent>
             </div>
           </div>
