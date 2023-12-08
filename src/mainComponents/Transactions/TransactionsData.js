@@ -1,0 +1,53 @@
+export const TransactionsColumns = [{
+        name: "Loan ID",
+        selector: (row) => row.id,
+        sortable: true,
+        hide: "sm",
+    },
+    {
+        name: "Lender",
+        selector: (row) => row.lender,
+        sortable: true,
+        hide: "md",
+    },
+    {
+        name: "Date",
+        selector: (row) => row.date,
+        sortable: true,
+        hide: "md",
+    },
+    {
+        name: "Loan Amount",
+        selector: (row) => row.loan_amount,
+        sortable: true,
+        hide: "md",
+    },
+    {
+        name: "Status",
+        selector: (row) => row.status,
+        sortable: true,
+        hide: "md",
+    },
+]
+
+export const TransactionsData = [{ "id": 1, "lender": "Arman", "date": "7/4/2023", "email": "atibalt0@ameblo.jp", "loan_amount": "Male", "status": "197.214.41.44" },
+    { "id": 2, "lender": "Sada", "date": "2/5/2023", "email": "spinkney1@edublogs.org", "loan_amount": "Female", "status": "161.95.83.163" },
+    { "id": 3, "lender": "Sam", "date": "6/17/2023", "email": "sironmonger2@upenn.edu", "loan_amount": "Male", "status": "143.131.247.106" },
+    { "id": 4, "lender": "Dorita", "date": "8/23/2023", "email": "dlangan3@artisteer.com", "loan_amount": "Female", "status": "48.133.21.13" },
+    { "id": 5, "lender": "Rycca", "date": "11/25/2023", "email": "rdulinty4@webmd.com", "loan_amount": "Female", "status": "42.130.132.197" },
+    { "id": 6, "lender": "Di", "date": "2/11/2023", "email": "dguyot5@tripod.com", "loan_amount": "Female", "status": "219.80.6.57" },
+    { "id": 7, "lender": "Chane", "date": "5/8/2023", "email": "cprinn6@ucoz.ru", "loan_amount": "Male", "status": "23.126.62.171" },
+    { "id": 8, "lender": "Cash", "date": "12/16/2022", "email": "cpurdy7@youku.com", "loan_amount": "Male", "status": "37.152.235.214" },
+    { "id": 9, "lender": "Jessie", "date": "9/30/2023", "email": "jwalsham8@merriam-webster.com", "loan_amount": "Female", "status": "211.10.103.115" },
+    { "id": 10, "lender": "Carlye", "date": "7/18/2023", "email": "cgreep9@jugem.jp", "loan_amount": "Female", "status": "141.218.86.209" },
+    { "id": 11, "lender": "Frans", "date": "1/11/2023", "email": "fthomsa@weibo.com", "loan_amount": "Male", "status": "233.207.10.214" },
+    { "id": 12, "lender": "Jami", "date": "11/10/2023", "email": "jbinfordb@constantcontact.com", "loan_amount": "Female", "status": "229.235.218.247" },
+    { "id": 13, "lender": "Shoshana", "date": "3/20/2023", "email": "ssheppardc@sciencedaily.com", "loan_amount": "Female", "status": "69.219.163.60" },
+    { "id": 14, "lender": "Bartholomeus", "date": "7/6/2023", "email": "bmontezd@bigcartel.com", "loan_amount": "Male", "status": "130.228.84.31" },
+    { "id": 15, "lender": "Jacobo", "date": "1/26/2023", "email": "jwakemane@is.gd", "loan_amount": "Male", "status": "8.211.48.15" },
+    { "id": 16, "lender": "Betty", "date": "6/9/2023", "email": "bnormandalef@ycombinator.com", "loan_amount": "Female", "status": "199.241.38.44" },
+    { "id": 17, "lender": "Aloisia", "date": "8/29/2023", "email": "ahuskg@gov.uk", "loan_amount": "Female", "status": "15.122.71.219" },
+    { "id": 18, "lender": "William", "date": "5/10/2023", "email": "woransh@ocn.ne.jp", "loan_amount": "Bigender", "status": "249.202.82.186" },
+    { "id": 19, "lender": "Auria", "date": "2/23/2023", "email": "afeatherstonhaughi@csmonitor.com", "loan_amount": "Female", "status": "76.145.14.47" },
+    { "id": 20, "lender": "Dawn", "date": "7/16/2023", "email": "dpatisj@time.com", "loan_amount": "Female", "status": "130.220.134.216" }
+]

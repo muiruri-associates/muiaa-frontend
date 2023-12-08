@@ -3,7 +3,6 @@ import menu from "./MenuData";
 import Icon from "../../components/icon/Icon";
 import classNames from "classnames";
 import { NavLink, Link } from "react-router-dom";
-import { ROLE } from "../../constants/auth";
 
 const MenuHeading = ({ heading }) => {
   return (
@@ -138,13 +137,13 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
   const menuItemClass = classNames({
     "nk-menu-item": true,
     "has-sub": sub,
-    "active current-page": currentUrl === process.env.PUBLIC_URL + link,
+    "active current-page": currentUrl === link,
   });
   return (
     <li className={menuItemClass} onClick={(e) => toggleActionSidebar(e)}>
       {newTab ? (
         <Link
-          to={`${process.env.PUBLIC_URL + link}`}
+          to={`${link}`}
           target="_blank"
           rel="noopener noreferrer"
           className="nk-menu-link"
@@ -158,7 +157,7 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
         </Link>
       ) : (
         <NavLink
-          to={`${process.env.PUBLIC_URL + link}`}
+          to={`${link}`}
           className={`nk-menu-link${sub ? " nk-menu-toggle" : ""}`}
           onClick={sub ? menuToggle : null}
         >
@@ -207,7 +206,6 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
       return true; // Menu item is accessible to all
     }
     const allowedRoles = item.roles;
-    console.log('User rOle>>', userRole)
     return allowedRoles.includes(userRole);
   });
 
@@ -234,60 +232,3 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
 };
 
 export default Menu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import MenuHeading from "./MenuHeading";
-// import MenuItem from "./MenuItem";
-// import menu from "./MenuData"; // Import your menu data
-
-// const Menu = ({ sidebarToggle, mobileView, userRoles }) => {
-//   // Filter the menu items based on user roles (if any)
-//   const allowedMenuItems = menu.filter(item => {
-//     if (!item.roles || item.roles.length === 0) {
-//       return true; // Menu item is accessible to all
-//     }
-
-//     const allowedRoles = item.roles;
-//     return userRoles.some(role => allowedRoles.includes(role));
-//   });
-
-//   return (
-//     <ul className="nk-menu">
-//       {allowedMenuItems.map(item =>
-//         item.heading ? (
-//           <MenuHeading heading={item.heading} key={item.heading} />
-//         ) : (
-//           <MenuItem
-//             key={item.text}
-//             link={item.link}
-//             icon={item.icon}
-//             text={item.text}
-//             sub={item.subMenu}
-//             badge={item.badge}
-//             sidebarToggle={sidebarToggle}
-//             mobileView={mobileView}
-//           />
-//         )
-//       )}
-//     </ul>
-//   );
-// };
-
-// export default Menu;

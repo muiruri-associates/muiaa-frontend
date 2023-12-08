@@ -25,7 +25,7 @@ const Register = ({ history }) => {
 
   const handleFormSubmit = () => {
     setLoading(true);
-    setTimeout(() => history.push(`${process.env.PUBLIC_URL}/auth-success`), 2000);
+    setTimeout(() => history.push(`/auth-success`), 2000);
   };
   return (
     <React.Fragment>
@@ -33,7 +33,7 @@ const Register = ({ history }) => {
       <PageContainer>
         <Block className="nk-block-middle nk-auth-body  wide-xs">
           <div className="brand-logo pb-4 text-center">
-            <Link to={`${process.env.PUBLIC_URL}/`} className="logo-link">
+            <Link to={`/`} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
               <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
             </Link>
@@ -43,7 +43,7 @@ const Register = ({ history }) => {
               <BlockContent>
                 <BlockTitle tag="h4">Register</BlockTitle>
                 <BlockDes>
-                  <p>Create New Dashlite Account</p>
+                  <p>Create New Account</p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -122,7 +122,7 @@ const Register = ({ history }) => {
             <div className="form-note-s2 text-center pt-4">
               {" "}
               Already have an account?{" "}
-              <Link to={`${process.env.PUBLIC_URL}/auth-login`}>
+              <Link to={`/auth-login`}>
                 <strong>Sign in instead</strong>
               </Link>
             </div>

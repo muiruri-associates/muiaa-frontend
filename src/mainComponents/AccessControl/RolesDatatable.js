@@ -20,7 +20,7 @@ import {fetchRoles} from "../../redux/actions/rolesActions";
 const RolesDatatable = () => {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.roles);
-  console.log("data on component", role);
+  console.log("data on roles component", role);
 
   useEffect(() => {
     dispatch(fetchRoles());
