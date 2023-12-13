@@ -10,8 +10,10 @@ import {
   TabContent,
   TabPane,
 } from "reactstrap";
-import UploadDocument from "./UploadDocument";
-import UserDocumentsTable from "./UserDocumentsTable";
+import UploadBorrowerDocuments from './Borrower/UploadBorrowerDocuments';
+import BorrowersDocumentsTable from "./Borrower/BorrowersDocumentsTable";
+import LendersDocumentsTable from "./Lender/LendersDocumentsTable";
+import UploadLenderDocument from "./Lender/UploadLenderDocuments";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
@@ -141,7 +143,7 @@ const UserProfileLayout = () => {
                         Personal Information
                       </a>
                     </li>
-                    {(isLender || isUser) && (
+                    {isLender && (
                       <>
                         <li>
                           <a
@@ -167,6 +169,34 @@ const UserProfileLayout = () => {
                         </li>
                       </>
                     )}
+                    <>
+                    {isUser && (
+                      <>
+                        <li>
+                          <a
+                            href="#tab"
+                            onClick={(ev) => {
+                              ev.preventDefault();
+                              setVerticalTab("4");
+                            }}
+                          >
+                            Upload Documents
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#tab"
+                            onClick={(ev) => {
+                              ev.preventDefault();
+                              setVerticalTab("5");
+                            }}
+                          >
+                            All Documents
+                          </a>
+                        </li>
+                      </>
+                    )}
+                    </>
                   </ul>
                 </div>
               </div>
@@ -216,8 +246,10 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">{(isLender || isUser)  ? <UploadDocument /> : null}</TabPane>
-                <TabPane tabId="3">{(isLender|| isUser) ? <UserDocumentsTable /> : null}</TabPane>
+                <TabPane tabId="2">{isLender ? <UploadLenderDocument /> : null}</TabPane>
+                <TabPane tabId="3">{isLender ? <LendersDocumentsTable /> : null}</TabPane>
+                <TabPane tabId="4">{isUser ? <UploadBorrowerDocuments /> : null}</TabPane>
+                <TabPane tabId="5">{isUser ? <BorrowersDocumentsTable /> : null}</TabPane>
               </TabContent>
             </div>
           </div>
