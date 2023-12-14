@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {createTicket} from '../actions/ticketActions'
+import {
+    createTicket,
+    getAllUserTickets,
+    getAllTickets
+} from '../actions/ticketActions'
 
 const initialState = {
   ticket: {},
@@ -23,6 +27,7 @@ const ticketSlice = createSlice({
         .addCase(createTicket.fulfilled, (state, action) => {
             state.loading = false;
             state.ticket = action.payload;
+            state.success = true;
             state.error = '';
         })
         // Add case for createticket.rejected
@@ -31,19 +36,34 @@ const ticketSlice = createSlice({
             state.ticket = null;
             state.error = action.error.message;
         })
-        // .addCase(fetchData.pending, state => {
-        // state.loading = true
-        // })
-        // .addCase(fetchData.fulfilled, (state, action) => {
-        // state.loading = false
-        // state.tickets = action.payload
-        // state.error = ''
-        // })
-        // .addCase(fetchData.rejected, (state, action) => {
-        // state.loading = false
-        // state.tickets = []
-        // state.error = action.error.message
-        // })
+        .addCase(getAllUserTickets.pending, state => {
+        state.loading = true
+        })
+        .addCase(getAllUserTickets.fulfilled, (state, action) => {
+        state.loading = false;
+        state.tickets = action.payload;
+        state.success = true;
+        state.error = ''
+        })
+        .addCase(getAllUserTickets.rejected, (state, action) => {
+        state.loading = false;
+        state.tickets = [];;
+        state.error = action.error.message;
+        })
+        .addCase(getAllTickets.pending, state => {
+        state.loading = true
+        })
+        .addCase(getAllTickets.fulfilled, (state, action) => {
+        state.loading = false;
+        state.tickets = action.payload;
+        state.success = true;
+        state.error = ''
+        })
+        .addCase(getAllTickets.rejected, (state, action) => {
+        state.loading = false;
+        state.tickets = [];;
+        state.error = action.error.message;
+        })
         // .addCase(fetchticketById.pending, (state) => {
         // state.loading = true;
         // })

@@ -3,9 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import { RedirectAs404 } from "../utils/Utils";
 import { ROLE } from "../constants/roles";
 import PrivateRoute from "./PrivateRoute";
-// import BusinessLoans from "../pages/main/loans/BusinessLoans";
-// import PersonalLoan from "../pages/main/loans/PersonalLoans";
-// import Mortgage from "../pages/main/loans/Mortgage";
 
 const NioIconPage = React.lazy(() => import("../pages/components/crafted-icons/NioIcon"));
 const SVGIconPage = React.lazy(() => import("../pages/components/crafted-icons/SvgIcons"));
@@ -36,9 +33,11 @@ const ContactUserPage = React.lazy(() => import("../pages/main/borrower/ContactU
 const BusinessLoans = React.lazy(() => import("../pages/main/loans/BusinessLoans"));
 const PersonalLoan = React.lazy(() => import("../pages/main/loans/PersonalLoans"));
 const Mortgage = React.lazy(() => import("../pages/main/loans/Mortgage"));
+const AllTickets = React.lazy(() => import("../pages/main/ticket/AllTickets"))
 const Ticket = React.lazy(() => import("../pages/main/ticket/Ticket"));
 const MyTickets = React.lazy(() => import("../pages/main/ticket/MyTickets"));
 const ViewTicket = React.lazy(() => import("../pages/main/ticket/ViewTicket"));
+
 
 
 const Pages = () => {
@@ -78,6 +77,7 @@ const Pages = () => {
         <PrivateRoute exact path={'/business-loans'} component={BusinessLoans} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/personal-loans'} component={PersonalLoan} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/mortgage'} component={Mortgage} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/all-tickets'} component={AllTickets} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/my-ticket/:ticket_id'} component={ViewTicket} allowedRoles={[ROLE.Lender]} />

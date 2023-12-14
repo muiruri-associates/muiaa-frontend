@@ -30,9 +30,8 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
     }
 });
 
-// createAsyncThunk generates pending, fulfilled and rejected action types
-// Define the async thunk for fetching all lender organizations
-export const fetchData = createAsyncThunk('ticket/fetchticket', async(_, { getState }) => {
+// Get All Tickets
+export const getAllTickets = createAsyncThunk('ticket/getAllTickets', async(_, { getState }) => {
     try {
         // Get the access token from your state or wherever it's stored
         const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
@@ -43,12 +42,36 @@ export const fetchData = createAsyncThunk('ticket/fetchticket', async(_, { getSt
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/admin/lender-orgs`, config);
-        console.log('all orgs', response.data.body)
-        return response.data.body;
+        const response = await axiosInstance.get(`/v1/users/tickets`, config);
+        const userTickets = response.data.body.tickets
+        console.log('All tickets for a user>>', userTickets)
+        return userTickets;
     } catch (error) {
         // Handle any error that occurred during the API call
-        throw new Error('Error fetching lender organizations');
+        throw new Error('Error fetching user tickets', error.message);
+    }
+});
+
+// Get All User Tickets
+export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', async(_, { getState }) => {
+    try {
+        // Get the access token from your state or wherever it's stored
+        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const user_id = "65610ffa2b7ff7ec9290f3dc";
+
+        // Set the Authorization header with the access token
+        const config = {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        };
+        const response = await axiosInstance.get(`/v1/users/tickets/user/${user_id}`, config);
+        const userTickets = response.data.body.tickets
+        console.log('All tickets for a user>>', userTickets)
+        return userTickets;
+    } catch (error) {
+        // Handle any error that occurred during the API call
+        throw new Error('Error fetching user tickets', error.message);
     }
 });
 

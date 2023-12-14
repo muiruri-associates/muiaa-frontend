@@ -21,7 +21,7 @@ const ActionsColumn = ({ row }) => {
 export const TicketColums = [
     {
       name: "Ticket No",
-      selector: (row) => row.ticket_no,
+      selector: (row) => row._id,
       sortable: true,
       hide: "md",
     },
@@ -39,7 +39,7 @@ export const TicketColums = [
     },
     {
       name: "Last Updated",
-      selector: (row) => row.last_updated,
+      selector: (row) => row.updatedAt,
       sortable: true,
       hide: "md",
     },

@@ -1,17 +1,17 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import GetAllUserTicketsDatatable from "../../../mainComponents/Tickets/GetAllUserTicketsDatatable";
+import GetAllTicketsDatatable from "../../../mainComponents/Tickets/GetAllTicketsDatatable";
 
-const Ticket = () => {
+const AllTickets = () => {
   return (
     <React.Fragment>
-      <Head title="Ticket" />
+      <Head title="All Tickets" />
       <Content>
-        <GetAllUserTicketsDatatable />
+        <GetAllTicketsDatatable />
       </Content>
     </React.Fragment>
   );
 };
 
-export default Ticket;
+export default AllTickets;

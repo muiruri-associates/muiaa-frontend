@@ -11,17 +11,17 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { getAllTickets } from '../../redux/actions/ticketActions';
+import { getAllUserTickets } from '../../redux/actions/ticketActions';
 import { TicketColums } from "./TicketsData";
 
 
-const GetAllTicketsDatatable = () => {
+const GetAllUserTicketsDatatable = () => {
   const dispatch = useDispatch();
   const ticket = useSelector((state) => state.ticket);
   console.log('All tickets in component', ticket);
 
   useEffect(() => {
-    dispatch(getAllTickets());
+    dispatch(getAllUserTickets());
   }, [dispatch])
 
   return (
@@ -33,7 +33,7 @@ const GetAllTicketsDatatable = () => {
         <BlockHead size="lg" wide="sm">
           <BlockHeadContent>
             <BlockTitle tag="h2" className="fw-normal">
-              Tickets
+              My Tickets
             </BlockTitle>
             <BackTo link="/ticket" icon="arrow-left">
               Back
@@ -68,4 +68,4 @@ const GetAllTicketsDatatable = () => {
 }
 
 
-export default GetAllTicketsDatatable
+export default GetAllUserTicketsDatatable
