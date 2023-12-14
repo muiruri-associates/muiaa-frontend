@@ -7,7 +7,7 @@ import { uploadDocument } from "../../../redux/actions/uploadActions";
 const UploadLenderDocument = () => {
   const dispatch = useDispatch();
   const [file, setFile] = useState([]);
-  const [type, setType] = useState('business license');
+  const [type, setType] = useState('');
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ const UploadLenderDocument = () => {
       {isLender && (<>
         <Row>
         <Col sm="6">
-            <label className="form-label">Business License</label>
-            <input type="text" value={type} hidden defaultValue={type}/>
+            <label className="form-label">Lender ID</label>
+            <input type="text" value={type} hidden defaultValue='ID' />
             <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
               {({ getRootProps, getInputProps }) => (
                 <section>
@@ -79,7 +79,8 @@ const UploadLenderDocument = () => {
             </Dropzone>
           </Col>
           <Col sm="6">
-            <label className="form-label">Business KRA PIN</label>
+            <label className="form-label">Payslips</label>
+            <input type="text" value={type} hidden defaultValue='Payslips' />
             <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
               {({ getRootProps, getInputProps }) => (
                 <section>
@@ -108,33 +109,8 @@ const UploadLenderDocument = () => {
         <br />
         <Row>
           <Col sm="6">
-            <label className="form-label">Business Tax Compliance Certificate(2 years)</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-          <Col sm="6">
-            <label className="form-label">Business MPESA Statement</label>
+            <label className="form-label">Bank Statements</label>
+            <input type="text" value={type} hidden defaultValue='BankStatements' />
             <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
               {({ getRootProps, getInputProps }) => (
                 <section>
@@ -160,62 +136,6 @@ const UploadLenderDocument = () => {
             </Dropzone>
           </Col>
         </Row>
-        <br />
-        <Row>
-          <Col sm="6">
-            <label className="form-label">Business Tax Compliance Certificate(2 years)</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-          <Col sm="6">
-            <label className="form-label">Business MPESA Statement</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-        </Row>
-        <br />
       </>)}
     </div>
   );

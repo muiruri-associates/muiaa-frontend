@@ -10,10 +10,7 @@ import {
   TabContent,
   TabPane,
 } from "reactstrap";
-import UploadBorrowerDocuments from './Borrower/UploadBorrowerDocuments';
-import BorrowersDocumentsTable from "./Borrower/BorrowersDocumentsTable";
-import LendersDocumentsTable from "./Lender/LendersDocumentsTable";
-import UploadLenderDocument from "./Lender/UploadLenderDocuments";
+import UploadDocument from "./UploadDocument";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
@@ -35,6 +32,7 @@ const UserProfileLayout = () => {
 
   // function to change the design view under 990 px
   const viewChange = () => {
+    
     if (window.innerWidth < 990) {
       setMobileView(true);
     } else {
@@ -143,7 +141,7 @@ const UserProfileLayout = () => {
                         Personal Information
                       </a>
                     </li>
-                    {isLender && (
+                    {(isLender || isUser) && (
                       <>
                         <li>
                           <a
@@ -153,50 +151,11 @@ const UserProfileLayout = () => {
                               setVerticalTab("2");
                             }}
                           >
-                            Upload Documents
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#tab"
-                            onClick={(ev) => {
-                              ev.preventDefault();
-                              setVerticalTab("3");
-                            }}
-                          >
-                            All Documents
+                            Document Uploads
                           </a>
                         </li>
                       </>
                     )}
-                    <>
-                    {isUser && (
-                      <>
-                        <li>
-                          <a
-                            href="#tab"
-                            onClick={(ev) => {
-                              ev.preventDefault();
-                              setVerticalTab("4");
-                            }}
-                          >
-                            Upload Documents
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#tab"
-                            onClick={(ev) => {
-                              ev.preventDefault();
-                              setVerticalTab("5");
-                            }}
-                          >
-                            All Documents
-                          </a>
-                        </li>
-                      </>
-                    )}
-                    </>
                   </ul>
                 </div>
               </div>
@@ -246,10 +205,7 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">{isLender ? <UploadLenderDocument /> : null}</TabPane>
-                <TabPane tabId="3">{isLender ? <LendersDocumentsTable /> : null}</TabPane>
-                <TabPane tabId="4">{isUser ? <UploadBorrowerDocuments /> : null}</TabPane>
-                <TabPane tabId="5">{isUser ? <BorrowersDocumentsTable /> : null}</TabPane>
+                <TabPane tabId="2">{(isLender || isUser) ? <UploadDocument /> : null}</TabPane>
               </TabContent>
             </div>
           </div>

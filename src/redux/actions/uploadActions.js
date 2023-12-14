@@ -1,11 +1,18 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+// import jwt from 'jsonwebtoken';
 import axiosInstance from '../../app/api/api';
 
 export const uploadDocument = createAsyncThunk('document/uploadDocument',async ({documentData, type}, { getState }) => {
     try {
       const accessToken = getState().auth.accessToken; // Replace with your actual access token
-    //   const user_id = getState().auth.user._id;
-      const user_id = "65610ffb2b7ff7ec9290f3df";
+      // const user_id = getState().auth.user._id;
+      const user_id = '6569e894d3bfbc68049f6d0d'
+      // const decodedToken = jwt.decodedToken(accessToken);
+      // if (!decodedToken || !decodedToken.user_id) {
+      //   throw new Error('Invalid access token or user ID missing');
+      // }
+      // const user_id = decodedToken.user_id;
+      // console.log('Decoded userId', user_id)
 
 
       // Set the Authorization header with the access token
@@ -42,3 +49,26 @@ export const uploadDocument = createAsyncThunk('document/uploadDocument',async (
     }
   }
 );
+
+
+export const getAllUserUploads = createAsyncThunk('document/getAllUserUploads', async(_, { getState }) => {
+  try {
+    // Get the access token from your state or wherever it's stored
+    const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+    const user_id = '6579f6b5d55168e208cda123'
+
+    // Set the Authorization header with the access token
+    const config = {
+        headers: {
+            Authorization: `Bearer ${accessToken}`
+        }
+    };
+    const response = await axiosInstance.get(`/v1/users/uploads/${user_id}`, config);
+    const allUserUploads = response.data.body
+    console.log('all available uloads', allUserUploads)
+    return allUserUploads;
+} catch (error) {
+    // Handle any error that occurred during the API call
+    console.error('error', error)
+}
+})

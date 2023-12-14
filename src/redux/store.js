@@ -8,6 +8,7 @@ import loanSliceReducer from './slices/loanSlice'
 import lenderUserSliceReducer from './slices/lenderUserSlice';
 import leadsSliceReducer from './slices/leadsSlice';
 import uploadSliceReducer from './slices/uploadSlice';
+import ticketSliceReducer from './slices/ticketSlice';
 
 export const store = configureStore({
     reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
         loan: loanSliceReducer,
         leads: leadsSliceReducer,
         upload: uploadSliceReducer,
+        ticket: ticketSliceReducer
     },
 });
 
