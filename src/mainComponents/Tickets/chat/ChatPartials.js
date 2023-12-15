@@ -39,7 +39,7 @@ export const MeChat = ({ item, chat, onRemoveMessage }) => {
           })}
         </div>
         <ul className="chat-meta">
-          <li>Abu Bin Ishtiyak</li>
+          <li>Lender</li>
           <li>{item.date}</li>
         </ul>
       </div>
@@ -50,7 +50,7 @@ export const MeChat = ({ item, chat, onRemoveMessage }) => {
 export const YouChat = ({ item, chat }) => {
   return (
     <div className="chat is-you">
-      <div className="chat-avatar">
+      {/* <div className="chat-avatar">
         {chat.group ? (
           <UserAvatar image={item.user.image} theme={item.user.theme} text={findUpper(item.user.name)}>
             {" "}
@@ -70,7 +70,7 @@ export const YouChat = ({ item, chat }) => {
             )}
           </UserAvatar>
         )}
-      </div>
+      </div> */}
       <div className="chat-content">
         <div className="chat-bubbles">
           {item.chat.map((msg, idx) => {
@@ -82,7 +82,7 @@ export const YouChat = ({ item, chat }) => {
           })}
         </div>
         <ul className="chat-meta">
-          <li>{chat.name}</li>
+          <li>test name</li>
           <li>{item.date}</li>
         </ul>
       </div>

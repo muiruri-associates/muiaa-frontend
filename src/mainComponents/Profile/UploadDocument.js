@@ -42,11 +42,7 @@ const UploadDocument = () => {
     <div style={{ overflowY: "auto", maxHeight: "100vh", paddingRight: "17px" }}>
       <Row>
         <Col sm="6">
-          {!upload.loading && upload.upload?.length > 0 && (
-            <div>
-              {upload.documentUpload.map((item, index) => (
-                <div key={index}>
-                  <label className="form-label">{item.type}</label>
+                  <label className="form-label">{type}</label>
                   <input type="text" value={type} onChange={(e) => setType(e.target.value)} hidden />
                   <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
                     {({ getRootProps, getInputProps }) => (
@@ -71,10 +67,6 @@ const UploadDocument = () => {
                       </section>
                     )}
                   </Dropzone>
-                </div>
-              ))}
-            </div>
-          )}
         </Col>
       </Row>
     </div>

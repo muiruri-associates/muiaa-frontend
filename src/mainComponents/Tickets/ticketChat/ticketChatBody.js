@@ -1,21 +1,25 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
 import classNames from "classnames";
-import ChatSideBar from "./ChatSideBar";
+// import ChatSideBar from "./ChatSideBar";
 import SimpleBar from "simplebar-react";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { UserAvatar, Icon, Button } from "../../../components/Component";
 import { currentTime, findUpper, truncate } from "../../../utils/Utils";
-import { ChatContext } from "./ChatContext";
+import { TicketChatContext } from "./ticketChatContext";
 
-import { MeChat, YouChat, MetaChat } from "./ChatPartials";
+import { MeChat, YouChat } from "./ticketChatPartials";
 
-const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
-  const { chatState } = useContext(ChatContext);
+// todo: ToDO:fix this section of chat body so that it can display the message
+
+const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
+  const { chatState } = useContext(TicketChatContext);
   const [chat, setChat] = chatState;
   const [Uchat, setUchat] = useState({});
   const [sidebar, setsidebar] = useState(false);
   const [inputText, setInputText] = useState("");
   const [chatOptions, setChatOptions] = useState(false);
+
+  console.log('chat>>>>>', chat)
 
   const messagesEndRef = useRef(null);
 
@@ -40,13 +44,14 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
     }
   };
 
+
   useEffect(() => {
     chat.forEach((item) => {
-      if (item.id === id) {
+      if (item._id === _id) {
         setUchat(item);
       }
     });
-  }, [id, chat]);
+  }, [_id, chat]);
 
   useEffect(() => {
     window.addEventListener("resize", resizeFunc);
@@ -68,60 +73,60 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
     setsidebar(!sidebar);
   };
 
-  const onTextSubmit = (e) => {
-    e.preventDefault();
-    let allChat = chat;
-    let index = allChat.find((item) => item.id === id);
-    let defaultChat = Uchat;
-    let text = truncate(inputText, 74);
-    let newChatItem;
-    if (inputText !== "") {
-      if (defaultChat.convo.length === 0) {
-        newChatItem = {
-          id: `chat_${defaultChat.convo.length + 2}`,
-          me: true,
-          chat: [text],
-          date: `${currentTime()}`,
-        };
-        defaultChat.convo = [...defaultChat.convo, newChatItem];
-      } else {
-        if (defaultChat.convo[defaultChat.convo.length - 1].me === true) {
-          newChatItem = {
-            id: `chat_${defaultChat.convo.length + 2}`,
-            me: true,
-            chat: [...defaultChat.convo[defaultChat.convo.length - 1].chat, text],
-            date: `${currentTime()}`,
-          };
-          defaultChat.convo[defaultChat.convo.length - 1] = newChatItem;
-        } else {
-          let newChatItem = {
-            id: `chat_${defaultChat.convo.length + 2}`,
-            me: true,
-            chat: [text],
-            date: `${currentTime()}`,
-          };
-          defaultChat.convo = [...defaultChat.convo, newChatItem];
-        }
-      }
-    }
-    allChat[index] = defaultChat;
-    setChat([...allChat]);
-    setUchat({ ...defaultChat });
-    setInputText("");
-  };
+  // const onTextSubmit = (e) => {
+  //   e.preventDefault();
+  //   let allChat = chat;
+  //   let index = allChat.find((item) => item._id === _id);
+  //   let defaultChat = Uchat;
+  //   let text = truncate(inputText, 74);
+  //   let newChatItem;
+  //   if (inputText !== "") {
+  //     if (defaultChat.convo.length === 0) {
+  //       newChatItem = {
+  //         id: `chat_${defaultChat.convo.length + 2}`,
+  //         me: true,
+  //         chat: [text],
+  //         date: `${currentTime()}`,
+  //       };
+  //       defaultChat.convo = [...defaultChat.convo, newChatItem];
+  //     } else {
+  //       if (defaultChat.convo[defaultChat.convo.length - 1].me === true) {
+  //         newChatItem = {
+  //           id: `chat_${defaultChat.convo.length + 2}`,
+  //           me: true,
+  //           chat: [...defaultChat.convo[defaultChat.convo.length - 1].chat, text],
+  //           date: `${currentTime()}`,
+  //         };
+  //         defaultChat.convo[defaultChat.convo.length - 1] = newChatItem;
+  //       } else {
+  //         let newChatItem = {
+  //           id: `chat_${defaultChat.convo.length + 2}`,
+  //           me: true,
+  //           chat: [text],
+  //           date: `${currentTime()}`,
+  //         };
+  //         defaultChat.convo = [...defaultChat.convo, newChatItem];
+  //       }
+  //     }
+  //   }
+  //   allChat[index] = defaultChat;
+  //   setChat([...allChat]);
+  //   setUchat({ ...defaultChat });
+  //   setInputText("");
+  // };
 
-  const onRemoveMessage = (idx, id) => {
-    let allChat = chat;
-    let cindex = allChat.find((item) => item.id === id);
-    let defaultChat = Uchat;
-    let newConvo = defaultChat.convo;
-    let index = newConvo.findIndex((item) => item.id === id);
-    newConvo[index].chat[idx] = "deleted";
-    allChat[cindex] = defaultChat;
-    setChat([...allChat]);
-  };
+  // const onRemoveMessage = (idx, id) => {
+  //   let allChat = chat;
+  //   let cindex = allChat.find((item) => item.id === id);
+  //   let defaultChat = Uchat;
+  //   let newConvo = defaultChat.convo;
+  //   let index = newConvo.findIndex((item) => item.id === id);
+  //   newConvo[index].chat[idx] = "deleted";
+  //   allChat[cindex] = defaultChat;
+  //   setChat([...allChat]);
+  // };
 
-  const chatBodyClass = classNames({
+  const TicketchatBodyClass = classNames({
     "nk-chat-body": true,
     "show-chat": mobileView,
     "profile-shown": sidebar && window.innerWidth > 1550,
@@ -130,7 +135,7 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
   return (
     <React.Fragment>
       {Object.keys(Uchat).length > 0 && (
-        <div className={chatBodyClass}>
+        <div className={TicketchatBodyClass}>
           <div className="nk-chat-head">
             <ul className="nk-chat-head-info">
               <li className="nk-chat-body-close" onClick={() => setMobileView(false)}>
@@ -186,40 +191,7 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
                   <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger text-primary">
                     <Icon name="setting-fill"></Icon>
                   </DropdownToggle>
-                  {/* <DropdownMenu right className="dropdown-menu">
-                    <ul className="link-list-opt no-bdr">
-                      <li>
-                        <DropdownItem
-                          tag="a"
-                          className="dropdown-item"
-                          disabled={Uchat.archive}
-                          href="#dropdown"
-                          onClick={(ev) => {
-                            ev.preventDefault();
-                            propAction(id, "archive");
-                          }}
-                        >
-                          <Icon name="archive"></Icon>
-                          <span>Make as Archive</span>
-                        </DropdownItem>
-                      </li>
-                      <li>
-                        <DropdownItem
-                          tag="a"
-                          className="dropdown-item"
-                          href="#dropdown"
-                          onClick={(ev) => {
-                            ev.preventDefault();
-                            deleteConvo(id);
-                            setSelectedId(null);
-                          }}
-                        >
-                          <Icon name="cross-c"></Icon>
-                          <span>Remove Conversion</span>
-                        </DropdownItem>
-                      </li>
-                    </ul>
-                  </DropdownMenu> */}
+                  
                 </UncontrolledDropdown>
               </li>
               <li className="mr-n1 mr-md-n2">
@@ -237,11 +209,9 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
             </ul>
           </div>
           <SimpleBar className="nk-chat-panel" scrollableNodeProps={{ ref: messagesEndRef }}>
-            {Uchat.convo.map((item, idx) => {
-              if (item.me) {
-                return <MeChat key={idx} item={item} chat={Uchat} onRemoveMessage={onRemoveMessage}></MeChat>;
-              } else if (item.meta) {
-                return <MetaChat key={idx} item={item.meta.metaText}></MetaChat>;
+            {Uchat.chat.map((chat, idx) => {
+              if (chat.sender) {
+                return <MeChat key={chat._id} item={chat} chat={Uchat} onRemoveMessage={onRemoveMessage}></MeChat>;
               } else {
                 return <YouChat key={idx} item={item} chat={Uchat}></YouChat>;
               }
@@ -330,7 +300,7 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
             </ul>
           </div>
 
-          <ChatSideBar sidebar={sidebar} chat={Uchat} />
+          {/* <ChatSideBar sidebar={sidebar} chat={Uchat} /> */}
 
           {window.innerWidth < 1550 && sidebar && (
             <div onClick={() => toggleMenu()} className="nk-chat-profile-overlay"></div>
@@ -341,4 +311,4 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
   );
 };
 
-export default ChatBody;
+export default TicketChatBody;

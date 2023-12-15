@@ -101,7 +101,7 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
         <div className={chatBodyClass}>
           <div className="nk-msg-head">
             <h4 className="title d-none d-lg-block">{item.messageTitle}</h4>
-            <div className="nk-msg-head-meta">http://localhost:3000/contact-user
+            <div className="nk-msg-head-meta">
               <div className="d-none d-lg-block">
                 <ul className="nk-msg-tags">
                   <li>
