@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 // import Homepage from "../Homepage";
 // import { toast } from 'react-toastify';
 
-
 import {
   Block,
   BlockContent,
@@ -26,30 +25,27 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/actions/authActions";
 
-
-
 const Login = () => {
   const history = useHistory();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(false);
   const [passState, setPassState] = useState(false);
   const [errorVal, setError] = useState("");
-  const [email, setEmail]= useState(null)
-  const [password, setPassword]= useState(null)
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const onFormSubmit = async () => {
     setLoading(true); // Start loading
 
     const loginData = {
       email,
-      password
+      password,
     };
 
-      await dispatch(login(loginData));
-      history.push(`/`);
-      // setError("Unable to login with credentials");
-
+    await dispatch(login(loginData));
+    history.push(`/`);
+    // setError("Unable to login with credentials");
   };
 
   const { errors, register, handleSubmit } = useForm();
@@ -95,7 +91,7 @@ const Login = () => {
                     type="text"
                     id="default-01"
                     name="email"
-                    onChange={(e)=> setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your email address or username"
                     className="form-control-lg form-control"
@@ -129,7 +125,7 @@ const Login = () => {
                     type={passState ? "text" : "password"}
                     id="password"
                     name="password"
-                    onChange={(e)=> setPassword(e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your password"
                     className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
@@ -138,9 +134,9 @@ const Login = () => {
                 </div>
               </FormGroup>
               <FormGroup>
-              <Button size="lg" className="btn-block" type="submit" color="primary">
-          {loading ? <Spinner size="sm" color="light" /> : "Sign in"}
-        </Button>
+                <Button size="lg" className="btn-block" type="submit" color="primary">
+                  {loading ? <Spinner size="sm" color="light" /> : "Sign in"}
+                </Button>
               </FormGroup>
             </Form>
             <div className="form-note-s2 text-center pt-4">

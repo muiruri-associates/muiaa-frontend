@@ -14,7 +14,7 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async(_, { getSta
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/admin/users`, config);
+        const response = await axiosInstance.get(`admin/users`, config);
         console.log('all users>>>', response)
         return response.data.body;
     } catch (error) {

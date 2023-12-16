@@ -14,7 +14,7 @@ export const createLenderOrg = createAsyncThunk('lenderOrg/createLenderOrg', asy
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.post(`/v1/admin/lender-orgs`, lenderOrgData, config);
+        const response = await axiosInstance.post(`admin/lender-orgs`, lenderOrgData, config);
         console.log('new orgs>>>', response)
         return response.data.body;
     } catch (error) {
@@ -35,7 +35,7 @@ export const fetchData = createAsyncThunk('lenderOrg/fetchLenderOrg', async(_, {
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/admin/lender-orgs`, config);
+        const response = await axiosInstance.get(`admin/lender-orgs`, config);
         console.log('all orgs', response.data.body)
         return response.data.body;
     } catch (error) {
@@ -57,7 +57,7 @@ export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById
             }
         };
         console.log('id', id);
-        const response = await axiosInstance.get(`/v1/admin/lender-org/${id}`, config);
+        const response = await axiosInstance.get(`admin/lender-org/${id}`, config);
         console.log('resp org id', response.data);
         return response.data.body;
     } catch (error) {

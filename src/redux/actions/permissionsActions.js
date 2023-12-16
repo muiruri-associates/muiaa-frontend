@@ -6,7 +6,7 @@ import axiosInstance from '../../app/api/api';
 
 export const createPermissions = createAsyncThunk('lenderOrg/createPermissions', async(permissionsData) => {
     try {
-        const response = await axiosInstance.post(`/v1/admin/permissions`, permissionsData);
+        const response = await axiosInstance.post(`admin/permissions`, permissionsData);
         console.log('new permissions>>', response)
         return response.data;
     } catch (error) {
@@ -26,7 +26,7 @@ export const fetchPermissions = createAsyncThunk('permissions/fetchPermissions',
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/admin/permissions`, config);
+        const response = await axiosInstance.get(`admin/permissions`, config);
         console.log('all permissions', response)
         return response.data.body;
     } catch (error) {

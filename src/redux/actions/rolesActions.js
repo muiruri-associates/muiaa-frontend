@@ -14,7 +14,7 @@ export const fetchRoles = createAsyncThunk('roles/fetchRoles', async(_, { getSta
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/admin/roles`, config);
+        const response = await axiosInstance.get(`admin/roles`, config);
         console.log('all roles', response.data.body)
         return response.data.body.roles;
     } catch (error) {
