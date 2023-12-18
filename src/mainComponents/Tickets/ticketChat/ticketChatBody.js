@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
+import { useDispatch } from 'react-redux';
 import classNames from "classnames";
 // import ChatSideBar from "./ChatSideBar";
 import SimpleBar from "simplebar-react";
@@ -6,20 +7,37 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 import { UserAvatar, Icon, Button } from "../../../components/Component";
 import { currentTime, findUpper, truncate } from "../../../utils/Utils";
 import { TicketChatContext } from "./ticketChatContext";
-
 import { MeChat, YouChat } from "./ticketChatPartials";
+import { sendMessage } from '../../../redux/actions/ticketActions'
+import { useParams } from "react-router-dom";
 
 // todo: ToDO:fix this section of chat body so that it can display the message
 
-const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
+const TicketChatBody = ({ mobileView, setMobileView, setSelectedId }) => {
+  const dispatch = useDispatch();
+  const { _id } = useParams();
+
   const { chatState } = useContext(TicketChatContext);
-  const [chat, setChat] = chatState;
+  const [chat, setChat] = chatState || [];
   const [Uchat, setUchat] = useState({});
   const [sidebar, setsidebar] = useState(false);
   const [inputText, setInputText] = useState("");
   const [chatOptions, setChatOptions] = useState(false);
+  const [user, setUser] = useState(null);
 
-  console.log('chat>>>>>', chat)
+  useEffect(() => {
+    // Retrieve user data from local storage (assuming it's stored as JSON)
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  // Function to check if the user is a lender (customize this logic as per your application)
+  // const isLender = user && user.role === "Lender";
+  // const isUser = user && user.role === "User";
+
+  console.log("chat>>>>>", chat);
 
   const messagesEndRef = useRef(null);
 
@@ -44,13 +62,27 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
     }
   };
 
+  // useEffect(() => {
+  //   if (_id && chat && chat.length > 0) {
+  //     const foundChat = chat.find(item => item._id === _id);
+  //     console.log('chat foundnd',foundChat);
+  //     if (foundChat) {
+  //       setUchat(foundChat);
+  //     }
+  //   }
+  // }, [_id, chat]);
 
   useEffect(() => {
-    chat.forEach((item) => {
-      if (item._id === _id) {
+    if (Array.isArray(chat)) {
+      chat.forEach((item) => {
+        console.log("chat eegf>>", item);
         setUchat(item);
-      }
-    });
+        // if (item._id === _id) {
+        //   console.log('id to check wih>>', _id)
+        //   setUchat(item);
+        // }
+      });
+    }
   }, [_id, chat]);
 
   useEffect(() => {
@@ -73,59 +105,57 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
     setsidebar(!sidebar);
   };
 
-  // const onTextSubmit = (e) => {
-  //   e.preventDefault();
-  //   let allChat = chat;
-  //   let index = allChat.find((item) => item._id === _id);
-  //   let defaultChat = Uchat;
-  //   let text = truncate(inputText, 74);
-  //   let newChatItem;
-  //   if (inputText !== "") {
-  //     if (defaultChat.convo.length === 0) {
-  //       newChatItem = {
-  //         id: `chat_${defaultChat.convo.length + 2}`,
-  //         me: true,
-  //         chat: [text],
-  //         date: `${currentTime()}`,
-  //       };
-  //       defaultChat.convo = [...defaultChat.convo, newChatItem];
-  //     } else {
-  //       if (defaultChat.convo[defaultChat.convo.length - 1].me === true) {
-  //         newChatItem = {
-  //           id: `chat_${defaultChat.convo.length + 2}`,
-  //           me: true,
-  //           chat: [...defaultChat.convo[defaultChat.convo.length - 1].chat, text],
-  //           date: `${currentTime()}`,
-  //         };
-  //         defaultChat.convo[defaultChat.convo.length - 1] = newChatItem;
-  //       } else {
-  //         let newChatItem = {
-  //           id: `chat_${defaultChat.convo.length + 2}`,
-  //           me: true,
-  //           chat: [text],
-  //           date: `${currentTime()}`,
-  //         };
-  //         defaultChat.convo = [...defaultChat.convo, newChatItem];
-  //       }
-  //     }
-  //   }
-  //   allChat[index] = defaultChat;
-  //   setChat([...allChat]);
-  //   setUchat({ ...defaultChat });
-  //   setInputText("");
-  // };
+  const onTextSubmit = async (e) => {
+    e.preventDefault();
+    if (inputText.trim() !== "") {
+      const ticketData = {
+        message: inputText,
+        date: currentTime(),
+      };
+  
+      try {
+        // Dispatch the sendMessage action with the necessary data
+        await dispatch(sendMessage({ ticketData, ticket_id: _id }));
+        // Update the chat state with the new message
+      const newMessage = {
+        id: `chat_${chat.length + 1}`, // Generate a unique ID for the new message
+        sender: user._id,
+        message: inputText,
+        date: currentTime(),
+      };
 
-  // const onRemoveMessage = (idx, id) => {
-  //   let allChat = chat;
-  //   let cindex = allChat.find((item) => item.id === id);
-  //   let defaultChat = Uchat;
-  //   let newConvo = defaultChat.convo;
-  //   let index = newConvo.findIndex((item) => item.id === id);
-  //   newConvo[index].chat[idx] = "deleted";
-  //   allChat[cindex] = defaultChat;
-  //   setChat([...allChat]);
-  // };
+      setChat([...chat, newMessage]); // Append the new message to the chat array
+      setInputText(""); // Clear the input field after sending the message
+      } catch (error) {
+        console.error('Error sending message:', error);
+        // Handle error scenarios here
+      }
+    }
+  };
+  
 
+  const onRemoveMessage = (idx, id) => {
+    // Find the index of the message to be removed
+    const messageIndex = chat.findIndex((item) => item.id === id);
+    
+    if (messageIndex !== -1) {
+      // Make a copy of the chat array
+      const updatedChat = [...chat];
+      const messageToRemove = updatedChat[messageIndex];
+  
+      // Remove the message at the found index
+      updatedChat.splice(messageIndex, 1);
+  
+      // Update the chat state with the modified array
+      setChat(updatedChat);
+  
+      // Additional logic based on your requirements after removing the message...
+      // For example, you might want to perform further actions or update other state variables.
+  
+      console.log('Message removed:', messageToRemove);
+    }
+  };
+  
   const TicketchatBodyClass = classNames({
     "nk-chat-body": true,
     "show-chat": mobileView,
@@ -149,41 +179,6 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
                   <Icon name="arrow-left"></Icon>
                 </a>
               </li>
-              <li className="nk-chat-head-user">
-                <div className="user-card">
-                  {Uchat.group ? (
-                    <div className="chat-media user-avatar user-avatar-multiple">
-                      {Uchat.user.map((user,index) => {
-                        return (
-                          <UserAvatar
-                            theme={user.theme}
-                            text={findUpper(user.name)}
-                            image={user.image}
-                            className="chat-media"
-                            key={index}
-                          ></UserAvatar>
-                        );
-                      })}
-                      <span className={"status dot dot-lg dot-success"}></span>
-                    </div>
-                  ) : (
-                    <UserAvatar image={Uchat.image} theme={Uchat.theme} text={findUpper(Uchat.name)}>
-                      {Uchat.active === true ? (
-                        <span className="status dot dot-lg dot-success"></span>
-                      ) : (
-                        <span className="status dot dot-lg dot-gray"></span>
-                      )}
-                    </UserAvatar>
-                  )}
-                  <div className="user-info">
-                    <div className="lead-text">Test name</div>
-                    <div className="sub-text">
-                      <span className="d-none d-sm-inline mr-1">Active </span>{" "}
-                      {Uchat.active === true ? "Now" : `${Uchat.active} ago `}
-                    </div>
-                  </div>
-                </div>
-              </li>
             </ul>
             <ul className="nk-chat-head-tools">
               <li className="d-none d-sm-block">
@@ -191,7 +186,6 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
                   <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger text-primary">
                     <Icon name="setting-fill"></Icon>
                   </DropdownToggle>
-                  
                 </UncontrolledDropdown>
               </li>
               <li className="mr-n1 mr-md-n2">
@@ -208,69 +202,31 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
               </li>
             </ul>
           </div>
+          {Array.isArray(chat) && (
           <SimpleBar className="nk-chat-panel" scrollableNodeProps={{ ref: messagesEndRef }}>
-            {Uchat.chat.map((chat, idx) => {
-              if (chat.sender) {
-                return <MeChat key={chat._id} item={chat} chat={Uchat} onRemoveMessage={onRemoveMessage}></MeChat>;
-              } else {
-                return <YouChat key={idx} item={item} chat={Uchat}></YouChat>;
-              }
+            {chat.map((message, idx) => {
+              const isMe = message.sender === user._id;
+
+              // Render MeChat for messages sent by the user, and YouChat for others
+              return isMe ? (
+                <MeChat
+                  key={idx}
+                  item={message}
+                  chat={Uchat} // If needed, adjust the props accordingly
+                  onRemoveMessage={onRemoveMessage}
+                />
+              ) : (
+                <YouChat
+                  key={idx}
+                  item={message}
+                  sender={message.sender}
+                  // Pass other necessary props to YouChat
+                />
+              );
             })}
           </SimpleBar>
+          )}
           <div className="nk-chat-editor">
-            <div className="nk-chat-editor-upload  ml-n1">
-              <Button
-                size="sm"
-                className={`btn-icon btn-trigger text-primary toggle-opt ${chatOptions ? "active" : ""}`}
-                onClick={() => onChatOptions()}
-              >
-                <Icon name="plus-circle-fill"></Icon>
-              </Button>
-              <div className={`chat-upload-option ${chatOptions ? "expanded" : ""}`}>
-                <ul className="">
-                  <li>
-                    <a
-                      href="#img"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      <Icon name="img-fill"></Icon>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#camera"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      <Icon name="camera-fill"></Icon>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#mic"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      <Icon name="mic"></Icon>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#grid"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                      }}
-                    >
-                      <Icon name="grid-sq"></Icon>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className="nk-chat-editor-form">
               <div className="form-control-wrap">
                 <textarea
@@ -288,19 +244,12 @@ const TicketChatBody = ({ _id, mobileView, setMobileView, setSelectedId }) => {
             </div>
             <ul className="nk-chat-editor-tools g-2">
               <li>
-                <Button size="sm" className="btn-icon btn-trigger text-primary">
-                  <Icon name="happyf-fill"></Icon>
-                </Button>
-              </li>
-              <li>
                 <Button color="primary" onClick={(e) => onTextSubmit(e)} className="btn-round btn-icon">
                   <Icon name="send-alt"></Icon>
                 </Button>
               </li>
             </ul>
           </div>
-
-          {/* <ChatSideBar sidebar={sidebar} chat={Uchat} /> */}
 
           {window.innerWidth < 1550 && sidebar && (
             <div onClick={() => toggleMenu()} className="nk-chat-profile-overlay"></div>

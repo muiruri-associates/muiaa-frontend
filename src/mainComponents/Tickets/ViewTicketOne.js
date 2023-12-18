@@ -5,8 +5,8 @@ import TicketChatContainer from './ticketChat/ticketChatContainer'
 const ViewTicketOne = () => {
   return (
     <div>
-      <ChatContainer />
-      {/* <TicketChatContainer /> */}
+      {/* <ChatContainer /> */}
+      <TicketChatContainer />
     </div>
   )
 }

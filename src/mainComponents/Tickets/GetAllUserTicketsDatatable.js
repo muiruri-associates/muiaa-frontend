@@ -13,6 +13,8 @@ import {
 } from "../../components/Component";
 import { getAllUserTickets } from '../../redux/actions/ticketActions';
 import { TicketColums } from "./TicketsData";
+import { Button } from 'reactstrap';
+import { Link } from "react-router-dom";
 
 
 const GetAllUserTicketsDatatable = () => {
@@ -40,6 +42,16 @@ const GetAllUserTicketsDatatable = () => {
             </BackTo>
           </BlockHeadContent>
         </BlockHead>
+        {/* Second BlockHead */}
+        <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <Button>
+                <Link to={`/ticket`} >
+                    Create Ticket
+                </Link>
+              </Button>
+            </BlockHeadContent>
+          </BlockHead>
       </div>
       <br />
 

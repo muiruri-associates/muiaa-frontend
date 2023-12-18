@@ -2,14 +2,14 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
 
 export const login = createAsyncThunk('auth/login', async(loginData) => {
-    try {
-        const response = await axiosInstance.post(`/v1/auth/login`, loginData);
+    // try {
+        const response = await axiosInstance.post(`/auth/login`, loginData);
         const userData = response.data; // Assuming the response contains user data including roles
         console.log('data>>>', userData)
         return userData;
-    } catch (error) {
-        throw new Error('Error logging in');
-    }
+    // } catch (error) {
+    //     throw new Error('Error logging in', error.message);
+    // }
 });
 
 export const logout = () => {
@@ -22,7 +22,7 @@ export const logout = () => {
 export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(registerData) => {
     try {
         const response = await axiosInstance.post(`/v1/lenders/register`, registerData);
-        const userData = response.data
+        const userData = response.data;
         return userData
     } catch (error) {
         throw error; // Rethrow the error to be handled by Redux

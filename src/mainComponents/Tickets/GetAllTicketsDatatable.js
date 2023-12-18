@@ -26,7 +26,7 @@ const GetAllTicketsDatatable = () => {
 
   return (
     <React.Fragment>
-    <Head title="My Tickets" />
+    <Head title="My Ticket" />
     <Content page="component">
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         {/* First BlockHead */}
@@ -35,11 +35,10 @@ const GetAllTicketsDatatable = () => {
             <BlockTitle tag="h2" className="fw-normal">
               Tickets
             </BlockTitle>
-            <BackTo link="/ticket" icon="arrow-left">
-              Back
-            </BackTo>
           </BlockHeadContent>
         </BlockHead>
+
+        
       </div>
       <br />
 

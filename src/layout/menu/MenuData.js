@@ -139,7 +139,7 @@ const menu = [{
         icon: 'ticket',
         text: 'Tickets',
         active: false,
-        link: '/ticket',
+        link: '/my-tickets',
         roles: [ROLE.Lender],
     },
     {

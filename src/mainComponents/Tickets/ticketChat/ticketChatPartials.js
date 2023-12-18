@@ -1,75 +1,84 @@
-import React, { useContext } from "react";
-import { DropdownToggle, DropdownMenu, UncontrolledDropdown, DropdownItem } from "reactstrap";
-import { Link } from "react-router-dom";
-import { Icon, UserAvatar } from "../../../components/Component";
-import { findUpper } from "../../../utils/Utils";
-import { TicketChatContext } from "./ticketChatContext";
+import React from "react";
+import { Icon } from "../../../components/Component";
 
 export const MeChat = ({ item, onRemoveMessage }) => {
-  const { chatState } = useContext(TicketChatContext);
-  const [chat] = chatState;
+  const { message, date, sender } = item; // Access the message content and date from the item
+
   return (
     <div className="chat is-me">
       <div className="chat-content">
         <div className="chat-bubbles">
-          {chat.messages?.map((msg, idx) => (
-              <div className="chat-bubble" key={idx}>
-                {msg === "deleted" ? (
-                  <div className="chat-msg border bg-white text-muted">Message has been deleted</div>
-                ) : (
-                  <React.Fragment>
-                    <div className={`chat-msg`}>{msg.message}</div>
-                    <ul className="chat-msg-more">
-                      <li className="d-none d-sm-block">
-                        <a
-                          href="#delete"
-                          onClick={(ev) => {
-                            ev.preventDefault();
-                            onRemoveMessage(idx, item.id);
-                          }}
-                          className="btn btn-icon btn-sm btn-trigger"
-                        >
-                          <Icon name="trash-fill"></Icon>
-                        </a>
-                      </li>
-                    </ul>
-                  </React.Fragment>
-                )}
-              </div>
-          ))}
+          <div className="chat-bubble">
+            {message === "deleted" ? (
+              <div className="chat-msg border bg-white text-muted">Message has been deleted</div>
+            ) : (
+              <React.Fragment>
+                <div className="chat-msg">{message}</div>
+                <ul className="chat-msg-more">
+                  <li className="d-none d-sm-block">
+                    <a
+                      href="#delete"
+                      onClick={(ev) => {
+                        ev.preventDefault();
+                        onRemoveMessage(item.id); // Pass the message ID to remove
+                      }}
+                      className="btn btn-icon btn-sm btn-trigger"
+                    >
+                      <Icon name="trash-fill"></Icon>
+                    </a>
+                  </li>
+                </ul>
+              </React.Fragment>
+            )}
+          </div>
+          <ul className="chat-meta">
+            <li>{/* Show the sender here */}{sender}</li>
+            <li>{date}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+export const YouChat = ({ item }) => {
+  if (!item || typeof item !== 'object' || !item.message) {
+    // Handle the case when item or item.message is undefined
+    return (
+      <div className="chat is-you">
+        <div className="chat-content">
+          <div className="chat-bubbles">
+            <div className="chat-bubble">
+              <div className="chat-msg">Invalid message</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Assuming item.message contains the actual message content
+  const { message, created_at, sender } = item;
+
+  return (
+    <div className="chat is-you">
+      <div className="chat-content">
+        <div className="chat-bubbles">
+          <div className="chat-bubble">
+            <div className="chat-msg">{message}</div>
+          </div>
         </div>
         <ul className="chat-meta">
-          <li>{msg.sender}</li>
-          <li>{msg.sender}</li>
+          <li>{sender}</li>
+          <li>{created_at}</li>
         </ul>
       </div>
     </div>
   );
 };
 
-export const YouChat = ({ item }) => {
-  const { chatState } = useContext(TicketChatContext);
-  const [chat] = chatState;
-  return (
-    <div className="chat is-you">
-      
-      <div className="chat-content">
-        <div className="chat-bubbles">
-          {chat.messages?.map((msg, idx) => (
-            // console.log('msg>>',msg)
-              <div className="chat-bubble" key={idx}>
-                <div className="chat-msg">{msg.message}</div>
-              </div>
-          ))}
-        </div>
-        <ul className="chat-meta">
-          <li>test name</li>
-          <li>date</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+
 
 // export const MetaChat = ({ item }) => {
 //   return (
