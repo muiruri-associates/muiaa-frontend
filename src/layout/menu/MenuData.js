@@ -77,13 +77,6 @@ const menu = [{
         roles: [ROLE.Lender]
     },
     {
-      icon: 'call',
-      text: 'Contact Borrowers',
-      active: false,
-      link: '/contact-user',
-      roles: [ROLE.Lender],
-  },
-    {
         icon: 'tranx',
         text: 'Lenders',
         active: false,
@@ -131,6 +124,30 @@ const menu = [{
                 link: '/permissions',
             }
         ]
+    },
+    {
+        heading: 'Support',
+    },
+    {
+        icon: 'call',
+        text: 'Contact Borrowers',
+        active: false,
+        link: '/contact-user',
+        roles: [ROLE.Lender],
+    },
+    {
+        icon: 'ticket',
+        text: 'Tickets',
+        active: false,
+        link: '/ticket',
+        roles: [ROLE.Lender],
+    },
+    {
+        icon: 'ticket',
+        text: 'All Tickets',
+        active: false,
+        link: '/all-tickets',
+        roles: [ROLE.Admin],
     },
 ];
 

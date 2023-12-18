@@ -1,6 +1,6 @@
 import React from 'react'
 import ChatContainer from './chat/ChatContainer'
-// import TicketChatContainer from './ticketChat/ticketChatContainer'
+import TicketChatContainer from './ticketChat/ticketChatContainer'
 
 const ViewTicketOne = () => {
   return (

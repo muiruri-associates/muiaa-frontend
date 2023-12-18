@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
@@ -11,9 +12,18 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { AllLeadsDataTableData, AllLeadsdataTableColumns, dataTableColumns } from "./AllTableData";
+import { AllLeadsDataTableData, AllLeadsdataTableColumns } from "./AllTableData";
+import { getAllAvailableLeads } from "../../redux/actions/leadsActions"
 
 const AllLeadsAppliedDatatable = () => {
+  const dispatch = useDispatch();
+  const leads = useSelector((state) => state.leads);
+  console.log('Leads on component', leads)
+
+  useEffect(() => {
+    dispatch(getAllAvailableLeads())
+  }, [dispatch])
+  
   return (
     <React.Fragment>
     <Head title="Loans" />
@@ -34,13 +44,22 @@ const AllLeadsAppliedDatatable = () => {
 
       <Block size="lg">
         <PreviewCard>
-          <ReactDataTable
+        {leads.loading && <div>Loading...</div>}
+            {!leads.loading && leads.error ? (
+              <div>Error: {leads.error}</div>
+            ) : null}
+            {!leads.loading && leads.leads?.length ? (
+              <ReactDataTable data={leads.leads} columns={AllLeadsdataTableColumns} pagination actions />
+            ) : (
+              <div>No leads found.</div>
+            )}
+          {/* <ReactDataTable
             data={AllLeadsDataTableData}
             columns={AllLeadsdataTableColumns}
             expandableRows
             pagination
             actions
-          />
+          /> */}
         </PreviewCard>
       </Block>
     </Content>
