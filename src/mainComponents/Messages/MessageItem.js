@@ -3,20 +3,39 @@ import SimpleBar from "simplebar-react";
 import classNames from "classnames";
 import MessageProfileSidebar from "./MessageProfile";
 import { Modal, ModalBody, DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from "reactstrap";
-import { Button, Icon, TooltipComponent, UserAvatar } from "../../../components/Component";
+import { Button, Icon, TooltipComponent, UserAvatar } from "../../components/Component";
 import { ReplyItem, MetaItem } from "./MessagePartials";
-import { currentTime, findUpper, todaysDate, monthNames } from "../../../utils/Utils";
+import { currentTime, findUpper, todaysDate, monthNames } from "../../utils/Utils";
 import { assignMembers } from "./MessageData";
+import { useDispatch, useSelector } from "react-redux";
+import { getTicketById, sendMessage } from "../../redux/actions/ticketActions";
+import { useParams } from "react-router-dom";
 
-const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
-  const [itemData] = useState(data);
+
+// TODO: Fix ui so that reply can sepearte from message of ticket
+const message = ({ id, onClosed, mobileView, setMobileView }) => {
+  const dispatch = useDispatch();
+  const { _id } = useParams();
+  const messagesEndRef = useRef(null);
+  const ticket = useSelector((state) => state.ticket.ticket);
+  console.log("Ticket on message mesge>>", ticket);
+  console.log("TicketID On  message message item>>", _id);
+
   const [sidebar, setSideBar] = useState(false);
   const [item, setItem] = useState({});
   const [formTab, setFormTab] = useState("1");
   const [assignModal, setAssignModal] = useState(false);
   const [textInput, setTextInput] = useState("");
+  const [user, setUser] = useState(null);
+  const [isClosed, setIsClosed] = useState(ticket.status);
 
-  const messagesEndRef = useRef(null);
+  useEffect(() => {
+    // Retrieve user data from local storage (assuming it's stored as JSON)
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const scrollToBottom = () => {
     const scrollHeight = messagesEndRef.current.scrollHeight;
@@ -42,15 +61,21 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
   }, []);
 
   useEffect(() => {
-    const checkId = (id) => {
-      itemData.forEach((items) => {
-        if (items.id === id) {
-          setTimeout(setItem(items), 1000);
-        }
-      });
-    };
-    checkId(id);
-  }, [id, item, itemData, data]);
+    if (_id && ticket && ticket.items && Array.isArray(ticket.items)) {
+      const checkId = (_id) => {
+        ticket.items.forEach((item) => {
+          if (item._id === _id) {
+            setTimeout(() => setItem(item), 1000);
+          }
+        });
+      };
+      checkId(_id);
+    }
+  }, [_id, ticket]);
+
+  useEffect(() => {
+    dispatch(getTicketById(_id));
+  }, [dispatch, _id]);
 
   const toggleSidebar = () => {
     setSideBar(!sidebar);
@@ -64,28 +89,41 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
     setTextInput(e.target.value);
   };
 
-  const onFormSubmit = (e, note) => {
-    let defaultObject = item;
-    var htmlMarkup = [];
-    if (textInput.trim() !== "") {
-      var text = textInput.replace(/\r/g, "").split(/\n/);
-      text.forEach((item) => {
-        htmlMarkup.push(item);
-      });
-      const replyObject = {
-        replyId: `rep_${item.reply.length + 1}`,
-        name: "Illias Hossain",
-        note: note,
-        theme: "purple",
-        date: `${monthNames[todaysDate.getMonth()]} ${todaysDate.getDate()}, ${todaysDate.getFullYear()}`,
-        time: `${currentTime()}`,
-        replyMarkup: htmlMarkup,
-      };
-      defaultObject.reply.push(replyObject);
-      setItem({ ...defaultObject });
-      setTextInput("");
+  const toggleStatus = () => {
+    setIsClosed(!isClosed);
+    // If it's closed, perform an action (e.g., call onClosed function)
+    if (!isClosed) {
+      onClosed(id);
+      // Additional actions if needed when switching to Closed state
     }
-    setTimeout(() => scrollToBottom());
+    // Additional actions if needed when switching to Open state
+  };
+
+  const onFormSubmit = async (e) => {
+    e.preventDefault();
+    if (textInput.trim() !== "") {
+      const ticketData = {
+        message: textInput,
+        date: currentTime(),
+      };
+
+      try {
+        // Dispatch the sendMessage action with the necessary data
+        await dispatch(sendMessage({ ticketData, ticket_id: _id }));
+        // Update the chat state with the new message
+        const newMessage = {
+          id: `chat_${chat.length + 1}`, // Generate a unique ID for the new message
+          sender: user._id,
+          message: textInput,
+        };
+
+        setItem([...item, newMessage]); // Append the new message to the chat array
+        setTextInput(""); // Clear the input field after sending the message
+      } catch (error) {
+        console.error("Error sending message:", error);
+        // Handle error scenarios here
+      }
+    }
   };
 
   const chatBodyClass = classNames({
@@ -97,16 +135,16 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
 
   return (
     <React.Fragment>
-      {Object.keys(item).length > 0 && (
+      {ticket && Object.keys(ticket).length > 0 && (
         <div className={chatBodyClass}>
           <div className="nk-msg-head">
-            <h4 className="title d-none d-lg-block">{item.messageTitle}</h4>
+            <h4 className="title d-none d-lg-block">{ticket.title}</h4>
             <div className="nk-msg-head-meta">
               <div className="d-none d-lg-block">
                 <ul className="nk-msg-tags">
                   <li>
                     <span className="label-tag">
-                      <Icon name="flag-fill"></Icon> <span>Technical Problem</span>
+                      <Icon name="flag-fill"></Icon> <span>{ticket.description}</span>
                     </span>
                   </li>
                 </ul>
@@ -117,21 +155,19 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
                 </Button>
               </div>
               <ul className="nk-msg-actions">
-                {item.closed ? (
-                  <li>
+                <li>
+                  {isClosed ? (
                     <span className="badge badge-dim badge-success badge-sm">
                       <Icon name="check"></Icon>
                       <span>Closed</span>
                     </span>
-                  </li>
-                ) : (
-                  <li>
-                    <Button outline size="sm" color="light" className="btn-dim" onClick={() => onClosed(id)}>
+                  ) : (
+                    <Button outline size="sm" color="light" className="btn-dim" onClick={toggleStatus}>
                       <Icon name="check"></Icon>
                       <span>Mark as Closed</span>
                     </Button>
-                  </li>
-                )}
+                  )}
+                </li>
 
                 <li className="d-lg-none">
                   <Button
@@ -163,7 +199,7 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
                             <span>Assign To Member</span>
                           </DropdownItem>
                         </li>
-                        {!item.closed && (
+                        {!ticket.status && (
                           <li>
                             <DropdownItem
                               tag="a"
@@ -198,7 +234,7 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
           {/*nk-msg-head*/}
           <SimpleBar className="nk-msg-reply nk-reply" scrollableNodeProps={{ ref: messagesEndRef }}>
             <div className="nk-msg-head py-4 d-lg-none">
-              <h4 className="title">{item.messageTitle}</h4>
+              <h4 className="title">{ticket.title}</h4>
               <ul className="nk-msg-tags">
                 <li>
                   <span className="label-tag">
@@ -210,26 +246,30 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
             <div className="nk-reply-item">
               <div className="nk-reply-header">
                 <div className="user-card">
-                  <UserAvatar size="sm" theme={item.theme} text={findUpper(item.name)} image={item.image} />
-                  <div className="user-name">{item.name}</div>
+                  <UserAvatar size="sm" />
+                  <div className="text">Sender: {ticket.createdBy}</div>
                 </div>
-                <div className="date-time">{item.date}</div>
+                <div className="date-time">{ticket.createdAt}</div>
+                {/* <div className="date-time">{ticket.createdBy}</div> */}
               </div>
               <div className="nk-reply-body">
                 <div className="nk-reply-entry entry">
-                  {item.messageMarkup.map((messageItem, idx) => {
-                    return <p key={idx}>{messageItem}</p>;
+                  {ticket.messages?.map((messageObj, idx) => {
+                    return <p key={idx}>{messageObj.message}</p>;
+
+                    <hr className="divider" />;
                   })}
                 </div>
               </div>
             </div>
-            {item.reply &&
-              item.reply.map((replyItem) => {
-                if (!replyItem.meta === true) {
-                  return <ReplyItem item={replyItem} key={replyItem.replyId}></ReplyItem>;
-                } else {
-                  return <MetaItem item={replyItem.meta.metaMarkup} key={replyItem.meta.metaId}></MetaItem>;
-                }
+
+            {ticket.message &&
+              ticket.messages?.map((messageObj) => {
+                return <ReplyItem item={messageObj.message} key={messageObj._id}></ReplyItem>;
+                // if (!replyItem.meta === true) {
+                // } else {
+                //   return <MetaItem item={replyItem.meta.metaMarkup} key={replyItem.meta.metaId}></MetaItem>;
+                // }
               })}
             <div className="nk-reply-form">
               <div className="nk-reply-form-header">
@@ -483,11 +523,11 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
             </div>
           </SimpleBar>
 
-          <MessageProfileSidebar sidebar={sidebar} profile={item} />
+          {/* <MessageProfileSidebar sidebar={sidebar} profile={item} /> */}
 
-          {sidebar && (
+          {/* {sidebar && (
             <div className={window.innerWidth < 1550 ? "nk-msg-profile-overlay" : ""} onClick={() => toggleSidebar()} />
-          )}
+          )} */}
         </div>
       )}
 
@@ -530,4 +570,4 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
   );
 };
 
-export default MessageItem;
+export default message;

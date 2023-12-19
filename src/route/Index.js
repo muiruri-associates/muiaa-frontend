@@ -80,7 +80,7 @@ const Pages = () => {
         <PrivateRoute exact path={'/all-tickets'} component={AllTickets} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender]} />
-        <PrivateRoute exact path={'/my-ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Admin,ROLE.Lender]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>
