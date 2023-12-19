@@ -136,11 +136,18 @@ const menu = [{
         roles: [ROLE.Lender],
     },
     {
+        icon: 'call',
+        text: 'Chat with Lender',
+        active: false,
+        link: '/chat-user',
+        roles: [ROLE.User],
+    },
+    {
         icon: 'ticket',
         text: 'Tickets',
         active: false,
         link: '/my-tickets',
-        roles: [ROLE.Lender],
+        roles: [ROLE.Lender, ROLE.User],
     },
     {
         icon: 'ticket',

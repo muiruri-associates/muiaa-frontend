@@ -7,7 +7,9 @@ import axiosInstance from '../../app/api/api';
 export const createTicket = createAsyncThunk('ticket/createTicket', async(ticketData, { getState }) => {
     try {
         const accessToken = getState().auth.accessToken; // Replace with your actual access token
-        const createdBy = "65610ffa2b7ff7ec9290f3dc";
+        // const createdBy = "65610ffa2b7ff7ec9290f3dc";
+        const createdBy = "65610ffb2b7ff7ec9290f3df"
+
 
         // Set the Authorization header with the access token
         const config = {
@@ -86,7 +88,8 @@ export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', as
     try {
         // Get the access token from your state or wherever it's stored
         const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
-        const user_id = "65610ffa2b7ff7ec9290f3dc";
+        // const user_id = "65610ffa2b7ff7ec9290f3dc";
+        const user_id = "65610ffb2b7ff7ec9290f3df"
 
         // Set the Authorization header with the access token
         const config = {

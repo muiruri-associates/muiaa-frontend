@@ -1,5 +1,5 @@
 import React from 'react'
-import ChatContainer from './chat/ChatContainer'
+import ChatContainer from './chat1/ChatContainer'
 import TicketChatContainer from './ticketChat/ticketChatContainer'
 import Messages from '../Messages/Messages'
 
