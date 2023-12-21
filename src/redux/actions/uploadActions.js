@@ -28,7 +28,7 @@ export const uploadDocument = createAsyncThunk('document/uploadDocument',async (
       formData.append('user_id', user_id);
       formData.append('file', documentData);
 
-      const response = await axiosInstance.post('/v1/users/uploads', formData, config);
+      const response = await axiosInstance.post('/users/uploads', formData, config);
       const uploadedDocument = response.data;
       console.log('Uploaded document:', uploadedDocument);
       return uploadedDocument;
@@ -63,7 +63,7 @@ export const getAllUserUploads = createAsyncThunk('document/getAllUserUploads', 
             Authorization: `Bearer ${accessToken}`
         }
     };
-    const response = await axiosInstance.get(`/v1/users/uploads/${user_id}`, config);
+    const response = await axiosInstance.get(`/users/uploads/${user_id}`, config);
     const allUserUploads = response.data.body
     console.log('all available uloads', allUserUploads)
     return allUserUploads;

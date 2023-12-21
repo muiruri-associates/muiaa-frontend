@@ -23,7 +23,7 @@ export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', 
         };
 
         const response = await axiosInstance.post(
-            '/v1/admin/lender-orgs/user/invites',
+            '/admin/lender-orgs/user/invites',
             lenderUserData,
             config
         );
@@ -44,7 +44,7 @@ export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', 
 // Define the async thunk for fetching all lender users
 export const getLenderUsers = createAsyncThunk('lenderUser/fetchLenderUsers', async() => {
     try {
-        const response = await axiosInstance.get(`/v1/admin/lender-orgs/lender-users`);
+        const response = await axiosInstance.get(`/admin/lender-orgs/lender-users`);
         console.log('all lender users', response.data.body)
         return response.data.body;
     } catch (error) {
@@ -58,7 +58,7 @@ export const fetchLenderUserById = createAsyncThunk('lenderUser/fetchLenderUserB
     // Check if id is provided before making the API call
     try {
         console.log('id', id);
-        const response = await axiosInstance.get(`/v1/admin/lender-org/${id}`);
+        const response = await axiosInstance.get(`/admin/lender-org/${id}`);
         console.log('resp org id', response.data);
         return response.data.body;
     } catch (error) {

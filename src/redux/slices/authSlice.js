@@ -40,6 +40,7 @@
                   console.log('UserRole', action.payload.body.user.role)
                   localStorage.setItem('userRole', JSON.stringify(action.payload.body.user.role));
                   localStorage.setItem('user', JSON.stringify(action.payload.body.user));
+                  localStorage.setItem('accessToken', JSON.stringify(action.payload.accessToken));
                   state.error = ''
               })
               .addCase(login.rejected, (state, action) => {

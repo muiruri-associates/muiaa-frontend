@@ -7,6 +7,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store"
 import { Provider } from 'react-redux';
+import { StepsProvider } from "react-step-builder";
 
 
 
@@ -14,6 +15,7 @@ const Error404Modern = lazy(() => import("./pages/error/404-modern"));
 
 ReactDOM.render(
   <React.Fragment>
+    {/* <StepsProvider startsFrom={1}> */}
     <Provider store={store}>
     <Suspense fallback={<div />}>
       <Router basename={`/`}>
@@ -21,6 +23,7 @@ ReactDOM.render(
       </Router>
     </Suspense>
     </Provider>
+    {/* </StepsProvider> */}
   </React.Fragment>,
   document.getElementById("root")
 );

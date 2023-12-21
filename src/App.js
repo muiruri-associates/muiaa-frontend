@@ -20,6 +20,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 import Success from "./pages/auth/Success";
 import InvoicePrint from "./pages/pre-built/invoice/InvoicePrint";
 import ResetPassword from "./pages/auth/ResetPassword";
+import Subscription from "./pages/main/subscription/Subscription";
 
 const App = () => {
   return (
@@ -28,8 +29,7 @@ const App = () => {
       <Route exact path={`/auth-success`} component={Success}></Route>
       <Route exact path={`/auth-reset`} component={ForgotPassword}></Route>
       <Route exact path={`/auth-register`} component={Register}></Route>
-      <Route exact path={`/
-      lender/register/verify/:token`} component={LenderRegisterPage}></Route>
+      <Route exact path={`/lender/register/verify/:token`} component={Subscription}></Route>
       <Route exact path={`/auth-login`} component={Login}></Route>
       <Route exact path={`/reset-password`} component={ResetPassword}></Route>
 
