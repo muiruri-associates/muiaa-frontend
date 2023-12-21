@@ -10,7 +10,7 @@ import { ChatContext } from "./ChatContext";
 import { MeChat, YouChat, MetaChat } from "./ChatPartials";
 
 const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
-  const { deleteConvo, propAction, chatState } = useContext(ChatContext);
+  const { chatState } = useContext(ChatContext);
   const [chat, setChat] = chatState;
   const [Uchat, setUchat] = useState({});
   const [sidebar, setsidebar] = useState(false);
@@ -171,7 +171,7 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
                     </UserAvatar>
                   )}
                   <div className="user-info">
-                    <div className="lead-text">{Uchat.nickname ? Uchat.nickname : Uchat.name}</div>
+                    <div className="lead-text">Test name</div>
                     <div className="sub-text">
                       <span className="d-none d-sm-inline mr-1">Active </span>{" "}
                       {Uchat.active === true ? "Now" : `${Uchat.active} ago `}
@@ -181,34 +181,12 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
               </li>
             </ul>
             <ul className="nk-chat-head-tools">
-              <li>
-                <a
-                  href="#call"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                  className="btn btn-icon btn-trigger text-primary"
-                >
-                  <Icon name="call-fill"></Icon>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#video"
-                  onClick={(ev) => {
-                    ev.preventDefault();
-                  }}
-                  className="btn btn-icon btn-trigger text-primary"
-                >
-                  <Icon name="video-fill"></Icon>
-                </a>
-              </li>
               <li className="d-none d-sm-block">
                 <UncontrolledDropdown>
                   <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger text-primary">
                     <Icon name="setting-fill"></Icon>
                   </DropdownToggle>
-                  <DropdownMenu right className="dropdown-menu">
+                  {/* <DropdownMenu right className="dropdown-menu">
                     <ul className="link-list-opt no-bdr">
                       <li>
                         <DropdownItem
@@ -241,7 +219,7 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
                         </DropdownItem>
                       </li>
                     </ul>
-                  </DropdownMenu>
+                  </DropdownMenu> */}
                 </UncontrolledDropdown>
               </li>
               <li className="mr-n1 mr-md-n2">

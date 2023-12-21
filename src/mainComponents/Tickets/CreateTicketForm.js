@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Form, FormGroup, Label, Row, Col, Button } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
+import { BackTo,Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
 import { createTicket } from '../../redux/actions/ticketActions';
 
 const CreateTicketForm = () => {
@@ -60,19 +60,14 @@ const CreateTicketForm = () => {
               <BlockTitle tag="h2" className="fw-normal">
                 Create Ticket
               </BlockTitle>
+
+            <BackTo link="/my-tickets" icon="arrow-left">
+              Back
+            </BackTo>
             </BlockHeadContent>
+            
           </BlockHead>
 
-          {/* Second BlockHead */}
-          <BlockHead size="lg" wide="sm">
-            <BlockHeadContent>
-              <Button>
-                <Link to={`/my-tickets`} >
-                    My Tickets
-                </Link>
-              </Button>
-            </BlockHeadContent>
-          </BlockHead>
         </div>
         <PreviewCard>
           <OverlineTitle tag="span" className="preview-title-lg">

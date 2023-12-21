@@ -37,6 +37,7 @@ const AllTickets = React.lazy(() => import("../pages/main/ticket/AllTickets"))
 const Ticket = React.lazy(() => import("../pages/main/ticket/Ticket"));
 const MyTickets = React.lazy(() => import("../pages/main/ticket/MyTickets"));
 const ViewTicket = React.lazy(() => import("../pages/main/ticket/ViewTicket"));
+const Chat = React.lazy(() => import("../pages/main/ticket/Chat"));
 
 
 
@@ -78,9 +79,10 @@ const Pages = () => {
         <PrivateRoute exact path={'/personal-loans'} component={PersonalLoan} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/mortgage'} component={Mortgage} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/all-tickets'} component={AllTickets} allowedRoles={[ROLE.Admin]} />
-        <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender]} />
-        <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender]} />
-        <PrivateRoute exact path={'/my-ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender, ROLE.User]} />
+        <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender, ROLE.User]} />
+        <PrivateRoute exact path={'/ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Admin,ROLE.Lender, ROLE.User]} />
+        <PrivateRoute exact path={'/chat-user'} component={Chat} allowedRoles={[ROLE.Lender, ROLE.User]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>

@@ -7,7 +7,7 @@ const ActionsColumn = ({ row }) => {
     // Function to handle the view button click
     const handleView = () => {
       // Replace '/destination' with the path of the desired destination page
-      history.push(`/my-ticket/${row._id}`);
+      history.push(`/ticket/${row._id}`);
     };
   
     return (

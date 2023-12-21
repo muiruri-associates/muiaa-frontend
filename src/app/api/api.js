@@ -10,12 +10,12 @@ const axiosInstance = axios.create({
     // Add any other default config options here, such as headers or interceptors
 });
 
-export const setAccessToken = (accessToken) => {
-    if (accessToken) {
-        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-    } else {
-        delete axiosInstance.defaults.headers.common['Authorization'];
-    }
-};
+// export const setAccessToken = (accessToken) => {
+//     if (accessToken) {
+//         axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+//     } else {
+//         delete axiosInstance.defaults.headers.common['Authorization'];
+//     }
+// };
 
 export default axiosInstance;

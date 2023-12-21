@@ -7,7 +7,9 @@ import axiosInstance from '../../app/api/api';
 export const createTicket = createAsyncThunk('ticket/createTicket', async(ticketData, { getState }) => {
     try {
         const accessToken = getState().auth.accessToken; // Replace with your actual access token
-        const createdBy = "65610ffa2b7ff7ec9290f3dc";
+        // const createdBy = "65610ffa2b7ff7ec9290f3dc";
+        const createdBy = "65610ffb2b7ff7ec9290f3df"
+
 
         // Set the Authorization header with the access token
         const config = {
@@ -18,10 +20,10 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
 
         const ticketDataWithId = {
             ...ticketData,
-            createdBy
+            createdBy,
         }
 
-        const response = await axiosInstance.post(`/v1/users/tickets`, ticketDataWithId, config);
+        const response = await axiosInstance.post(`/users/tickets`, ticketDataWithId, config);
         const newTicket = response.data;
         console.log('new ticket >>>', newTicket)
         return newTicket;
@@ -34,7 +36,8 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
 export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}, { getState }) => {
     try {
         const accessToken = getState().auth.accessToken; // Replace with your actual access token
-        const sender = "65610ffa2b7ff7ec9290f3dc";
+        // const sender = "65610ffa2b7ff7ec9290f3dc";
+        const sender = "65610ffa2b7ff7ec9290f3d9"
 
         // Set the Authorization header with the access token
         const config = {
@@ -48,7 +51,7 @@ export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketD
             sender
         }
 
-        const response = await axiosInstance.post(`/v1/users/${ticket_id}`, ticketDataWithId, config);
+        const response = await axiosInstance.post(`/users/tickets/${ticket_id}/messages`, ticketDataWithId, config);
         const ticketMessage = response.data;
         console.log('send message to ticket >>>', ticketMessage)
         return ticketMessage;
@@ -70,7 +73,7 @@ export const getAllTickets = createAsyncThunk('ticket/getAllTickets', async(_, {
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/users/tickets`, config);
+        const response = await axiosInstance.get(`/users/tickets`, config);
         const userTickets = response.data.body.tickets
         console.log('All tickets for a user>>', userTickets)
         return userTickets;
@@ -85,7 +88,8 @@ export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', as
     try {
         // Get the access token from your state or wherever it's stored
         const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
-        const user_id = "65610ffa2b7ff7ec9290f3dc";
+        // const user_id = "65610ffa2b7ff7ec9290f3dc";
+        const user_id = "65610ffb2b7ff7ec9290f3df"
 
         // Set the Authorization header with the access token
         const config = {
@@ -93,7 +97,7 @@ export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', as
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/users/tickets/user/${user_id}`, config);
+        const response = await axiosInstance.get(`/users/tickets/user/${user_id}`, config);
         const userTickets = response.data.body.tickets
         console.log('All tickets for a user>>', userTickets)
         return userTickets;
@@ -116,7 +120,7 @@ export const getTicketById = createAsyncThunk('ticket/getTicketById', async(_id,
             }
         };
         console.log('Ticket id>>', _id);
-        const response = await axiosInstance.get(`/v1/users/tickets/${_id}`, config);
+        const response = await axiosInstance.get(`/users/tickets/${_id}`, config);
         const ticketById = response.data.body
         console.log('Geting ticket by id', ticketById);
         return ticketById;
@@ -137,7 +141,7 @@ export const updateTicket = createAsyncThunk('ticket/updateTicket', async ({ tic
             }
         };
 
-        const response = await axiosInstance.put(`/v1/users/tickets/${ticket_id}`, updatedData, config);
+        const response = await axiosInstance.put(`/users/tickets/${ticket_id}`, updatedData, config);
         const updatedTicket = response.data;
         console.log('Updated ticket:', updatedTicket);
         return updatedTicket;
@@ -158,7 +162,7 @@ export const deleteTicket = createAsyncThunk('ticket/deleteTicket', async (ticke
             }
         };
 
-        const response = await axiosInstance.delete(`/v1/users/tickets/${ticket_id}`, config);
+        const response = await axiosInstance.delete(`/users/tickets/${ticket_id}`, config);
         const deletedTicket = response.data;
         console.log('Deleted ticket:', deletedTicket);
         return ticket_id;

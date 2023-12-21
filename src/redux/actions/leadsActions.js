@@ -14,7 +14,7 @@ import axiosInstance from '../../app/api/api';
 //                 Authorization: `Bearer ${accessToken}`
 //             }
 //         };
-//         const response = await axiosInstance.post(`/v1/admin/lender-orgs`, lenderOrgData, config);
+//         const response = await axiosInstance.post(`/admin/lender-orgs`, lenderOrgData, config);
 //         console.log('new orgs>>>', response)
 //         return response.data.body;
 //     } catch (error) {
@@ -36,7 +36,7 @@ export const getAllAvailableLeads = createAsyncThunk('leads/getAllAvailableLeads
                 Authorization: `Bearer ${accessToken}`
             }
         };
-        const response = await axiosInstance.get(`/v1/lenders/${lender_id}/available-leads`, config);
+        const response = await axiosInstance.get(`/lenders/${lender_id}/available-leads`, config);
         const allAvailableLeads = response.data.body
         console.log('all available leads', allAvailableLeads)
         return allAvailableLeads;
@@ -59,7 +59,7 @@ export const fetchLenderOrgById = createAsyncThunk('lenderOrg/fetchLenderOrgById
             }
         };
         console.log('id', id);
-        const response = await axiosInstance.get(`/v1/admin/lender-org/${id}`, config);
+        const response = await axiosInstance.get(`/admin/lender-org/${id}`, config);
         console.log('resp org id', response.data);
         return response.data.body;
     } catch (error) {
