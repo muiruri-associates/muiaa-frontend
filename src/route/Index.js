@@ -3,9 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import { RedirectAs404 } from "../utils/Utils";
 import { ROLE } from "../constants/roles";
 import PrivateRoute from "./PrivateRoute";
-import BusinessLoans from "../pages/main/loans/BusinessLoans";
-import PersonalLoan from "../pages/main/loans/PersonalLoans";
-import Mortgage from "../pages/main/loans/Mortgage";
 
 const NioIconPage = React.lazy(() => import("../pages/components/crafted-icons/NioIcon"));
 const SVGIconPage = React.lazy(() => import("../pages/components/crafted-icons/SvgIcons"));
@@ -25,14 +22,22 @@ const Loan = React.lazy(() => import("../pages/main/loans/Loan"));
 const AllLeads = React.lazy(() => import("../pages/main/leads/AllLeads"));
 const Profile = React.lazy(() => import("../pages/main/profile/Profile"));
 const UserProfileInfo = React.lazy(() => import("../mainComponents/Profile/UserProfileInfo"));
-const UploadsPage = React.lazy(() => import("./../pages/main/borrower/UploadsPage"));
-const TransactionsPage = React.lazy(() => import("./../pages/main/borrower/TransactionsPage"));
-const BorrowerLoansPage = React.lazy(() => import("./../pages/main/borrower/BorrowerLoansPage"));
-const RequestedLoansPage = React.lazy(() => import("./../pages/main/borrower/RequestedLoansPage"));
-const ApprovedLoansPage = React.lazy(() => import("./../pages/main/borrower/ApprovedLoansPage"));
-const RejectedLoansPage = React.lazy(() => import("./../pages/main/borrower/RejectedLoansPage"));
-const ContactLenderPage = React.lazy(() => import("./../pages/main/borrower/ContactLenderPage"));
-const ContactUserPage = React.lazy(() => import("./../pages/main/borrower/ContactUserPage"));
+const UploadsPage = React.lazy(() => import("../pages/main/borrower/UploadsPage"));
+const TransactionsPage = React.lazy(() => import("../pages/main/borrower/TransactionsPage"));
+const BorrowerLoansPage = React.lazy(() => import("../pages/main/borrower/BorrowerLoansPage"));
+const RequestedLoansPage = React.lazy(() => import("../pages/main/borrower/RequestedLoansPage"));
+const ApprovedLoansPage = React.lazy(() => import("../pages/main/borrower/ApprovedLoansPage"));
+const RejectedLoansPage = React.lazy(() => import("../pages/main/borrower/RejectedLoansPage"));
+const ContactLenderPage = React.lazy(() => import("../pages/main/borrower/ContactLenderPage"));
+const ContactUserPage = React.lazy(() => import("../pages/main/borrower/ContactUserPage"));
+const BusinessLoans = React.lazy(() => import("../pages/main/loans/BusinessLoans"));
+const PersonalLoan = React.lazy(() => import("../pages/main/loans/PersonalLoans"));
+const Mortgage = React.lazy(() => import("../pages/main/loans/Mortgage"));
+const AllTickets = React.lazy(() => import("../pages/main/ticket/AllTickets"))
+const Ticket = React.lazy(() => import("../pages/main/ticket/Ticket"));
+const MyTickets = React.lazy(() => import("../pages/main/ticket/MyTickets"));
+const ViewTicket = React.lazy(() => import("../pages/main/ticket/ViewTicket"));
+
 
 
 const Pages = () => {
@@ -72,6 +77,10 @@ const Pages = () => {
         <PrivateRoute exact path={'/business-loans'} component={BusinessLoans} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/personal-loans'} component={PersonalLoan} allowedRoles={[ROLE.Admin]} />
         <PrivateRoute exact path={'/mortgage'} component={Mortgage} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/all-tickets'} component={AllTickets} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/my-ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>

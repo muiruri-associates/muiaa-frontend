@@ -12,7 +12,7 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { DataTableData, dataTableColumns } from "./AllTableData";
+import { dataTableColumns } from "./AllTableData";
 import { Link } from "react-router-dom";
 
 import {fetchData} from "../../redux/actions/lenderOrgActions";
