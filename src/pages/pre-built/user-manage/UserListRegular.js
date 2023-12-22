@@ -83,7 +83,8 @@ const UserListRegularPage = () => {
       return item;
     });
     setData([...newData]);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Changing state value when searching name
   useEffect(() => {
@@ -224,6 +225,7 @@ const UserListRegularPage = () => {
 
   // function which fires on applying selected action
   const onActionClick = (e) => {
+    console.log(e);
     if (actionText === "suspend") {
       let newData = data.map((item) => {
         if (item.checked === true) item.status = "Suspend";

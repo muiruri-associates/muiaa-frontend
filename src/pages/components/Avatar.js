@@ -51,7 +51,7 @@ const Avatar = () => {
           <PreviewCard>
             <Row className="g-4">
               <Col md="3">
-                <OverlineTitle className="preview-title">Default Style's</OverlineTitle>
+                <OverlineTitle className="preview-title">Default Styl&apos;</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB"></UserAvatar>
@@ -65,7 +65,7 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Status Style's</OverlineTitle>
+                <OverlineTitle className="preview-title">Status Styl&apos;</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB">
@@ -85,7 +85,7 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Square Style's</OverlineTitle>
+                <OverlineTitle className="preview-title">Square Styl&apos;</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB" className="sq"></UserAvatar>
@@ -99,7 +99,7 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Square Style's</OverlineTitle>
+                <OverlineTitle className="preview-title">Square Styl&apos;</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB" className="sq">
@@ -119,7 +119,7 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Group Style's</OverlineTitle>
+                <OverlineTitle className="preview-title">Group Styl&apos;</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserGroup>
@@ -142,7 +142,7 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Group Style's v2</OverlineTitle>
+                <OverlineTitle className="preview-title">Group Styl&apos; v2</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <div className="user-avatar user-avatar-multiple">
@@ -440,7 +440,7 @@ const Avatar = () => {
             <tbody>
               <tr>
                 <td>
-                  <code>className="size"</code>
+                  <code>className=size</code>
                 </td>
                 <td>
                   Use <code>{"size"}</code> as <code>xl, lg, md, sm, xs</code>

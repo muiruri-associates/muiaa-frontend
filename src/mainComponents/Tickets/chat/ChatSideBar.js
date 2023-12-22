@@ -7,7 +7,12 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 import SimpleBar from "simplebar-react";
 import { findUpper } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
+import PropTypes from 'prop-types';
 
+ChatSideBar.propTypes = {
+  sidebar: PropTypes.any,
+  chat: PropTypes.any,
+}
 const ChatSideBar = ({ sidebar, chat }) => {
   const { changeNickname, changeTheme, userData, addUserToChat, deleteUser, makeAdmin } = useContext(ChatContext);
 

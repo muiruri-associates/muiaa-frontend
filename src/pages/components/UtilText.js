@@ -4,7 +4,7 @@ import Head from "../../layout/head/Head";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
-const TextPage = ({ ...props }) => {
+const TextPage = () => {
   return (
     <React.Fragment>
       <Head title="Text Utility" />

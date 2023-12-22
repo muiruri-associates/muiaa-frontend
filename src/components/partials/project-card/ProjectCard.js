@@ -4,6 +4,11 @@ import Icon from "../../icon/Icon";
 import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress } from "reactstrap";
 import { PreviewCard } from "../../Component";
 import { setDeadlineDays } from "../../../utils/Utils";
+import PropTypes from 'prop-types';
+
+ProjectCard.propTypes = {
+  children: PropTypes.any,
+}
 
 export const ProjectCard = ({ ...props }) => {
   return (
@@ -77,6 +82,13 @@ export const ProjectHead = ({ color, initial, title, subtitle }) => {
   );
 };
 
+ProjectHead.propTypes = {
+  color: PropTypes.any,
+  initial: PropTypes.any,
+  subtitle: PropTypes.any,
+  title: PropTypes.any
+}
+
 export const ProjectBody = ({ desc, task, percentage, team, date }) => {
   var days = setDeadlineDays(date);
   return (
@@ -94,9 +106,9 @@ export const ProjectBody = ({ desc, task, percentage, team, date }) => {
       </div>
       <div className="project-meta">
         <ul className="project-users g-1">
-          {team.slice(0, 2).map((item) => {
+          {team.slice(0, 2).map((item, idx) => {
             return (
-              <li>
+              <li key={idx}>
                 <UserAvatar size="sm" text={item.text} theme={item.theme} image={item.image} />
               </li>
             );
@@ -119,3 +131,14 @@ export const ProjectBody = ({ desc, task, percentage, team, date }) => {
     </React.Fragment>
   );
 };
+
+ProjectBody.propTypes = {
+  date: PropTypes.any,
+  desc: PropTypes.any,
+  percentage: PropTypes.any,
+  task: PropTypes.any,
+  team: PropTypes.shape({
+    length: PropTypes.number,
+    slice: PropTypes.func
+  })
+}

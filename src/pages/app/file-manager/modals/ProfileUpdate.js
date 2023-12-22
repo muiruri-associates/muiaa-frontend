@@ -6,6 +6,13 @@ import { ModalBody, FormGroup, Button } from "reactstrap";
 import { getDateStructured } from "../../../../utils/Utils";
 import { selectDateFormat, selectLanguageOptions, selectTimezoneFormat } from "../Data";
 
+import PropTypes from 'prop-types';
+
+ProfileUpdate.propTypes = {
+  formData: PropTypes.object,
+  setFormData: PropTypes.func,
+  setModal: PropTypes.func
+}
 const ProfileUpdate = ({ formData, setFormData, setModal }) => {
   const submitForm = (formVal) => {
     let newForm = {

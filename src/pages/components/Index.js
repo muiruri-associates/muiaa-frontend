@@ -14,7 +14,7 @@ import {
 } from "../../components/Component";
 import { Link } from "react-router-dom";
 
-const ComponentsPage = ({ ...props }) => {
+const ComponentsPage = () => {
   return (
     <React.Fragment>
       <Head title="Componets" />

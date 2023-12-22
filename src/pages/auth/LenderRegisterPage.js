@@ -3,7 +3,7 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import RegisterLender from "../../mainComponents/Auth/RegisterLenderForm";
 
-const LenderRegisterPage = ({ ...props }) => {
+const LenderRegisterPage = () => {
   return (
     <React.Fragment>
       <Head title="LenderRegisterPage" />

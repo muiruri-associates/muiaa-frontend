@@ -7,7 +7,7 @@ import { Toast, ToastHeader, ToastBody } from "reactstrap";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const ToastPage = ({ ...props }) => {
+const ToastPage = () => {
   const [show, setShow] = useState(true);
   const toggle = () => setShow(!show);
 
@@ -26,8 +26,8 @@ const ToastPage = ({ ...props }) => {
             <BlockDes>
               <p className="lead">
                 Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.
-                It's built with flexbox, so they’re easy to align and position. To use it, import it such as{" "}
-                <code>import {`{Toast,ToastHeader,ToastBody}`} from "reactstrap"</code>. Visit the{" "}
+                It&apos;s built with flexbox, so they’re easy to align and position. To use it, import it such as{" "}
+                <code>import {`{Toast,ToastHeader,ToastBody}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/toasts"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}

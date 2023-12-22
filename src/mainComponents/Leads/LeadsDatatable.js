@@ -1,18 +1,15 @@
 import React from "react";
-import {Button} from 'reactstrap'
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
   Block,
   BlockHead,
   BlockHeadContent,
-  BlockTitle,
-  BlockDes,
-  BackTo,
+  BlockTitle, BackTo,
   PreviewCard,
-  ReactDataTable,
+  ReactDataTable
 } from "../../components/Component";
-import {MyLeadsDataTableData, dataTableColumns } from "./AllTableData";
+import { MyLeadsDataTableData, dataTableColumns } from "./AllTableData";
 
 const MyLeadsDatatable = () => {
   return (

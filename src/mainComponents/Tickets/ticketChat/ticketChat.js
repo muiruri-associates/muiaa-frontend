@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, {  useState } from "react";
 import Head from "../../../layout/head/Head";
 import ContentAlt from "../../../layout/content/ContentAlt";
 // import AppContact from "./contact/Contact";
 import TicketChatBody from "./ticketChatBody";
 // import User from "../../../images/avatar/b-sm.jpg";
-import { Button, Icon, UserAvatar } from "../../../components/Component";
+import { Button, Icon } from "../../../components/Component";
 // import { DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from "reactstrap";
 // import { chatData } from "./ChatData";
 // import { ChatContext } from "./ChatContext";

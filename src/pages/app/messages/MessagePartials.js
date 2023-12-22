@@ -1,6 +1,8 @@
+import PropTypes from "prop-types"
 import parse from "html-react-parser";
 import { UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
+import React from "react";
 
 export const ReplyItem = ({ item }) => {
   const { theme, name, date, replyMarkup, note, replyId, time } = item;
@@ -28,6 +30,24 @@ export const ReplyItem = ({ item }) => {
   );
 };
 
+ReplyItem.propTypes = {
+  item: PropTypes.shape({
+    date: PropTypes.any,
+    name: PropTypes.any,
+    note: PropTypes.any,
+    replyId: PropTypes.any,
+    replyMarkup: PropTypes.shape({
+      map: PropTypes.func
+    }),
+    theme: PropTypes.any,
+    time: PropTypes.any
+  })
+}
+
 export const MetaItem = ({ item }) => {
   return <div className="nk-reply-meta">{parse(item)}</div>;
 };
+
+MetaItem.propTypes = {
+  item: PropTypes.any
+}

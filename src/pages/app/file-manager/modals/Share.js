@@ -3,6 +3,13 @@ import { Button } from "reactstrap";
 import { Icon } from "../../../../components/Component";
 import { FileManagerContext } from "../FileManagerContext";
 
+import PropTypes from 'prop-types';
+
+Share.propTypes = {
+  file: PropTypes.string,
+  toggle: PropTypes.bool
+}
+
 const Share = ({ file, toggle }) => {
   const { shareFiles } = useContext(FileManagerContext);
   const [mail, setMail] = useState("");

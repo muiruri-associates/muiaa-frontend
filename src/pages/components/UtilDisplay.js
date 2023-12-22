@@ -4,7 +4,7 @@ import Head from "../../layout/head/Head";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
-const DisplayPage = ({ ...props }) => {
+const DisplayPage = () => {
   return (
     <React.Fragment>
       <Head title="Display Utility" />

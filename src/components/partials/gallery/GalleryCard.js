@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import ImageContainer from "./GalleryImage";
 import { UserAvatar, Icon, Button } from "../../Component";
@@ -30,5 +31,14 @@ const GalleryCard = ({ img, userName, theme, userImg, userEmail, heartCount }) =
     </Card>
   );
 };
+
+GalleryCard.propTypes = {
+  heartCount: PropTypes.number,
+  img: PropTypes.any,
+  theme: PropTypes.any,
+  userEmail: PropTypes.any,
+  userImg: PropTypes.any,
+  userName: PropTypes.any
+}
 
 export default GalleryCard;

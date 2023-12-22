@@ -7,6 +7,7 @@ import { contacts, formTemplates } from "./InboxData";
 import { Button, Icon, TooltipComponent } from "../../../components/Component";
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import { currentTime, getDateStructured } from "../../../utils/Utils";
+import PropTypes from 'prop-types';
 
 const tagifySettings = {
   blacklist: ["xxx", "yyy", "zzz"],
@@ -18,7 +19,17 @@ const tagifySettings = {
     enabled: 0, // a;ways show suggestions dropdown
   },
 };
-
+InboxMessages.propTypes = {
+  mailId: PropTypes.any,
+  data: PropTypes.any,
+  setMailId: PropTypes.any,
+  toggleMessageView: PropTypes.any,
+  onFavoriteClick: PropTypes.any,
+  deleteInbox: PropTypes.any,
+  onArchiveClick: PropTypes.any,
+  onSpamClick: PropTypes.any,
+  outerLabels: PropTypes.any,
+}
 const InboxMessages = ({
   mailId,
   data,

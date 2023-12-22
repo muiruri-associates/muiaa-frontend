@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import {
@@ -198,3 +199,7 @@ export const PurchasePlanChart = ({ set }) => {
     ></Bar>
   );
 };
+
+PurchasePlanChart.propTypes = {
+  set: PropTypes.string
+}

@@ -14,12 +14,12 @@ import UploadDocument from "./UploadDocument";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
-  const [mobileView, setMobileView] = useState(false);
+  const [setMobileView] = useState(false);
   const [verticalTab, setVerticalTab] = useState("1");
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Retrieve user data from local storage (assuming it's stored as JSON)
+    // Retrieve user data from local storage (assuming It&apos;s stored as JSON)
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -32,7 +32,6 @@ const UserProfileLayout = () => {
 
   // function to change the design view under 990 px
   const viewChange = () => {
-    
     if (window.innerWidth < 990) {
       setMobileView(true);
     } else {
@@ -52,6 +51,7 @@ const UserProfileLayout = () => {
       window.removeEventListener("resize", viewChange);
       window.removeEventListener("load", viewChange);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -60,8 +60,9 @@ const UserProfileLayout = () => {
         <Card className="card-bordered">
           <div className="card-aside-wrap">
             <div
-              className={`card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg ${sm ? "content-active" : ""
-                }`}
+              className={`card-aside card-aside-left user-aside toggle-slide toggle-slide-left toggle-break-lg ${
+                sm ? "content-active" : ""
+              }`}
             >
               <div className="card-inner-group">
                 <div className="card-inner">
@@ -115,14 +116,9 @@ const UserProfileLayout = () => {
                     <div className="card-inner">
                       <div className="user-account-info py-0">
                         <h6 className="overline-title-alt">YOUR DTI SCORE</h6>
-                        <div className="user-balance">
-                          40%
-                        </div>
+                        <div className="user-balance">40%</div>
                         <div className="user-balance-sub">
-                          Loans{" "}
-                          <span>
-                            0.344939
-                          </span>
+                          Loans <span>0.344939</span>
                         </div>
                       </div>
                     </div>
@@ -205,7 +201,7 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">{(isLender || isUser) ? <UploadDocument /> : null}</TabPane>
+                <TabPane tabId="2">{isLender || isUser ? <UploadDocument /> : null}</TabPane>
               </TabContent>
             </div>
           </div>

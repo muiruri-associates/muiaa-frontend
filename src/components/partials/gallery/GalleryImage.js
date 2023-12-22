@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import { Modal } from "reactstrap";
 
@@ -25,5 +26,9 @@ const ImageContainer = ({ img }) => {
     </a>
   );
 };
+
+ImageContainer.propTypes = {
+  img: PropTypes.any
+}
 
 export default ImageContainer;

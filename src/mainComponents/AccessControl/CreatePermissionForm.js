@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Input, Form, FormGroup, Label, Row, Col, Button } from "reactstrap";
+import { Input, Form, FormGroup, Label, Row,  Button } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
 import { createLenderOrg } from "../../redux/actions/lenderOrgActions";
-import Permissions from "./../../pages/main/accessControl/Permissions";
 
 const CreatePermissionForm = () => {
   const dispatch = useDispatch();
@@ -13,7 +12,7 @@ const CreatePermissionForm = () => {
   const [name, setName] = useState("");
 
   // State to manage form submission status
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  // const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
     setName(e.target.value);

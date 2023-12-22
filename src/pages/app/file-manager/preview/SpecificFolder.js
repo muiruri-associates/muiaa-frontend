@@ -1,14 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Files from "./Files";
 import { folderList } from "../Data";
+import PropTypes from 'prop-types';
+
+SpecificFolder.propTypes = {
+  match: PropTypes.object,
+  setData: PropTypes.func,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.object,
+  toggleCreateModal: PropTypes.func,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+  children: PropTypes.object
+}
 
 const SpecificFolder = ({
   match,
-  data,
+  children,
   searchText,
   setSearchText,
   setData,
-  children,
   toggleCreateModal,
   toggleUploadModal,
   toggleScreenLg,

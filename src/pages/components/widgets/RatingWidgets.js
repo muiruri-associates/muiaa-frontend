@@ -449,7 +449,7 @@ const RatingWidgets = () => {
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card's content.
+                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
                           Some quick example text to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
@@ -541,7 +541,7 @@ const RatingWidgets = () => {
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card's content.
+                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
                           Some quick example text to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
@@ -635,7 +635,7 @@ const RatingWidgets = () => {
       <div className="rating-card-description">
         <h5 className="card-title">Description</h5>
         <p className="text-muted">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
           Some quick example text to build on the card title bulk.
         </p>
         <ul className="pt-2 gy-1">
@@ -806,7 +806,7 @@ const RatingWidgets = () => {
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card's content.
+                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
                           Some quick example text to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
@@ -969,7 +969,7 @@ const RatingWidgets = () => {
       <div className="rating-card-description">
         <h5 className="card-title">Description</h5>
         <p className="text-muted">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
+          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
           Some quick example text to build on the card title bulk.
         </p>
         <ul className="pt-2 gy-1">
@@ -1087,7 +1087,7 @@ const RatingWidgets = () => {
                           <textarea
                             className="form-control no-resize"
                             id="review"
-                            defaultValue="I've been using Dashlite for months now and with every update, it's just becoming better.
+                            defaultValue="I've been using Dashlite for months now and with every update, it&apos; s just becoming better.
                             Thank you for such a great design touch. Really love it"
                           ></textarea>
                         </div>
@@ -1414,8 +1414,8 @@ const RatingWidgets = () => {
                   </div>
                   <div className="card-inner">
                     <p className="text-soft">
-                      I've been using Dashlite for months now and with every update, update it's just becoming more and
-                      more better it's just becoming better. Thank you for such a great design touch. Further I
+                      I&apos;ve been using Dashlite for months now and with every update, update it&apos; s just becoming more and
+                      more better it&apos;s just becoming better. Thank you for such a great design touch. Further I
                       definitely cooperate with your product . Highly appriciate it. Really love it
                     </p>
                   </div>

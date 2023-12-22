@@ -1,9 +1,10 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import Icon from "../../icon/Icon";
 import Button from "../../button/Button";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const NicoIconCard = ({ iconName, tag, ...props }) => {
+const NicoIconCard = ({ iconName, tag }) => {
   const [copy, setCopy] = useState(false);
   const [text] = useState(tag);
 
@@ -31,4 +32,9 @@ const NicoIconCard = ({ iconName, tag, ...props }) => {
     </React.Fragment>
   );
 };
+
+NicoIconCard.propTypes = {
+  iconName: PropTypes.any,
+  tag: PropTypes.any
+}
 export default NicoIconCard;

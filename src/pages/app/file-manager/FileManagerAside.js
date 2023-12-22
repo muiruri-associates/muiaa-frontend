@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext } from "react";
 import SimpleBar from "simplebar-react";
 import { asideData, pricingTableDataV2 } from "./Data";
@@ -93,5 +94,9 @@ const FileManagerAside = ({ setScLg }) => {
     </React.Fragment>
   );
 };
+
+FileManagerAside.propTypes = {
+  setScLg: PropTypes.func
+}
 
 export default FileManagerAside;

@@ -1,5 +1,6 @@
 import React, { useState, createContext } from "react";
 import { chatData, addUserData } from "./ChatData";
+import PropTypes from 'prop-types';
 
 export const ChatContext = createContext();
 
@@ -106,3 +107,7 @@ export const ChatContextProvider = (props) => {
     </ChatContext.Provider>
   );
 };
+
+ChatContextProvider.propTypes = {
+  children: PropTypes.node
+}

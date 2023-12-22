@@ -1,7 +1,8 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { Icon } from "../../Component";
 
-export const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+export const SlickArrowLeft = ({ currentSlide,  ...props }) => (
   <div
     {...props}
     className={`slick-arrow-prev slick-arrow ${currentSlide === 0 ? " slick-disabled" : ""}`}
@@ -14,6 +15,11 @@ export const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
     </a>
   </div>
 );
+
+SlickArrowLeft.propTypes = {
+  currentSlide: PropTypes.number,
+  slideCount: PropTypes.any
+}
 
 export const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <div
@@ -28,3 +34,8 @@ export const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     </a>
   </div>
 );
+
+SlickArrowRight.propTypes = {
+  currentSlide: PropTypes.any,
+  slideCount: PropTypes.number
+}

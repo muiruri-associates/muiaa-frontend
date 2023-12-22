@@ -2,7 +2,7 @@ import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 
-const Loans = ({ ...props }) => {
+const Loans = () => {
   return (
     <React.Fragment>
       <Head title="Loans" />

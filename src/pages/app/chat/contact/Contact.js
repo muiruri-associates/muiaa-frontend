@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
@@ -59,7 +60,7 @@ const AppContact = ({ setTab, setSelectedId }) => {
             <ul className="contacts-list">
               {filterData.map((contact, idx) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={idx}>
                     <li
                       key={idx}
                       onClick={() => {
@@ -91,4 +92,9 @@ const AppContact = ({ setTab, setSelectedId }) => {
     </React.Fragment>
   );
 };
+
+AppContact.propTypes = {
+  setSelectedId: PropTypes.func,
+  setTab: PropTypes.func
+}
 export default AppContact;

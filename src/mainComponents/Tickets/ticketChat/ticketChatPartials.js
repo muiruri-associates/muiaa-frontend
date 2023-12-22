@@ -1,6 +1,11 @@
 import React from "react";
 import { Icon } from "../../../components/Component";
+import PropTypes from 'prop-types';
 
+MeChat.propTypes = {
+  item: PropTypes.any,
+  onRemoveMessage: PropTypes.any,
+}
 export const MeChat = ({ item, onRemoveMessage }) => {
   const { message, date, sender } = item; // Access the message content and date from the item
 
@@ -77,6 +82,14 @@ export const YouChat = ({ item }) => {
     </div>
   );
 };
+
+YouChat.propTypes = {
+  item: PropTypes.shape({
+    created_at: PropTypes.any,
+    message: PropTypes.any,
+    sender: PropTypes.any
+  })
+}
 
 
 

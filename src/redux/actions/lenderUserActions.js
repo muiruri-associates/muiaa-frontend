@@ -7,7 +7,7 @@ import axiosInstance from '../../app/api/api';
 export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', async(lenderUserData, { getState }) => {
 
     // Get the access token from your state or wherever it's stored
-    try {
+    // try {
         const accessToken = getState().auth.accessToken; // Retrieve the accessToken from your state
         console.log('Data lender user>>>', lenderUserData)
 
@@ -32,10 +32,10 @@ export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', 
         const { invite } = response.data.body;
 
         return invite; // Return the invite object
-    } catch (error) {
-        // Handle errors
-        throw error;
-    }
+    // } catch (error) {
+    //     // Handle errors
+    //     throw error;
+    // }
 
 
 });

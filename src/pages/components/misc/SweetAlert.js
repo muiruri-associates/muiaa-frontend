@@ -99,7 +99,7 @@ const SweetAlertPage = () => {
   const handleAdvanced3 = () => {
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You won&apos;t be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes, delete it!",
@@ -197,7 +197,7 @@ const SweetAlertPage = () => {
                 <a href="https://sweetalert2.github.io/" target="_blank" rel="noreferrer">
                   SweetAlert2
                 </a>{" "}
-                which is beautiful, responsive, highly customizable JavaScript's popup boxes.
+                which is beautiful, responsive, highly customizable JavaScript&apos;s popup boxes.
               </p>
               <p>
                 You can see full uses documentation details from{" "}
@@ -339,7 +339,7 @@ const SweetAlertPage = () => {
             {`  const handleAdvanced3 = () => {
     Swal.fire({
         title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        text: "You won&apos;t be able to revert this!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Yes, delete it!",

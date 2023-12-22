@@ -56,7 +56,7 @@ const DualListPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic</BlockTitle>
               <BlockDes>
-                import <code>DualListBox</code> component from "react-dual-listbox".
+                import <code>DualListBox</code> component from react-dual-listbox.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>

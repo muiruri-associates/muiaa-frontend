@@ -3,7 +3,7 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import CreatePermissionForm from "../../../mainComponents/AccessControl/CreatePermissionForm";
 
-const AddPermission = ({ ...props }) => {
+const AddPermission = () => {
   return (
     <React.Fragment>
       <Head title="AddPermission" />

@@ -1,11 +1,11 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState, useRef } from "react";
 import SimpleBar from "simplebar-react";
 import classNames from "classnames";
-import MessageProfileSidebar from "./MessageProfile";
 import { Modal, ModalBody, DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from "reactstrap";
 import { Button, Icon, TooltipComponent, UserAvatar } from "../../components/Component";
-import { ReplyItem, MetaItem } from "./MessagePartials";
-import { currentTime, findUpper, todaysDate, monthNames } from "../../utils/Utils";
+import { ReplyItem } from "./MessagePartials";
+import { currentTime, findUpper } from "../../utils/Utils";
 import { assignMembers } from "./MessageData";
 import { useDispatch, useSelector } from "react-redux";
 import { getTicketById, sendMessage } from "../../redux/actions/ticketActions";
@@ -13,7 +13,7 @@ import { useParams } from "react-router-dom";
 
 
 // TODO: Fix ui so that reply can sepearte from message of ticket
-const message = ({ id, onClosed, mobileView, setMobileView }) => {
+const Message = ({ id, onClosed, mobileView, setMobileView }) => {
   const dispatch = useDispatch();
   const { _id } = useParams();
   const messagesEndRef = useRef(null);
@@ -30,13 +30,14 @@ const message = ({ id, onClosed, mobileView, setMobileView }) => {
   const [isClosed, setIsClosed] = useState(ticket.status);
 
   useEffect(() => {
-    // Retrieve user data from local storage (assuming it's stored as JSON)
+    // Retrieve user data from local storage (assuming It&apos;s stored as JSON)
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const scrollToBottom = () => {
     const scrollHeight = messagesEndRef.current.scrollHeight;
     const height = messagesEndRef.current.clientHeight;
@@ -91,7 +92,7 @@ const message = ({ id, onClosed, mobileView, setMobileView }) => {
 
   const toggleStatus = () => {
     setIsClosed(!isClosed);
-    // If it's closed, perform an action (e.g., call onClosed function)
+    // If It&apos;s closed, perform an action (e.g., call onClosed function)
     if (!isClosed) {
       onClosed(id);
       // Additional actions if needed when switching to Closed state
@@ -99,6 +100,7 @@ const message = ({ id, onClosed, mobileView, setMobileView }) => {
     // Additional actions if needed when switching to Open state
   };
 
+  const chat = [];
   const onFormSubmit = async (e) => {
     e.preventDefault();
     if (textInput.trim() !== "") {
@@ -256,8 +258,7 @@ const message = ({ id, onClosed, mobileView, setMobileView }) => {
                 <div className="nk-reply-entry entry">
                   {ticket.messages?.map((messageObj, idx) => {
                     return <p key={idx}>{messageObj.message}</p>;
-
-                    <hr className="divider" />;
+                    // <hr className="divider" />;
                   })}
                 </div>
               </div>
@@ -570,4 +571,11 @@ const message = ({ id, onClosed, mobileView, setMobileView }) => {
   );
 };
 
-export default message;
+Message.propTypes = {
+  id: PropTypes.any,
+  mobileView: PropTypes.any,
+  onClosed: PropTypes.func,
+  setMobileView: PropTypes.func
+}
+
+export default Message;

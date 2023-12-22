@@ -8,7 +8,7 @@ import { Nav, NavItem, NavLink, Row, Col, TabContent, TabPane } from "reactstrap
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const TabsPage = ({ ...props }) => {
+const TabsPage = () => {
   const [activeTab, setActiveTab] = useState("1");
   const [activeIconTab, setActiveIconTab] = useState("5");
   const [activeAltTab, setActiveAltTab] = useState("9");
@@ -40,7 +40,7 @@ const TabsPage = ({ ...props }) => {
               <p className="lead">
                 Use the Reactstrap tab component, tabs and pills to create tabbable panes of local content, even via
                 dropdown menus. To use it, import it such as{" "}
-                <code>import {`{Nav, NavItem, NavLink, TabContent, TabPane }`} from "reactstrap"</code>
+                <code>import {`{Nav, NavItem, NavLink, TabContent, TabPane }`}from &ldquo;reactstrap&ldquo;</code>
               </p>
             </BlockDes>
           </BlockHeadContent>

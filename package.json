@@ -95,7 +95,8 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "husky": {
     "hooks": {
@@ -103,6 +104,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json,css,md}": ["eslint --fix", "prettier --write"]
+    "*.{js,jsx,json,css,md}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

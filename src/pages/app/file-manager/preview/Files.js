@@ -4,6 +4,18 @@ import Groups from "../views/Groups";
 import List from "../views/List";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
+import PropTypes from 'prop-types';
+
+Files.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.object,
+  folderName: PropTypes.string,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.string,
+  toggleCreateModal: PropTypes.func,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+}
 
 const Files = ({
   data,
@@ -22,6 +34,7 @@ const Files = ({
     if (folderName === "Search Files") {
       setSearch(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleSearch = () => {

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { Card, Button } from "reactstrap";
@@ -13,6 +14,12 @@ export const PreviewCard = ({ className, bodyClass, ...props }) => {
   );
 };
 
+PreviewCard.propTypes = {
+  bodyClass: PropTypes.any,
+  className: PropTypes.any,
+  children: PropTypes.any
+}
+
 export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
   return (
     <Card className={`card-bordered ${className ? className : ""}`}>
@@ -21,6 +28,12 @@ export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
   );
 };
 
+PreviewAltCard.propTypes = {
+  bodyClass: PropTypes.any,
+  className: PropTypes.any,
+  children: PropTypes.any
+}
+
 export const PreviewTable = ({ ...props }) => {
   return (
     <Card className="card-preview">
@@ -28,7 +41,12 @@ export const PreviewTable = ({ ...props }) => {
     </Card>
   );
 };
-export const CodeBlock = ({ language, ...props }) => {
+
+PreviewTable.propTypes = {
+  children: PropTypes.any
+}
+
+export const CodeBlock = ({ ...props }) => {
   const [copyText] = useState(props.children);
   const [copyState, setCopyState] = useState(false);
   const onCopyClick = () => {
@@ -49,3 +67,9 @@ export const CodeBlock = ({ language, ...props }) => {
     </div>
   );
 };
+
+CodeBlock.propTypes = {
+  language: PropTypes.any,
+  children: PropTypes.any,
+  title: PropTypes.string,
+}

@@ -4,8 +4,13 @@ import { Icon } from "../../../../components/Component";
 import { Link } from "react-router-dom";
 import { FileManagerContext } from "../FileManagerContext";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import PropTypes from 'prop-types';
 
-const Grid = ({ data, setData }) => {
+Grid.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+}
+const Grid = ({ data }) => {
   const { onStarClick, getTotalSize } = useContext(FileManagerContext);
 
   const [filterSelect, setFilterSelect] = useState("Last Opened");
@@ -50,6 +55,7 @@ const Grid = ({ data, setData }) => {
         setDataList([...filteredData]);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterSelect]);
 
   return (

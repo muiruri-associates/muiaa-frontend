@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import { Bar, HorizontalBar, Line } from "react-chartjs-2";
 import {
@@ -57,6 +58,10 @@ export const BarChart = ({ sales }) => {
   );
 };
 
+BarChart.propTypes = {
+  sales: PropTypes.any
+}
+
 export const LineChart = () => {
   return (
     <Line
@@ -97,7 +102,7 @@ export const LineChart = () => {
                 beginAtZero: true,
                 fontSize: 11,
                 fontColor: "#9eaecf",
-                callback: function (value, index, values) {
+                callback: function (value) {
                   return "$ " + value;
                 },
                 padding: 10,
@@ -183,7 +188,7 @@ export const DoubleBar = ({ state }) => {
                 fontSize: 11,
                 fontColor: "#9eaecf",
                 padding: 10,
-                callback: function (value, index, values) {
+                callback: function (value) {
                   return "$ " + value;
                 },
                 min: 100,
@@ -217,6 +222,10 @@ export const DoubleBar = ({ state }) => {
     />
   );
 };
+
+DoubleBar.propTypes = {
+  state: PropTypes.any
+}
 
 export const HorizontalBarChart = ({ state }) => {
   const [data, setData] = useState(coinOverview);
@@ -297,6 +306,10 @@ export const HorizontalBarChart = ({ state }) => {
   );
 };
 
+HorizontalBarChart.propTypes = {
+  state: PropTypes.string
+}
+
 export const StackedBarChart = ({ state }) => {
   const [data, setData] = useState(userActivity);
   useEffect(() => {
@@ -354,3 +367,7 @@ export const StackedBarChart = ({ state }) => {
     />
   );
 };
+
+StackedBarChart.propTypes = {
+  state: PropTypes.string
+}

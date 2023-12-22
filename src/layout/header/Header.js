@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 import Toggle from "../sidebar/Toggle";
@@ -46,4 +47,12 @@ const Header = ({ fixed, theme, className, setVisibility, ...props }) => {
     </div>
   );
 };
+
+Header.propTypes = {
+  className: PropTypes.any,
+  fixed: PropTypes.any,
+  setVisibility: PropTypes.func,
+  theme: PropTypes.string,
+  sidebarToggle: PropTypes.func
+}
 export default Header;

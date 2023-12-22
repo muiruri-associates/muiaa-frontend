@@ -2,9 +2,16 @@ import React, { useContext, useState } from "react";
 import { Icon } from "../../../../components/Component";
 import { FileManagerContext } from "../FileManagerContext";
 
+import PropTypes from 'prop-types';
+
+SelectorCopy.propTypes={
+  toggle: PropTypes.bool,
+  toggleCreateModal: PropTypes.func
+}
+
 const SelectorCopy = ({ toggle, toggleCreateModal }) => {
   const { contextData, selectorCopyToFolder } = useContext(FileManagerContext);
-  const [data, setData] = contextData;
+  const [data] = contextData;
 
   const [selected, setSelected] = useState("");
 

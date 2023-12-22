@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState, useContext, useRef } from "react";
 import classNames from "classnames";
 import ChatSideBar from "./ChatSideBar";
@@ -362,5 +363,12 @@ const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
     </React.Fragment>
   );
 };
+
+ChatBody.propTypes = {
+  id: PropTypes.any,
+  mobileView: PropTypes.any,
+  setMobileView: PropTypes.func,
+  setSelectedId: PropTypes.func
+}
 
 export default ChatBody;

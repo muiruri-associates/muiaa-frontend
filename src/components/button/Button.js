@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 
@@ -16,4 +17,13 @@ const Button = ({ color, size, className, outline, disabled, ...props }) => {
     </button>
   );
 };
+
+Button.propTypes = {
+  className: PropTypes.any,
+  color: PropTypes.any,
+  disabled: PropTypes.any,
+  outline: PropTypes.any,
+  size: PropTypes.any,
+  children: PropTypes.any
+}
 export default Button;

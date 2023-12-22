@@ -1,10 +1,11 @@
+import PropTypes from "prop-types"
 import React, { useContext, useState } from "react";
 import { Icon } from "../../../../components/Component";
 import { FileManagerContext } from "../FileManagerContext";
 
 const Copy = ({ file, toggle, toggleCreateModal }) => {
   const { contextData, copyToFolder } = useContext(FileManagerContext);
-  const [data, setData] = contextData;
+  const [data] = contextData;
 
   const [selected, setSelected] = useState("");
 
@@ -117,5 +118,13 @@ const Copy = ({ file, toggle, toggleCreateModal }) => {
     </React.Fragment>
   );
 };
+
+Copy.propTypes = {
+  file: PropTypes.shape({
+    id: PropTypes.any
+  }),
+  toggle: PropTypes.func,
+  toggleCreateModal: PropTypes.func
+}
 
 export default Copy;

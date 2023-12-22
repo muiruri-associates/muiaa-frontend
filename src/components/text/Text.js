@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 
@@ -17,3 +18,10 @@ export const OverlineTitle = ({ className, alt, ...props }) => {
     </React.Fragment>
   );
 };
+
+OverlineTitle.propTypes = {
+  alt: PropTypes.any,
+  className: PropTypes.any,
+  children: PropTypes.node.isRequired,
+  tag: PropTypes.string
+}

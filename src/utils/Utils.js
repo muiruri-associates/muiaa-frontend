@@ -1,4 +1,6 @@
 import { Redirect } from "react-router-dom";
+import React from "react";
+import PropTypes from "prop-types"; 
 
 //url for production
 export var url = "";
@@ -86,6 +88,7 @@ export const dateFormatterAlt = (date, reverse) => {
 
 //Date formatter function
 export const dateFormatter = (date, reverse, string) => {
+  console.log(string);
   var dateformat = date.split("-");
   //var date = dateformat[1]+"-"+dateformat[2]+"-"+dateformat[0];
   reverse
@@ -124,6 +127,10 @@ export const truncate = (str, n) => {
 export const RedirectAs404 = ({ location }) => (
   <Redirect to={Object.assign({}, location, { state: { is404: true } })} />
 );
+
+RedirectAs404.propTypes = {
+  location: PropTypes.object,
+};
 
 // returns upload url
 export const getUploadParams = () => {

@@ -10,7 +10,12 @@ import {
   LoginLogTable,
   Button,
 } from "../../../components/Component";
+import PropTypes from 'prop-types';
 
+UserProfileActivityPage.propTypes = {
+  sm: PropTypes.bool,
+  updateSm: PropTypes.object,
+}
 const UserProfileActivityPage = ({ sm, updateSm }) => {
   return (
     <React.Fragment>

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { Line, Bar, Pie, Polar, Doughnut } from "react-chartjs-2";
 
@@ -67,6 +68,11 @@ export const LineChartExample = ({ data, legend }) => {
   );
 };
 
+LineChartExample.propTypes = {
+  data: PropTypes.any,
+  legend: PropTypes.any
+}
+
 export const BarChartExample = ({ data, stacked }) => {
   return (
     <Bar
@@ -134,6 +140,11 @@ export const BarChartExample = ({ data, stacked }) => {
   );
 };
 
+BarChartExample.propTypes = {
+  data: PropTypes.any,
+  stacked: PropTypes.any
+}
+
 export const PieChartExample = ({ data }) => {
   return (
     <Pie
@@ -162,6 +173,10 @@ export const PieChartExample = ({ data }) => {
     />
   );
 };
+
+PieChartExample.propTypes = {
+  data: PropTypes.any
+}
 
 export const DoughnutExample = ({ data }) => {
   return (
@@ -193,6 +208,10 @@ export const DoughnutExample = ({ data }) => {
   );
 };
 
+DoughnutExample.propTypes = {
+  data: PropTypes.any
+}
+
 export const PolarExample = ({ data }) => {
   return (
     <Polar
@@ -220,3 +239,7 @@ export const PolarExample = ({ data }) => {
     />
   );
 };
+
+PolarExample.propTypes = {
+  data: PropTypes.any
+}

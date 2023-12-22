@@ -10,7 +10,7 @@ const User = () => {
   const toggle = () => setOpen((prevState) => !prevState);
 
   useEffect(() => {
-    // Retrieve user data from local storage (assuming it's stored as JSON)
+    // Retrieve user data from local storage (assuming It&apos;s stored as JSON)
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));

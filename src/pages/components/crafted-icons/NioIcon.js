@@ -26,7 +26,7 @@ const NioIconPage = () => {
               <p>
                 An in-built component can be used to show the icons. Use the Icon component. Import it to your file from
                 the Component.js file of the component directory. Such as{" "}
-                <code>import {`{Icon}`} from "./components/Component"</code> use the name props of the Icon to show the
+                <code>import {`{Icon}`} from `./components/Component`</code> use the name props of the Icon to show the
                 specific icon.
                 <br />
                 Example of uses - <code className="code-tag">{`<Icon name="icon-name"/>`}</code>

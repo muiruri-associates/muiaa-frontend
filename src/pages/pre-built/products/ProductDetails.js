@@ -20,6 +20,7 @@ import { Badge, Card } from "reactstrap";
 import { ProductContext } from "./ProductContext";
 import { Link } from "react-router-dom";
 import { SlickArrowLeft, SlickArrowRight } from "../../../components/partials/slick/SlickComponents";
+import PropTypes from 'prop-types';
 
 const sliderSettings = {
   className: "slider-init row",
@@ -52,7 +53,9 @@ const sliderSettingsDefault = {
   focusOnSelect: true,
   className: "slider-init slider-nav",
 };
-
+ProductDetails.propTypes = {
+  match: PropTypes.any
+}
 const ProductDetails = ({ match }) => {
   const { contextData } = useContext(ProductContext);
 
@@ -106,8 +109,9 @@ const ProductDetails = ({ match }) => {
       setSliderData(data[0]);
       setCurrentSlide(data[0].slider[0]);
     }
-  }, [match.params.id]); // eslint-disable-line react-hooks/exhaustive-deps
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [match.params.id]); 
+  
   return (
     <React.Fragment>
       <Head title="Product Detail"></Head>

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import { Icon, Button } from "../Component";
 
@@ -51,5 +52,14 @@ const NSComponent = ({ max, min, step, outline, color, defaultVal }) => {
     </div>
   );
 };
+
+NSComponent.propTypes = {
+  color: PropTypes.any,
+  defaultVal: PropTypes.any,
+  max: PropTypes.any,
+  min: PropTypes.any,
+  outline: PropTypes.any,
+  step: PropTypes.any
+}
 
 export default NSComponent;

@@ -17,6 +17,14 @@ import {
 } from "../../../components/Component";
 import { countryOptions, userData } from "./UserData";
 import { getDateStructured } from "../../../utils/Utils";
+import PropTypes from "prop-types"; 
+
+UserProfileRegularPage.propTypes = {
+  sm: PropTypes.bool.isRequired,
+  updateSm: PropTypes.func.isRequired,
+  setProfileName: PropTypes.func.isRequired,
+};
+
 
 const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
   const [modalTab, setModalTab] = useState("1");

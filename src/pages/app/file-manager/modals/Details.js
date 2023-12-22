@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext } from "react";
 import { Icon, UserGroup, UserAvatar } from "../../../../components/Component";
 import { findUpper } from "../../../../utils/Utils";
@@ -136,5 +137,24 @@ const Details = ({ file, toggle, toggleShare }) => {
     </React.Fragment>
   );
 };
+
+Details.propTypes = {
+  file: PropTypes.shape({
+    meta: PropTypes.shape({
+      date: PropTypes.any,
+      members: PropTypes.shape({
+        length: PropTypes.number,
+        map: PropTypes.func,
+        slice: PropTypes.func
+      }),
+      name: PropTypes.any,
+      size: PropTypes.any,
+      svg: PropTypes.any,
+      type: PropTypes.any
+    })
+  }),
+  toggle: PropTypes.func,
+  toggleShare: PropTypes.func
+}
 
 export default Details;

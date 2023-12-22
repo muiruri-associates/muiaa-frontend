@@ -13,6 +13,11 @@ import {
 import { useForm } from "react-hook-form";
 import { Steps, Step } from "react-step-builder";
 import { Row, Col, FormGroup, Button } from "reactstrap";
+import PropTypes from 'prop-types';
+
+PersonalForm.propTypes = {
+  next: PropTypes.node.isRequired
+}
 
 const PersonalForm = (props) => {
   const [formData, setFormData] = useState({
@@ -30,6 +35,7 @@ const PersonalForm = (props) => {
   const { errors, handleSubmit, register } = useForm();
 
   const submitForm = (data) => {
+    console.dir(data);
     props.next();
   };
 
@@ -170,7 +176,7 @@ const UserSettings = (props) => {
 
   const { errors, handleSubmit, register, watch } = useForm();
 
-  const submitForm = (data) => {
+  const submitForm = () => {
     props.next();
   };
 
@@ -282,6 +288,11 @@ const UserSettings = (props) => {
   );
 };
 
+UserSettings.propTypes = {
+  next: PropTypes.func,
+  prev: PropTypes.any
+}
+
 const PaymentInfo = (props) => {
   const [formData, setFormData] = useState({
     tokenAddress: "",
@@ -295,7 +306,7 @@ const PaymentInfo = (props) => {
 
   const { errors, handleSubmit, register } = useForm();
 
-  const submitForm = (data) => {
+  const submitForm = () => {
     //window.location.reload();
     props.next();
   };
@@ -396,6 +407,12 @@ const PaymentInfo = (props) => {
   );
 };
 
+PaymentInfo.propTypes = {
+  next: PropTypes.func,
+  prev: PropTypes.any,
+  current: PropTypes.node,
+}
+
 const Header = (props) => {
   return (
     <div className="steps clearfix">
@@ -426,12 +443,14 @@ const Header = (props) => {
     </div>
   );
 };
-
+Header.propTypes = {
+  current: PropTypes.node.isRequired
+}
 const Success = (props) => {
   return (
     <div className="d-flex justify-content-center align-items-center p-3">
       <BlockTitle tag="h6" className="text-center">
-        Thank you for submitting form
+        Thank you for submitting form. {props}
       </BlockTitle>
     </div>
   );

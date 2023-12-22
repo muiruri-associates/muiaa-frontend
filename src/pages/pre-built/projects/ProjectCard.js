@@ -246,7 +246,7 @@ const ProjectCardPage = () => {
         <Block>
           <Row className="g-gs">
             {currentItems &&
-              currentItems.map((item, idx) => {
+              currentItems.map((item) => {
                 var days = setDeadlineDays(item.deadline);
                 return (
                   <Col sm="6" lg="4" xxl="3" key={item.id}>

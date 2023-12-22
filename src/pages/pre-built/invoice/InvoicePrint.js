@@ -4,6 +4,11 @@ import Head from "../../../layout/head/Head";
 import LogoDark from "../../../images/logo-dark2x.png";
 import { Button, Icon, Block } from "../../../components/Component";
 import { invoiceData } from "./Invoice";
+import PropTypes from 'prop-types';
+
+InvoicePrint.propTypes = {
+  match: PropTypes.object
+}
 
 const InvoicePrint = ({ match }) => {
   const [data] = useState(invoiceData);

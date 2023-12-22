@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "../../../layout/head/Head";
+import PropTypes from 'prop-types';
 import {
   BlockBetween,
   BlockContent,
@@ -11,7 +12,10 @@ import {
   InputSwitch,
   Button,
 } from "../../../components/Component";
-
+UserProfileNotificationPage.propTypes = {
+  sm: PropTypes.bool,
+  updateSm: PropTypes.object,
+}
 const UserProfileNotificationPage = ({ sm, updateSm }) => {
   return (
     <React.Fragment>

@@ -4,7 +4,7 @@ import Head from "../../layout/head/Head";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const FlexPage = ({ ...props }) => {
+const FlexPage = () => {
   return (
     <React.Fragment>
       <Head title="Flex Utility" />
@@ -38,13 +38,13 @@ const FlexPage = ({ ...props }) => {
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
-            <div className="d-flex p-2 bg-lighter">I"m a flexbox container!</div>
+            <div className="d-flex p-2 bg-lighter">I am a flexbox container!</div>
           </PreviewCard>
-          <CodeBlock language="jsx">{`<div className="d-flex">I"m a flexbox container!</div>`}</CodeBlock>
+          <CodeBlock language="jsx">{`<div className="d-flex">I am a flexbox container!</div>`}</CodeBlock>
           <PreviewCard>
-            <div className="d-inline-flex p-2 bg-lighter">I"m an inline flexbox container!</div>
+            <div className="d-inline-flex p-2 bg-lighter">I am an inline flexbox container!</div>
           </PreviewCard>
-          <CodeBlock language="jsx">{`<div className="d-inline-flex">I"m an inline flexbox container!</div>`}</CodeBlock>
+          <CodeBlock language="jsx">{`<div className="d-inline-flex">I am an inline flexbox container!</div>`}</CodeBlock>
         </Block>
 
         <Block size="lg">

@@ -3,7 +3,7 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import CreateLenderOrgForm from "../../../mainComponents/LenderOrg/CreateLenderOrgForm";
 
-const CreateLenderOrganizations = ({ ...props }) => {
+const CreateLenderOrganizations = () => {
   return (
     <React.Fragment>
       <Head title="CreateLenderOrganizations" />

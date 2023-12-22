@@ -67,7 +67,7 @@ const EmailTemplate = () => {
                     <strong>Hello User</strong>,
                   </p>
                   <p>
-                    Let's face it, sometimes you have a simple message that doesn’t need much design—but still needs
+                    Let&apos;s face it, sometimes you have a simple message that doesn’t need much design—but still needs
                     flexibility and reliability. Select a basic email template. Write your message. Then send with
                     confidence.
                   </p>
@@ -76,7 +76,7 @@ const EmailTemplate = () => {
                     template.
                   </p>
                   <p>
-                    Hope you'll enjoy the experience, we're here if you have any questions, drop us a line at
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at
                     info@yourwebsite.com anytime.{" "}
                   </p>
                   <p className="mt-4">
@@ -178,7 +178,7 @@ const EmailTemplate = () => {
                     always modern, clean and easier to use.
                   </p>
                   <p>
-                    Hope you'll enjoy the experience, we're here if you have any questions, drop us a line at
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at
                     info@yourwebsite.com anytime.{" "}
                   </p>
                 </EmailBodyContent>
@@ -396,7 +396,7 @@ const EmailTemplate = () => {
                     documents for the KYC from my Account page.
                   </p>
                   <p>
-                    Hope you'll enjoy the experience, we're here if you have any questions, drop us a line at{" "}
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at{" "}
                     <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a> anytime.{" "}
                   </p>
                 </EmailBodyContent>

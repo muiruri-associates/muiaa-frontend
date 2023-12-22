@@ -4,7 +4,7 @@ import Head from "../../../layout/head/Head";
 
 import GetAllLenderUsersDatatable from "../../../mainComponents/LenderOrg/GetAllLenderUsersDatatable";
 
-const LenderUsers = ({ ...props }) => {
+const LenderUsers = () => {
   return (
     <React.Fragment>
       <Head title="Lender Users" />

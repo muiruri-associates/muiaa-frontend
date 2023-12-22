@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 import { basicData } from "./TableData";
@@ -36,4 +37,12 @@ const Table = ({ headColor, striped, border, hover, responsive }) => {
     </div>
   );
 };
+
+Table.propTypes = {
+  border: PropTypes.any,
+  headColor: PropTypes.any,
+  hover: PropTypes.any,
+  responsive: PropTypes.any,
+  striped: PropTypes.any
+}
 export default Table;

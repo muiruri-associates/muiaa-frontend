@@ -144,10 +144,10 @@ export const messageData = [
     marked: false,
     closed: false,
     messageTitle: "I want my money back.",
-    message: "Hey! I don't want to stay as your subscriber any more,",
+    message: "Hey! I don&apos;t want to stay as your subscriber any more,",
     messageMarkup: [
       "Heey!",
-      "I don't want to stay as your subscriber any more.",
+      "I don&apos;t want to stay as your subscriber any more.",
       "Could you please return my money as soon as possible",
       "Customer, ",
       " Thank you",

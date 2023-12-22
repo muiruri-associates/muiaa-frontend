@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Content = ({ ...props }) => {
   return (
@@ -16,4 +17,10 @@ const Content = ({ ...props }) => {
     </div>
   );
 };
+
+Content.propTypes = {
+  page: PropTypes.string,
+  children: PropTypes.node.isRequired
+}
+
 export default Content;

@@ -9,7 +9,7 @@ import {
   ListGroup,
   ListGroupItem,
 } from 'reactstrap';
-import {Icon, UserAvatar} from "../../components/Component"
+import {Icon} from "../../components/Component"
 import './style.css'; // Import your CSS file
 
 

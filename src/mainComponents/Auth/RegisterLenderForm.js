@@ -36,7 +36,7 @@ const RegisterLender = () => {
   const [phone_number, setPhone_number] = useState('')
   const [password, setPassword] = useState('')
   const [confirm_password, setConfirm_password] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [ setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { errors, register, handleSubmit } = useForm();
@@ -154,7 +154,7 @@ const RegisterLender = () => {
                 <div className="form-control-wrap">
                   <input
                     type="text"
-                    bssize="lg"
+                    size="lg"
                     id="email"
                     name="email"
                     ref={register({ required: true })}
@@ -175,7 +175,7 @@ const RegisterLender = () => {
                 <div className="form-control-wrap">
                   <input
                     type="text"
-                    bssize="lg"
+                    size="lg"
                     id="default-01"
                     name="phone_number"
                     ref={register({ required: true })}

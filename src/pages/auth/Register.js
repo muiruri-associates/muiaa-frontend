@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo-dark.png";
@@ -73,7 +74,7 @@ const Register = ({ history }) => {
                 <div className="form-control-wrap">
                   <input
                     type="text"
-                    bssize="lg"
+                    size="lg"
                     id="default-01"
                     name="email"
                     ref={register({ required: true })}
@@ -162,4 +163,10 @@ const Register = ({ history }) => {
     </React.Fragment>
   );
 };
+
+Register.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func
+  })
+}
 export default Register;

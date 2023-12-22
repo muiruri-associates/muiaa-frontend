@@ -3,7 +3,7 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle, PreviewCard } from "../../components/Component";
 
-const Terms = ({ ...props }) => {
+const Terms = () => {
   return (
     <React.Fragment>
       <Head title="Terms &amp; Conditions" />
@@ -83,7 +83,7 @@ const Terms = ({ ...props }) => {
                   publish, translate and distribute it in any and all media.
                 </p>
                 <p>
-                  Your Content must be your own and must not be invading any third-party"s rights. Company Name reserves
+                  Your Content must be your own and must not be invading any third-party&ldquo;s rights. Company Name reserves
                   the right to remove any of Your Content from this Website at any time without notice.
                 </p>
                 <h4>No warranties</h4>

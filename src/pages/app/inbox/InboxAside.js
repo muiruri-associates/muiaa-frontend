@@ -17,7 +17,23 @@ import {
   Col,
   FormGroup,
 } from "reactstrap";
+import PropTypes from 'prop-types';
 
+InboxAside.propTypes = {
+  navData: PropTypes.object,
+  currentTab: PropTypes.string,
+  aside: PropTypes.string ,
+  setAside: PropTypes.string,
+  setCurrentTab: PropTypes.string,
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  contact: PropTypes.string,
+  setContact: PropTypes.func,
+  labels: PropTypes.string,
+  setLabels: PropTypes.func,
+  setFilterLabel: PropTypes.func,
+  setMessageView: PropTypes.func,
+}
 const InboxAside = ({
   navData,
   currentTab,

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState, useRef } from "react";
 import SimpleBar from "simplebar-react";
 import classNames from "classnames";
@@ -529,5 +530,13 @@ const MessageItem = ({ id, onClosed, mobileView, setMobileView, data }) => {
     </React.Fragment>
   );
 };
+
+MessageItem.propTypes = {
+  data: PropTypes.any,
+  id: PropTypes.any,
+  mobileView: PropTypes.any,
+  onClosed: PropTypes.func,
+  setMobileView: PropTypes.func
+}
 
 export default MessageItem;

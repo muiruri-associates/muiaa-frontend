@@ -6,9 +6,21 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
 import { Link } from "react-router-dom";
 
+import PropTypes from "prop-types";
+
+Home.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  toggleCreateModal: PropTypes.func,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.string,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+};
+
 const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, toggleUploadModal, toggleScreenLg }) => {
   const [hide1, setHide1] = useState(true);
-  const [hide2, setHide2] = useState(true);
+  const [hide2] = useState(true);
   const [view, setView] = useState("grid");
   const [search, setSearch] = useState(false);
   const [dataList, setDataList] = useState();
@@ -16,7 +28,9 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
   useEffect(() => {
     let quickView = data.filter((item) => item.meta.starred === true && Boolean(item.recovery) === false);
     setTimeout(() => setDataList([...quickView]));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
 
   const filterFilerQuickView = (id) => {
     let defaultData = dataList;

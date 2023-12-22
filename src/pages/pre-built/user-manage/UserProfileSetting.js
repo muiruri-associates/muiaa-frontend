@@ -12,7 +12,11 @@ import {
   InputSwitch,
   Button,
 } from "../../../components/Component";
-
+import PropTypes from 'prop-types';
+UserProfileSettingPage.propTypes = {
+  sm: PropTypes.bool,
+  updateSm: PropTypes.object
+}
 const UserProfileSettingPage = ({ sm, updateSm }) => {
   return (
     <React.Fragment>

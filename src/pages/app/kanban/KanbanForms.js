@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
@@ -33,7 +34,7 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
     ];
   });
 
-  const submitForm = (returnVal) => {
+  const submitForm = () => {
     let board = taskToBoard ? taskToBoard : formData.board === null ? boardOptions[0] : formData.board;
     if (editTask) {
       let defaultTask = {
@@ -255,6 +256,29 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
   );
 };
 
+KanbanTaskForm.propTypes = {
+  data: PropTypes.shape({
+    columnOrder: PropTypes.any,
+    columns: PropTypes.any,
+    task: PropTypes.any
+  }),
+  editTask: PropTypes.shape({
+    desc: PropTypes.any,
+    id: PropTypes.any,
+    meta: PropTypes.shape({
+      category: PropTypes.any,
+      tags: PropTypes.any,
+      users: PropTypes.any
+    }),
+    title: PropTypes.any
+  }),
+  setData: PropTypes.func,
+  taskToBoard: PropTypes.shape({
+    id: PropTypes.any
+  }),
+  toggle: PropTypes.func
+}
+
 export const KanbanBoardForm = ({ toggle, data, setData, editBoard }) => {
   const [formData, setFormData] = useState({
     title: editBoard ? editBoard.text : "",
@@ -376,3 +400,18 @@ export const KanbanBoardForm = ({ toggle, data, setData, editBoard }) => {
     </ModalBody>
   );
 };
+
+KanbanBoardForm.propTypes = {
+  data: PropTypes.shape({
+    columnOrder: PropTypes.any,
+    columns: PropTypes.any
+  }),
+  editBoard: PropTypes.shape({
+    id: PropTypes.any,
+    tasks: PropTypes.any,
+    text: PropTypes.any,
+    theme: PropTypes.any
+  }),
+  setData: PropTypes.func,
+  toggle: PropTypes.func
+}

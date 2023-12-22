@@ -13,7 +13,7 @@ const Error504Modern = () => {
           <div className="wide-xs mx-auto">
             <h3 className="nk-error-title">Unauthorized!!!</h3>
             <p className="nk-error-text">
-              You don't have access to this page.
+              You don&apos;t have access to this page.
             </p>
             <Link to={`${process.env.PUBLIC_URL}/`}>
               <Button color="primary" size="lg" className="mt-2">

@@ -179,7 +179,7 @@ export const ticketChatData = [
       {
         id: "chat_3",
         me: true,
-        chat: ["No I haven't. I will look into it", "It’s perfect. Thanks for letting me know."],
+        chat: ["No I haven&apos;t. I will look into it", "It’s perfect. Thanks for letting me know."],
         date: "4:28 PM",
       },
     ],

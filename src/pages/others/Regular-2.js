@@ -4,7 +4,7 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle } from "../../components/Component";
 
-const Regularv2 = ({ ...props }) => {
+const Regularv2 = () => {
   return (
     <React.Fragment>
       <Head title="Regular v-2" />
@@ -16,7 +16,7 @@ const Regularv2 = ({ ...props }) => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Got a question? Can't find the answer you're looking for? Don't worry, drop us a line on our{" "}
+                Got a question? Can&apos;t find the answer you&apos;re looking for? Don&apos;t worry, drop us a line on our{" "}
                 <a
                   href="#contact"
                   onClick={(ev) => {

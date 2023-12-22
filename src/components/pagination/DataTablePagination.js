@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect } from "react";
 import Icon from "../icon/Icon";
 import { Pagination, PaginationLink, PaginationItem, Row, Col } from "reactstrap";
@@ -87,4 +88,14 @@ const DataTablePagination = ({
     </Row>
   );
 };
+
+DataTablePagination.propTypes = {
+  currentPage: PropTypes.number,
+  customItemPerPage: PropTypes.any,
+  itemPerPage: PropTypes.any,
+  onChangeRowsPerPage: PropTypes.func,
+  paginate: PropTypes.func,
+  setRowsPerPage: PropTypes.func,
+  totalItems: PropTypes.any
+}
 export default DataTablePagination;

@@ -1,6 +1,7 @@
 import React, { useState, createContext } from "react";
 import { currentTime, getDateStructured } from "../../../utils/Utils";
 import { folderList } from "./Data";
+import PropTypes from 'prop-types';
 
 export const FileManagerContext = createContext();
 
@@ -243,3 +244,6 @@ export const FileManagerContextProvider = (props) => {
     </FileManagerContext.Provider>
   );
 };
+FileManagerContextProvider.propTypes = {
+  children: PropTypes.node
+}

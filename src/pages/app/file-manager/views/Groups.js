@@ -4,8 +4,12 @@ import { Icon } from "../../../../components/Component";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Link } from "react-router-dom";
 import { FileManagerContext } from "../FileManagerContext";
+import PropTypes from 'prop-types';
 
-const Groups = ({ data, setData }) => {
+Groups.propTypes = {
+  data: PropTypes.object,
+}
+const Groups = ({ data }) => {
   const { onStarClick, getTotalSize } = useContext(FileManagerContext);
   const [dataList, setDataList] = useState();
   const [filterSelect, setFilterSelect] = useState("Last Opened");
@@ -34,6 +38,7 @@ const Groups = ({ data, setData }) => {
         setDataList({ folderlist: [...folderView], filelist: [...fileView] });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterSelect]);
 
   const nameSortFunc = (data) => {

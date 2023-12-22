@@ -3,17 +3,21 @@ import { useDispatch } from 'react-redux';
 import classNames from "classnames";
 // import ChatSideBar from "./ChatSideBar";
 import SimpleBar from "simplebar-react";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { UserAvatar, Icon, Button } from "../../../components/Component";
-import { currentTime, findUpper, truncate } from "../../../utils/Utils";
+import { DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import { Icon, Button } from "../../../components/Component";
+import { currentTime } from "../../../utils/Utils";
 import { TicketChatContext } from "./ticketChatContext";
 import { MeChat, YouChat } from "./ticketChatPartials";
-import { sendMessage } from '../../../redux/actions/ticketActions'
+import { sendMessage } from '../../../redux/actions/ticketActions';
 import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 // todo: ToDO:fix this section of chat body so that it can display the message
-
-const TicketChatBody = ({ mobileView, setMobileView, setSelectedId }) => {
+TicketChatBody.propTypes = {
+  mobileView: PropTypes.any,
+  setMobileView: PropTypes.any,
+}
+const TicketChatBody = ({ mobileView, setMobileView }) => {
   const dispatch = useDispatch();
   const { _id } = useParams();
 
@@ -93,9 +97,9 @@ const TicketChatBody = ({ mobileView, setMobileView, setSelectedId }) => {
     };
   }, []);
 
-  const onChatOptions = () => {
+  // () => {
     setChatOptions(!chatOptions);
-  };
+  // };
 
   const onInputChange = (e) => {
     setInputText(e.target.value);

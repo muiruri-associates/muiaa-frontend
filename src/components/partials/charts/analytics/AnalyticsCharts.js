@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import { Line, Bar, Doughnut } from "react-chartjs-2";
 import { VectorMap } from "react-jvectormap";
@@ -99,6 +100,10 @@ export const AudienceLineChart = ({ state }) => {
   );
 };
 
+AudienceLineChart.propTypes = {
+  state: PropTypes.string
+}
+
 export const ActiveUserBarChart = () => {
   return (
     <Bar
@@ -112,7 +117,7 @@ export const ActiveUserBarChart = () => {
         tooltips: {
           enabled: true,
           callbacks: {
-            title: function (tooltipItem, data) {
+            title: function () {
               return false; //data['labels'][tooltipItem[0]['index']];
             },
             label: function (tooltipItem, data) {
@@ -191,7 +196,7 @@ export const WPCharts = ({ data, className }) => {
         tooltips: {
           enabled: true,
           callbacks: {
-            title: function (tooltipItem, data) {
+            title: function () {
               return false; //data['labels'][tooltipItem[0]['index']];
             },
             label: function (tooltipItem, data) {
@@ -251,6 +256,13 @@ export const WPCharts = ({ data, className }) => {
   );
 };
 
+WPCharts.propTypes = {
+  className: PropTypes.any,
+  data: PropTypes.shape({
+    datasets: PropTypes.any
+  })
+}
+
 export const TCDoughnut = ({ state, className }) => {
   const [data, setData] = useState(TrafficChannelDoughnutData);
   useEffect(() => {
@@ -293,6 +305,11 @@ export const TCDoughnut = ({ state, className }) => {
     ></Doughnut>
   );
 };
+
+TCDoughnut.propTypes = {
+  className: PropTypes.any,
+  state: PropTypes.string
+}
 
 export const SessionDoughnut = ({ state, className }) => {
   const [data, setData] = useState(deviceStatusData);
@@ -339,6 +356,11 @@ export const SessionDoughnut = ({ state, className }) => {
   );
 };
 
+SessionDoughnut.propTypes = {
+  className: PropTypes.any,
+  state: PropTypes.string
+}
+
 export const Map = ({ set }) => {
   return (
     <VectorMap
@@ -381,3 +403,7 @@ export const Map = ({ set }) => {
     ></VectorMap>
   );
 };
+
+Map.propTypes = {
+  set: PropTypes.string
+}

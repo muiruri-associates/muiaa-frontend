@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import { Icon } from "../../components/Component";
+import React from "react";
 
-const ActionsColumn = ({ row }) => {
+const ActionsColumn = () => {
   const history = useHistory();
 
   return (

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import Icon from "../icon/Icon";
 import { Pagination, PaginationLink, PaginationItem } from "reactstrap";
@@ -65,4 +66,11 @@ const PaginationComponent = ({ itemPerPage, totalItems, paginate, currentPage })
     </Pagination>
   );
 };
+
+PaginationComponent.propTypes = {
+  currentPage: PropTypes.number,
+  itemPerPage: PropTypes.any,
+  paginate: PropTypes.func,
+  totalItems: PropTypes.any
+}
 export default PaginationComponent;

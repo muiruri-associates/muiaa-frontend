@@ -23,7 +23,7 @@ const ButtonGroupPage = () => {
             <BlockDes>
               <p className="lead">
                 Group a series of buttons together on a single line with the button group, and super-power them with
-                JavaScript. To use it, import it such as <code>import {`{ButtonGroup}`} from "reactstrap"</code>. Visit
+                JavaScript. To use it, import it such as <code>import {`{ButtonGroup}`} from &ldquo;reactstrap&ldquo;</code>. Visit
                 the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/button-group"} target="_blank" rel="noreferrer">
                   Reactstrap

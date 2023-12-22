@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 import { Row, Col, FormGroup, Label, Form } from "reactstrap";
@@ -6,7 +7,7 @@ import { Button } from "../../../components/Component";
 
 const FormValidationComponent = ({ alter, id }) => {
   const { errors, register, handleSubmit } = useForm();
-  const onFormSubmit = (e) => {};
+  const onFormSubmit = () => {};
   const formClass = classNames({
     "form-validate": true,
     "is-alter": alter,
@@ -192,4 +193,9 @@ const FormValidationComponent = ({ alter, id }) => {
     </React.Fragment>
   );
 };
+
+FormValidationComponent.propTypes = {
+  alter: PropTypes.any,
+  id: PropTypes.string
+}
 export default FormValidationComponent;

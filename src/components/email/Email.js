@@ -1,4 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+EmailWrapper.propTypes = {
+  children: PropTypes.any
+}
 
 export const EmailWrapper = ({ ...props }) => {
   return (
@@ -11,7 +16,9 @@ export const EmailWrapper = ({ ...props }) => {
     </table>
   );
 };
-
+EmailHeader.propTypes = {
+  children: PropTypes.any
+}
 export const EmailHeader = ({ ...props }) => {
   return (
     <table className="email-header">
@@ -32,6 +39,11 @@ export const EmailBody = ({ centered, ...props }) => {
   );
 };
 
+EmailBody.propTypes = {
+  centered: PropTypes.any,
+  children: PropTypes.node
+}
+
 export const EmailBodyContent = ({ className, ...props }) => {
   return (
     <tr>
@@ -39,6 +51,11 @@ export const EmailBodyContent = ({ className, ...props }) => {
     </tr>
   );
 };
+
+EmailBodyContent.propTypes = {
+  className: PropTypes.any,
+  children: PropTypes.node
+}
 
 export const EmailFooter = ({ ...props }) => {
   return (
@@ -51,3 +68,6 @@ export const EmailFooter = ({ ...props }) => {
     </table>
   );
 };
+EmailFooter.propTypes = {
+  children: PropTypes.node
+}

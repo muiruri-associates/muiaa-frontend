@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react";
 import Home from "./preview/Home";
 import Files from "./preview/Files";
@@ -50,10 +51,12 @@ const FileManagerBody = ({ data, setData, toggleScreenLg }) => {
         setChildren([...children]);
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.location.pathname, dataList]);
 
   useEffect(() => {
     setSearchText("");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [window.location.pathname]);
 
   useEffect(() => {
@@ -249,6 +252,7 @@ const FileManagerBody = ({ data, setData, toggleScreenLg }) => {
                 render={(props) => (
                   <SpecificFolder
                     data={data}
+                    // eslint-disable-next-line react/no-children-prop
                     children={children}
                     setData={setData}
                     searchText={searchText}
@@ -273,5 +277,13 @@ const FileManagerBody = ({ data, setData, toggleScreenLg }) => {
     </div>
   );
 };
+
+FileManagerBody.propTypes = {
+  data: PropTypes.shape({
+    find: PropTypes.func
+  }),
+  setData: PropTypes.any,
+  toggleScreenLg: PropTypes.any
+}
 
 export default FileManagerBody;

@@ -3,6 +3,14 @@ import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from
 import { Icon, UserAvatar, TooltipComponent } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { contacts } from "./InboxData";
+import PropTypes from 'prop-types';
+
+InboxReplyItem.propTypes = {
+  reply: PropTypes.string, 
+  replyTo: PropTypes.string, 
+  forwardTo: PropTypes.string, 
+  deleteMessage: PropTypes.string
+}
 
 const InboxReplyItem = ({ reply, replyTo, forwardTo, deleteMessage }) => {
   const [user, setUser] = useState();

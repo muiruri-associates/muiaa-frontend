@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import Head from "../../layout/head/Head";
 import DatePicker from "react-datepicker";
@@ -18,7 +19,7 @@ import {
 
 const UserProfileInfo = ({ sm, updateSm }) => {
   const [modalTab, setModalTab] = useState("1");
-  const [userInfo, setUserInfo] = useState(userData[0]);
+  // const [userInfo, setUserInfo] = useState(userData[0]);
   const [modal, setModal] = useState(false);
 
 
@@ -231,7 +232,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         id="full-name"
                         className="form-control"
                         name="name"
-                        onChange={(e) => onInputChange(e)}
+                        // //onChange={(e) => onInputChange(e)}
                         defaultValue="name"
                         placeholder="Enter Full name"
                       />
@@ -247,7 +248,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         id="display-name"
                         className="form-control"
                         name="displayName"
-                        onChange={(e) => onInputChange(e)}
+                        // //onChange={(e) => onInputChange(e)}
                         defaultValue="dname"
                         placeholder="Enter display name"
                       />
@@ -263,7 +264,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         id="phone-no"
                         className="form-control"
                         name="phone"
-                        onChange={(e) => onInputChange(e)}
+                        // //onChange={(e) => onInputChange(e)}
                         defaultValue="phone"
                         placeholder="Phone Number"
                       />
@@ -295,7 +296,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                           size="lg"
                           onClick={(ev) => {
                             ev.preventDefault();
-                            submitForm();
+                            // submitForm();
                           }}
                         >
                           Update Profile
@@ -328,7 +329,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         type="text"
                         id="address-l1"
                         name="address"
-                        onChange={(e) => onInputChange(e)}
+                        // //onChange={(e) => onInputChange(e)}
                         defaultValue="add"
                         className="form-control"
                       />
@@ -343,7 +344,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         type="text"
                         id="address-l2"
                         name="address2"
-                        onChange={(e) => onInputChange(e)}
+                        //onChange={(e) => onInputChange(e)}
                         defaultValue="Add"
                         className="form-control"
                       />
@@ -358,7 +359,7 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                         type="text"
                         id="address-st"
                         name="state"
-                        onChange={(e) => onInputChange(e)}
+                        //onChange={(e) => onInputChange(e)}
                         defaultValue="add"
                         className="form-control"
                       />
@@ -379,7 +380,8 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                   <Col size="12">
                     <ul className="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                       <li>
-                        <Button color="primary" size="lg" onClick={() => submitForm()}>
+                        {/* <Button color="primary" size="lg" onClick={() => submitForm()}> */}
+                        <Button color="primary" size="lg">
                           Update Address
                         </Button>
                       </li>
@@ -406,4 +408,9 @@ const UserProfileInfo = ({ sm, updateSm }) => {
     </React.Fragment>
   );
 };
+
+UserProfileInfo.propTypes = {
+  sm: PropTypes.any,
+  updateSm: PropTypes.func
+}
 export default UserProfileInfo;

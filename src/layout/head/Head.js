@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import PropTypes from 'prop-types';
 
 const Head = ({ ...props }) => {
   return (
@@ -8,4 +9,9 @@ const Head = ({ ...props }) => {
     </Helmet>
   );
 };
+
+Head.propTypes = {
+  title: PropTypes.string
+}
+
 export default Head;

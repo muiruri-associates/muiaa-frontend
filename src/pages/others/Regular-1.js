@@ -4,7 +4,7 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Block, BlockDes, BlockHead, BlockHeadContent, BlockTitle, PreviewCard } from "../../components/Component";
 
-const Regularv1 = ({ ...props }) => {
+const Regularv1 = () => {
   return (
     <React.Fragment>
       <Head title="Regular page v-1" />
@@ -16,7 +16,7 @@ const Regularv1 = ({ ...props }) => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                We love to share ideas! Visit our blog if you're looking for great articles or inspiration to get you
+                We love to share ideas! Visit our blog if you&apos;re looking for great articles or inspiration to get you
                 going.
               </p>
             </BlockDes>

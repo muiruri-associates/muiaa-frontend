@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import { Icon } from "../../Component";
 
@@ -23,5 +24,12 @@ const OutlinedInput = ({ label, size, id, icon }) => {
     </div>
   );
 };
+
+OutlinedInput.propTypes = {
+  icon: PropTypes.any,
+  id: PropTypes.any,
+  label: PropTypes.any,
+  size: PropTypes.any
+}
 
 export default OutlinedInput;

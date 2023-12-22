@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { Form,
+import {
+  Form,
   FormGroup,
   Label,
   Row,
@@ -29,7 +30,7 @@ const CreateLenderOrgForm = () => {
   const [business_location, setBusiness_Location] = useState("");
 
    // State to manage form submission status
-   const [isSubmitted, setIsSubmitted] = useState(false);
+   const [ setIsSubmitted] = useState(false);
 
   // Function to handle form submission
  const handleSubmit = async (e) => {

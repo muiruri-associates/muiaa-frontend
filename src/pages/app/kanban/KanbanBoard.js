@@ -1,6 +1,12 @@
 import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { KanbanColumn } from "./KanbanPartials";
+import PropTypes from 'prop-types';
+
+KanbanBoard.propTypes = {
+  columns: PropTypes.any, 
+  setColumns: PropTypes.func 
+}
 
 const KanbanBoard = ({ columns, setColumns }) => {
   const handleOnDragEnd = (result) => {

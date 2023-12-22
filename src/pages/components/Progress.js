@@ -6,7 +6,7 @@ import { Progress } from "reactstrap";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const ProgressPage = ({ ...props }) => {
+const ProgressPage = () => {
   return (
     <React.Fragment>
       <Head title="Progress" />
@@ -22,7 +22,7 @@ const ProgressPage = ({ ...props }) => {
             <BlockDes>
               <p className="lead">
                 Examples for using custom progress bars featuring support for stacked bars, animated backgrounds, and
-                text labels. To use it, import it such as <code>import {`{Progress}`} from "reactstrap"</code>. Visit
+                text labels. To use it, import it such as <code>import {`{Progress}`}from &ldquo;reactstrap&ldquo;</code>. Visit
                 the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/progress"} target="_blank" rel="noreferrer">
                   Reactstrap

@@ -3,7 +3,7 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import MortgageDatatable from "../../../mainComponents/Loans/MortgageDatatable";
 
-const Mortgage = ({ ...props }) => {
+const Mortgage = () => {
   return (
     <React.Fragment>
       <Head title="Mortgage" />

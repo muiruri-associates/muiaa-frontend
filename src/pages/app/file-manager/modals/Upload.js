@@ -5,6 +5,11 @@ import { Icon } from "../../../../components/Component";
 import { svgSelect } from "../Data";
 import { FileManagerContext } from "../FileManagerContext";
 import { bytesToMegaBytes, currentTime, getDateStructured } from "../../../../utils/Utils";
+import PropTypes from 'prop-types';
+
+Upload.propTypes = {
+  toggle: PropTypes.bool,
+}
 
 const Upload = ({ toggle }) => {
   const { createFile } = useContext(FileManagerContext);

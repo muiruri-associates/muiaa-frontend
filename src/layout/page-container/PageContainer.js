@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from "react";
+import PropTypes from 'prop-types';
 
 const PageContainer = ({ ...props }) => {
   const [themeState] = useState({
@@ -24,4 +25,7 @@ const PageContainer = ({ ...props }) => {
     </React.Fragment>
   );
 };
+PageContainer.propTypes = {
+  children: PropTypes.node
+}
 export default PageContainer;

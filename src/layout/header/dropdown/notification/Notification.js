@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import { DropdownToggle, DropdownMenu, UncontrolledDropdown } from "reactstrap";
 
@@ -18,6 +19,14 @@ const NotificationItem = (props) => {
     </div>
   );
 };
+
+NotificationItem.propTypes = {
+  icon: PropTypes.any,
+  iconStyle: PropTypes.any,
+  id: PropTypes.any,
+  text: PropTypes.any,
+  time: PropTypes.any
+}
 
 const Notification = () => {
   return (

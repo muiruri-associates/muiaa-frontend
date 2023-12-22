@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const ContentAlt = ({ ...props }) => {
   return (
@@ -14,4 +15,9 @@ const ContentAlt = ({ ...props }) => {
     </div>
   );
 };
+
+ContentAlt.propTypes = {
+  page: PropTypes.string,
+  children: PropTypes.node.isRequired
+}
 export default ContentAlt;

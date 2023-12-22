@@ -145,7 +145,7 @@ const UserContactCardPage = () => {
         <BlockHead size="sm">
           <BlockBetween>
             <BlockHeadContent>
-              <BlockTitle page>User's Card</BlockTitle>
+              <BlockTitle page>User&apos;s Card</BlockTitle>
               <BlockDes className="text-soft">
                 <p>You have total 2,595 users.</p>
               </BlockDes>
@@ -289,7 +289,7 @@ const UserContactCardPage = () => {
           <BlockHead>
             <BlockBetween>
               <BlockHeadContent>
-                <BlockTitle tag="h4">User's Cards Alternate</BlockTitle>
+                <BlockTitle tag="h4">User&apos;s Cards Alternate</BlockTitle>
                 <BlockDes className="text-soft">
                   <p>An alternate version of user card here.</p>
                 </BlockDes>

@@ -7,7 +7,7 @@ import { Alert, UncontrolledAlert } from "reactstrap";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
-const AlertsPage = ({ ...props }) => {
+const AlertsPage = () => {
   return (
     <React.Fragment>
       <Head title="Alerts" />
@@ -23,7 +23,7 @@ const AlertsPage = ({ ...props }) => {
             <BlockDes>
               <p className="lead">
                 Provide contextual feedback messages for typical user actions with the handful of available and flexible
-                alert messages. To use it, import it such as <code>import {`{Alert}`} from "reactstrap"</code>. Visit
+                alert messages. To use it, import it such as <code>import {`{Alert}`}from &ldquo;reactstrap&ldquo;</code>. Visit
                 the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/alerts"} target="_blank" rel="noreferrer">
                   Reactstrap

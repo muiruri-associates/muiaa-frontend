@@ -3,9 +3,8 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 
 import GetAllLenderOrgsDatatable from "../../../mainComponents/LenderOrg/GetAllLenderOrgsDatatable";
-import { Button } from "reactstrap";
 
-const LenderOrganizations = ({ ...props }) => {
+const LenderOrganizations = () => {
   return (
     <React.Fragment>
       <Head title="Lender Organizations" />

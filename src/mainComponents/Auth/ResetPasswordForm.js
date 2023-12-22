@@ -71,7 +71,7 @@ const ResetPasswordForm = () => {
               <BlockContent>
                 <BlockTitle tag="h5">Reset password</BlockTitle>
                 <BlockDes>
-                  <p>If you forgot your password, we'll send you instructions to reset it.</p>
+                  <p>If you forgot your password, we&apos;ll send you instructions to reset it.</p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>

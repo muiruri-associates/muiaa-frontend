@@ -14,7 +14,7 @@ import {
   PreviewCard,
 } from "../../components/Component";
 
-const Faq = ({ ...props }) => {
+const Faq = () => {
   return (
     <React.Fragment>
       <Head title="FAQ" />

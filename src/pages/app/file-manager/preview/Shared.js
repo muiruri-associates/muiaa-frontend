@@ -4,6 +4,17 @@ import Links from "../views/shared/Links";
 import Outgoing from "../views/shared/Outgoing";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
+import PropTypes from 'prop-types';
+
+Shared.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.object,
+  toggleCreateModal: PropTypes.func,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+}
 
 const Shared = ({ data, setData, searchText, setSearchText, toggleCreateModal, toggleUploadModal, toggleScreenLg }) => {
   const [tabs, setTab] = useState("incoming");

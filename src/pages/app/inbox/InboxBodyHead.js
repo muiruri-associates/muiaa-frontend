@@ -2,7 +2,25 @@ import React, { useEffect, useState } from "react";
 import { contacts, inboxList } from "./InboxData";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Icon } from "../../../components/Component";
+import PropTypes from 'prop-types';
 
+InboxBodyHead.propTypes = {
+  allData: PropTypes.object,
+  data: PropTypes.object,
+  aside: PropTypes.object,
+  setAside: PropTypes.object,
+  setData: PropTypes.object,
+  check: PropTypes.object,
+  currentTab: PropTypes.object,
+  setChecked: PropTypes.object,
+  selectorDeleteInbox: PropTypes.object,
+  selectorArchive: PropTypes.object,
+  toggleRefresh: PropTypes.object,
+  itemPerPage: PropTypes.object,
+  totalItems: PropTypes.object,
+  paginate: PropTypes.func,
+  currentPage: PropTypes.any,
+}
 const InboxBodyHead = ({
   allData,
   data,

@@ -61,7 +61,7 @@ const ModalsPage = () => {
               <p className="lead">
                 Use Bootstrap’s JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications,
                 or completely custom content. To use it, import it such as{" "}
-                <code>import {`{Modal,ModalBody,ModalBody,ModalFooter}`} from "reactstrap"</code>. Visit the{" "}
+                <code>import {`{Modal,ModalBody,ModalBody,ModalFooter}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/modals"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}

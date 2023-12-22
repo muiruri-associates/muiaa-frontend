@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState, useContext } from "react";
 import SlideA from "../../../images/slides/slide-a.jpg";
 import SlideB from "../../../images/slides/slide-b.jpg";
@@ -473,4 +474,24 @@ const ChatSideBar = ({ sidebar, chat }) => {
     </SimpleBar>
   );
 };
+
+ChatSideBar.propTypes = {
+  chat: PropTypes.shape({
+    active: PropTypes.bool,
+    chatGroup: PropTypes.any,
+    chatTheme: PropTypes.any,
+    group: PropTypes.any,
+    id: PropTypes.any,
+    image: PropTypes.any,
+    name: PropTypes.any,
+    nickname: PropTypes.any,
+    theme: PropTypes.any,
+    user: PropTypes.shape({
+      length: PropTypes.number,
+      map: PropTypes.func,
+      slice: PropTypes.func
+    })
+  }),
+  sidebar: PropTypes.any
+}
 export default ChatSideBar;

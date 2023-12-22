@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Modal, UncontrolledDropdown } from "reactstrap";
@@ -146,6 +147,31 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
   );
 };
 
+KanbanCard.propTypes = {
+  card: PropTypes.shape({
+    desc: PropTypes.any,
+    id: PropTypes.any,
+    meta: PropTypes.shape({
+      category: PropTypes.any,
+      date: PropTypes.any,
+      due: PropTypes.any,
+      tags: PropTypes.shape({
+        map: PropTypes.func
+      }),
+      users: PropTypes.shape({
+        map: PropTypes.func
+      })
+    }),
+    title: PropTypes.any
+  }),
+  column: PropTypes.shape({
+    id: PropTypes.any
+  }),
+  data: PropTypes.any,
+  index: PropTypes.any,
+  setData: PropTypes.func
+}
+
 export const KanbanCardList = ({ data, setData, tasks, column }) => {
   return tasks.length > 0 ? (
     tasks.map((task, index) => {
@@ -156,6 +182,18 @@ export const KanbanCardList = ({ data, setData, tasks, column }) => {
     <div className="kanban-drag"></div>
   );
 };
+
+KanbanCardList.propTypes = {
+  column: PropTypes.any,
+  data: PropTypes.shape({
+    task: PropTypes.any
+  }),
+  setData: PropTypes.any,
+  tasks: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.func
+  })
+}
 
 export const KanbanColumn = ({ data, setData, column, index }) => {
   const [open, setOpen] = useState(false);
@@ -290,3 +328,17 @@ export const KanbanColumn = ({ data, setData, column, index }) => {
     </React.Fragment>
   );
 };
+
+KanbanColumn.propTypes = {
+  column: PropTypes.shape({
+    id: PropTypes.any,
+    tasks: PropTypes.shape({
+      length: PropTypes.number
+    }),
+    text: PropTypes.any,
+    theme: PropTypes.any
+  }),
+  data: PropTypes.any,
+  index: PropTypes.any,
+  setData: PropTypes.func
+}

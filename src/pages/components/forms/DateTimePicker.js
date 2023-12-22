@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState, forwardRef } from "react";
 import Head from "../../../layout/head/Head";
 import Content from "../../../layout/content/Content";
@@ -14,7 +15,7 @@ import {
   CodeBlock,
   Icon,
 } from "../../../components/Component";
-
+ 
 const ExampleCustomInput = forwardRef(({ value, onClick, onChange }, ref) => (
   <div onClick={onClick} ref={ref}>
     <div className="form-icon form-icon-left">
@@ -23,6 +24,14 @@ const ExampleCustomInput = forwardRef(({ value, onClick, onChange }, ref) => (
     <input className="form-control date-picker" type="text" value={value} onChange={onChange} />
   </div>
 ));
+
+ExampleCustomInput.propTypes = {
+  value: PropTypes.any,
+  onClick: PropTypes.func,
+  onChange: PropTypes.func,
+};
+
+ExampleCustomInput.displayName = 'ExampleCustomInput';
 
 const DateTimePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -72,7 +81,7 @@ const DateTimePicker = () => {
               <BlockTitle tag="h5">Date Picker</BlockTitle>
               <BlockDes>
                 To use the date picker component, import it such as{" "}
-                <code>import DatePicker from "react-datepicker"</code>.
+                <code>import DatePicker from react-datepicker</code>.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -303,4 +312,4 @@ const DateTimePicker = () => {
     </React.Fragment>
   );
 };
-export default DateTimePicker;
+export default {DateTimePicker, ExampleCustomInput};

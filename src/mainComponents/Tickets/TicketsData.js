@@ -1,5 +1,7 @@
+import PropTypes from "prop-types"
 import {Button} from "reactstrap"
 import { useHistory } from 'react-router-dom';
+import React from "react";
 
 const ActionsColumn = ({ row }) => {
     const history = useHistory();
@@ -16,6 +18,12 @@ const ActionsColumn = ({ row }) => {
       </Button>
     );
   };
+
+ActionsColumn.propTypes = {
+  row: PropTypes.shape({
+    _id: PropTypes.any
+  })
+}
 
 
 export const TicketColums = [

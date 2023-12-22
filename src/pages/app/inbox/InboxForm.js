@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import Tags from "@yaireo/tagify/dist/react.tagify";
 import { formTemplates } from "./InboxData";
@@ -52,7 +53,8 @@ const InboxForm = ({
     } else {
       setTagifyOptions([composeMail]);
     }
-  }, [composeMail]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [composeMail]); 
 
   const addMailFunc = (type) => {
     let defaultData = mailData;
@@ -450,5 +452,30 @@ const InboxForm = ({
     </Modal>
   );
 };
+
+InboxForm.propTypes = {
+  composeMail: PropTypes.any,
+  composeState: PropTypes.any,
+  currentItem: PropTypes.shape({
+    id: PropTypes.any,
+    message: PropTypes.shape({
+      meta: PropTypes.shape({
+        tags: PropTypes.any
+      })
+    })
+  }),
+  deleteInbox: PropTypes.func,
+  draftData: PropTypes.shape({
+    mail: PropTypes.any,
+    message: PropTypes.any,
+    subject: PropTypes.any
+  }),
+  editOnOpen: PropTypes.any,
+  mailData: PropTypes.shape({
+    length: PropTypes.number
+  }),
+  setMailData: PropTypes.func,
+  toggleModal: PropTypes.func
+}
 
 export default InboxForm;

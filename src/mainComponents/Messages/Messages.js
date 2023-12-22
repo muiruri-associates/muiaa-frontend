@@ -2,20 +2,18 @@ import React, { useEffect, useState } from "react";
 import Head from "../../layout/head/Head";
 import MessageItem from "./MessageItem";
 import ContentAlt from "../../layout/content/ContentAlt";
-import Simplebar from "simplebar-react";
-import { Button, Icon, UserAvatar } from "../../components/Component";
 import { messageData } from "./MessageData";
-import { findUpper } from "../../utils/Utils";
 
 const Messages = () => {
   const [data, setData] = useState(messageData);
   const [filteredTabData, setFilteredTabData] = useState(messageData);
-  const [filterTab, setFilterTab] = useState("1");
-  const [search, setOnSearch] = useState(false);
+  const [filterTab] = useState("1");
+  const [ setOnSearch] = useState(false);
   const [filterText, setFilterText] = useState("");
   const [selectedId, setSelectedIt] = useState(1);
   const [mobileView, setMobileView] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   const onInputChange = (e) => {
     setFilterText(e.target.value);
   };
@@ -61,6 +59,7 @@ const Messages = () => {
     }
   }, [filterTab]);
 
+  // eslint-disable-next-line no-unused-vars
   const onSearchBack = () => {
     setOnSearch(false);
     setFilterText("");
@@ -72,7 +71,7 @@ const Messages = () => {
     newData[index].closed = true;
     setData([...newData]);
   };
-
+  // eslint-disable-next-line no-unused-vars
   const onMessageClick = (id) => {
     setSelectedIt(id);
     if (window.innerWidth <= 990) {

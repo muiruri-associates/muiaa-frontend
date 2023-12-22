@@ -458,7 +458,7 @@ const Typography = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Reactstrap's
+                  Reactstraps
                 </a>{" "}
                 predefined components.
               </p>

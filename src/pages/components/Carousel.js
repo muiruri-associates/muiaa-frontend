@@ -11,7 +11,7 @@ import FadeCarousel from "../../components/partials/carousel/Fade";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const CarouselPage = ({ ...props }) => {
+const CarouselPage = () => {
   return (
     <React.Fragment>
       <Head title="Carousel" />
@@ -30,7 +30,7 @@ const CarouselPage = ({ ...props }) => {
                 <code>
                   Import
                   {` {Carousel, CarouselItem, CarouselControl, CarouselIndicators } `}
-                  from "reactstrap"
+                  from &ldquo;reactstrap&ldquo;
                 </code>
                 . Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/carousel"} target="_blank" rel="noreferrer">

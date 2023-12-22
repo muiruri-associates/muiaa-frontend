@@ -4,7 +4,7 @@ import Head from "../../layout/head/Head";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
-const SpacingPage = ({ ...props }) => {
+const SpacingPage = () => {
   return (
     <React.Fragment>
       <Head title="Spacing Utility" />

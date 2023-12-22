@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 
 const Error404Modern = lazy(() => import("./pages/error/404-modern"));
 
+// eslint-disable-next-line react/no-deprecated
 ReactDOM.render(
   <React.Fragment>
     <Provider store={store}>

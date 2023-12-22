@@ -3,8 +3,13 @@ import { Icon } from "../../../../../components/Component";
 import { Link } from "react-router-dom";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { FileManagerContext } from "../../FileManagerContext";
+import PropTypes from 'prop-types';
 
-const Links = ({ data, setData }) => {
+Links.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+}
+const Links = ({ data }) => {
   const { removeShare } = useContext(FileManagerContext);
   return (
     <div className="nk-files nk-files-view-list">

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import Icon from "../icon/Icon";
 import Button from "../button/Button";
@@ -177,6 +178,14 @@ export const SpecialTable = ({ action, isCompact, data }) => {
     </table>
   );
 };
+
+SpecialTable.propTypes = {
+  action: PropTypes.any,
+  data: PropTypes.shape({
+    map: PropTypes.func
+  }),
+  isCompact: PropTypes.any
+}
 
 export const OrderTable = () => {
   const DropdownTrans = () => {

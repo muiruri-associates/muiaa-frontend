@@ -145,7 +145,7 @@ const NouiSlider = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Vertical Slider</BlockTitle>
               <p>
-                For vertical slider, just add <code>orientation</code> props to <code>"vertical"</code>
+                For vertical slider, just add <code>orientation</code> props to <code>&ldquo;vertical&ldquo;</code>
               </p>
             </BlockHeadContent>
           </BlockHead>

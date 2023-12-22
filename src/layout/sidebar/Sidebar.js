@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import classNames from "classnames";
 import SimpleBar from "simplebar-react";
@@ -5,7 +6,7 @@ import Logo from "../logo/Logo";
 import Menu from "../menu/Menu";
 import Toggle from "./Toggle";
 
-const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, roles, ...props }) => {
+const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView }) => {
   const [collapseSidebar, setSidebar] = useState(false);
   const [mouseEnter, setMouseEnter] = useState(false);
 
@@ -51,4 +52,13 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView, roles, ..
     </div>
   );
 };
+
+Sidebar.propTypes = {
+  className: PropTypes.any,
+  fixed: PropTypes.any,
+  mobileView: PropTypes.any,
+  roles: PropTypes.any,
+  sidebarToggle: PropTypes.any,
+  theme: PropTypes.string
+}
 export default Sidebar;

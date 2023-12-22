@@ -6,7 +6,7 @@ import { Spinner, Button } from "reactstrap";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const SpinnerPage = ({ ...props }) => {
+const SpinnerPage = () => {
   return (
     <React.Fragment>
       <Head title="Spinner" />
@@ -22,7 +22,7 @@ const SpinnerPage = ({ ...props }) => {
             <BlockDes>
               <p className="lead">
                 Indicate the loading state of a component or page with Bootstrap spinners. To use it, import it such as{" "}
-                <code>import {`{Spinner}`} from "reactstrap"</code>. Visit the{" "}
+                <code>import {`{Spinner}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/spinners"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}
@@ -138,7 +138,7 @@ const SpinnerPage = ({ ...props }) => {
               <BlockTitle tag="h5">Size</BlockTitle>
               <p>
                 Add <code className="highlighter-rouge">size</code> props and{" "}
-                <code className="highlighter-rouge">type="grow"</code> to make a smaller spinner that can quickly be
+                <code className="highlighter-rouge">type=grow</code> to make a smaller spinner that can quickly be
                 used within other components.
               </p>
             </BlockHeadContent>

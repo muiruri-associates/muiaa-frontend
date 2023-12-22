@@ -3,7 +3,7 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import RolesDatatable from "../../../mainComponents/AccessControl/RolesDatatable";
 
-const Roles = ({ ...props }) => {
+const Roles = () => {
   return (
     <React.Fragment>
       <Head title="Roles" />

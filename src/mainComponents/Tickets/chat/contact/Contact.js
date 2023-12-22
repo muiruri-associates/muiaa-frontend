@@ -6,6 +6,12 @@ import { findUpper } from "../../../../utils/Utils";
 import { contacts } from "./ContactData";
 import { chatData } from "../ChatData";
 import { ContactItem } from "../ChatPartials";
+import PropTypes from 'prop-types';
+
+AppContact.propTypes = {
+  setTab: PropTypes.any,
+  setSelectedId: PropTypes.any,
+}
 
 const AppContact = ({ setTab, setSelectedId }) => {
   const [contactData] = useState(contacts);
@@ -59,7 +65,7 @@ const AppContact = ({ setTab, setSelectedId }) => {
             <ul className="contacts-list">
               {filterData.map((contact, idx) => {
                 return (
-                  <React.Fragment>
+                  <React.Fragment key={idx}>
                     <li
                       key={idx}
                       onClick={() => {

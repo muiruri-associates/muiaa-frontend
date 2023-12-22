@@ -21,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const ForgotPassword = () => {
+  // eslint-disable-next-line no-unused-vars
   const history = useHistory();
   const dispatch = useDispatch()
 

@@ -378,7 +378,7 @@ const ProductCard = () => {
                       <section>
                         <div {...getRootProps()} className="dropzone upload-zone small bg-lighter my-2 dz-clickable">
                           <input {...getInputProps()} />
-                          {files.length === 0 && <p>Drag 'n' drop some files here, or click to select files</p>}
+                          {files.length === 0 && <p>Drag and drop some files here, or click to select files</p>}
                           {files.map((file) => (
                             <div
                               key={file.name}

@@ -35,6 +35,12 @@ import {
 import { kycData, filterStatus, filterDoc, bulkActionKycOptions } from "./KycData";
 import { findUpper } from "../../../utils/Utils";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+KycListRegular.propTypes = {
+  history: PropTypes.string
+}
+
 
 const KycListRegular = ({ history }) => {
   const [onSearch, setonSearch] = useState(true);
@@ -102,6 +108,7 @@ const KycListRegular = ({ history }) => {
 
   // function to fire actions after dropdowm select
   const onActionClick = (e) => {
+    console.log(e)
     if (actionText === "Reject") {
       let newData = data.map((item) => {
         if (item.check === true) item.status = "Rejected";

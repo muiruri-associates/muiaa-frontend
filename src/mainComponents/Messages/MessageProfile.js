@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import SimpleBar from "simplebar-react";
 import { Row, Col, UncontrolledDropdown, DropdownToggle, DropdownMenu, Card } from "reactstrap";
@@ -121,5 +122,18 @@ const MessageProfileSidebar = ({ sidebar, profile }) => {
     </SimpleBar>
   );
 };
+
+MessageProfileSidebar.propTypes = {
+  profile: PropTypes.shape({
+    closed: PropTypes.any,
+    image: PropTypes.any,
+    name: PropTypes.any,
+    reply: PropTypes.shape({
+      length: PropTypes.number
+    }),
+    theme: PropTypes.any
+  }),
+  sidebar: PropTypes.any
+}
 
 export default MessageProfileSidebar;

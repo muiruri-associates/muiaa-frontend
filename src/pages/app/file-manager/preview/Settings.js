@@ -14,6 +14,11 @@ import { findUpper } from "../../../../utils/Utils";
 import { FileManagerContext } from "../FileManagerContext";
 import { pricingTableDataV2, selectDateFormat, selectLanguageOptions, selectTimezoneFormat } from "../Data";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+SettingsPreview.propTypes = {
+  toggleScreenLg: PropTypes.func
+}
 
 const SettingsPreview = ({ toggleScreenLg }) => {
   const { planData } = useContext(FileManagerContext);

@@ -8,7 +8,7 @@ import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 import { OverlineTitle } from "../../components/text/Text";
 
-const ButtonsPage = ({ ...props }) => {
+const ButtonsPage = () => {
   return (
     <React.Fragment>
       <Head title="Buttons" />
@@ -25,7 +25,7 @@ const ButtonsPage = ({ ...props }) => {
               <p className="lead">
                 Documentation and examples of button styles for actions in forms, dialogs and more with support for
                 multiple sizes, states, and more. To use it, import it such as{" "}
-                <code>import {`{Button}`} from "reactstrap"</code>. Visit the{" "}
+                <code>import {`{Button}`} from &quot;reactstrap&quot;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/buttons"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}

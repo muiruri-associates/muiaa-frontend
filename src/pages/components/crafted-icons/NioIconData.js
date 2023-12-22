@@ -1,3 +1,5 @@
+import React from "react"; 
+
 export const iconData = [
   { "icon-name": "centos" },
   { "icon-name": "covid" },

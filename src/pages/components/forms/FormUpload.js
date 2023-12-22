@@ -338,7 +338,7 @@ const handleDropChange = (acceptedFiles) => {
               </tr>
               <tr>
                 <td>
-                  <code>acceptedFiles=[".jpg", ".png", ".svg"]</code>
+                  <code>acceptedFiles=[&quot;.jpg&quot;, &quot;.png&quot;, &quot;.svg&quot;]</code>
                 </td>
                 <td>
                   Use <code>{`{fileType}`}</code> with <code>acceptedFiles</code> props as{" "}

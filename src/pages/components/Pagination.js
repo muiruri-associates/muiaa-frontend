@@ -7,7 +7,7 @@ import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const PaginationPage = ({ ...props }) => {
+const PaginationPage = () => {
   return (
     <React.Fragment>
       <Head title="Pagination" />
@@ -24,7 +24,7 @@ const PaginationPage = ({ ...props }) => {
               <p className="lead">
                 Examples for showing pagination to indicate a series of related content exists across multiple pages.To
                 use it, import it such as{" "}
-                <code>import {`{Pagination, PaginationItem, PaginationLink}`} from "reactstrap"</code>. Visit the{" "}
+                <code>import {`{Pagination, PaginationItem, PaginationLink}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/pagination"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}
@@ -346,7 +346,7 @@ const PaginationPage = ({ ...props }) => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Sizing</BlockTitle>
               <p>
-                Add <code>size="sm|md|lg"</code> props with <code>Pagination</code> component for additional sizes.
+                Add <code>size=sm|md|lg</code> props with <code>Pagination</code> component for additional sizes.
               </p>
             </BlockHeadContent>
           </BlockHead>

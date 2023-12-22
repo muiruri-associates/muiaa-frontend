@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Form, FormGroup, Label, Row, Col, Button } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { BackTo,Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
@@ -17,7 +17,7 @@ const CreateTicketForm = () => {
   const [email, setEmail] = useState("test@gmail.com");
 
   // State to manage form submission status
-     const [isSubmitted, setIsSubmitted] = useState(false);
+     const [ setIsSubmitted] = useState(false);
 
   // Function to handle form submission
   const handleSubmit = async (e) => {

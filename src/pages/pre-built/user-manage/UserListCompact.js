@@ -213,7 +213,7 @@ const UserListCompact = () => {
   };
 
   // function which fires on applying selected action
-  const onActionClick = (e) => {
+  const onActionClick = () => {
     if (actionText === "suspend") {
       let newData = data.map((item) => {
         if (item.checked === true) item.status = "Suspend";

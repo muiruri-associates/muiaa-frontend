@@ -36,14 +36,17 @@ export const uploadDocument = createAsyncThunk('document/uploadDocument',async (
         if (error.response) {
             // Server responded with a status other than 2xx
             console.error('Server error:', error.response.data);
+            // eslint-disable-next-line no-undef
             return rejectWithValue('Server error: ' + error.response.data.message);
           } else if (error.request) {
             // The request was made but no response was received
             console.error('Request made but no response received:', error.request);
+            // eslint-disable-next-line no-undef
             return rejectWithValue('No response from server');
           } else {
             // Something happened in setting up the request
             console.error('Error setting up the request:', error.message);
+            // eslint-disable-next-line no-undef
             return rejectWithValue('Request setup error: ' + error.message);
           }
     }

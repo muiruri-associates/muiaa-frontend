@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext, useState } from "react";
 import CreateFolder from "../../../pages/app/file-manager/modals/CreateFolder";
 import Details from "../../../pages/app/file-manager/modals/Details";
@@ -152,5 +153,11 @@ const FileManagerDropdown = ({ file }) => {
     </div>
   );
 };
+
+FileManagerDropdown.propTypes = {
+  file: PropTypes.shape({
+    id: PropTypes.any
+  })
+}
 
 export default FileManagerDropdown;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext } from "react";
 import { Icon, UserAvatar } from "../../../components/Component";
 import SimpleBar from "simplebar-react";
@@ -220,6 +221,26 @@ export const ChatAsideBody = ({
   );
 };
 
+ChatAsideBody.propTypes = {
+  chatItemClick: PropTypes.any,
+  favFilter: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.func
+  }),
+  favFilterText: PropTypes.any,
+  favInputSearchChange: PropTypes.func,
+  favState: PropTypes.any,
+  filterTab: PropTypes.string,
+  filteredChatList: PropTypes.shape({
+    filter: PropTypes.func,
+    map: PropTypes.func
+  }),
+  onInputChange: PropTypes.func,
+  selectedId: PropTypes.any,
+  setFavState: PropTypes.func,
+  setSelectedId: PropTypes.func
+}
+
 export const ChannelAsideBody = ({
   filteredChatList,
   onInputChange,
@@ -349,6 +370,19 @@ export const ChannelAsideBody = ({
   );
 };
 
+ChannelAsideBody.propTypes = {
+  chatItemClick: PropTypes.any,
+  filterTab: PropTypes.string,
+  filteredChatList: PropTypes.shape({
+    filter: PropTypes.func,
+    map: PropTypes.func
+  }),
+  onInputChange: PropTypes.func,
+  selectedId: PropTypes.any,
+  setMobileView: PropTypes.func,
+  setSelectedId: PropTypes.func
+}
+
 export const ContactAsideBody = (onInputChange, filterData, filterText, contactData, setSelectedId) => {
   return (
     <SimpleBar className="nk-chat-aside-body">
@@ -381,8 +415,8 @@ export const ContactAsideBody = (onInputChange, filterData, filterText, contactD
           <ul className="contacts-list">
             {filterData.map((contact, idx) => {
               return (
-                <React.Fragment>
-                  <li key={idx} setSelectedId={setSelectedId(contact.id)}>
+                <React.Fragment key={idx}>
+                  <li key={idx} onClick={() => setSelectedId(contact.id)}>
                     <div className="user-card">
                       <a href="#name" onClick={(ev) => ev.preventDefault()}>
                         <UserAvatar

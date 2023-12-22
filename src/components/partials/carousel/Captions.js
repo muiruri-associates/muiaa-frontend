@@ -26,7 +26,7 @@ const items = [
   },
 ];
 
-const BasicCarousel = (props) => {
+const BasicCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import menu from "./MenuData";
 import Icon from "../../components/icon/Icon";
@@ -12,7 +13,11 @@ const MenuHeading = ({ heading }) => {
   );
 };
 
-const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, badge, ...props }) => {
+MenuHeading.propTypes = {
+  heading: PropTypes.any,
+};
+
+const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, badge }) => {
   let currentUrl;
   const toggleActionSidebar = (e) => {
     if (!sub && !newTab && mobileView) {
@@ -142,12 +147,7 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
   return (
     <li className={menuItemClass} onClick={(e) => toggleActionSidebar(e)}>
       {newTab ? (
-        <Link
-          to={`${link}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nk-menu-link"
-        >
+        <Link to={`${link}`} target="_blank" rel="noopener noreferrer" className="nk-menu-link">
           {icon ? (
             <span className="nk-menu-icon">
               <Icon name={icon} />
@@ -179,7 +179,18 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
   );
 };
 
-const MenuSub = ({ icon, link, text, sub, sidebarToggle, mobileView, ...props }) => {
+MenuItem.propTypes = {
+  badge: PropTypes.any,
+  icon: PropTypes.any,
+  link: PropTypes.any,
+  mobileView: PropTypes.any,
+  newTab: PropTypes.any,
+  sidebarToggle: PropTypes.func,
+  sub: PropTypes.any,
+  text: PropTypes.any,
+};
+
+const MenuSub = ({ sub, sidebarToggle, mobileView, ...props }) => {
   return (
     <ul className="nk-menu-sub" style={props.style}>
       {sub.map((item) => (
@@ -199,9 +210,21 @@ const MenuSub = ({ icon, link, text, sub, sidebarToggle, mobileView, ...props })
   );
 };
 
+MenuSub.propTypes = {
+  icon: PropTypes.any,
+  link: PropTypes.any,
+  mobileView: PropTypes.any,
+  sidebarToggle: PropTypes.any,
+  sub: PropTypes.shape({
+    map: PropTypes.func,
+  }),
+  text: PropTypes.any,
+  style: PropTypes.string,
+};
+
 const Menu = ({ sidebarToggle, mobileView, userRole }) => {
   // Filter the menu items based on the user's role
-  const allowedMenuItems = menu.filter(item => {
+  const allowedMenuItems = menu.filter((item) => {
     if (!item.roles || item.roles.length === 0) {
       return true; // Menu item is accessible to all
     }
@@ -211,7 +234,7 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
 
   return (
     <ul className="nk-menu">
-      {allowedMenuItems.map(item =>
+      {allowedMenuItems.map((item) =>
         item.heading ? (
           <MenuHeading heading={item.heading} key={item.heading} />
         ) : (
@@ -229,6 +252,12 @@ const Menu = ({ sidebarToggle, mobileView, userRole }) => {
       )}
     </ul>
   );
+};
+
+Menu.propTypes = {
+  mobileView: PropTypes.any,
+  sidebarToggle: PropTypes.any,
+  userRole: PropTypes.any,
 };
 
 export default Menu;

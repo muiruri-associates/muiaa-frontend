@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom"; 
 import { getTicketById } from "../../../redux/actions/ticketActions";
+import PropTypes from 'prop-types';
 
 export const TicketChatContext = createContext();
 
@@ -137,3 +138,7 @@ export const TicketChatContextProvider = (props) => {
     </TicketChatContext.Provider>
   );
 };
+
+TicketChatContextProvider.propTypes = {
+  children: PropTypes.node
+}

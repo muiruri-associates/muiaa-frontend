@@ -21,6 +21,12 @@ import { useHistory } from "react-router";
 import { currentTime, findUpper, monthNames, todaysDate } from "../../../utils/Utils";
 import { UserContext } from "./UserContext";
 import { notes } from "./UserData";
+import PropTypes from 'prop-types';
+
+UserDetailsPage.propTypes = {
+  match: PropTypes.any,
+}
+
 
 const UserDetailsPage = ({ match }) => {
   const { contextData } = useContext(UserContext);

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 import Icon from "../icon/Icon";
@@ -22,5 +23,16 @@ const UserAvatar = ({ className, size, theme, icon, text, image, imageAlt, ...pr
     </div>
   );
 };
+
+UserAvatar.propTypes = {
+  className: PropTypes.any,
+  icon: PropTypes.any,
+  image: PropTypes.any,
+  imageAlt: PropTypes.any,
+  size: PropTypes.any,
+  text: PropTypes.any,
+  theme: PropTypes.any,
+  children: PropTypes.node.isRequired
+}
 
 export default UserAvatar;

@@ -22,10 +22,22 @@ import {
 } from "../../../../components/Component";
 import { selectOptions } from "../Data";
 import { FileManagerContext } from "../FileManagerContext";
+import PropTypes from 'prop-types';
+
+Recovery.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.object,
+  toggleCreateModal: PropTypes.func,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+}
+
 
 const Recovery = ({
   data,
-  setData,
+  // setData,
   searchText,
   setSearchText,
   toggleCreateModal,

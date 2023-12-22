@@ -18,6 +18,11 @@ import {
 import { findUpper } from "../../../utils/Utils";
 import { kycData } from "./KycData";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+KycDetailsRegular.propTypes = {
+  match: PropTypes.object
+}
 
 const KycDetailsRegular = ({ match }) => {
   const [data] = useState(kycData);

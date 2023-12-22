@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import exportFromJSON from "export-from-json";
@@ -60,6 +61,12 @@ const Export = ({ data }) => {
   );
 };
 
+Export.propTypes = {
+  data: PropTypes.shape({
+    length: PropTypes.any
+  })
+}
+
 const ExpandableRowComponent = ({ data }) => {
   return (
     <ul className="dtr-details p-2 border-bottom ml-1">
@@ -79,6 +86,15 @@ const ExpandableRowComponent = ({ data }) => {
   );
 };
 
+ExpandableRowComponent.propTypes = {
+  data: PropTypes.shape({
+    company: PropTypes.any,
+    gender: PropTypes.any,
+    salary: PropTypes.any,
+    startDate: PropTypes.any
+  })
+}
+
 const CustomCheckbox = React.forwardRef(({ onClick, ...rest }, ref) => (
   <div className="custom-control custom-control-sm custom-checkbox notext">
     <input
@@ -92,6 +108,12 @@ const CustomCheckbox = React.forwardRef(({ onClick, ...rest }, ref) => (
     <label className="custom-control-label" htmlFor={rest.name} />
   </div>
 ));
+
+CustomCheckbox.propTypes = {
+  onClick: PropTypes.any
+}
+
+CustomCheckbox.displayName = "CustomCheckbox";
 
 const ReactDataTable = ({ data, columns, pagination, actions, className, selectableRows, expandableRows }) => {
   const [tableData, setTableData] = useState(data);
@@ -201,5 +223,17 @@ const ReactDataTable = ({ data, columns, pagination, actions, className, selecta
     </div>
   );
 };
+
+ReactDataTable.propTypes = {
+  actions: PropTypes.any,
+  className: PropTypes.any,
+  columns: PropTypes.any,
+  data: PropTypes.shape({
+    filter: PropTypes.func
+  }),
+  expandableRows: PropTypes.any,
+  pagination: PropTypes.any,
+  selectableRows: PropTypes.any
+}
 
 export default ReactDataTable;

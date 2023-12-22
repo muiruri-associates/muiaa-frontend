@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import PropTypes from "prop-types";
 
 const RSelect = ({ ...props }) => {
   return (
@@ -12,5 +13,9 @@ const RSelect = ({ ...props }) => {
     </div>
   );
 };
+
+RSelect.propTypes = {
+  className: PropTypes.string
+}
 
 export default RSelect;

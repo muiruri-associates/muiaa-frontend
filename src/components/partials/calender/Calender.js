@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -278,5 +279,13 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
     </React.Fragment>
   );
 };
+
+CalenderApp.propTypes = {
+  events: PropTypes.shape({
+    find: PropTypes.func
+  }),
+  onDelete: PropTypes.func,
+  onEdit: PropTypes.func
+}
 
 export default CalenderApp;

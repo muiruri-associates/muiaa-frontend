@@ -1,7 +1,8 @@
+import PropTypes from "prop-types"
 import React, { useState } from "react";
 import { Collapse } from "reactstrap";
 
-const Accordion = ({ className, variation, ...props }) => {
+const Accordion = ({ className, variation }) => {
   const [isOpen, setIsOpen] = useState("1");
 
   const toggleCollapse = (param) => {
@@ -106,5 +107,10 @@ const Accordion = ({ className, variation, ...props }) => {
     </div>
   );
 };
+
+Accordion.propTypes = {
+  className: PropTypes.any,
+  variation: PropTypes.any
+}
 
 export default Accordion;

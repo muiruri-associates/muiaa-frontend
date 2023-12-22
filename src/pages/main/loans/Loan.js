@@ -3,7 +3,7 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import ViewLoan from "../../../mainComponents/Loans/ViewLoan";
 
-const Loan = ({ ...props }) => {
+const Loan = () => {
   return (
     <React.Fragment>
       <Head title="Loan" />

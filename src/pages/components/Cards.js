@@ -20,7 +20,7 @@ import {
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const CardsPage = ({ ...props }) => {
+const CardsPage = () => {
   return (
     <React.Fragment>
       <Head title="Cards" />
@@ -40,7 +40,7 @@ const CardsPage = ({ ...props }) => {
                 <code>
                   import{" "}
                   {`{Card, CardHeader, CardFooter, CardImg, CardText, CardBody, CardTitle, CardSubtitle, CardLink}`}{" "}
-                  from "reactstrap"
+                  from reactstrap
                 </code>
                 . Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/card"} target="_blank" rel="noreferrer">
@@ -70,7 +70,7 @@ const CardsPage = ({ ...props }) => {
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Card with stretched link</CardTitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                     <Button color="primary">Go somewhere</Button>
                   </CardBody>
@@ -114,7 +114,7 @@ const CardsPage = ({ ...props }) => {
                       Card subtitle
                     </CardSubtitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                     <CardLink
                       href="#link"
@@ -221,7 +221,7 @@ const CardsPage = ({ ...props }) => {
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Primary card title</CardTitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                   </CardBody>
                 </Card>
@@ -232,7 +232,7 @@ const CardsPage = ({ ...props }) => {
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Secondary card title</CardTitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                   </CardBody>
                 </Card>
@@ -243,7 +243,7 @@ const CardsPage = ({ ...props }) => {
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Dark card title</CardTitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                   </CardBody>
                 </Card>
@@ -254,7 +254,7 @@ const CardsPage = ({ ...props }) => {
                   <CardBody className="card-inner">
                     <CardTitle tag="h5">Light card title</CardTitle>
                     <CardText>
-                      Some quick example text to build on the card title and make up the bulk of the card"s content.
+                      Some quick example text to build on the card title and make up the bulk of the card&ldquo;scontent.
                     </CardText>
                   </CardBody>
                 </Card>

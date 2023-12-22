@@ -3,7 +3,17 @@ import SimpleBar from "simplebar-react";
 import InboxForm from "./InboxForm";
 import { Icon, TooltipComponent } from "../../../components/Component";
 import { Badge, Spinner, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
+import PropTypes from 'prop-types';
 
+InboxDraftList.propTypes = {
+  item: PropTypes.any, 
+  deleteInbox: PropTypes.any, 
+  onArchiveClick: PropTypes.any, 
+  onFavoriteClick: PropTypes.any, 
+  checkMessage: PropTypes.any, 
+  data: PropTypes.any, 
+  setData: PropTypes.any
+}
 export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteClick, checkMessage, data, setData }) => {
   const [compose, setCompose] = useState(false);
   const [draftData, setDraftData] = useState({ id: "", mail: "", subject: "", message: "" });
@@ -180,6 +190,17 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
     </React.Fragment>
   );
 };
+
+InboxDraft.propTypes = {
+  data: PropTypes.any,
+  setData: PropTypes.any,
+  tabData: PropTypes.any,
+  checkMessage: PropTypes.any,
+  refresh: PropTypes.any,
+  deleteInbox: PropTypes.any,
+  onArchiveClick: PropTypes.any,
+  onFavoriteClick: PropTypes.any,
+}
 
 const InboxDraft = ({
   data,

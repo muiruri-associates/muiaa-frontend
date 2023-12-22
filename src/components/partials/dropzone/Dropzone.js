@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 
 const DropzoneContainer = (props) => {
@@ -21,5 +22,15 @@ const DropzoneContainer = (props) => {
     </div>
   );
 };
+
+DropzoneContainer.propTypes = {
+  files: PropTypes.shape({
+    length: PropTypes.number
+  }),
+  input: PropTypes.any,
+  previews: PropTypes.any,
+  submitButton: PropTypes.any,
+  extra: PropTypes.object
+}
 
 export default DropzoneContainer;

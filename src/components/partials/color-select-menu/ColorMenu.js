@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 
 export const ColorOptions = ({ value, label }) => {
@@ -8,3 +9,8 @@ export const ColorOptions = ({ value, label }) => {
     </div>
   );
 };
+
+ColorOptions.propTypes = {
+  label: PropTypes.any,
+  value: PropTypes.any
+}

@@ -4,7 +4,7 @@ import Head from "../../../layout/head/Head";
 
 import CreateLenderUserForm from "../../../mainComponents/LenderOrg/CreateLenderUserForm";
 
-const CreateLenderUser = ({ ...props }) => {
+const CreateLenderUser = () => {
   return (
     <React.Fragment>
       <Head title="Create" />

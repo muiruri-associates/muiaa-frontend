@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useEffect, useState } from "react";
 import DualListBox from "react-dual-listbox";
 import { Icon } from "../Component";
@@ -75,5 +76,14 @@ const ReactDualList = ({ options, icon, canFilter, preSelected }) => {
     </div>
   );
 };
+
+ReactDualList.propTypes = {
+  canFilter: PropTypes.any,
+  icon: PropTypes.any,
+  options: PropTypes.shape({
+    filter: PropTypes.func
+  }),
+  preSelected: PropTypes.any
+}
 
 export default ReactDualList;

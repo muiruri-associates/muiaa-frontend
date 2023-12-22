@@ -77,7 +77,7 @@ const KnobPreview = () => {
               <BlockDes>
                 <p>
                   Half Knobs can be made using the built in react dashlite component of <code>Knob</code>. Just pass{" "}
-                  <code>type="half"</code> to the component.
+                  <code>type=&#34;half&#34;</code> to the component.
                 </p>
               </BlockDes>
             </BlockHeadContent>

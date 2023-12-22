@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
@@ -6,14 +6,12 @@ import {
   Block,
   BlockHead,
   BlockHeadContent,
-  BlockTitle,
-  BlockDes,
-  BackTo,
+  BlockTitle, BackTo,
   PreviewCard,
-  ReactDataTable,
+  ReactDataTable
 } from "../../components/Component";
-import { AllLeadsDataTableData, AllLeadsdataTableColumns } from "./AllTableData";
-import { getAllAvailableLeads } from "../../redux/actions/leadsActions"
+import { AllLeadsdataTableColumns } from "./AllTableData";
+import { getAllAvailableLeads } from "../../redux/actions/leadsActions";
 
 const AllLeadsAppliedDatatable = () => {
   const dispatch = useDispatch();

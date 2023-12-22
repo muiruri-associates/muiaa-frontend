@@ -6,7 +6,7 @@ import { Button, Popover, UncontrolledPopover, PopoverHeader, PopoverBody } from
 import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
-const PopoversPage = ({ ...props }) => {
+const PopoversPage = () => {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   const toggle = () => setPopoverOpen(!popoverOpen);
@@ -25,7 +25,7 @@ const PopoversPage = ({ ...props }) => {
             <BlockDes>
               <p className="lead">
                 Examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.To use it,
-                import it such as <code>import {`{Popover}`} from "reactstrap"</code>. Visit the{" "}
+                import it such as <code>import {`{Popover}`} from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
                 <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/popovers"} target="_blank" rel="noreferrer">
                   Reactstrap
                 </a>{" "}
@@ -48,7 +48,7 @@ const PopoversPage = ({ ...props }) => {
             </Button>
             <Popover isOpen={popoverOpen} target="Popover1" toggle={toggle}>
               <PopoverHeader>Popover Title</PopoverHeader>
-              <PopoverBody>And here's some amazing content. It's very engaging. Right?</PopoverBody>
+              <PopoverBody>And her&apos; some amazing content. It&apos;s very engaging. Right?</PopoverBody>
             </Popover>
           </PreviewCard>
           <CodeBlock language="jsx">
@@ -58,7 +58,7 @@ const PopoversPage = ({ ...props }) => {
 <Popover isOpen={popoverOpen} target="Popover1" toggle={toggle}>
   <PopoverHeader>Popover Title</PopoverHeader>
   <PopoverBody>
-    And here"s some amazing content. It"s very engaging. Right?
+    And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?
   </PopoverBody>
 </Popover>`}
           </CodeBlock>
@@ -81,7 +81,7 @@ const PopoversPage = ({ ...props }) => {
                 </Button>
                 <UncontrolledPopover placement="top" target="PopoverTop">
                   <PopoverHeader>Popover Title</PopoverHeader>
-                  <PopoverBody>And here"s some amazing content. It"s very engaging. Right?</PopoverBody>
+                  <PopoverBody>And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?</PopoverBody>
                 </UncontrolledPopover>
               </li>
               <li className="preview-item">
@@ -90,7 +90,7 @@ const PopoversPage = ({ ...props }) => {
                 </Button>
                 <UncontrolledPopover placement="right" target="PopoverRight">
                   <PopoverHeader>Popover Title</PopoverHeader>
-                  <PopoverBody>And here"s some amazing content. It"s very engaging. Right?</PopoverBody>
+                  <PopoverBody>And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?</PopoverBody>
                 </UncontrolledPopover>
               </li>
               <li className="preview-item">
@@ -99,7 +99,7 @@ const PopoversPage = ({ ...props }) => {
                 </Button>
                 <UncontrolledPopover placement="bottom" target="PopoverBottom">
                   <PopoverHeader>Popover Title</PopoverHeader>
-                  <PopoverBody>And here"s some amazing content. It"s very engaging. Right?</PopoverBody>
+                  <PopoverBody>And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?</PopoverBody>
                 </UncontrolledPopover>
               </li>
               <li className="preview-item">
@@ -108,7 +108,7 @@ const PopoversPage = ({ ...props }) => {
                 </Button>
                 <UncontrolledPopover placement="left" target="PopoverLeft">
                   <PopoverHeader>Popover Title</PopoverHeader>
-                  <PopoverBody>And here"s some amazing content. It"s very engaging. Right?</PopoverBody>
+                  <PopoverBody>And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?</PopoverBody>
                 </UncontrolledPopover>
               </li>
             </ul>
@@ -120,7 +120,7 @@ const PopoversPage = ({ ...props }) => {
 <UncontrolledPopover placement="top" target="PopoverTop">
   <PopoverHeader>Popover Title</PopoverHeader>
   <PopoverBody>
-    And here"s some amazing content. It"s very engaging. Right?
+    And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?
   </PopoverBody>
 </UncontrolledPopover>`}
           </CodeBlock>
@@ -142,7 +142,7 @@ const PopoversPage = ({ ...props }) => {
             </Button>
             <UncontrolledPopover target="PopoverDismisable" trigger="focus">
               <PopoverHeader>Popover Title</PopoverHeader>
-              <PopoverBody>And here"s some amazing content. It"s very engaging. Right?</PopoverBody>
+              <PopoverBody>And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?</PopoverBody>
             </UncontrolledPopover>
           </PreviewCard>
           <CodeBlock language="jsx">
@@ -152,7 +152,7 @@ const PopoversPage = ({ ...props }) => {
 <UncontrolledPopover target="PopoverDismisable" trigger="focus">
   <PopoverHeader>Popover Title</PopoverHeader>
   <PopoverBody>
-    And here"s some amazing content. It"s very engaging. Right?
+    And here&ldquo;ssome amazing content. It&ldquo;svery engaging. Right?
   </PopoverBody>
 </UncontrolledPopover>`}
           </CodeBlock>

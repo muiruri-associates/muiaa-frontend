@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React, { useContext, useState } from "react";
 import { Icon, RSelect } from "../../../../components/Component";
 import { Button, FormGroup } from "reactstrap";
@@ -70,5 +71,9 @@ const CreateFolder = ({ toggle }) => {
     </React.Fragment>
   );
 };
+
+CreateFolder.propTypes = {
+  toggle: PropTypes.func
+}
 
 export default CreateFolder;

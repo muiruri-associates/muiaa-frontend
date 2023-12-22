@@ -19,7 +19,7 @@ const CreateLenderUserForm = () => {
   const [phone, setPhone] = useState("");
 
   // State to manage form submission status
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Fetch organizations when the component mounts
@@ -34,30 +34,30 @@ const CreateLenderUserForm = () => {
   // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!lenderOrgId || !email || !name || !phone) {
       toast.error("Please fill out all fields.");
       return;
     }
-  
+
     const lenderUserData = {
       lenderOrgId,
       email,
       name,
-      phone
+      phone,
     };
-  
+
     try {
       const invite = await dispatch(createLenderUser(lenderUserData));
-      console.log('Invite object:', invite); // Access the invite object here
-  
+      console.log("Invite object:", invite); // Access the invite object here
+
       // Clear form fields and set submission status
       setLenderOrgId("");
       setEmail("");
       setName("");
       setPhone("");
       setIsSubmitted(true);
-  
+
       // Handle the invite object or display a success message
       if (invite && Object.keys(invite).length > 0) {
         // Perform actions based on the invite object
@@ -73,10 +73,10 @@ const CreateLenderUserForm = () => {
       toast.error("Error creating lender Org User.");
     }
   };
-  
+
   return (
     <React.Fragment>
-      <Block size="lg" >
+      <Block size="lg">
         <BlockHead>
           <BlockHeadContent>
             <BlockTitle tag="h5">Create New Lender User</BlockTitle>
@@ -108,10 +108,10 @@ const CreateLenderUserForm = () => {
                           <option value="">Select an organization</option>
                           {lenderOrg.lenderOrgs
                             ? lenderOrg.lenderOrgs.map((org) => (
-                              <option key={org._id} value={org._id}>
-                                {org.business_name}
-                              </option>
-                            ))
+                                <option key={org._id} value={org._id}>
+                                  {org.business_name}
+                                </option>
+                              ))
                             : null}
                         </Input>
                       </div>
@@ -174,14 +174,12 @@ const CreateLenderUserForm = () => {
                   </Col>
                 </Row>
               </Form>
-
             </Col>
           </Row>
         </PreviewCard>
       </Block>
     </React.Fragment>
   );
-
 };
 
 export default CreateLenderUserForm;

@@ -7,7 +7,32 @@ import { contacts } from "./InboxData";
 import { Icon, UserAvatar, TooltipComponent } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Spinner, UncontrolledDropdown } from "reactstrap";
+import PropTypes from 'prop-types';
 
+InboxBody.propTypes = {
+  data: PropTypes.object,
+  currentTab: PropTypes.string,
+  aside: PropTypes.string ,
+  setAside: PropTypes.string,
+  setCurrentTab: PropTypes.string,
+  setData: PropTypes.func,
+  contact: PropTypes.string,
+  setContact: PropTypes.func,
+  labels: PropTypes.string,
+  setLabels: PropTypes.func,
+  setFilterLabel: PropTypes.func,
+  setMessageView: PropTypes.func,
+  tabData: PropTypes.object,
+  setTabData: PropTypes.object,
+  messageView: PropTypes.func,
+  mailId: PropTypes.func,
+  setMailId: PropTypes.func,
+  outerLabels: PropTypes.func,
+  itemPerPage: PropTypes.func,
+  totalItems: PropTypes.func,
+  paginate: PropTypes.func,
+  currentPage: PropTypes.func,
+}
 const InboxBody = ({
   data,
   aside,
@@ -180,6 +205,7 @@ const InboxBody = ({
       (currentTab === "Trash" && item.message.meta.draft === true) ||
       (currentTab === "Archive" && item.message.meta.draft === true)
     ) {
+      console.log()
     } else {
       ev.preventDefault();
       toggleMessageView();

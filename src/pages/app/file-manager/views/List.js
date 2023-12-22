@@ -7,9 +7,14 @@ import { findUpper } from "../../../../utils/Utils";
 import { FileManagerContext } from "../FileManagerContext";
 import { Link } from "react-router-dom";
 import { DropdownItem, DropdownMenu, Modal, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import PropTypes from 'prop-types';
 
-const List = ({ data, setData, starred }) => {
-  const { onStarClick, onFileCheck, selectorDeleteFolder, selectorDownloadFile, getTotalSize } =
+List.propTypes = {
+  data: PropTypes.object,
+  starred: PropTypes.func,
+}
+const List = ({ data,  starred }) => {
+  const { onStarClick, onFileCheck, selectorDeleteFolder, selectorDownloadFile } =
     useContext(FileManagerContext);
 
   const [dataList, setDataList] = useState();
@@ -24,6 +29,7 @@ const List = ({ data, setData, starred }) => {
       let filteredData = data.filter((item) => !item.recovery);
       setDataList([...filteredData]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const toggleCreateModal = () => {

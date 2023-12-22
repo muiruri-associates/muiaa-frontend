@@ -2,7 +2,7 @@ import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 
-const Starter = ({ ...props }) => {
+const Starter = () => {
   return (
     <React.Fragment>
       <Head title="Starter" />

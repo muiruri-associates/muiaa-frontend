@@ -1,9 +1,11 @@
+import PropTypes from "prop-types"
 import React, { useContext } from "react";
 import { DropdownToggle, DropdownMenu, UncontrolledDropdown, DropdownItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Icon, UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
+
 
 export const MeChat = ({ item, chat, onRemoveMessage }) => {
   return (
@@ -46,6 +48,20 @@ export const MeChat = ({ item, chat, onRemoveMessage }) => {
     </div>
   );
 };
+
+MeChat.propTypes = {
+  chat: PropTypes.shape({
+    chatTheme: PropTypes.any
+  }),
+  item: PropTypes.shape({
+    chat: PropTypes.shape({
+      map: PropTypes.func
+    }),
+    date: PropTypes.any,
+    id: PropTypes.any
+  }),
+  onRemoveMessage: PropTypes.func
+}
 
 export const YouChat = ({ item, chat }) => {
   return (
@@ -90,6 +106,27 @@ export const YouChat = ({ item, chat }) => {
   );
 };
 
+YouChat.propTypes = {
+  chat: PropTypes.shape({
+    active: PropTypes.bool,
+    group: PropTypes.any,
+    image: PropTypes.any,
+    name: PropTypes.any,
+    theme: PropTypes.any
+  }),
+  item: PropTypes.shape({
+    chat: PropTypes.shape({
+      map: PropTypes.func
+    }),
+    date: PropTypes.any,
+    user: PropTypes.shape({
+      image: PropTypes.any,
+      name: PropTypes.any,
+      theme: PropTypes.any
+    })
+  })
+}
+
 export const MetaChat = ({ item }) => {
   return (
     <div className="chat-sap">
@@ -99,6 +136,10 @@ export const MetaChat = ({ item }) => {
     </div>
   );
 };
+
+MetaChat.propTypes = {
+  item: PropTypes.any
+}
 
 export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => {
   const { deleteConvo, propAction } = useContext(ChatContext);
@@ -209,6 +250,31 @@ export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => 
   );
 };
 
+ChatItem.propTypes = {
+  chatItemClick: PropTypes.func,
+  item: PropTypes.shape({
+    active: PropTypes.bool,
+    archive: PropTypes.any,
+    convo: PropTypes.shape({
+      length: PropTypes.number
+    }),
+    date: PropTypes.any,
+    delivered: PropTypes.string,
+    group: PropTypes.bool,
+    id: PropTypes.any,
+    image: PropTypes.any,
+    name: PropTypes.any,
+    nickname: PropTypes.any,
+    theme: PropTypes.any,
+    unread: PropTypes.any,
+    user: PropTypes.shape({
+      slice: PropTypes.func
+    })
+  }),
+  selectedId: PropTypes.any,
+  setSelectedId: PropTypes.func
+}
+
 export const ContactItem = ({ item, setTab, setSelectedId }) => {
   return (
     <ul className="contacts-list">
@@ -239,3 +305,15 @@ export const ContactItem = ({ item, setTab, setSelectedId }) => {
     </ul>
   );
 };
+
+ContactItem.propTypes = {
+  item: PropTypes.shape({
+    contacts: PropTypes.shape({
+      length: PropTypes.number,
+      map: PropTypes.func
+    }),
+    title: PropTypes.any
+  }),
+  setSelectedId: PropTypes.func,
+  setTab: PropTypes.func
+}

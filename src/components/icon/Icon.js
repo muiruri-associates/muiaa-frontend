@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import classNames from "classnames";
 import React from "react";
 
@@ -10,4 +11,11 @@ const Icon = ({ name, id, className, style, ...props }) => {
   });
   return <em className={iconClass} id={id} style={style} {...props}></em>;
 };
+
+Icon.propTypes = {
+  className: PropTypes.any,
+  id: PropTypes.any,
+  name: PropTypes.any,
+  style: PropTypes.any,
+}
 export default Icon;

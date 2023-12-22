@@ -1,10 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Icon } from "../../../../components/Component";
 import { FileManagerContext } from "../FileManagerContext";
+import PropTypes from 'prop-types';
 
+Move.propTypes = {
+  file: PropTypes.string,
+  toggle: PropTypes.bool,
+  toggleCreateModal: PropTypes.string,
+}
 const Move = ({ file, toggle, toggleCreateModal }) => {
   const { contextData, moveFolder } = useContext(FileManagerContext);
-  const [data, setData] = contextData;
+  const [data] = contextData;
 
   const [selected, setSelected] = useState("");
   const [currentFolder, setCurrentFolder] = useState(null);

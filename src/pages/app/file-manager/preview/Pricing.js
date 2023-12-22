@@ -12,6 +12,11 @@ import {
 } from "../../../../components/Component";
 import { pricingTableDataV2 } from "../Data";
 import { FileManagerContext } from "../FileManagerContext";
+import PropTypes from "prop-types";
+
+Pricing.propTypes = {
+  toggleScreenLg: PropTypes.func,
+};
 
 const Pricing = ({ toggleScreenLg }) => {
   const { planData } = useContext(FileManagerContext);

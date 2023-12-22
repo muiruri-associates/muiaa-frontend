@@ -4,8 +4,13 @@ import { Icon } from "../../../../../components/Component";
 import { Link } from "react-router-dom";
 import { DropdownItem, DropdownMenu, Modal, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { FileManagerContext } from "../../FileManagerContext";
+import PropTypes from 'prop-types';
 
-const Incoming = ({ data, setData }) => {
+Incoming.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func
+}
+const Incoming = ({ data }) => {
   const { removeShare } = useContext(FileManagerContext);
   const [shareModal, setShareModal] = useState(false);
 

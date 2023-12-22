@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Button, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Icon } from "../../components/Component";
-import MyLeadsDatatable from './LeadsDatatable';
 
 // const history = useHistory();
 // Custom component for the "Actions" column
@@ -22,7 +21,7 @@ import MyLeadsDatatable from './LeadsDatatable';
 //   );
 // };
 const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableData, MyLeadsDataTableData, setMyLeadsDataTableData }) => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleApprove = () => {
     if (AllLeadsDataTableData && AllLeadsDataTableData.length > 0) {
@@ -94,6 +93,19 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
     </UncontrolledDropdown>
   );
 };
+
+LeadsActionsColumn.propTypes = {
+  AllLeadsDataTableData: PropTypes.shape({
+    findIndex: PropTypes.func,
+    length: PropTypes.number
+  }),
+  MyLeadsDataTableData: PropTypes.any,
+  row: PropTypes.shape({
+    id: PropTypes.any
+  }),
+  setAllLeadsDataTableData: PropTypes.func,
+  setMyLeadsDataTableData: PropTypes.func
+}
 
 // columns
 export const dataTableColumns = [

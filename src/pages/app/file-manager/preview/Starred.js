@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import List from "../views/List";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
+import PropTypes from 'prop-types';
 
+Starred.propTypes = {
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  searchText: PropTypes.string,
+  setSearchText: PropTypes.object,
+  toggleCreateModal: PropTypes.func,
+  toggleUploadModal: PropTypes.func,
+  toggleScreenLg: PropTypes.func,
+  children: PropTypes.object
+}
 const Starred = ({ data, setData, setSearchText, toggleCreateModal, toggleUploadModal, toggleScreenLg }) => {
   const [search, setSearch] = useState(false);
   const toggleSearch = () => {

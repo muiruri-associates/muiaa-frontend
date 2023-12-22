@@ -2,28 +2,44 @@ import React from "react";
 import Icon from "../icon/Icon";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-export const LinkItem = ({ ...props }) => {
+LinkItem.propTypes = {
+  tag: PropTypes.string, // You can specify the expected type
+  link: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+  text: PropTypes.string,
+  children: PropTypes.node, // If you&apos;re using props.children
+};
+
+export const LinkItem = ({ tag, link, icon, text, children, ...props }) => {
   return (
     <li>
-      {props.tag !== "a" ? (
-        <Link to={process.env.PUBLIC_URL + props.link} {...props}>
-          {props.icon ? <Icon name={props.icon} /> : null} <span>{props.text || props.children}</span>
+      {tag !== 'a' ? (
+        <Link to={process.env.PUBLIC_URL + link} {...props}>
+          {icon ? <Icon name={icon} /> : null} <span>{text || children}</span>
         </Link>
       ) : (
-        <a href={process.env.PUBLIC_URL + props.link} onClick={(ev) => ev.preventDefault()}>
-          {props.icon ? <Icon name={props.icon} /> : null} <span>{props.text || props.children}</span>
+        <a href={process.env.PUBLIC_URL + link} onClick={(ev) => ev.preventDefault()}>
+          {icon ? <Icon name={icon} /> : null} <span>{text || children}</span>
         </a>
       )}
     </li>
   );
 };
 
-export const LinkList = ({ ...props }) => {
-  const listClasses = classNames({
-    "link-list": !props.opt,
-    "link-list-opt": props.opt,
-    [`${props.className}`]: props.className,
-  });
-  return <ul className={listClasses}>{props.children}</ul>;
+LinkList.propTypes = {
+  opt: PropTypes.any,
+  className: PropTypes.string, // Add PropTypes validation for className
+  children: PropTypes.any,
 };
+
+export const LinkList = ({ opt, className, children }) => {
+  const listClasses = classNames({
+    'link-list': !opt,
+    'link-list-opt': opt,
+    [`${className}`]: className, // Include className in the classNames object
+  });
+  return <ul className={listClasses}>{children}</ul>;
+};
+

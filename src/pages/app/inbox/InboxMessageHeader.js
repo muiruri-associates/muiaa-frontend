@@ -1,6 +1,21 @@
 import React, { useState } from "react";
 import { Icon, TooltipComponent } from "../../../components/Component";
 import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem, UncontrolledTooltip } from "reactstrap";
+import PropTypes from 'prop-types';
+
+InboxMessageHeader.propTypes = {
+  msgId: PropTypes.any,
+  setMailId: PropTypes.any,
+  onSpamClick: PropTypes.any,
+  toggleMessageView: PropTypes.any,
+  deleteInbox: PropTypes.any,
+  onArchiveClick: PropTypes.any,
+  localLabel: PropTypes.any,
+  outerLabels: PropTypes.any,
+  mailData: PropTypes.any,
+  setMailData: PropTypes.any,
+}
+
 
 const InboxMessageHeader = ({
   msgId,

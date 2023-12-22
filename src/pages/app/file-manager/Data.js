@@ -5,8 +5,8 @@ import User4 from "../../../images/avatar/d-sm.jpg";
 import PlanS1 from "../../../images/icons/plan-s1.svg";
 import PlanS2 from "../../../images/icons/plan-s2.svg";
 import PlanS3 from "../../../images/icons/plan-s3.svg";
-
 import { Folder, FolderSecure, FolderShare } from "./Svg";
+import React from "react";
 
 export const asideData = [
   {
@@ -444,7 +444,7 @@ export const folderList = [
       ),
       type: "file",
       time: "11:52 PM",
-      time: "Yesterday",
+      // time: "Yesterday",
       size: 350,
       starred: true,
       ext: "application/pdf",

@@ -5,7 +5,7 @@ import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 import { OverlineTitle } from "../../components/text/Text";
 
-const ColorsPage = ({ ...props }) => {
+const ColorsPage = () => {
   return (
     <React.Fragment>
       <Head title="Colors Utility" />

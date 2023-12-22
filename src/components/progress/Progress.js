@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import React from "react";
 import classNames from "classnames";
 
@@ -14,5 +15,11 @@ const Progress = ({ value, size, className }) => {
     </div>
   );
 };
+
+Progress.propTypes = {
+  className: PropTypes.any,
+  size: PropTypes.any,
+  value: PropTypes.any
+}
 
 export default Progress;

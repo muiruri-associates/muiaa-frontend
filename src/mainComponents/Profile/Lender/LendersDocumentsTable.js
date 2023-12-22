@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import { Document, Page, pdfjs} from 'react-pdf';
 import { Button, Modal, ModalBody, } from "reactstrap";
 
 const LendersDocumentsTable = () => {
   const [modal, setModal] = useState(false);
-  const [numPages, setNumPages] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
+  // const [numPages, setNumPages] = useState();
+  // const [pageNumber, setPageNumber] = useState(1);
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {

@@ -14,6 +14,11 @@ import {
 } from "../../../components/Component";
 import { invoiceData } from "./Invoice";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
+
+InvoiceDetails.propTypes = {
+  match: PropTypes.object
+}
 
 const InvoiceDetails = ({ match }) => {
   const [data] = useState(invoiceData);

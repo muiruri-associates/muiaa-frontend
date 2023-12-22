@@ -124,7 +124,7 @@ const AdvancedControls = () => {
                       className="custom-control-input"
                       id="imageRadio1"
                       checked={radio === "imageRadio1" ? true : false}
-                      onChange={(ev) => setRadio("imageRadio1")}
+                      onChange={() => setRadio("imageRadio1")}
                     />
                     <label className="custom-control-label" htmlFor="imageRadio1">
                       <img src={StockE} alt="" />
@@ -141,7 +141,7 @@ const AdvancedControls = () => {
                       className="custom-control-input"
                       id="imageRadio2"
                       checked={radio === "imageRadio2" ? true : false}
-                      onChange={(ev) => setRadio("imageRadio2")}
+                      onChange={() => setRadio("imageRadio2")}
                     />
                     <label className="custom-control-label" htmlFor="imageRadio2">
                       <img src={StockF} alt="" />

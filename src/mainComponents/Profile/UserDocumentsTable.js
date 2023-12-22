@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import { Document, Page, pdfjs} from 'react-pdf';
 import { Button, Modal, ModalBody, } from "reactstrap";
 
 const UserDocumentsTable = () => {
   const [modal, setModal] = useState(false);
-  const [numPages, setNumPages] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
+  // const [numPages, setNumPages] = useState();
+  // const [pageNumber, setPageNumber] = useState(1);
   // const [user, setUser] = useState(null);
 
   // useEffect(() => {
-  //   // Retrieve user data from local storage (assuming it's stored as JSON)
+  //   // Retrieve user data from local storage (assuming It&apos;s stored as JSON)
   //   const storedUser = localStorage.getItem("user");
   //   if (storedUser) {
   //     setUser(JSON.parse(storedUser));
