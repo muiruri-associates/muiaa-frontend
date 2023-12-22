@@ -27,8 +27,8 @@ const FormValidation = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                With validation using the react-hook-form package, you can simply add validation on clientside before
-                submit form. Look up the{" "}
+                With validation using the react-hook-form package, you can simply add
+                validation on clientside before submit form. Look up the{" "}
                 <a target="_blank" rel="noreferrer" href="https://react-hook-form.com/">
                   documentation
                 </a>{" "}

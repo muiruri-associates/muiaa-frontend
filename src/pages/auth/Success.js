@@ -3,7 +3,13 @@ import Logo from "../../images/logoMuiaa.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
-import { Block, BlockContent, BlockDes, BlockHead, BlockTitle } from "../../components/Component";
+import {
+  Block,
+  BlockContent,
+  BlockDes,
+  BlockHead,
+  BlockTitle,
+} from "../../components/Component";
 import { Link } from "react-router-dom";
 
 const Success = () => {
@@ -15,7 +21,11 @@ const Success = () => {
           <div className="brand-logo pb-5">
             <Link to={`/`} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-              <img className="logo-dark logo-img logo-img-lg" src={Logo} alt="logo-dark" />
+              <img
+                className="logo-dark logo-img logo-img-lg"
+                src={Logo}
+                alt="logo-dark"
+              />
             </Link>
           </div>
           <BlockHead>

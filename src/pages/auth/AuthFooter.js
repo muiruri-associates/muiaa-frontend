@@ -4,7 +4,12 @@ import SpanishFlag from "../../images/flags/spanish.png";
 import FrenchFlag from "../../images/flags/french.png";
 import TurkeyFlag from "../../images/flags/turkey.png";
 import { Row, Col } from "../../components/Component";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 
 const AuthFooter = () => {

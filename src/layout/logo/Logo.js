@@ -1,7 +1,7 @@
 import React from "react";
 import LogoLight2x from "../../images/logo.png";
 import LogoDark2x from "../../images/logo.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (

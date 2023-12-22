@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import Logo from "../../images/logoMuiaa.png";
 import LogoDark from "../../images/logoMuiaa.png";
@@ -18,7 +18,7 @@ import {
   PreviewCard,
 } from "../../components/Component";
 import { Spinner, FormGroup } from "reactstrap";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { lenderRegister } from "../../redux/actions/authActions";
@@ -29,14 +29,14 @@ const RegisterLender = () => {
 
   const [passState, setPassState] = useState(false);
   const [confirmPassState, setConfirmPassState] = useState(false);
-  const [username, setUsername] = useState('')
-  const [first_name, setFirst_name ] = useState('')
-  const [last_name, setLast_name] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone_number, setPhone_number] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirm_password, setConfirm_password] = useState('')
-  const [ setIsSubmitted] = useState(false);
+  const [username, setUsername] = useState("");
+  const [first_name, setFirst_name] = useState("");
+  const [last_name, setLast_name] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone_number, setPhone_number] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirm_password] = useState("");
+  const [setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { errors, register, handleSubmit } = useForm();
@@ -51,18 +51,18 @@ const RegisterLender = () => {
       email,
       phone_number,
       password,
-    }
+    };
 
     try {
-      await dispatch(lenderRegister(registerData))
-      console.log('Registered data', registerData)
+      await dispatch(lenderRegister(registerData));
+      console.log("Registered data", registerData);
       setFirst_name("");
       setLast_name("");
       setUsername("");
       setEmail("");
-      setPhone_number('');
-      setPassword('');
-      setConfirm_password('');
+      setPhone_number("");
+      setPassword("");
+      setConfirm_password("");
       setIsSubmitted(true);
       toast.success("User registered successfully!");
       setTimeout(() => history.push(`/auth-success`), 2000);
@@ -78,7 +78,11 @@ const RegisterLender = () => {
           <div className="brand-logo pb-4 text-center">
             <Link to={`/`} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-              <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+              <img
+                className="logo-dark logo-img logo-img-lg"
+                src={LogoDark}
+                alt="logo-dark"
+              />
             </Link>
           </div>
           <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
@@ -91,7 +95,7 @@ const RegisterLender = () => {
               </BlockContent>
             </BlockHead>
             <form className="is-alter" onSubmit={handleSubmit(handleFormSubmit)}>
-            <FormGroup>
+              <FormGroup>
                 <label className="form-label" htmlFor="name">
                   Username
                 </label>
@@ -124,7 +128,9 @@ const RegisterLender = () => {
                     onChange={(e) => setFirst_name(e.target.value)}
                     className="form-control-lg form-control"
                   />
-                  {errors.first_name && <p className="invalid">This field is required</p>}
+                  {errors.first_name && (
+                    <p className="invalid">This field is required</p>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -142,7 +148,9 @@ const RegisterLender = () => {
                     onChange={(e) => setLast_name(e.target.value)}
                     className="form-control-lg form-control"
                   />
-                  {errors.last_name && <p className="invalid">This field is required</p>}
+                  {errors.last_name && (
+                    <p className="invalid">This field is required</p>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -184,7 +192,9 @@ const RegisterLender = () => {
                     className="form-control-lg form-control"
                     placeholder="Enter your email address"
                   />
-                  {errors.phone_number && <p className="invalid">This field is required</p>}
+                  {errors.phone_number && (
+                    <p className="invalid">This field is required</p>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -200,7 +210,9 @@ const RegisterLender = () => {
                       ev.preventDefault();
                       setPassState(!passState);
                     }}
-                    className={`form-icon lg form-icon-right passcode-switch ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-icon lg form-icon-right passcode-switch ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   >
                     <Icon name="eye" className="passcode-icon icon-show"></Icon>
 
@@ -210,11 +222,16 @@ const RegisterLender = () => {
                     type={passState ? "text" : "password"}
                     id="password"
                     name="password"
-                    value={password} onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your Password"
-                    className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-control-lg form-control ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   />
-                  {errors.password && <span className="invalid">{errors.password.message}</span>}
+                  {errors.password && (
+                    <span className="invalid">{errors.password.message}</span>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -230,7 +247,9 @@ const RegisterLender = () => {
                       ev.preventDefault();
                       setConfirmPassState(!confirmPassState);
                     }}
-                    className={`form-icon lg form-icon-right passcode-switch ${confirmPassState ? "is-hidden" : "is-shown"}`}
+                    className={`form-icon lg form-icon-right passcode-switch ${
+                      confirmPassState ? "is-hidden" : "is-shown"
+                    }`}
                   >
                     <Icon name="eye" className="passcode-icon icon-show"></Icon>
 
@@ -241,11 +260,16 @@ const RegisterLender = () => {
                     id="confirmpassword"
                     name="password"
                     ref={register({ required: "This field is required" })}
-                    value={confirm_password} onChange={(e) => setConfirm_password(e.target.value)}
+                    value={confirm_password}
+                    onChange={(e) => setConfirm_password(e.target.value)}
                     placeholder="Enter your Password"
-                    className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-control-lg form-control ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   />
-                  {errors.confirm_password && <span className="invalid">{errors.confirm_password.message}</span>}
+                  {errors.confirm_password && (
+                    <span className="invalid">{errors.confirm_password.message}</span>
+                  )}
                 </div>
               </FormGroup>
 

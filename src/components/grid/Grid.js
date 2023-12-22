@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classnames from "classnames";
 
@@ -21,8 +21,8 @@ Col.propTypes = {
   size: PropTypes.any,
   sm: PropTypes.any,
   xxl: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export const Row = ({ className, ...props }) => {
   const rowClass = classnames({
     row: true,
@@ -33,5 +33,5 @@ export const Row = ({ className, ...props }) => {
 
 Row.propTypes = {
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};

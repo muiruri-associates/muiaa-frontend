@@ -4,7 +4,14 @@ import Head from "../../layout/head/Head";
 import Icon from "../../components/icon/Icon";
 
 import { Toast, ToastHeader, ToastBody } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const ToastPage = () => {
@@ -25,10 +32,20 @@ const ToastPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.
-                It&apos;s built with flexbox, so they’re easy to align and position. To use it, import it such as{" "}
-                <code>import {`{Toast,ToastHeader,ToastBody}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/toasts"} target="_blank" rel="noreferrer">
+                Push notifications to your visitors with a toast, a lightweight and
+                easily customizable alert message. It&apos;s built with flexbox, so
+                they’re easy to align and position. To use it, import it such as{" "}
+                <code>
+                  import {`{Toast,ToastHeader,ToastBody}`}from &ldquo;reactstrap&ldquo;
+                </code>
+                . Visit the{" "}
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/toasts"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -41,7 +58,10 @@ const ToastPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Examples</BlockTitle>
-              <p>Toasts are lightweight notifications designed to mimic the push notifications.</p>
+              <p>
+                Toasts are lightweight notifications designed to mimic the push
+                notifications.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -93,7 +113,10 @@ const ToastPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Stacking</BlockTitle>
-              <p>You can stack toasts by wrapping them in a toast container, which will vertically add some spacing.</p>
+              <p>
+                You can stack toasts by wrapping them in a toast container, which will
+                vertically add some spacing.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -178,9 +201,10 @@ const ToastPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Placement</BlockTitle>
               <p>
-                Place toasts with custom CSS as you need them. The top right is often used for notifications, as is the
-                top middle. If you’re only ever going to show one toast at a time, put the positioning styles right on
-                the Toast.
+                Place toasts with custom CSS as you need them. The top right is often
+                used for notifications, as is the top middle. If you’re only ever going
+                to show one toast at a time, put the positioning styles right on the
+                Toast.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -231,7 +255,10 @@ const ToastPage = () => {
           </CodeBlock>
           <PreviewCard>
             <div style={{ position: "relative", minHeight: "200px" }}>
-              <div className="toast-container" style={{ position: "absolute", top: 0, right: 0 }}>
+              <div
+                className="toast-container"
+                style={{ position: "absolute", top: 0, right: 0 }}
+              >
                 <Toast>
                   <ToastHeader
                     close={
@@ -312,7 +339,10 @@ const ToastPage = () => {
 `}
           </CodeBlock>
           <PreviewCard>
-            <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "200px" }}>
+            <div
+              className="d-flex justify-content-center align-items-center"
+              style={{ minHeight: "200px" }}
+            >
               <Toast>
                 <ToastHeader
                   close={
@@ -363,8 +393,9 @@ const ToastPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Translucent</BlockTitle>
               <p>
-                Toasts are slightly translucent, too, so they blend over whatever they might appear over. For browsers
-                that support the backdrop-filter CSS property, we’ll also attempt to blur the elements under a toast.
+                Toasts are slightly translucent, too, so they blend over whatever they
+                might appear over. For browsers that support the backdrop-filter CSS
+                property, we’ll also attempt to blur the elements under a toast.
               </p>
             </BlockHeadContent>
           </BlockHead>

@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import { DropdownToggle, DropdownMenu, UncontrolledDropdown } from "reactstrap";
 
@@ -10,7 +10,10 @@ const NotificationItem = (props) => {
   return (
     <div className="nk-notification-item" key={id} id={id}>
       <div className="nk-notification-icon">
-        <Icon name={icon} className={[`icon-circle ${iconStyle ? " " + iconStyle : ""}`]} />
+        <Icon
+          name={icon}
+          className={[`icon-circle ${iconStyle ? " " + iconStyle : ""}`]}
+        />
       </div>
       <div className="nk-notification-content">
         <div className="nk-notification-text">{text}</div>
@@ -25,8 +28,8 @@ NotificationItem.propTypes = {
   iconStyle: PropTypes.any,
   id: PropTypes.any,
   text: PropTypes.any,
-  time: PropTypes.any
-}
+  time: PropTypes.any,
+};
 
 const Notification = () => {
   return (

@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const DisplayPage = () => {
@@ -19,8 +26,9 @@ const DisplayPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Quickly and responsively toggle the display value of components and more with our display utilities.
-                ClassNames can be combined for various effects as you need.
+                Quickly and responsively toggle the display value of components and more
+                with our display utilities. ClassNames can be combined for various
+                effects as you need.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -30,7 +38,9 @@ const DisplayPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Uses</BlockTitle>
-              <p>These utilities classNames allow to set display property of an element.</p>
+              <p>
+                These utilities classNames allow to set display property of an element.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
@@ -45,7 +55,10 @@ const DisplayPage = () => {
                 <td>
                   <code>.d-{"{name}"}</code>
                 </td>
-                <td>none | inline | inline-block | block | table | table-cell | table-row | flex | inline-flex</td>
+                <td>
+                  none | inline | inline-block | block | table | table-cell | table-row
+                  | flex | inline-flex
+                </td>
               </tr>
               <tr>
                 <td>
@@ -54,14 +67,16 @@ const DisplayPage = () => {
                   </code>
                 </td>
                 <td>
-                  Use <code>{"{breakpoint}"}</code> as <code>sm, md, lg, and xl</code> to effect on screen width.
+                  Use <code>{"{breakpoint}"}</code> as <code>sm, md, lg, and xl</code>{" "}
+                  to effect on screen width.
                 </td>
               </tr>
               <tr>
                 <td colSpan="2">
                   <em className="fs-13px">
-                    The media queries effect screen widths with the given breakpoint or larger. For example,{" "}
-                    <code>.d-lg-none</code> sets <code className="code-fnc">display: none;</code> on both{" "}
+                    The media queries effect screen widths with the given breakpoint or
+                    larger. For example, <code>.d-lg-none</code> sets{" "}
+                    <code className="code-fnc">display: none;</code> on both{" "}
                     <code>lg</code> and <code>xl</code> screens.
                   </em>
                 </td>
@@ -75,8 +90,8 @@ const DisplayPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Hiding elements</BlockTitle>
               <p>
-                For faster mobile-friendly development, use responsive display classNames for showing and hiding
-                elements by device.
+                For faster mobile-friendly development, use responsive display
+                classNames for showing and hiding elements by device.
               </p>
             </BlockHeadContent>
           </BlockHead>

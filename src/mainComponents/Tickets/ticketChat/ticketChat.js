@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import Head from "../../../layout/head/Head";
 import ContentAlt from "../../../layout/content/ContentAlt";
 // import AppContact from "./contact/Contact";
@@ -32,11 +32,18 @@ const TicketChat = () => {
             <div className="nk-chat-body">
               <div className="nk-chat-blank">
                 <div className="nk-chat-blank-icon">
-                  <Icon name="chat" className="icon-circle icon-circle-xxl bg-white"></Icon>
+                  <Icon
+                    name="chat"
+                    className="icon-circle icon-circle-xxl bg-white"
+                  ></Icon>
                 </div>
                 <div className="nk-chat-blank-btn">
                   <Link to={`${process.env.PUBLIC_URL}/app-chat`}>
-                    <Button color="primary" disabled={mainTab === "Contact"} onClick={() => setMainTab("Contact")}>
+                    <Button
+                      color="primary"
+                      disabled={mainTab === "Contact"}
+                      onClick={() => setMainTab("Contact")}
+                    >
                       Start Chat
                     </Button>
                   </Link>

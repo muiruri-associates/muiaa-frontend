@@ -7,8 +7,14 @@ import ControlsCarousel from "../../components/partials/carousel/Controls";
 import CaptionsCarousel from "../../components/partials/carousel/Captions";
 import FadeCarousel from "../../components/partials/carousel/Fade";
 
-
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const CarouselPage = () => {
@@ -26,14 +32,21 @@ const CarouselPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                A slideshow component for cycling through elements or slides of text—like a carousel. To use it{" "}
+                A slideshow component for cycling through elements or slides of
+                text—like a carousel. To use it{" "}
                 <code>
                   Import
                   {` {Carousel, CarouselItem, CarouselControl, CarouselIndicators } `}
                   from &ldquo;reactstrap&ldquo;
                 </code>
                 . Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/carousel"} target="_blank" rel="noreferrer">
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/carousel"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -47,8 +60,8 @@ const CarouselPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Examples</BlockTitle>
               <p>
-                Carousels don’t automatically normalize slide dimensions. You may need to use additional utilities to
-                appropriate function.
+                Carousels don’t automatically normalize slide dimensions. You may need
+                to use additional utilities to appropriate function.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -116,7 +129,10 @@ const BasicCarousel = (props) => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">With Controls &amp; Indicators</BlockTitle>
-              <p>You can add the indicators to the carousel, as well as the previous and next controls too.</p>
+              <p>
+                You can add the indicators to the carousel, as well as the previous and
+                next controls too.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -192,10 +208,13 @@ const BasicCarousel = (props) => {
             <BlockHeadContent>
               <BlockTitle tag="h5">With Captions</BlockTitle>
               <p>
-                Add captions to your slides easily with the <code>.carousel-caption</code> element within any{" "}
-                <code>.carousel-item</code>. They can be easily hidden on smaller viewports, as shown below, with
-                optional <a href="ut">display utilities</a>. We hide them initially with <code>.d-none</code> and bring
-                them back on medium-sized devices with <code>.d-md-block</code>.
+                Add captions to your slides easily with the{" "}
+                <code>.carousel-caption</code> element within any{" "}
+                <code>.carousel-item</code>. They can be easily hidden on smaller
+                viewports, as shown below, with optional{" "}
+                <a href="ut">display utilities</a>. We hide them initially with{" "}
+                <code>.d-none</code> and bring them back on medium-sized devices with{" "}
+                <code>.d-md-block</code>.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -279,8 +298,8 @@ const BasicCarousel = (props) => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Crossfade Effect</BlockTitle>
               <p>
-                Add <code>.carousel-fade</code> to your carousel to animate slides with a fade transition instead of a
-                slide.
+                Add <code>.carousel-fade</code> to your carousel to animate slides with
+                a fade transition instead of a slide.
               </p>
             </BlockHeadContent>
           </BlockHead>

@@ -17,7 +17,16 @@ MenuHeading.propTypes = {
   heading: PropTypes.any,
 };
 
-const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, badge }) => {
+const MenuItem = ({
+  icon,
+  link,
+  text,
+  sub,
+  newTab,
+  sidebarToggle,
+  mobileView,
+  badge,
+}) => {
   let currentUrl;
   const toggleActionSidebar = (e) => {
     if (!sub && !newTab && mobileView) {
@@ -63,7 +72,9 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
     var arrayElement = [...element];
 
     arrayElement.forEach((dom) => {
-      if (dom.parentElement.parentElement.parentElement.classList[0] === "nk-menu-item") {
+      if (
+        dom.parentElement.parentElement.parentElement.classList[0] === "nk-menu-item"
+      ) {
         dom.parentElement.parentElement.parentElement.classList.add("active");
         const subMenuHeight = menuHeight(dom.parentNode.children);
         dom.parentElement.parentElement.style.height = subMenuHeight + "px";
@@ -114,7 +125,8 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
           for (var l = 0; l < parentMenus.length; l++) {
             if (typeof parentMenus !== "undefined") {
               if (parentMenus[l].classList.contains("nk-menu-wrap")) {
-                parentMenus[l].style.height = subMenuHeight + parentMenus[l].clientHeight + "px";
+                parentMenus[l].style.height =
+                  subMenuHeight + parentMenus[l].clientHeight + "px";
               }
             }
           }
@@ -130,7 +142,8 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
         for (var k = 0; k < parentMenus.length; k++) {
           if (typeof parentMenus !== "undefined") {
             if (parentMenus[k].classList.contains("nk-menu-wrap")) {
-              parentMenus[k].style.height = parentMenus[k].clientHeight - subMenuHeight + "px";
+              parentMenus[k].style.height =
+                parentMenus[k].clientHeight - subMenuHeight + "px";
             }
           }
         }
@@ -147,7 +160,12 @@ const MenuItem = ({ icon, link, text, sub, newTab, sidebarToggle, mobileView, ba
   return (
     <li className={menuItemClass} onClick={(e) => toggleActionSidebar(e)}>
       {newTab ? (
-        <Link to={`${link}`} target="_blank" rel="noopener noreferrer" className="nk-menu-link">
+        <Link
+          to={`${link}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nk-menu-link"
+        >
           {icon ? (
             <span className="nk-menu-icon">
               <Icon name={icon} />

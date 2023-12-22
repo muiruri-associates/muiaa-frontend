@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Icon from "../../../icon/Icon";
-import { Progress, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown } from "reactstrap";
+import {
+  Progress,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { PreviewAltCard } from "../../../preview/Preview";
 import { PurchasePlanChart } from "../../charts/invest/InvestChart";
-import { investData, investDataSet2, investDataSet3, investDataSet4 } from "./InvestData";
+import {
+  investData,
+  investDataSet2,
+  investDataSet3,
+  investDataSet4,
+} from "./InvestData";
 
 const InvestPlan = () => {
   const [planSet, setPlanSet] = useState("30");
@@ -26,11 +37,17 @@ const InvestPlan = () => {
       <div className="card-title-group mb-3">
         <div className="card-title">
           <h6 className="title">Top Invested Plan</h6>
-          <p>In last {planSet === "7" ? "7" : planSet === "15" ? "15" : "30"} days top invested schemes.</p>
+          <p>
+            In last {planSet === "7" ? "7" : planSet === "15" ? "15" : "30"} days top
+            invested schemes.
+          </p>
         </div>
         <div className="card-tools mt-n4 mr-n1">
           <UncontrolledDropdown>
-            <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+            <DropdownToggle
+              tag="a"
+              className="dropdown-toggle btn btn-icon btn-trigger"
+            >
               <Icon name="more-h"></Icon>
             </DropdownToggle>
             <DropdownMenu right>
@@ -84,7 +101,11 @@ const InvestPlan = () => {
                 <div className="progress-label">{item.pack}</div>
                 <div className="progress-amount">{item.amount}%</div>
               </div>
-              <Progress className="progress-md" value={item.amount} color={item.color}></Progress>
+              <Progress
+                className="progress-md"
+                value={item.amount}
+                color={item.color}
+              ></Progress>
             </div>
           );
         })}

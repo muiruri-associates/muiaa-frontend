@@ -1,7 +1,14 @@
 import React from "react";
 import Head from "../../../layout/head/Head";
 import Content from "../../../layout/content/Content";
-import { BlockHead, BlockHeadContent, BlockDes, NioIconCard, BackTo, BlockTitle } from "../../../components/Component";
+import {
+  BlockHead,
+  BlockHeadContent,
+  BlockDes,
+  NioIconCard,
+  BackTo,
+  BlockTitle,
+} from "../../../components/Component";
 import { iconData } from "./NioIconData";
 
 const NioIconPage = () => {
@@ -19,17 +26,20 @@ const NioIconPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                <strong>Nioicon</strong> is hand-crafted and beautiful icon set which is designed by{" "}
-                <strong>Softnio</strong> Team. We took inspiration from google icons and carefully designed it for{" "}
-                <strong>DashLite</strong> dashboard. It has over than 900 icons that helps much in your project.
+                <strong>Nioicon</strong> is hand-crafted and beautiful icon set which is
+                designed by <strong>Softnio</strong> Team. We took inspiration from
+                google icons and carefully designed it for <strong>DashLite</strong>{" "}
+                dashboard. It has over than 900 icons that helps much in your project.
               </p>
               <p>
-                An in-built component can be used to show the icons. Use the Icon component. Import it to your file from
-                the Component.js file of the component directory. Such as{" "}
-                <code>import {`{Icon}`} from `./components/Component`</code> use the name props of the Icon to show the
-                specific icon.
+                An in-built component can be used to show the icons. Use the Icon
+                component. Import it to your file from the Component.js file of the
+                component directory. Such as{" "}
+                <code>import {`{Icon}`} from `./components/Component`</code> use the
+                name props of the Icon to show the specific icon.
                 <br />
-                Example of uses - <code className="code-tag">{`<Icon name="icon-name"/>`}</code>
+                Example of uses -{" "}
+                <code className="code-tag">{`<Icon name="icon-name"/>`}</code>
               </p>
             </BlockDes>
           </BlockHeadContent>

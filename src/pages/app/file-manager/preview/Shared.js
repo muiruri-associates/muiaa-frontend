@@ -2,9 +2,21 @@ import React, { useEffect, useState } from "react";
 import Incoming from "../views/shared/Incoming";
 import Links from "../views/shared/Links";
 import Outgoing from "../views/shared/Outgoing";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
-import PropTypes from 'prop-types';
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import {
+  Block,
+  BlockBetween,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  Icon,
+} from "../../../../components/Component";
+import PropTypes from "prop-types";
 
 Shared.propTypes = {
   data: PropTypes.object,
@@ -14,19 +26,33 @@ Shared.propTypes = {
   toggleCreateModal: PropTypes.func,
   toggleUploadModal: PropTypes.func,
   toggleScreenLg: PropTypes.func,
-}
+};
 
-const Shared = ({ data, setData, searchText, setSearchText, toggleCreateModal, toggleUploadModal, toggleScreenLg }) => {
+const Shared = ({
+  data,
+  setData,
+  searchText,
+  setSearchText,
+  toggleCreateModal,
+  toggleUploadModal,
+  toggleScreenLg,
+}) => {
   const [tabs, setTab] = useState("incoming");
   const [search, setSearch] = useState(false);
   const [dataList, setDataList] = useState();
 
   useEffect(() => {
-    let filteredIncoming = data.filter((item) => item.meta.members && item.meta.members.length > 0);
+    let filteredIncoming = data.filter(
+      (item) => item.meta.members && item.meta.members.length > 0
+    );
     let filteredOutgoing = data.filter((item) => item.shared);
     let filteredLinks = data.filter((item) => item.meta.link === true);
 
-    setDataList({ incoming: filteredIncoming, outgoing: filteredOutgoing, links: filteredLinks });
+    setDataList({
+      incoming: filteredIncoming,
+      outgoing: filteredOutgoing,
+      links: filteredLinks,
+    });
   }, [data]);
 
   const toggleSearch = () => {

@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { Bar, HorizontalBar, Line } from "react-chartjs-2";
 import {
@@ -59,8 +59,8 @@ export const BarChart = ({ sales }) => {
 };
 
 BarChart.propTypes = {
-  sales: PropTypes.any
-}
+  sales: PropTypes.any,
+};
 
 export const LineChart = () => {
   return (
@@ -79,7 +79,9 @@ export const LineChart = () => {
               return data["labels"][tooltipItem[0]["index"]];
             },
             label: function (tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex]["data"][tooltipItem["index"]];
+              return data.datasets[tooltipItem.datasetIndex]["data"][
+                tooltipItem["index"]
+              ];
             },
           },
           backgroundColor: "#eff6ff",
@@ -224,8 +226,8 @@ export const DoubleBar = ({ state }) => {
 };
 
 DoubleBar.propTypes = {
-  state: PropTypes.any
-}
+  state: PropTypes.any,
+};
 
 export const HorizontalBarChart = ({ state }) => {
   const [data, setData] = useState(coinOverview);
@@ -307,8 +309,8 @@ export const HorizontalBarChart = ({ state }) => {
 };
 
 HorizontalBarChart.propTypes = {
-  state: PropTypes.string
-}
+  state: PropTypes.string,
+};
 
 export const StackedBarChart = ({ state }) => {
   const [data, setData] = useState(userActivity);
@@ -369,5 +371,5 @@ export const StackedBarChart = ({ state }) => {
 };
 
 StackedBarChart.propTypes = {
-  state: PropTypes.string
-}
+  state: PropTypes.string,
+};

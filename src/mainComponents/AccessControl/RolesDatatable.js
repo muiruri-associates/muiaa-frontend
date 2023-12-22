@@ -15,7 +15,7 @@ import {
 import { rolesColumns } from "./AccessControlData";
 import { Link } from "react-router-dom";
 
-import {fetchRoles} from "../../redux/actions/rolesActions";
+import { fetchRoles } from "../../redux/actions/rolesActions";
 
 const RolesDatatable = () => {
   const dispatch = useDispatch();
@@ -58,11 +58,14 @@ const RolesDatatable = () => {
         <Block size="lg">
           <PreviewCard>
             {role.loading && <div>Loading...</div>}
-            {!role.loading && role.error ? (
-              <div>Error: {role.error}</div>
-            ) : null}
+            {!role.loading && role.error ? <div>Error: {role.error}</div> : null}
             {!role.loading && role.roles?.length ? (
-              <ReactDataTable data={role.roles} columns={rolesColumns} pagination actions />
+              <ReactDataTable
+                data={role.roles}
+                columns={rolesColumns}
+                pagination
+                actions
+              />
             ) : (
               <div>No Role found.</div>
             )}

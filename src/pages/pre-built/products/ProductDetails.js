@@ -19,8 +19,11 @@ import {
 import { Badge, Card } from "reactstrap";
 import { ProductContext } from "./ProductContext";
 import { Link } from "react-router-dom";
-import { SlickArrowLeft, SlickArrowRight } from "../../../components/partials/slick/SlickComponents";
-import PropTypes from 'prop-types';
+import {
+  SlickArrowLeft,
+  SlickArrowRight,
+} from "../../../components/partials/slick/SlickComponents";
+import PropTypes from "prop-types";
 
 const sliderSettings = {
   className: "slider-init row",
@@ -54,8 +57,8 @@ const sliderSettingsDefault = {
   className: "slider-init slider-nav",
 };
 ProductDetails.propTypes = {
-  match: PropTypes.any
-}
+  match: PropTypes.any,
+};
 const ProductDetails = ({ match }) => {
   const { contextData } = useContext(ProductContext);
 
@@ -110,8 +113,8 @@ const ProductDetails = ({ match }) => {
       setCurrentSlide(data[0].slider[0]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [match.params.id]); 
-  
+  }, [match.params.id]);
+
   return (
     <React.Fragment>
       <Head title="Product Detail"></Head>
@@ -127,13 +130,21 @@ const ProductDetails = ({ match }) => {
               </BlockHeadContent>
               <BlockHeadContent>
                 <Link to={`${process.env.PUBLIC_URL}/product-card`}>
-                  <Button color="light" outline className="bg-white d-none d-sm-inline-flex">
+                  <Button
+                    color="light"
+                    outline
+                    className="bg-white d-none d-sm-inline-flex"
+                  >
                     <Icon name="arrow-left"></Icon>
                     <span>Back</span>
                   </Button>
                 </Link>
                 <Link to={`${process.env.PUBLIC_URL}/product-card`}>
-                  <Button color="light" outline className="btn-icon bg-white d-inline-flex d-sm-none">
+                  <Button
+                    color="light"
+                    outline
+                    className="btn-icon bg-white d-inline-flex d-sm-none"
+                  >
                     <Icon name="arrow-left"></Icon>
                   </Button>
                 </Link>
@@ -172,7 +183,9 @@ const ProductDetails = ({ match }) => {
                         {sliderData.slider.map((item) => {
                           return (
                             <div
-                              className={`slider-item ${currentSlide.id === item.id ? "slick-current" : ""}`}
+                              className={`slider-item ${
+                                currentSlide.id === item.id ? "slick-current" : ""
+                              }`}
                               key={item.id}
                             >
                               <div className="thumb">
@@ -189,7 +202,10 @@ const ProductDetails = ({ match }) => {
                       <h4 className="product-price text-primary">
                         ${sliderData.newPrice}{" "}
                         <small className="text-muted fs-14px">
-                          ${sliderData.prevPrice === null ? "0.00" : sliderData.prevPrice}
+                          $
+                          {sliderData.prevPrice === null
+                            ? "0.00"
+                            : sliderData.prevPrice}
                         </small>
                       </h4>
                       <h2 className="product-title">{sliderData.title}</h2>
@@ -215,19 +231,24 @@ const ProductDetails = ({ match }) => {
                       </div>
                       <div className="product-excrept text-soft">
                         <p className="lead">
-                          I must explain to you how all this mistaken idea of denoun cing ple praising pain was born and
-                          I will give you a complete account of the system, and expound the actual teaching.
+                          I must explain to you how all this mistaken idea of denoun
+                          cing ple praising pain was born and I will give you a complete
+                          account of the system, and expound the actual teaching.
                         </p>
                       </div>
                       <div className="product-meta">
                         <ul className="d-flex g-3 gx-5">
                           <li>
                             <div className="fs-14px text-muted">Type</div>
-                            <div className="fs-16px fw-bold text-secondary">{sliderData.type}</div>
+                            <div className="fs-16px fw-bold text-secondary">
+                              {sliderData.type}
+                            </div>
                           </li>
                           <li>
                             <div className="fs-14px text-muted">Model Number</div>
-                            <div className="fs-16px fw-bold text-secondary">Forerunner 290XT</div>
+                            <div className="fs-16px fw-bold text-secondary">
+                              Forerunner 290XT
+                            </div>
                           </li>
                         </ul>
                       </div>
@@ -318,7 +339,10 @@ const ProductDetails = ({ match }) => {
                                 onChange={() => setSizeSelector(1)}
                                 checked={sizeSelector === 1 ? true : false}
                               />
-                              <label className="custom-control-label" htmlFor="sizeCheck1">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="sizeCheck1"
+                              >
                                 XS
                               </label>
                             </div>
@@ -333,7 +357,10 @@ const ProductDetails = ({ match }) => {
                                 onChange={() => setSizeSelector(2)}
                                 checked={sizeSelector === 2 ? true : false}
                               />
-                              <label className="custom-control-label" htmlFor="sizeCheck2">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="sizeCheck2"
+                              >
                                 SM
                               </label>
                             </div>
@@ -348,7 +375,10 @@ const ProductDetails = ({ match }) => {
                                 onChange={() => setSizeSelector(3)}
                                 checked={sizeSelector === 3 ? true : false}
                               />
-                              <label className="custom-control-label" htmlFor="sizeCheck3">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="sizeCheck3"
+                              >
                                 L
                               </label>
                             </div>
@@ -363,7 +393,10 @@ const ProductDetails = ({ match }) => {
                                 onChange={() => setSizeSelector(4)}
                                 checked={sizeSelector === 4 ? true : false}
                               />
-                              <label className="custom-control-label" htmlFor="sizeCheck4">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="sizeCheck4"
+                              >
                                 XL
                               </label>
                             </div>
@@ -443,10 +476,12 @@ const ProductDetails = ({ match }) => {
                     <div className="product-details entry mr-xxl-3">
                       <h3>Product details of Comfy cushions</h3>
                       <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                        beatae vitae dicta sunt explicabo. Neque porro quisquam est, qui dolorem consectetur, adipisci
-                        velit.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                        quae ab illo inventore veritatis et quasi architecto beatae
+                        vitae dicta sunt explicabo. Neque porro quisquam est, qui
+                        dolorem consectetur, adipisci velit.Nam libero tempore, cum
+                        soluta nobis est eligendi optio cumque nihil impedit quo minus.
                       </p>
                       <ul className="list list-sm list-checked">
                         <li>Meets and/or exceeds performance standards.</li>
@@ -457,15 +492,18 @@ const ProductDetails = ({ match }) => {
                         <li>As attractively priced as you look attractive in one</li>
                       </ul>
                       <p>
-                        Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
+                        Unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                        illo inventore veritatis et quasi architecto beatae.
                       </p>
                       <h3>The best seats in the house</h3>
                       <p>
-                        I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
-                        born and I will give you a complete account of the system, and expound the actual teachings.
-                        Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae.
+                        I must explain to you how all this mistaken idea of denouncing
+                        pleasure and praising pain was born and I will give you a
+                        complete account of the system, and expound the actual
+                        teachings. Unde omnis iste natus error sit voluptatem
+                        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                        quae ab illo inventore veritatis et quasi architecto beatae.
                       </p>
                     </div>
                   </Col>
@@ -488,7 +526,9 @@ const ProductDetails = ({ match }) => {
                   <Col key={item.id}>
                     <Card className="card-bordered product-card mr-3 ml-3">
                       <div className="product-thumb">
-                        <Link to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}>
+                        <Link
+                          to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}
+                        >
                           <img className="card-img-top" src={item.img} alt="" />
                         </Link>
                         <ul className="product-badges">
@@ -525,10 +565,17 @@ const ProductDetails = ({ match }) => {
                           </li>
                         </ul>
                         <h5 className="product-title">
-                          <Link to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}>{item.title}</Link>
+                          <Link
+                            to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}
+                          >
+                            {item.title}
+                          </Link>
                         </h5>
                         <div className="product-price text-primary h5">
-                          <small className="text-muted del fs-13px">${item.prevPrice}</small> ${item.newPrice}
+                          <small className="text-muted del fs-13px">
+                            ${item.prevPrice}
+                          </small>{" "}
+                          ${item.newPrice}
                         </div>
                       </div>
                     </Card>

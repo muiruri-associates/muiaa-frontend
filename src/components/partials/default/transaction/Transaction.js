@@ -2,8 +2,19 @@ import React, { useEffect, useState } from "react";
 import Icon from "../../../icon/Icon";
 import UserAvatar from "../../../user/UserAvatar";
 import { transactionData } from "./TransactionData";
-import { CardTitle, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { DataTableBody, DataTableHead, DataTableItem, DataTableRow } from "../../../table/DataTable";
+import {
+  CardTitle,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
+import {
+  DataTableBody,
+  DataTableHead,
+  DataTableItem,
+  DataTableRow,
+} from "../../../table/DataTable";
 import { Link } from "react-router-dom";
 
 const TransactionTable = () => {
@@ -24,7 +35,10 @@ const TransactionTable = () => {
   const DropdownTrans = () => {
     return (
       <UncontrolledDropdown>
-        <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+        <DropdownToggle
+          tag="a"
+          className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+        >
           <Icon name="more-h"></Icon>
         </DropdownToggle>
         <DropdownMenu right>
@@ -74,14 +88,20 @@ const TransactionTable = () => {
           <CardTitle>
             <h6 className="title">
               <span className="mr-2">Transaction</span>{" "}
-              <Link to={`${process.env.PUBLIC_URL}/transaction-basic`} className="link d-none d-sm-inline">
+              <Link
+                to={`${process.env.PUBLIC_URL}/transaction-basic`}
+                className="link d-none d-sm-inline"
+              >
                 See History
               </Link>
             </h6>
           </CardTitle>
           <div className="card-tools">
             <ul className="card-tools-nav">
-              <li className={trans === "Paid" ? "active" : ""} onClick={() => setTrans("Paid")}>
+              <li
+                className={trans === "Paid" ? "active" : ""}
+                onClick={() => setTrans("Paid")}
+              >
                 <a
                   href="#paid"
                   onClick={(ev) => {
@@ -91,7 +111,10 @@ const TransactionTable = () => {
                   <span>Paid</span>
                 </a>
               </li>
-              <li className={trans === "Due" ? "active" : ""} onClick={() => setTrans("Due")}>
+              <li
+                className={trans === "Due" ? "active" : ""}
+                onClick={() => setTrans("Due")}
+              >
                 <a
                   href="#pending"
                   onClick={(ev) => {
@@ -149,7 +172,12 @@ const TransactionTable = () => {
               </DataTableRow>
               <DataTableRow size="sm">
                 <div className="user-card">
-                  <UserAvatar size="sm" theme={item.theme} text={item.initial} image={item.img}></UserAvatar>
+                  <UserAvatar
+                    size="sm"
+                    theme={item.theme}
+                    text={item.initial}
+                    image={item.img}
+                  ></UserAvatar>
                   <div className="user-name">
                     <span className="tb-lead">{item.name}</span>
                   </div>
@@ -169,7 +197,11 @@ const TransactionTable = () => {
               <DataTableRow>
                 <span
                   className={`badge badge-dot badge-dot-xs badge-${
-                    item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"
+                    item.status === "Paid"
+                      ? "success"
+                      : item.status === "Due"
+                        ? "warning"
+                        : "danger"
                   }`}
                 >
                   {item.status}

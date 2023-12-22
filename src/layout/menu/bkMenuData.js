@@ -1,4 +1,3 @@
-
 const menu = [
   // {
   //     icon: "dashlite",
@@ -21,50 +20,50 @@ const menu = [
   //     link: "/invest",
   // },
   {
-    heading: 'Menus'
+    heading: "Menus",
   },
   {
-    icon: 'grid-alt',
-    text: 'Dashboard',
+    icon: "grid-alt",
+    text: "Dashboard",
     active: false,
-    link: '/'
+    link: "/",
   },
 
   {
-    icon: 'users',
-    text: 'Clients',
+    icon: "users",
+    text: "Clients",
     active: false,
-    link: '/'
+    link: "/",
   },
   {
-    icon: 'tranx',
-    text: 'Lenders',
+    icon: "tranx",
+    text: "Lenders",
     active: false,
     subMenu: [
       {
-        text: 'KYC List - Regular',
-        link: '/kyc-list-regular'
+        text: "KYC List - Regular",
+        link: "/kyc-list-regular",
       },
       {
-        text: 'KYC Details - Regular',
-        link: '/kyc-details-regular/UD01544'
-      }
-    ]
+        text: "KYC Details - Regular",
+        link: "/kyc-details-regular/UD01544",
+      },
+    ],
   },
   {
-    icon: 'file-docs',
-    text: 'Loans',
+    icon: "file-docs",
+    text: "Loans",
     active: false,
     subMenu: [
       {
-        text: 'KYC List - Regular',
-        link: '/kyc-list-regular'
+        text: "KYC List - Regular",
+        link: "/kyc-list-regular",
       },
       {
-        text: 'KYC Details - Regular',
-        link: '/kyc-details-regular/UD01544'
-      }
-    ]
+        text: "KYC Details - Regular",
+        link: "/kyc-details-regular/UD01544",
+      },
+    ],
   },
 
   // {
@@ -563,5 +562,5 @@ const menu = [
   //   link: '/email-template',
   //   active: 'false'
   // }
-]
-export default menu
+];
+export default menu;

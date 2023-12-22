@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const BorderPage = () => {
@@ -18,7 +25,10 @@ const BorderPage = () => {
               Border Utility
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Use border utilities to quickly style the border and border-radius of an element.</p>
+              <p className="lead">
+                Use border utilities to quickly style the border and border-radius of an
+                element.
+              </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -27,7 +37,10 @@ const BorderPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Additive Border</BlockTitle>
-              <p>You can add border to any side of an element with border utilities classes.</p>
+              <p>
+                You can add border to any side of an element with border utilities
+                classes.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -68,7 +81,10 @@ const BorderPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Subtractive Border</BlockTitle>
-              <p>You can remove border to a single side of an element with below border utilities classes.</p>
+              <p>
+                You can remove border to a single side of an element with below border
+                utilities classes.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -138,7 +154,10 @@ const BorderPage = () => {
                 <td>
                   <code>.border-{"{value}"}</code>
                 </td>
-                <td>primary | secondary | success | warning | danger | info | dark | gray | light | white </td>
+                <td>
+                  primary | secondary | success | warning | danger | info | dark | gray
+                  | light | white{" "}
+                </td>
               </tr>
             </tbody>
           </PreviewTable>

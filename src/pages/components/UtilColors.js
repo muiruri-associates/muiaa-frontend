@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 import { OverlineTitle } from "../../components/text/Text";
 
@@ -20,8 +27,8 @@ const ColorsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Convey meaning through color with a handful of color utility classNames. This utilities to quickly style
-                the text and background of any element.
+                Convey meaning through color with a handful of color utility classNames.
+                This utilities to quickly style the text and background of any element.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -32,8 +39,9 @@ const ColorsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Background Color</BlockTitle>
               <p>
-                A set of solid background utilities classNames. Use <code className="code-class">.bg-[color]</code>{" "}
-                className in element to set background color.
+                A set of solid background utilities classNames. Use{" "}
+                <code className="code-class">.bg-[color]</code> className in element to
+                set background color.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -41,7 +49,9 @@ const ColorsPage = () => {
             <OverlineTitle>Theme Color</OverlineTitle>
             <div className="d-flex flex-wrap bg-white text-center fs-12px">
               <div className="w-80px flex-fill p-2 bg-primary text-white">primary</div>
-              <div className="w-80px flex-fill p-2 bg-secondary text-white">secondary</div>
+              <div className="w-80px flex-fill p-2 bg-secondary text-white">
+                secondary
+              </div>
               <div className="w-80px flex-fill p-2 bg-dark text-white">dark</div>
               <div className="w-80px flex-fill p-2 bg-gray text-white">gray</div>
               <div className="w-80px flex-fill p-2 bg-success text-white">success</div>
@@ -51,13 +61,23 @@ const ColorsPage = () => {
             </div>
             <OverlineTitle className="mt-4">Theme Pale Color</OverlineTitle>
             <div className="d-flex flex-wrap bg-white text-center fs-12px">
-              <div className="w-80px flex-fill p-2 bg-primary-dim text-primary">primary</div>
-              <div className="w-80px flex-fill p-2 bg-secondary-dim text-secondary">secondary</div>
+              <div className="w-80px flex-fill p-2 bg-primary-dim text-primary">
+                primary
+              </div>
+              <div className="w-80px flex-fill p-2 bg-secondary-dim text-secondary">
+                secondary
+              </div>
               <div className="w-80px flex-fill p-2 bg-dark-dim text-dark">dark</div>
               <div className="w-80px flex-fill p-2 bg-gray-dim text-gray">gray</div>
-              <div className="w-80px flex-fill p-2 bg-success-dim text-success">success</div>
-              <div className="w-80px flex-fill p-2 bg-danger-dim text-danger">danger</div>
-              <div className="w-80px flex-fill p-2 bg-warning-dim text-warning">warning</div>
+              <div className="w-80px flex-fill p-2 bg-success-dim text-success">
+                success
+              </div>
+              <div className="w-80px flex-fill p-2 bg-danger-dim text-danger">
+                danger
+              </div>
+              <div className="w-80px flex-fill p-2 bg-warning-dim text-warning">
+                warning
+              </div>
               <div className="w-80px flex-fill p-2 bg-info-dim text-info">info</div>
             </div>
             <OverlineTitle className="mt-4">Theme Lighten Color</OverlineTitle>
@@ -82,10 +102,16 @@ const ColorsPage = () => {
             <div className="d-flex flex-wrap bg-white text-center fs-12px">
               <div className="w-80px flex-fill p-2 bg-blue-dim text-blue">blue</div>
               <div className="w-80px flex-fill p-2 bg-azure-dim text-azure">azure</div>
-              <div className="w-80px flex-fill p-2 bg-indigo-dim text-indigo">indigo</div>
-              <div className="w-80px flex-fill p-2 bg-purple-dim text-purple">purple</div>
+              <div className="w-80px flex-fill p-2 bg-indigo-dim text-indigo">
+                indigo
+              </div>
+              <div className="w-80px flex-fill p-2 bg-purple-dim text-purple">
+                purple
+              </div>
               <div className="w-80px flex-fill p-2 bg-pink-dim text-pink">pink</div>
-              <div className="w-80px flex-fill p-2 bg-orange-dim text-orange">orange</div>
+              <div className="w-80px flex-fill p-2 bg-orange-dim text-orange">
+                orange
+              </div>
               <div className="w-80px flex-fill p-2 bg-teal-dim text-teal">teal</div>
             </div>
           </PreviewCard>
@@ -102,7 +128,9 @@ const ColorsPage = () => {
                   <code>.bg-{"{theme}"}</code>
                   <br />
                 </td>
-                <td>primary | secondary | success | info | warning | danger | dark | gray</td>
+                <td>
+                  primary | secondary | success | info | warning | danger | dark | gray
+                </td>
               </tr>
               <tr>
                 <td>
@@ -167,7 +195,8 @@ const ColorsPage = () => {
               <BlockTitle tag="h5">Gray &amp; Dark Color</BlockTitle>
               <p>
                 A set of shade color of gray and dark classNames. Use{" "}
-                <code className="code-class">.bg-gray-[value]</code> className in element to set background color.
+                <code className="code-class">.bg-gray-[value]</code> className in
+                element to set background color.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -208,8 +237,9 @@ const ColorsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Text Color</BlockTitle>
               <p>
-                A set of text color utilities className. Use <code className="code-class">.text-{"{theme|color}"}</code>{" "}
-                className in element to set text color.
+                A set of text color utilities className. Use{" "}
+                <code className="code-class">.text-{"{theme|color}"}</code> className in
+                element to set text color.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -343,7 +373,9 @@ const ColorsPage = () => {
                   Use for text color &amp; <code>-dim</code> user for pale color. <br />
                   <span className="text-soft">
                     <code>{"{theme}"}</code> use as{" "}
-                    <code>primary, secondary, success, info, warning, danger, dark, gray</code>
+                    <code>
+                      primary, secondary, success, info, warning, danger, dark, gray
+                    </code>
                   </span>
                 </td>
               </tr>
@@ -357,7 +389,8 @@ const ColorsPage = () => {
                   Use for text color &amp; <code>-dim</code> user for pale color.
                   <br />
                   <span className="text-soft">
-                    <code>{"{color}"}</code> use as <code>blue, azure, indigo, purple, pink, orange, teal</code>
+                    <code>{"{color}"}</code> use as{" "}
+                    <code>blue, azure, indigo, purple, pink, orange, teal</code>
                   </span>
                 </td>
               </tr>

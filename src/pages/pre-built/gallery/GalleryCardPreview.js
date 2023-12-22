@@ -33,11 +33,19 @@ const GalleryCardPreview = () => {
               </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
-              <Button color="light" outline className="bg-white d-none d-sm-inline-flex">
+              <Button
+                color="light"
+                outline
+                className="bg-white d-none d-sm-inline-flex"
+              >
                 <Icon name="download-cloud"></Icon>
                 <span>Download All</span>
               </Button>
-              <Button color="light" outline className="btn-icon bg-white d-inline-flex d-sm-none">
+              <Button
+                color="light"
+                outline
+                className="btn-icon bg-white d-inline-flex d-sm-none"
+              >
                 <Icon name="download-cloud"></Icon>
               </Button>
             </BlockHeadContent>

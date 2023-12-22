@@ -22,7 +22,7 @@ import {
 } from "../../../../components/Component";
 import { selectOptions } from "../Data";
 import { FileManagerContext } from "../FileManagerContext";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 Recovery.propTypes = {
   data: PropTypes.object,
@@ -32,8 +32,7 @@ Recovery.propTypes = {
   toggleCreateModal: PropTypes.func,
   toggleUploadModal: PropTypes.func,
   toggleScreenLg: PropTypes.func,
-}
-
+};
 
 const Recovery = ({
   data,
@@ -56,7 +55,8 @@ const Recovery = ({
     setDataList([...data]);
   }, [data]);
 
-  const { restoreFolder, permanentDelete, getTotalSize } = useContext(FileManagerContext);
+  const { restoreFolder, permanentDelete, getTotalSize } =
+    useContext(FileManagerContext);
 
   // Sets the filter to default
   const resetFilter = () => {
@@ -68,10 +68,14 @@ const Recovery = ({
     let defaultData = data;
     let dateDay = new Date().getDate();
     if (dates.to.getDate() === dateDay && dates.from.getDate() === dateDay) {
-      defaultData = defaultData.filter((item) => item.recovery && item.recovery.deletedAt === "Today");
+      defaultData = defaultData.filter(
+        (item) => item.recovery && item.recovery.deletedAt === "Today"
+      );
       setDataList([...defaultData]);
     } else if (dates.to.getDate() !== dateDay) {
-      defaultData = defaultData.filter((item) => item.recovery && item.recovery.deletedAt !== "Today");
+      defaultData = defaultData.filter(
+        (item) => item.recovery && item.recovery.deletedAt !== "Today"
+      );
       setDataList([...defaultData]);
     } else {
       setDataList([...data]);
@@ -206,7 +210,11 @@ const Recovery = ({
         {dataList && dataList.length > 0 ? (
           <Row>
             <Col xl="3" className="order-xl-12">
-              <div className={`nk-fmg-filter toggle-expand-content ${filterOptions ? "expanded" : ""}`}>
+              <div
+                className={`nk-fmg-filter toggle-expand-content ${
+                  filterOptions ? "expanded" : ""
+                }`}
+              >
                 <form>
                   <Row>
                     <Col lg="12" md="4">
@@ -243,10 +251,18 @@ const Recovery = ({
                     </Col>
                     <Col lg="12">
                       <div className="d-flex justify-between mt-1">
-                        <button type="reset" className="link link-sm link-primary ml-n1" onClick={() => resetFilter()}>
+                        <button
+                          type="reset"
+                          className="link link-sm link-primary ml-n1"
+                          onClick={() => resetFilter()}
+                        >
                           Reset Filter
                         </button>
-                        <Button color="primary" size="sm" onClick={() => filterOnDates()}>
+                        <Button
+                          color="primary"
+                          size="sm"
+                          onClick={() => filterOnDates()}
+                        >
                           Filter
                         </Button>
                       </div>
@@ -283,7 +299,9 @@ const Recovery = ({
                             >
                               <div className="nk-file-title">
                                 <div className="nk-file-icon">
-                                  <span className="nk-file-icon-type">{item.meta.svg}</span>
+                                  <span className="nk-file-icon-type">
+                                    {item.meta.svg}
+                                  </span>
                                 </div>
                                 <div className="nk-file-name">
                                   <div className="nk-file-name-text">
@@ -298,10 +316,16 @@ const Recovery = ({
                               </div>
                             </Link>
                           ) : (
-                            <a className="nk-file-link" href="#link" onClick={(ev) => ev.preventDefault()}>
+                            <a
+                              className="nk-file-link"
+                              href="#link"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <div className="nk-file-title">
                                 <div className="nk-file-icon">
-                                  <span className="nk-file-icon-type">{item.meta.svg}</span>
+                                  <span className="nk-file-icon-type">
+                                    {item.meta.svg}
+                                  </span>
                                 </div>
                                 <div className="nk-file-name">
                                   <div className="nk-file-name-text">
@@ -319,7 +343,10 @@ const Recovery = ({
                         </div>
                         <div className="nk-file-size">
                           <div className="tb-lead">
-                            {item.meta.type === "folder" ? getTotalSize(item) : item.meta.size} MB
+                            {item.meta.type === "folder"
+                              ? getTotalSize(item)
+                              : item.meta.size}{" "}
+                            MB
                           </div>
                         </div>
                         <div className="nk-file-date">

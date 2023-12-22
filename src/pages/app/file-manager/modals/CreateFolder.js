@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext, useState } from "react";
 import { Icon, RSelect } from "../../../../components/Component";
 import { Button, FormGroup } from "reactstrap";
@@ -35,7 +35,12 @@ const CreateFolder = ({ toggle }) => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormGroup>
               <label className="form-label">Folder Name</label>
-              <input name="name" type="text" ref={register({ required: true })} className="form-control"></input>
+              <input
+                name="name"
+                type="text"
+                ref={register({ required: true })}
+                className="form-control"
+              ></input>
               {errors.name && <span className="invalid">This field is required</span>}
             </FormGroup>
             <FormGroup>
@@ -73,7 +78,7 @@ const CreateFolder = ({ toggle }) => {
 };
 
 CreateFolder.propTypes = {
-  toggle: PropTypes.func
-}
+  toggle: PropTypes.func,
+};
 
 export default CreateFolder;

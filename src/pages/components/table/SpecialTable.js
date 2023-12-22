@@ -29,9 +29,10 @@ const SpecialTablePage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                <strong>Softnio Team</strong> understand the value of <strong>real case-use</strong>, so our team
-                designed some large content base table which is <strong>well optimized</strong> and fit on every screen.
-                It gives you extra ease on your project and surely you loved it.{" "}
+                <strong>Softnio Team</strong> understand the value of{" "}
+                <strong>real case-use</strong>, so our team designed some large content
+                base table which is <strong>well optimized</strong> and fit on every
+                screen. It gives you extra ease on your project and surely you loved it.{" "}
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -42,7 +43,8 @@ const SpecialTablePage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h4">Transaction List - With Action</BlockTitle>
               <p>
-                The following table can be use for <strong className="text-primary">invoice, payment history</strong>{" "}
+                The following table can be use for{" "}
+                <strong className="text-primary">invoice, payment history</strong>{" "}
                 related transaction.
               </p>
             </BlockHeadContent>
@@ -57,7 +59,8 @@ const SpecialTablePage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h4">Transaction List - No Action</BlockTitle>
               <p>
-                The following table can be use for <strong className="text-primary">invoice, payment history</strong>{" "}
+                The following table can be use for{" "}
+                <strong className="text-primary">invoice, payment history</strong>{" "}
                 related transaction.
               </p>
             </BlockHeadContent>
@@ -72,8 +75,8 @@ const SpecialTablePage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h4">Transaction List - Compact</BlockTitle>
               <p>
-                Add the <code>.is-compact</code> class with <code>.table-tranx</code> className to make compact version
-                of table.
+                Add the <code>.is-compact</code> class with <code>.table-tranx</code>{" "}
+                className to make compact version of table.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -88,7 +91,8 @@ const SpecialTablePage = () => {
               <BlockTitle tag="h4">Order History - With Action</BlockTitle>
               <p>
                 The following table can be use for{" "}
-                <strong className="text-primary">order history, invoice listing</strong> related transaction.
+                <strong className="text-primary">order history, invoice listing</strong>{" "}
+                related transaction.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -103,7 +107,10 @@ const SpecialTablePage = () => {
               <BlockTitle tag="h4">Login History - With Action</BlockTitle>
               <p>
                 The following table can be used for{" "}
-                <strong className="text-primary">Login Activity, Browser Session, etc</strong> .
+                <strong className="text-primary">
+                  Login Activity, Browser Session, etc
+                </strong>{" "}
+                .
               </p>
             </BlockHeadContent>
           </BlockHead>

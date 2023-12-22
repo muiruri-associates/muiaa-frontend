@@ -2,7 +2,7 @@ import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 // import AllLeadsDatatable from "../../../mainComponents/Loans/AllLeadsDatatable";
-import  AllLeadsDatatable from "../../../mainComponents/Leads/AllLeadsDatatable";
+import AllLeadsDatatable from "../../../mainComponents/Leads/AllLeadsDatatable";
 
 const AllLeads = () => {
   return (

@@ -2,12 +2,12 @@ import React, { useContext, useState } from "react";
 import { Icon } from "../../../../components/Component";
 import { FileManagerContext } from "../FileManagerContext";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-SelectorCopy.propTypes={
+SelectorCopy.propTypes = {
   toggle: PropTypes.bool,
-  toggleCreateModal: PropTypes.func
-}
+  toggleCreateModal: PropTypes.func,
+};
 
 const SelectorCopy = ({ toggle, toggleCreateModal }) => {
   const { contextData, selectorCopyToFolder } = useContext(FileManagerContext);
@@ -39,12 +39,18 @@ const SelectorCopy = ({ toggle, toggleCreateModal }) => {
                 .map((item) => {
                   return (
                     <div
-                      className={`nk-file-item nk-file ${item.id === selected ? "selected" : ""}`}
+                      className={`nk-file-item nk-file ${
+                        item.id === selected ? "selected" : ""
+                      }`}
                       key={item.id}
                       onClick={() => setSelected(item.id)}
                     >
                       <div className="nk-file-info">
-                        <a className="nk-file-link" href="#link" onClick={(ev) => ev.preventDefault()}>
+                        <a
+                          className="nk-file-link"
+                          href="#link"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <div className="nk-file-title">
                             <div className="nk-file-icon">{item.meta.svg}</div>
                             <div className="nk-file-name">

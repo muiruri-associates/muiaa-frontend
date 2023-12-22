@@ -1,9 +1,15 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import Tags from "@yaireo/tagify/dist/react.tagify";
 import { formTemplates } from "./InboxData";
 import { Icon, Button, TooltipComponent } from "../../../components/Component";
-import { Modal, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  Modal,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { getDateStructured, currentTime } from "../../../utils/Utils";
 
 const tagifySettings = {
@@ -54,7 +60,7 @@ const InboxForm = ({
       setTagifyOptions([composeMail]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [composeMail]); 
+  }, [composeMail]);
 
   const addMailFunc = (type) => {
     let defaultData = mailData;
@@ -121,7 +127,9 @@ const InboxForm = ({
                 replyId: `rep_${Math.random()}`,
                 userId: 1,
                 to: {
-                  mail: tagifyOptions[0].value ? tagifyOptions[0].value : tagifyOptions[0],
+                  mail: tagifyOptions[0].value
+                    ? tagifyOptions[0].value
+                    : tagifyOptions[0],
                   bcc: bccTagify.value[0].value,
                   cc: ccTagify.value[0].value,
                 },
@@ -258,7 +266,11 @@ const InboxForm = ({
                   showDropdown={false}
                 />
               </div>
-              <div className={`nk-reply-form-input nk-reply-form-input-cc ${ccTagify.toggle ? "expanded" : ""}`}>
+              <div
+                className={`nk-reply-form-input nk-reply-form-input-cc ${
+                  ccTagify.toggle ? "expanded" : ""
+                }`}
+              >
                 <label className="label">Cc</label>
                 <Tags
                   className="input-mail"
@@ -279,7 +291,11 @@ const InboxForm = ({
                   <Icon name="cross"></Icon>
                 </a>
               </div>
-              <div className={`nk-reply-form-input nk-reply-form-input-bcc ${bccTagify.toggle ? "expanded" : ""}`}>
+              <div
+                className={`nk-reply-form-input nk-reply-form-input-bcc ${
+                  bccTagify.toggle ? "expanded" : ""
+                }`}
+              >
                 <label className="label">Bcc</label>
                 <Tags
                   className="input-mail"
@@ -350,7 +366,10 @@ const InboxForm = ({
         </div>
         <div className="nk-reply-form-attachment">
           {attachmentList.map((item, key) => (
-            <div key={key} className="nk-reply-form-attachment-list p-1 align-center justify-between m-2 d-flex">
+            <div
+              key={key}
+              className="nk-reply-form-attachment-list p-1 align-center justify-between m-2 d-flex"
+            >
               <span>{item.fileName}</span>
               <a
                 className="toggle-opt"
@@ -403,7 +422,11 @@ const InboxForm = ({
                     ))}
                     <li className="divider"></li>
                     <li onClick={() => saveTemplate()}>
-                      <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                      <DropdownItem
+                        tag="a"
+                        href="#item"
+                        onClick={(ev) => ev.preventDefault()}
+                      >
                         <Icon name="file-plus"></Icon>
                         <span>Save as Template</span>
                       </DropdownItem>
@@ -421,7 +444,11 @@ const InboxForm = ({
                 direction="top"
                 text="Upload Attachment"
               />
-              <input type="file" id="attachmentInput" style={{ display: "none" }}></input>
+              <input
+                type="file"
+                id="attachmentInput"
+                style={{ display: "none" }}
+              ></input>
             </li>
             <li onClick={() => onImageClick()}>
               <TooltipComponent
@@ -433,7 +460,12 @@ const InboxForm = ({
                 text="Upload Images"
               />
             </li>
-            <input type="file" id="imageInput" accept=".png, .jpg, .jpeg" style={{ display: "none" }}></input>
+            <input
+              type="file"
+              id="imageInput"
+              accept=".png, .jpg, .jpeg"
+              style={{ display: "none" }}
+            ></input>
           </ul>
           <ul className="nk-reply-form-actions g-1">
             <li onClick={() => onDeleteClick()}>
@@ -460,22 +492,22 @@ InboxForm.propTypes = {
     id: PropTypes.any,
     message: PropTypes.shape({
       meta: PropTypes.shape({
-        tags: PropTypes.any
-      })
-    })
+        tags: PropTypes.any,
+      }),
+    }),
   }),
   deleteInbox: PropTypes.func,
   draftData: PropTypes.shape({
     mail: PropTypes.any,
     message: PropTypes.any,
-    subject: PropTypes.any
+    subject: PropTypes.any,
   }),
   editOnOpen: PropTypes.any,
   mailData: PropTypes.shape({
-    length: PropTypes.number
+    length: PropTypes.number,
   }),
   setMailData: PropTypes.func,
-  toggleModal: PropTypes.func
-}
+  toggleModal: PropTypes.func,
+};
 
 export default InboxForm;

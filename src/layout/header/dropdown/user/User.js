@@ -18,10 +18,10 @@ const User = () => {
   }, []);
 
   const handleSignout = () => {
-    localStorage.removeItem('userRole');
-    localStorage.removeItem('user');
-     // Redirect to the login page
-     window.location.href = '/auth-login'; 
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("user");
+    // Redirect to the login page
+    window.location.href = "/auth-login";
   };
 
   return (
@@ -38,7 +38,9 @@ const User = () => {
           <UserAvatar icon="user-alt" className="sm" />
           <div className="user-info d-none d-md-block">
             {/* <div className="user-status">{user?.roles || "Guest"}</div> */}
-            <div className="user-name dropdown-indicator">{user?.first_name || "Guest User"} {user?.last_name}</div>
+            <div className="user-name dropdown-indicator">
+              {user?.first_name || "Guest User"} {user?.last_name}
+            </div>
           </div>
         </div>
       </DropdownToggle>
@@ -49,7 +51,9 @@ const User = () => {
               <span>AB</span>
             </div>
             <div className="user-info">
-              <span className="lead-text">{user?.first_name || "Guest User"} {user?.last_name}</span>
+              <span className="lead-text">
+                {user?.first_name || "Guest User"} {user?.last_name}
+              </span>
               <span className="sub-text">{user?.email || "guest@example.com"}</span>
             </div>
           </div>
@@ -62,7 +66,11 @@ const User = () => {
             <LinkItem link="/user-profile-setting" icon="setting-alt" onClick={toggle}>
               Account Setting
             </LinkItem>
-            <LinkItem link="/user-profile-activity" icon="activity-alt" onClick={toggle}>
+            <LinkItem
+              link="/user-profile-activity"
+              icon="activity-alt"
+              onClick={toggle}
+            >
               Login Activity
             </LinkItem>
           </LinkList>

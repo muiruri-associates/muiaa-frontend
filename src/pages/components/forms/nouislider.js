@@ -31,7 +31,11 @@ const NouiSlider = () => {
             <BlockDes>
               <p className="lead">
                 Examples and usage guidelines for range sliders with{" "}
-                <a href="https://www.npmjs.com/package/nouislider-react/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.npmjs.com/package/nouislider-react/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   noUislider
                 </a>{" "}
                 package. All the props referrence are in that page.
@@ -45,7 +49,8 @@ const NouiSlider = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Configuration</BlockTitle>
               <p>
-                For slider use <code>{`<Nouislider/>`}</code> component from <code>{`nouislider-react`}</code>.
+                For slider use <code>{`<Nouislider/>`}</code> component from{" "}
+                <code>{`nouislider-react`}</code>.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -145,7 +150,8 @@ const NouiSlider = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Vertical Slider</BlockTitle>
               <p>
-                For vertical slider, just add <code>orientation</code> props to <code>&ldquo;vertical&ldquo;</code>
+                For vertical slider, just add <code>orientation</code> props to{" "}
+                <code>&ldquo;vertical&ldquo;</code>
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -325,8 +331,8 @@ const NouiSlider = () => {
                   <code>limit={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>limit</code> props to specify the minimum limit in between
-                  the sliders.
+                  Use <code>{`{number}`}</code> with <code>limit</code> props to specify
+                  the minimum limit in between the sliders.
                 </td>
               </tr>
               <tr>
@@ -334,8 +340,8 @@ const NouiSlider = () => {
                   <code>margin={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>margin</code> props to specify the maximum limit in between
-                  the sliders.
+                  Use <code>{`{number}`}</code> with <code>margin</code> props to
+                  specify the maximum limit in between the sliders.
                 </td>
               </tr>
               <tr>
@@ -343,8 +349,8 @@ const NouiSlider = () => {
                   <code>step={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>step</code> props to specify the number with which to
-                  increament or decreament.
+                  Use <code>{`{number}`}</code> with <code>step</code> props to specify
+                  the number with which to increament or decreament.
                 </td>
               </tr>
               <tr>
@@ -352,7 +358,8 @@ const NouiSlider = () => {
                   <code>tooltip={`{boolean}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{boolean}`}</code> with <code>tooltip</code> props to specify if tooltip is required.
+                  Use <code>{`{boolean}`}</code> with <code>tooltip</code> props to
+                  specify if tooltip is required.
                 </td>
               </tr>
             </tbody>

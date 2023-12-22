@@ -1,5 +1,18 @@
 export const saleRevenue = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   dataUnit: "USD",
   stacked: true,
   datasets: [
@@ -22,7 +35,9 @@ export const saleRevenue = {
         "rgba(101,118,255,0.2)",
         "rgba(101,118,255,1)",
       ],
-      data: [11000, 8000, 12500, 5500, 9500, 14299, 11000, 8000, 12500, 5500, 9500, 14299],
+      data: [
+        11000, 8000, 12500, 5500, 9500, 14299, 11000, 8000, 12500, 5500, 9500, 14299,
+      ],
     },
   ],
 };
@@ -99,8 +114,9 @@ export const salesOverview = {
       pointHoverBorderColor: "#798bff",
       pointHoverBackgroundColor: "#fff",
       data: [
-        8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690,
-        8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690,
+        8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200,
+        7800, 9500, 5500, 9200, 9690, 8200, 7800, 9500, 5500, 9200, 9690, 8200, 7800,
+        9500, 5500, 9200, 9690,
       ],
     },
   ],
@@ -131,7 +147,10 @@ export const orderOverviewSet1 = {
       backgroundColor: "#8feac5",
       barPercentage: 0.8,
       categoryPercentage: 0.6,
-      data: [1740, 2500, 1820, 1200, 1600, 2500, 1820, 1200, 1700, 1820, 1400, 1600, 1930, 2100],
+      data: [
+        1740, 2500, 1820, 1200, 1600, 2500, 1820, 1200, 1700, 1820, 1400, 1600, 1930,
+        2100,
+      ],
     },
     {
       label: "Sell Orders",
@@ -139,7 +158,10 @@ export const orderOverviewSet1 = {
       backgroundColor: "#9cabff",
       barPercentage: 0.8,
       categoryPercentage: 0.6,
-      data: [2420, 1820, 3000, 5000, 2450, 1820, 2700, 5000, 2400, 2600, 4000, 2380, 2120, 1700],
+      data: [
+        2420, 1820, 3000, 5000, 2450, 1820, 2700, 5000, 2400, 2600, 4000, 2380, 2120,
+        1700,
+      ],
     },
   ],
 };
@@ -186,8 +208,9 @@ export const orderOverviewSet2 = {
       barPercentage: 0.8,
       categoryPercentage: 0.6,
       data: [
-        1780, 2300, 2820, 2200, 2600, 1500, 1620, 1300, 1500, 1720, 1200, 1500, 2030, 2100, 1780, 2300, 2820, 2200,
-        2600, 1500, 1620, 1300, 1500, 1720, 1200, 1500, 2030, 2100, 3200, 3200,
+        1780, 2300, 2820, 2200, 2600, 1500, 1620, 1300, 1500, 1720, 1200, 1500, 2030,
+        2100, 1780, 2300, 2820, 2200, 2600, 1500, 1620, 1300, 1500, 1720, 1200, 1500,
+        2030, 2100, 3200, 3200,
       ],
     },
     {
@@ -197,8 +220,9 @@ export const orderOverviewSet2 = {
       barPercentage: 0.8,
       categoryPercentage: 0.6,
       data: [
-        2520, 1320, 2000, 3000, 2750, 1920, 2900, 4000, 3400, 2900, 4500, 2680, 2520, 1900, 2520, 1320, 2000, 3000,
-        2750, 1920, 2900, 4000, 3400, 2900, 4500, 2680, 2520, 1900, 2500, 2500,
+        2520, 1320, 2000, 3000, 2750, 1920, 2900, 4000, 3400, 2900, 4500, 2680, 2520,
+        1900, 2520, 1320, 2000, 3000, 2750, 1920, 2900, 4000, 3400, 2900, 4500, 2680,
+        2520, 1900, 2500, 2500,
       ],
     },
   ],
@@ -229,7 +253,10 @@ export const orderOverviewSet3 = {
       backgroundColor: "#8feac5",
       barPercentage: 0.8,
       categoryPercentage: 0.6,
-      data: [1790, 2390, 2720, 2000, 2900, 1800, 1820, 1900, 1900, 1920, 1600, 1800, 2530, 2900],
+      data: [
+        1790, 2390, 2720, 2000, 2900, 1800, 1820, 1900, 1900, 1920, 1600, 1800, 2530,
+        2900,
+      ],
     },
     {
       label: "Sell Orders",
@@ -237,7 +264,10 @@ export const orderOverviewSet3 = {
       backgroundColor: "#9cabff",
       barPercentage: 0.8,
       categoryPercentage: 0.6,
-      data: [3520, 2320, 3000, 4000, 2950, 1220, 2100, 4200, 3800, 2500, 4600, 2780, 2020, 1800],
+      data: [
+        3520, 2320, 3000, 4000, 2950, 1220, 2100, 4200, 3800, 2500, 4600, 2780, 2020,
+        1800,
+      ],
     },
   ],
 };
@@ -392,7 +422,10 @@ export const userActivity = {
       label: "Direct Join",
       color: "#9cabff",
       backgroundColor: "#9cabff",
-      data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90],
+      data: [
+        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55,
+        95, 75, 90,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -400,7 +433,10 @@ export const userActivity = {
       label: "Referral Join",
       color: "#9cabff",
       backgroundColor: "rgba(156, 171, 255, 0.4)",
-      data: [125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90],
+      data: [
+        125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90,
+        75, 90,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -438,7 +474,10 @@ export const userActivitySet2 = {
       label: "Direct Join",
       color: "#9cabff",
       backgroundColor: "#9cabff",
-      data: [90, 70, 125, 80, 95, 15, 90, 110, 80, 125, 55, 95, 155, 90, 120, 80, 105, 75, 85, 55, 100],
+      data: [
+        90, 70, 125, 80, 95, 15, 90, 110, 80, 125, 55, 95, 155, 90, 120, 80, 105, 75,
+        85, 55, 100,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -446,7 +485,10 @@ export const userActivitySet2 = {
       label: "Referral Join",
       color: "#9cabff",
       backgroundColor: "rgba(156, 171, 255, 0.4)",
-      data: [105, 35, 100, 55, 40, 120, 70, 105, 59, 90, 70, 90, 100, 18, 105, 59, 105, 65, 50, 55, 80],
+      data: [
+        105, 35, 100, 55, 40, 120, 70, 105, 59, 90, 70, 90, 100, 18, 105, 59, 105, 65,
+        50, 55, 80,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -484,7 +526,10 @@ export const userActivitySet3 = {
       label: "Direct Join",
       color: "#9cabff",
       backgroundColor: "#9cabff",
-      data: [90, 180, 25, 85, 85, 75, 90, 50, 90, 25, 55, 155, 70, 90, 110, 80, 125, 55, 95, 85, 100],
+      data: [
+        90, 180, 25, 85, 85, 75, 90, 50, 90, 25, 55, 155, 70, 90, 110, 80, 125, 55, 95,
+        85, 100,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -492,7 +537,10 @@ export const userActivitySet3 = {
       label: "Referral Join",
       color: "#9cabff",
       backgroundColor: "rgba(156, 171, 255, 0.4)",
-      data: [125, 65, 65, 95, 100, 90, 70, 25, 155, 65, 75, 80, 10, 90, 135, 56, 95, 75, 98, 79, 110],
+      data: [
+        125, 65, 65, 95, 100, 90, 70, 25, 155, 65, 75, 80, 10, 90, 135, 56, 95, 75, 98,
+        79, 110,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -530,7 +578,10 @@ export const userActivitySet4 = {
       label: "Direct Join",
       color: "#9cabff",
       backgroundColor: "#9cabff",
-      data: [110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90],
+      data: [
+        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55,
+        95, 75, 90,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },
@@ -538,7 +589,10 @@ export const userActivitySet4 = {
       label: "Referral Join",
       color: "#9cabff",
       backgroundColor: "rgba(156, 171, 255, 0.4)",
-      data: [125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90],
+      data: [
+        125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90,
+        75, 90,
+      ],
       categoryPercentage: 0.7,
       barPercentage: 0.7,
     },

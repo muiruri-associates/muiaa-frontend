@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 const InputSwitch = ({ label, id, checked }) => {
@@ -23,7 +23,7 @@ const InputSwitch = ({ label, id, checked }) => {
 InputSwitch.propTypes = {
   checked: PropTypes.any,
   id: PropTypes.any,
-  label: PropTypes.any
-}
+  label: PropTypes.any,
+};
 
 export default InputSwitch;

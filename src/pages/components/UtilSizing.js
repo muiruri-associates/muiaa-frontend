@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const SizingPage = () => {
@@ -18,7 +25,10 @@ const SizingPage = () => {
               Sizing
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Easily make an element as wide or as tall with our width and height utilities.</p>
+              <p className="lead">
+                Easily make an element as wide or as tall with our width and height
+                utilities.
+              </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -27,7 +37,9 @@ const SizingPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Set a Width</BlockTitle>
-              <p>These utility classNames allow to set width of an element instantly.</p>
+              <p>
+                These utility classNames allow to set width of an element instantly.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -71,7 +83,8 @@ const SizingPage = () => {
               <tr>
                 <td colSpan="2">
                   <em className="fs-13px">
-                    These classNames mostly used with <code>.container</code> to specific width on any larger screens.
+                    These classNames mostly used with <code>.container</code> to
+                    specific width on any larger screens.
                   </em>
                 </td>
               </tr>
@@ -90,8 +103,8 @@ const SizingPage = () => {
                   <code>.w-{"{value}"}</code>
                 </td>
                 <td>
-                  80px | 90px | 100px | 110px | 120px | 125px | 130px | 140px | 150px | 175px | 200px | 220px | 225px |
-                  250px | 300px | 350px | 400px | 550px
+                  80px | 90px | 100px | 110px | 120px | 125px | 130px | 140px | 150px |
+                  175px | 200px | 220px | 225px | 250px | 300px | 350px | 400px | 550px
                 </td>
               </tr>
               <tr>
@@ -173,7 +186,9 @@ const SizingPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Set a Height</BlockTitle>
-              <p>These utility classNames allow to set width of an element instantly.</p>
+              <p>
+                These utility classNames allow to set width of an element instantly.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -221,8 +236,8 @@ const SizingPage = () => {
                   <code>.h-{"{value}"}</code>
                 </td>
                 <td>
-                  100px | 150px | 175px | 200px | 225px | 250px | 275px | 300px | 325px | 350px | 375px | 400px | 425px
-                  | 450px | 475px | 500px
+                  100px | 150px | 175px | 200px | 225px | 250px | 275px | 300px | 325px
+                  | 350px | 375px | 400px | 425px | 450px | 475px | 500px
                 </td>
               </tr>
               <tr>
@@ -249,7 +264,10 @@ const SizingPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Relative to the viewport</BlockTitle>
-              <p>You can also use utilities to set the width and height relative to the viewport.</p>
+              <p>
+                You can also use utilities to set the width and height relative to the
+                viewport.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>

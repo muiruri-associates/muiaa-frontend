@@ -32,10 +32,31 @@ import { LinkList, LinkItem } from "./links/Links";
 import { Row, Col } from "./grid/Grid";
 import { OverlineTitle } from "./text/Text";
 import { SpecialTable, OrderTable, LoginLogTable } from "./table/SpecialTable";
-import { PreviewCard, PreviewAltCard, PreviewTable, CodeBlock } from "./preview/Preview";
-import { LineChartExample, BarChartExample, PieChartExample, DoughnutExample, PolarExample } from "./charts/Chart";
-import { EmailHeader, EmailBody, EmailBodyContent, EmailWrapper, EmailFooter } from "./email/Email";
-import { ProjectCard, ProjectBody, ProjectHead } from "./partials/project-card/ProjectCard";
+import {
+  PreviewCard,
+  PreviewAltCard,
+  PreviewTable,
+  CodeBlock,
+} from "./preview/Preview";
+import {
+  LineChartExample,
+  BarChartExample,
+  PieChartExample,
+  DoughnutExample,
+  PolarExample,
+} from "./charts/Chart";
+import {
+  EmailHeader,
+  EmailBody,
+  EmailBodyContent,
+  EmailWrapper,
+  EmailFooter,
+} from "./email/Email";
+import {
+  ProjectCard,
+  ProjectBody,
+  ProjectHead,
+} from "./partials/project-card/ProjectCard";
 import {
   DataTable,
   DataTableBody,

@@ -33,7 +33,13 @@ import {
   PaginationComponent,
   RSelect,
 } from "../../../components/Component";
-import { cryptoActivityOptions, filterCoin, filterPaymentmethod, filterStatusOptions, orderData } from "./TransData";
+import {
+  cryptoActivityOptions,
+  filterCoin,
+  filterPaymentmethod,
+  filterStatusOptions,
+  orderData,
+} from "./TransData";
 import { useForm } from "react-hook-form";
 
 const TransListCrypto = () => {
@@ -111,7 +117,10 @@ const TransListCrypto = () => {
       id: data.length + 1,
       ref: "YWLX52JG73",
       date: "18/10/2019 12:04 PM",
-      desc: formData.orderType === "Profit" ? "Credited " + formData.orderType : formData.orderType + " Funds",
+      desc:
+        formData.orderType === "Profit"
+          ? "Credited " + formData.orderType
+          : formData.orderType + " Funds",
       orderType: formData.orderType,
       amountBTC: amountBTC,
       amountUSD: amountUSD,
@@ -183,7 +192,11 @@ const TransListCrypto = () => {
                   </Button>
                 </li>
                 <li>
-                  <Button color="primary" className="btn-icon" onClick={() => setModal({ add: true })}>
+                  <Button
+                    color="primary"
+                    className="btn-icon"
+                    onClick={() => setModal({ add: true })}
+                  >
                     <Icon name="plus"></Icon>
                   </Button>
                 </li>
@@ -216,13 +229,18 @@ const TransListCrypto = () => {
                     <li className="btn-toolbar-sep"></li>
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
+                        <DropdownToggle
+                          tag="a"
+                          className="btn btn-trigger btn-icon dropdown-toggle"
+                        >
                           <div className="dot dot-primary"></div>
                           <Icon name="filter-alt"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right className="filter-wg dropdown-menu-xl">
                           <div className="dropdown-head">
-                            <span className="sub-title dropdown-title">Advanced Filter</span>
+                            <span className="sub-title dropdown-title">
+                              Advanced Filter
+                            </span>
                             <div className="dropdown">
                               <Button size="sm" className="btn-icon">
                                 <Icon name="more-h"></Icon>
@@ -233,34 +251,61 @@ const TransListCrypto = () => {
                             <Row className="gx-6 gy-4">
                               <Col size="6">
                                 <FormGroup>
-                                  <label className="overline-title overline-title-alt">Type</label>
-                                  <RSelect options={cryptoActivityOptions} placeholder="Any Activity" />
+                                  <label className="overline-title overline-title-alt">
+                                    Type
+                                  </label>
+                                  <RSelect
+                                    options={cryptoActivityOptions}
+                                    placeholder="Any Activity"
+                                  />
                                 </FormGroup>
                               </Col>
                               <Col size="6">
                                 <FormGroup>
-                                  <label className="overline-title overline-title-alt">Status</label>
-                                  <RSelect options={filterStatusOptions} placeholder="Any Status" />
+                                  <label className="overline-title overline-title-alt">
+                                    Status
+                                  </label>
+                                  <RSelect
+                                    options={filterStatusOptions}
+                                    placeholder="Any Status"
+                                  />
                                 </FormGroup>
                               </Col>
                               <Col size="6">
                                 <FormGroup className="form-group">
-                                  <label className="overline-title overline-title-alt">Pay Currency</label>
-                                  <RSelect options={filterCoin} placeholder="Any coin" />
+                                  <label className="overline-title overline-title-alt">
+                                    Pay Currency
+                                  </label>
+                                  <RSelect
+                                    options={filterCoin}
+                                    placeholder="Any coin"
+                                  />
                                 </FormGroup>
                               </Col>
                               <Col size="6">
                                 <FormGroup className="form-group">
-                                  <label className="overline-title overline-title-alt">Method</label>
-                                  <RSelect options={filterPaymentmethod} placeholder="Any Method" />
+                                  <label className="overline-title overline-title-alt">
+                                    Method
+                                  </label>
+                                  <RSelect
+                                    options={filterPaymentmethod}
+                                    placeholder="Any Method"
+                                  />
                                 </FormGroup>
                               </Col>
 
                               <Col size="6">
                                 <FormGroup>
                                   <div className="custom-control custom-control-sm custom-checkbox">
-                                    <input type="checkbox" className="custom-control-input" id="includeDel" />
-                                    <label className="custom-control-label" htmlFor="includeDel">
+                                    <input
+                                      type="checkbox"
+                                      className="custom-control-input"
+                                      id="includeDel"
+                                    />
+                                    <label
+                                      className="custom-control-label"
+                                      htmlFor="includeDel"
+                                    >
                                       {" "}
                                       Including Deleted
                                     </label>
@@ -301,7 +346,10 @@ const TransListCrypto = () => {
                     </li>
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
+                        <DropdownToggle
+                          tag="a"
+                          className="btn btn-trigger btn-icon dropdown-toggle"
+                        >
                           <Icon name="setting"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right className="dropdown-menu-xs">
@@ -429,10 +477,10 @@ const TransListCrypto = () => {
                                 item.status === "Completed"
                                   ? "success-dim text-success"
                                   : item.status === "Upcoming"
-                                  ? "warning-dim text-warning"
-                                  : item.status === "Pending"
-                                  ? "info-dim text-info"
-                                  : "danger-dim text-danger"
+                                    ? "warning-dim text-warning"
+                                    : item.status === "Pending"
+                                      ? "info-dim text-info"
+                                      : "danger-dim text-danger"
                               }`}
                             >
                               <Icon name="arrow-up-right"></Icon>
@@ -454,10 +502,10 @@ const TransListCrypto = () => {
                               item.status === "Completed"
                                 ? "success"
                                 : item.status === "Upcoming"
-                                ? "warning"
-                                : item.status === "Pending"
-                                ? "info"
-                                : "danger"
+                                  ? "warning"
+                                  : item.status === "Pending"
+                                    ? "info"
+                                    : "danger"
                             }`}
                           >
                             {item.orderType}
@@ -481,10 +529,10 @@ const TransListCrypto = () => {
                               item.status === "Completed"
                                 ? "success"
                                 : item.status === "Upcoming"
-                                ? "warning"
-                                : item.status === "Pending"
-                                ? "info"
-                                : "danger"
+                                  ? "warning"
+                                  : item.status === "Pending"
+                                    ? "info"
+                                    : "danger"
                             } d-md-none`}
                           ></div>
                           <span
@@ -492,10 +540,10 @@ const TransListCrypto = () => {
                               item.status === "Completed"
                                 ? "success"
                                 : item.status === "Upcoming"
-                                ? "warning"
-                                : item.status === "Pending"
-                                ? "info"
-                                : "danger"
+                                  ? "warning"
+                                  : item.status === "Pending"
+                                    ? "info"
+                                    : "danger"
                             } d-none d-md-inline-flex`}
                           >
                             {item.status}
@@ -519,30 +567,37 @@ const TransListCrypto = () => {
                                 text="Details"
                               />
                             </li>
-                            {item.status !== "Completed" && item.status !== "Rejected" && (
-                              <React.Fragment>
-                                <li className="nk-tb-action-hidden" onClick={() => onApproveClick(item.id)}>
-                                  <TooltipComponent
-                                    tag="a"
-                                    containerClassName="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                    id={item.ref + "approve"}
-                                    icon="done"
-                                    direction="top"
-                                    text="approve"
-                                  />
-                                </li>
-                                <li className="nk-tb-action-hidden" onClick={() => onRejectClick(item.id)}>
-                                  <TooltipComponent
-                                    tag="a"
-                                    containerClassName="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
-                                    id={item.ref + "reject"}
-                                    icon="cross-round"
-                                    direction="top"
-                                    text="Reject"
-                                  />
-                                </li>
-                              </React.Fragment>
-                            )}
+                            {item.status !== "Completed" &&
+                              item.status !== "Rejected" && (
+                                <React.Fragment>
+                                  <li
+                                    className="nk-tb-action-hidden"
+                                    onClick={() => onApproveClick(item.id)}
+                                  >
+                                    <TooltipComponent
+                                      tag="a"
+                                      containerClassName="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
+                                      id={item.ref + "approve"}
+                                      icon="done"
+                                      direction="top"
+                                      text="approve"
+                                    />
+                                  </li>
+                                  <li
+                                    className="nk-tb-action-hidden"
+                                    onClick={() => onRejectClick(item.id)}
+                                  >
+                                    <TooltipComponent
+                                      tag="a"
+                                      containerClassName="bg-white btn btn-sm btn-outline-light btn-icon btn-tooltip"
+                                      id={item.ref + "reject"}
+                                      icon="cross-round"
+                                      direction="top"
+                                      text="Reject"
+                                    />
+                                  </li>
+                                </React.Fragment>
+                              )}
                             <li>
                               <UncontrolledDropdown>
                                 <DropdownToggle
@@ -553,34 +608,35 @@ const TransListCrypto = () => {
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                   <ul className="link-list-opt no-bdr">
-                                    {item.status !== "Completed" && item.status !== "Rejected" && (
-                                      <React.Fragment>
-                                        <li onClick={() => onApproveClick(item.id)}>
-                                          <DropdownItem
-                                            tag="a"
-                                            href="#approve"
-                                            onClick={(ev) => {
-                                              ev.preventDefault();
-                                            }}
-                                          >
-                                            <Icon name="done"></Icon>
-                                            <span>Approve</span>
-                                          </DropdownItem>
-                                        </li>
-                                        <li onClick={() => onRejectClick(item.id)}>
-                                          <DropdownItem
-                                            tag="a"
-                                            href="#reject"
-                                            onClick={(ev) => {
-                                              ev.preventDefault();
-                                            }}
-                                          >
-                                            <Icon name="cross-round"></Icon>
-                                            <span>Reject</span>
-                                          </DropdownItem>
-                                        </li>
-                                      </React.Fragment>
-                                    )}
+                                    {item.status !== "Completed" &&
+                                      item.status !== "Rejected" && (
+                                        <React.Fragment>
+                                          <li onClick={() => onApproveClick(item.id)}>
+                                            <DropdownItem
+                                              tag="a"
+                                              href="#approve"
+                                              onClick={(ev) => {
+                                                ev.preventDefault();
+                                              }}
+                                            >
+                                              <Icon name="done"></Icon>
+                                              <span>Approve</span>
+                                            </DropdownItem>
+                                          </li>
+                                          <li onClick={() => onRejectClick(item.id)}>
+                                            <DropdownItem
+                                              tag="a"
+                                              href="#reject"
+                                              onClick={(ev) => {
+                                                ev.preventDefault();
+                                              }}
+                                            >
+                                              <Icon name="cross-round"></Icon>
+                                              <span>Reject</span>
+                                            </DropdownItem>
+                                          </li>
+                                        </React.Fragment>
+                                      )}
                                     <li
                                       onClick={() => {
                                         loadDetail(item.id);
@@ -627,7 +683,12 @@ const TransListCrypto = () => {
           </DataTable>
         </Block>
 
-        <Modal isOpen={modal.add} toggle={() => setModal({ add: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.add}
+          toggle={() => setModal({ add: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#close"
@@ -650,7 +711,9 @@ const TransListCrypto = () => {
                         <RSelect
                           options={cryptoActivityOptions}
                           defaultValue={[{ value: "deposit", label: "Deposit" }]}
-                          onChange={(e) => setFormData({ ...formData, orderType: e.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, orderType: e.value })
+                          }
                         />
                       </div>
                     </FormGroup>
@@ -662,7 +725,9 @@ const TransListCrypto = () => {
                         <RSelect
                           options={filterStatusOptions}
                           defaultValue={[{ value: "Pending", label: "Pending" }]}
-                          onChange={(e) => setFormData({ ...formData, status: e.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, status: e.value })
+                          }
                         />
                       </div>
                     </FormGroup>
@@ -681,7 +746,9 @@ const TransListCrypto = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.amountBTC && <span className="invalid">{errors.amountBTC.message}</span>}
+                      {errors.amountBTC && (
+                        <span className="invalid">{errors.amountBTC.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -694,7 +761,9 @@ const TransListCrypto = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.amountUSD && <span className="invalid">{errors.amountUSD.message}</span>}
+                      {errors.amountUSD && (
+                        <span className="invalid">{errors.amountUSD.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                 </Row>
@@ -711,7 +780,9 @@ const TransListCrypto = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.balanceBTC && <span className="invalid">{errors.balanceBTC.message}</span>}
+                      {errors.balanceBTC && (
+                        <span className="invalid">{errors.balanceBTC.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -724,7 +795,9 @@ const TransListCrypto = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.balanceUSD && <span className="invalid">{errors.balanceUSD.message}</span>}
+                      {errors.balanceUSD && (
+                        <span className="invalid">{errors.balanceUSD.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -754,7 +827,12 @@ const TransListCrypto = () => {
           </ModalBody>
         </Modal>
 
-        <Modal isOpen={modalDetail} toggle={() => toggleModalDetail()} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modalDetail}
+          toggle={() => toggleModalDetail()}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -768,7 +846,8 @@ const TransListCrypto = () => {
             </a>
             <div className="nk-modal-head mb-3">
               <h4 className="nk-modal-title title">
-                Transaction <small className="text-primary">{detail.transactionId}</small>
+                Transaction{" "}
+                <small className="text-primary">{detail.transactionId}</small>
               </h4>
             </div>
             <div className="nk-tnx-details">
@@ -779,10 +858,10 @@ const TransListCrypto = () => {
                       detail.status === "Completed"
                         ? "success"
                         : detail.status === "Upcoming"
-                        ? "warning"
-                        : detail.status === "Pending"
-                        ? "info"
-                        : "danger"
+                          ? "warning"
+                          : detail.status === "Pending"
+                            ? "info"
+                            : "danger"
                     } text-white`}
                   >
                     <Icon name="arrow-up-right"></Icon>
@@ -799,10 +878,10 @@ const TransListCrypto = () => {
                         detail.status === "Completed"
                           ? "success"
                           : detail.status === "Upcoming"
-                          ? "warning"
-                          : detail.status === "Pending"
-                          ? "info"
-                          : "danger"
+                            ? "warning"
+                            : detail.status === "Pending"
+                              ? "info"
+                              : "danger"
                       }
                       size="sm"
                     >
@@ -859,7 +938,9 @@ const TransListCrypto = () => {
                 </Col>
                 <Col lg={12}>
                   <span className="sub-text">Transaction Hash</span>
-                  <span className="caption-text text-break">{detail.transactionHash}</span>
+                  <span className="caption-text text-break">
+                    {detail.transactionHash}
+                  </span>
                 </Col>
                 <Col lg={12}>
                   <span className="sub-text">Details</span>

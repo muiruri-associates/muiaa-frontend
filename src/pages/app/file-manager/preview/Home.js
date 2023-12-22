@@ -2,8 +2,20 @@ import React, { useEffect, useState } from "react";
 import Groups from "../views/Groups";
 import Grid from "../views/Grid";
 import List from "../views/List";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import {
+  Block,
+  BlockBetween,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  Icon,
+} from "../../../../components/Component";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
@@ -18,7 +30,15 @@ Home.propTypes = {
   toggleScreenLg: PropTypes.func,
 };
 
-const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, toggleUploadModal, toggleScreenLg }) => {
+const Home = ({
+  data,
+  setData,
+  toggleCreateModal,
+  searchText,
+  setSearchText,
+  toggleUploadModal,
+  toggleScreenLg,
+}) => {
   const [hide1, setHide1] = useState(true);
   const [hide2] = useState(true);
   const [view, setView] = useState("grid");
@@ -26,11 +46,12 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
   const [dataList, setDataList] = useState();
 
   useEffect(() => {
-    let quickView = data.filter((item) => item.meta.starred === true && Boolean(item.recovery) === false);
+    let quickView = data.filter(
+      (item) => item.meta.starred === true && Boolean(item.recovery) === false
+    );
     setTimeout(() => setDataList([...quickView]));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
 
   const filterFilerQuickView = (id) => {
     let defaultData = dataList;
@@ -161,7 +182,9 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
                       ev.preventDefault();
                       setHide1(!hide1);
                     }}
-                    className={`"link link-primary toggle-opt ${hide1 === true ? "active" : ""}`}
+                    className={`"link link-primary toggle-opt ${
+                      hide1 === true ? "active" : ""
+                    }`}
                   >
                     <div className="inactive-text">Show</div>
                     <div className="active-text">Hide</div>
@@ -169,7 +192,9 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
                 </BlockHeadContent>
               </BlockBetween>
             </BlockHead>
-            <div className={`toggle-expand-content ${hide1 === true ? "expanded" : ""}`}>
+            <div
+              className={`toggle-expand-content ${hide1 === true ? "expanded" : ""}`}
+            >
               <div className="nk-files nk-files-view-grid">
                 <div className="nk-files-list">
                   {dataList.map((file) => (
@@ -182,7 +207,9 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
                           >
                             <div className="nk-file-title">
                               <div className="nk-file-icon">
-                                <span className="nk-file-icon-type">{file.meta.svg}</span>
+                                <span className="nk-file-icon-type">
+                                  {file.meta.svg}
+                                </span>
                               </div>
                               <div className="nk-file-name">
                                 <div className="nk-file-name-text">
@@ -192,10 +219,16 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
                             </div>
                           </Link>
                         ) : (
-                          <a className="nk-file-link" href="#link" onClick={(ev) => ev.preventDefault()}>
+                          <a
+                            className="nk-file-link"
+                            href="#link"
+                            onClick={(ev) => ev.preventDefault()}
+                          >
                             <div className="nk-file-title">
                               <div className="nk-file-icon">
-                                <span className="nk-file-icon-type">{file.meta.svg}</span>
+                                <span className="nk-file-icon-type">
+                                  {file.meta.svg}
+                                </span>
                               </div>
                               <div className="nk-file-name">
                                 <div className="nk-file-name-text">
@@ -275,7 +308,9 @@ const Home = ({ data, setData, toggleCreateModal, searchText, setSearchText, tog
             </BlockHead>
 
             {data.length > 0 ? (
-              <div className={`toggle-expand-content ${hide2 === true ? "expanded" : ""}`}>
+              <div
+                className={`toggle-expand-content ${hide2 === true ? "expanded" : ""}`}
+              >
                 {view === "grid" ? (
                   <Grid data={data} setData={setData} />
                 ) : view === "group" ? (

@@ -8,7 +8,7 @@ const Messages = () => {
   const [data, setData] = useState(messageData);
   const [filteredTabData, setFilteredTabData] = useState(messageData);
   const [filterTab] = useState("1");
-  const [ setOnSearch] = useState(false);
+  const [setOnSearch] = useState(false);
   const [filterText, setFilterText] = useState("");
   const [selectedId, setSelectedIt] = useState(1);
   const [mobileView, setMobileView] = useState(false);
@@ -84,7 +84,6 @@ const Messages = () => {
       <Head title="App Messages"></Head>
       <ContentAlt>
         <div className="nk-msg">
-          
           {/*nk-aside*/}
           <MessageItem
             id={selectedId}

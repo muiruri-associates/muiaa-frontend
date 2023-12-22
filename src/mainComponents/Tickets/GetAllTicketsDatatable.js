@@ -10,60 +10,54 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { getAllTickets } from '../../redux/actions/ticketActions';
+import { getAllTickets } from "../../redux/actions/ticketActions";
 import { TicketColums } from "./TicketsData";
-
 
 const GetAllTicketsDatatable = () => {
   const dispatch = useDispatch();
   const ticket = useSelector((state) => state.ticket);
-  console.log('All tickets in component', ticket);
+  console.log("All tickets in component", ticket);
 
   useEffect(() => {
     dispatch(getAllTickets());
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <React.Fragment>
-    <Head title="My Ticket" />
-    <Content page="component">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* First BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-            <BlockTitle tag="h2" className="fw-normal">
-              Tickets
-            </BlockTitle>
-          </BlockHeadContent>
-        </BlockHead>
+      <Head title="My Ticket" />
+      <Content page="component">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* First BlockHead */}
+          <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <BlockTitle tag="h2" className="fw-normal">
+                Tickets
+              </BlockTitle>
+            </BlockHeadContent>
+          </BlockHead>
+        </div>
+        <br />
 
-        
-      </div>
-      <br />
+        <Block size="lg">
+          <PreviewCard>
+            {ticket.loading && <div>Loading...</div>}
+            {!ticket.loading && ticket.error ? <div>Error: {ticket.error}</div> : null}
+            {!ticket.loading && ticket.tickets?.length ? (
+              <ReactDataTable
+                data={ticket.tickets}
+                columns={TicketColums}
+                expandableRows
+                pagination
+                actions
+              />
+            ) : (
+              <div>No Tickets found.</div>
+            )}
+          </PreviewCard>
+        </Block>
+      </Content>
+    </React.Fragment>
+  );
+};
 
-      <Block size="lg">
-        <PreviewCard>
-          {ticket.loading && <div>Loading...</div>}
-          {!ticket.loading && ticket.error ? (
-            <div>Error: {ticket.error}</div>
-          ): null}
-          {!ticket.loading && ticket.tickets?.length ? (
-            <ReactDataTable
-            data={ticket.tickets}
-            columns={TicketColums}
-            expandableRows
-            pagination
-            actions
-          />
-          ): (
-            <div>No Tickets found.</div>
-          )}
-        </PreviewCard>
-      </Block>
-    </Content>
-  </React.Fragment>
-);
-}
-
-
-export default GetAllTicketsDatatable
+export default GetAllTicketsDatatable;

@@ -1,7 +1,15 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
-import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Modal, UncontrolledDropdown } from "reactstrap";
+import {
+  Badge,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Modal,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Icon, UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { KanbanTaskForm, KanbanBoardForm } from "./KanbanForms";
@@ -22,7 +30,9 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
     let defaultData = data;
     delete defaultData.task[id];
 
-    defaultData.columns[column.id].tasks = defaultData.columns[column.id].tasks.filter((item) => item !== id);
+    defaultData.columns[column.id].tasks = defaultData.columns[column.id].tasks.filter(
+      (item) => item !== id
+    );
 
     setData({ ...defaultData });
   };
@@ -32,7 +42,12 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
     <React.Fragment>
       <Draggable draggableId={id} key={id} index={index}>
         {(provided) => (
-          <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="mt-2">
+          <div
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+            {...provided.dragHandleProps}
+            className="mt-2"
+          >
             <div className="kanban-item">
               <div className="kanban-item-title">
                 <h6 className="title">{title}</h6>
@@ -45,7 +60,12 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
                   >
                     <div className="user-avatar-group">
                       {meta.users.map((user, index) => (
-                        <UserAvatar key={index} className="xs" theme={user.theme} text={user.value[0]}></UserAvatar>
+                        <UserAvatar
+                          key={index}
+                          className="xs"
+                          theme={user.theme}
+                          text={user.value[0]}
+                        ></UserAvatar>
                       ))}
                     </div>
                   </DropdownToggle>
@@ -54,7 +74,11 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
                       {meta.users.map((user, index) => (
                         <li key={index}>
                           <div className="user-card" onClick={toggleOpen}>
-                            <UserAvatar className="sm" theme={user.theme} text={findUpper(user.value)}></UserAvatar>
+                            <UserAvatar
+                              className="sm"
+                              theme={user.theme}
+                              text={findUpper(user.value)}
+                            ></UserAvatar>
                             <div className="user-name">
                               <span className="tb-lead">{user.value}</span>
                             </div>
@@ -141,7 +165,13 @@ export const KanbanCard = ({ data, setData, card, index, column }) => {
         )}
       </Draggable>
       <Modal size="lg" isOpen={taskModal} toggle={toggleTaskModal}>
-        <KanbanTaskForm toggle={toggleTaskModal} data={data} setData={setData} editTask={card} taskToBoard={column} />
+        <KanbanTaskForm
+          toggle={toggleTaskModal}
+          data={data}
+          setData={setData}
+          editTask={card}
+          taskToBoard={column}
+        />
       </Modal>
     </React.Fragment>
   );
@@ -156,27 +186,36 @@ KanbanCard.propTypes = {
       date: PropTypes.any,
       due: PropTypes.any,
       tags: PropTypes.shape({
-        map: PropTypes.func
+        map: PropTypes.func,
       }),
       users: PropTypes.shape({
-        map: PropTypes.func
-      })
+        map: PropTypes.func,
+      }),
     }),
-    title: PropTypes.any
+    title: PropTypes.any,
   }),
   column: PropTypes.shape({
-    id: PropTypes.any
+    id: PropTypes.any,
   }),
   data: PropTypes.any,
   index: PropTypes.any,
-  setData: PropTypes.func
-}
+  setData: PropTypes.func,
+};
 
 export const KanbanCardList = ({ data, setData, tasks, column }) => {
   return tasks.length > 0 ? (
     tasks.map((task, index) => {
       const card = data.task[task];
-      return <KanbanCard card={card} data={data} setData={setData} key={card.id} index={index} column={column} />;
+      return (
+        <KanbanCard
+          card={card}
+          data={data}
+          setData={setData}
+          key={card.id}
+          index={index}
+          column={column}
+        />
+      );
     })
   ) : (
     <div className="kanban-drag"></div>
@@ -186,14 +225,14 @@ export const KanbanCardList = ({ data, setData, tasks, column }) => {
 KanbanCardList.propTypes = {
   column: PropTypes.any,
   data: PropTypes.shape({
-    task: PropTypes.any
+    task: PropTypes.any,
   }),
   setData: PropTypes.any,
   tasks: PropTypes.shape({
     length: PropTypes.number,
-    map: PropTypes.func
-  })
-}
+    map: PropTypes.func,
+  }),
+};
 
 export const KanbanColumn = ({ data, setData, column, index }) => {
   const [open, setOpen] = useState(false);
@@ -226,12 +265,21 @@ export const KanbanColumn = ({ data, setData, column, index }) => {
     <React.Fragment>
       <Draggable draggableId={column.id} key={column.id} index={index}>
         {(provided) => (
-          <div className="kanban-board" ref={provided.innerRef} {...provided.draggableProps}>
-            <div className={`kanban-board-header kanban-${column.theme}`} {...provided.dragHandleProps}>
+          <div
+            className="kanban-board"
+            ref={provided.innerRef}
+            {...provided.draggableProps}
+          >
+            <div
+              className={`kanban-board-header kanban-${column.theme}`}
+              {...provided.dragHandleProps}
+            >
               <div className="kanban-title-board">
                 <div className="kanban-title-content">
                   <h6 className="title">{column.text}</h6>
-                  <span className="badge badge-pill badge-outline-light text-dark">{column.tasks.length}</span>
+                  <span className="badge badge-pill badge-outline-light text-dark">
+                    {column.tasks.length}
+                  </span>
                 </div>
                 <div className="kanban-title-content">
                   <UncontrolledDropdown>
@@ -305,11 +353,25 @@ export const KanbanColumn = ({ data, setData, column, index }) => {
             </div>
             <Droppable droppableId={column.id} type="task">
               {(provided) => (
-                <div className="kanban-drag" {...provided.droppableProps} ref={provided.innerRef}>
-                  <KanbanCardList data={data} setData={setData} tasks={column.tasks} column={column} />
-                  <button className="kanban-add-task mt-2 btn btn-block" onClick={toggleModal}>
+                <div
+                  className="kanban-drag"
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
+                  <KanbanCardList
+                    data={data}
+                    setData={setData}
+                    tasks={column.tasks}
+                    column={column}
+                  />
+                  <button
+                    className="kanban-add-task mt-2 btn btn-block"
+                    onClick={toggleModal}
+                  >
                     <Icon name="plus-sm"></Icon>
-                    <span>{column.tasks.length > 0 ? "Add another " : "Add "} task</span>
+                    <span>
+                      {column.tasks.length > 0 ? "Add another " : "Add "} task
+                    </span>
                   </button>
                   {provided.placeholder}
                 </div>
@@ -319,11 +381,21 @@ export const KanbanColumn = ({ data, setData, column, index }) => {
         )}
       </Draggable>
       <Modal size="lg" isOpen={open} toggle={toggleModal}>
-        <KanbanTaskForm toggle={toggleModal} data={data} setData={setData} taskToBoard={column} />
+        <KanbanTaskForm
+          toggle={toggleModal}
+          data={data}
+          setData={setData}
+          taskToBoard={column}
+        />
       </Modal>
 
       <Modal size="lg" isOpen={editModal} toggle={toggleEditModal}>
-        <KanbanBoardForm toggle={toggleEditModal} data={data} setData={setData} editBoard={column} />
+        <KanbanBoardForm
+          toggle={toggleEditModal}
+          data={data}
+          setData={setData}
+          editBoard={column}
+        />
       </Modal>
     </React.Fragment>
   );
@@ -333,12 +405,12 @@ KanbanColumn.propTypes = {
   column: PropTypes.shape({
     id: PropTypes.any,
     tasks: PropTypes.shape({
-      length: PropTypes.number
+      length: PropTypes.number,
     }),
     text: PropTypes.any,
-    theme: PropTypes.any
+    theme: PropTypes.any,
   }),
   data: PropTypes.any,
   index: PropTypes.any,
-  setData: PropTypes.func
-}
+  setData: PropTypes.func,
+};

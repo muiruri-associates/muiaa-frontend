@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 import { basicData } from "./TableData";
@@ -43,6 +43,6 @@ Table.propTypes = {
   headColor: PropTypes.any,
   hover: PropTypes.any,
   responsive: PropTypes.any,
-  striped: PropTypes.any
-}
+  striped: PropTypes.any,
+};
 export default Table;

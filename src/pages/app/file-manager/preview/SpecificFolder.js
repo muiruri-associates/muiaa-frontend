@@ -1,7 +1,7 @@
 import React from "react";
 import Files from "./Files";
 import { folderList } from "../Data";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 SpecificFolder.propTypes = {
   match: PropTypes.object,
@@ -11,8 +11,8 @@ SpecificFolder.propTypes = {
   toggleCreateModal: PropTypes.func,
   toggleUploadModal: PropTypes.func,
   toggleScreenLg: PropTypes.func,
-  children: PropTypes.object
-}
+  children: PropTypes.object,
+};
 
 const SpecificFolder = ({
   match,

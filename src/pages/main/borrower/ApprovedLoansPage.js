@@ -1,7 +1,7 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import ApprovedLoansDatatable from './../../../mainComponents/Loans/ApprovedLoansDatatable';
+import ApprovedLoansDatatable from "./../../../mainComponents/Loans/ApprovedLoansDatatable";
 
 const ApprovedLoansPage = () => {
   return (

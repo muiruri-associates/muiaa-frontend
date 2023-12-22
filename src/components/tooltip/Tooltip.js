@@ -1,9 +1,17 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import Icon from "../icon/Icon";
 import { UncontrolledTooltip } from "reactstrap";
 
-const TooltipComponent = ({ iconClass, icon, id, direction, text, containerClassName, ...props }) => {
+const TooltipComponent = ({
+  iconClass,
+  icon,
+  id,
+  direction,
+  text,
+  containerClassName,
+  ...props
+}) => {
   return (
     <React.Fragment>
       {props.tag ? (
@@ -28,6 +36,6 @@ TooltipComponent.propTypes = {
   iconClass: PropTypes.any,
   id: PropTypes.any,
   text: PropTypes.any,
-  tag: PropTypes.string
-}
+  tag: PropTypes.string,
+};
 export default TooltipComponent;

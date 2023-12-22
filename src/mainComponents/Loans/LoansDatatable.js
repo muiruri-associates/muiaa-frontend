@@ -29,7 +29,13 @@ const LoansDatatable = () => {
         </div>
         <Block size="lg">
           <PreviewCard>
-            <ReactDataTable data={DataTableData} columns={dataTableColumns} expandableRows pagination actions />
+            <ReactDataTable
+              data={DataTableData}
+              columns={dataTableColumns}
+              expandableRows
+              pagination
+              actions
+            />
           </PreviewCard>{" "}
         </Block>{" "}
       </Content>{" "}

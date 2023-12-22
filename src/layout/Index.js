@@ -78,9 +78,16 @@ const Layout = () => {
             theme={themeState.sidebar}
             className={sidebarClass}
           />
-          {visibility && mobileView && <div className="nk-sidebar-overlay" onClick={toggleSidebar}></div>}
+          {visibility && mobileView && (
+            <div className="nk-sidebar-overlay" onClick={toggleSidebar}></div>
+          )}
           <div className="nk-wrap">
-            <Header sidebarToggle={toggleSidebar} setVisibility={setVisibility} fixed theme={themeState.header} />
+            <Header
+              sidebarToggle={toggleSidebar}
+              setVisibility={setVisibility}
+              fixed
+              theme={themeState.header}
+            />
             <Pages />
             <Footer />
           </div>

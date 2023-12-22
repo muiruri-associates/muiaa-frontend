@@ -36,7 +36,9 @@ const PricingTable = () => {
             {pricingTableDataV1.map((item) => {
               return (
                 <Col md={6} xxl={3} key={item.id}>
-                  <Card className={`card-bordered pricing ${item.tags ? "recommend" : ""}`}>
+                  <Card
+                    className={`card-bordered pricing ${item.tags ? "recommend" : ""}`}
+                  >
                     {item.tags && (
                       <Badge color="primary" className="pricing-badge">
                         Recommend
@@ -71,7 +73,8 @@ const PricingTable = () => {
                           <span className="ml-auto">${item.maxDeposit}</span>
                         </li>
                         <li>
-                          <span className="w-50">Deposit Return</span> - <span className="ml-auto">{item.return}</span>
+                          <span className="w-50">Deposit Return</span> -{" "}
+                          <span className="ml-auto">{item.return}</span>
                         </li>
                         <li>
                           <span className="w-50">Total Return</span> -{" "}
@@ -106,7 +109,11 @@ const PricingTable = () => {
             {pricingTableDataV2.map((item) => {
               return (
                 <Col md={6} xxl={3} key={item.id}>
-                  <Card className={`card-bordered pricing text-center ${item.tags ? "recommend" : ""}`}>
+                  <Card
+                    className={`card-bordered pricing text-center ${
+                      item.tags ? "recommend" : ""
+                    }`}
+                  >
                     {item.tags && (
                       <Badge color="primary" className="pricing-badge">
                         Recommend
@@ -124,7 +131,9 @@ const PricingTable = () => {
                         <div className="amount">
                           ${item.amount} <span>/yr</span>
                         </div>
-                        <span className="bill">{item.userNumber} User, Billed Yearly</span>
+                        <span className="bill">
+                          {item.userNumber} User, Billed Yearly
+                        </span>
                       </div>
                       <div className="pricing-action">
                         <Button color="primary">Select Plan</Button>

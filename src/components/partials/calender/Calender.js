@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -6,7 +6,16 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 import bootstrapPlugin from "@fullcalendar/bootstrap";
 import DatePicker from "react-datepicker";
-import { Popover, PopoverHeader, PopoverBody, ModalHeader, Modal, ModalBody, FormGroup, Button } from "reactstrap";
+import {
+  Popover,
+  PopoverHeader,
+  PopoverBody,
+  ModalHeader,
+  Modal,
+  ModalBody,
+  FormGroup,
+  Button,
+} from "reactstrap";
 import { useForm } from "react-hook-form";
 import { Col, Row, RSelect } from "../../Component";
 import { setDateForPicker } from "../../../utils/Utils";
@@ -17,7 +26,11 @@ const EventView = (event) => {
   const { title, extendedProps, publicId } = event.event.event._def;
   return (
     <React.Fragment>
-      <div id={publicId} onMouseEnter={() => setMouseEnter(true)} onMouseLeave={() => setMouseEnter(false)}>
+      <div
+        id={publicId}
+        onMouseEnter={() => setMouseEnter(true)}
+        onMouseLeave={() => setMouseEnter(false)}
+      >
         {title}
       </div>{" "}
       <Popover placement="bottom" isOpen={mouseEnter} target={publicId}>
@@ -148,7 +161,10 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
       <Modal isOpen={edit} toggle={toggleEdit} className="modal-md">
         <ModalHeader toggle={toggleEdit}>Edit Event</ModalHeader>
         <ModalBody>
-          <form className="form-validate is-alter" onSubmit={handleSubmit(handleFormSubmit)}>
+          <form
+            className="form-validate is-alter"
+            onSubmit={handleSubmit(handleFormSubmit)}
+          >
             <Row className="gx-4 gy-3">
               <Col size="12">
                 <FormGroup>
@@ -176,7 +192,9 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
                       <div className="form-control-wrap">
                         <DatePicker
                           selected={new Date(event.start)}
-                          onChange={(date) => updateEvent({ ...event, start: setDateForPicker(date) })}
+                          onChange={(date) =>
+                            updateEvent({ ...event, start: setDateForPicker(date) })
+                          }
                           className="form-control date-picker"
                         />
                       </div>
@@ -206,7 +224,9 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
                       <div className="form-control-wrap">
                         <DatePicker
                           selected={new Date(event.end)}
-                          onChange={(date) => updateEvent({ ...event, end: setDateForPicker(date) })}
+                          onChange={(date) =>
+                            updateEvent({ ...event, end: setDateForPicker(date) })
+                          }
                           className="form-control date-picker"
                         />
                       </div>
@@ -241,7 +261,9 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
                       ref={register({ required: true })}
                       defaultValue={event.description}
                     ></textarea>
-                    {errors.description && <p className="invalid">This field is required</p>}
+                    {errors.description && (
+                      <p className="invalid">This field is required</p>
+                    )}
                   </div>
                 </FormGroup>
               </Col>
@@ -282,10 +304,10 @@ const CalenderApp = ({ events, onDelete, onEdit }) => {
 
 CalenderApp.propTypes = {
   events: PropTypes.shape({
-    find: PropTypes.func
+    find: PropTypes.func,
   }),
   onDelete: PropTypes.func,
-  onEdit: PropTypes.func
-}
+  onEdit: PropTypes.func,
+};
 
 export default CalenderApp;

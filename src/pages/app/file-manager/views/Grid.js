@@ -3,13 +3,18 @@ import FileManagerDropdown from "../../../../components/partials/file-manager-dr
 import { Icon } from "../../../../components/Component";
 import { Link } from "react-router-dom";
 import { FileManagerContext } from "../FileManagerContext";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import PropTypes from 'prop-types';
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import PropTypes from "prop-types";
 
 Grid.propTypes = {
   data: PropTypes.object,
   setData: PropTypes.func,
-}
+};
 const Grid = ({ data }) => {
   const { onStarClick, getTotalSize } = useContext(FileManagerContext);
 
@@ -66,7 +71,10 @@ const Grid = ({ data }) => {
             <div className="nk-file-item">
               <div className="nk-file-info">
                 <UncontrolledDropdown>
-                  <DropdownToggle tag="div" className="tb-head dropdown-toggle dropdown-indicator-caret">
+                  <DropdownToggle
+                    tag="div"
+                    className="tb-head dropdown-toggle dropdown-indicator-caret"
+                  >
                     {filterSelect}
                   </DropdownToggle>
                   <DropdownMenu right className="dropdown-menu-xs">
@@ -127,7 +135,11 @@ const Grid = ({ data }) => {
                           <span className="nk-file-icon-type">{item.meta.svg}</span>
                         </Link>
                       ) : (
-                        <a href="#link" onClick={(ev) => ev.preventDefault()} className="nk-file-icon-link">
+                        <a
+                          href="#link"
+                          onClick={(ev) => ev.preventDefault()}
+                          className="nk-file-icon-link"
+                        >
                           <span className="nk-file-icon-type">{item.meta.svg}</span>
                         </a>
                       )}
@@ -135,11 +147,18 @@ const Grid = ({ data }) => {
                     <div className="nk-file-name">
                       <div className="nk-file-name-text">
                         {item.meta.type === "folder" ? (
-                          <Link to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`} className="title">
+                          <Link
+                            to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`}
+                            className="title"
+                          >
                             {item.meta.name}
                           </Link>
                         ) : (
-                          <a href="#link" onClick={(ev) => ev.preventDefault()} className="title">
+                          <a
+                            href="#link"
+                            onClick={(ev) => ev.preventDefault()}
+                            className="title"
+                          >
                             {item.meta.name}
                           </a>
                         )}
@@ -161,8 +180,15 @@ const Grid = ({ data }) => {
                   </div>
                   <ul className="nk-file-desc">
                     <li className="date">{item.meta.time}</li>
-                    <li className="size">{item.meta.type === "folder" ? getTotalSize(item) : item.meta.size} MB</li>
-                    {item.meta.members && <li className="members">{item.meta.members.length} Members</li>}
+                    <li className="size">
+                      {item.meta.type === "folder"
+                        ? getTotalSize(item)
+                        : item.meta.size}{" "}
+                      MB
+                    </li>
+                    {item.meta.members && (
+                      <li className="members">{item.meta.members.length} Members</li>
+                    )}
                   </ul>
                 </div>
                 <FileManagerDropdown file={item} />

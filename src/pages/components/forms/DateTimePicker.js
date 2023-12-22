@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState, forwardRef } from "react";
 import Head from "../../../layout/head/Head";
 import Content from "../../../layout/content/Content";
@@ -15,13 +15,18 @@ import {
   CodeBlock,
   Icon,
 } from "../../../components/Component";
- 
+
 const ExampleCustomInput = forwardRef(({ value, onClick, onChange }, ref) => (
   <div onClick={onClick} ref={ref}>
     <div className="form-icon form-icon-left">
       <Icon name="calendar"></Icon>
     </div>
-    <input className="form-control date-picker" type="text" value={value} onChange={onChange} />
+    <input
+      className="form-control date-picker"
+      type="text"
+      value={value}
+      onChange={onChange}
+    />
   </div>
 ));
 
@@ -31,7 +36,7 @@ ExampleCustomInput.propTypes = {
   onChange: PropTypes.func,
 };
 
-ExampleCustomInput.displayName = 'ExampleCustomInput';
+ExampleCustomInput.displayName = "ExampleCustomInput";
 
 const DateTimePicker = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -65,7 +70,8 @@ const DateTimePicker = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Examples and usage guidelines for date and time picker for forms. For further preview, visit the{" "}
+                Examples and usage guidelines for date and time picker for forms. For
+                further preview, visit the{" "}
                 <a href="https://reactdatepicker.com/" target="_blank" rel="noreferrer">
                   React Datepicker
                 </a>{" "}
@@ -91,7 +97,11 @@ const DateTimePicker = () => {
                 <FormGroup>
                   <Label>Datepicker</Label>
                   <div className="form-control-wrap">
-                    <DatePicker selected={startDate} onChange={setStartDate} className="form-control date-picker" />{" "}
+                    <DatePicker
+                      selected={startDate}
+                      onChange={setStartDate}
+                      className="form-control date-picker"
+                    />{" "}
                   </div>
                   <div className="form-note">
                     Date Format <code>mm/dd/yyyy</code>
@@ -130,7 +140,8 @@ const DateTimePicker = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Date Range Picker</BlockTitle>
               <BlockDes>
-                To use the time component, add extra props to <code>{"<DatePicker />"}</code> component such as{" "}
+                To use the time component, add extra props to{" "}
+                <code>{"<DatePicker />"}</code> component such as{" "}
                 <code>selectsRange || startDate || endDate</code>.
               </BlockDes>
             </BlockHeadContent>
@@ -207,7 +218,8 @@ const DateTimePicker = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Time Picker</BlockTitle>
               <BlockDes>
-                To use the time component, add extra props to <code>{"<DatePicker />"}</code> component such as{" "}
+                To use the time component, add extra props to{" "}
+                <code>{"<DatePicker />"}</code> component such as{" "}
                 <code>showTimeSelect || showTimeSelectOnly || timeInterval</code>.
               </BlockDes>
             </BlockHeadContent>
@@ -252,8 +264,12 @@ const DateTimePicker = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Month & Year Picker</BlockTitle>
               <BlockDes>
-                To use the time component, add extra props to <code>{"<DatePicker />"}</code> component such as{" "}
-                <code>showMonthYearPicker || showFullMonthYearPicker || showYearPicker</code>.
+                To use the time component, add extra props to{" "}
+                <code>{"<DatePicker />"}</code> component such as{" "}
+                <code>
+                  showMonthYearPicker || showFullMonthYearPicker || showYearPicker
+                </code>
+                .
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -312,4 +328,4 @@ const DateTimePicker = () => {
     </React.Fragment>
   );
 };
-export default {DateTimePicker, ExampleCustomInput};
+export default { DateTimePicker, ExampleCustomInput };

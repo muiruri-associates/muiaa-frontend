@@ -37,5 +37,4 @@ export const rolesColumns = [
     sortable: true,
     hide: "md",
   },
-]
-
+];

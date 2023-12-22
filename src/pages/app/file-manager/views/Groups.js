@@ -1,21 +1,28 @@
 import React, { useState, useEffect, useContext } from "react";
 import FileManagerDropdown from "../../../../components/partials/file-manager-dropdown/FileManagerDropdown";
 import { Icon } from "../../../../components/Component";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import { FileManagerContext } from "../FileManagerContext";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 Groups.propTypes = {
   data: PropTypes.object,
-}
+};
 const Groups = ({ data }) => {
   const { onStarClick, getTotalSize } = useContext(FileManagerContext);
   const [dataList, setDataList] = useState();
   const [filterSelect, setFilterSelect] = useState("Last Opened");
 
   useEffect(() => {
-    let folderView = data.filter((item) => item.meta.type === "folder" && !item.recovery);
+    let folderView = data.filter(
+      (item) => item.meta.type === "folder" && !item.recovery
+    );
     let fileView = data.filter((item) => item.meta.type === "file" && !item.recovery);
 
     setDataList({ folderlist: [...folderView], filelist: [...fileView] });
@@ -27,13 +34,20 @@ const Groups = ({ data }) => {
       if (filterSelect === "Name") {
         defaultData.folderlist = nameSortFunc(defaultData.folderlist);
         defaultData.filelist = nameSortFunc(defaultData.filelist);
-        setDataList({ folderlist: [...defaultData.folderlist], filelist: [...defaultData.filelist] });
+        setDataList({
+          folderlist: [...defaultData.folderlist],
+          filelist: [...defaultData.filelist],
+        });
       } else if (filterSelect === "Size") {
         defaultData.folderlist = sizeSortFunc(defaultData.folderlist);
         defaultData.filelist = sizeSortFunc(defaultData.filelist);
       } else {
-        let folderView = data.filter((item) => item.meta.type === "folder" && !item.recovery);
-        let fileView = data.filter((item) => item.meta.type === "file" && !item.recovery);
+        let folderView = data.filter(
+          (item) => item.meta.type === "folder" && !item.recovery
+        );
+        let fileView = data.filter(
+          (item) => item.meta.type === "file" && !item.recovery
+        );
 
         setDataList({ folderlist: [...folderView], filelist: [...fileView] });
       }
@@ -73,7 +87,10 @@ const Groups = ({ data }) => {
         <div className="nk-file-item">
           <div className="nk-file-info">
             <UncontrolledDropdown>
-              <DropdownToggle tag="div" className="tb-head dropdown-toggle dropdown-indicator-caret">
+              <DropdownToggle
+                tag="div"
+                className="tb-head dropdown-toggle dropdown-indicator-caret"
+              >
                 {filterSelect}
               </DropdownToggle>
               <DropdownMenu right className="dropdown-menu-xs">
@@ -143,7 +160,11 @@ const Groups = ({ data }) => {
                                 {item.meta.name}
                               </Link>
                             ) : (
-                              <a href="#link" onClick={(ev) => ev.preventDefault()} className="title">
+                              <a
+                                href="#link"
+                                onClick={(ev) => ev.preventDefault()}
+                                className="title"
+                              >
                                 {item.meta.name}
                               </a>
                             )}
@@ -165,8 +186,17 @@ const Groups = ({ data }) => {
                       </div>
                       <ul className="nk-file-desc">
                         <li className="date">{item.meta.time}</li>
-                        <li className="size">{item.meta.type === "folder" ? getTotalSize(item) : item.meta.size} MB</li>
-                        {item.meta.members && <li className="members">{item.meta.members.length} Members</li>}
+                        <li className="size">
+                          {item.meta.type === "folder"
+                            ? getTotalSize(item)
+                            : item.meta.size}{" "}
+                          MB
+                        </li>
+                        {item.meta.members && (
+                          <li className="members">
+                            {item.meta.members.length} Members
+                          </li>
+                        )}
                       </ul>
                     </div>
                     <FileManagerDropdown file={item} />
@@ -188,7 +218,11 @@ const Groups = ({ data }) => {
                         </div>
                         <div className="nk-file-name">
                           <div className="nk-file-name-text">
-                            <a href="#folder" onClick={(ev) => ev.preventDefault()} className="title">
+                            <a
+                              href="#folder"
+                              onClick={(ev) => ev.preventDefault()}
+                              className="title"
+                            >
                               {item.meta.name}
                             </a>
                             <div className="asterisk">
@@ -210,7 +244,11 @@ const Groups = ({ data }) => {
                       <ul className="nk-file-desc">
                         <li className="date">{item.meta.time}</li>
                         <li className="size">{item.meta.size} MB</li>
-                        {item.meta.members && <li className="members">{item.meta.members.length} Members</li>}
+                        {item.meta.members && (
+                          <li className="members">
+                            {item.meta.members.length} Members
+                          </li>
+                        )}
                       </ul>
                     </div>
                     <FileManagerDropdown file={item} />

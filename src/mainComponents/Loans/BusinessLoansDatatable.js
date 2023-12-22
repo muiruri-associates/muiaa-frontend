@@ -15,36 +15,36 @@ import { ApprovedLoansData, ApprovedLoansColumns } from "./AllLoanData";
 const BusinessLoansDatatable = () => {
   return (
     <React.Fragment>
-    <Head title="Loans" />
-    <Content page="component">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* First BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-            <BackTo link="/" icon="arrow-left">
-              Back
-            </BackTo>
-            <BlockTitle tag="h2" className="fw-normal">
-               Business Loans
-            </BlockTitle>
-          </BlockHeadContent>
-        </BlockHead>
-      </div>
+      <Head title="Loans" />
+      <Content page="component">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* First BlockHead */}
+          <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <BackTo link="/" icon="arrow-left">
+                Back
+              </BackTo>
+              <BlockTitle tag="h2" className="fw-normal">
+                Business Loans
+              </BlockTitle>
+            </BlockHeadContent>
+          </BlockHead>
+        </div>
 
-      <Block size="lg">
-        <PreviewCard>
-          <ReactDataTable
-            data={ApprovedLoansData}
-            columns={ApprovedLoansColumns}
-            expandableRows
-            pagination
-            actions
-          />
-        </PreviewCard>
-      </Block>
-    </Content>
-  </React.Fragment>
-);
-}
+        <Block size="lg">
+          <PreviewCard>
+            <ReactDataTable
+              data={ApprovedLoansData}
+              columns={ApprovedLoansColumns}
+              expandableRows
+              pagination
+              actions
+            />
+          </PreviewCard>
+        </Block>
+      </Content>
+    </React.Fragment>
+  );
+};
 
-export default BusinessLoansDatatable
+export default BusinessLoansDatatable;

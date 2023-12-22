@@ -3,8 +3,16 @@ import { useDispatch } from "react-redux";
 // import { Link } from "react-router-dom";
 import { Form, FormGroup, Label, Row, Col, Button } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
-import { BackTo,Block, BlockHead, BlockHeadContent, BlockTitle, PreviewCard, OverlineTitle } from "../../components/Component";
-import { createTicket } from '../../redux/actions/ticketActions';
+import {
+  BackTo,
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  PreviewCard,
+  OverlineTitle,
+} from "../../components/Component";
+import { createTicket } from "../../redux/actions/ticketActions";
 
 const CreateTicketForm = () => {
   const dispatch = useDispatch();
@@ -17,43 +25,39 @@ const CreateTicketForm = () => {
   const [email, setEmail] = useState("test@gmail.com");
 
   // State to manage form submission status
-     const [ setIsSubmitted] = useState(false);
+  const [setIsSubmitted] = useState(false);
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
-      e.preventDefault();
-      if (
-        !title ||
-        !description ||
-        !type
-      ) {
-        toast.error("Please fill out all fields.");
-        return;
-      }
-      const ticketData = {
-        title,
-        description,
-        type
-      };
-      try {
-        await dispatch(createTicket(ticketData));
-        console.log('data>>', ticketData)
-        setTitle("");
-        setDescription("");
-        setType("");
-        // setusername("");
-        // setEmail("");
-        setIsSubmitted(true);
-        toast.success("Ticket created successfully!");
-      } catch (error) {
-        // Handle submission error here
-        toast.error("Error creating Ticket.");
-      }
+    e.preventDefault();
+    if (!title || !description || !type) {
+      toast.error("Please fill out all fields.");
+      return;
+    }
+    const ticketData = {
+      title,
+      description,
+      type,
+    };
+    try {
+      await dispatch(createTicket(ticketData));
+      console.log("data>>", ticketData);
+      setTitle("");
+      setDescription("");
+      setType("");
+      // setusername("");
+      // setEmail("");
+      setIsSubmitted(true);
+      toast.success("Ticket created successfully!");
+    } catch (error) {
+      // Handle submission error here
+      toast.error("Error creating Ticket.");
+    }
   };
   return (
     <React.Fragment>
       <Block size="lg">
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           {/* First BlockHead */}
           <BlockHead size="lg" wide="sm">
             <BlockHeadContent>
@@ -61,13 +65,11 @@ const CreateTicketForm = () => {
                 Create Ticket
               </BlockTitle>
 
-            <BackTo link="/my-tickets" icon="arrow-left">
-              Back
-            </BackTo>
+              <BackTo link="/my-tickets" icon="arrow-left">
+                Back
+              </BackTo>
             </BlockHeadContent>
-            
           </BlockHead>
-
         </div>
         <PreviewCard>
           <OverlineTitle tag="span" className="preview-title-lg">
@@ -143,9 +145,9 @@ const CreateTicketForm = () => {
                   value={type}
                   onChange={(e) => setType(e.target.value)}
                 >
-                    <option value="">Select Type</option>
-                    <option value="Business">Business</option>
-                    <option value="Investor">Investor</option>
+                  <option value="">Select Type</option>
+                  <option value="Business">Business</option>
+                  <option value="Investor">Investor</option>
                 </select>
               </div>
             </FormGroup>

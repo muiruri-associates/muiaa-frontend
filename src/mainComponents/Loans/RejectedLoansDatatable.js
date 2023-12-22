@@ -15,36 +15,36 @@ import { RejectedLoansColumns, RejectedLoansData } from "./AllLoanData";
 const RejectedLoanDatatable = () => {
   return (
     <React.Fragment>
-    <Head title="Loans" />
-    <Content page="component">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* First BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-            <BackTo link="/" icon="arrow-left">
-              Back
-            </BackTo>
-            <BlockTitle tag="h2" className="fw-normal">
-               Rejected Loan
-            </BlockTitle>
-          </BlockHeadContent>
-        </BlockHead>
-      </div>
+      <Head title="Loans" />
+      <Content page="component">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* First BlockHead */}
+          <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <BackTo link="/" icon="arrow-left">
+                Back
+              </BackTo>
+              <BlockTitle tag="h2" className="fw-normal">
+                Rejected Loan
+              </BlockTitle>
+            </BlockHeadContent>
+          </BlockHead>
+        </div>
 
-      <Block size="lg">
-        <PreviewCard>
-          <ReactDataTable
-            data={RejectedLoansData}
-            columns={RejectedLoansColumns}
-            expandableRows
-            pagination
-            actions
-          />
-        </PreviewCard>
-      </Block>
-    </Content>
-  </React.Fragment>
-);
-}
+        <Block size="lg">
+          <PreviewCard>
+            <ReactDataTable
+              data={RejectedLoansData}
+              columns={RejectedLoansColumns}
+              expandableRows
+              pagination
+              actions
+            />
+          </PreviewCard>
+        </Block>
+      </Content>
+    </React.Fragment>
+  );
+};
 
-export default RejectedLoanDatatable
+export default RejectedLoanDatatable;

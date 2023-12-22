@@ -74,13 +74,21 @@ export const dataTableColumns2 = [
     style: { paddingRight: "20px" },
     cell: (row) => (
       <div className="user-card mt-2 mb-2">
-        <UserAvatar theme={row.avatarBg} text={findUpper(row.name)} image={row.image}></UserAvatar>
+        <UserAvatar
+          theme={row.avatarBg}
+          text={findUpper(row.name)}
+          image={row.image}
+        ></UserAvatar>
         <div className="user-info">
           <span className="tb-lead">
             {row.name}{" "}
             <span
               className={`dot dot-${
-                row.status === "Active" ? "success" : row.status === "Pending" ? "warning" : "danger"
+                row.status === "Active"
+                  ? "success"
+                  : row.status === "Pending"
+                    ? "warning"
+                    : "danger"
               } d-md-none ml-1`}
             ></span>
           </span>
@@ -120,14 +128,18 @@ export const dataTableColumns2 = [
         <li>
           <Icon
             className={`text-${
-              row.emailStatus === "success" ? "success" : row.emailStatus === "pending" ? "info" : "secondary"
+              row.emailStatus === "success"
+                ? "success"
+                : row.emailStatus === "pending"
+                  ? "info"
+                  : "secondary"
             }`}
             name={`${
               row.emailStatus === "success"
                 ? "check-circle"
                 : row.emailStatus === "alert"
-                ? "alert-circle"
-                : "alarm-alt"
+                  ? "alert-circle"
+                  : "alarm-alt"
             }`}
           ></Icon>{" "}
           <span>Email</span>
@@ -138,13 +150,17 @@ export const dataTableColumns2 = [
               row.kycStatus === "success"
                 ? "success"
                 : row.kycStatus === "pending"
-                ? "info"
-                : row.kycStatus === "warning"
-                ? "warning"
-                : "secondary"
+                  ? "info"
+                  : row.kycStatus === "warning"
+                    ? "warning"
+                    : "secondary"
             }`}
             name={`${
-              row.kycStatus === "success" ? "check-circle" : row.kycStatus === "pending" ? "alarm-alt" : "alert-circle"
+              row.kycStatus === "success"
+                ? "check-circle"
+                : row.kycStatus === "pending"
+                  ? "alarm-alt"
+                  : "alert-circle"
             }`}
           ></Icon>{" "}
           <span>KYC</span>
@@ -167,7 +183,11 @@ export const dataTableColumns2 = [
     cell: (row) => (
       <span
         className={`tb-status ml-1 text-${
-          row.status === "Active" ? "success" : row.status === "Pending" ? "warning" : "danger"
+          row.status === "Active"
+            ? "success"
+            : row.status === "Pending"
+              ? "warning"
+              : "danger"
         }`}
       >
         {row.status}

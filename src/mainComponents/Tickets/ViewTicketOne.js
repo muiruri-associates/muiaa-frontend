@@ -1,5 +1,5 @@
-import React from 'react'
-import Messages from '../Messages/Messages'
+import React from "react";
+import Messages from "../Messages/Messages";
 
 const ViewTicketOne = () => {
   return (
@@ -8,7 +8,7 @@ const ViewTicketOne = () => {
       {/* <TicketChatContainer /> */}
       <Messages />
     </div>
-  )
-}
+  );
+};
 
-export default ViewTicketOne
+export default ViewTicketOne;

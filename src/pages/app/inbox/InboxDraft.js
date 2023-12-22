@@ -2,21 +2,41 @@ import React, { useState } from "react";
 import SimpleBar from "simplebar-react";
 import InboxForm from "./InboxForm";
 import { Icon, TooltipComponent } from "../../../components/Component";
-import { Badge, Spinner, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap";
-import PropTypes from 'prop-types';
+import {
+  Badge,
+  Spinner,
+  UncontrolledDropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
+import PropTypes from "prop-types";
 
 InboxDraftList.propTypes = {
-  item: PropTypes.any, 
-  deleteInbox: PropTypes.any, 
-  onArchiveClick: PropTypes.any, 
-  onFavoriteClick: PropTypes.any, 
-  checkMessage: PropTypes.any, 
-  data: PropTypes.any, 
-  setData: PropTypes.any
-}
-export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteClick, checkMessage, data, setData }) => {
+  item: PropTypes.any,
+  deleteInbox: PropTypes.any,
+  onArchiveClick: PropTypes.any,
+  onFavoriteClick: PropTypes.any,
+  checkMessage: PropTypes.any,
+  data: PropTypes.any,
+  setData: PropTypes.any,
+};
+export const InboxDraftList = ({
+  item,
+  deleteInbox,
+  onArchiveClick,
+  onFavoriteClick,
+  checkMessage,
+  data,
+  setData,
+}) => {
   const [compose, setCompose] = useState(false);
-  const [draftData, setDraftData] = useState({ id: "", mail: "", subject: "", message: "" });
+  const [draftData, setDraftData] = useState({
+    id: "",
+    mail: "",
+    subject: "",
+    message: "",
+  });
   const toggleModal = () => {
     setCompose(!compose);
   };
@@ -30,7 +50,8 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
             setDraftData({
               mail: item.message.reply[item.message.reply.length - 1].to.mail,
               subject: item.message.subject,
-              message: item.message.reply[item.message.reply.length - 1].replyMessage[0],
+              message:
+                item.message.reply[item.message.reply.length - 1].replyMessage[0],
             });
             toggleModal();
           }}
@@ -48,7 +69,10 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
               key={Math.random()}
               onChange={(e) => checkMessage(item.id, e.target.checked)}
             />
-            <label className="custom-control-label" htmlFor={`conversionItem${item.id}`}></label>
+            <label
+              className="custom-control-label"
+              htmlFor={`conversionItem${item.id}`}
+            ></label>
           </div>
         </div>
         <div className="nk-ibx-item-elem nk-ibx-item-star">
@@ -61,7 +85,9 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
                 onFavoriteClick(item.id);
               }}
             >
-              <Icon name={`${item.message.meta.favourite ? "star-fill" : "star"}`}></Icon>
+              <Icon
+                name={`${item.message.meta.favourite ? "star-fill" : "star"}`}
+              ></Icon>
             </a>
           </div>
         </div>
@@ -72,12 +98,16 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
           <div className="nk-ibx-context-group">
             {item.message.meta.tags.length > 0 && (
               <div className="nk-ibx-context-badges">
-                <Badge color={item.message.meta.tags[0].color}>{item.message.meta.tags[0].text}</Badge>
+                <Badge color={item.message.meta.tags[0].color}>
+                  {item.message.meta.tags[0].text}
+                </Badge>
               </div>
             )}
             <div className="nk-ibx-context">
               <span className="nk-ibx-context-text">
-                <span className="heading">{item.message.subject ? item.message.subject : "(no subject)"}</span>{" "}
+                <span className="heading">
+                  {item.message.subject ? item.message.subject : "(no subject)"}
+                </span>{" "}
                 {item.message.reply[item.message.reply.length - 1].replyMessage[0]}
               </span>
             </div>
@@ -85,13 +115,19 @@ export const InboxDraftList = ({ item, deleteInbox, onArchiveClick, onFavoriteCl
         </div>
         {item.message.reply[item.message.reply.length - 1].attachment && (
           <div className="nk-ibx-item-elem nk-ibx-item-attach">
-            <a className="link link-light" href="#link" onClick={(ev) => ev.preventDefault()}>
+            <a
+              className="link link-light"
+              href="#link"
+              onClick={(ev) => ev.preventDefault()}
+            >
               <Icon name="clip-h"></Icon>
             </a>
           </div>
         )}
         <div className="nk-ibx-item-elem nk-ibx-item-time">
-          <div className="sub-text">{item.message.reply[item.message.reply.length - 1].time}</div>
+          <div className="sub-text">
+            {item.message.reply[item.message.reply.length - 1].time}
+          </div>
         </div>
         <div className="nk-ibx-item-elem nk-ibx-item-tools">
           <div className="ibx-actions">
@@ -200,7 +236,7 @@ InboxDraft.propTypes = {
   deleteInbox: PropTypes.any,
   onArchiveClick: PropTypes.any,
   onFavoriteClick: PropTypes.any,
-}
+};
 
 const InboxDraft = ({
   data,

@@ -18,11 +18,11 @@ import {
 import { findUpper } from "../../../utils/Utils";
 import { kycData } from "./KycData";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 KycDetailsRegular.propTypes = {
-  match: PropTypes.object
-}
+  match: PropTypes.object,
+};
 
 const KycDetailsRegular = ({ match }) => {
   const [data] = useState(kycData);
@@ -62,11 +62,19 @@ const KycDetailsRegular = ({ match }) => {
               </BlockHeadContent>
               <BlockHeadContent>
                 <Link to={`${process.env.PUBLIC_URL}/kyc-list-regular`}>
-                  <Button color="light" outline className="bg-white d-none d-sm-inline-flex">
+                  <Button
+                    color="light"
+                    outline
+                    className="bg-white d-none d-sm-inline-flex"
+                  >
                     <Icon name="arrow-left"></Icon>
                     <span>Back</span>
                   </Button>
-                  <Button color="light" outline className="btn-icon bg-white d-inline-flex d-sm-none">
+                  <Button
+                    color="light"
+                    outline
+                    className="btn-icon bg-white d-inline-flex d-sm-none"
+                  >
                     <Icon name="arrow-left"></Icon>
                   </Button>
                 </Link>
@@ -107,8 +115,8 @@ const KycDetailsRegular = ({ match }) => {
                               user.status === "Approved"
                                 ? "outline-success"
                                 : user.status === "Pending"
-                                ? "outline-info"
-                                : "outline-danger"
+                                  ? "outline-info"
+                                  : "outline-danger"
                             }
                             className="badge-dim"
                           >
@@ -122,7 +130,10 @@ const KycDetailsRegular = ({ match }) => {
                         <div className="data-label">Last Checked</div>
                         <div className="data-value">
                           <div className="user-card">
-                            <UserAvatar theme="orange-dim" text={findUpper(user.checked)}></UserAvatar>
+                            <UserAvatar
+                              theme="orange-dim"
+                              text={findUpper(user.checked)}
+                            ></UserAvatar>
                             <div className="user-info">
                               <span className="tb-lead">{user.checked}</span>
                             </div>
@@ -225,7 +236,9 @@ const KycDetailsRegular = ({ match }) => {
                     <li className="data-item">
                       <div className="data-col">
                         <div className="data-label">Full Address</div>
-                        <div className="data-value">6516, Eldoret, Uasin Gishu, 30100</div>
+                        <div className="data-value">
+                          6516, Eldoret, Uasin Gishu, 30100
+                        </div>
                       </div>
                     </li>
                     <li className="data-item">
@@ -237,7 +250,9 @@ const KycDetailsRegular = ({ match }) => {
                     <li className="data-item">
                       <div className="data-col">
                         <div className="data-label">Wallet Address</div>
-                        <div className="data-value text-break">1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX</div>
+                        <div className="data-value text-break">
+                          1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX
+                        </div>
                       </div>
                     </li>
                     <li className="data-item">

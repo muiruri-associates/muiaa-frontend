@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "../icon/Icon";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 LinkItem.propTypes = {
   tag: PropTypes.string, // You can specify the expected type
@@ -15,7 +15,7 @@ LinkItem.propTypes = {
 export const LinkItem = ({ tag, link, icon, text, children, ...props }) => {
   return (
     <li>
-      {tag !== 'a' ? (
+      {tag !== "a" ? (
         <Link to={process.env.PUBLIC_URL + link} {...props}>
           {icon ? <Icon name={icon} /> : null} <span>{text || children}</span>
         </Link>
@@ -36,10 +36,9 @@ LinkList.propTypes = {
 
 export const LinkList = ({ opt, className, children }) => {
   const listClasses = classNames({
-    'link-list': !opt,
-    'link-list-opt': opt,
+    "link-list": !opt,
+    "link-list-opt": opt,
     [`${className}`]: className, // Include className in the classNames object
   });
   return <ul className={listClasses}>{children}</ul>;
 };
-

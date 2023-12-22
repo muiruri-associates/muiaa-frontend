@@ -56,10 +56,14 @@ const TransListBasic = () => {
   const sortingFunc = (params) => {
     let defaultData = data;
     if (params === "asc") {
-      let sortedData = [...defaultData].sort((a, b) => parseFloat(a.ref) - parseFloat(b.ref));
+      let sortedData = [...defaultData].sort(
+        (a, b) => parseFloat(a.ref) - parseFloat(b.ref)
+      );
       setData([...sortedData]);
     } else if (params === "dsc") {
-      let sortedData = [...defaultData].sort((a, b) => parseFloat(b.ref) - parseFloat(a.ref));
+      let sortedData = [...defaultData].sort(
+        (a, b) => parseFloat(b.ref) - parseFloat(a.ref)
+      );
       setData([...sortedData]);
     }
   };
@@ -150,7 +154,11 @@ const TransListBasic = () => {
             <BlockHeadContent>
               <ul className="nk-block-tools g-3">
                 <li>
-                  <Button color="primary" className="btn-icon" onClick={() => setModal({ add: true })}>
+                  <Button
+                    color="primary"
+                    className="btn-icon"
+                    onClick={() => setModal({ add: true })}
+                  >
                     <Icon name="plus"></Icon>
                   </Button>
                 </li>
@@ -170,14 +178,20 @@ const TransListBasic = () => {
                   <div className="card-tools mr-n1">
                     <ul className="btn-toolbar">
                       <li>
-                        <Button onClick={toggle} className="btn-icon search-toggle toggle-search">
+                        <Button
+                          onClick={toggle}
+                          className="btn-icon search-toggle toggle-search"
+                        >
                           <Icon name="search"></Icon>
                         </Button>
                       </li>
                       <li className="btn-toolbar-sep"></li>
                       <li>
                         <UncontrolledDropdown>
-                          <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                          <DropdownToggle
+                            tag="a"
+                            className="dropdown-toggle btn btn-icon btn-trigger"
+                          >
                             <Icon name="setting"></Icon>
                           </DropdownToggle>
                           <DropdownMenu right>
@@ -246,7 +260,9 @@ const TransListBasic = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className={`card-search search-wrap ${!onSearch ? "active" : ""}`}>
+                  <div
+                    className={`card-search search-wrap ${!onSearch ? "active" : ""}`}
+                  >
                     <div className="search-content">
                       <Button
                         className="search-back btn-icon toggle-search"
@@ -292,7 +308,9 @@ const TransListBasic = () => {
                       </th>
                       <th className="tb-tnx-amount is-alt">
                         <span className="tb-tnx-total">Total</span>
-                        <span className="tb-tnx-status d-none d-md-inline-block">Status</span>
+                        <span className="tb-tnx-status d-none d-md-inline-block">
+                          Status
+                        </span>
                       </th>
                       <th className="tb-tnx-action">
                         <span>&nbsp;</span>
@@ -330,7 +348,11 @@ const TransListBasic = () => {
                                 <div className="tb-tnx-status">
                                   <span
                                     className={`badge badge-dot badge-${
-                                      item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"
+                                      item.status === "Paid"
+                                        ? "success"
+                                        : item.status === "Due"
+                                          ? "warning"
+                                          : "danger"
                                     }`}
                                   >
                                     {item.status}
@@ -404,7 +426,12 @@ const TransListBasic = () => {
           </Card>
         </Block>
 
-        <Modal isOpen={modal.add} toggle={() => setModal({ add: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.add}
+          toggle={() => setModal({ add: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -431,7 +458,9 @@ const TransListBasic = () => {
                         defaultValue={formData.bill}
                         placeholder="Enter bill"
                       />
-                      {errors.bill && <span className="invalid">{errors.bill.message}</span>}
+                      {errors.bill && (
+                        <span className="invalid">{errors.bill.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -444,7 +473,9 @@ const TransListBasic = () => {
                         name="total"
                         defaultValue={formData.total}
                       />
-                      {errors.total && <span className="invalid">{errors.total.message}</span>}
+                      {errors.total && (
+                        <span className="invalid">{errors.total.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -476,7 +507,9 @@ const TransListBasic = () => {
                         <RSelect
                           options={statusOptions}
                           defaultValue={{ value: "Paid", label: "Paid" }}
-                          onChange={(e) => setFormData({ ...formData, status: e.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, status: e.value })
+                          }
                         />
                       </div>
                     </FormGroup>
@@ -508,7 +541,12 @@ const TransListBasic = () => {
           </ModalBody>
         </Modal>
 
-        <Modal isOpen={viewModal} toggle={() => setViewModal(false)} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={viewModal}
+          toggle={() => setViewModal(false)}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -542,7 +580,13 @@ const TransListBasic = () => {
                 <Col lg={6}>
                   <span className="sub-text">Status</span>
                   <Badge
-                    color={detail.status === "Paid" ? "success" : detail.status === "Due" ? "warning" : "danger"}
+                    color={
+                      detail.status === "Paid"
+                        ? "success"
+                        : detail.status === "Due"
+                          ? "warning"
+                          : "danger"
+                    }
                     size="md"
                   >
                     {detail.status}

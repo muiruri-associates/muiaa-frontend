@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import ImageContainer from "./GalleryImage";
 import { UserAvatar, Icon, Button } from "../../Component";
@@ -15,7 +15,11 @@ const GalleryCard = ({ img, userName, theme, userImg, userEmail, heartCount }) =
       <ImageContainer img={img} />
       <div className="gallery-body card-inner align-center justify-between flex-wrap g-2">
         <div className="user-card">
-          <UserAvatar theme={theme} text={findUpper(userName)} image={userImg}></UserAvatar>
+          <UserAvatar
+            theme={theme}
+            text={findUpper(userName)}
+            image={userImg}
+          ></UserAvatar>
           <div className="user-info">
             <span className="lead-text">{userName}</span>
             <span className="sub-text">{userEmail}</span>
@@ -38,7 +42,7 @@ GalleryCard.propTypes = {
   theme: PropTypes.any,
   userEmail: PropTypes.any,
   userImg: PropTypes.any,
-  userName: PropTypes.any
-}
+  userName: PropTypes.any,
+};
 
 export default GalleryCard;

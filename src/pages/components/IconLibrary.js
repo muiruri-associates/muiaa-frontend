@@ -1,7 +1,13 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { BackTo, BlockDes, BlockHead, BlockHeadContent, BlockTitle } from "../../components/Component";
+import {
+  BackTo,
+  BlockDes,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+} from "../../components/Component";
 
 const IconLibrary = () => {
   return (
@@ -18,9 +24,10 @@ const IconLibrary = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Examples for opt-in styling of tables with Bootstrap. Just add the base class{" "}
-                <code className="code-class">.table</code> to any <code className="code-tag">&lt;table&gt;</code> tag,
-                then extend with custom styles or our various included modifier classes.
+                Examples for opt-in styling of tables with Bootstrap. Just add the base
+                class <code className="code-class">.table</code> to any{" "}
+                <code className="code-tag">&lt;table&gt;</code> tag, then extend with
+                custom styles or our various included modifier classes.
               </p>
             </BlockDes>
           </BlockHeadContent>

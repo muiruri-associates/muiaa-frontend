@@ -1,6 +1,6 @@
 import { Redirect } from "react-router-dom";
 import React from "react";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 
 //url for production
 export var url = "";
@@ -29,7 +29,10 @@ export const findUpper = (string) => {
   let extractedString = [];
 
   for (var i = 0; i < string.length; i++) {
-    if (string.charAt(i) === string.charAt(i).toUpperCase() && string.charAt(i) !== " ") {
+    if (
+      string.charAt(i) === string.charAt(i).toUpperCase() &&
+      string.charAt(i) !== " "
+    ) {
       extractedString.push(string.charAt(i));
     }
   }
@@ -121,7 +124,9 @@ export const calcPercentage = (str1, str2) => {
 };
 
 export const truncate = (str, n) => {
-  return str.length > n ? str.substr(0, n - 1) + " " + truncate(str.substr(n - 1, str.length), n) : str;
+  return str.length > n
+    ? str.substr(0, n - 1) + " " + truncate(str.substr(n - 1, str.length), n)
+    : str;
 };
 
 export const RedirectAs404 = ({ location }) => (

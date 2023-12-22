@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import { UncontrolledDropdown, DropdownMenu, DropdownToggle, Card, Badge, DropdownItem } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+  Card,
+  Badge,
+  DropdownItem,
+} from "reactstrap";
 import {
   Button,
   Block,
@@ -99,14 +106,20 @@ const InvoiceList = () => {
                   <div className="card-tools mr-n1">
                     <ul className="btn-toolbar">
                       <li>
-                        <Button onClick={toggle} className="btn-icon search-toggle toggle-search">
+                        <Button
+                          onClick={toggle}
+                          className="btn-icon search-toggle toggle-search"
+                        >
                           <Icon name="search"></Icon>
                         </Button>
                       </li>
                       <li className="btn-toolbar-sep"></li>
                       <li>
                         <UncontrolledDropdown>
-                          <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                          <DropdownToggle
+                            tag="a"
+                            className="dropdown-toggle btn btn-icon btn-trigger"
+                          >
                             <Icon name="setting"></Icon>
                           </DropdownToggle>
                           <DropdownMenu right>
@@ -175,7 +188,9 @@ const InvoiceList = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className={`card-search search-wrap ${!onSearch ? "active" : ""}`}>
+                  <div
+                    className={`card-search search-wrap ${!onSearch ? "active" : ""}`}
+                  >
                     <div className="search-content">
                       <Button
                         className="search-back btn-icon toggle-search"
@@ -206,11 +221,15 @@ const InvoiceList = () => {
                     <tr className="tb-odr-item">
                       <th className="tb-odr-info">
                         <span className="tb-odr-id">Order ID</span>
-                        <span className="tb-odr-date d-none d-md-inline-block">Date</span>
+                        <span className="tb-odr-date d-none d-md-inline-block">
+                          Date
+                        </span>
                       </th>
                       <th className="tb-odr-amount">
                         <span className="tb-odr-total">Amount</span>
-                        <span className="tb-odr-status d-none d-md-inline-block">Status</span>
+                        <span className="tb-odr-status d-none d-md-inline-block">
+                          Status
+                        </span>
                       </th>
                       <th className="tb-odr-action">&nbsp;</th>
                     </tr>
@@ -222,7 +241,9 @@ const InvoiceList = () => {
                             <tr className="tb-odr-item" key={item.id}>
                               <td className="tb-odr-info">
                                 <span className="tb-odr-id">
-                                  <Link to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}>
+                                  <Link
+                                    to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}
+                                  >
                                     #{item.orderId}
                                   </Link>
                                 </span>
@@ -238,8 +259,8 @@ const InvoiceList = () => {
                                       item.status === "Complete"
                                         ? "success"
                                         : item.status === "Pending"
-                                        ? "warning"
-                                        : "danger"
+                                          ? "warning"
+                                          : "danger"
                                     }
                                     className="badge-dot"
                                   >
@@ -249,18 +270,33 @@ const InvoiceList = () => {
                               </td>
                               <td className="tb-odr-action">
                                 <div className="tb-odr-btns d-none d-sm-inline">
-                                  <Link to={`${process.env.PUBLIC_URL}/invoice-print/${item.id}`} target="_blank">
-                                    <Button color="primary" size="sm" className="btn-icon btn-white btn-dim">
+                                  <Link
+                                    to={`${process.env.PUBLIC_URL}/invoice-print/${item.id}`}
+                                    target="_blank"
+                                  >
+                                    <Button
+                                      color="primary"
+                                      size="sm"
+                                      className="btn-icon btn-white btn-dim"
+                                    >
                                       <Icon name="printer-fill"></Icon>
                                     </Button>
                                   </Link>
-                                  <Link to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}>
-                                    <Button color="primary" size="sm" className="btn btn-dim">
+                                  <Link
+                                    to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}
+                                  >
+                                    <Button
+                                      color="primary"
+                                      size="sm"
+                                      className="btn btn-dim"
+                                    >
                                       View
                                     </Button>
                                   </Link>
                                 </div>
-                                <Link to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}>
+                                <Link
+                                  to={`${process.env.PUBLIC_URL}/invoice-details/${item.id}`}
+                                >
                                   <Button className="btn-pd-auto d-sm-none">
                                     <Icon name="chevron-right"></Icon>
                                   </Button>

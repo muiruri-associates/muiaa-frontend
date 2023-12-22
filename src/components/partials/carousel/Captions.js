@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from "reactstrap";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption,
+} from "reactstrap";
 
 import SlideA from "../../../images/slides/slide-a.jpg";
 import SlideB from "../../../images/slides/slide-b.jpg";
@@ -56,16 +62,27 @@ const BasicCarousel = () => {
         key={item.src}
       >
         <img src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.captionText} captionHeader={item.captionHead} />
+        <CarouselCaption
+          captionText={item.captionText}
+          captionHeader={item.captionHead}
+        />
       </CarouselItem>
     );
   });
 
   return (
     <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      <CarouselIndicators
+        items={items}
+        activeIndex={activeIndex}
+        onClickHandler={goToIndex}
+      />
       {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl
+        direction="prev"
+        directionText="Previous"
+        onClickHandler={previous}
+      />
       <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
     </Carousel>
   );

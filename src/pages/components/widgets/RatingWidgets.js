@@ -54,7 +54,11 @@ const RatingWidgets = () => {
                 <PreviewAltCard className="h-100">
                   <div className="team">
                     <div className="user-card user-card-s2">
-                      <UserAvatar theme="purple" className="md" text={findUpper("Abu Bin")}>
+                      <UserAvatar
+                        theme="purple"
+                        className="md"
+                        text={findUpper("Abu Bin")}
+                      >
                         <div className="status dot dot-lg dot-success"></div>
                       </UserAvatar>
                       <div className="user-info">
@@ -140,27 +144,47 @@ const RatingWidgets = () => {
                   <div className="gy-3 pt-4">
                     <div className="progress-rating">
                       <div className="progress-rating-title">5 star</div>
-                      <Progress value={72} color="teal" className="progress-md"></Progress>
+                      <Progress
+                        value={72}
+                        color="teal"
+                        className="progress-md"
+                      ></Progress>
                       <div className="progress-rating-percent">72%</div>
                     </div>
                     <div className="progress-rating">
                       <div className="progress-rating-title">4 star</div>
-                      <Progress value={58} color="success" className="progress-md"></Progress>
+                      <Progress
+                        value={58}
+                        color="success"
+                        className="progress-md"
+                      ></Progress>
                       <div className="progress-rating-percent">58%</div>
                     </div>
                     <div className="progress-rating">
                       <div className="progress-rating-title">3 star</div>
-                      <Progress value={34} color="info" className="progress-md"></Progress>
+                      <Progress
+                        value={34}
+                        color="info"
+                        className="progress-md"
+                      ></Progress>
                       <div className="progress-rating-percent">34%</div>
                     </div>
                     <div className="progress-rating">
                       <div className="progress-rating-title">2 star</div>
-                      <Progress value={18} color="warning" className="progress-md"></Progress>
+                      <Progress
+                        value={18}
+                        color="warning"
+                        className="progress-md"
+                      ></Progress>
                       <div className="progress-rating-percent">18%</div>
                     </div>
                     <div className="progress-rating">
                       <div className="progress-rating-title">1 star</div>
-                      <Progress value={55} color="danger" className="progress-md"></Progress>
+                      <Progress
+                        value={55}
+                        color="danger"
+                        className="progress-md"
+                      ></Progress>
                       <div className="progress-rating-percent">55%</div>
                     </div>
                   </div>
@@ -265,27 +289,47 @@ const RatingWidgets = () => {
                     <div className="gy-3 pt-4">
                       <div className="progress-rating">
                         <div className="progress-rating-title">5 star</div>
-                        <Progress value={72} color="primary" className="progress-md"></Progress>
+                        <Progress
+                          value={72}
+                          color="primary"
+                          className="progress-md"
+                        ></Progress>
                         <div className="progress-rating-percent">72%</div>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating-title">4 star</div>
-                        <Progress value={58} color="primary" className="progress-md"></Progress>
+                        <Progress
+                          value={58}
+                          color="primary"
+                          className="progress-md"
+                        ></Progress>
                         <div className="progress-rating-percent">58%</div>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating-title">3 star</div>
-                        <Progress value={34} color="primary" className="progress-md"></Progress>
+                        <Progress
+                          value={34}
+                          color="primary"
+                          className="progress-md"
+                        ></Progress>
                         <div className="progress-rating-percent">34%</div>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating-title">2 star</div>
-                        <Progress value={18} color="primary" className="progress-md"></Progress>
+                        <Progress
+                          value={18}
+                          color="primary"
+                          className="progress-md"
+                        ></Progress>
                         <div className="progress-rating-percent">18%</div>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating-title">1 star</div>
-                        <Progress value={55} color="primary" className="progress-md"></Progress>
+                        <Progress
+                          value={55}
+                          color="primary"
+                          className="progress-md"
+                        ></Progress>
                         <div className="progress-rating-percent">55%</div>
                       </div>
                     </div>
@@ -321,23 +365,43 @@ const RatingWidgets = () => {
                     <div className="rating-progress-bar gy-1 w-100">
                       <div className="progress-rating">
                         <div className="progress-rating mr-2">5</div>
-                        <Progress value={72} color="teal" className="progress-lg"></Progress>
+                        <Progress
+                          value={72}
+                          color="teal"
+                          className="progress-lg"
+                        ></Progress>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating mr-2">4</div>
-                        <Progress value={58} color="success" className="progress-lg"></Progress>
+                        <Progress
+                          value={58}
+                          color="success"
+                          className="progress-lg"
+                        ></Progress>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating mr-2">3</div>
-                        <Progress value={34} color="info" className="progress-lg"></Progress>
+                        <Progress
+                          value={34}
+                          color="info"
+                          className="progress-lg"
+                        ></Progress>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating mr-2">2</div>
-                        <Progress value={18} color="warning" className="progress-lg"></Progress>
+                        <Progress
+                          value={18}
+                          color="warning"
+                          className="progress-lg"
+                        ></Progress>
                       </div>
                       <div className="progress-rating">
                         <div className="progress-rating mr-2">1</div>
-                        <Progress value={55} color="danger" className="progress-lg"></Progress>
+                        <Progress
+                          value={55}
+                          color="danger"
+                          className="progress-lg"
+                        ></Progress>
                       </div>
                     </div>
                   </div>
@@ -442,15 +506,18 @@ const RatingWidgets = () => {
                           <span>Fulltime</span>
                         </li>
                       </ul>
-                      <span className="badge badge-dim badge-sm badge-pill badge-outline-info">$1550.00</span>
+                      <span className="badge badge-dim badge-sm badge-pill badge-outline-info">
+                        $1550.00
+                      </span>
                     </div>
                     <Collapse isOpen={collapse}>
                       <div className="divider"></div>
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
-                          Some quick example text to build on the card title bulk.
+                          Some quick example text to build on the card title and make up
+                          the bulk of the card&apos; s content. Some quick example text
+                          to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
                           <li>
@@ -534,15 +601,18 @@ const RatingWidgets = () => {
                           <span>Fulltime</span>
                         </li>
                       </ul>
-                      <span className="badge badge-dim badge-sm badge-pill badge-outline-info">$1550.00</span>
+                      <span className="badge badge-dim badge-sm badge-pill badge-outline-info">
+                        $1550.00
+                      </span>
                     </div>
                     <Collapse isOpen={collapse2}>
                       <div className="divider"></div>
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
-                          Some quick example text to build on the card title bulk.
+                          Some quick example text to build on the card title and make up
+                          the bulk of the card&apos; s content. Some quick example text
+                          to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
                           <li>
@@ -806,8 +876,9 @@ const RatingWidgets = () => {
                       <div className="rating-card-description">
                         <h5 className="card-title">Description</h5>
                         <p className="text-muted">
-                          Some quick example text to build on the card title and make up the bulk of the card&apos; s content.
-                          Some quick example text to build on the card title bulk.
+                          Some quick example text to build on the card title and make up
+                          the bulk of the card&apos; s content. Some quick example text
+                          to build on the card title bulk.
                         </p>
                         <ul className="pt-2 gy-1">
                           <li>
@@ -1087,7 +1158,7 @@ const RatingWidgets = () => {
                           <textarea
                             className="form-control no-resize"
                             id="review"
-                            defaultValue="I've been using Dashlite for months now and with every update, it&apos; s just becoming better.
+                            defaultValue="I've been using Dashlite for months now and with every update, it' s just becoming better.
                             Thank you for such a great design touch. Really love it"
                           ></textarea>
                         </div>
@@ -1164,7 +1235,10 @@ const RatingWidgets = () => {
                           How was your experience?
                         </label>
                         <div className="form-control-wrap">
-                          <textarea className="form-control no-resize" id="review"></textarea>
+                          <textarea
+                            className="form-control no-resize"
+                            id="review"
+                          ></textarea>
                         </div>
                       </div>
                     </form>
@@ -1414,9 +1488,11 @@ const RatingWidgets = () => {
                   </div>
                   <div className="card-inner">
                     <p className="text-soft">
-                      I&apos;ve been using Dashlite for months now and with every update, update it&apos; s just becoming more and
-                      more better it&apos;s just becoming better. Thank you for such a great design touch. Further I
-                      definitely cooperate with your product . Highly appriciate it. Really love it
+                      I&apos;ve been using Dashlite for months now and with every
+                      update, update it&apos; s just becoming more and more better
+                      it&apos;s just becoming better. Thank you for such a great design
+                      touch. Further I definitely cooperate with your product . Highly
+                      appriciate it. Really love it
                     </p>
                   </div>
                   <div className="card-inner border-top">
@@ -1427,12 +1503,15 @@ const RatingWidgets = () => {
                       <div className="fake-class">
                         <h6 className="mt-0 d-flex align-center">
                           <span>Abu Bin Ishiyak</span>
-                          <span className="badge badge-dim badge-outline-info ml-2">Author</span>
+                          <span className="badge badge-dim badge-outline-info ml-2">
+                            Author
+                          </span>
                         </h6>
                         <p className="text-soft">
-                          Time zone depend on your server time as we use that by default. So you need to change that
-                          from your server. For data display issues, you may send your website url so we can check what
-                          actually wrong.
+                          Time zone depend on your server time as we use that by
+                          default. So you need to change that from your server. For data
+                          display issues, you may send your website url so we can check
+                          what actually wrong.
                         </p>
                       </div>
                     </div>
@@ -1446,7 +1525,9 @@ const RatingWidgets = () => {
                         <h6 className="mt-0 d-flex align-center">
                           <span>Ifrat Binte</span>
                         </h6>
-                        <p className="text-soft">Thanks for the help. Really great support.</p>
+                        <p className="text-soft">
+                          Thanks for the help. Really great support.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -1497,7 +1578,8 @@ const RatingWidgets = () => {
               <BlockTitle tag="h5">Customization</BlockTitle>
               <BlockDes>
                 <p>
-                  You can use customize <code>Rating</code> component used in react dashlite.
+                  You can use customize <code>Rating</code> component used in react
+                  dashlite.
                 </p>
               </BlockDes>
             </BlockHeadContent>

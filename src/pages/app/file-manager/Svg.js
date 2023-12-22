@@ -1,10 +1,18 @@
-import React from "react"
+import React from "react";
 
 export const Folder = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
       <g>
-        <rect x="32" y="16" width="28" height="15" rx="2.5" ry="2.5" style={{ fill: "#f29611" }} />
+        <rect
+          x="32"
+          y="16"
+          width="28"
+          height="15"
+          rx="2.5"
+          ry="2.5"
+          style={{ fill: "#f29611" }}
+        />
         <path
           d="M59.7778,61H12.2222A6.4215,6.4215,0,0,1,6,54.3962V17.6038A6.4215,6.4215,0,0,1,12.2222,11H30.6977a4.6714,4.6714,0,0,1,4.1128,2.5644L38,24H59.7778A5.91,5.91,0,0,1,66,30V54.3962A6.4215,6.4215,0,0,1,59.7778,61Z"
           style={{ fill: "#ffb32c" }}
@@ -22,7 +30,15 @@ export const FolderSecure = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
       <g>
-        <rect x="32" y="16" width="28" height="15" rx="2.5" ry="2.5" style={{ fill: "#f29611" }} />
+        <rect
+          x="32"
+          y="16"
+          width="28"
+          height="15"
+          rx="2.5"
+          ry="2.5"
+          style={{ fill: "#f29611" }}
+        />
         <path
           d="M59.7778,61H12.2222A6.4215,6.4215,0,0,1,6,54.3962V17.6038A6.4215,6.4215,0,0,1,12.2222,11H30.6977a4.6714,4.6714,0,0,1,4.1128,2.5644L38,24H59.7778A5.91,5.91,0,0,1,66,30V54.3962A6.4215,6.4215,0,0,1,59.7778,61Z"
           style={{ fill: "#ffb32c" }}
@@ -44,7 +60,15 @@ export const FolderShare = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
       <g>
-        <rect x="32" y="16" width="28" height="15" rx="2.5" ry="2.5" style={{ fill: "#f29611" }} />
+        <rect
+          x="32"
+          y="16"
+          width="28"
+          height="15"
+          rx="2.5"
+          ry="2.5"
+          style={{ fill: "#f29611" }}
+        />
         <path
           d="M59.7778,61H12.2222A6.4215,6.4215,0,0,1,6,54.3962V17.6038A6.4215,6.4215,0,0,1,12.2222,11H30.6977a4.6714,4.6714,0,0,1,4.1128,2.5644L38,24H59.7778A5.91,5.91,0,0,1,66,30V54.3962A6.4215,6.4215,0,0,1,59.7778,61Z"
           style={{ fill: "#ffb32c" }}

@@ -5,7 +5,12 @@ import AppContact from "./contact/Contact";
 import ChatBody from "./ChatBody";
 import User from "../../../images/avatar/b-sm.jpg";
 import { Button, Icon, UserAvatar } from "../../../components/Component";
-import { DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import { chatData } from "./ChatData";
 import { ChatContext } from "./ChatContext";
 import { Link } from "react-router-dom";
@@ -43,7 +48,10 @@ const Chat = () => {
   useEffect(() => {
     if (favFilterText !== "") {
       const filteredObject = favData.filter((item) => {
-        return item.name.toLowerCase().includes(favFilterText.toLowerCase()) && item.fav === false;
+        return (
+          item.name.toLowerCase().includes(favFilterText.toLowerCase()) &&
+          item.fav === false
+        );
       });
       setFavFilter([...filteredObject]);
     } else {
@@ -86,7 +94,10 @@ const Chat = () => {
             <div className="nk-chat-aside-head">
               <div className="nk-chat-aside-user">
                 <UncontrolledDropdown>
-                  <DropdownToggle tag="a" className="dropdown-toggle dropdown-indicator">
+                  <DropdownToggle
+                    tag="a"
+                    className="dropdown-toggle dropdown-indicator"
+                  >
                     <UserAvatar image={User}></UserAvatar>
                     <div className="title">{mainTab}</div>
                   </DropdownToggle>
@@ -110,10 +121,22 @@ const Chat = () => {
                           href="#contact"
                           onClick={(ev) => {
                             ev.preventDefault();
-                            setMainTab(mainTab === "Chats" ? "Channel" : mainTab === "Channel" ? "Contact" : "Channel");
+                            setMainTab(
+                              mainTab === "Chats"
+                                ? "Channel"
+                                : mainTab === "Channel"
+                                  ? "Contact"
+                                  : "Channel"
+                            );
                           }}
                         >
-                          <span>{mainTab === "Chats" ? "Channel" : mainTab === "Channel" ? "Contact" : "Channel"}</span>
+                          <span>
+                            {mainTab === "Chats"
+                              ? "Channel"
+                              : mainTab === "Channel"
+                                ? "Contact"
+                                : "Channel"}
+                          </span>
                         </DropdownItem>
                       </li>
                     </ul>
@@ -125,7 +148,10 @@ const Chat = () => {
                   <React.Fragment>
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn btn-round btn-icon btn-light dropdown-toggle">
+                        <DropdownToggle
+                          tag="a"
+                          className="btn btn-round btn-icon btn-light dropdown-toggle"
+                        >
                           <Icon name="setting-alt-fill"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -257,11 +283,18 @@ const Chat = () => {
             <div className="nk-chat-body">
               <div className="nk-chat-blank">
                 <div className="nk-chat-blank-icon">
-                  <Icon name="chat" className="icon-circle icon-circle-xxl bg-white"></Icon>
+                  <Icon
+                    name="chat"
+                    className="icon-circle icon-circle-xxl bg-white"
+                  ></Icon>
                 </div>
                 <div className="nk-chat-blank-btn">
                   <Link to={`${process.env.PUBLIC_URL}/app-chat`}>
-                    <Button color="primary" disabled={mainTab === "Contact"} onClick={() => setMainTab("Contact")}>
+                    <Button
+                      color="primary"
+                      disabled={mainTab === "Contact"}
+                      onClick={() => setMainTab("Contact")}
+                    >
                       Start Chat
                     </Button>
                   </Link>

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { DropdownToggle, DropdownMenu, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  DropdownToggle,
+  DropdownMenu,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import { TCDoughnut } from "../../charts/analytics/AnalyticsCharts";
 
 const TrafficDougnut = () => {
@@ -65,7 +70,8 @@ const TrafficDougnut = () => {
               <span>Organic Search</span>
             </div>
             <div className="amount">
-              {traffic === "7" ? "3,055" : traffic === "15" ? "4,505" : "4,705"} <small>58.63%</small>
+              {traffic === "7" ? "3,055" : traffic === "15" ? "4,505" : "4,705"}{" "}
+              <small>58.63%</small>
             </div>
           </div>
           <div className="traffic-channel-data">
@@ -74,7 +80,8 @@ const TrafficDougnut = () => {
               <span>Social Media</span>
             </div>
             <div className="amount">
-              {traffic === "7" ? "259" : traffic === "15" ? "1,059" : "1509"} <small>23.94%</small>
+              {traffic === "7" ? "259" : traffic === "15" ? "1,059" : "1509"}{" "}
+              <small>23.94%</small>
             </div>
           </div>
           <div className="traffic-channel-data">
@@ -83,7 +90,8 @@ const TrafficDougnut = () => {
               <span>Referrals</span>
             </div>
             <div className="amount">
-              {traffic === "7" ? "438" : traffic === "15" ? "282" : "482"} <small>12.94%</small>
+              {traffic === "7" ? "438" : traffic === "15" ? "282" : "482"}{" "}
+              <small>12.94%</small>
             </div>
           </div>
           <div className="traffic-channel-data">
@@ -92,7 +100,8 @@ const TrafficDougnut = () => {
               <span>Others</span>
             </div>
             <div className="amount">
-              {traffic === "7" ? "438" : traffic === "15" ? "800" : "1000"} <small>4.49%</small>
+              {traffic === "7" ? "438" : traffic === "15" ? "800" : "1000"}{" "}
+              <small>4.49%</small>
             </div>
           </div>
         </div>

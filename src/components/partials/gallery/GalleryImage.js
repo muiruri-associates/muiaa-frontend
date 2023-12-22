@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Modal } from "reactstrap";
 
@@ -21,14 +21,19 @@ const ImageContainer = ({ img }) => {
         <button type="button" className="mfp-close" onClick={toggle}>
           ×
         </button>
-        <img className="w-100 rounded-top" style={{ height: "100%" }} src={img} alt="" />
+        <img
+          className="w-100 rounded-top"
+          style={{ height: "100%" }}
+          src={img}
+          alt=""
+        />
       </Modal>
     </a>
   );
 };
 
 ImageContainer.propTypes = {
-  img: PropTypes.any
-}
+  img: PropTypes.any,
+};
 
 export default ImageContainer;

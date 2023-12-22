@@ -38,10 +38,16 @@ const GoogleMapPage = () => {
               Google Map
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Google map is using with Embed code and API Scripts</p>
+              <p className="lead">
+                Google map is using with Embed code and API Scripts
+              </p>
               <p className="lead">
                 For more info please visit{" "}
-                <a href="https://mapsplatform.google.com/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://mapsplatform.google.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Google Cloud
                 </a>
                 .
@@ -55,8 +61,8 @@ const GoogleMapPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Map with Embed</BlockTitle>
               <BlockDes>
-                For using map with embed code you need to go on Google Map site. Set your location & take embed script
-                for display your location.
+                For using map with embed code you need to go on Google Map site. Set
+                your location & take embed script for display your location.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -90,9 +96,14 @@ const GoogleMapPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Map with API</BlockTitle>
               <BlockDes>
-                For using map with JavaScript API script you need to go on Google Maps Platform. Set your API script &
-                added Javascript code for display your location. In this case{" "}
-                <a href="https://react-google-maps-api-docs.netlify.app/" target="_blank" rel="noreferrer">
+                For using map with JavaScript API script you need to go on Google Maps
+                Platform. Set your API script & added Javascript code for display your
+                location. In this case{" "}
+                <a
+                  href="https://react-google-maps-api-docs.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React-Google-Maps
                 </a>{" "}
                 package is used. All that is needed is to add the api key provided.

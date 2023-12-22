@@ -31,7 +31,11 @@ const Notifications = () => {
             {notificationData.map((item) => {
               return (
                 <li className="timeline-item" key={item.id}>
-                  <div className={`timeline-status ${item.fill} ${item.outline ? "is-outline" : ""}`}></div>
+                  <div
+                    className={`timeline-status ${item.fill} ${
+                      item.outline ? "is-outline" : ""
+                    }`}
+                  ></div>
                   <div className="timeline-date">
                     {item.date} <Icon name="alarm-alt"></Icon>
                   </div>

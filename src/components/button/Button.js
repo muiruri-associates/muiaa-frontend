@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 
@@ -24,6 +24,6 @@ Button.propTypes = {
   disabled: PropTypes.any,
   outline: PropTypes.any,
   size: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export default Button;

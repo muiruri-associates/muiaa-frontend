@@ -54,9 +54,9 @@ const Pricing = ({ toggleScreenLg }) => {
             return (
               <Col md={6} xxl={3} key={item.id}>
                 <Card
-                  className={`card-bordered pricing text-center ${item.tags ? "recommend" : ""} ${
-                    plan === item.title ? "border-primary" : ""
-                  }`}
+                  className={`card-bordered pricing text-center ${
+                    item.tags ? "recommend" : ""
+                  } ${plan === item.title ? "border-primary" : ""}`}
                 >
                   {plan === item.title && (
                     <Badge color="primary" className="pricing-badge">
@@ -75,7 +75,9 @@ const Pricing = ({ toggleScreenLg }) => {
                       <div className="amount">
                         ${item.amount} <span>/yr</span>
                       </div>
-                      <span className="bill">{item.userNumber} User, Billed Yearly</span>
+                      <span className="bill">
+                        {item.userNumber} User, Billed Yearly
+                      </span>
                     </div>
                     <div className="pricing-action">
                       {plan === item.title ? (

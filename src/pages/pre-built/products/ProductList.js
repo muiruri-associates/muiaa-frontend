@@ -21,7 +21,14 @@ import {
   DataTableItem,
   PaginationComponent,
 } from "../../../components/Component";
-import { Card, DropdownItem, UncontrolledDropdown, DropdownMenu, DropdownToggle, Badge } from "reactstrap";
+import {
+  Card,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+  Badge,
+} from "reactstrap";
 import { productData, categoryOptions } from "./ProductData";
 import { useForm } from "react-hook-form";
 import { Modal, ModalBody } from "reactstrap";
@@ -246,7 +253,10 @@ const ProductList = () => {
                 >
                   <Icon name="more-v"></Icon>
                 </a>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <div className="form-control-wrap">
@@ -273,17 +283,29 @@ const ProductList = () => {
                         <DropdownMenu right>
                           <ul className="link-list-opt no-bdr">
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>New Items</span>
                               </DropdownItem>
                             </li>
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>Featured</span>
                               </DropdownItem>
                             </li>
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>Out of Stock</span>
                               </DropdownItem>
                             </li>
@@ -368,7 +390,11 @@ const ProductList = () => {
                             <DropdownMenu right>
                               <ul className="link-list-opt no-bdr">
                                 <li>
-                                  <DropdownItem tag="a" href="#edit" onClick={(ev) => ev.preventDefault()}>
+                                  <DropdownItem
+                                    tag="a"
+                                    href="#edit"
+                                    onClick={(ev) => ev.preventDefault()}
+                                  >
                                     <Icon name="edit"></Icon>
                                     <span>Edit Selected</span>
                                   </DropdownItem>
@@ -387,13 +413,21 @@ const ProductList = () => {
                                   </DropdownItem>
                                 </li>
                                 <li>
-                                  <DropdownItem tag="a" href="#stock" onClick={(ev) => ev.preventDefault()}>
+                                  <DropdownItem
+                                    tag="a"
+                                    href="#stock"
+                                    onClick={(ev) => ev.preventDefault()}
+                                  >
                                     <Icon name="bar-c"></Icon>
                                     <span>Update Stock</span>
                                   </DropdownItem>
                                 </li>
                                 <li>
-                                  <DropdownItem tag="a" href="#price" onClick={(ev) => ev.preventDefault()}>
+                                  <DropdownItem
+                                    tag="a"
+                                    href="#price"
+                                    onClick={(ev) => ev.preventDefault()}
+                                  >
                                     <Icon name="invest"></Icon>
                                     <span>Update Price</span>
                                   </DropdownItem>
@@ -419,12 +453,19 @@ const ProductList = () => {
                                   key={Math.random()}
                                   onChange={(e) => onSelectChange(e, item.id)}
                                 />
-                                <label className="custom-control-label" htmlFor={item.id + "uid1"}></label>
+                                <label
+                                  className="custom-control-label"
+                                  htmlFor={item.id + "uid1"}
+                                ></label>
                               </div>
                             </DataTableRow>
                             <DataTableRow size="sm">
                               <span className="tb-product">
-                                <img src={item.img ? item.img : ProductH} alt="product" className="thumb" />
+                                <img
+                                  src={item.img ? item.img : ProductH}
+                                  alt="product"
+                                  className="thumb"
+                                />
                                 <span className="title">{item.name}</span>
                               </span>
                             </DataTableRow>
@@ -543,7 +584,12 @@ const ProductList = () => {
           </Card>
         </Block>
 
-        <Modal isOpen={view.edit} toggle={() => onFormCancel()} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={view.edit}
+          toggle={() => onFormCancel()}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a href="#cancel" className="close">
               {" "}
@@ -576,7 +622,9 @@ const ProductList = () => {
                             })}
                             defaultValue={formData.name}
                           />
-                          {errors.title && <span className="invalid">{errors.title.message}</span>}
+                          {errors.title && (
+                            <span className="invalid">{errors.title.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -593,7 +641,9 @@ const ProductList = () => {
                             className="form-control"
                             defaultValue={formData.price}
                           />
-                          {errors.price && <span className="invalid">{errors.price.message}</span>}
+                          {errors.price && (
+                            <span className="invalid">{errors.price.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -610,7 +660,9 @@ const ProductList = () => {
                             ref={register({ required: "This is required" })}
                             defaultValue={formData.price}
                           />
-                          {errors.salePrice && <span className="invalid">{errors.salePrice.message}</span>}
+                          {errors.salePrice && (
+                            <span className="invalid">{errors.salePrice.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -627,7 +679,9 @@ const ProductList = () => {
                             ref={register({ required: "This is required" })}
                             defaultValue={formData.stock}
                           />
-                          {errors.stock && <span className="invalid">{errors.stock.message}</span>}
+                          {errors.stock && (
+                            <span className="invalid">{errors.stock.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -644,7 +698,9 @@ const ProductList = () => {
                             ref={register({ required: "This is required" })}
                             defaultValue={formData.sku}
                           />
-                          {errors.sku && <span className="invalid">{errors.sku.message}</span>}
+                          {errors.sku && (
+                            <span className="invalid">{errors.sku.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -661,7 +717,9 @@ const ProductList = () => {
                             onChange={onCategoryChange}
                             //ref={register({ required: "This is required" })}
                           />
-                          {errors.category && <span className="invalid">{errors.category.message}</span>}
+                          {errors.category && (
+                            <span className="invalid">{errors.category.message}</span>
+                          )}
                         </div>
                       </div>
                     </Col>
@@ -676,7 +734,9 @@ const ProductList = () => {
                       </div>
                     </Col>
                     <Col size="6">
-                      <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
+                      <Dropzone
+                        onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}
+                      >
                         {({ getRootProps, getInputProps }) => (
                           <section>
                             <div
@@ -684,7 +744,12 @@ const ProductList = () => {
                               className="dropzone upload-zone small bg-lighter my-2 dz-clickable"
                             >
                               <input {...getInputProps()} />
-                              {files.length === 0 && <p>Drag and drop some files here, or click to select files</p>}
+                              {files.length === 0 && (
+                                <p>
+                                  Drag and drop some files here, or click to select
+                                  files
+                                </p>
+                              )}
                               {files.map((file) => (
                                 <div
                                   key={file.name}
@@ -714,7 +779,12 @@ const ProductList = () => {
           </ModalBody>
         </Modal>
 
-        <Modal isOpen={view.details} toggle={() => onFormCancel()} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={view.details}
+          toggle={() => onFormCancel()}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a href="#cancel" className="close">
               {" "}
@@ -793,7 +863,9 @@ const ProductList = () => {
                         })}
                         defaultValue={formData.name}
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -811,7 +883,9 @@ const ProductList = () => {
                         className="form-control"
                         defaultValue={formData.price}
                       />
-                      {errors.price && <span className="invalid">{errors.price.message}</span>}
+                      {errors.price && (
+                        <span className="invalid">{errors.price.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -829,7 +903,9 @@ const ProductList = () => {
                         ref={register({ required: "This is required" })}
                         defaultValue={formData.price}
                       />
-                      {errors.salePrice && <span className="invalid">{errors.salePrice.message}</span>}
+                      {errors.salePrice && (
+                        <span className="invalid">{errors.salePrice.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -847,7 +923,9 @@ const ProductList = () => {
                         ref={register({ required: "This is required" })}
                         defaultValue={formData.stock}
                       />
-                      {errors.stock && <span className="invalid">{errors.stock.message}</span>}
+                      {errors.stock && (
+                        <span className="invalid">{errors.stock.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -865,7 +943,9 @@ const ProductList = () => {
                         ref={register({ required: "This is required" })}
                         defaultValue={formData.sku}
                       />
-                      {errors.sku && <span className="invalid">{errors.sku.message}</span>}
+                      {errors.sku && (
+                        <span className="invalid">{errors.sku.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -882,7 +962,9 @@ const ProductList = () => {
                         onChange={onCategoryChange}
                         //ref={register({ required: "This is required" })}
                       />
-                      {errors.category && <span className="invalid">{errors.category.message}</span>}
+                      {errors.category && (
+                        <span className="invalid">{errors.category.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -890,9 +972,16 @@ const ProductList = () => {
                   <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
                     {({ getRootProps, getInputProps }) => (
                       <section>
-                        <div {...getRootProps()} className="dropzone upload-zone small bg-lighter my-2 dz-clickable">
+                        <div
+                          {...getRootProps()}
+                          className="dropzone upload-zone small bg-lighter my-2 dz-clickable"
+                        >
                           <input {...getInputProps()} />
-                          {files.length === 0 && <p>Drag and drop some files here, or click to select files</p>}
+                          {files.length === 0 && (
+                            <p>
+                              Drag and drop some files here, or click to select files
+                            </p>
+                          )}
                           {files.map((file) => (
                             <div
                               key={file.name}

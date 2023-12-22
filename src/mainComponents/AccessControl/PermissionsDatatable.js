@@ -15,7 +15,7 @@ import {
 import { dataTableColumns } from "./AccessControlData";
 import { Link } from "react-router-dom";
 
-import {fetchPermissions} from "../../redux/actions/permissionsActions";
+import { fetchPermissions } from "../../redux/actions/permissionsActions";
 
 const PermissionsDatatable = () => {
   const dispatch = useDispatch();
@@ -62,7 +62,12 @@ const PermissionsDatatable = () => {
               <div>Error: {permission.error}</div>
             ) : null}
             {!permission.loading && permission.permissions?.length ? (
-              <ReactDataTable data={permission.permissions} columns={dataTableColumns} pagination actions />
+              <ReactDataTable
+                data={permission.permissions}
+                columns={dataTableColumns}
+                pagination
+                actions
+              />
             ) : (
               <div>No permissions found.</div>
             )}

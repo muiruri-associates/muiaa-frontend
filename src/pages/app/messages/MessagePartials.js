@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import parse from "html-react-parser";
 import { UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
@@ -37,17 +37,17 @@ ReplyItem.propTypes = {
     note: PropTypes.any,
     replyId: PropTypes.any,
     replyMarkup: PropTypes.shape({
-      map: PropTypes.func
+      map: PropTypes.func,
     }),
     theme: PropTypes.any,
-    time: PropTypes.any
-  })
-}
+    time: PropTypes.any,
+  }),
+};
 
 export const MetaItem = ({ item }) => {
   return <div className="nk-reply-meta">{parse(item)}</div>;
 };
 
 MetaItem.propTypes = {
-  item: PropTypes.any
-}
+  item: PropTypes.any,
+};

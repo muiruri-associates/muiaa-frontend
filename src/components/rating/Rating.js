@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Icon } from "../Component";
 
@@ -29,7 +29,7 @@ const Rating = ({ type, initVal, className }) => {
 Rating.propTypes = {
   className: PropTypes.any,
   initVal: PropTypes.any,
-  type: PropTypes.any
-}
+  type: PropTypes.any,
+};
 
 export default Rating;

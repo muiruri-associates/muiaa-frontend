@@ -16,7 +16,10 @@ import {
   Row,
   RSelect,
 } from "../../../components/Component";
-import { eventOptions, events } from "../../../components/partials/calender/CalenderData";
+import {
+  eventOptions,
+  events,
+} from "../../../components/partials/calender/CalenderData";
 import { useForm } from "react-hook-form";
 import { setDateForPicker } from "../../../utils/Utils";
 
@@ -84,14 +87,21 @@ const Calender = () => {
         </BlockHead>
         <Block>
           <PreviewAltCard>
-            <CalenderApp events={mockEvents} onDelete={deleteEvent} onEdit={editEvent} />
+            <CalenderApp
+              events={mockEvents}
+              onDelete={deleteEvent}
+              onEdit={editEvent}
+            />
           </PreviewAltCard>
         </Block>
       </Content>
       <Modal isOpen={modal} toggle={toggle} className="modal-md">
         <ModalHeader toggle={toggle}>Add Event</ModalHeader>
         <ModalBody>
-          <form className="form-validate is-alter" onSubmit={handleSubmit(handleFormSubmit)}>
+          <form
+            className="form-validate is-alter"
+            onSubmit={handleSubmit(handleFormSubmit)}
+          >
             <Row className="gx-4 gy-3">
               <Col size="12">
                 <FormGroup>
@@ -183,7 +193,9 @@ const Calender = () => {
                       ref={register({ required: true })}
                     ></textarea>
 
-                    {errors.description && <p className="invalid">This field is required</p>}
+                    {errors.description && (
+                      <p className="invalid">This field is required</p>
+                    )}
                   </div>
                 </FormGroup>
               </Col>

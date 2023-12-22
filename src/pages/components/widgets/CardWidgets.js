@@ -30,7 +30,16 @@ import {
   Progress,
 } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
-import { Card, Row, Col, Button, UncontrolledDropdown, DropdownMenu, DropdownItem, DropdownToggle } from "reactstrap";
+import {
+  Card,
+  Row,
+  Col,
+  Button,
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+} from "reactstrap";
 
 const CardWidgets = () => {
   const [heart, setHeart] = useState(false);
@@ -57,8 +66,8 @@ const CardWidgets = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Product Card</BlockTitle>
               <p>
-                Cards are built with as little markup and styles as possible, but still manage to deliver a ton of
-                control and customization.
+                Cards are built with as little markup and styles as possible, but still
+                manage to deliver a ton of control and customization.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -86,11 +95,15 @@ const CardWidgets = () => {
                   <div className="card-inner text-center">
                     <ul className="product-tags">
                       <li>
-                        <Link to={`${process.env.PUBLIC_URL}/product-details/1`}>Smart Watch</Link>
+                        <Link to={`${process.env.PUBLIC_URL}/product-details/1`}>
+                          Smart Watch
+                        </Link>
                       </li>
                     </ul>
                     <h5 className="product-title">
-                      <Link to={`${process.env.PUBLIC_URL}/product-details/1`}>Classy Smart Watch</Link>
+                      <Link to={`${process.env.PUBLIC_URL}/product-details/1`}>
+                        Classy Smart Watch
+                      </Link>
                     </h5>
                     <div className="product-price text-primary h5">
                       <small className="text-muted del fs-13px">$350</small> $324
@@ -156,7 +169,11 @@ const CardWidgets = () => {
                       </div>
                     </div>
                     <div>
-                      <Button color="transparent" className="btn-p-0 btn-nofocus" onClick={toggleHeart}>
+                      <Button
+                        color="transparent"
+                        className="btn-p-0 btn-nofocus"
+                        onClick={toggleHeart}
+                      >
                         <Icon name={`${heart ? "heart-fill" : "heart"}`}></Icon>
                         <span>{heart ? 34 : 33}</span>
                       </Button>
@@ -194,8 +211,8 @@ const CardWidgets = () => {
               <BlockTitle tag="h5">User Card</BlockTitle>
               <BlockDes>
                 <p>
-                  Cards are built with as little markup and styles as possible, but still manage to deliver a ton of
-                  control and customization
+                  Cards are built with as little markup and styles as possible, but
+                  still manage to deliver a ton of control and customization
                 </p>
               </BlockDes>
             </BlockHeadContent>
@@ -210,7 +227,10 @@ const CardWidgets = () => {
                     </div>
                     <div className="team-options">
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn btn-icon btn-trigger"
+                        >
                           <Icon name="more-h"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -245,7 +265,11 @@ const CardWidgets = () => {
                       </UncontrolledDropdown>
                     </div>
                     <div className="user-card user-card-s2">
-                      <UserAvatar theme="purple" className="md" text={findUpper("Abu Bin")}>
+                      <UserAvatar
+                        theme="purple"
+                        className="md"
+                        text={findUpper("Abu Bin")}
+                      >
                         <div className="status dot dot-lg dot-success"></div>
                       </UserAvatar>
                       <div className="user-info">
@@ -369,8 +393,8 @@ const CardWidgets = () => {
               <BlockTitle tag="h5">User Alternate Card</BlockTitle>
               <BlockDes>
                 <p>
-                  Cards are built with as little markup and styles as possible, but still manage to deliver a ton of
-                  control and customization
+                  Cards are built with as little markup and styles as possible, but
+                  still manage to deliver a ton of control and customization
                 </p>
               </BlockDes>
             </BlockHeadContent>
@@ -382,7 +406,10 @@ const CardWidgets = () => {
                   <div className="team">
                     <div className="team-options">
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn btn-icon btn-trigger"
+                        >
                           <Icon name="more-h"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -416,7 +443,11 @@ const CardWidgets = () => {
                       </UncontrolledDropdown>
                     </div>
                     <div className="user-card user-card-s2">
-                      <UserAvatar theme="primary" className="lg" text={findUpper("Abu Bin")}>
+                      <UserAvatar
+                        theme="primary"
+                        className="lg"
+                        text={findUpper("Abu Bin")}
+                      >
                         <div className="status dot dot-lg dot-success"></div>
                       </UserAvatar>
                       <div className="user-info">
@@ -810,16 +841,20 @@ const InvestOverview = () => {
                   <div className="pricing-body">
                     <ul className="pricing-features">
                       <li>
-                        <span className="w-50">Min Deposit</span> - <span className="ml-auto">$250</span>
+                        <span className="w-50">Min Deposit</span> -{" "}
+                        <span className="ml-auto">$250</span>
                       </li>
                       <li>
-                        <span className="w-50">Max Deposit</span> - <span className="ml-auto">$1,999</span>
+                        <span className="w-50">Max Deposit</span> -{" "}
+                        <span className="ml-auto">$1,999</span>
                       </li>
                       <li>
-                        <span className="w-50">Deposit Return</span> - <span className="ml-auto">Yes</span>
+                        <span className="w-50">Deposit Return</span> -{" "}
+                        <span className="ml-auto">Yes</span>
                       </li>
                       <li>
-                        <span className="w-50">Total Return</span> - <span className="ml-auto">125%</span>
+                        <span className="w-50">Total Return</span> -{" "}
+                        <span className="ml-auto">125%</span>
                       </li>
                     </ul>
                     <div className="pricing-action">
@@ -893,7 +928,9 @@ const InvestOverview = () => {
                     </div>
                     <div className="pricing-title w-220px mx-auto">
                       <h5 className="title">Starter</h5>
-                      <span className="sub-text">If you are a small business amn please select this plan</span>
+                      <span className="sub-text">
+                        If you are a small business amn please select this plan
+                      </span>
                     </div>
                     <div className="pricing-amount">
                       <div className="amount">
@@ -951,14 +988,21 @@ const InvestOverview = () => {
                       }}
                       className="project-title"
                     >
-                      <UserAvatar className="sq" theme="primary" text={findUpper("Dashlite Dev")} />
+                      <UserAvatar
+                        className="sq"
+                        theme="primary"
+                        text={findUpper("Dashlite Dev")}
+                      />
                       <div className="project-info">
                         <h6 className="title">Dashlite Development</h6>
                         <span className="sub-text">Softnio</span>
                       </div>
                     </a>
                     <UncontrolledDropdown>
-                      <DropdownToggle tag="a" className="dropdown-toggle btn btn-sm btn-icon btn-trigger mt-n1 mr-n1">
+                      <DropdownToggle
+                        tag="a"
+                        className="dropdown-toggle btn btn-sm btn-icon btn-trigger mt-n1 mr-n1"
+                      >
                         <Icon name="more-h"></Icon>
                       </DropdownToggle>
                       <DropdownMenu right>
@@ -1002,15 +1046,26 @@ const InvestOverview = () => {
                       </div>
                       <div className="project-progress-percent">93%</div>
                     </div>
-                    <Progress className="progress-pill progress-md bg-light" value={93}></Progress>
+                    <Progress
+                      className="progress-pill progress-md bg-light"
+                      value={93}
+                    ></Progress>
                   </div>
                   <div className="project-meta">
                     <ul className="project-users g-1">
                       <li>
-                        <UserAvatar className="sm" text={findUpper("Abu")} theme="primary" />
+                        <UserAvatar
+                          className="sm"
+                          text={findUpper("Abu")}
+                          theme="primary"
+                        />
                       </li>
                       <li>
-                        <UserAvatar className="sm" text={findUpper("Desnis")} theme="blue" />
+                        <UserAvatar
+                          className="sm"
+                          text={findUpper("Desnis")}
+                          theme="blue"
+                        />
                       </li>
                       <li>
                         <UserAvatar theme="light" className="sm" text={`+12`} />
@@ -1114,7 +1169,10 @@ const InvestOverview = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">User list card</BlockTitle>
               <BlockDes>
-                <p>The following card can be use for User list, customer list related filed.</p>
+                <p>
+                  The following card can be use for User list, customer list related
+                  filed.
+                </p>
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -1459,7 +1517,10 @@ const Notifications = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">User Count</BlockTitle>
               <BlockDes>
-                <p>The following card can be use for User Count, View Count related filed.</p>
+                <p>
+                  The following card can be use for User Count, View Count related
+                  filed.
+                </p>
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -1585,7 +1646,10 @@ const PageViewer = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Action Center</BlockTitle>
               <BlockDes>
-                <p>The following card can be use for Action Center, Settings related field.</p>
+                <p>
+                  The following card can be use for Action Center, Settings related
+                  field.
+                </p>
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>

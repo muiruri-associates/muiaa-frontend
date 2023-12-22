@@ -1,7 +1,13 @@
 import React from "react";
 import Icon from "../../../icon/Icon";
 import Button from "../../../button/Button";
-import { UncontrolledDropdown, CardTitle, DropdownMenu, DropdownItem, DropdownToggle } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  CardTitle,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+} from "reactstrap";
 
 const ActionCenter = () => {
   return (
@@ -15,7 +21,10 @@ const ActionCenter = () => {
             </CardTitle>
             <div className="card-tools mr-n1">
               <UncontrolledDropdown>
-                <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                <DropdownToggle
+                  tag="a"
+                  className="dropdown-toggle btn btn-icon btn-trigger"
+                >
                   <Icon name="more-h"></Icon>
                 </DropdownToggle>
                 <DropdownMenu right>
@@ -56,8 +65,9 @@ const ActionCenter = () => {
               <Icon name="cc-alt-fill"></Icon>
               <div className="title">Pending Buy/Sell Orders</div>
               <p>
-                We have still <strong>40 buy orders</strong> and <strong>12 sell orders</strong>, thats need to review
-                &amp; take necessary action.
+                We have still <strong>40 buy orders</strong> and{" "}
+                <strong>12 sell orders</strong>, thats need to review &amp; take
+                necessary action.
               </p>
             </div>
             <Button className="btn-icon btn-trigger mr-n2">

@@ -6,14 +6,20 @@ import { Icon, UserAvatar, UserGroup } from "../../../../components/Component";
 import { findUpper } from "../../../../utils/Utils";
 import { FileManagerContext } from "../FileManagerContext";
 import { Link } from "react-router-dom";
-import { DropdownItem, DropdownMenu, Modal, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import PropTypes from 'prop-types';
+import {
+  DropdownItem,
+  DropdownMenu,
+  Modal,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import PropTypes from "prop-types";
 
 List.propTypes = {
   data: PropTypes.object,
   starred: PropTypes.func,
-}
-const List = ({ data,  starred }) => {
+};
+const List = ({ data, starred }) => {
   const { onStarClick, onFileCheck, selectorDeleteFolder, selectorDownloadFile } =
     useContext(FileManagerContext);
 
@@ -23,7 +29,9 @@ const List = ({ data,  starred }) => {
 
   useEffect(() => {
     if (starred) {
-      let filteredData = data.filter((item) => item.meta.starred === true && !item.recovery);
+      let filteredData = data.filter(
+        (item) => item.meta.starred === true && !item.recovery
+      );
       setDataList([...filteredData]);
     } else {
       let filteredData = data.filter((item) => !item.recovery);
@@ -139,7 +147,10 @@ const List = ({ data,  starred }) => {
                       onChange={(ev) => onFileCheck(ev, item.id)}
                       id={`folder-${item.id}`}
                     />
-                    <label className="custom-control-label" htmlFor={`folder-${item.id}`}></label>
+                    <label
+                      className="custom-control-label"
+                      htmlFor={`folder-${item.id}`}
+                    ></label>
                   </div>
                   <div className="nk-file-icon">
                     <span className="nk-file-icon-type">{item.meta.svg}</span>
@@ -147,11 +158,18 @@ const List = ({ data,  starred }) => {
                   <div className="nk-file-name">
                     <div className="nk-file-name-text">
                       {item.meta.type === "folder" ? (
-                        <Link to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`} className="title">
+                        <Link
+                          to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`}
+                          className="title"
+                        >
                           {item.meta.name}
                         </Link>
                       ) : (
-                        <a href="#link" onClick={(ev) => ev.preventDefault()} className="title">
+                        <a
+                          href="#link"
+                          onClick={(ev) => ev.preventDefault()}
+                          className="title"
+                        >
                           {item.meta.name}
                         </a>
                       )}
@@ -174,7 +192,9 @@ const List = ({ data,  starred }) => {
               </div>
               <div className="nk-file-meta">
                 <div className="tb-lead">{item.meta.time}</div>
-                {item.meta.members && <div className="tb-sub">by {item.meta.members[0].user}</div>}
+                {item.meta.members && (
+                  <div className="tb-sub">by {item.meta.members[0].user}</div>
+                )}
               </div>
               <div className="nk-file-members">
                 {!item.meta.members ? (
@@ -192,11 +212,20 @@ const List = ({ data,  starred }) => {
                             key={index}
                           />
                         ))}
-                        <UserAvatar theme="light" className="xs" text={`+${item.meta.members.length - 3}`} />
+                        <UserAvatar
+                          theme="light"
+                          className="xs"
+                          text={`+${item.meta.members.length - 3}`}
+                        />
                       </React.Fragment>
                     ) : (
                       item.meta.members.map((user, index) => (
-                        <UserAvatar theme={user.theme} text={findUpper(user.user)} className="xs" key={index} />
+                        <UserAvatar
+                          theme={user.theme}
+                          text={findUpper(user.user)}
+                          className="xs"
+                          key={index}
+                        />
                       ))
                     )}
                   </UserGroup>

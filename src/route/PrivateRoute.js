@@ -9,10 +9,12 @@ const PrivateRoute = ({ exact, component: Component, allowedRoles, ...rest }) =>
       return true;
     }
 
-    const userRoles = isAuthenticated ? JSON.parse(localStorage.getItem("userRole")) : [];
-    return allowedRoles.some(userRole => userRoles.includes(userRole));
+    const userRoles = isAuthenticated
+      ? JSON.parse(localStorage.getItem("userRole"))
+      : [];
+    return allowedRoles.some((userRole) => userRoles.includes(userRole));
   };
-  
+
   return (
     <Route
       exact={exact ? true : false}

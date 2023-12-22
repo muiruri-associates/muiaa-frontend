@@ -1,7 +1,14 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import SimpleBar from "simplebar-react";
-import { Row, Col, UncontrolledDropdown, DropdownToggle, DropdownMenu, Card } from "reactstrap";
+import {
+  Row,
+  Col,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  Card,
+} from "reactstrap";
 import { findUpper } from "../../utils/Utils";
 import { Icon, UserAvatar, LinkList, LinkItem } from "../../components/Component";
 
@@ -12,13 +19,21 @@ const MessageProfileSidebar = ({ sidebar, profile }) => {
         <div className="card-inner-group">
           <div className="card-inner">
             <div className="user-card user-card-s2 mb-2">
-              <UserAvatar className="md" theme={profile.theme} image={profile.image} text={findUpper(profile.name)} />
+              <UserAvatar
+                className="md"
+                theme={profile.theme}
+                image={profile.image}
+                text={findUpper(profile.name)}
+              />
               <div className="user-info">
                 <h5>{profile.name}</h5>
                 <span className="sub-text">Customer</span>
               </div>
               <UncontrolledDropdown className="user-card-menu dropdown">
-                <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-trigger dropdown-toggle">
+                <DropdownToggle
+                  tag="a"
+                  className="btn btn-icon btn-sm btn-trigger dropdown-toggle"
+                >
                   <Icon name="more-h"></Icon>
                 </DropdownToggle>
                 <DropdownMenu right>
@@ -92,13 +107,21 @@ const MessageProfileSidebar = ({ sidebar, profile }) => {
                 </Col>
                 <Col xs={6}>
                   <span className="sub-text">Status:</span>
-                  <span className={`lead-text text-${profile.closed ? "danger" : "success"}`}>
+                  <span
+                    className={`lead-text text-${
+                      profile.closed ? "danger" : "success"
+                    }`}
+                  >
                     {profile.closed ? "Closed" : "Open"}
                   </span>
                 </Col>
                 <Col xs={6}>
                   <span className="sub-text">Last Reply:</span>
-                  <span>{profile.reply.length === 0 ? "None" : profile.reply[profile.reply.length - 1].name}</span>
+                  <span>
+                    {profile.reply.length === 0
+                      ? "None"
+                      : profile.reply[profile.reply.length - 1].name}
+                  </span>
                 </Col>
               </Row>
             </div>
@@ -129,11 +152,11 @@ MessageProfileSidebar.propTypes = {
     image: PropTypes.any,
     name: PropTypes.any,
     reply: PropTypes.shape({
-      length: PropTypes.number
+      length: PropTypes.number,
     }),
-    theme: PropTypes.any
+    theme: PropTypes.any,
   }),
-  sidebar: PropTypes.any
-}
+  sidebar: PropTypes.any,
+};
 
 export default MessageProfileSidebar;

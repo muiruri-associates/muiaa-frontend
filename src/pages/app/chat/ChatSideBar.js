@@ -1,16 +1,28 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState, useContext } from "react";
 import SlideA from "../../../images/slides/slide-a.jpg";
 import SlideB from "../../../images/slides/slide-b.jpg";
 import SlideC from "../../../images/slides/slide-c.jpg";
 import { UserAvatar, Icon, LinkList, LinkItem } from "../../../components/Component";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import SimpleBar from "simplebar-react";
 import { findUpper } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
 
 const ChatSideBar = ({ sidebar, chat }) => {
-  const { changeNickname, changeTheme, userData, addUserToChat, deleteUser, makeAdmin } = useContext(ChatContext);
+  const {
+    changeNickname,
+    changeTheme,
+    userData,
+    addUserToChat,
+    deleteUser,
+    makeAdmin,
+  } = useContext(ChatContext);
 
   const [memberState, setMemberState] = useState(false);
   const [optionState, setOptionState] = useState(false);
@@ -22,7 +34,7 @@ const ChatSideBar = ({ sidebar, chat }) => {
       <div className="user-card user-card-s2 my-4">
         {chat.group ? (
           <div className="user-avatar-group">
-            {chat.user.slice(0, 3).map((user,index) => {
+            {chat.user.slice(0, 3).map((user, index) => {
               return (
                 <UserAvatar
                   theme={user.theme}
@@ -35,18 +47,33 @@ const ChatSideBar = ({ sidebar, chat }) => {
               );
             })}
             {chat.user.length > 3 && (
-              <UserAvatar theme="bg-light" text={chat.user.length - 3} size="md" className="chat-media"></UserAvatar>
+              <UserAvatar
+                theme="bg-light"
+                text={chat.user.length - 3}
+                size="md"
+                className="chat-media"
+              ></UserAvatar>
             )}
           </div>
         ) : (
-          <UserAvatar theme={chat.theme} image={chat.image} size="md" text={findUpper(chat.name)}></UserAvatar>
+          <UserAvatar
+            theme={chat.theme}
+            image={chat.image}
+            size="md"
+            text={findUpper(chat.name)}
+          ></UserAvatar>
         )}
         <div className="user-info">
           <h5>{chat.nickname ? chat.nickname : chat.name}</h5>
-          <span className="sub-text">Active {chat.active === true ? "now" : `${chat.active}`} ago</span>
+          <span className="sub-text">
+            Active {chat.active === true ? "now" : `${chat.active}`} ago
+          </span>
         </div>
         <UncontrolledDropdown className="user-card-menu">
-          <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-trigger dropdown-toggle">
+          <DropdownToggle
+            tag="a"
+            className="btn btn-icon btn-sm btn-trigger dropdown-toggle"
+          >
             <Icon name="more-h"></Icon>
           </DropdownToggle>
           <DropdownMenu right>
@@ -77,7 +104,10 @@ const ChatSideBar = ({ sidebar, chat }) => {
               <Icon name={`chevron-${optionState ? "up" : "down"}`}></Icon>
             </span>
           </a>
-          <div className={`chat-profile-body collapse ${optionState ? "" : "show"}`} id="chat-options">
+          <div
+            className={`chat-profile-body collapse ${optionState ? "" : "show"}`}
+            id="chat-options"
+          >
             <div className="chat-profile-body-inner">
               <ul className="chat-profile-options">
                 <li>
@@ -92,14 +122,18 @@ const ChatSideBar = ({ sidebar, chat }) => {
                       }}
                     >
                       <Icon className="icon icon-circle bg-light ni ni-edit-alt"></Icon>
-                      <span className="lead-text">{chat.group || chat.chatGroup ? "Group Name" : "Nickname"}</span>
+                      <span className="lead-text">
+                        {chat.group || chat.chatGroup ? "Group Name" : "Nickname"}
+                      </span>
                     </DropdownToggle>
                     <DropdownMenu>
                       <ul className="link-tidy no-bdr p-3">
                         <input
                           className="form-control mb-2"
                           type="text"
-                          placeholder={chat.group || chat.chatGroup ? "Group Name" : "Nickname"}
+                          placeholder={
+                            chat.group || chat.chatGroup ? "Group Name" : "Nickname"
+                          }
                           onChange={(e) => changeNickname(chat.id, e.target.value)}
                         />
                       </ul>
@@ -117,7 +151,10 @@ const ChatSideBar = ({ sidebar, chat }) => {
                         ev.preventDefault();
                       }}
                     >
-                      <Icon name="circle-fill" className={`icon-circle bg-light text-${chat.chatTheme}`}></Icon>
+                      <Icon
+                        name="circle-fill"
+                        className={`icon-circle bg-light text-${chat.chatTheme}`}
+                      ></Icon>
                       <span className="lead-text">Change Theme</span>
                     </DropdownToggle>
                     <DropdownMenu>
@@ -254,7 +291,10 @@ const ChatSideBar = ({ sidebar, chat }) => {
                 <Icon name={`chevron-${memberState ? "up" : "down"}`}></Icon>
               </span>
             </a>
-            <div className={`chat-profile-body collapse ${memberState ? "" : "show"}`} id="chat-photos">
+            <div
+              className={`chat-profile-body collapse ${memberState ? "" : "show"}`}
+              id="chat-photos"
+            >
               <div className="chat-profile-body-inner">
                 <ul className="chat-members">
                   <li>
@@ -316,7 +356,10 @@ const ChatSideBar = ({ sidebar, chat }) => {
                           </a>
                           <div className="user-actions">
                             <UncontrolledDropdown>
-                              <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-trigger dropdown-toggle">
+                              <DropdownToggle
+                                tag="a"
+                                className="btn btn-icon btn-sm btn-trigger dropdown-toggle"
+                              >
                                 <Icon name="more-h"></Icon>
                               </DropdownToggle>
                               <DropdownMenu right>
@@ -372,12 +415,19 @@ const ChatSideBar = ({ sidebar, chat }) => {
               <Icon name={`chevron-${settingState ? "up" : "down"}`}></Icon>
             </span>
           </a>
-          <div className={`chat-profile-body collapse ${settingState ? "" : "show"}`} id="chat-settings">
+          <div
+            className={`chat-profile-body collapse ${settingState ? "" : "show"}`}
+            id="chat-settings"
+          >
             <div className="chat-profile-body-inner">
               <ul className="chat-profile-settings">
                 <li>
                   <div className="custom-control custom-control-sm custom-switch">
-                    <input type="checkbox" className="custom-control-input" id="customSwitch2" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="customSwitch2"
+                    />
                     <label className="custom-control-label" htmlFor="customSwitch2">
                       Notifications
                     </label>
@@ -394,7 +444,9 @@ const ChatSideBar = ({ sidebar, chat }) => {
                     <Icon className="icon icon-circle bg-light ni ni-bell-off-fill"></Icon>
                     <div>
                       <span className="lead-text">Ignore Messages</span>
-                      <span className="sub-text">You won’t be notified when message you.</span>
+                      <span className="sub-text">
+                        You won’t be notified when message you.
+                      </span>
                     </div>
                   </a>
                 </li>
@@ -409,7 +461,9 @@ const ChatSideBar = ({ sidebar, chat }) => {
                     <Icon className="icon icon-circle bg-light ni ni-alert-fill"></Icon>
                     <div>
                       <span className="lead-text">Something Wrong</span>
-                      <span className="sub-text">Give feedback and report conversion.</span>
+                      <span className="sub-text">
+                        Give feedback and report conversion.
+                      </span>
                     </div>
                   </a>
                 </li>
@@ -432,7 +486,10 @@ const ChatSideBar = ({ sidebar, chat }) => {
               <Icon name={`chevron-${photoState ? "up" : "down"}`}></Icon>
             </span>
           </a>
-          <div className={`chat-profile-body collapse ${photoState ? "" : "show"}`} id="chat-photos">
+          <div
+            className={`chat-profile-body collapse ${photoState ? "" : "show"}`}
+            id="chat-photos"
+          >
             <div className="chat-profile-body-inner">
               <ul className="chat-profile-media">
                 <li>
@@ -489,9 +546,9 @@ ChatSideBar.propTypes = {
     user: PropTypes.shape({
       length: PropTypes.number,
       map: PropTypes.func,
-      slice: PropTypes.func
-    })
+      slice: PropTypes.func,
+    }),
   }),
-  sidebar: PropTypes.any
-}
+  sidebar: PropTypes.any,
+};
 export default ChatSideBar;

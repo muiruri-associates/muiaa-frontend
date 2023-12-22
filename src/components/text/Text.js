@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 
@@ -23,5 +23,5 @@ OverlineTitle.propTypes = {
   alt: PropTypes.any,
   className: PropTypes.any,
   children: PropTypes.node.isRequired,
-  tag: PropTypes.string
-}
+  tag: PropTypes.string,
+};

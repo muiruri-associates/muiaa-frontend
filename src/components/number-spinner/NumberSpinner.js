@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Icon, Button } from "../Component";
 
@@ -59,7 +59,7 @@ NSComponent.propTypes = {
   max: PropTypes.any,
   min: PropTypes.any,
   outline: PropTypes.any,
-  step: PropTypes.any
-}
+  step: PropTypes.any,
+};
 
 export default NSComponent;

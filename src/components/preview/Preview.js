@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { Card, Button } from "reactstrap";
@@ -17,8 +17,8 @@ export const PreviewCard = ({ className, bodyClass, ...props }) => {
 PreviewCard.propTypes = {
   bodyClass: PropTypes.any,
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
   return (
@@ -31,8 +31,8 @@ export const PreviewAltCard = ({ className, bodyClass, ...props }) => {
 PreviewAltCard.propTypes = {
   bodyClass: PropTypes.any,
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const PreviewTable = ({ ...props }) => {
   return (
@@ -43,8 +43,8 @@ export const PreviewTable = ({ ...props }) => {
 };
 
 PreviewTable.propTypes = {
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const CodeBlock = ({ ...props }) => {
   const [copyText] = useState(props.children);
@@ -54,14 +54,22 @@ export const CodeBlock = ({ ...props }) => {
     setTimeout(() => setCopyState(false), 2000);
   };
   return (
-    <div className={`code-block code-block-clean ${copyState ? "clipboard-success" : ""}`}>
-      <OverlineTitle className="title">{props.title ? props.title : "Code Example"}</OverlineTitle>
+    <div
+      className={`code-block code-block-clean ${copyState ? "clipboard-success" : ""}`}
+    >
+      <OverlineTitle className="title">
+        {props.title ? props.title : "Code Example"}
+      </OverlineTitle>
       <CopyToClipboard text={copyText} onCopy={onCopyClick}>
         <Button color="blank" size="sm" className="clipboard-init">
           {copyState ? "Copied" : "Copy"}
         </Button>
       </CopyToClipboard>
-      <SyntaxHighlighter language="javascript" className="bg-lighter h-max-150px m-0" style={a11yLight}>
+      <SyntaxHighlighter
+        language="javascript"
+        className="bg-lighter h-max-150px m-0"
+        style={a11yLight}
+      >
         {props.children}
       </SyntaxHighlighter>
     </div>
@@ -72,4 +80,4 @@ CodeBlock.propTypes = {
   language: PropTypes.any,
   children: PropTypes.any,
   title: PropTypes.string,
-}
+};

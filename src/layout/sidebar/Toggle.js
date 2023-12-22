@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import Icon from "../../components/icon/Icon";
 
@@ -20,6 +20,6 @@ const Toggle = ({ className, click, icon }) => {
 Toggle.propTypes = {
   className: PropTypes.any,
   click: PropTypes.func,
-  icon: PropTypes.any
-}
+  icon: PropTypes.any,
+};
 export default Toggle;

@@ -12,9 +12,7 @@ const Error504Modern = () => {
           <img className="nk-error-gfx" src={ErrorImage} alt="error" />
           <div className="wide-xs mx-auto">
             <h3 className="nk-error-title">Unauthorized!!!</h3>
-            <p className="nk-error-text">
-              You don&apos;t have access to this page.
-            </p>
+            <p className="nk-error-text">You don&apos;t have access to this page.</p>
             <Link to={`${process.env.PUBLIC_URL}/`}>
               <Button color="primary" size="lg" className="mt-2">
                 Back To Home

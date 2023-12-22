@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 
@@ -10,7 +10,10 @@ const Progress = ({ value, size, className }) => {
   });
   return (
     <div className={progressClass}>
-      <div className="progress-bar" style={{ width: `${value}%`, backgroundColor: "#6576ff" }}></div>
+      <div
+        className="progress-bar"
+        style={{ width: `${value}%`, backgroundColor: "#6576ff" }}
+      ></div>
       <div className="progress-amount">{value}%</div>
     </div>
   );
@@ -19,7 +22,7 @@ const Progress = ({ value, size, className }) => {
 Progress.propTypes = {
   className: PropTypes.any,
   size: PropTypes.any,
-  value: PropTypes.any
-}
+  value: PropTypes.any,
+};
 
 export default Progress;

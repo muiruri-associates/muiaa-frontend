@@ -7,14 +7,19 @@ import UserProfileActivityPage from "./UserProfileActivity";
 import { Route, Switch, Link } from "react-router-dom";
 import { Icon, UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
-import { Card, DropdownItem, UncontrolledDropdown, DropdownMenu, DropdownToggle } from "reactstrap";
+import {
+  Card,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+} from "reactstrap";
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
-  const [mobileView , setMobileView] = useState(false);
+  const [mobileView, setMobileView] = useState(false);
   const [profileName, setProfileName] = useState("Abu Bin Ishtiak");
-  
-  
+
   // function to change the design view under 990 px
   const viewChange = () => {
     if (window.innerWidth < 990) {
@@ -29,15 +34,17 @@ const UserProfileLayout = () => {
     viewChange();
     window.addEventListener("load", viewChange);
     window.addEventListener("resize", viewChange);
-    document.getElementsByClassName("nk-header")[0].addEventListener("click", function () {
-      updateSm(false);
-    });
+    document
+      .getElementsByClassName("nk-header")[0]
+      .addEventListener("click", function () {
+        updateSm(false);
+      });
     return () => {
       window.removeEventListener("resize", viewChange);
       window.removeEventListener("load", viewChange);
     };
   }, []);
-  
+
   return (
     <React.Fragment>
       <Content>
@@ -58,7 +65,10 @@ const UserProfileLayout = () => {
                     </div>
                     <div className="user-action">
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn btn-icon btn-trigger mr-n2">
+                        <DropdownToggle
+                          tag="a"
+                          className="btn btn-icon btn-trigger mr-n2"
+                        >
                           <Icon name="more-v"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -113,7 +123,10 @@ const UserProfileLayout = () => {
                       <Link
                         to={`${process.env.PUBLIC_URL}/user-profile-regular`}
                         className={
-                          window.location.pathname === `${process.env.PUBLIC_URL}/user-profile-regular` ? "active" : ""
+                          window.location.pathname ===
+                          `${process.env.PUBLIC_URL}/user-profile-regular`
+                            ? "active"
+                            : ""
                         }
                       >
                         <Icon name="user-fill-c"></Icon>
@@ -124,7 +137,8 @@ const UserProfileLayout = () => {
                       <Link
                         to={`${process.env.PUBLIC_URL}/user-profile-notification`}
                         className={
-                          window.location.pathname === `${process.env.PUBLIC_URL}/user-profile-notification`
+                          window.location.pathname ===
+                          `${process.env.PUBLIC_URL}/user-profile-notification`
                             ? "active"
                             : ""
                         }
@@ -137,7 +151,10 @@ const UserProfileLayout = () => {
                       <Link
                         to={`${process.env.PUBLIC_URL}/user-profile-activity`}
                         className={
-                          window.location.pathname === `${process.env.PUBLIC_URL}/user-profile-activity` ? "active" : ""
+                          window.location.pathname ===
+                          `${process.env.PUBLIC_URL}/user-profile-activity`
+                            ? "active"
+                            : ""
                         }
                       >
                         <Icon name="activity-round-fill"></Icon>
@@ -148,7 +165,10 @@ const UserProfileLayout = () => {
                       <Link
                         to={`${process.env.PUBLIC_URL}/user-profile-setting`}
                         className={
-                          window.location.pathname === `${process.env.PUBLIC_URL}/user-profile-setting` ? "active" : ""
+                          window.location.pathname ===
+                          `${process.env.PUBLIC_URL}/user-profile-setting`
+                            ? "active"
+                            : ""
                         }
                       >
                         <Icon name="lock-alt-fill"></Icon>
@@ -160,17 +180,27 @@ const UserProfileLayout = () => {
               </div>
             </div>
             <div className="card-inner card-inner-lg">
-              {sm && mobileView && <div className="toggle-overlay" onClick={() => updateSm(!sm)}></div>}
+              {sm && mobileView && (
+                <div className="toggle-overlay" onClick={() => updateSm(!sm)}></div>
+              )}
               <Switch>
                 <Route
                   exact
                   path={`${process.env.PUBLIC_URL}/user-profile-regular`}
-                  render={() => <UserProfileRegularPage updateSm={updateSm} sm={sm} setProfileName={setProfileName} />}
+                  render={() => (
+                    <UserProfileRegularPage
+                      updateSm={updateSm}
+                      sm={sm}
+                      setProfileName={setProfileName}
+                    />
+                  )}
                 ></Route>
                 <Route
                   exact
                   path={`${process.env.PUBLIC_URL}/user-profile-notification`}
-                  render={() => <UserProfileNotificationPage updateSm={updateSm} sm={sm} />}
+                  render={() => (
+                    <UserProfileNotificationPage updateSm={updateSm} sm={sm} />
+                  )}
                 ></Route>
                 <Route
                   exact

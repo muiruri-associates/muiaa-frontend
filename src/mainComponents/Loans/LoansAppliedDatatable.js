@@ -5,9 +5,10 @@ import {
   Block,
   BlockHead,
   BlockHeadContent,
-  BlockTitle, BackTo,
+  BlockTitle,
+  BackTo,
   PreviewCard,
-  ReactDataTable
+  ReactDataTable,
 } from "../../components/Component";
 import { DataTableData, dataTableColumns } from "./AllTableData";
 
@@ -32,7 +33,13 @@ const LoansAppliedDatatable = () => {
 
         <Block size="lg">
           <PreviewCard>
-            <ReactDataTable data={DataTableData} columns={dataTableColumns} expandableRows pagination actions />
+            <ReactDataTable
+              data={DataTableData}
+              columns={dataTableColumns}
+              expandableRows
+              pagination
+              actions
+            />
           </PreviewCard>
         </Block>
       </Content>

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Map } from "../../charts/analytics/AnalyticsCharts";
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
 const UserMap = () => {
   const [mapState, setMapState] = useState("30");
@@ -62,23 +67,46 @@ const UserMap = () => {
           <tbody>
             <tr className="analytics-map-data">
               <td className="country">United States</td>
-              <td className="amount">{mapState === "7" ? "8,005" : mapState === "15" ? "10,025" : "12,094"}</td>
-              <td className="percent"> {mapState === "7" ? "5.96" : mapState === "15" ? "15.96" : "23.54"}%</td>
+              <td className="amount">
+                {mapState === "7" ? "8,005" : mapState === "15" ? "10,025" : "12,094"}
+              </td>
+              <td className="percent">
+                {" "}
+                {mapState === "7" ? "5.96" : mapState === "15" ? "15.96" : "23.54"}%
+              </td>
             </tr>
             <tr className="analytics-map-data">
               <td className="country">India</td>
-              <td className="amount"> {mapState === "7" ? "2,505" : mapState === "15" ? "5,058" : "7,852"}</td>
-              <td className="percent"> {mapState === "7" ? "2.96" : mapState === "15" ? "4.18" : "7.19"}%</td>
+              <td className="amount">
+                {" "}
+                {mapState === "7" ? "2,505" : mapState === "15" ? "5,058" : "7,852"}
+              </td>
+              <td className="percent">
+                {" "}
+                {mapState === "7" ? "2.96" : mapState === "15" ? "4.18" : "7.19"}%
+              </td>
             </tr>
             <tr className="analytics-map-data">
               <td className="country">Turkey</td>
-              <td className="amount"> {mapState === "7" ? "1,502" : mapState === "15" ? "4,252" : "6,383"}</td>
-              <td className="percent"> {mapState === "7" ? "2.16" : mapState === "15" ? "3.96" : "6.54"}%</td>
+              <td className="amount">
+                {" "}
+                {mapState === "7" ? "1,502" : mapState === "15" ? "4,252" : "6,383"}
+              </td>
+              <td className="percent">
+                {" "}
+                {mapState === "7" ? "2.16" : mapState === "15" ? "3.96" : "6.54"}%
+              </td>
             </tr>
             <tr className="analytics-map-data">
               <td className="country">Bangladesh</td>
-              <td className="amount"> {mapState === "7" ? "1,839" : mapState === "15" ? "2,590" : "4,749"}</td>
-              <td className="percent"> {mapState === "7" ? "2.75" : mapState === "15" ? "3.35" : "5.29"}%</td>
+              <td className="amount">
+                {" "}
+                {mapState === "7" ? "1,839" : mapState === "15" ? "2,590" : "4,749"}
+              </td>
+              <td className="percent">
+                {" "}
+                {mapState === "7" ? "2.75" : mapState === "15" ? "3.35" : "5.29"}%
+              </td>
             </tr>
           </tbody>
         </table>

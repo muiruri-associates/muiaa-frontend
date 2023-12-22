@@ -1,15 +1,23 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import Icon from "../icon/Icon";
 import Button from "../button/Button";
 import { loginData, orderData, transactionData } from "./TableData";
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
 export const SpecialTable = ({ action, isCompact, data }) => {
   const DropdownTrans = () => {
     return (
       <UncontrolledDropdown>
-        <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+        <DropdownToggle
+          tag="a"
+          className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+        >
           <Icon name="more-h"></Icon>
         </DropdownToggle>
         <DropdownMenu right>
@@ -113,7 +121,11 @@ export const SpecialTable = ({ action, isCompact, data }) => {
                     <div className="tb-tnx-status">
                       <span
                         className={`badge badge-dot badge-${
-                          item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"
+                          item.status === "Paid"
+                            ? "success"
+                            : item.status === "Due"
+                              ? "warning"
+                              : "danger"
                         }`}
                       >
                         {item.status}
@@ -158,7 +170,11 @@ export const SpecialTable = ({ action, isCompact, data }) => {
                     <div className="tb-tnx-status">
                       <span
                         className={`badge badge-dot badge-${
-                          item.status === "Paid" ? "success" : item.status === "Due" ? "warning" : "danger"
+                          item.status === "Paid"
+                            ? "success"
+                            : item.status === "Due"
+                              ? "warning"
+                              : "danger"
                         }`}
                       >
                         {item.status}
@@ -182,16 +198,19 @@ export const SpecialTable = ({ action, isCompact, data }) => {
 SpecialTable.propTypes = {
   action: PropTypes.any,
   data: PropTypes.shape({
-    map: PropTypes.func
+    map: PropTypes.func,
   }),
-  isCompact: PropTypes.any
-}
+  isCompact: PropTypes.any,
+};
 
 export const OrderTable = () => {
   const DropdownTrans = () => {
     return (
       <UncontrolledDropdown>
-        <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+        <DropdownToggle
+          tag="a"
+          className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+        >
           <Icon name="more-h"></Icon>
         </DropdownToggle>
         <DropdownMenu right>
@@ -273,7 +292,11 @@ export const OrderTable = () => {
                 <span className="tb-odr-status">
                   <span
                     className={`badge badge-dot badge-${
-                      item.status === "Complete" ? "success" : item.status === "Pending" ? "warning" : "danger"
+                      item.status === "Complete"
+                        ? "success"
+                        : item.status === "Pending"
+                          ? "warning"
+                          : "danger"
                     }`}
                   >
                     {item.status}
@@ -327,7 +350,8 @@ export const LoginLogTable = () => {
               </td>
               <td className="tb-col-time">
                 <span className="sub-text">
-                  {item.date} <span className="d-none d-sm-inline-block">{item.time}</span>
+                  {item.date}{" "}
+                  <span className="d-none d-sm-inline-block">{item.time}</span>
                 </span>
               </td>
               <td className="tb-col-action">

@@ -53,7 +53,12 @@ const Kanban = () => {
                 <div className={`toggle-expand-content ${smBtn ? "expanded" : ""}`}>
                   <ul className="nk-block-tools g-3">
                     <li>
-                      <Button color="light" outline className="btn-white" onClick={() => toggleTaskModal()}>
+                      <Button
+                        color="light"
+                        outline
+                        className="btn-white"
+                        onClick={() => toggleTaskModal()}
+                      >
                         <Icon name="plus" />
                         <span>Add Task</span>
                       </Button>
@@ -78,11 +83,19 @@ const Kanban = () => {
         </Block>
 
         <Modal size="lg" isOpen={boardModal} toggle={toggleBoardModal}>
-          <KanbanBoardForm toggle={toggleBoardModal} data={columns} setData={setColumns} />
+          <KanbanBoardForm
+            toggle={toggleBoardModal}
+            data={columns}
+            setData={setColumns}
+          />
         </Modal>
 
         <Modal size="lg" isOpen={taskModal} toggle={toggleTaskModal}>
-          <KanbanTaskForm toggle={toggleTaskModal} data={columns} setData={setColumns} />
+          <KanbanTaskForm
+            toggle={toggleTaskModal}
+            data={columns}
+            setData={setColumns}
+          />
         </Modal>
       </Content>
     </React.Fragment>

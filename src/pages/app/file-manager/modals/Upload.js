@@ -4,12 +4,16 @@ import { Button } from "reactstrap";
 import { Icon } from "../../../../components/Component";
 import { svgSelect } from "../Data";
 import { FileManagerContext } from "../FileManagerContext";
-import { bytesToMegaBytes, currentTime, getDateStructured } from "../../../../utils/Utils";
-import PropTypes from 'prop-types';
+import {
+  bytesToMegaBytes,
+  currentTime,
+  getDateStructured,
+} from "../../../../utils/Utils";
+import PropTypes from "prop-types";
 
 Upload.propTypes = {
   toggle: PropTypes.bool,
-}
+};
 
 const Upload = ({ toggle }) => {
   const { createFile } = useContext(FileManagerContext);
@@ -65,7 +69,10 @@ const Upload = ({ toggle }) => {
           <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
             {({ getRootProps, getInputProps }) => (
               <section>
-                <div {...getRootProps()} className="dropzone upload-zone small bg-lighter my-2 dz-clickable">
+                <div
+                  {...getRootProps()}
+                  className="dropzone upload-zone small bg-lighter my-2 dz-clickable"
+                >
                   <input {...getInputProps()} />
                   <div className="dz-message">
                     <span className="dz-message-text">

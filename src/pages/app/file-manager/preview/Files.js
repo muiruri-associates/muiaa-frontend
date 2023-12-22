@@ -2,9 +2,21 @@ import React, { useEffect, useState } from "react";
 import Grid from "../views/Grid";
 import Groups from "../views/Groups";
 import List from "../views/List";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
-import PropTypes from 'prop-types';
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import {
+  Block,
+  BlockBetween,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  Icon,
+} from "../../../../components/Component";
+import PropTypes from "prop-types";
 
 Files.propTypes = {
   data: PropTypes.object,
@@ -15,7 +27,7 @@ Files.propTypes = {
   toggleCreateModal: PropTypes.func,
   toggleUploadModal: PropTypes.func,
   toggleScreenLg: PropTypes.func,
-}
+};
 
 const Files = ({
   data,

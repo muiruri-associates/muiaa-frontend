@@ -1,8 +1,10 @@
 # muiaa-frontend
+
 - This guide will help you set up the frontend application in react using yarn.
 - Yarn is a package manager that helps you manage dependencies and libraries for your application.
 
 # Prerequisites
+
 - Before starting, ensure that you have the following installed on your machine:
   - Node.js: Visit the official Node.js website (https://nodejs.org) and follow the installation instructions for your operating system.
   - yarn

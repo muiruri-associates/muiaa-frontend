@@ -37,9 +37,10 @@ const FormElementsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Examples and usage guidelines for form control styles, layout options, and custom components for
-                creating a wide variety of forms. Here’s a quick example to demonstrate form styles, so use these
-                classes to opt into their customized displays.
+                Examples and usage guidelines for form control styles, layout options,
+                and custom components for creating a wide variety of forms. Here’s a
+                quick example to demonstrate form styles, so use these classes to opt
+                into their customized displays.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -50,11 +51,13 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Form controls</BlockTitle>
               <p>
-                Textual form controls—like <code className="code-tag">&lt;input&gt;</code>s,{" "}
+                Textual form controls—like{" "}
+                <code className="code-tag">&lt;input&gt;</code>s,{" "}
                 <code className="code-tag">&lt;select&gt;</code>s, and{" "}
-                <code className="code-tag">&lt;textarea&gt;</code>s—are styled with the <code>.form-control</code>{" "}
-                className. Included are styles for general appearance, focus state, sizing, and more. Additional classes
-                can be used to vary this layout on a per-form basis.
+                <code className="code-tag">&lt;textarea&gt;</code>s—are styled with the{" "}
+                <code>.form-control</code> className. Included are styles for general
+                appearance, focus state, sizing, and more. Additional classes can be
+                used to vary this layout on a per-form basis.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -70,7 +73,12 @@ const FormElementsPage = () => {
                     Input text Default
                   </Label>
                   <div className="form-control-wrap">
-                    <input className="form-control" type="text" id="default-0" placeholder="Input placeholder" />
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="default-0"
+                      placeholder="Input placeholder"
+                    />
                   </div>
                 </FormGroup>
               </Col>
@@ -83,7 +91,12 @@ const FormElementsPage = () => {
                     <div className="form-text-hint">
                       <span className="overline-title">Usd</span>
                     </div>
-                    <input className="form-control" type="text" id="default-1" placeholder="Input placeholder" />
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="default-1"
+                      placeholder="Input placeholder"
+                    />
                   </div>
                 </FormGroup>
               </Col>
@@ -96,7 +109,12 @@ const FormElementsPage = () => {
                     <div className="form-icon form-icon-left">
                       <Icon name="user" />
                     </div>
-                    <input className="form-control" type="text" id="default-2" placeholder="Input placeholder" />
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="default-2"
+                      placeholder="Input placeholder"
+                    />
                   </div>
                 </FormGroup>
                 <FormGroup>
@@ -107,7 +125,12 @@ const FormElementsPage = () => {
                     <div className="form-icon form-icon-right">
                       <Icon name="user" />
                     </div>
-                    <input className="form-control" type="text" id="default-3" placeholder="Input placeholder" />
+                    <input
+                      className="form-control"
+                      type="text"
+                      id="default-3"
+                      placeholder="Input placeholder"
+                    />
                   </div>
                 </FormGroup>
               </Col>
@@ -168,7 +191,13 @@ const FormElementsPage = () => {
                   </label>
                   <div className="form-control-wrap">
                     <div className="form-control-select-multiple">
-                      <Input className="custom-select" type="select" name="select" id="default-5" multiple>
+                      <Input
+                        className="custom-select"
+                        type="select"
+                        name="select"
+                        id="default-5"
+                        multiple
+                      >
                         <option value="option_select0">Default Option</option>
                         <option value="option_select1">Option select name</option>
                         <option value="option_select2">Option select name</option>
@@ -191,7 +220,10 @@ const FormElementsPage = () => {
                   <Label htmlFor="default-5" className="form-label">
                     Focus State
                   </Label>
-                  <input className="form-control focus" placeholder="Input placeholder" />
+                  <input
+                    className="form-control focus"
+                    placeholder="Input placeholder"
+                  />
                 </FormGroup>
               </Col>
               <Col sm="6">
@@ -199,7 +231,11 @@ const FormElementsPage = () => {
                   <Label htmlFor="default-5" className="form-label">
                     Filled State
                   </Label>
-                  <input className="form-control" defaultValue="Abu Ibn Ishtiak" placeholder="Input placeholder" />
+                  <input
+                    className="form-control"
+                    defaultValue="Abu Ibn Ishtiak"
+                    placeholder="Input placeholder"
+                  />
                 </FormGroup>
               </Col>
               <Col sm="6">
@@ -207,7 +243,10 @@ const FormElementsPage = () => {
                   <Label htmlFor="default-5" className="form-label">
                     Error State
                   </Label>
-                  <input className="form-control error" placeholder="Input placeholder" />
+                  <input
+                    className="form-control error"
+                    placeholder="Input placeholder"
+                  />
                 </FormGroup>
               </Col>
               <Col sm="6">
@@ -230,28 +269,40 @@ const FormElementsPage = () => {
               <Col lg="4">
                 <FormGroup>
                   <div className="form-control-wrap">
-                    <input type="text" className="form-control form-control-xl" placeholder="Input Large" />
+                    <input
+                      type="text"
+                      className="form-control form-control-xl"
+                      placeholder="Input Large"
+                    />
                   </div>
                 </FormGroup>
               </Col>
               <Col lg="4">
                 <FormGroup>
                   <div className="form-control-wrap">
-                    <input type="text" className="form-control form-control-lg" placeholder="Input Regular" />
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      placeholder="Input Regular"
+                    />
                   </div>
                 </FormGroup>
               </Col>
               <Col lg="4">
                 <FormGroup>
                   <div className="form-control-wrap">
-                    <input type="text" className="form-control form-control-sm" placeholder="Input small" />
+                    <input
+                      type="text"
+                      className="form-control form-control-sm"
+                      placeholder="Input small"
+                    />
                   </div>
                 </FormGroup>
               </Col>
               <Col lg="12">
                 <p className="text-soft">
-                  Use <code>.form-control-lg</code> or <code>.form-control-sm</code> with <code>.form-control</code> for
-                  large or small input box.
+                  Use <code>.form-control-lg</code> or <code>.form-control-sm</code>{" "}
+                  with <code>.form-control</code> for large or small input box.
                 </p>
               </Col>
             </Row>
@@ -267,11 +318,13 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Form Outlined</BlockTitle>
               <p>
-                Textual form controls—like <code className="code-tag">&lt;input&gt;</code>s,{" "}
+                Textual form controls—like{" "}
+                <code className="code-tag">&lt;input&gt;</code>s,{" "}
                 <code className="code-tag">&lt;select&gt;</code>s, and{" "}
-                <code className="code-tag">&lt;textarea&gt;</code>s—are styled with the <code>.form-control</code>{" "}
-                className. Included are styles for general appearance, focus state, sizing, and more. Additional classes
-                can be used to vary this layout on a per-form basis.
+                <code className="code-tag">&lt;textarea&gt;</code>s—are styled with the{" "}
+                <code>.form-control</code> className. Included are styles for general
+                appearance, focus state, sizing, and more. Additional classes can be
+                used to vary this layout on a per-form basis.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -280,12 +333,21 @@ const FormElementsPage = () => {
             <Row className="gy-4">
               <Col lg="4" sm="6">
                 <FormGroup>
-                  <OutlinedInput id="outlined-normal" label="Input text outline" size="xl" />
+                  <OutlinedInput
+                    id="outlined-normal"
+                    label="Input text outline"
+                    size="xl"
+                  />
                 </FormGroup>
               </Col>
               <Col lg="4" sm="6">
                 <FormGroup>
-                  <OutlinedInput id="outlined-icon" label="Input with icon" size="xl" icon="user" />
+                  <OutlinedInput
+                    id="outlined-icon"
+                    label="Input with icon"
+                    size="xl"
+                    icon="user"
+                  />
                 </FormGroup>
               </Col>
             </Row>
@@ -309,9 +371,10 @@ const FormElementsPage = () => {
               </Col>
               <Col size="12">
                 <p className="text-soft">
-                  Use <code>.form-control-outlined</code> with <code>.form-control</code> for outlined form element and
-                  replace <code>.form-label</code> with <code>.form-label-outlined</code>, also place label after
-                  input/select element.
+                  Use <code>.form-control-outlined</code> with{" "}
+                  <code>.form-control</code> for outlined form element and replace{" "}
+                  <code>.form-label</code> with <code>.form-label-outlined</code>, also
+                  place label after input/select element.
                 </p>
               </Col>
             </Row>
@@ -326,9 +389,11 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Checkbox Styles</BlockTitle>
               <p>
-                To create custom control, wrapped with <code className="code-tag">&lt;div&gt;</code> each checkbox{" "}
-                <code className="code-tag">&lt;input&gt;</code> &amp; <code className="code-tag">&lt;label&gt;</code>{" "}
-                using <code>.custom-control</code>, <code>.custom-checkbox</code> classes.
+                To create custom control, wrapped with{" "}
+                <code className="code-tag">&lt;div&gt;</code> each checkbox{" "}
+                <code className="code-tag">&lt;input&gt;</code> &amp;{" "}
+                <code className="code-tag">&lt;label&gt;</code> using{" "}
+                <code>.custom-control</code>, <code>.custom-checkbox</code> classes.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -338,7 +403,11 @@ const FormElementsPage = () => {
                 <div className="preview-block">
                   <span className="preview-title overline-title">Default</span>
                   <div className="custom-control custom-checkbox">
-                    <input type="checkbox" className="custom-control-input form-control" id="customCheck1" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input form-control"
+                      id="customCheck1"
+                    />
                     <label className="custom-control-label" htmlFor="customCheck1">
                       Option Label
                     </label>
@@ -363,7 +432,12 @@ const FormElementsPage = () => {
                 <div className="preview-block">
                   <span className="preview-title overline-title">Disabled</span>
                   <div className="custom-control custom-checkbox">
-                    <input type="checkbox" className="custom-control-input form-control" disabled id="customCheck3" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input form-control"
+                      disabled
+                      id="customCheck3"
+                    />
                     <label className="custom-control-label" htmlFor="customCheck3">
                       Option Label
                     </label>
@@ -393,7 +467,11 @@ const FormElementsPage = () => {
                   <div className="g-3 align-center flex-wrap">
                     <div className="g">
                       <div className="custom-control custom-control-sm custom-checkbox">
-                        <input type="checkbox" className="custom-control-input form-control" id="customCheck7" />
+                        <input
+                          type="checkbox"
+                          className="custom-control-input form-control"
+                          id="customCheck7"
+                        />
                         <label className="custom-control-label" htmlFor="customCheck7">
                           Option Label
                         </label>
@@ -401,7 +479,11 @@ const FormElementsPage = () => {
                     </div>
                     <div className="g">
                       <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input form-control" id="customCheck6" />
+                        <input
+                          type="checkbox"
+                          className="custom-control-input form-control"
+                          id="customCheck6"
+                        />
                         <label className="custom-control-label" htmlFor="customCheck6">
                           Option Label
                         </label>
@@ -409,7 +491,11 @@ const FormElementsPage = () => {
                     </div>
                     <div className="g">
                       <div className="custom-control custom-control-lg custom-checkbox">
-                        <input type="checkbox" className="custom-control-input form-control" id="customCheck5" />
+                        <input
+                          type="checkbox"
+                          className="custom-control-input form-control"
+                          id="customCheck5"
+                        />
                         <label className="custom-control-label" htmlFor="customCheck5">
                           Option Label
                         </label>
@@ -420,8 +506,9 @@ const FormElementsPage = () => {
               </Col>
               <Col xl="12">
                 <p className="text-soft">
-                  For large or small size of <code>.custom-checkbox</code>, use <code>.custom-control-{`lg|sm`}</code>{" "}
-                  with <code>.custom-control</code> className.
+                  For large or small size of <code>.custom-checkbox</code>, use{" "}
+                  <code>.custom-control-{`lg|sm`}</code> with{" "}
+                  <code>.custom-control</code> className.
                 </p>
               </Col>
             </Row>
@@ -434,9 +521,11 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Radio Style</BlockTitle>
               <p>
-                To create custom control, wrapped with <code className="code-tag">&lt;div&gt;</code> each radio{" "}
-                <code className="code-tag">&lt;input&gt;</code> &amp; <code className="code-tag">&lt;label&gt;</code>{" "}
-                using <code>.custom-control</code>, <code>.custom-radio</code> classNames.
+                To create custom control, wrapped with{" "}
+                <code className="code-tag">&lt;div&gt;</code> each radio{" "}
+                <code className="code-tag">&lt;input&gt;</code> &amp;{" "}
+                <code className="code-tag">&lt;label&gt;</code> using{" "}
+                <code>.custom-control</code>, <code>.custom-radio</code> classNames.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -558,7 +647,8 @@ const FormElementsPage = () => {
               </Col>
               <Col xl="12">
                 <p className="text-soft">
-                  For large or small size of <code>.custom-radio</code>, use <code>.custom-control-{`lg|sm`}</code> with{" "}
+                  For large or small size of <code>.custom-radio</code>, use{" "}
+                  <code>.custom-control-{`lg|sm`}</code> with{" "}
                   <code>.custom-control</code> className.
                 </p>
               </Col>
@@ -572,8 +662,9 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Switch Style</BlockTitle>
               <p>
-                The switch markup of a <code>.custom-control</code> <code className="code-fnc">checkbox</code> but uses
-                the <code>.custom-switch</code> className to render a toggle switch.
+                The switch markup of a <code>.custom-control</code>{" "}
+                <code className="code-fnc">checkbox</code> but uses the{" "}
+                <code>.custom-switch</code> className to render a toggle switch.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -583,7 +674,11 @@ const FormElementsPage = () => {
                 <div className="preview-block">
                   <span className="preview-title overline-title">Default</span>
                   <div className="custom-control custom-switch">
-                    <input type="checkbox" className="custom-control-input form-control" id="customSwitch1" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input form-control"
+                      id="customSwitch1"
+                    />
                     <label className="custom-control-label" htmlFor="customSwitch1">
                       Switch
                     </label>
@@ -610,7 +705,12 @@ const FormElementsPage = () => {
                 <div className="preview-block">
                   <span className="preview-title overline-title">Disabled</span>
                   <div className="custom-control custom-switch">
-                    <input type="checkbox" className="custom-control-input form-control" disabled id="customSwitch3" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input form-control"
+                      disabled
+                      id="customSwitch3"
+                    />
                     <label className="custom-control-label" htmlFor="customSwitch3">
                       Switch
                     </label>
@@ -640,7 +740,11 @@ const FormElementsPage = () => {
                   <div className="g-3 align-center flex-wrap">
                     <div className="g">
                       <div className="custom-control custom-control-sm custom-switch">
-                        <input type="checkbox" className="custom-control-input" id="customSwitch7" />
+                        <input
+                          type="checkbox"
+                          className="custom-control-input"
+                          id="customSwitch7"
+                        />
                         <label className="custom-control-label" htmlFor="customSwitch7">
                           Switch Label
                         </label>
@@ -648,7 +752,11 @@ const FormElementsPage = () => {
                     </div>
                     <div className="g">
                       <div className="custom-control custom-switch">
-                        <Input type="checkbox" className="custom-control-input form-control" id="customSwitch6" />
+                        <Input
+                          type="checkbox"
+                          className="custom-control-input form-control"
+                          id="customSwitch6"
+                        />
                         <label className="custom-control-label" htmlFor="customSwitch6">
                           Switch Label
                         </label>
@@ -656,7 +764,11 @@ const FormElementsPage = () => {
                     </div>
                     <div className="g">
                       <div className="custom-control custom-control-lg custom-switch">
-                        <input type="checkbox" className="custom-control-input form-control" id="customSwitch5" />
+                        <input
+                          type="checkbox"
+                          className="custom-control-input form-control"
+                          id="customSwitch5"
+                        />
                         <label className="custom-control-label" htmlFor="customSwitch5">
                           Switch Label
                         </label>
@@ -667,8 +779,9 @@ const FormElementsPage = () => {
               </Col>
               <Col xl="12">
                 <p className="text-soft">
-                  For large or small size of <code>.custom-switch</code>, use <code>.custom-control-{`lg|sm`}</code>{" "}
-                  with <code>.custom-control</code> className.
+                  For large or small size of <code>.custom-switch</code>, use{" "}
+                  <code>.custom-control-{`lg|sm`}</code> with{" "}
+                  <code>.custom-control</code> className.
                 </p>
               </Col>
             </Row>
@@ -684,9 +797,15 @@ const FormElementsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">React Select</BlockTitle>
               <p>
-                To use the Dashlite customized version of react-select component import it such as,{" "}
-                <code>import {`{RSelect}`} from /components/Component.js</code>. Visit the official documentaion{" "}
-                <a href="https://react-select.com/home" target="_blank" rel="noreferrer">
+                To use the Dashlite customized version of react-select component import
+                it such as,{" "}
+                <code>import {`{RSelect}`} from /components/Component.js</code>. Visit
+                the official documentaion{" "}
+                <a
+                  href="https://react-select.com/home"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   here.
                 </a>
               </p>

@@ -5,9 +5,14 @@ import InboxReplyItem from "./InboxReply";
 import Tags from "@yaireo/tagify/dist/react.tagify";
 import { contacts, formTemplates } from "./InboxData";
 import { Button, Icon, TooltipComponent } from "../../../components/Component";
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 import { currentTime, getDateStructured } from "../../../utils/Utils";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const tagifySettings = {
   blacklist: ["xxx", "yyy", "zzz"],
@@ -29,7 +34,7 @@ InboxMessages.propTypes = {
   onArchiveClick: PropTypes.any,
   onSpamClick: PropTypes.any,
   outerLabels: PropTypes.any,
-}
+};
 const InboxMessages = ({
   mailId,
   data,
@@ -231,10 +236,15 @@ const InboxMessages = ({
             mailData={mailData}
             setMailData={setMailData}
           />
-          <SimpleBar className="nk-ibx-reply nk-reply" scrollableNodeProps={{ ref: messagesEndRef }}>
+          <SimpleBar
+            className="nk-ibx-reply nk-reply"
+            scrollableNodeProps={{ ref: messagesEndRef }}
+          >
             <div className="nk-ibx-reply-head">
               <div>
-                <h4 className="title">{mailData.message.subject ? mailData.message.subject : "(no subject)"}</h4>
+                <h4 className="title">
+                  {mailData.message.subject ? mailData.message.subject : "(no subject)"}
+                </h4>
                 <ul className="nk-ibx-tags g-1">
                   {mailData.message.meta.tags.map((tagItem, index) => (
                     <li className="btn-group is-tags" key={index}>
@@ -276,7 +286,11 @@ const InboxMessages = ({
                         onFavoriteClick(mailData.id);
                       }}
                     >
-                      <Icon name={`${mailData.message.meta.favourite ? "star-fill" : "star"}`}></Icon>
+                      <Icon
+                        name={`${
+                          mailData.message.meta.favourite ? "star-fill" : "star"
+                        }`}
+                      ></Icon>
                     </a>
                   </div>
                 </li>
@@ -309,18 +323,32 @@ const InboxMessages = ({
                       <DropdownMenu className="dropdown-menu-md">
                         <ul className="link-list-opt no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
-                              <Icon name="reply-fill"></Icon> <span>Reply to Abu Bin Ishtiyak</span>
+                            <DropdownItem
+                              tag="a"
+                              href="#item"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
+                              <Icon name="reply-fill"></Icon>{" "}
+                              <span>Reply to Abu Bin Ishtiyak</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
-                              <Icon name="forward-arrow-fill"></Icon> <span>Forword</span>
+                            <DropdownItem
+                              tag="a"
+                              href="#item"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
+                              <Icon name="forward-arrow-fill"></Icon>{" "}
+                              <span>Forword</span>
                             </DropdownItem>
                           </li>
                           <li className="divider"></li>
                           <li>
-                            <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#item"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="edit-fill"></Icon> <span>Edit Subject</span>
                             </DropdownItem>
                           </li>
@@ -341,7 +369,11 @@ const InboxMessages = ({
                         showDropdown={false}
                       />
                     </div>
-                    <div className={`nk-reply-form-input nk-reply-form-input-cc ${ccTagify.toggle ? "expanded" : ""}`}>
+                    <div
+                      className={`nk-reply-form-input nk-reply-form-input-cc ${
+                        ccTagify.toggle ? "expanded" : ""
+                      }`}
+                    >
                       <label className="label">Cc</label>
                       <Tags
                         className="input-mail"
@@ -363,7 +395,9 @@ const InboxMessages = ({
                       </a>
                     </div>
                     <div
-                      className={`nk-reply-form-input nk-reply-form-input-bcc ${bccTagify.toggle ? "expanded" : ""}`}
+                      className={`nk-reply-form-input nk-reply-form-input-bcc ${
+                        bccTagify.toggle ? "expanded" : ""
+                      }`}
                     >
                       <label className="label">Bcc</label>
                       <Tags
@@ -482,7 +516,11 @@ const InboxMessages = ({
                           ))}
                           <li className="divider"></li>
                           <li onClick={() => saveTemplate()}>
-                            <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#item"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="file-plus"></Icon>
                               <span>Save as Template</span>
                             </DropdownItem>
@@ -500,7 +538,11 @@ const InboxMessages = ({
                       direction="top"
                       text="Upload Attachment"
                     />
-                    <input type="file" id="attachmentInput" style={{ display: "none" }}></input>
+                    <input
+                      type="file"
+                      id="attachmentInput"
+                      style={{ display: "none" }}
+                    ></input>
                   </li>
                   <li onClick={() => onImageClick()}>
                     <TooltipComponent
@@ -512,7 +554,12 @@ const InboxMessages = ({
                       text="Upload Images"
                     />
                   </li>
-                  <input type="file" id="imageInput" accept=".png, .jpg, .jpeg" style={{ display: "none" }}></input>
+                  <input
+                    type="file"
+                    id="imageInput"
+                    accept=".png, .jpg, .jpeg"
+                    style={{ display: "none" }}
+                  ></input>
                 </ul>
               </div>
             </div>

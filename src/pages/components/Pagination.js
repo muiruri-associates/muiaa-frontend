@@ -4,7 +4,14 @@ import Head from "../../layout/head/Head";
 import Icon from "../../components/icon/Icon";
 
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const PaginationPage = () => {
@@ -22,10 +29,20 @@ const PaginationPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Examples for showing pagination to indicate a series of related content exists across multiple pages.To
-                use it, import it such as{" "}
-                <code>import {`{Pagination, PaginationItem, PaginationLink}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/pagination"} target="_blank" rel="noreferrer">
+                Examples for showing pagination to indicate a series of related content
+                exists across multiple pages.To use it, import it such as{" "}
+                <code>
+                  import {`{Pagination, PaginationItem, PaginationLink}`}from
+                  &ldquo;reactstrap&ldquo;
+                </code>
+                . Visit the{" "}
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/pagination"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -38,7 +55,10 @@ const PaginationPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Examples</BlockTitle>
-              <p>The following example of basic pagination. Use pagination component from reactstrap</p>
+              <p>
+                The following example of basic pagination. Use pagination component from
+                reactstrap
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -158,8 +178,9 @@ const PaginationPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Working with Icons</BlockTitle>
               <p>
-                Looking to use an icon or symbol in place of text for some pagination links? Be sure to provide proper
-                screen reader support with aria attributes..
+                Looking to use an icon or symbol in place of text for some pagination
+                links? Be sure to provide proper screen reader support with aria
+                attributes..
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -252,8 +273,9 @@ const PaginationPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Disabled and Active States</BlockTitle>
               <p>
-                Use <code>disabled</code> props in <code>PaginationItem</code> for links that appear un-clickable and{" "}
-                <code>active</code> props in <code>PaginationItem</code> to indicate the current page..
+                Use <code>disabled</code> props in <code>PaginationItem</code> for links
+                that appear un-clickable and <code>active</code> props in{" "}
+                <code>PaginationItem</code> to indicate the current page..
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -346,7 +368,8 @@ const PaginationPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Sizing</BlockTitle>
               <p>
-                Add <code>size=sm|md|lg</code> props with <code>Pagination</code> component for additional sizes.
+                Add <code>size=sm|md|lg</code> props with <code>Pagination</code>{" "}
+                component for additional sizes.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -540,13 +563,16 @@ const PaginationPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Alignment</BlockTitle>
               <p>
-                Change the alignment of pagination components with flexbox utilities as use
-                .justify-content-[start|center|end] to set alignment.
+                Change the alignment of pagination components with flexbox utilities as
+                use .justify-content-[start|center|end] to set alignment.
               </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
-            <Pagination listClassName="justify-content-start" aria-label="Page navigation example">
+            <Pagination
+              listClassName="justify-content-start"
+              aria-label="Page navigation example"
+            >
               <PaginationItem disabled>
                 <PaginationLink
                   href="#prev"
@@ -604,7 +630,10 @@ const PaginationPage = () => {
               </PaginationItem>
             </Pagination>
             <div className="gap"></div>
-            <Pagination listClassName="justify-content-center" aria-label="Page navigation example">
+            <Pagination
+              listClassName="justify-content-center"
+              aria-label="Page navigation example"
+            >
               <PaginationItem disabled>
                 <PaginationLink
                   href="#prev"
@@ -662,7 +691,10 @@ const PaginationPage = () => {
               </PaginationItem>
             </Pagination>
             <div className="gap"></div>
-            <Pagination listClassName="justify-content-end" aria-label="Page navigation example">
+            <Pagination
+              listClassName="justify-content-end"
+              aria-label="Page navigation example"
+            >
               <PaginationItem disabled>
                 <PaginationLink
                   href="#prev"

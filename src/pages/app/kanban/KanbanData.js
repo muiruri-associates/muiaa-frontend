@@ -54,7 +54,9 @@ export const columnData = {
       desc: "Keyword recarch for @techyspec business profile and there other websites, to improve ranking.",
       board: "In Progress",
       meta: {
-        users: [{ value: "Vernon Hollander", label: "Vernon Hollander", theme: "danger" }],
+        users: [
+          { value: "Vernon Hollander", label: "Vernon Hollander", theme: "danger" },
+        ],
         tags: [
           { value: "Techyspec", label: "Techyspec", theme: "dark" },
           { value: "SEO", label: "SEO", theme: "success" },

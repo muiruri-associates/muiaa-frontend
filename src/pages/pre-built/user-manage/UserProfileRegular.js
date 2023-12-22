@@ -17,14 +17,13 @@ import {
 } from "../../../components/Component";
 import { countryOptions, userData } from "./UserData";
 import { getDateStructured } from "../../../utils/Utils";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
 
 UserProfileRegularPage.propTypes = {
   sm: PropTypes.bool.isRequired,
   updateSm: PropTypes.func.isRequired,
   setProfileName: PropTypes.func.isRequired,
 };
-
 
 const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
   const [modalTab, setModalTab] = useState("1");
@@ -65,7 +64,9 @@ const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
           <BlockHeadContent>
             <BlockTitle tag="h4">Personal Information</BlockTitle>
             <BlockDes>
-              <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+              <p>
+                Basic info, like your name and address, that you use on Nio Platform.
+              </p>
             </BlockDes>
           </BlockHeadContent>
           <BlockHeadContent className="align-self-start d-lg-none">
@@ -213,7 +214,12 @@ const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
         </div>
       </Block>
 
-      <Modal isOpen={modal} className="modal-dialog-centered" size="lg" toggle={() => setModal(false)}>
+      <Modal
+        isOpen={modal}
+        className="modal-dialog-centered"
+        size="lg"
+        toggle={() => setModal(false)}
+      >
         <ModalBody>
           <a
             href="#dropdownitem"
@@ -254,7 +260,10 @@ const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
               </li>
             </ul>
             <div className="tab-content">
-              <div className={`tab-pane ${modalTab === "1" ? "active" : ""}`} id="personal">
+              <div
+                className={`tab-pane ${modalTab === "1" ? "active" : ""}`}
+                id="personal"
+              >
                 <Row className="gy-4">
                   <Col md="6">
                     <FormGroup>
@@ -312,14 +321,20 @@ const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
                       <DatePicker
                         selected={new Date(formData.dob)}
                         className="form-control"
-                        onChange={(date) => setFormData({ ...formData, dob: getDateStructured(date) })}
+                        onChange={(date) =>
+                          setFormData({ ...formData, dob: getDateStructured(date) })
+                        }
                         maxDate={new Date()}
                       />
                     </FormGroup>
                   </Col>
                   <Col size="12">
                     <div className="custom-control custom-switch">
-                      <input type="checkbox" className="custom-control-input form-control" id="latest-sale" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input form-control"
+                        id="latest-sale"
+                      />
                       <label className="custom-control-label" htmlFor="latest-sale">
                         Use full name to display{" "}
                       </label>
@@ -355,7 +370,10 @@ const UserProfileRegularPage = ({ sm, updateSm, setProfileName }) => {
                   </Col>
                 </Row>
               </div>
-              <div className={`tab-pane ${modalTab === "2" ? "active" : ""}`} id="address">
+              <div
+                className={`tab-pane ${modalTab === "2" ? "active" : ""}`}
+                id="address"
+              >
                 <Row className="gy-4">
                   <Col md="6">
                     <FormGroup>

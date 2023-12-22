@@ -27,7 +27,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 1,
           to: { user: 8, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "10:00 AM",
           replyMessage: [
@@ -54,7 +57,11 @@ export const inboxList = [
           to: { user: 8, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "10:00 AM",
-          replyMessage: ["okayy", "Please let me know as soon as possible", "Thank you"],
+          replyMessage: [
+            "okayy",
+            "Please let me know as soon as possible",
+            "Thank you",
+          ],
         },
       ],
     },
@@ -95,13 +102,20 @@ export const inboxList = [
           to: { user: 1, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "10:00 AM",
-          replyMessage: ["Hey there", "Our team is working on the issue please wait", "Thank you"],
+          replyMessage: [
+            "Hey there",
+            "Our team is working on the issue please wait",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_3",
           userId: 1,
           to: { user: 5, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "mail-error.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "mail-error.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "10:00 AM",
           replyMessage: ["Thank you"],
@@ -225,7 +239,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 7,
           to: { user: 6 },
-          attachment: [{ fileName: "page-error.jpg" }, { fileName: "new-page-error.jpg" }],
+          attachment: [
+            { fileName: "page-error.jpg" },
+            { fileName: "new-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -265,7 +282,11 @@ export const inboxList = [
           to: { user: 6, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Hello team", "Can you guys provide me with a Promo for tokenListe.", "Thank you"],
+          replyMessage: [
+            "Hello team",
+            "Can you guys provide me with a Promo for tokenListe.",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_2",
@@ -299,10 +320,17 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 8,
           to: { user: 6, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Hello team", "I need to add some content in the tokenPage", "Thank you"],
+          replyMessage: [
+            "Hello team",
+            "I need to add some content in the tokenPage",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_2",
@@ -310,13 +338,20 @@ export const inboxList = [
           to: { user: 8, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Hi", "Can you specify which application you are taking about?", "Thank you"],
+          replyMessage: [
+            "Hi",
+            "Can you specify which application you are taking about?",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_3",
           userId: 8,
           to: { user: 6, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: ["Hello team", "Please check attached files.", "Thank you"],
@@ -342,7 +377,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 1,
           to: { user: 6 },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -363,7 +401,10 @@ export const inboxList = [
           replyId: "rep_3",
           userId: 1,
           to: { user: 6 },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -395,7 +436,11 @@ export const inboxList = [
           to: { user: 3 },
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Hi there", "Just wanted to show our gratitude you for completion of the survey", "Thank you"],
+          replyMessage: [
+            "Hi there",
+            "Just wanted to show our gratitude you for completion of the survey",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_2",
@@ -426,7 +471,11 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 5,
           to: { user: 1 },
-          attachment: [{ fileName: "template1.jpg" }, { fileName: "template2.jpg" }, { fileName: "template3.jpg" }],
+          attachment: [
+            { fileName: "template1.jpg" },
+            { fileName: "template2.jpg" },
+            { fileName: "template3.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -441,7 +490,10 @@ export const inboxList = [
           to: { user: 5 },
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Thank you", "We will fix it right away. However this may take several days"],
+          replyMessage: [
+            "Thank you",
+            "We will fix it right away. However this may take several days",
+          ],
         },
       ],
     },
@@ -468,7 +520,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 6,
           to: { user: 7 },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -558,7 +613,9 @@ export const inboxList = [
           to: { mail: "" },
           date: "14 Jan, 2020",
           time: "05:45 PM",
-          replyMessage: ["I have been facing trouble since yesterday to open my account"],
+          replyMessage: [
+            "I have been facing trouble since yesterday to open my account",
+          ],
         },
       ],
     },
@@ -584,7 +641,9 @@ export const inboxList = [
           to: { mail: "" },
           date: "14 Jan, 2020",
           time: "09:30 AM",
-          replyMessage: ["Thank you for taking our time to mailing your issue, we will go though the problem"],
+          replyMessage: [
+            "Thank you for taking our time to mailing your issue, we will go though the problem",
+          ],
         },
       ],
     },
@@ -656,7 +715,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 7,
           to: { user: 6 },
-          attachment: [{ fileName: "page-error.jpg" }, { fileName: "new-page-error.jpg" }],
+          attachment: [
+            { fileName: "page-error.jpg" },
+            { fileName: "new-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "09:30 AM",
           replyMessage: [
@@ -699,7 +761,10 @@ export const inboxList = [
           replyId: "rep_1",
           userId: 1,
           to: { user: 8, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "error-file.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "error-file.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "10:00 AM",
           replyMessage: [
@@ -726,7 +791,11 @@ export const inboxList = [
           to: { user: 8, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "10:00 AM",
-          replyMessage: ["okayy", "Please let me know as soon as possible", "Thank you"],
+          replyMessage: [
+            "okayy",
+            "Please let me know as soon as possible",
+            "Thank you",
+          ],
         },
       ],
     },
@@ -767,13 +836,20 @@ export const inboxList = [
           to: { user: 1, bcc: "team@softnio.com" },
           date: "14 Jan, 2020",
           time: "10:00 AM",
-          replyMessage: ["Hey there", "Our team is working on the issue please wait", "Thank you"],
+          replyMessage: [
+            "Hey there",
+            "Our team is working on the issue please wait",
+            "Thank you",
+          ],
         },
         {
           replyId: "rep_3",
           userId: 1,
           to: { user: 5, bcc: "team@softnio.com" },
-          attachment: [{ fileName: "mail-error.jpg" }, { fileName: "full-page-error.jpg" }],
+          attachment: [
+            { fileName: "mail-error.jpg" },
+            { fileName: "full-page-error.jpg" },
+          ],
           date: "14 Jan, 2020",
           time: "10:00 AM",
           replyMessage: ["Thank you"],
@@ -895,7 +971,8 @@ export const draftList = [
     meta: {
       time: "07:45 PM",
       subject: "Grateful Reply",
-      message: "Thank you for taking our time to mailing your issue, we will go though the problem",
+      message:
+        "Thank you for taking our time to mailing your issue, we will go though the problem",
       tags: ["Management"],
       checked: false,
     },

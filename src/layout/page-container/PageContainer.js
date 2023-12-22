@@ -1,5 +1,5 @@
-import React,{useEffect, useState} from "react";
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const PageContainer = ({ ...props }) => {
   const [themeState] = useState({
@@ -12,8 +12,8 @@ const PageContainer = ({ ...props }) => {
   useEffect(() => {
     document.body.className = `nk-body bg-lighter npc-default has-sidebar no-touch nk-nio-theme ${
       themeState.skin === "dark" ? "dark-mode" : ""
-    }`
-  },[themeState.skin])
+    }`;
+  }, [themeState.skin]);
 
   return (
     <React.Fragment>
@@ -26,6 +26,6 @@ const PageContainer = ({ ...props }) => {
   );
 };
 PageContainer.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 export default PageContainer;

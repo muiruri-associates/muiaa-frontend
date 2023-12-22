@@ -40,9 +40,14 @@ const DualListPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Dual Listbox is a pure JavaScript plugin that converts the normal select box into a searchable dual list
-                box where the users are able to move options between two selection panels. Visit the{" "}
-                <a href="https://www.npmjs.com/package/react-dual-listbox" target="_blank" rel="noreferrer">
+                Dual Listbox is a pure JavaScript plugin that converts the normal select
+                box into a searchable dual list box where the users are able to move
+                options between two selection panels. Visit the{" "}
+                <a
+                  href="https://www.npmjs.com/package/react-dual-listbox"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React Duallistbox
                 </a>{" "}
                 plugin for further details.
@@ -70,7 +75,8 @@ const DualListPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Custom labels</BlockTitle>
               <BlockDes>
-                Add an <code>icons</code> props to the <code>DualList component</code> to add custom buttons.
+                Add an <code>icons</code> props to the <code>DualList component</code>{" "}
+                to add custom buttons.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -84,12 +90,17 @@ const DualListPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Pre Selected</BlockTitle>
               <BlockDes>
-                Add an <code>selected</code> props to the <code>DualList component</code> to add pre-selected.
+                Add an <code>selected</code> props to the{" "}
+                <code>DualList component</code> to add pre-selected.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
-            <ReactDualList options={options} canFilter={true} preSelected={["1", "2"]} />
+            <ReactDualList
+              options={options}
+              canFilter={true}
+              preSelected={["1", "2"]}
+            />
           </PreviewCard>
         </Block>
 
@@ -98,7 +109,8 @@ const DualListPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Without search</BlockTitle>
               <BlockDes>
-                Remove <code>canFilter</code> props to the <code>DualList component</code> to remove search option.
+                Remove <code>canFilter</code> props to the{" "}
+                <code>DualList component</code> to remove search option.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>

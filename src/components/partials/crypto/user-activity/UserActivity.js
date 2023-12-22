@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Icon from "../../../icon/Icon";
-import { UncontrolledDropdown, CardTitle, DropdownMenu, DropdownItem, DropdownToggle } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  CardTitle,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+} from "reactstrap";
 import { StackedBarChart } from "../../charts/default/Charts";
 
 const UserActivity = () => {
@@ -12,13 +18,21 @@ const UserActivity = () => {
           <CardTitle className="card-title">
             <h6 className="title">User Activities</h6>
             <p>
-              In last In last {userActivity === "day" ? "30 days" : userActivity === "month" ? "3 months" : "15 days"}{" "}
+              In last In last{" "}
+              {userActivity === "day"
+                ? "30 days"
+                : userActivity === "month"
+                  ? "3 months"
+                  : "15 days"}{" "}
               <Icon name="info"></Icon>
             </p>
           </CardTitle>
           <div className="card-tools mt-n1 mr-n1">
             <UncontrolledDropdown>
-              <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+              <DropdownToggle
+                tag="a"
+                className="dropdown-toggle btn btn-icon btn-trigger"
+              >
                 <Icon name="more-h"></Icon>
               </DropdownToggle>
               <DropdownMenu right>
@@ -67,7 +81,11 @@ const UserActivity = () => {
             <div className="info">
               <span className="amount">
                 {" "}
-                {userActivity === "day" ? "345" : userActivity === "month" ? "850" : "50"}
+                {userActivity === "day"
+                  ? "345"
+                  : userActivity === "month"
+                    ? "850"
+                    : "50"}
               </span>
               <span className="title">Direct Join</span>
             </div>
@@ -83,7 +101,14 @@ const UserActivity = () => {
           <div className="user-activity">
             <Icon name="users"></Icon>
             <div className="info">
-              <span className="amount"> {userActivity === "day" ? "49" : userActivity === "month" ? "250" : "10"}</span>
+              <span className="amount">
+                {" "}
+                {userActivity === "day"
+                  ? "49"
+                  : userActivity === "month"
+                    ? "250"
+                    : "10"}
+              </span>
               <span className="title">Referral Join</span>
             </div>
             <div className="gfx">

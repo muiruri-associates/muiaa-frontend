@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
-import React, { useEffect } from 'react';
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import React, { useEffect } from "react";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Icon } from "../../components/Component";
 
 // const history = useHistory();
@@ -20,13 +25,19 @@ import { Icon } from "../../components/Component";
 //     </Button>
 //   );
 // };
-const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableData, MyLeadsDataTableData, setMyLeadsDataTableData }) => {
+const LeadsActionsColumn = ({
+  row,
+  AllLeadsDataTableData,
+  setAllLeadsDataTableData,
+  MyLeadsDataTableData,
+  setMyLeadsDataTableData,
+}) => {
   // const history = useHistory();
 
   const handleApprove = () => {
     if (AllLeadsDataTableData && AllLeadsDataTableData.length > 0) {
       // Find the index of the item to be approved in AllLeadsDataTableData
-      const index = AllLeadsDataTableData.findIndex(item => item.id === row.id);
+      const index = AllLeadsDataTableData.findIndex((item) => item.id === row.id);
 
       if (index !== -1) {
         // Get the selected item from AllLeadsDataTableData
@@ -38,7 +49,7 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
         setAllLeadsDataTableData(updatedAllLeadsData);
 
         // Change the status of the selected item (assuming 'status' is the property to be changed)
-        selectedLead.status = 'Approved'; // Change status to 'Approved' or any other value
+        selectedLead.status = "Approved"; // Change status to 'Approved' or any other value
 
         // Add the selected item with updated status to MyLeadsDataTableData
         setMyLeadsDataTableData([...MyLeadsDataTableData, selectedLead]);
@@ -47,21 +58,21 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
   };
 
   useEffect(() => {
-    console.log('MyLeadsDataTableData updated:', MyLeadsDataTableData);
+    console.log("MyLeadsDataTableData updated:", MyLeadsDataTableData);
   }, [MyLeadsDataTableData]);
 
   return (
     <UncontrolledDropdown>
-      <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+      <DropdownToggle
+        tag="a"
+        className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+      >
         <Icon name="more-h"></Icon>
       </DropdownToggle>
       <DropdownMenu right>
         <ul className="link-list-plain">
           <li>
-            <DropdownItem
-              tag="a"
-              href={'/loan/${row}.id'}
-            >
+            <DropdownItem tag="a" href={"/loan/${row}.id"}>
               View
             </DropdownItem>
           </li>
@@ -97,15 +108,15 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
 LeadsActionsColumn.propTypes = {
   AllLeadsDataTableData: PropTypes.shape({
     findIndex: PropTypes.func,
-    length: PropTypes.number
+    length: PropTypes.number,
   }),
   MyLeadsDataTableData: PropTypes.any,
   row: PropTypes.shape({
-    id: PropTypes.any
+    id: PropTypes.any,
   }),
   setAllLeadsDataTableData: PropTypes.func,
-  setMyLeadsDataTableData: PropTypes.func
-}
+  setMyLeadsDataTableData: PropTypes.func,
+};
 
 // columns
 export const dataTableColumns = [
@@ -198,7 +209,6 @@ export const AllLeadsdataTableColumns = [
   },
 ];
 
-
 export const MyLeadsDataTableData = [
   {
     id: 1,
@@ -208,7 +218,7 @@ export const MyLeadsDataTableData = [
     rating: 5,
     status: "pending",
   },
-]
+];
 // Data
 // export const MyLeadsDataTableData = [
 //   {
@@ -422,7 +432,6 @@ export const MyLeadsDataTableData = [
 //     status: "disbursed",
 //   },
 // ];
-
 
 export const AllLeadsDataTableData = [
   {

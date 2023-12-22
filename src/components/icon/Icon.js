@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import React from "react";
 
@@ -17,5 +17,5 @@ Icon.propTypes = {
   id: PropTypes.any,
   name: PropTypes.any,
   style: PropTypes.any,
-}
+};
 export default Icon;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { Document, Page, pdfjs} from 'react-pdf';
-import { Button, Modal, ModalBody, } from "reactstrap";
+import { Button, Modal, ModalBody } from "reactstrap";
 
 const UserDocumentsTable = () => {
   const [modal, setModal] = useState(false);
@@ -38,14 +38,10 @@ const UserDocumentsTable = () => {
         <tbody className="tb-odr-body">
           <tr className="tb-odr-item">
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                ID Front
-              </span>
+              <span className="tb-odr-id">ID Front</span>
             </td>
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                ID_FRONT.pdf
-              </span>
+              <span className="tb-odr-id">ID_FRONT.pdf</span>
             </td>
             <td className="tb-odr-action">
               <Button color="primary" className="btn-sm" onClick={() => setModal(true)}>
@@ -55,14 +51,10 @@ const UserDocumentsTable = () => {
           </tr>
           <tr className="tb-odr-item">
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                ID Back
-              </span>
+              <span className="tb-odr-id">ID Back</span>
             </td>
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                ID_BACK.pdf
-              </span>
+              <span className="tb-odr-id">ID_BACK.pdf</span>
             </td>
             <td className="tb-odr-action">
               <Button color="primary" className="btn-sm">
@@ -72,14 +64,10 @@ const UserDocumentsTable = () => {
           </tr>
           <tr className="tb-odr-item">
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                MPESA Statement
-              </span>
+              <span className="tb-odr-id">MPESA Statement</span>
             </td>
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                MPESA.pdf
-              </span>
+              <span className="tb-odr-id">MPESA.pdf</span>
             </td>
             <td className="tb-odr-action">
               <Button color="primary" className="btn-sm">
@@ -89,14 +77,10 @@ const UserDocumentsTable = () => {
           </tr>
           <tr className="tb-odr-item">
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                KRA PIN
-              </span>
+              <span className="tb-odr-id">KRA PIN</span>
             </td>
             <td className="tb-odr-info">
-              <span className="tb-odr-id">
-                KRA_PIN.pdf
-              </span>
+              <span className="tb-odr-id">KRA_PIN.pdf</span>
             </td>
             <td className="tb-odr-action">
               <div className="tb-odr-btns d-none d-md-inline">
@@ -108,7 +92,12 @@ const UserDocumentsTable = () => {
           </tr>
         </tbody>
       </table>
-      <Modal isOpen={modal} className="modal-dialog-centered" size="lg" toggle={() => setModal(false)}>
+      <Modal
+        isOpen={modal}
+        className="modal-dialog-centered"
+        size="lg"
+        toggle={() => setModal(false)}
+      >
         <ModalBody>
           <div>
             {/* <Document file="../../assets/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>

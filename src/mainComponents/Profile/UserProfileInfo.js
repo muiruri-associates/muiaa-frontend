@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Head from "../../layout/head/Head";
 import DatePicker from "react-datepicker";
@@ -22,7 +22,6 @@ const UserProfileInfo = ({ sm, updateSm }) => {
   // const [userInfo, setUserInfo] = useState(userData[0]);
   const [modal, setModal] = useState(false);
 
-
   return (
     <React.Fragment>
       <Head title="User List - Profile"></Head>
@@ -31,7 +30,9 @@ const UserProfileInfo = ({ sm, updateSm }) => {
           <BlockHeadContent>
             <BlockTitle tag="h4">Personal Information</BlockTitle>
             <BlockDes>
-              <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+              <p>
+                Basic info, like your name and address, that you use on Nio Platform.
+              </p>
             </BlockDes>
           </BlockHeadContent>
           <BlockHeadContent className="align-self-start d-lg-none">
@@ -179,7 +180,12 @@ const UserProfileInfo = ({ sm, updateSm }) => {
         </div>
       </Block>
 
-      <Modal isOpen={modal} className="modal-dialog-centered" size="lg" toggle={() => setModal(false)}>
+      <Modal
+        isOpen={modal}
+        className="modal-dialog-centered"
+        size="lg"
+        toggle={() => setModal(false)}
+      >
         <ModalBody>
           <a
             href="#dropdownitem"
@@ -220,7 +226,10 @@ const UserProfileInfo = ({ sm, updateSm }) => {
               </li>
             </ul>
             <div className="tab-content">
-              <div className={`tab-pane ${modalTab === "1" ? "active" : ""}`} id="personal">
+              <div
+                className={`tab-pane ${modalTab === "1" ? "active" : ""}`}
+                id="personal"
+              >
                 <Row className="gy-4">
                   <Col md="6">
                     <FormGroup>
@@ -275,14 +284,16 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                       <label className="form-label" htmlFor="birth-day">
                         Date of Birth
                       </label>
-                      <DatePicker
-                        className="form-control"
-                      />
+                      <DatePicker className="form-control" />
                     </FormGroup>
                   </Col>
                   <Col size="12">
                     <div className="custom-control custom-switch">
-                      <input type="checkbox" className="custom-control-input form-control" id="latest-sale" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input form-control"
+                        id="latest-sale"
+                      />
                       <label className="custom-control-label" htmlFor="latest-sale">
                         Use full name to display{" "}
                       </label>
@@ -318,7 +329,10 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                   </Col>
                 </Row>
               </div>
-              <div className={`tab-pane ${modalTab === "2" ? "active" : ""}`} id="address">
+              <div
+                className={`tab-pane ${modalTab === "2" ? "active" : ""}`}
+                id="address"
+              >
                 <Row className="gy-4">
                   <Col md="6">
                     <FormGroup>
@@ -373,7 +387,6 @@ const UserProfileInfo = ({ sm, updateSm }) => {
                       <RSelect
                         // options={countryOptions}
                         placeholder="Select a country"
-                        
                       />
                     </FormGroup>
                   </Col>
@@ -411,6 +424,6 @@ const UserProfileInfo = ({ sm, updateSm }) => {
 
 UserProfileInfo.propTypes = {
   sm: PropTypes.any,
-  updateSm: PropTypes.func
-}
+  updateSm: PropTypes.func,
+};
 export default UserProfileInfo;

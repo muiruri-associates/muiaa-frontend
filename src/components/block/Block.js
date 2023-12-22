@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import Icon from "../icon/Icon";
 import classNames from "classnames";
@@ -16,8 +16,8 @@ export const Block = ({ className, size, ...props }) => {
 Block.propTypes = {
   className: PropTypes.any,
   size: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export const BlockContent = ({ className, ...props }) => {
   const blockContentClass = classNames({
     "nk-block-content": true,
@@ -28,17 +28,21 @@ export const BlockContent = ({ className, ...props }) => {
 
 BlockContent.propTypes = {
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const BlockBetween = ({ className, ...props }) => {
-  return <div className={`nk-block-between ${className ? className : ""}`}>{props.children}</div>;
+  return (
+    <div className={`nk-block-between ${className ? className : ""}`}>
+      {props.children}
+    </div>
+  );
 };
 
 BlockBetween.propTypes = {
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const BlockHead = ({ className, size, wide, ...props }) => {
   const blockHeadClass = classNames({
@@ -54,18 +58,26 @@ BlockHead.propTypes = {
   className: PropTypes.any,
   size: PropTypes.any,
   wide: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export const BlockHeadContent = ({ className, ...props }) => {
-  return <div className={[`nk-block-head-content${className ? " " + className : ""}`]}>{props.children}</div>;
+  return (
+    <div className={[`nk-block-head-content${className ? " " + className : ""}`]}>
+      {props.children}
+    </div>
+  );
 };
 
 BlockHeadContent.propTypes = {
   className: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export const BlockTitle = ({ className, page, ...props }) => {
-  const classes = [`nk-block-title ${page ? "page-title" : "title"}${className ? " " + className : ""}`];
+  const classes = [
+    `nk-block-title ${page ? "page-title" : "title"}${
+      className ? " " + className : ""
+    }`,
+  ];
   return (
     <React.Fragment>
       {!props.tag ? (
@@ -81,8 +93,8 @@ BlockTitle.propTypes = {
   className: PropTypes.any,
   page: PropTypes.any,
   children: PropTypes.any,
-  tag: PropTypes.string
-}
+  tag: PropTypes.string,
+};
 export const BlockDes = ({ className, ...props }) => {
   const classes = [`nk-block-des${className ? " " + className : ""}`];
   return <div className={classes}>{props.children}</div>;
@@ -91,8 +103,8 @@ export const BlockDes = ({ className, ...props }) => {
 BlockDes.propTypes = {
   className: PropTypes.any,
   page: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const BackTo = ({ className, link, icon, ...props }) => {
   const classes = [`back-to${className ? " " + className : ""}`];
@@ -110,5 +122,5 @@ BackTo.propTypes = {
   className: PropTypes.any,
   icon: PropTypes.any,
   link: PropTypes.any,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};

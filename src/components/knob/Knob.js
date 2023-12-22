@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
@@ -31,7 +31,7 @@ const Knob = ({ data, type, centerText }) => {
 Knob.propTypes = {
   centerText: PropTypes.any,
   data: PropTypes.any,
-  type: PropTypes.string
-}
+  type: PropTypes.string,
+};
 
 export default Knob;

@@ -4,7 +4,14 @@ import Head from "../../layout/head/Head";
 import Icon from "../../components/icon/Icon";
 
 import { Row, Col, Button } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 import { OverlineTitle } from "../../components/text/Text";
 
@@ -23,10 +30,17 @@ const ButtonsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Documentation and examples of button styles for actions in forms, dialogs and more with support for
-                multiple sizes, states, and more. To use it, import it such as{" "}
+                Documentation and examples of button styles for actions in forms,
+                dialogs and more with support for multiple sizes, states, and more. To
+                use it, import it such as{" "}
                 <code>import {`{Button}`} from &quot;reactstrap&quot;</code>. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/buttons"} target="_blank" rel="noreferrer">
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/buttons"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -40,8 +54,8 @@ const ButtonsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Example with Variations</BlockTitle>
               <p>
-                Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a few
-                extras thrown in for more control.
+                Bootstrap includes several predefined button styles, each serving its
+                own semantic purpose, with a few extras thrown in for more control.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -97,7 +111,9 @@ const ButtonsPage = () => {
               </Col>
             </Row>
           </PreviewCard>
-          <CodeBlock language="jsx">&lt;Button color=&quot;primary&quot;&gt;Primary&lt;/Button&gt;</CodeBlock>
+          <CodeBlock language="jsx">
+            &lt;Button color=&quot;primary&quot;&gt;Primary&lt;/Button&gt;
+          </CodeBlock>
           <PreviewCard>
             <Row className="g-4">
               <Col xs="6" md="3">
@@ -235,7 +251,9 @@ const ButtonsPage = () => {
               </Col>
             </Row>
           </PreviewCard>
-          <CodeBlock language="jsx">&lt;Button outline color=&quot;primary&quot;&gt;Primary&lt;/Button&gt;</CodeBlock>
+          <CodeBlock language="jsx">
+            &lt;Button outline color=&quot;primary&quot;&gt;Primary&lt;/Button&gt;
+          </CodeBlock>
           <PreviewCard>
             <Row className="g-4">
               <Col xs="6" md="3">
@@ -340,7 +358,8 @@ const ButtonsPage = () => {
             </ul>
           </PreviewCard>
           <CodeBlock language="jsx">
-            &lt;Button color=&quot;primary&quot; size=&quot;xl&quot;&gt;Primary&lt;/Button&gt;
+            &lt;Button color=&quot;primary&quot;
+            size=&quot;xl&quot;&gt;Primary&lt;/Button&gt;
           </CodeBlock>
           <PreviewCard>
             <ul className="preview-btn-list preview-btn-list-fw">
@@ -379,7 +398,8 @@ const ButtonsPage = () => {
             </ul>
           </PreviewCard>
           <CodeBlock language="jsx">
-            &lt;Button color=&quot;primary&quot; size=&quot;xl&quot;&gt;Primary&lt;/Button&gt;
+            &lt;Button color=&quot;primary&quot;
+            size=&quot;xl&quot;&gt;Primary&lt;/Button&gt;
           </CodeBlock>
           <PreviewCard>
             <ul className="preview-btn-list preview-btn-list-fw">

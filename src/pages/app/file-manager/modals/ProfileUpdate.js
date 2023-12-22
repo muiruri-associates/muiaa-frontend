@@ -6,13 +6,13 @@ import { ModalBody, FormGroup, Button } from "reactstrap";
 import { getDateStructured } from "../../../../utils/Utils";
 import { selectDateFormat, selectLanguageOptions, selectTimezoneFormat } from "../Data";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 ProfileUpdate.propTypes = {
   formData: PropTypes.object,
   setFormData: PropTypes.func,
-  setModal: PropTypes.func
-}
+  setModal: PropTypes.func,
+};
 const ProfileUpdate = ({ formData, setFormData, setModal }) => {
   const submitForm = (formVal) => {
     let newForm = {
@@ -79,7 +79,9 @@ const ProfileUpdate = ({ formData, setFormData, setModal }) => {
                     defaultValue={formData.displayName}
                     placeholder="Enter display name"
                   />
-                  {errors.displayName && <p className="invalid">This field is required</p>}
+                  {errors.displayName && (
+                    <p className="invalid">This field is required</p>
+                  )}
                 </FormGroup>
               </Col>
               <Col md="6">
@@ -135,7 +137,9 @@ const ProfileUpdate = ({ formData, setFormData, setModal }) => {
                   <DatePicker
                     selected={new Date(formData.dob)}
                     className="form-control"
-                    onChange={(date) => setFormData({ ...formData, dob: getDateStructured(date) })}
+                    onChange={(date) =>
+                      setFormData({ ...formData, dob: getDateStructured(date) })
+                    }
                     maxDate={new Date()}
                   />
                 </FormGroup>

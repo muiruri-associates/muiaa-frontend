@@ -49,8 +49,13 @@ const FormUpload = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Examples and usage guidelines for form upload fields with default file input type and with{" "}
-                <a href="https://react-dropzone.js.org/" target="_blank" rel="noreferrer">
+                Examples and usage guidelines for form upload fields with default file
+                input type and with{" "}
+                <a
+                  href="https://react-dropzone.js.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {" "}
                   Dropzone{" "}
                 </a>
@@ -99,7 +104,10 @@ const FormUpload = () => {
                         id="customMultipleFiles"
                         onChange={(e) => setDefaultFiles2(e.target.files[0].name)}
                       />
-                      <label className="custom-file-label" htmlFor="customMultipleFiles">
+                      <label
+                        className="custom-file-label"
+                        htmlFor="customMultipleFiles"
+                      >
                         {defaultFiles2 === "" ? "Choose files" : defaultFiles2}
                       </label>
                     </div>
@@ -130,12 +138,20 @@ const FormUpload = () => {
               <BlockTitle tag="h5">Dropzone</BlockTitle>
               <p>
                 File Upload system with
-                <a href="https://react-dropzone.js.org/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://react-dropzone.js.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {" "}
                   Dropzone{" "}
                 </a>
                 , for more detailed documentation, visit{" "}
-                <a href="https://react-dropzone.js.org/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://react-dropzone.js.org/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {" "}
                   React Dropzone{" "}
                 </a>
@@ -147,10 +163,15 @@ const FormUpload = () => {
             <Row className="g-4">
               <Col sm="6">
                 <label className="form-label">Dropzone Default</label>
-                <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles)}>
+                <Dropzone
+                  onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles)}
+                >
                   {({ getRootProps, getInputProps }) => (
                     <section>
-                      <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                      <div
+                        {...getRootProps()}
+                        className="dropzone upload-zone dz-clickable"
+                      >
                         <input {...getInputProps()} />
                         {files.length === 0 && (
                           <div className="dz-message">
@@ -176,10 +197,16 @@ const FormUpload = () => {
               </Col>
               <Col sm="6">
                 <label className="form-label">Dropzone Single File</label>
-                <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles2)} maxFiles={1}>
+                <Dropzone
+                  onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles2)}
+                  maxFiles={1}
+                >
                   {({ getRootProps, getInputProps }) => (
                     <section>
-                      <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                      <div
+                        {...getRootProps()}
+                        className="dropzone upload-zone dz-clickable"
+                      >
                         <input {...getInputProps()} />
                         {files2.length === 0 && (
                           <div className="dz-message">
@@ -205,10 +232,16 @@ const FormUpload = () => {
               </Col>
               <Col sm="6">
                 <label className="form-label">Dropzone File Size Limit</label>
-                <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles3)} maxSize={4194304}>
+                <Dropzone
+                  onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFiles3)}
+                  maxSize={4194304}
+                >
                   {({ getRootProps, getInputProps }) => (
                     <section>
-                      <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                      <div
+                        {...getRootProps()}
+                        className="dropzone upload-zone dz-clickable"
+                      >
                         <input {...getInputProps()} />
                         {files3.length === 0 && (
                           <div className="dz-message">
@@ -240,7 +273,10 @@ const FormUpload = () => {
                 >
                   {({ getRootProps, getInputProps }) => (
                     <section>
-                      <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                      <div
+                        {...getRootProps()}
+                        className="dropzone upload-zone dz-clickable"
+                      >
                         <input {...getInputProps()} />
                         {files4.length === 0 && (
                           <div className="dz-message">
@@ -324,7 +360,8 @@ const handleDropChange = (acceptedFiles) => {
                   <code>maxFiles={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>maxFiles</code> props to specify file limit in react dropzone{" "}
+                  Use <code>{`{number}`}</code> with <code>maxFiles</code> props to
+                  specify file limit in react dropzone{" "}
                 </td>
               </tr>
               <tr>
@@ -332,17 +369,20 @@ const handleDropChange = (acceptedFiles) => {
                   <code>maxSize={`{size}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{size}`}</code> with <code>maxSize</code> props to specify file size (bytes) limit in
-                  react dropzone{" "}
+                  Use <code>{`{size}`}</code> with <code>maxSize</code> props to specify
+                  file size (bytes) limit in react dropzone{" "}
                 </td>
               </tr>
               <tr>
                 <td>
-                  <code>acceptedFiles=[&quot;.jpg&quot;, &quot;.png&quot;, &quot;.svg&quot;]</code>
+                  <code>
+                    acceptedFiles=[&quot;.jpg&quot;, &quot;.png&quot;, &quot;.svg&quot;]
+                  </code>
                 </td>
                 <td>
-                  Use <code>{`{fileType}`}</code> with <code>acceptedFiles</code> props as{" "}
-                  <code>image/*, .docx, .psd, .txt</code> etc in a array of strings to specify accepted file types.
+                  Use <code>{`{fileType}`}</code> with <code>acceptedFiles</code> props
+                  as <code>image/*, .docx, .psd, .txt</code> etc in a array of strings
+                  to specify accepted file types.
                 </td>
               </tr>
             </tbody>

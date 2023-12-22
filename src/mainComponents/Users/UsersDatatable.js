@@ -15,7 +15,7 @@ import {
 import { usersColumns } from "./UserData";
 import { Link } from "react-router-dom";
 
-import {fetchUsers} from "../../redux/actions/usersActions";
+import { fetchUsers } from "../../redux/actions/usersActions";
 
 const UsersDatatable = () => {
   const dispatch = useDispatch();
@@ -58,11 +58,14 @@ const UsersDatatable = () => {
         <Block size="lg">
           <PreviewCard>
             {user.loading && <div>Loading...</div>}
-            {!user.loading && user.error ? (
-              <div>Error: {user.error}</div>
-            ) : null}
+            {!user.loading && user.error ? <div>Error: {user.error}</div> : null}
             {!user.loading && user.users?.length ? (
-              <ReactDataTable data={user.users} columns={usersColumns} pagination actions />
+              <ReactDataTable
+                data={user.users}
+                columns={usersColumns}
+                pagination
+                actions
+              />
             ) : (
               <div>No user found.</div>
             )}

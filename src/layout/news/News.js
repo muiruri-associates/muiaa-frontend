@@ -10,7 +10,7 @@ const News = () => {
         </div>
         <div className="nk-news-text">
           <p>
-           Latest News From <span> Muiruri Associates</span>
+            Latest News From <span> Muiruri Associates</span>
           </p>
           <Icon name="external" />
         </div>

@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import { Icon } from "../../Component";
 
@@ -13,7 +13,9 @@ const OutlinedInput = ({ label, size, id, icon }) => {
       )}
       <input
         type="text"
-        className={`form-control-outlined form-control ${size ? `form-control-${size}` : ""}`}
+        className={`form-control-outlined form-control ${
+          size ? `form-control-${size}` : ""
+        }`}
         id={id}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
@@ -29,7 +31,7 @@ OutlinedInput.propTypes = {
   icon: PropTypes.any,
   id: PropTypes.any,
   label: PropTypes.any,
-  size: PropTypes.any
-}
+  size: PropTypes.any,
+};
 
 export default OutlinedInput;

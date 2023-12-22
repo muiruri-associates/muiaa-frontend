@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const SpacingPage = () => {
@@ -19,8 +26,9 @@ const SpacingPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                A wide range of shorthand responsive margin and padding utility classNames to modify an element’s
-                appearance. Mostly use for cards, buttons, or any other element.
+                A wide range of shorthand responsive margin and padding utility
+                classNames to modify an element’s appearance. Mostly use for cards,
+                buttons, or any other element.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -75,7 +83,9 @@ const SpacingPage = () => {
               </tr>
               <tr>
                 <td colSpan="3">
-                  <em className="fs-13px">Note: Base font size is 16px and 1rem equal to 16px</em>
+                  <em className="fs-13px">
+                    Note: Base font size is 16px and 1rem equal to 16px
+                  </em>
                 </td>
               </tr>
             </tbody>
@@ -126,7 +136,9 @@ const SpacingPage = () => {
                   <code>.mb-{"{size}"}</code>
                 </td>
                 <td>0 | 1 | 2 | 3 | 4 | 5 | gs | auto</td>
-                <td className="text-soft">Apply margin on specific side of the element</td>
+                <td className="text-soft">
+                  Apply margin on specific side of the element
+                </td>
               </tr>
               <tr>
                 <td>
@@ -163,9 +175,10 @@ const SpacingPage = () => {
               <tr>
                 <td colSpan="3">
                   <em className="fs-13px">
-                    <code>{"{screen}"}</code> related with breakpoint and apply from the <code>{"{screen}"}</code> you
-                    have use. For example, <code>.m-sm-2</code> sets margin on <code>sm</code> screen and continue to
-                    above screens.
+                    <code>{"{screen}"}</code> related with breakpoint and apply from the{" "}
+                    <code>{"{screen}"}</code> you have use. For example,{" "}
+                    <code>.m-sm-2</code> sets margin on <code>sm</code> screen and
+                    continue to above screens.
                   </em>
                 </td>
               </tr>
@@ -234,7 +247,9 @@ const SpacingPage = () => {
                   <code>.pb-{"{size}"}</code>
                 </td>
                 <td>0 | 1 | 2 | 3 | 4 | 5 | gs | auto</td>
-                <td className="text-soft">Apply padding on specific side of the element</td>
+                <td className="text-soft">
+                  Apply padding on specific side of the element
+                </td>
               </tr>
               <tr>
                 <td>
@@ -271,9 +286,10 @@ const SpacingPage = () => {
               <tr>
                 <td colSpan="3">
                   <em className="fs-13px">
-                    <code>{"{screen}"}</code> related with breakpoint and will apply from the <code>{"{screen}"}</code>{" "}
-                    to above. For example, <code>.m-sm-2</code> sets padding on <code>sm</code> screen and continue to
-                    above screens.
+                    <code>{"{screen}"}</code> related with breakpoint and will apply
+                    from the <code>{"{screen}"}</code> to above. For example,{" "}
+                    <code>.m-sm-2</code> sets padding on <code>sm</code> screen and
+                    continue to above screens.
                   </em>
                 </td>
               </tr>
@@ -290,7 +306,10 @@ const SpacingPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Gaps classNames</BlockTitle>
-              <p>The gap classNames allow to set specific gap between to section or block.</p>
+              <p>
+                The gap classNames allow to set specific gap between to section or
+                block.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
@@ -352,7 +371,8 @@ const SpacingPage = () => {
                   <code>.gap-{"{num}"}px</code>
                 </td>
                 <td>
-                  <code>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</code> use as <code>{"{num}"}</code> value
+                  <code>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</code> use as{" "}
+                  <code>{"{num}"}</code> value
                 </td>
                 <td>
                   <span className="fs-11px text-soft">Fixed in pixel</span>

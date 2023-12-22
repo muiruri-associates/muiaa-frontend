@@ -29,7 +29,10 @@ const NumberSpinner = () => {
               Number Spinner
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Examples and usage guidelines for number spinner with basic number type input.</p>
+              <p className="lead">
+                Examples and usage guidelines for number spinner with basic number type
+                input.
+              </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -38,7 +41,10 @@ const NumberSpinner = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Number Spinner</BlockTitle>
-              <p>With number spinner component you can use min, max, step and many other props.</p>
+              <p>
+                With number spinner component you can use min, max, step and many other
+                props.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -58,12 +64,20 @@ const NumberSpinner = () => {
               <Col sm="6">
                 <div className="form-group">
                   <label className="form-label">Number Spinner Min Max (15-80)</label>
-                  <NSComponent defaultVal={20} color="light" outline max={80} min={15} />
+                  <NSComponent
+                    defaultVal={20}
+                    color="light"
+                    outline
+                    max={80}
+                    min={15}
+                  />
                 </div>
               </Col>
               <Col sm="6">
                 <div className="form-group">
-                  <label className="form-label">Number Spinner with Primary Button</label>
+                  <label className="form-label">
+                    Number Spinner with Primary Button
+                  </label>
                   <NSComponent defaultVal={20} color="primary" />
                 </div>
               </Col>
@@ -88,7 +102,8 @@ const NumberSpinner = () => {
                   <code>max={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>max</code> props to specify the max limit for the input.
+                  Use <code>{`{number}`}</code> with <code>max</code> props to specify
+                  the max limit for the input.
                 </td>
               </tr>
               <tr>
@@ -96,7 +111,8 @@ const NumberSpinner = () => {
                   <code>min={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>min</code> props to specify the min limit for the input.
+                  Use <code>{`{number}`}</code> with <code>min</code> props to specify
+                  the min limit for the input.
                 </td>
               </tr>
               <tr>
@@ -104,8 +120,8 @@ const NumberSpinner = () => {
                   <code>step={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>step</code> props to specify the number with which to
-                  increament or decreament.
+                  Use <code>{`{number}`}</code> with <code>step</code> props to specify
+                  the number with which to increament or decreament.
                 </td>
               </tr>
               <tr>
@@ -113,8 +129,8 @@ const NumberSpinner = () => {
                   <code>outline={`{boolean}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{boolean}`}</code> with <code>outline</code> props to specify if outline on button is
-                  needed.
+                  Use <code>{`{boolean}`}</code> with <code>outline</code> props to
+                  specify if outline on button is needed.
                 </td>
               </tr>
               <tr>
@@ -122,7 +138,8 @@ const NumberSpinner = () => {
                   <code>color={`{color}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{color}`}</code> with <code>color</code> props to specify the color of the button.
+                  Use <code>{`{color}`}</code> with <code>color</code> props to specify
+                  the color of the button.
                 </td>
               </tr>
               <tr>
@@ -130,8 +147,8 @@ const NumberSpinner = () => {
                   <code>defaultVal={`{number}`}</code>
                 </td>
                 <td>
-                  Use <code>{`{number}`}</code> with <code>defaultVal</code> props to specify any default value of the
-                  input.
+                  Use <code>{`{number}`}</code> with <code>defaultVal</code> props to
+                  specify any default value of the input.
                 </td>
               </tr>
             </tbody>

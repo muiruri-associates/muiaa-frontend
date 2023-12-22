@@ -5,7 +5,14 @@ import Icon from "../../components/icon/Icon";
 import classnames from "classnames";
 
 import { Nav, NavItem, NavLink, Row, Col, TabContent, TabPane } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const TabsPage = () => {
@@ -38,9 +45,13 @@ const TabsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Use the Reactstrap tab component, tabs and pills to create tabbable panes of local content, even via
-                dropdown menus. To use it, import it such as{" "}
-                <code>import {`{Nav, NavItem, NavLink, TabContent, TabPane }`}from &ldquo;reactstrap&ldquo;</code>
+                Use the Reactstrap tab component, tabs and pills to create tabbable
+                panes of local content, even via dropdown menus. To use it, import it
+                such as{" "}
+                <code>
+                  import {`{Nav, NavItem, NavLink, TabContent, TabPane }`}from
+                  &ldquo;reactstrap&ldquo;
+                </code>
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -51,9 +62,16 @@ const TabsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Examples</BlockTitle>
               <p>
-                You can simply activate a tab or pill navigation, add <code>tabs</code> or <code>pills</code> props to{" "}
-                <code>Nav</code> component. Here is some basic tab component that you can use. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/tabs"} target="_blank" rel="noreferrer">
+                You can simply activate a tab or pill navigation, add <code>tabs</code>{" "}
+                or <code>pills</code> props to <code>Nav</code> component. Here is some
+                basic tab component that you can use. Visit the{" "}
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/tabs"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -118,36 +136,42 @@ const TabsPage = () => {
             <TabContent activeTab={activeTab}>
               <TabPane tabId="1">
                 <p>
-                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                  incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat
-                  quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate
-                  minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea
-                  incid.
+                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim
+                  Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur
+                  laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et
+                  velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat
+                  commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non
+                  laborum enim et cillum eu deserunt excepteur ea incid.
                 </p>
               </TabPane>
               <TabPane tabId="2">
                 <p>
-                  Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
-                  magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
-                  ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                  labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do
-                  sint minim consectetur qui.
+                  Culpa dolor voluptate do laboris laboris irure reprehenderit id
+                  incididunt duis pariatur mollit aute magna pariatur consectetur. Eu
+                  veniam duis non ut dolor deserunt commodo et minim in quis laboris
+                  ipsum velit id veniam. Quis ut consectetur adipisicing officia
+                  excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco
+                  mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod
+                  do sint minim consectetur qui.
                 </p>
               </TabPane>
               <TabPane tabId="3">
                 <p>
-                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                  laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                  Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna
-                  commodo est ea veniam consectetur.
+                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor
+                  aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem
+                  veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et
+                  et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem
+                  aliquip labore est magna commodo est ea veniam consectetur.
                 </p>
               </TabPane>
               <TabPane tabId="4">
                 <p>
-                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                  proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua
-                  amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa
-                  ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit
+                  consectetur elit id dolor proident in cupidatat officia. Voluptate
+                  excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui
+                  mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem
+                  deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit
+                  nisi in aute tempor commodo eiusmod.
                 </p>
               </TabPane>
             </TabContent>
@@ -236,8 +260,9 @@ const TabsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">With Icon</BlockTitle>
               <p>
-                You can simply activate a tab or pill navigation, add <code>tabs</code> or <code>pills</code> props to{" "}
-                <code>Nav</code> component. Here is some basic tab component that you can use.
+                You can simply activate a tab or pill navigation, add <code>tabs</code>{" "}
+                or <code>pills</code> props to <code>Nav</code> component. Here is some
+                basic tab component that you can use.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -299,36 +324,42 @@ const TabsPage = () => {
             <TabContent activeTab={activeIconTab}>
               <TabPane tabId="5">
                 <p>
-                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                  incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat
-                  quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate
-                  minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea
-                  incid.
+                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim
+                  Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur
+                  laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et
+                  velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat
+                  commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non
+                  laborum enim et cillum eu deserunt excepteur ea incid.
                 </p>
               </TabPane>
               <TabPane tabId="6">
                 <p>
-                  Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
-                  magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
-                  ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                  labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do
-                  sint minim consectetur qui.
+                  Culpa dolor voluptate do laboris laboris irure reprehenderit id
+                  incididunt duis pariatur mollit aute magna pariatur consectetur. Eu
+                  veniam duis non ut dolor deserunt commodo et minim in quis laboris
+                  ipsum velit id veniam. Quis ut consectetur adipisicing officia
+                  excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco
+                  mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod
+                  do sint minim consectetur qui.
                 </p>
               </TabPane>
               <TabPane tabId="7">
                 <p>
-                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                  laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                  Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna
-                  commodo est ea veniam consectetur.
+                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor
+                  aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem
+                  veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et
+                  et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem
+                  aliquip labore est magna commodo est ea veniam consectetur.
                 </p>
               </TabPane>
               <TabPane tabId="8">
                 <p>
-                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                  proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua
-                  amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa
-                  ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit
+                  consectetur elit id dolor proident in cupidatat officia. Voluptate
+                  excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui
+                  mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem
+                  deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit
+                  nisi in aute tempor commodo eiusmod.
                 </p>
               </TabPane>
             </TabContent>
@@ -418,8 +449,8 @@ const TabsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Alternet Tab style</BlockTitle>
               <p>
-                You can simply activate add <code>.nav-tabs-s2</code> className in <code>Nav</code> component to make an
-                alternet styled tab.
+                You can simply activate add <code>.nav-tabs-s2</code> className in{" "}
+                <code>Nav</code> component to make an alternet styled tab.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -481,36 +512,42 @@ const TabsPage = () => {
             <TabContent activeTab={activeAltTab}>
               <TabPane tabId="9">
                 <p>
-                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                  incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat
-                  quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate
-                  minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea
-                  incid.
+                  Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim
+                  Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur
+                  laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et
+                  velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat
+                  commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non
+                  laborum enim et cillum eu deserunt excepteur ea incid.
                 </p>
               </TabPane>
               <TabPane tabId="10">
                 <p>
-                  Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute
-                  magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris
-                  ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip
-                  labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do
-                  sint minim consectetur qui.
+                  Culpa dolor voluptate do laboris laboris irure reprehenderit id
+                  incididunt duis pariatur mollit aute magna pariatur consectetur. Eu
+                  veniam duis non ut dolor deserunt commodo et minim in quis laboris
+                  ipsum velit id veniam. Quis ut consectetur adipisicing officia
+                  excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco
+                  mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod
+                  do sint minim consectetur qui.
                 </p>
               </TabPane>
               <TabPane tabId="11">
                 <p>
-                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                  laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                  Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna
-                  commodo est ea veniam consectetur.
+                  Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor
+                  aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem
+                  veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et
+                  et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem
+                  aliquip labore est magna commodo est ea veniam consectetur.
                 </p>
               </TabPane>
               <TabPane tabId="12">
                 <p>
-                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                  proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua
-                  amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa
-                  ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                  Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit
+                  consectetur elit id dolor proident in cupidatat officia. Voluptate
+                  excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui
+                  mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem
+                  deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit
+                  nisi in aute tempor commodo eiusmod.
                 </p>
               </TabPane>
             </TabContent>
@@ -600,8 +637,8 @@ const TabsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Veritcal Tab style</BlockTitle>
               <p>
-                You can simply activate add <code>.link-list-menu</code> className in <code>Nav</code> component to make
-                a vertical styled tab.
+                You can simply activate add <code>.link-list-menu</code> className in{" "}
+                <code>Nav</code> component to make a vertical styled tab.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -663,63 +700,80 @@ const TabsPage = () => {
                 <TabContent activeTab={verticalTab}>
                   <TabPane tabId="1">
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="2">
                     <p>
-                      Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit
-                      aute magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis
-                      laboris ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et
-                      elit aliquip labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse
-                      anim eiusmod do sint minim consectetur qui.
+                      Culpa dolor voluptate do laboris laboris irure reprehenderit id
+                      incididunt duis pariatur mollit aute magna pariatur consectetur.
+                      Eu veniam duis non ut dolor deserunt commodo et minim in quis
+                      laboris ipsum velit id veniam. Quis ut consectetur adipisicing
+                      officia excepteur non sit. Ut et elit aliquip labore Lorem enim
+                      eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui
+                      esse anim eiusmod do sint minim consectetur qui.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="3">
                     <p>
-                      Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                      laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                      Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est
-                      magna commodo est ea veniam consectetur.
+                      Fugiat id quis dolor culpa eiusmod anim velit excepteur proident
+                      dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem
+                      Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
+                      Velit et et proident Lorem do ea tempor officia dolor.
+                      Reprehenderit Lorem aliquip labore est magna commodo est ea veniam
+                      consectetur.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="4">
                     <p>
-                      Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                      proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do.
-                      Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt
-                      amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                      Eu dolore ea ullamco dolore Lorem id cupidatat excepteur
+                      reprehenderit consectetur elit id dolor proident in cupidatat
+                      officia. Voluptate excepteur commodo labore nisi cillum duis
+                      aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit
+                      aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit
+                      adipisicing labore officia magna elit nisi in aute tempor commodo
+                      eiusmod.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
@@ -886,8 +940,8 @@ const TabsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Veritcal Tab style</BlockTitle>
               <p>
-                You can simply activate add <code>.link-list-menu</code> className in <code>Nav</code> component to make
-                a vertical styled tab.
+                You can simply activate add <code>.link-list-menu</code> className in{" "}
+                <code>Nav</code> component to make a vertical styled tab.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -961,63 +1015,80 @@ const TabsPage = () => {
                 <TabContent activeTab={verticalIconTab}>
                   <TabPane tabId="1">
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="2">
                     <p>
-                      Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit
-                      aute magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis
-                      laboris ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et
-                      elit aliquip labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse
-                      anim eiusmod do sint minim consectetur qui.
+                      Culpa dolor voluptate do laboris laboris irure reprehenderit id
+                      incididunt duis pariatur mollit aute magna pariatur consectetur.
+                      Eu veniam duis non ut dolor deserunt commodo et minim in quis
+                      laboris ipsum velit id veniam. Quis ut consectetur adipisicing
+                      officia excepteur non sit. Ut et elit aliquip labore Lorem enim
+                      eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui
+                      esse anim eiusmod do sint minim consectetur qui.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="3">
                     <p>
-                      Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident
-                      laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
-                      Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est
-                      magna commodo est ea veniam consectetur.
+                      Fugiat id quis dolor culpa eiusmod anim velit excepteur proident
+                      dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem
+                      Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla.
+                      Velit et et proident Lorem do ea tempor officia dolor.
+                      Reprehenderit Lorem aliquip labore est magna commodo est ea veniam
+                      consectetur.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>
                   <TabPane tabId="4">
                     <p>
-                      Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor
-                      proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do.
-                      Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt
-                      amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.
+                      Eu dolore ea ullamco dolore Lorem id cupidatat excepteur
+                      reprehenderit consectetur elit id dolor proident in cupidatat
+                      officia. Voluptate excepteur commodo labore nisi cillum duis
+                      aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit
+                      aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit
+                      adipisicing labore officia magna elit nisi in aute tempor commodo
+                      eiusmod.
                     </p>
                     <p>
-                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis
-                      incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua
-                      occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et
-                      voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
+                      Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua
+                      anim Lorem sint. Veniam sint duis incididunt do esse magna mollit
+                      excepteur laborum qui. Id id reprehenderit sit est eu aliqua
+                      occaecat quis et velit excepteur laborum mollit dolore eiusmod.
+                      Ipsum dolor in occaecat commodo et voluptate minim reprehenderit
+                      mollit pariatur. Deserunt non laborum enim et cillum eu deserunt
                       excepteur ea incid.
                     </p>
                   </TabPane>

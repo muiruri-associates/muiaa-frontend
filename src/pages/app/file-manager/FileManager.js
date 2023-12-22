@@ -32,11 +32,19 @@ const FileManager = () => {
       <Head title="File Manager"></Head>
       <Content>
         <div className="nk-fmg">
-          <SimpleBar className={`nk-fmg-aside toggle-screen-lg ${scLg ? "content-active" : ""}`}>
+          <SimpleBar
+            className={`nk-fmg-aside toggle-screen-lg ${scLg ? "content-active" : ""}`}
+          >
             <FileManagerAside setScLg={setScLg} />
           </SimpleBar>
-          {scLg && <div className="toggle-overlay" onClick={() => toggleScreenLg()}></div>}
-          <FileManagerBody data={data} setData={setData} toggleScreenLg={toggleScreenLg} />
+          {scLg && (
+            <div className="toggle-overlay" onClick={() => toggleScreenLg()}></div>
+          )}
+          <FileManagerBody
+            data={data}
+            setData={setData}
+            toggleScreenLg={toggleScreenLg}
+          />
         </div>
       </Content>
     </React.Fragment>

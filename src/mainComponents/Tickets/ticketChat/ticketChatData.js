@@ -101,7 +101,9 @@ export const ticketChatData = [
       },
       {
         id: "chat_4",
-        chat: ["Hey, I am facing problem as i can not login into application. Can you help me to reset my password?"],
+        chat: [
+          "Hey, I am facing problem as i can not login into application. Can you help me to reset my password?",
+        ],
         date: "3:49 PM",
       },
       {
@@ -179,7 +181,10 @@ export const ticketChatData = [
       {
         id: "chat_3",
         me: true,
-        chat: ["No I haven&apos;t. I will look into it", "It’s perfect. Thanks for letting me know."],
+        chat: [
+          "No I haven&apos;t. I will look into it",
+          "It’s perfect. Thanks for letting me know.",
+        ],
         date: "4:28 PM",
       },
     ],
@@ -205,7 +210,10 @@ export const ticketChatData = [
       {
         id: "chat_3",
         me: true,
-        chat: ["Hey, I have been great. It has been a long time.", "How have you been doing?."],
+        chat: [
+          "Hey, I have been great. It has been a long time.",
+          "How have you been doing?.",
+        ],
         date: "29 Apr, 2020 4:28 PM",
       },
       {
@@ -404,7 +412,9 @@ export const ticketChatData = [
       {
         id: "chat_4",
         user: { name: "Marele Jhonson", image: User3 },
-        chat: ["Hey, I am facing problem as i can not login into application. Can you help me to reset my password?"],
+        chat: [
+          "Hey, I am facing problem as i can not login into application. Can you help me to reset my password?",
+        ],
         date: "3:49 PM",
       },
       {
@@ -459,7 +469,9 @@ export const ticketChatData = [
       {
         id: "chat_1",
         me: true,
-        chat: ["We need a website for an ecommerce project, please inbox us for further details"],
+        chat: [
+          "We need a website for an ecommerce project, please inbox us for further details",
+        ],
         date: "27 Mar",
       },
       {
@@ -522,7 +534,10 @@ export const ticketChatData = [
         date: "3:55 PM",
         me: true,
         now: true,
-        chat: ["We need will need some time to let you know", "Please, give us around 2 working days"],
+        chat: [
+          "We need will need some time to let you know",
+          "Please, give us around 2 working days",
+        ],
       },
     ],
   },
@@ -631,7 +646,9 @@ export const ticketChatData = [
       {
         id: "chat_4",
         user: { name: "Marele Jhonson", image: User3 },
-        chat: ["Hey, I am facing problem as i can not login into application. Can you help me to reset my password?"],
+        chat: [
+          "Hey, I am facing problem as i can not login into application. Can you help me to reset my password?",
+        ],
         date: "3:49 PM",
       },
       {
@@ -697,7 +714,9 @@ export const ticketChatData = [
           name: "Michael Kenon",
           theme: "primary",
         },
-        chat: ["Please help with an issue that I have faced, need a new feature on chat application"],
+        chat: [
+          "Please help with an issue that I have faced, need a new feature on chat application",
+        ],
       },
     ],
   },
@@ -740,7 +759,9 @@ export const ticketChatData = [
           name: "Keating Beat",
           theme: "pink",
         },
-        chat: ["I seem t have a new ideas, and now looking for sponsers. Anyone care to join in ? "],
+        chat: [
+          "I seem t have a new ideas, and now looking for sponsers. Anyone care to join in ? ",
+        ],
       },
       {
         id: "chat_2",

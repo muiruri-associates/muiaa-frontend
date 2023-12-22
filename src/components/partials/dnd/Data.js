@@ -10,6 +10,9 @@ export const dndDataSet2 = [
     id: "5",
     text: "Ther&apos; also the possibility of moving elements around in the same container, changing their position.",
   },
-  { id: "6", text: "This is the default use case. You only need to specify the containers you want to use." },
+  {
+    id: "6",
+    text: "This is the default use case. You only need to specify the containers you want to use.",
+  },
   { id: "7", text: "Moving elements works just fine. You can still focus them, too. " },
 ];

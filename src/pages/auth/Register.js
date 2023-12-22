@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Logo from "../../images/logo.png";
 import LogoDark from "../../images/logo-dark.png";
@@ -36,7 +36,11 @@ const Register = ({ history }) => {
           <div className="brand-logo pb-4 text-center">
             <Link to={`/`} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-              <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+              <img
+                className="logo-dark logo-img logo-img-lg"
+                src={LogoDark}
+                alt="logo-dark"
+              />
             </Link>
           </div>
           <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
@@ -97,7 +101,9 @@ const Register = ({ history }) => {
                       ev.preventDefault();
                       setPassState(!passState);
                     }}
-                    className={`form-icon lg form-icon-right passcode-switch ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-icon lg form-icon-right passcode-switch ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   >
                     <Icon name="eye" className="passcode-icon icon-show"></Icon>
 
@@ -109,9 +115,13 @@ const Register = ({ history }) => {
                     name="passcode"
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your passcode"
-                    className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-control-lg form-control ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   />
-                  {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
+                  {errors.passcode && (
+                    <span className="invalid">{errors.passcode.message}</span>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -166,7 +176,7 @@ const Register = ({ history }) => {
 
 Register.propTypes = {
   history: PropTypes.shape({
-    push: PropTypes.func
-  })
-}
+    push: PropTypes.func,
+  }),
+};
 export default Register;

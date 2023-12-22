@@ -1,8 +1,15 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState, useRef } from "react";
 import SimpleBar from "simplebar-react";
 import classNames from "classnames";
-import { Modal, ModalBody, DropdownMenu, DropdownToggle, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  Modal,
+  ModalBody,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import { Button, Icon, TooltipComponent, UserAvatar } from "../../components/Component";
 import { ReplyItem } from "./MessagePartials";
 import { currentTime, findUpper } from "../../utils/Utils";
@@ -10,7 +17,6 @@ import { assignMembers } from "./MessageData";
 import { useDispatch, useSelector } from "react-redux";
 import { getTicketById, sendMessage } from "../../redux/actions/ticketActions";
 import { useParams } from "react-router-dom";
-
 
 // TODO: Fix ui so that reply can sepearte from message of ticket
 const Message = ({ id, onClosed, mobileView, setMobileView }) => {
@@ -152,7 +158,10 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                 </ul>
               </div>
               <div className="d-lg-none">
-                <Button className="btn-icon btn-trigger nk-msg-hide ml-n1" onClick={() => setMobileView(false)}>
+                <Button
+                  className="btn-icon btn-trigger nk-msg-hide ml-n1"
+                  onClick={() => setMobileView(false)}
+                >
                   <Icon name="arrow-left"></Icon>
                 </Button>
               </div>
@@ -164,7 +173,13 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                       <span>Closed</span>
                     </span>
                   ) : (
-                    <Button outline size="sm" color="light" className="btn-dim" onClick={toggleStatus}>
+                    <Button
+                      outline
+                      size="sm"
+                      color="light"
+                      className="btn-dim"
+                      onClick={toggleStatus}
+                    >
                       <Icon name="check"></Icon>
                       <span>Mark as Closed</span>
                     </Button>
@@ -183,7 +198,10 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                 </li>
                 <li>
                   <UncontrolledDropdown>
-                    <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-white btn-light dropdown-toggle">
+                    <DropdownToggle
+                      tag="a"
+                      className="btn btn-icon btn-sm btn-white btn-light dropdown-toggle"
+                    >
                       <Icon name="more-h"></Icon>
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -228,13 +246,18 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                 ev.preventDefault();
                 toggleSidebar();
               }}
-              className={`nk-msg-profile-toggle profile-toggle ${sidebar ? "active" : ""}`}
+              className={`nk-msg-profile-toggle profile-toggle ${
+                sidebar ? "active" : ""
+              }`}
             >
               <Icon name="arrow-left"></Icon>
             </a>
           </div>
           {/*nk-msg-head*/}
-          <SimpleBar className="nk-msg-reply nk-reply" scrollableNodeProps={{ ref: messagesEndRef }}>
+          <SimpleBar
+            className="nk-msg-reply nk-reply"
+            scrollableNodeProps={{ ref: messagesEndRef }}
+          >
             <div className="nk-msg-head py-4 d-lg-none">
               <h4 className="title">{ticket.title}</h4>
               <ul className="nk-msg-tags">
@@ -266,7 +289,9 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
 
             {ticket.message &&
               ticket.messages?.map((messageObj) => {
-                return <ReplyItem item={messageObj.message} key={messageObj._id}></ReplyItem>;
+                return (
+                  <ReplyItem item={messageObj.message} key={messageObj._id}></ReplyItem>
+                );
                 // if (!replyItem.meta === true) {
                 // } else {
                 //   return <MetaItem item={replyItem.meta.metaMarkup} key={replyItem.meta.metaId}></MetaItem>;
@@ -321,13 +346,20 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                     <div className="nk-reply-form-tools">
                       <ul className="nk-reply-form-actions g-1">
                         <li className="mr-2">
-                          <Button color="primary" type="submit" onClick={(e) => onFormSubmit(e)}>
+                          <Button
+                            color="primary"
+                            type="submit"
+                            onClick={(e) => onFormSubmit(e)}
+                          >
                             Reply
                           </Button>
                         </li>
                         <li>
                           <UncontrolledDropdown>
-                            <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-tooltip">
+                            <DropdownToggle
+                              tag="a"
+                              className="btn btn-icon btn-sm btn-tooltip"
+                            >
                               <Icon name="hash"></Icon>
                             </DropdownToggle>
                             <DropdownMenu right className="dropdown-menu">
@@ -413,13 +445,21 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                           ></TooltipComponent>
                         </li>
                         <li>
-                          <TooltipComponent icon="img" direction="top" text="Upload Images" id="img-tooltip">
+                          <TooltipComponent
+                            icon="img"
+                            direction="top"
+                            text="Upload Images"
+                            id="img-tooltip"
+                          >
                             <Icon name="img"></Icon>
                           </TooltipComponent>
                         </li>
                       </ul>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn-trigger btn btn-icon mr-n2">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn-trigger btn btn-icon mr-n2"
+                        >
                           <Icon name="more-v"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -467,7 +507,11 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                     <div className="nk-reply-form-tools">
                       <ul className="nk-reply-form-actions g-1">
                         <li className="mr-2">
-                          <Button color="primary" onClick={(e) => onFormSubmit(e, "note")} type="submit">
+                          <Button
+                            color="primary"
+                            onClick={(e) => onFormSubmit(e, "note")}
+                            type="submit"
+                          >
                             Add Note
                           </Button>
                         </li>
@@ -485,7 +529,10 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                         </li>
                       </ul>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn-trigger btn btn-icon mr-n2">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn-trigger btn btn-icon mr-n2"
+                        >
                           <Icon name="more-v"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -533,7 +580,12 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
       )}
 
       {/*Assign Members Modal*/}
-      <Modal isOpen={assignModal} toggle={toggleAssignModal} className="modal-dialog-centered" size="xs">
+      <Modal
+        isOpen={assignModal}
+        toggle={toggleAssignModal}
+        className="modal-dialog-centered"
+        size="xs"
+      >
         <ModalBody>
           <a
             href="#cancel"
@@ -557,7 +609,12 @@ const Message = ({ id, onClosed, mobileView, setMobileView }) => {
                       onClick={toggleAssignModal}
                       key={index}
                     >
-                      <UserAvatar text={findUpper(user.name)} theme={user.theme} className="sm" image={null} />
+                      <UserAvatar
+                        text={findUpper(user.name)}
+                        theme={user.theme}
+                        className="sm"
+                        image={null}
+                      />
                       <div className="m-1 ml-2 fs-15px">{user.name}</div>
                     </li>
                   );
@@ -575,7 +632,7 @@ Message.propTypes = {
   id: PropTypes.any,
   mobileView: PropTypes.any,
   onClosed: PropTypes.func,
-  setMobileView: PropTypes.func
-}
+  setMobileView: PropTypes.func,
+};
 
 export default Message;

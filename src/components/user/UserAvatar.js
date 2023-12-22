@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 import Icon from "../icon/Icon";
@@ -7,7 +7,16 @@ import Icon from "../icon/Icon";
 /* Aviable theme {blue-dim, blue, azure-dim, azure, indigo-dim, indigo, purple-dim, purple, pink-dim, pink, orange-dim, orange, teal-dim, teal, 
     primary-dim, primary, secondary-dim, secondary, success-dim, success, info-dim, info, warning-dim, warning, danger-dim, danger, dark-dim, dark, gray-dim, gray, lighter, light} */
 
-const UserAvatar = ({ className, size, theme, icon, text, image, imageAlt, ...props }) => {
+const UserAvatar = ({
+  className,
+  size,
+  theme,
+  icon,
+  text,
+  image,
+  imageAlt,
+  ...props
+}) => {
   const classes = classNames({
     "user-avatar": true,
     [`${className}`]: className,
@@ -32,7 +41,7 @@ UserAvatar.propTypes = {
   size: PropTypes.any,
   text: PropTypes.any,
   theme: PropTypes.any,
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
 export default UserAvatar;

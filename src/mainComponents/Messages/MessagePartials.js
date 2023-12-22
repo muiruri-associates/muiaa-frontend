@@ -1,11 +1,11 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import parse from "html-react-parser";
 import { UserAvatar } from "../../components/Component";
 import { findUpper } from "../../utils/Utils";
 import React from "react";
 
 export const ReplyItem = ({ item }) => {
-  const { sender,  description, note,  message, _id, created_at} = item;
+  const { sender, description, note, message, _id, created_at } = item;
   return (
     <div className="nk-reply-item" key={_id}>
       <div className="nk-reply-header">
@@ -35,18 +35,18 @@ ReplyItem.propTypes = {
     created_at: PropTypes.any,
     description: PropTypes.any,
     message: PropTypes.shape({
-      map: PropTypes.func
+      map: PropTypes.func,
     }),
     note: PropTypes.any,
     sender: PropTypes.any,
-    title: PropTypes.any
-  })
-}
+    title: PropTypes.any,
+  }),
+};
 
 export const MetaItem = ({ item }) => {
   return <div className="nk-reply-meta">{parse(item)}</div>;
 };
 
 MetaItem.propTypes = {
-  item: PropTypes.any
-}
+  item: PropTypes.any,
+};

@@ -3,7 +3,6 @@ import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import ResetPasswordForm from "../../mainComponents/Auth/ResetPasswordForm";
 
-
 const ResetPassword = () => {
   return (
     <React.Fragment>

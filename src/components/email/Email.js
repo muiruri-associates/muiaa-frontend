@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 EmailWrapper.propTypes = {
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 
 export const EmailWrapper = ({ ...props }) => {
   return (
@@ -17,8 +17,8 @@ export const EmailWrapper = ({ ...props }) => {
   );
 };
 EmailHeader.propTypes = {
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export const EmailHeader = ({ ...props }) => {
   return (
     <table className="email-header">
@@ -41,8 +41,8 @@ export const EmailBody = ({ centered, ...props }) => {
 
 EmailBody.propTypes = {
   centered: PropTypes.any,
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 export const EmailBodyContent = ({ className, ...props }) => {
   return (
@@ -54,8 +54,8 @@ export const EmailBodyContent = ({ className, ...props }) => {
 
 EmailBodyContent.propTypes = {
   className: PropTypes.any,
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
 
 export const EmailFooter = ({ ...props }) => {
   return (
@@ -69,5 +69,5 @@ export const EmailFooter = ({ ...props }) => {
   );
 };
 EmailFooter.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};

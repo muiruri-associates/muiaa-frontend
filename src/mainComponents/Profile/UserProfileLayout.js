@@ -44,14 +44,16 @@ const UserProfileLayout = () => {
     viewChange();
     window.addEventListener("load", viewChange);
     window.addEventListener("resize", viewChange);
-    document.getElementsByClassName("nk-header")[0].addEventListener("click", function () {
-      updateSm(false);
-    });
+    document
+      .getElementsByClassName("nk-header")[0]
+      .addEventListener("click", function () {
+        updateSm(false);
+      });
     return () => {
       window.removeEventListener("resize", viewChange);
       window.removeEventListener("load", viewChange);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -76,7 +78,10 @@ const UserProfileLayout = () => {
                     </div>
                     <div className="user-action">
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="btn btn-icon btn-trigger mr-n2">
+                        <DropdownToggle
+                          tag="a"
+                          className="btn btn-icon btn-trigger mr-n2"
+                        >
                           <Icon name="more-v"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>
@@ -185,7 +190,9 @@ const UserProfileLayout = () => {
                       <div className="data-item">
                         <div className="data-col">
                           <span className="data-label">Phone Number</span>
-                          <span className="data-value text-soft">{user?.phone_number}</span>
+                          <span className="data-value text-soft">
+                            {user?.phone_number}
+                          </span>
                         </div>
                       </div>
                       <div className="data-item">
@@ -201,7 +208,9 @@ const UserProfileLayout = () => {
                     </div>
                   </Block>
                 </TabPane>
-                <TabPane tabId="2">{isLender || isUser ? <UploadDocument /> : null}</TabPane>
+                <TabPane tabId="2">
+                  {isLender || isUser ? <UploadDocument /> : null}
+                </TabPane>
               </TabContent>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import {getAllAvailableLeads} from '../actions/leadsActions'
+import { createSlice } from "@reduxjs/toolkit";
+import { getAllAvailableLeads } from "../actions/leadsActions";
 
 const initialState = {
   lead: {},
@@ -9,25 +9,24 @@ const initialState = {
   error: null,
 };
 
-
 const leadsSlice = createSlice({
-  name: 'leads',
+  name: "leads",
   initialState,
-  extraReducers: builder => {
-    builder.addCase(getAllAvailableLeads.pending, state => {
-      state.loading = true
-    })
+  extraReducers: (builder) => {
+    builder.addCase(getAllAvailableLeads.pending, (state) => {
+      state.loading = true;
+    });
     builder.addCase(getAllAvailableLeads.fulfilled, (state, action) => {
-      state.loading = false
-      state.leads = action.payload
-      state.success = true
-      state.error = ''
-    })
+      state.loading = false;
+      state.leads = action.payload;
+      state.success = true;
+      state.error = "";
+    });
     builder.addCase(getAllAvailableLeads.rejected, (state, action) => {
-      state.loading = false
-      state.leads = []
-      state.error = action.error.message
-    })
+      state.loading = false;
+      state.leads = [];
+      state.error = action.error.message;
+    });
     // .addCase(fetchleadsById.pending, (state) => {
     //   state.loading = true;
     // })
@@ -59,9 +58,7 @@ const leadsSlice = createSlice({
     //   state.leads = null;
     //   state.error = action.error.message;
     // });
-  } 
-})
+  },
+});
 
-export default leadsSlice.reducer
-
-
+export default leadsSlice.reducer;

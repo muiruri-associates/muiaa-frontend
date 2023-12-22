@@ -43,7 +43,9 @@ const AdvancedControls = () => {
               Advanced Controls
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Examples and usage guidelines for custom styled Checkbox and Radio.</p>
+              <p className="lead">
+                Examples and usage guidelines for custom styled Checkbox and Radio.
+              </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -53,9 +55,11 @@ const AdvancedControls = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Image Checkbox & Radio</BlockTitle>
               <p>
-                To create custom control, wrapped with <code className="code-tag">&lt;div&gt;</code> each checkbox{" "}
-                <code className="code-tag">&lt;input&gt;</code> &amp; <code className="code-tag">&lt;label&gt;</code>{" "}
-                using <code>.custom-control</code>, <code>.custom-checkbox</code> classes.
+                To create custom control, wrapped with{" "}
+                <code className="code-tag">&lt;div&gt;</code> each checkbox{" "}
+                <code className="code-tag">&lt;input&gt;</code> &amp;{" "}
+                <code className="code-tag">&lt;label&gt;</code> using{" "}
+                <code>.custom-control</code>, <code>.custom-checkbox</code> classes.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -66,7 +70,11 @@ const AdvancedControls = () => {
                 <div className="preview-block">
                   <OverlineTitle className="preview-title">Default</OverlineTitle>
                   <div className="custom-control custom-checkbox image-control">
-                    <input type="checkbox" className="custom-control-input" id="imageCheck1" />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="imageCheck1"
+                    />
                     <label className="custom-control-label" htmlFor="imageCheck1">
                       <img src={StockA} alt="" />
                     </label>
@@ -77,7 +85,12 @@ const AdvancedControls = () => {
                 <div className="preview-block">
                   <OverlineTitle className="preview-title">Checked</OverlineTitle>
                   <div className="custom-control custom-checkbox image-control">
-                    <input type="checkbox" className="custom-control-input" id="imageCheck2" defaultChecked={true} />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="imageCheck2"
+                      defaultChecked={true}
+                    />
                     <label className="custom-control-label" htmlFor="imageCheck2">
                       <img src={StockB} alt="" />
                     </label>
@@ -88,7 +101,12 @@ const AdvancedControls = () => {
                 <div className="preview-block">
                   <OverlineTitle className="preview-title">Disabled</OverlineTitle>
                   <div className="custom-control custom-checkbox image-control">
-                    <input type="checkbox" className="custom-control-input" id="imageCheck3" disabled />
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="imageCheck3"
+                      disabled
+                    />
                     <label className="custom-control-label" htmlFor="imageCheck3">
                       <img src={StockC} alt="" />
                     </label>
@@ -97,7 +115,9 @@ const AdvancedControls = () => {
               </Col>
               <Col md="3" className="col-6">
                 <div className="preview-block">
-                  <OverlineTitle className="preview-title">Checked Disabled</OverlineTitle>
+                  <OverlineTitle className="preview-title">
+                    Checked Disabled
+                  </OverlineTitle>
                   <div className="custom-control custom-checkbox image-control">
                     <input
                       type="checkbox"
@@ -153,7 +173,12 @@ const AdvancedControls = () => {
                 <div className="preview-block">
                   <OverlineTitle className="preview-title">Disabled</OverlineTitle>
                   <div className="custom-control custom-radio image-control">
-                    <input type="radio" className="custom-control-input" id="imageRadio3" disabled />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="imageRadio3"
+                      disabled
+                    />
                     <label className="custom-control-label" htmlFor="imageRadio3">
                       <img src={StockG} alt="" />
                     </label>
@@ -162,7 +187,9 @@ const AdvancedControls = () => {
               </Col>
               <Col md="3" className="col-6">
                 <div className="preview-block">
-                  <OverlineTitle className="preview-title">Checked Disabled</OverlineTitle>
+                  <OverlineTitle className="preview-title">
+                    Checked Disabled
+                  </OverlineTitle>
                   <div className="custom-control custom-radio image-control">
                     <input
                       type="radio"
@@ -204,10 +231,12 @@ const AdvancedControls = () => {
               <BlockTitle tag="h5">Grouped Checkbox</BlockTitle>
               <BlockDes>
                 <p>
-                  For Grouped checkbox, use <code>custom-control-pro</code> class with <code>custom-control</code> also
-                  if you want to hide control then use <code>no-control</code> class with it. <br /> For group use{" "}
-                  <code>ul.custom-control-group &gt; li &gt; .custom-control</code> if you want vertical them use{" "}
-                  <code>.custom-control-vertical</code> on <code>ul</code>.
+                  For Grouped checkbox, use <code>custom-control-pro</code> class with{" "}
+                  <code>custom-control</code> also if you want to hide control then use{" "}
+                  <code>no-control</code> class with it. <br /> For group use{" "}
+                  <code>ul.custom-control-group &gt; li &gt; .custom-control</code> if
+                  you want vertical them use <code>.custom-control-vertical</code> on{" "}
+                  <code>ul</code>.
                 </p>
               </BlockDes>
             </BlockHeadContent>
@@ -287,7 +316,12 @@ const AdvancedControls = () => {
             <ul className="custom-control-group">
               <li>
                 <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                  <input type="checkbox" className="custom-control-input" name="btnCheck" id="btnCheck1" />
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    name="btnCheck"
+                    id="btnCheck1"
+                  />
                   <label className="custom-control-label" htmlFor="btnCheck1">
                     Option Label
                   </label>
@@ -295,7 +329,12 @@ const AdvancedControls = () => {
               </li>
               <li>
                 <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                  <input type="checkbox" className="custom-control-input" name="btnCheck" id="btnCheck2" />
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    name="btnCheck"
+                    id="btnCheck2"
+                  />
                   <label className="custom-control-label" htmlFor="btnCheck2">
                     Option Label
                   </label>
@@ -303,7 +342,12 @@ const AdvancedControls = () => {
               </li>
               <li>
                 <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                  <input type="checkbox" className="custom-control-input" name="btnCheck" id="btnCheck3" />
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    name="btnCheck"
+                    id="btnCheck3"
+                  />
                   <label className="custom-control-label" htmlFor="btnCheck3">
                     Option Label
                   </label>
@@ -311,7 +355,12 @@ const AdvancedControls = () => {
               </li>
               <li>
                 <div className="custom-control custom-checkbox custom-control-pro no-control">
-                  <input type="checkbox" className="custom-control-input" name="btnCheck" id="btnCheck4" />
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    name="btnCheck"
+                    id="btnCheck4"
+                  />
                   <label className="custom-control-label" htmlFor="btnCheck4">
                     Option Label
                   </label>
@@ -326,14 +375,24 @@ const AdvancedControls = () => {
                     id="btnCheck5"
                     defaultChecked={true}
                   />
-                  <label className="custom-control-label" htmlFor="btnCheck5" defaultChecked={true}>
+                  <label
+                    className="custom-control-label"
+                    htmlFor="btnCheck5"
+                    defaultChecked={true}
+                  >
                     Option Checked
                   </label>
                 </div>
               </li>
               <li>
                 <div className="custom-control custom-checkbox custom-control-pro no-control">
-                  <input type="checkbox" className="custom-control-input" name="btnCheck" id="btnCheck6" disabled />
+                  <input
+                    type="checkbox"
+                    className="custom-control-input"
+                    name="btnCheck"
+                    id="btnCheck6"
+                    disabled
+                  />
                   <label className="custom-control-label" htmlFor="btnCheck6">
                     Option Disabled
                   </label>
@@ -346,7 +405,11 @@ const AdvancedControls = () => {
                 <ul className="custom-control-group">
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnIconCheckNc1" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnIconCheckNc1"
+                      />
                       <label className="custom-control-label" htmlFor="btnIconCheckNc1">
                         <Icon name="user"></Icon>
                         <span>User</span>
@@ -355,7 +418,11 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnIconCheckNc2" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnIconCheckNc2"
+                      />
                       <label className="custom-control-label" htmlFor="btnIconCheckNc2">
                         <Icon name="loader"></Icon>
                         <span>Loading</span>
@@ -364,7 +431,11 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnIconCheckNc3" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnIconCheckNc3"
+                      />
                       <label className="custom-control-label" htmlFor="btnIconCheckNc3">
                         <Icon name="signal"></Icon>
                         <span>Network</span>
@@ -373,7 +444,11 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnIconCheckNc4" />
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnIconCheckNc4"
+                      />
                       <label className="custom-control-label" htmlFor="btnIconCheckNc4">
                         <Icon name="wifi-off"></Icon>
                         <span>No Wifi</span>
@@ -387,32 +462,60 @@ const AdvancedControls = () => {
                 <ul className="custom-control-group">
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro custom-control-pro-icon no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnOnlyIconCheck1" />
-                      <label className="custom-control-label" htmlFor="btnOnlyIconCheck1">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnOnlyIconCheck1"
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor="btnOnlyIconCheck1"
+                      >
                         <Icon name="user"></Icon>
                       </label>
                     </div>
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro custom-control-pro-icon no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnOnlyIconCheck2" />
-                      <label className="custom-control-label" htmlFor="btnOnlyIconCheck2">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnOnlyIconCheck2"
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor="btnOnlyIconCheck2"
+                      >
                         <Icon name="loader"></Icon>
                       </label>
                     </div>
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro custom-control-pro-icon no-control checked">
-                      <input type="checkbox" className="custom-control-input" id="btnOnlyIconCheck3" />
-                      <label className="custom-control-label" htmlFor="btnOnlyIconCheck3">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnOnlyIconCheck3"
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor="btnOnlyIconCheck3"
+                      >
                         <Icon name="signal"></Icon>
                       </label>
                     </div>
                   </li>
                   <li>
                     <div className="custom-control custom-checkbox custom-control-pro custom-control-pro-icon no-control">
-                      <input type="checkbox" className="custom-control-input" id="btnOnlyIconCheck4" />
-                      <label className="custom-control-label" htmlFor="btnOnlyIconCheck4">
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id="btnOnlyIconCheck4"
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor="btnOnlyIconCheck4"
+                      >
                         <Icon name="wifi-off"></Icon>
                       </label>
                     </div>
@@ -466,10 +569,12 @@ const AdvancedControls = () => {
               <BlockTitle tag="h5">Grouped Radio</BlockTitle>
               <BlockDes>
                 <p>
-                  For Grouped radio, use <code>custom-control-pro</code> class with <code>custom-control</code> also if
-                  you want to hide control then use <code>no-control</code> class with it. <br /> For group use{" "}
-                  <code>ul.custom-control-group &gt; li &gt; .custom-control</code> if you want vertical them use{" "}
-                  <code>.custom-control-vertical</code> on <code>ul</code>.
+                  For Grouped radio, use <code>custom-control-pro</code> class with{" "}
+                  <code>custom-control</code> also if you want to hide control then use{" "}
+                  <code>no-control</code> class with it. <br /> For group use{" "}
+                  <code>ul.custom-control-group &gt; li &gt; .custom-control</code> if
+                  you want vertical them use <code>.custom-control-vertical</code> on{" "}
+                  <code>ul</code>.
                 </p>
               </BlockDes>
             </BlockHeadContent>
@@ -480,7 +585,12 @@ const AdvancedControls = () => {
               <ul className="custom-control-group">
                 <li>
                   <div className="custom-control custom-control-sm custom-radio custom-control-pro checked">
-                    <input type="radio" className="custom-control-input" name="btnRadioControl" id="btnRadioControl1" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadioControl"
+                      id="btnRadioControl1"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadioControl1">
                       Option Label
                     </label>
@@ -488,7 +598,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-control-sm custom-radio custom-control-pro checked">
-                    <input type="radio" className="custom-control-input" name="btnRadioControl" id="btnRadioControl2" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadioControl"
+                      id="btnRadioControl2"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadioControl2">
                       Option Label
                     </label>
@@ -496,7 +611,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-control-sm custom-radio custom-control-pro checked">
-                    <input type="radio" className="custom-control-input" name="btnRadioControl" id="btnRadioControl3" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadioControl"
+                      id="btnRadioControl3"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadioControl3">
                       Option Label
                     </label>
@@ -535,7 +655,12 @@ const AdvancedControls = () => {
               <ul className="custom-control-group">
                 <li>
                   <div className="custom-control custom-radio custom-control-pro no-control checked">
-                    <input type="radio" className="custom-control-input" name="btnRadio" id="btnRadio1" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadio"
+                      id="btnRadio1"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadio1">
                       Option Label
                     </label>
@@ -543,7 +668,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-radio custom-control-pro no-control checked">
-                    <input type="radio" className="custom-control-input" name="btnRadio" id="btnRadio2" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadio"
+                      id="btnRadio2"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadio2">
                       Option Label
                     </label>
@@ -551,7 +681,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-radio custom-control-pro no-control checked">
-                    <input type="radio" className="custom-control-input" name="btnRadio" id="btnRadio3" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadio"
+                      id="btnRadio3"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadio3">
                       Option Label
                     </label>
@@ -559,7 +694,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-radio custom-control-pro no-control">
-                    <input type="radio" className="custom-control-input" name="btnRadio" id="btnRadio4" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadio"
+                      id="btnRadio4"
+                    />
                     <label className="custom-control-label" htmlFor="btnRadio4">
                       Option Label
                     </label>
@@ -581,7 +721,13 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control custom-radio custom-control-pro no-control">
-                    <input type="radio" className="custom-control-input" name="btnRadio" id="btnRadio6" disabled />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      name="btnRadio"
+                      id="btnRadio6"
+                      disabled
+                    />
                     <label className="custom-control-label" htmlFor="btnRadio6">
                       Option Disabled
                     </label>
@@ -594,8 +740,15 @@ const AdvancedControls = () => {
                   <ul className="custom-control-group">
                     <li>
                       <div className="custom-control custom-radio custom-control-pro no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnIconRadioNc1" />
-                        <label className="custom-control-label" htmlFor="btnIconRadioNc1">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnIconRadioNc1"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnIconRadioNc1"
+                        >
                           <Icon name="user"></Icon>
                           <span>User</span>
                         </label>
@@ -603,8 +756,15 @@ const AdvancedControls = () => {
                     </li>
                     <li>
                       <div className="custom-control custom-radio custom-control-pro no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnIconRadioNc2" />
-                        <label className="custom-control-label" htmlFor="btnIconRadioNc2">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnIconRadioNc2"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnIconRadioNc2"
+                        >
                           <Icon name="loader"></Icon>
                           <span>Loading</span>
                         </label>
@@ -612,8 +772,15 @@ const AdvancedControls = () => {
                     </li>
                     <li>
                       <div className="custom-control custom-radio custom-control-pro no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnIconRadioNc3" />
-                        <label className="custom-control-label" htmlFor="btnIconRadioNc3">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnIconRadioNc3"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnIconRadioNc3"
+                        >
                           <Icon name="signal"></Icon>
                           <span>Network</span>
                         </label>
@@ -621,8 +788,15 @@ const AdvancedControls = () => {
                     </li>
                     <li>
                       <div className="custom-control custom-radio custom-control-pro no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnIconRadioNc4" />
-                        <label className="custom-control-label" htmlFor="btnIconRadioNc4">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnIconRadioNc4"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnIconRadioNc4"
+                        >
                           <Icon name="wifi-off"></Icon>
                           <span>No Wifi</span>
                         </label>
@@ -635,16 +809,30 @@ const AdvancedControls = () => {
                   <ul className="custom-control-group">
                     <li>
                       <div className="custom-control custom-radio custom-control-pro custom-control-pro-icon no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnOnlyIconRadio1" />
-                        <label className="custom-control-label" htmlFor="btnOnlyIconRadio1">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnOnlyIconRadio1"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnOnlyIconRadio1"
+                        >
                           <Icon name="user"></Icon>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div className="custom-control custom-radio custom-control-pro custom-control-pro-icon no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnOnlyIconRadio2" />
-                        <label className="custom-control-label" htmlFor="btnOnlyIconRadio2">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnOnlyIconRadio2"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnOnlyIconRadio2"
+                        >
                           <Icon name="loader"></Icon>
                         </label>
                       </div>
@@ -657,15 +845,25 @@ const AdvancedControls = () => {
                           id="btnOnlyIconRadio3"
                           defaultChecked={true}
                         />
-                        <label className="custom-control-label" htmlFor="btnOnlyIconRadio3">
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnOnlyIconRadio3"
+                        >
                           <Icon name="signal"></Icon>
                         </label>
                       </div>
                     </li>
                     <li>
                       <div className="custom-control custom-radio custom-control-pro custom-control-pro-icon no-control checked">
-                        <input type="radio" className="custom-control-input" id="btnOnlyIconRadio4" />
-                        <label className="custom-control-label" htmlFor="btnOnlyIconRadio4">
+                        <input
+                          type="radio"
+                          className="custom-control-input"
+                          id="btnOnlyIconRadio4"
+                        />
+                        <label
+                          className="custom-control-label"
+                          htmlFor="btnOnlyIconRadio4"
+                        >
                           <Icon name="wifi-off"></Icon>
                         </label>
                       </div>
@@ -694,7 +892,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor2" name="productColor" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor2"
+                      name="productColor"
+                    />
                     <label
                       className="custom-control-label dot dot-xl"
                       htmlFor="productColor2"
@@ -704,7 +907,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control color-control checked">
-                    <input type="radio" className="custom-control-input" id="productColor3" name="productColor" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor3"
+                      name="productColor"
+                    />
                     <label
                       className="custom-control-label dot dot-xl"
                       htmlFor="productColor3"
@@ -714,7 +922,12 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor4" name="productColor" />
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor4"
+                      name="productColor"
+                    />
                     <label
                       className="custom-control-label dot dot-xl"
                       htmlFor="productColor4"
@@ -724,44 +937,100 @@ const AdvancedControls = () => {
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor5" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-danger" htmlFor="productColor5"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor5"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-danger"
+                      htmlFor="productColor5"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor6" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-indigo" htmlFor="productColor6"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor6"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-indigo"
+                      htmlFor="productColor6"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor7" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-info" htmlFor="productColor7"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor7"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-info"
+                      htmlFor="productColor7"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor8" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-warning" htmlFor="productColor8"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor8"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-warning"
+                      htmlFor="productColor8"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor9" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-teal" htmlFor="productColor9"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor9"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-teal"
+                      htmlFor="productColor9"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor10" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-purple" htmlFor="productColor10"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor10"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-purple"
+                      htmlFor="productColor10"
+                    ></label>
                   </div>
                 </li>
                 <li>
                   <div className="custom-control color-control">
-                    <input type="radio" className="custom-control-input" id="productColor11" name="productColor" />
-                    <label className="custom-control-label dot dot-xl bg-pink" htmlFor="productColor11"></label>
+                    <input
+                      type="radio"
+                      className="custom-control-input"
+                      id="productColor11"
+                      name="productColor"
+                    />
+                    <label
+                      className="custom-control-label dot dot-xl bg-pink"
+                      htmlFor="productColor11"
+                    ></label>
                   </div>
                 </li>
               </ul>
@@ -812,13 +1081,14 @@ const AdvancedControls = () => {
               <BlockTitle tag="h5">With Custom Content</BlockTitle>
               <BlockDes>
                 <p>
-                  You can create checkbox or radio with any styled element, just like displayed below. just add{" "}
-                  <code>.custom-control-pro</code> class with <code>.custom-control</code> then put that styled element
-                  in <code className="code-tag">&lt;label&gt;</code> tag. An example with user card shown for display
-                  purpose. <br />{" "}
+                  You can create checkbox or radio with any styled element, just like
+                  displayed below. just add <code>.custom-control-pro</code> class with{" "}
+                  <code>.custom-control</code> then put that styled element in{" "}
+                  <code className="code-tag">&lt;label&gt;</code> tag. An example with
+                  user card shown for display purpose. <br />{" "}
                   <small className="text-muted">
-                    Note : you should not use any block-level elements inside <span className="code-tag">label</span>{" "}
-                    tag.
+                    Note : you should not use any block-level elements inside{" "}
+                    <span className="code-tag">label</span> tag.
                   </small>
                 </p>
               </BlockDes>
@@ -837,7 +1107,10 @@ const AdvancedControls = () => {
                         id="user-selection-s1"
                         name="user-selection"
                       />
-                      <label className="custom-control-label" htmlFor="user-selection-s1">
+                      <label
+                        className="custom-control-label"
+                        htmlFor="user-selection-s1"
+                      >
                         <span className="user-card">
                           <UserAvatar image={AvatarA} className="sq"></UserAvatar>
                           <span className="user-info">
@@ -856,9 +1129,16 @@ const AdvancedControls = () => {
                         id="user-selection-s2"
                         name="user-selection"
                       />
-                      <label className="custom-control-label" htmlFor="user-selection-s2">
+                      <label
+                        className="custom-control-label"
+                        htmlFor="user-selection-s2"
+                      >
                         <span className="user-card">
-                          <UserAvatar theme="pink" text="AB" className="sm"></UserAvatar>
+                          <UserAvatar
+                            theme="pink"
+                            text="AB"
+                            className="sm"
+                          ></UserAvatar>
                           <span className="user-info">
                             <span className="lead-text">Abu Bin Ishtiyak</span>
                             <span className="sub-text">Senior Developer</span>
@@ -875,7 +1155,10 @@ const AdvancedControls = () => {
                         id="user-selection-s4"
                         name="user-selection"
                       />
-                      <label className="custom-control-label" htmlFor="user-selection-s4">
+                      <label
+                        className="custom-control-label"
+                        htmlFor="user-selection-s4"
+                      >
                         <span className="user-card">
                           <UserAvatar image={AvatarB} className="sm"></UserAvatar>
                           <span className="user-info">
@@ -893,7 +1176,12 @@ const AdvancedControls = () => {
                 <ul className="custom-control-group custom-control-vertical custom-control-stacked w-100">
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" id="user-choose-s1" name="user-choose" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        id="user-choose-s1"
+                        name="user-choose"
+                      />
                       <label className="custom-control-label" htmlFor="user-choose-s1">
                         <span className="user-card">
                           <UserAvatar image={AvatarA} className="sm"></UserAvatar>
@@ -904,10 +1192,19 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" id="user-choose-s2" name="user-choose" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        id="user-choose-s2"
+                        name="user-choose"
+                      />
                       <label className="custom-control-label" htmlFor="user-choose-s2">
                         <span className="user-card">
-                          <UserAvatar theme="pink" text="AB" className="sm"></UserAvatar>
+                          <UserAvatar
+                            theme="pink"
+                            text="AB"
+                            className="sm"
+                          ></UserAvatar>
                           <span className="user-name">Abu Bin Ishtiyak</span>
                         </span>
                       </label>
@@ -915,7 +1212,12 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" id="user-choose-s3" name="user-choose" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        id="user-choose-s3"
+                        name="user-choose"
+                      />
                       <label className="custom-control-label" htmlFor="user-choose-s3">
                         <span className="user-card">
                           <UserAvatar image={AvatarB} className="sm"></UserAvatar>
@@ -926,7 +1228,12 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" id="user-choose-s4" name="user-choose" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        id="user-choose-s4"
+                        name="user-choose"
+                      />
                       <label className="custom-control-label" htmlFor="user-choose-s4">
                         <span className="user-card">
                           <UserAvatar image={AvatarC} className="sm"></UserAvatar>
@@ -942,7 +1249,12 @@ const AdvancedControls = () => {
                 <ul className="custom-control-group custom-control-vertical w-100">
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" name="paymentCheck" id="paymentCheck1" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        name="paymentCheck"
+                        id="paymentCheck1"
+                      />
                       <label className="custom-control-label" htmlFor="paymentCheck1">
                         <Icon className="icon-lg" name="cc-paypal"></Icon>
                         <span>Paypal</span>
@@ -951,7 +1263,12 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" name="paymentCheck" id="paymentCheck2" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        name="paymentCheck"
+                        id="paymentCheck2"
+                      />
                       <label className="custom-control-label" htmlFor="paymentCheck2">
                         <Icon className="icon-lg" name="cc-mc"></Icon>
                         <span>Master Card</span>
@@ -960,7 +1277,12 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" name="paymentCheck" id="paymentCheck3" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        name="paymentCheck"
+                        id="paymentCheck3"
+                      />
                       <label className="custom-control-label" htmlFor="paymentCheck3">
                         <Icon className="icon-lg" name="cc-visa"></Icon>
                         <span>Visa Card</span>
@@ -969,7 +1291,12 @@ const AdvancedControls = () => {
                   </li>
                   <li>
                     <div className="custom-control custom-control-sm custom-radio custom-control-pro">
-                      <input type="radio" className="custom-control-input" name="paymentCheck" id="paymentCheck4" />
+                      <input
+                        type="radio"
+                        className="custom-control-input"
+                        name="paymentCheck"
+                        id="paymentCheck4"
+                      />
                       <label className="custom-control-label" htmlFor="paymentCheck4">
                         <Icon className="icon-lg" name="cc-stripe"></Icon>
                         <span>Stripe</span>

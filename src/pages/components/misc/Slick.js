@@ -3,7 +3,10 @@ import Head from "../../../layout/head/Head";
 import Content from "../../../layout/content/Content";
 import Slider from "react-slick";
 import { pricingTableDataV1, cardPreview } from "./Data";
-import { SlickArrowLeft, SlickArrowRight } from "../../../components/partials/slick/SlickComponents";
+import {
+  SlickArrowLeft,
+  SlickArrowRight,
+} from "../../../components/partials/slick/SlickComponents";
 import { Row, Col, Card } from "reactstrap";
 import {
   Block,
@@ -62,10 +65,17 @@ const SlickPage = () => {
               Slick Slider
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Here is some awesome carousel and slider made with love and Slick slider. </p>
+              <p className="lead">
+                Here is some awesome carousel and slider made with love and Slick
+                slider.{" "}
+              </p>
               <p>
                 You can see more details from{" "}
-                <a href="https://react-slick.neostack.com/" rel="noreferrer" target="_blank">
+                <a
+                  href="https://react-slick.neostack.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   here
                 </a>
                 .
@@ -171,7 +181,8 @@ const SlickPage = () => {
                           <span className="ml-auto">${item.maxDeposit.usd}</span>
                         </li>
                         <li>
-                          <span className="w-50">Deposit Return</span> - <span className="ml-auto">Yes</span>
+                          <span className="w-50">Deposit Return</span> -{" "}
+                          <span className="ml-auto">Yes</span>
                         </li>
                         <li>
                           <span className="w-50">Total Return</span> -{" "}
@@ -179,7 +190,9 @@ const SlickPage = () => {
                         </li>
                       </ul>
                       <div className="pricing-action">
-                        <button className="btn btn-outline-light">Choose this plan</button>
+                        <button className="btn btn-outline-light">
+                          Choose this plan
+                        </button>
                       </div>
                     </div>
                   </Card>

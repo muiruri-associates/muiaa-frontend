@@ -28,7 +28,8 @@ const FormLayoutsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Form is most esential part of your project. We styled out nicely so you can build your form so quickly.
+                Form is most esential part of your project. We styled out nicely so you
+                can build your form so quickly.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -77,7 +78,11 @@ const FormLayoutsPage = () => {
                     <ul className="custom-control-group g-3 align-center">
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-email" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-email"
+                          />
                           <label className="custom-control-label" htmlFor="com-email">
                             Email
                           </label>
@@ -85,7 +90,11 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-sms" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-sms"
+                          />
                           <label className="custom-control-label" htmlFor="com-sms">
                             SMS
                           </label>
@@ -93,7 +102,11 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-phone" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-phone"
+                          />
                           <label className="custom-control-label" htmlFor="com-phone">
                             Phone
                           </label>
@@ -114,7 +127,11 @@ const FormLayoutsPage = () => {
                     <ul className="custom-control-group g-3 align-center">
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-card" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-card"
+                          />
                           <label className="custom-control-label" htmlFor="pay-card">
                             Card
                           </label>
@@ -122,15 +139,26 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-bitcoin" />
-                          <label className="custom-control-label " htmlFor="pay-bitcoin">
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-bitcoin"
+                          />
+                          <label
+                            className="custom-control-label "
+                            htmlFor="pay-bitcoin"
+                          >
                             Bitcoin
                           </label>
                         </div>
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-cash" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-cash"
+                          />
                           <label className="custom-control-label" htmlFor="pay-cash">
                             Cash
                           </label>
@@ -228,7 +256,11 @@ const FormLayoutsPage = () => {
                       Email address
                     </label>
                     <div className="form-control-wrap">
-                      <input type="text" id="email-address-1" className="form-control" />
+                      <input
+                        type="text"
+                        id="email-address-1"
+                        className="form-control"
+                      />
                     </div>
                   </FormGroup>
                 </Col>
@@ -258,7 +290,11 @@ const FormLayoutsPage = () => {
                     <ul className="custom-control-group g-3 align-center">
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-email-1" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-email-1"
+                          />
                           <label className="custom-control-label" htmlFor="com-email-1">
                             Email
                           </label>
@@ -266,7 +302,11 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-sms-1" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-sms-1"
+                          />
                           <label className="custom-control-label" htmlFor="com-sms-1">
                             SMS
                           </label>
@@ -274,7 +314,11 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="com-phone-1" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="com-phone-1"
+                          />
                           <label className="custom-control-label" htmlFor="com-phone-1">
                             Phone
                           </label>
@@ -289,7 +333,11 @@ const FormLayoutsPage = () => {
                     <ul className="custom-control-group g-3 align-center">
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-card-1" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-card-1"
+                          />
                           <label className="custom-control-label" htmlFor="pay-card-1">
                             Card
                           </label>
@@ -297,15 +345,26 @@ const FormLayoutsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-bitcoin-1" />
-                          <label className="custom-control-label" htmlFor="pay-bitcoin-1">
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-bitcoin-1"
+                          />
+                          <label
+                            className="custom-control-label"
+                            htmlFor="pay-bitcoin-1"
+                          >
                             Bitcoin
                           </label>
                         </div>
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input form-control" id="pay-cash-1" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input form-control"
+                            id="pay-cash-1"
+                          />
                           <label className="custom-control-label" htmlFor="pay-cash-1">
                             Cash
                           </label>
@@ -328,7 +387,9 @@ const FormLayoutsPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Setting Form Style</BlockTitle>
-              <p>You can make style out your setting related form as per below example.</p>
+              <p>
+                You can make style out your setting related form as per below example.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -362,13 +423,20 @@ const FormLayoutsPage = () => {
                 <Col lg="5">
                   <FormGroup>
                     <label className="form-label">Site Email</label>
-                    <span className="form-note">Specify the email address of your website.</span>
+                    <span className="form-note">
+                      Specify the email address of your website.
+                    </span>
                   </FormGroup>
                 </Col>
                 <Col lg="7">
                   <FormGroup>
                     <div className="form-control-wrap">
-                      <input type="text" id="site-email" className="form-control" defaultValue="info@softnio.com" />
+                      <input
+                        type="text"
+                        id="site-email"
+                        className="form-control"
+                        defaultValue="info@softnio.com"
+                      />
                     </div>
                   </FormGroup>
                 </Col>
@@ -377,7 +445,9 @@ const FormLayoutsPage = () => {
                 <Col lg="5">
                   <FormGroup>
                     <label className="form-label">Site Copyright</label>
-                    <span className="form-note">Copyright information of your website.</span>
+                    <span className="form-note">
+                      Copyright information of your website.
+                    </span>
                   </FormGroup>
                 </Col>
                 <Col lg="7">
@@ -397,7 +467,9 @@ const FormLayoutsPage = () => {
                 <Col lg="5">
                   <FormGroup>
                     <label className="form-label">Allow Registration</label>
-                    <span className="form-note">Enable or disable registration from site.</span>
+                    <span className="form-note">
+                      Enable or disable registration from site.
+                    </span>
                   </FormGroup>
                 </Col>
                 <Col lg="7">
@@ -451,7 +523,9 @@ const FormLayoutsPage = () => {
                 <Col lg="5">
                   <FormGroup>
                     <label className="form-label">Main Website</label>
-                    <span className="form-note">Specify the URL if your main website is external.</span>
+                    <span className="form-note">
+                      Specify the URL if your main website is external.
+                    </span>
                   </FormGroup>
                 </Col>
                 <Col lg="7">
@@ -473,7 +547,9 @@ const FormLayoutsPage = () => {
                     <label className="form-label" htmlFor="site-off">
                       Maintanance Mode
                     </label>
-                    <span className="form-note">Enable to make website make offline.</span>
+                    <span className="form-note">
+                      Enable to make website make offline.
+                    </span>
                   </FormGroup>
                 </Col>
                 <Col lg="7">
@@ -495,7 +571,11 @@ const FormLayoutsPage = () => {
               <Row className="g-3">
                 <Col lg="7" className="offset-lg-5">
                   <FormGroup className="mt-2">
-                    <Button color="primary" size="lg" onClick={(e) => e.preventDefault()}>
+                    <Button
+                      color="primary"
+                      size="lg"
+                      onClick={(e) => e.preventDefault()}
+                    >
                       Update
                     </Button>
                   </FormGroup>

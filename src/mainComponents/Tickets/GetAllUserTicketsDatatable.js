@@ -11,73 +11,67 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { getAllUserTickets } from '../../redux/actions/ticketActions';
+import { getAllUserTickets } from "../../redux/actions/ticketActions";
 import { TicketColums } from "./TicketsData";
-import { Button } from 'reactstrap';
+import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-
 
 const GetAllUserTicketsDatatable = () => {
   const dispatch = useDispatch();
   const ticket = useSelector((state) => state.ticket);
-  console.log('All tickets in component', ticket);
+  console.log("All tickets in component", ticket);
 
   useEffect(() => {
     dispatch(getAllUserTickets());
-  }, [dispatch])
+  }, [dispatch]);
 
   return (
     <React.Fragment>
-    <Head title="My Tickets" />
-    <Content page="component">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* First BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-            <BlockTitle tag="h2" className="fw-normal">
-              My Tickets
-            </BlockTitle>
-            <BackTo link="/ticket" icon="arrow-left">
-              Back
-            </BackTo>
-          </BlockHeadContent>
-        </BlockHead>
-        {/* Second BlockHead */}
-        <BlockHead size="lg" wide="sm">
+      <Head title="My Tickets" />
+      <Content page="component">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* First BlockHead */}
+          <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <BlockTitle tag="h2" className="fw-normal">
+                My Tickets
+              </BlockTitle>
+              <BackTo link="/ticket" icon="arrow-left">
+                Back
+              </BackTo>
+            </BlockHeadContent>
+          </BlockHead>
+          {/* Second BlockHead */}
+          <BlockHead size="lg" wide="sm">
             <BlockHeadContent>
               <Button>
-                <Link to={`/ticket`} >
-                    Create Ticket
-                </Link>
+                <Link to={`/ticket`}>Create Ticket</Link>
               </Button>
             </BlockHeadContent>
           </BlockHead>
-      </div>
-      <br />
+        </div>
+        <br />
 
-      <Block size="lg">
-        <PreviewCard>
-          {ticket.loading && <div>Loading...</div>}
-          {!ticket.loading && ticket.error ? (
-            <div>Error: {ticket.error}</div>
-          ): null}
-          {!ticket.loading && ticket.tickets?.length ? (
-            <ReactDataTable
-            data={ticket.tickets}
-            columns={TicketColums}
-            expandableRows
-            pagination
-            actions
-          />
-          ): (
-            <div>No Tickets found.</div>
-          )}
-        </PreviewCard>
-      </Block>
-    </Content>
-  </React.Fragment>
-);
-}
+        <Block size="lg">
+          <PreviewCard>
+            {ticket.loading && <div>Loading...</div>}
+            {!ticket.loading && ticket.error ? <div>Error: {ticket.error}</div> : null}
+            {!ticket.loading && ticket.tickets?.length ? (
+              <ReactDataTable
+                data={ticket.tickets}
+                columns={TicketColums}
+                expandableRows
+                pagination
+                actions
+              />
+            ) : (
+              <div>No Tickets found.</div>
+            )}
+          </PreviewCard>
+        </Block>
+      </Content>
+    </React.Fragment>
+  );
+};
 
-
-export default GetAllUserTicketsDatatable
+export default GetAllUserTicketsDatatable;

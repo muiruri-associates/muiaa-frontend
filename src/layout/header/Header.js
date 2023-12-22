@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import classNames from "classnames";
 import Toggle from "../sidebar/Toggle";
@@ -34,10 +34,13 @@ const Header = ({ fixed, theme, className, setVisibility, ...props }) => {
           </div>
           <div className="nk-header-tools">
             <ul className="nk-quick-nav">
-              <li className="user-dropdown"  onClick={() => setVisibility(false)}>
+              <li className="user-dropdown" onClick={() => setVisibility(false)}>
                 <User />
               </li>
-              <li className="notification-dropdown mr-n1"  onClick={() => setVisibility(false)}>
+              <li
+                className="notification-dropdown mr-n1"
+                onClick={() => setVisibility(false)}
+              >
                 <Notification />
               </li>
             </ul>
@@ -53,6 +56,6 @@ Header.propTypes = {
   fixed: PropTypes.any,
   setVisibility: PropTypes.func,
   theme: PropTypes.string,
-  sidebarToggle: PropTypes.func
-}
+  sidebarToggle: PropTypes.func,
+};
 export default Header;

@@ -83,7 +83,7 @@ const UserListRegularPage = () => {
       return item;
     });
     setData([...newData]);
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Changing state value when searching name
@@ -269,12 +269,17 @@ const UserListRegularPage = () => {
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="menu-alt-r"></Icon>
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <Button color="light" outline className="btn-white">
@@ -283,7 +288,11 @@ const UserListRegularPage = () => {
                       </Button>
                     </li>
                     <li className="nk-block-tools-opt">
-                      <Button color="primary" className="btn-icon" onClick={() => setModal({ add: true })}>
+                      <Button
+                        color="primary"
+                        className="btn-icon"
+                        onClick={() => setModal({ add: true })}
+                      >
                         <Icon name="plus"></Icon>
                       </Button>
                     </li>
@@ -352,21 +361,33 @@ const UserListRegularPage = () => {
                     <li>
                       <div className="toggle-wrap">
                         <Button
-                          className={`btn-icon btn-trigger toggle ${tablesm ? "active" : ""}`}
+                          className={`btn-icon btn-trigger toggle ${
+                            tablesm ? "active" : ""
+                          }`}
                           onClick={() => updateTableSm(true)}
                         >
                           <Icon name="menu-right"></Icon>
                         </Button>
-                        <div className={`toggle-content ${tablesm ? "content-active" : ""}`}>
+                        <div
+                          className={`toggle-content ${
+                            tablesm ? "content-active" : ""
+                          }`}
+                        >
                           <ul className="btn-toolbar gx-1">
                             <li className="toggle-close">
-                              <Button className="btn-icon btn-trigger toggle" onClick={() => updateTableSm(false)}>
+                              <Button
+                                className="btn-icon btn-trigger toggle"
+                                onClick={() => updateTableSm(false)}
+                              >
                                 <Icon name="arrow-left"></Icon>
                               </Button>
                             </li>
                             <li>
                               <UncontrolledDropdown>
-                                <DropdownToggle tag="a" className="btn btn-trigger btn-icon dropdown-toggle">
+                                <DropdownToggle
+                                  tag="a"
+                                  className="btn btn-trigger btn-icon dropdown-toggle"
+                                >
                                   <div className="dot dot-primary"></div>
                                   <Icon name="filter-alt"></Icon>
                                 </DropdownToggle>
@@ -376,7 +397,9 @@ const UserListRegularPage = () => {
                                   style={{ overflow: "visible" }}
                                 >
                                   <div className="dropdown-head">
-                                    <span className="sub-title dropdown-title">Filter Users</span>
+                                    <span className="sub-title dropdown-title">
+                                      Filter Users
+                                    </span>
                                     <div className="dropdown">
                                       <a
                                         href="#more"
@@ -398,7 +421,10 @@ const UserListRegularPage = () => {
                                             className="custom-control-input form-control"
                                             id="hasBalance"
                                           />
-                                          <label className="custom-control-label" htmlFor="hasBalance">
+                                          <label
+                                            className="custom-control-label"
+                                            htmlFor="hasBalance"
+                                          >
                                             {" "}
                                             Have Balance
                                           </label>
@@ -411,7 +437,10 @@ const UserListRegularPage = () => {
                                             className="custom-control-input form-control"
                                             id="hasKYC"
                                           />
-                                          <label className="custom-control-label" htmlFor="hasKYC">
+                                          <label
+                                            className="custom-control-label"
+                                            htmlFor="hasKYC"
+                                          >
                                             {" "}
                                             KYC Verified
                                           </label>
@@ -419,19 +448,32 @@ const UserListRegularPage = () => {
                                       </Col>
                                       <Col size="6">
                                         <FormGroup>
-                                          <label className="overline-title overline-title-alt">Role</label>
-                                          <RSelect options={filterRole} placeholder="Any Role" />
+                                          <label className="overline-title overline-title-alt">
+                                            Role
+                                          </label>
+                                          <RSelect
+                                            options={filterRole}
+                                            placeholder="Any Role"
+                                          />
                                         </FormGroup>
                                       </Col>
                                       <Col size="6">
                                         <FormGroup>
-                                          <label className="overline-title overline-title-alt">Status</label>
-                                          <RSelect options={filterStatus} placeholder="Any Status" />
+                                          <label className="overline-title overline-title-alt">
+                                            Status
+                                          </label>
+                                          <RSelect
+                                            options={filterStatus}
+                                            placeholder="Any Status"
+                                          />
                                         </FormGroup>
                                       </Col>
                                       <Col size="12">
                                         <FormGroup className="form-group">
-                                          <button type="button" className="btn btn-secondary">
+                                          <button
+                                            type="button"
+                                            className="btn btn-secondary"
+                                          >
                                             Filter
                                           </button>
                                         </FormGroup>
@@ -462,7 +504,10 @@ const UserListRegularPage = () => {
                             </li>
                             <li>
                               <UncontrolledDropdown>
-                                <DropdownToggle color="tranparent" className="btn btn-trigger btn-icon dropdown-toggle">
+                                <DropdownToggle
+                                  color="tranparent"
+                                  className="btn btn-trigger btn-icon dropdown-toggle"
+                                >
                                   <Icon name="setting"></Icon>
                                 </DropdownToggle>
                                 <DropdownMenu right className="dropdown-menu-xs">
@@ -605,7 +650,11 @@ const UserListRegularPage = () => {
                       <ul className="link-tidy sm no-bdr">
                         <li>
                           <div className="custom-control custom-control-sm custom-checkbox">
-                            <input type="checkbox" className="custom-control-input form-control" id="bl" />
+                            <input
+                              type="checkbox"
+                              className="custom-control-input form-control"
+                              id="bl"
+                            />
                             <label className="custom-control-label" htmlFor="bl">
                               Balance
                             </label>
@@ -613,7 +662,11 @@ const UserListRegularPage = () => {
                         </li>
                         <li>
                           <div className="custom-control custom-control-sm custom-checkbox">
-                            <input type="checkbox" className="custom-control-input form-control" id="ph" />
+                            <input
+                              type="checkbox"
+                              className="custom-control-input form-control"
+                              id="ph"
+                            />
                             <label className="custom-control-label" htmlFor="ph">
                               Phone
                             </label>
@@ -621,7 +674,11 @@ const UserListRegularPage = () => {
                         </li>
                         <li>
                           <div className="custom-control custom-control-sm custom-checkbox">
-                            <input type="checkbox" className="custom-control-input form-control" id="vri" />
+                            <input
+                              type="checkbox"
+                              className="custom-control-input form-control"
+                              id="vri"
+                            />
                             <label className="custom-control-label" htmlFor="vri">
                               Verified
                             </label>
@@ -629,7 +686,11 @@ const UserListRegularPage = () => {
                         </li>
                         <li>
                           <div className="custom-control custom-control-sm custom-checkbox">
-                            <input type="checkbox" className="custom-control-input form-control" id="st" />
+                            <input
+                              type="checkbox"
+                              className="custom-control-input form-control"
+                              id="st"
+                            />
                             <label className="custom-control-label" htmlFor="st">
                               Status
                             </label>
@@ -655,11 +716,16 @@ const UserListRegularPage = () => {
                               key={Math.random()}
                               onChange={(e) => onSelectChange(e, item.id)}
                             />
-                            <label className="custom-control-label" htmlFor={item.id + "uid1"}></label>
+                            <label
+                              className="custom-control-label"
+                              htmlFor={item.id + "uid1"}
+                            ></label>
                           </div>
                         </DataTableRow>
                         <DataTableRow>
-                          <Link to={`${process.env.PUBLIC_URL}/user-details-regular/${item.id}`}>
+                          <Link
+                            to={`${process.env.PUBLIC_URL}/user-details-regular/${item.id}`}
+                          >
                             <div className="user-card">
                               <UserAvatar
                                 theme={item.avatarBg}
@@ -674,8 +740,8 @@ const UserListRegularPage = () => {
                                       item.status === "Active"
                                         ? "success"
                                         : item.status === "Pending"
-                                        ? "warning"
-                                        : "danger"
+                                          ? "warning"
+                                          : "danger"
                                     } d-md-none ml-1`}
                                   ></span>
                                 </span>
@@ -700,15 +766,15 @@ const UserListRegularPage = () => {
                                   item.emailStatus === "success"
                                     ? "success"
                                     : item.emailStatus === "pending"
-                                    ? "info"
-                                    : "secondary"
+                                      ? "info"
+                                      : "secondary"
                                 }`}
                                 name={`${
                                   item.emailStatus === "success"
                                     ? "check-circle"
                                     : item.emailStatus === "alert"
-                                    ? "alert-circle"
-                                    : "alarm-alt"
+                                      ? "alert-circle"
+                                      : "alarm-alt"
                                 }`}
                               ></Icon>{" "}
                               <span>Email</span>
@@ -719,17 +785,17 @@ const UserListRegularPage = () => {
                                   item.kycStatus === "success"
                                     ? "success"
                                     : item.kycStatus === "pending"
-                                    ? "info"
-                                    : item.kycStatus === "warning"
-                                    ? "warning"
-                                    : "secondary"
+                                      ? "info"
+                                      : item.kycStatus === "warning"
+                                        ? "warning"
+                                        : "secondary"
                                 }`}
                                 name={`${
                                   item.kycStatus === "success"
                                     ? "check-circle"
                                     : item.kycStatus === "pending"
-                                    ? "alarm-alt"
-                                    : "alert-circle"
+                                      ? "alarm-alt"
+                                      : "alert-circle"
                                 }`}
                               ></Icon>{" "}
                               <span>KYC</span>
@@ -742,7 +808,11 @@ const UserListRegularPage = () => {
                         <DataTableRow size="md">
                           <span
                             className={`tb-status text-${
-                              item.status === "Active" ? "success" : item.status === "Pending" ? "warning" : "danger"
+                              item.status === "Active"
+                                ? "success"
+                                : item.status === "Pending"
+                                  ? "warning"
+                                  : "danger"
                             }`}
                           >
                             {item.status}
@@ -750,7 +820,10 @@ const UserListRegularPage = () => {
                         </DataTableRow>
                         <DataTableRow className="nk-tb-col-tools">
                           <ul className="nk-tb-actions gx-1">
-                            <li className="nk-tb-action-hidden" onClick={() => onEditClick(item.id)}>
+                            <li
+                              className="nk-tb-action-hidden"
+                              onClick={() => onEditClick(item.id)}
+                            >
                               <TooltipComponent
                                 tag="a"
                                 containerClassName="btn btn-trigger btn-icon"
@@ -762,7 +835,10 @@ const UserListRegularPage = () => {
                             </li>
                             {item.status !== "Suspend" && (
                               <React.Fragment>
-                                <li className="nk-tb-action-hidden" onClick={() => suspendUser(item.id)}>
+                                <li
+                                  className="nk-tb-action-hidden"
+                                  onClick={() => suspendUser(item.id)}
+                                >
                                   <TooltipComponent
                                     tag="a"
                                     containerClassName="btn btn-trigger btn-icon"
@@ -776,7 +852,10 @@ const UserListRegularPage = () => {
                             )}
                             <li>
                               <UncontrolledDropdown>
-                                <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+                                <DropdownToggle
+                                  tag="a"
+                                  className="dropdown-toggle btn btn-icon btn-trigger"
+                                >
                                   <Icon name="more-h"></Icon>
                                 </DropdownToggle>
                                 <DropdownMenu right>
@@ -837,7 +916,12 @@ const UserListRegularPage = () => {
             </div>
           </DataTable>
         </Block>
-        <Modal isOpen={modal.add} toggle={() => setModal({ add: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.add}
+          toggle={() => setModal({ add: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#close"
@@ -852,7 +936,11 @@ const UserListRegularPage = () => {
             <div className="p-2">
               <h5 className="title">Add User</h5>
               <div className="mt-4">
-                <Form className="row gy-4" noValidate onSubmit={handleSubmit(onFormSubmit)}>
+                <Form
+                  className="row gy-4"
+                  noValidate
+                  onSubmit={handleSubmit(onFormSubmit)}
+                >
                   <Col md="6">
                     <FormGroup>
                       <label className="form-label">Name</label>
@@ -864,7 +952,9 @@ const UserListRegularPage = () => {
                         placeholder="Enter name"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.name && <span className="invalid">{errors.name.message}</span>}
+                      {errors.name && (
+                        <span className="invalid">{errors.name.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -884,7 +974,9 @@ const UserListRegularPage = () => {
                           },
                         })}
                       />
-                      {errors.email && <span className="invalid">{errors.email.message}</span>}
+                      {errors.email && (
+                        <span className="invalid">{errors.email.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -898,7 +990,9 @@ const UserListRegularPage = () => {
                         placeholder="Balance"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.balance && <span className="invalid">{errors.balance.message}</span>}
+                      {errors.balance && (
+                        <span className="invalid">{errors.balance.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -911,7 +1005,9 @@ const UserListRegularPage = () => {
                         defaultValue={formData.phone}
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.phone && <span className="invalid">{errors.phone.message}</span>}
+                      {errors.phone && (
+                        <span className="invalid">{errors.phone.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="12">
@@ -921,7 +1017,9 @@ const UserListRegularPage = () => {
                         <RSelect
                           options={filterStatus}
                           defaultValue={{ value: "Active", label: "Active" }}
-                          onChange={(e) => setFormData({ ...formData, status: e.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, status: e.value })
+                          }
                         />
                       </div>
                     </FormGroup>
@@ -953,7 +1051,12 @@ const UserListRegularPage = () => {
           </ModalBody>
         </Modal>
 
-        <Modal isOpen={modal.edit} toggle={() => setModal({ edit: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.edit}
+          toggle={() => setModal({ edit: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -980,7 +1083,9 @@ const UserListRegularPage = () => {
                         placeholder="Enter name"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.name && <span className="invalid">{errors.name.message}</span>}
+                      {errors.name && (
+                        <span className="invalid">{errors.name.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -1000,7 +1105,9 @@ const UserListRegularPage = () => {
                           },
                         })}
                       />
-                      {errors.email && <span className="invalid">{errors.email.message}</span>}
+                      {errors.email && (
+                        <span className="invalid">{errors.email.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -1015,7 +1122,9 @@ const UserListRegularPage = () => {
                         placeholder="Balance"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.balance && <span className="invalid">{errors.balance.message}</span>}
+                      {errors.balance && (
+                        <span className="invalid">{errors.balance.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -1028,7 +1137,9 @@ const UserListRegularPage = () => {
                         defaultValue={Number(formData.phone)}
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.phone && <span className="invalid">{errors.phone.message}</span>}
+                      {errors.phone && (
+                        <span className="invalid">{errors.phone.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="12">
@@ -1041,7 +1152,9 @@ const UserListRegularPage = () => {
                             value: formData.status,
                             label: formData.status,
                           }}
-                          onChange={(e) => setFormData({ ...formData, status: e.value })}
+                          onChange={(e) =>
+                            setFormData({ ...formData, status: e.value })
+                          }
                         />
                       </div>
                     </FormGroup>

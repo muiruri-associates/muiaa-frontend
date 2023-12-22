@@ -1,14 +1,19 @@
 import React, { useContext } from "react";
 import { Icon } from "../../../../../components/Component";
 import { Link } from "react-router-dom";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { FileManagerContext } from "../../FileManagerContext";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 Links.propTypes = {
   data: PropTypes.object,
   setData: PropTypes.func,
-}
+};
 const Links = ({ data }) => {
   const { removeShare } = useContext(FileManagerContext);
   return (
@@ -36,7 +41,11 @@ const Links = ({ data }) => {
                   <DropdownMenu right>
                     <ul className="link-list-opt no-bdr">
                       <li>
-                        <DropdownItem tag="a" onClick={(ev) => ev.preventDefault()} href="#item">
+                        <DropdownItem
+                          tag="a"
+                          onClick={(ev) => ev.preventDefault()}
+                          href="#item"
+                        >
                           <Icon name="share"></Icon>
                           <span>Share</span>
                         </DropdownItem>
@@ -75,8 +84,15 @@ const Links = ({ data }) => {
                 <div className="nk-file-info">
                   <div className="nk-file-title">
                     <div className="custom-control custom-control-sm custom-checkbox notext">
-                      <input type="checkbox" className="custom-control-input" id={`folder-${item.id}`} />
-                      <label className="custom-control-label" htmlFor={`folder-${item.id}`}></label>
+                      <input
+                        type="checkbox"
+                        className="custom-control-input"
+                        id={`folder-${item.id}`}
+                      />
+                      <label
+                        className="custom-control-label"
+                        htmlFor={`folder-${item.id}`}
+                      ></label>
                     </div>
                     <div className="nk-file-icon">
                       <span className="nk-file-icon-type">{item.meta.svg}</span>
@@ -84,11 +100,18 @@ const Links = ({ data }) => {
                     <div className="nk-file-name">
                       <div className="nk-file-name-text">
                         {item.meta.type === "folder" ? (
-                          <Link to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`} className="title">
+                          <Link
+                            to={`${process.env.PUBLIC_URL}/app-file-manager/folder/${item.id}`}
+                            className="title"
+                          >
                             {item.meta.name}
                           </Link>
                         ) : (
-                          <a href="#link" onClick={(ev) => ev.preventDefault()} className="title">
+                          <a
+                            href="#link"
+                            onClick={(ev) => ev.preventDefault()}
+                            className="title"
+                          >
                             {item.meta.name}
                           </a>
                         )}

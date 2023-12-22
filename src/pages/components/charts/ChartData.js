@@ -1,5 +1,18 @@
 export const solidLineChart = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   dataUnit: "BTC",
   lineTension: 0.4,
   legend: true,
@@ -30,7 +43,20 @@ export const solidLineChart = {
 };
 
 export const filledLineChart = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   dataUnit: "BTC",
   datasets: [
     {
@@ -51,7 +77,20 @@ export const filledLineChart = {
 };
 
 export const straightLineChart = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   dataUnit: "BTC",
   datasets: [
     {
@@ -111,8 +150,8 @@ export const barChartData = {
       barPercentage: 0.8,
       categoryPercentage: 0.8,
       data: [
-        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95,
-        75, 90, 75, 90,
+        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55,
+        95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90,
       ],
     },
     {
@@ -121,14 +160,27 @@ export const barChartData = {
       barPercentage: 0.8,
       categoryPercentage: 0.8,
       data: [
-        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95,
-        75, 90, 75, 90,
+        110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 110, 80, 125, 55,
+        95, 75, 90, 110, 80, 125, 55, 95, 75, 90, 75, 90,
       ],
     },
   ],
 };
 export const barChartMultiple = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   dataUnit: "USD",
   datasets: [
     {
@@ -144,7 +196,20 @@ export const barChartMultiple = {
   ],
 };
 export const barChartStacked = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  labels: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
   stacked: true,
   dataUnit: "USD",
   datasets: [
@@ -168,7 +233,11 @@ export const doughnutChartData = {
   datasets: [
     {
       borderColor: "#fff",
-      backgroundColor: ["rgba(156, 171, 255, 0.8)", "rgba(244, 170, 164, 0.8)", "rgba(143, 234, 197, 0.8)"],
+      backgroundColor: [
+        "rgba(156, 171, 255, 0.8)",
+        "rgba(244, 170, 164, 0.8)",
+        "rgba(143, 234, 197, 0.8)",
+      ],
       data: [110, 80, 125],
     },
   ],
@@ -181,7 +250,11 @@ export const polarChartData = {
   datasets: [
     {
       borderColor: "#fff",
-      backgroundColor: ["rgba(156, 171, 255, 0.8)", "rgba(244, 170, 164, 0.8)", "rgba(143, 234, 197, 0.8)"],
+      backgroundColor: [
+        "rgba(156, 171, 255, 0.8)",
+        "rgba(244, 170, 164, 0.8)",
+        "rgba(143, 234, 197, 0.8)",
+      ],
       data: [110, 80, 125],
     },
   ],

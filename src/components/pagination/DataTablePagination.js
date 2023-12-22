@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import Icon from "../icon/Icon";
 import { Pagination, PaginationLink, PaginationItem, Row, Col } from "reactstrap";
@@ -50,7 +50,10 @@ const DataTablePagination = ({
           </PaginationItem>
           {pageNumbers.map((item) => {
             return (
-              <PaginationItem className={`d-none d-sm-block ${currentPage === item ? "active" : ""}`} key={item}>
+              <PaginationItem
+                className={`d-none d-sm-block ${currentPage === item ? "active" : ""}`}
+                key={item}
+              >
                 <PaginationLink
                   tag="a"
                   href="#pageitem"
@@ -65,7 +68,9 @@ const DataTablePagination = ({
             );
           })}
 
-          <PaginationItem disabled={pageNumbers[pageNumbers.length - 1] === currentPage}>
+          <PaginationItem
+            disabled={pageNumbers[pageNumbers.length - 1] === currentPage}
+          >
             <PaginationLink
               className="page-link-next"
               onClick={(ev) => {
@@ -81,7 +86,12 @@ const DataTablePagination = ({
         </Pagination>
       </Col>
       <Col sm="12" md="3" className="col-5 text-left text-md-right">
-        <div className="dataTables_info" id="DataTables_Table_2_info" role="status" aria-live="polite">
+        <div
+          className="dataTables_info"
+          id="DataTables_Table_2_info"
+          role="status"
+          aria-live="polite"
+        >
           1 - {customItemPerPage} of {totalItems}
         </div>
       </Col>
@@ -96,6 +106,6 @@ DataTablePagination.propTypes = {
   onChangeRowsPerPage: PropTypes.func,
   paginate: PropTypes.func,
   setRowsPerPage: PropTypes.func,
-  totalItems: PropTypes.any
-}
+  totalItems: PropTypes.any,
+};
 export default DataTablePagination;

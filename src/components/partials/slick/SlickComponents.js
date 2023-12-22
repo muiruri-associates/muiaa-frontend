@@ -1,11 +1,13 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import { Icon } from "../../Component";
 
-export const SlickArrowLeft = ({ currentSlide,  ...props }) => (
+export const SlickArrowLeft = ({ currentSlide, ...props }) => (
   <div
     {...props}
-    className={`slick-arrow-prev slick-arrow ${currentSlide === 0 ? " slick-disabled" : ""}`}
+    className={`slick-arrow-prev slick-arrow ${
+      currentSlide === 0 ? " slick-disabled" : ""
+    }`}
     aria-hidden="true"
     aria-disabled={currentSlide === 0 ? true : false}
     type="button"
@@ -18,13 +20,15 @@ export const SlickArrowLeft = ({ currentSlide,  ...props }) => (
 
 SlickArrowLeft.propTypes = {
   currentSlide: PropTypes.number,
-  slideCount: PropTypes.any
-}
+  slideCount: PropTypes.any,
+};
 
 export const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <div
     {...props}
-    className={`slick-arrow-next slick-arrow ${currentSlide === slideCount - 3 ? " slick-disabled" : ""}`}
+    className={`slick-arrow-next slick-arrow ${
+      currentSlide === slideCount - 3 ? " slick-disabled" : ""
+    }`}
     aria-hidden="true"
     aria-disabled={currentSlide === slideCount - 3 ? " slick-disabled" : ""}
     type="button"
@@ -37,5 +41,5 @@ export const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 
 SlickArrowRight.propTypes = {
   currentSlide: PropTypes.any,
-  slideCount: PropTypes.number
-}
+  slideCount: PropTypes.number,
+};

@@ -6,7 +6,13 @@ import ActionCenter from "../components/partials/crypto/action-center/ActionCent
 import CoinOrder from "../components/partials/crypto/coin-order/CoinOrder";
 import UserActivity from "../components/partials/crypto/user-activity/UserActivity";
 import OrderActivity from "../components/partials/order-activity/OrderActivity";
-import { Card, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  Card,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import {
   Block,
   BlockDes,
@@ -38,12 +44,17 @@ const CryptoHomePage = () => {
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="more-v" />
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <Button color="primary" outline className="btn-dim btn-white">
@@ -59,7 +70,10 @@ const CryptoHomePage = () => {
                     </li>
                     <li className="nk-block-tools-opt">
                       <UncontrolledDropdown>
-                        <DropdownToggle color="transparent" className="btn btn-primary btn-icon dropdown-toggle">
+                        <DropdownToggle
+                          color="transparent"
+                          className="btn btn-primary btn-icon dropdown-toggle"
+                        >
                           <Icon name="plus"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>

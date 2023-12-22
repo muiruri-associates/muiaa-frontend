@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import DualListBox from "react-dual-listbox";
 import { Icon } from "../Component";
@@ -64,7 +64,11 @@ const ReactDualList = ({ options, icon, canFilter, preSelected }) => {
   return (
     <div className="dual-listbox">
       {canFilter && (
-        <input className="dual-listbox__search" placeholder="Search" onChange={(e) => setFilterText(e.target.value)} />
+        <input
+          className="dual-listbox__search"
+          placeholder="Search"
+          onChange={(e) => setFilterText(e.target.value)}
+        />
       )}
       <DualListBox
         options={data}
@@ -81,9 +85,9 @@ ReactDualList.propTypes = {
   canFilter: PropTypes.any,
   icon: PropTypes.any,
   options: PropTypes.shape({
-    filter: PropTypes.func
+    filter: PropTypes.func,
   }),
-  preSelected: PropTypes.any
-}
+  preSelected: PropTypes.any,
+};
 
 export default ReactDualList;

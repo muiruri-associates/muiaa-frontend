@@ -33,7 +33,12 @@ import {
   RSelect,
 } from "../../../components/Component";
 import { projectData, teamList } from "./ProjectData";
-import { findUpper, setDeadline, setDeadlineDays, calcPercentage } from "../../../utils/Utils";
+import {
+  findUpper,
+  setDeadline,
+  setDeadlineDays,
+  calcPercentage,
+} from "../../../utils/Utils";
 import { useForm } from "react-hook-form";
 
 export const ProjectListPage = () => {
@@ -210,21 +215,31 @@ export const ProjectListPage = () => {
           <BlockBetween>
             <BlockHeadContent>
               <BlockTitle page> Projects</BlockTitle>
-              <BlockDes className="text-soft">You have total {data.length} projects</BlockDes>
+              <BlockDes className="text-soft">
+                You have total {data.length} projects
+              </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="menu-alt-r"></Icon>
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-white btn-dim btn-outline-light">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                        >
                           <Icon name="filter-alt" className="d-none d-sm-inline"></Icon>
                           <span>Filtered By</span>
                           <Icon name="chevron-right" className="dd-indc"></Icon>
@@ -268,7 +283,10 @@ export const ProjectListPage = () => {
                         </DropdownMenu>
                       </UncontrolledDropdown>
                     </li>
-                    <li className="nk-block-tools-opt" onClick={() => setModal({ add: true })}>
+                    <li
+                      className="nk-block-tools-opt"
+                      onClick={() => setModal({ add: true })}
+                    >
                       <Button color="primary">
                         <Icon name="plus"></Icon>
                         <span>Add Project</span>
@@ -318,7 +336,10 @@ export const ProjectListPage = () => {
                 </DataTableRow>
                 <DataTableRow className="nk-tb-col-tools text-right">
                   <UncontrolledDropdown>
-                    <DropdownToggle tag="a" className="btn btn-xs btn-trigger btn-icon dropdown-toggle mr-n1">
+                    <DropdownToggle
+                      tag="a"
+                      className="btn btn-xs btn-trigger btn-icon dropdown-toggle mr-n1"
+                    >
                       <Icon name="more-h"></Icon>
                     </DropdownToggle>
                     <DropdownMenu right>
@@ -367,7 +388,10 @@ export const ProjectListPage = () => {
                               key={Math.random()}
                               onChange={(e) => onSelectChange(e, item.id)}
                             />
-                            <label className="custom-control-label" htmlFor={item.id + "pid-all"}></label>
+                            <label
+                              className="custom-control-label"
+                              htmlFor={item.id + "pid-all"}
+                            ></label>
                           </div>
                         </DataTableRow>
                         <DataTableRow>
@@ -378,7 +402,11 @@ export const ProjectListPage = () => {
                             }}
                             className="project-title"
                           >
-                            <UserAvatar className="sq" theme={item.avatarClass} text={findUpper(item.title)} />
+                            <UserAvatar
+                              className="sq"
+                              theme={item.avatarClass}
+                              text={findUpper(item.title)}
+                            />
                             <div className="project-info">
                               <h6 className="title">{item.title}</h6>
                             </div>
@@ -406,7 +434,11 @@ export const ProjectListPage = () => {
                             })}
                             {item.team.length > 2 && (
                               <li>
-                                <UserAvatar theme="light" className="sm" text={`+${item.team.length - 2}`} />
+                                <UserAvatar
+                                  theme="light"
+                                  className="sm"
+                                  text={`+${item.team.length - 2}`}
+                                />
                               </li>
                             )}
                           </ul>
@@ -418,10 +450,17 @@ export const ProjectListPage = () => {
                           <div className="project-list-progress">
                             <Progress
                               className="progress-pill progress-md bg-light"
-                              value={days === 0 ? 100 : calcPercentage(item.totalTask, item.tasks)}
+                              value={
+                                days === 0
+                                  ? 100
+                                  : calcPercentage(item.totalTask, item.tasks)
+                              }
                             ></Progress>
                             <div className="project-progress-percent">
-                              {days === 0 ? 100 : calcPercentage(item.totalTask, item.tasks)}%
+                              {days === 0
+                                ? 100
+                                : calcPercentage(item.totalTask, item.tasks)}
+                              %
                             </div>
                           </div>
                         </DataTableRow>
@@ -431,21 +470,30 @@ export const ProjectListPage = () => {
                               days > 10
                                 ? "light"
                                 : days <= 10 && days >= 2
-                                ? "warning"
-                                : days === 1
-                                ? "danger"
-                                : days <= 0 && "success"
+                                  ? "warning"
+                                  : days === 1
+                                    ? "danger"
+                                    : days <= 0 && "success"
                             }`}
                           >
                             <Icon name="clock"></Icon>
-                            <span>{days <= 0 ? "Done" : days === 1 ? "Due Tomorrow" : days + " Days Left"}</span>
+                            <span>
+                              {days <= 0
+                                ? "Done"
+                                : days === 1
+                                  ? "Due Tomorrow"
+                                  : days + " Days Left"}
+                            </span>
                           </span>
                         </DataTableRow>
                         <DataTableRow className="nk-tb-col-tools text-right">
                           <ul className="nk-tb-actions gx-1">
                             <li>
                               <UncontrolledDropdown>
-                                <DropdownToggle tag="a" className="text-soft dropdown-toggle btn btn-icon btn-trigger">
+                                <DropdownToggle
+                                  tag="a"
+                                  className="text-soft dropdown-toggle btn btn-icon btn-trigger"
+                                >
                                   <Icon name="more-h"></Icon>
                                 </DropdownToggle>
                                 <DropdownMenu right>
@@ -504,7 +552,12 @@ export const ProjectListPage = () => {
           </DataTable>
         </Block>
 
-        <Modal isOpen={modal.add} toggle={() => setModal({ add: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.add}
+          toggle={() => setModal({ add: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -534,7 +587,9 @@ export const ProjectListPage = () => {
                           required: "This field is required",
                         })}
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -551,7 +606,9 @@ export const ProjectListPage = () => {
                           required: "This field is required",
                         })}
                       />
-                      {errors.subtitle && <span className="invalid">{errors.subtitle.message}</span>}
+                      {errors.subtitle && (
+                        <span className="invalid">{errors.subtitle.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -567,7 +624,9 @@ export const ProjectListPage = () => {
                           required: "This field is required",
                         })}
                       />
-                      {errors.description && <span className="invalid">{errors.description.message}</span>}
+                      {errors.description && (
+                        <span className="invalid">{errors.description.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -583,7 +642,9 @@ export const ProjectListPage = () => {
                           required: "This field is required",
                         })}
                       />
-                      {errors.tasks && <span className="invalid">{errors.tasks.message}</span>}
+                      {errors.tasks && (
+                        <span className="invalid">{errors.tasks.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -599,7 +660,9 @@ export const ProjectListPage = () => {
                           required: "This field is required",
                         })}
                       />
-                      {errors.totalTask && <span className="invalid">{errors.totalTask.message}</span>}
+                      {errors.totalTask && (
+                        <span className="invalid">{errors.totalTask.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -616,13 +679,20 @@ export const ProjectListPage = () => {
                   <Col md="6">
                     <FormGroup>
                       <label className="form-label">Team Members</label>
-                      <RSelect options={teamList} isMulti onChange={(e) => setFormData({ ...formData, team: e })} />
+                      <RSelect
+                        options={teamList}
+                        isMulti
+                        onChange={(e) => setFormData({ ...formData, team: e })}
+                      />
                     </FormGroup>
                   </Col>
                   <Col md="6">
                     <FormGroup>
                       <label className="form-label">Lead</label>
-                      <RSelect options={formData.team} onChange={(e) => setFormData({ ...formData, lead: e.value })} />
+                      <RSelect
+                        options={formData.team}
+                        onChange={(e) => setFormData({ ...formData, lead: e.value })}
+                      />
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -651,7 +721,12 @@ export const ProjectListPage = () => {
           </ModalBody>
         </Modal>
 
-        <Modal isOpen={modal.edit} toggle={() => setModal({ edit: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.edit}
+          toggle={() => setModal({ edit: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -681,7 +756,9 @@ export const ProjectListPage = () => {
                         })}
                         className="form-control"
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -698,7 +775,9 @@ export const ProjectListPage = () => {
                         })}
                         className="form-control"
                       />
-                      {errors.subtitle && <span className="invalid">{errors.subtitle.message}</span>}
+                      {errors.subtitle && (
+                        <span className="invalid">{errors.subtitle.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -714,7 +793,9 @@ export const ProjectListPage = () => {
                         })}
                         className="form-control no-resize"
                       />
-                      {errors.description && <span className="invalid">{errors.description.message}</span>}
+                      {errors.description && (
+                        <span className="invalid">{errors.description.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -730,7 +811,9 @@ export const ProjectListPage = () => {
                         defaultValue={formData.tasks}
                         className="form-control"
                       />
-                      {errors.tasks && <span className="invalid">{errors.tasks.message}</span>}
+                      {errors.tasks && (
+                        <span className="invalid">{errors.tasks.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -747,7 +830,9 @@ export const ProjectListPage = () => {
                         })}
                         className="form-control"
                       />
-                      {errors.totalTask && <span className="invalid">{errors.totalTask.message}</span>}
+                      {errors.totalTask && (
+                        <span className="invalid">{errors.totalTask.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">

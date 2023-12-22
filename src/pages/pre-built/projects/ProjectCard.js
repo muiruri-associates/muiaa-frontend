@@ -19,7 +19,12 @@ import {
   RSelect,
 } from "../../../components/Component";
 import { projectData, teamList } from "./ProjectData";
-import { findUpper, setDeadline, setDeadlineDays, calcPercentage } from "../../../utils/Utils";
+import {
+  findUpper,
+  setDeadline,
+  setDeadlineDays,
+  calcPercentage,
+} from "../../../utils/Utils";
 import {
   DropdownMenu,
   DropdownToggle,
@@ -172,21 +177,31 @@ const ProjectCardPage = () => {
           <BlockBetween>
             <BlockHeadContent>
               <BlockTitle page> Projects</BlockTitle>
-              <BlockDes className="text-soft">You have total {data.length} projects</BlockDes>
+              <BlockDes className="text-soft">
+                You have total {data.length} projects
+              </BlockDes>
             </BlockHeadContent>
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="menu-alt-r"></Icon>
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-white btn-dim btn-outline-light">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                        >
                           <Icon name="filter-alt" className="d-none d-sm-inline"></Icon>
                           <span>Filtered By</span>
                           <Icon name="chevron-right" className="dd-indc"></Icon>
@@ -230,7 +245,10 @@ const ProjectCardPage = () => {
                         </DropdownMenu>
                       </UncontrolledDropdown>
                     </li>
-                    <li className="nk-block-tools-opt" onClick={() => setModal({ add: true })}>
+                    <li
+                      className="nk-block-tools-opt"
+                      onClick={() => setModal({ add: true })}
+                    >
                       <Button color="primary">
                         <Icon name="plus"></Icon>
                         <span>Add Project</span>
@@ -259,7 +277,11 @@ const ProjectCardPage = () => {
                           }}
                           className="project-title"
                         >
-                          <UserAvatar className="sq" theme={item.avatarClass} text={findUpper(item.title)} />
+                          <UserAvatar
+                            className="sq"
+                            theme={item.avatarClass}
+                            text={findUpper(item.title)}
+                          />
                           <div className="project-info">
                             <h6 className="title">{item.title}</h6>
                             <span className="sub-text">{item.subtitle}</span>
@@ -305,7 +327,9 @@ const ProjectCardPage = () => {
                         </UncontrolledDropdown>
                       </div>
                       <div className="project-details">
-                        {item.desc.length > 90 ? item.desc.substring(0, 89) + "... " : item.desc}
+                        {item.desc.length > 90
+                          ? item.desc.substring(0, 89) + "... "
+                          : item.desc}
                       </div>
                       <div className="project-progress">
                         <div className="project-progress-details">
@@ -314,12 +338,19 @@ const ProjectCardPage = () => {
                             <span>{item.tasks} Tasks</span>
                           </div>
                           <div className="project-progress-percent">
-                            {days === 0 ? 100 : calcPercentage(item.totalTask, item.tasks)}%
+                            {days === 0
+                              ? 100
+                              : calcPercentage(item.totalTask, item.tasks)}
+                            %
                           </div>
                         </div>
                         <Progress
                           className="progress-pill progress-md bg-light"
-                          value={days === 0 ? 100 : calcPercentage(item.totalTask, item.tasks)}
+                          value={
+                            days === 0
+                              ? 100
+                              : calcPercentage(item.totalTask, item.tasks)
+                          }
                         ></Progress>
                       </div>
                       <div className="project-meta">
@@ -338,7 +369,11 @@ const ProjectCardPage = () => {
                           })}
                           {item.team.length > 2 && (
                             <li>
-                              <UserAvatar theme="light" className="sm" text={`+${item.team.length - 2}`} />
+                              <UserAvatar
+                                theme="light"
+                                className="sm"
+                                text={`+${item.team.length - 2}`}
+                              />
                             </li>
                           )}
                         </ul>
@@ -347,14 +382,20 @@ const ProjectCardPage = () => {
                             days > 10
                               ? "light"
                               : days <= 10 && days >= 2
-                              ? "warning"
-                              : days === 1
-                              ? "danger"
-                              : days <= 0 && "success"
+                                ? "warning"
+                                : days === 1
+                                  ? "danger"
+                                  : days <= 0 && "success"
                           }`}
                         >
                           <Icon name="clock"></Icon>
-                          <span>{days <= 0 ? "Done" : days === 1 ? "Due Tomorrow" : days + " Days Left"}</span>
+                          <span>
+                            {days <= 0
+                              ? "Done"
+                              : days === 1
+                                ? "Due Tomorrow"
+                                : days + " Days Left"}
+                          </span>
                         </span>
                       </div>
                     </ProjectCard>
@@ -372,7 +413,12 @@ const ProjectCardPage = () => {
           </div>
         </Block>
 
-        <Modal isOpen={modal.add} toggle={() => setModal({ add: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.add}
+          toggle={() => setModal({ add: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -400,7 +446,9 @@ const ProjectCardPage = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -415,7 +463,9 @@ const ProjectCardPage = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.subtitle && <span className="invalid">{errors.subtitle.message}</span>}
+                      {errors.subtitle && (
+                        <span className="invalid">{errors.subtitle.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -429,7 +479,9 @@ const ProjectCardPage = () => {
                         className="form-control-xl form-control no-resize"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.description && <span className="invalid">{errors.description.message}</span>}
+                      {errors.description && (
+                        <span className="invalid">{errors.description.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -442,7 +494,9 @@ const ProjectCardPage = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.tasks && <span className="invalid">{errors.tasks.message}</span>}
+                      {errors.tasks && (
+                        <span className="invalid">{errors.tasks.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -455,7 +509,9 @@ const ProjectCardPage = () => {
                         className="form-control"
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.totalTask && <span className="invalid">{errors.totalTask.message}</span>}
+                      {errors.totalTask && (
+                        <span className="invalid">{errors.totalTask.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -472,13 +528,20 @@ const ProjectCardPage = () => {
                   <Col md="6">
                     <FormGroup>
                       <label className="form-label">Team Members</label>
-                      <RSelect options={teamList} isMulti onChange={(e) => setFormData({ ...formData, team: e })} />
+                      <RSelect
+                        options={teamList}
+                        isMulti
+                        onChange={(e) => setFormData({ ...formData, team: e })}
+                      />
                     </FormGroup>
                   </Col>
                   <Col md="6">
                     <FormGroup>
                       <label className="form-label">Lead</label>
-                      <RSelect options={formData.team} onChange={(e) => setFormData({ ...formData, lead: e.value })} />
+                      <RSelect
+                        options={formData.team}
+                        onChange={(e) => setFormData({ ...formData, lead: e.value })}
+                      />
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -506,7 +569,12 @@ const ProjectCardPage = () => {
             </div>
           </ModalBody>
         </Modal>
-        <Modal isOpen={modal.edit} toggle={() => setModal({ edit: false })} className="modal-dialog-centered" size="lg">
+        <Modal
+          isOpen={modal.edit}
+          toggle={() => setModal({ edit: false })}
+          className="modal-dialog-centered"
+          size="lg"
+        >
           <ModalBody>
             <a
               href="#cancel"
@@ -534,7 +602,9 @@ const ProjectCardPage = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -549,7 +619,9 @@ const ProjectCardPage = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.subtitle && <span className="invalid">{errors.subtitle.message}</span>}
+                      {errors.subtitle && (
+                        <span className="invalid">{errors.subtitle.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col size="12">
@@ -563,7 +635,9 @@ const ProjectCardPage = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control no-resize"
                       />
-                      {errors.description && <span className="invalid">{errors.description.message}</span>}
+                      {errors.description && (
+                        <span className="invalid">{errors.description.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -577,7 +651,9 @@ const ProjectCardPage = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.tasks && <span className="invalid">{errors.tasks.message}</span>}
+                      {errors.tasks && (
+                        <span className="invalid">{errors.tasks.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -591,7 +667,9 @@ const ProjectCardPage = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.totalTask && <span className="invalid">{errors.totalTask.message}</span>}
+                      {errors.totalTask && (
+                        <span className="invalid">{errors.totalTask.message}</span>
+                      )}
                     </FormGroup>
                   </Col>
                   <Col md="6">

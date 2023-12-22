@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Button, Col, Row } from "reactstrap";
 import { uploadDocument } from "../../../redux/actions/uploadActions";
 
 const UploadBorrowerDocument = () => {
   const dispatch = useDispatch();
   const [file, setFile] = useState([]);
-  const [type, setType] = useState('ID');
+  const [type, setType] = useState("ID");
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -49,151 +49,194 @@ const UploadBorrowerDocument = () => {
     setType(e.target.value); // Update the type state when the input changes
   };
   return (
-    <div style={{ overflowY: 'auto', maxHeight: '100vh', paddingRight: '17px' }}>
-      {isUser && (<>
-        <Row>
-          <Col sm="6">
-            <label className="form-label">Personal ID</label>
-            <input type="text" value={type} hidden defaultValue={type}/>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-          <Col sm="6">
-            <label className="form-label">Personal KRA PIN</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-        </Row>
-        <br />
-      </>)}
+    <div style={{ overflowY: "auto", maxHeight: "100vh", paddingRight: "17px" }}>
       {isUser && (
-      <>
-        <Row>
-          <Col sm="6">
-            <label className="form-label">Personal MPESA Statement</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
+        <>
+          <Row>
+            <Col sm="6">
+              <label className="form-label">Personal ID</label>
+              <input type="text" value={type} hidden defaultValue={type} />
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
+                      <input {...getInputProps()} />
+                      {file.length === 0 && (
+                        <div className="dz-message">
+                          <span className="dz-message-text">Drag and drop file</span>
+                          <span className="dz-message-or">or</span>
+                          <Button color="primary">SELECT</Button>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-          <Col sm="6">
-            <label className="form-label">Personal Bank Statement</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
+                      )}
+                      {file.map((file) => (
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
+                          <div className="dz-image">
+                            <img src={file.preview} alt="preview" />
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm="6">
-            <label className="form-label">Mortgage Downpayment Slip</label>
-            <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
-              {({ getRootProps, getInputProps }) => (
-                <section>
-                  <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
-                    <input {...getInputProps()} />
-                    {file.length === 0 && (
-                      <div className="dz-message">
-                        <span className="dz-message-text">Drag and drop file</span>
-                        <span className="dz-message-or">or</span>
-                        <Button color="primary">SELECT</Button>
-                      </div>
-                    )}
-                    {file.map((file) => (
-                      <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
-                        <div className="dz-image">
-                          <img src={file.preview} alt="preview" />
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+            </Col>
+            <Col sm="6">
+              <label className="form-label">Personal KRA PIN</label>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
+                      <input {...getInputProps()} />
+                      {file.length === 0 && (
+                        <div className="dz-message">
+                          <span className="dz-message-text">Drag and drop file</span>
+                          <span className="dz-message-or">or</span>
+                          <Button color="primary">SELECT</Button>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </Dropzone>
-          </Col>
-        </Row>
-        <br />
-      </>)}
+                      )}
+                      {file.map((file) => (
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
+                          <div className="dz-image">
+                            <img src={file.preview} alt="preview" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+            </Col>
+          </Row>
+          <br />
+        </>
+      )}
+      {isUser && (
+        <>
+          <Row>
+            <Col sm="6">
+              <label className="form-label">Personal MPESA Statement</label>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
+                      <input {...getInputProps()} />
+                      {file.length === 0 && (
+                        <div className="dz-message">
+                          <span className="dz-message-text">Drag and drop file</span>
+                          <span className="dz-message-or">or</span>
+                          <Button color="primary">SELECT</Button>
+                        </div>
+                      )}
+                      {file.map((file) => (
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
+                          <div className="dz-image">
+                            <img src={file.preview} alt="preview" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+            </Col>
+            <Col sm="6">
+              <label className="form-label">Personal Bank Statement</label>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
+                      <input {...getInputProps()} />
+                      {file.length === 0 && (
+                        <div className="dz-message">
+                          <span className="dz-message-text">Drag and drop file</span>
+                          <span className="dz-message-or">or</span>
+                          <Button color="primary">SELECT</Button>
+                        </div>
+                      )}
+                      {file.map((file) => (
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
+                          <div className="dz-image">
+                            <img src={file.preview} alt="preview" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="6">
+              <label className="form-label">Mortgage Downpayment Slip</label>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
+                {({ getRootProps, getInputProps }) => (
+                  <section>
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
+                      <input {...getInputProps()} />
+                      {file.length === 0 && (
+                        <div className="dz-message">
+                          <span className="dz-message-text">Drag and drop file</span>
+                          <span className="dz-message-or">or</span>
+                          <Button color="primary">SELECT</Button>
+                        </div>
+                      )}
+                      {file.map((file) => (
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
+                          <div className="dz-image">
+                            <img src={file.preview} alt="preview" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </Dropzone>
+            </Col>
+          </Row>
+          <br />
+        </>
+      )}
     </div>
   );
 };

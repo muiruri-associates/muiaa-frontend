@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import exportFromJSON from "export-from-json";
@@ -37,14 +37,25 @@ const Export = ({ data }) => {
         <div className="dt-export-title d-none d-md-inline-block">Export</div>
         <div className="dt-buttons btn-group flex-wrap">
           <CopyToClipboard text={JSON.stringify(data)}>
-            <Button className="buttons-copy buttons-html5" onClick={() => copyToClipboard()}>
+            <Button
+              className="buttons-copy buttons-html5"
+              onClick={() => copyToClipboard()}
+            >
               <span>Copy</span>
             </Button>
           </CopyToClipboard>{" "}
-          <button className="btn btn-secondary buttons-csv buttons-html5" type="button" onClick={() => exportCSV()}>
+          <button
+            className="btn btn-secondary buttons-csv buttons-html5"
+            type="button"
+            onClick={() => exportCSV()}
+          >
             <span>CSV</span>
           </button>{" "}
-          <button className="btn btn-secondary buttons-excel buttons-html5" type="button" onClick={() => exportExcel()}>
+          <button
+            className="btn btn-secondary buttons-excel buttons-html5"
+            type="button"
+            onClick={() => exportExcel()}
+          >
             <span>Excel</span>
           </button>{" "}
         </div>
@@ -63,24 +74,28 @@ const Export = ({ data }) => {
 
 Export.propTypes = {
   data: PropTypes.shape({
-    length: PropTypes.any
-  })
-}
+    length: PropTypes.any,
+  }),
+};
 
 const ExpandableRowComponent = ({ data }) => {
   return (
     <ul className="dtr-details p-2 border-bottom ml-1">
       <li className="d-block d-sm-none">
-        <span className="dtr-title">Company</span> <span className="dtr-data">{data.company}</span>
+        <span className="dtr-title">Company</span>{" "}
+        <span className="dtr-data">{data.company}</span>
       </li>
       <li className="d-block d-sm-none">
-        <span className="dtr-title ">Gender</span> <span className="dtr-data">{data.gender}</span>
+        <span className="dtr-title ">Gender</span>{" "}
+        <span className="dtr-data">{data.gender}</span>
       </li>
       <li>
-        <span className="dtr-title">Start Date</span> <span className="dtr-data">{data.startDate}</span>
+        <span className="dtr-title">Start Date</span>{" "}
+        <span className="dtr-data">{data.startDate}</span>
       </li>
       <li>
-        <span className="dtr-title">Salary</span> <span className="dtr-data">{data.salary}</span>
+        <span className="dtr-title">Salary</span>{" "}
+        <span className="dtr-data">{data.salary}</span>
       </li>
     </ul>
   );
@@ -91,9 +106,9 @@ ExpandableRowComponent.propTypes = {
     company: PropTypes.any,
     gender: PropTypes.any,
     salary: PropTypes.any,
-    startDate: PropTypes.any
-  })
-}
+    startDate: PropTypes.any,
+  }),
+};
 
 const CustomCheckbox = React.forwardRef(({ onClick, ...rest }, ref) => (
   <div className="custom-control custom-control-sm custom-checkbox notext">
@@ -110,12 +125,20 @@ const CustomCheckbox = React.forwardRef(({ onClick, ...rest }, ref) => (
 ));
 
 CustomCheckbox.propTypes = {
-  onClick: PropTypes.any
-}
+  onClick: PropTypes.any,
+};
 
 CustomCheckbox.displayName = "CustomCheckbox";
 
-const ReactDataTable = ({ data, columns, pagination, actions, className, selectableRows, expandableRows }) => {
+const ReactDataTable = ({
+  data,
+  columns,
+  pagination,
+  actions,
+  className,
+  selectableRows,
+  expandableRows,
+}) => {
   const [tableData, setTableData] = useState(data);
   const [searchText, setSearchText] = useState("");
   const [rowsPerPageS, setRowsPerPage] = useState(10);
@@ -151,7 +174,11 @@ const ReactDataTable = ({ data, columns, pagination, actions, className, selecta
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className={`dataTables_wrapper dt-bootstrap4 no-footer ${className ? className : ""}`}>
+    <div
+      className={`dataTables_wrapper dt-bootstrap4 no-footer ${
+        className ? className : ""
+      }`}
+    >
       <Row className={`justify-between g-2 ${actions ? "with-export" : ""}`}>
         <Col className="col-7 text-left" sm="4">
           <div id="DataTables_Table_0_filter" className="dataTables_filter">
@@ -208,7 +235,13 @@ const ReactDataTable = ({ data, columns, pagination, actions, className, selecta
           </div>
         }
         pagination={pagination}
-        paginationComponent={({ currentPage, rowsPerPage, rowCount, onChangePage, onChangeRowsPerPage }) => (
+        paginationComponent={({
+          currentPage,
+          rowsPerPage,
+          rowCount,
+          onChangePage,
+          onChangeRowsPerPage,
+        }) => (
           <DataTablePagination
             customItemPerPage={rowsPerPageS}
             itemPerPage={rowsPerPage}
@@ -229,11 +262,11 @@ ReactDataTable.propTypes = {
   className: PropTypes.any,
   columns: PropTypes.any,
   data: PropTypes.shape({
-    filter: PropTypes.func
+    filter: PropTypes.func,
   }),
   expandableRows: PropTypes.any,
   pagination: PropTypes.any,
-  selectableRows: PropTypes.any
-}
+  selectableRows: PropTypes.any,
+};
 
 export default ReactDataTable;

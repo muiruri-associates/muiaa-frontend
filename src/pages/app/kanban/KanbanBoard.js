@@ -1,12 +1,12 @@
 import React from "react";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { KanbanColumn } from "./KanbanPartials";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 KanbanBoard.propTypes = {
-  columns: PropTypes.any, 
-  setColumns: PropTypes.func 
-}
+  columns: PropTypes.any,
+  setColumns: PropTypes.func,
+};
 
 const KanbanBoard = ({ columns, setColumns }) => {
   const handleOnDragEnd = (result) => {
@@ -15,7 +15,10 @@ const KanbanBoard = ({ columns, setColumns }) => {
     if (!destination) {
       return;
     }
-    if (destination.droppableId === source.droppableId && destination.index === source.index) {
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
       return;
     }
 
@@ -95,7 +98,15 @@ const KanbanBoard = ({ columns, setColumns }) => {
           >
             {columns.columnOrder.map((columnId, index) => {
               const column = columns.columns[columnId];
-              return <KanbanColumn data={columns} setData={setColumns} column={column} key={index} index={index} />;
+              return (
+                <KanbanColumn
+                  data={columns}
+                  setData={setColumns}
+                  column={column}
+                  key={index}
+                  index={index}
+                />
+              );
             })}
             {provided.placeholder}
           </div>

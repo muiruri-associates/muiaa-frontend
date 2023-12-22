@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Icon from "../../../icon/Icon";
 import Progress from "../../../progress/Progress";
-import { browserUserData, browserUserDataSet2, browserUserDataSet3 } from "../../charts/analytics/AnalyticsData";
-import { DropdownItem, UncontrolledDropdown, DropdownToggle, DropdownMenu } from "reactstrap";
+import {
+  browserUserData,
+  browserUserDataSet2,
+  browserUserDataSet3,
+} from "../../charts/analytics/AnalyticsData";
+import {
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+} from "reactstrap";
 import { DataTableRow, DataTableHead, DataTableItem } from "../../../table/DataTable";
 
 const BrowserUser = () => {
@@ -101,7 +110,11 @@ const BrowserUser = () => {
                 </span>
               </DataTableRow>
               <DataTableRow>
-                <Progress value={item.userPercentage} size="md" className="progress-alt bg-transparent" />
+                <Progress
+                  value={item.userPercentage}
+                  size="md"
+                  className="progress-alt bg-transparent"
+                />
               </DataTableRow>
               <DataTableRow className="tb-col-sm text-right">
                 <span className="tb-sub">{item.bounceRate}%</span>

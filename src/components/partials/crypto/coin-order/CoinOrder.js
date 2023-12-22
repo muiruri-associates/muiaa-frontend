@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import Icon from "../../../icon/Icon";
-import { UncontrolledDropdown, CardTitle, DropdownMenu, DropdownItem, DropdownToggle } from "reactstrap";
+import {
+  UncontrolledDropdown,
+  CardTitle,
+  DropdownMenu,
+  DropdownItem,
+  DropdownToggle,
+} from "reactstrap";
 import { HorizontalBarChart } from "../../charts/default/Charts";
 
 const CoinOrder = () => {
@@ -11,13 +17,21 @@ const CoinOrder = () => {
         <CardTitle className="card-title">
           <h6 className="title">Top Coin in Orders</h6>
           <p>
-            In last {coinOrder === "day" ? "30 days" : coinOrder === "month" ? "3 months" : "15 days"} buy and sells
-            overview.
+            In last{" "}
+            {coinOrder === "day"
+              ? "30 days"
+              : coinOrder === "month"
+                ? "3 months"
+                : "15 days"}{" "}
+            buy and sells overview.
           </p>
         </CardTitle>
         <div className="card-tools mt-n1 mr-n1">
           <UncontrolledDropdown>
-            <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger">
+            <DropdownToggle
+              tag="a"
+              className="dropdown-toggle btn btn-icon btn-trigger"
+            >
               <Icon name="more-h"></Icon>
             </DropdownToggle>
             <DropdownMenu right>

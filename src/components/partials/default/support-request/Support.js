@@ -29,7 +29,11 @@ const Support = () => {
                   <span>{item.name}</span>
                   <span
                     className={`badge badge-dot badge-dot-xs badge-${
-                      item.status === "Solved" ? "success" : item.status === "Pending" ? "warning" : "info"
+                      item.status === "Solved"
+                        ? "success"
+                        : item.status === "Pending"
+                          ? "warning"
+                          : "info"
                     }`}
                   >
                     {item.status}

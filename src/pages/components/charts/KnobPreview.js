@@ -31,11 +31,13 @@ const KnobPreview = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                <a href="https://www.chartjs.org/">ChartJs</a> is a very simple and flexible JavaScript charting for
-                designers & developers. Knobs are made from <code>Doughnut</code> component provided by chartjs2.
+                <a href="https://www.chartjs.org/">ChartJs</a> is a very simple and
+                flexible JavaScript charting for designers & developers. Knobs are made
+                from <code>Doughnut</code> component provided by chartjs2.
               </p>
               <p>
-                Also can fine more details from <a href="https://www.chartjs.org/">here</a>.
+                Also can fine more details from{" "}
+                <a href="https://www.chartjs.org/">here</a>.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -47,7 +49,8 @@ const KnobPreview = () => {
               <BlockTitle tag="h4">Knob Full</BlockTitle>
               <BlockDes>
                 <p>
-                  Full Knobs can be made using the built in react dashlite component of <code>Knob</code>.
+                  Full Knobs can be made using the built in react dashlite component of{" "}
+                  <code>Knob</code>.
                 </p>
               </BlockDes>
             </BlockHeadContent>
@@ -76,8 +79,9 @@ const KnobPreview = () => {
               <BlockTitle tag="h4">Knob half</BlockTitle>
               <BlockDes>
                 <p>
-                  Half Knobs can be made using the built in react dashlite component of <code>Knob</code>. Just pass{" "}
-                  <code>type=&#34;half&#34;</code> to the component.
+                  Half Knobs can be made using the built in react dashlite component of{" "}
+                  <code>Knob</code>. Just pass <code>type=&#34;half&#34;</code> to the
+                  component.
                 </p>
               </BlockDes>
             </BlockHeadContent>

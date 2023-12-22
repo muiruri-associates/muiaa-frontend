@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import classNames from "classnames";
 // import ChatSideBar from "./ChatSideBar";
 import SimpleBar from "simplebar-react";
@@ -8,15 +8,15 @@ import { Icon, Button } from "../../../components/Component";
 import { currentTime } from "../../../utils/Utils";
 import { TicketChatContext } from "./ticketChatContext";
 import { MeChat, YouChat } from "./ticketChatPartials";
-import { sendMessage } from '../../../redux/actions/ticketActions';
+import { sendMessage } from "../../../redux/actions/ticketActions";
 import { useParams } from "react-router-dom";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // todo: ToDO:fix this section of chat body so that it can display the message
 TicketChatBody.propTypes = {
   mobileView: PropTypes.any,
   setMobileView: PropTypes.any,
-}
+};
 const TicketChatBody = ({ mobileView, setMobileView }) => {
   const dispatch = useDispatch();
   const { _id } = useParams();
@@ -98,7 +98,7 @@ const TicketChatBody = ({ mobileView, setMobileView }) => {
   }, []);
 
   // () => {
-    setChatOptions(!chatOptions);
+  setChatOptions(!chatOptions);
   // };
 
   const onInputChange = (e) => {
@@ -116,50 +116,49 @@ const TicketChatBody = ({ mobileView, setMobileView }) => {
         message: inputText,
         date: currentTime(),
       };
-  
+
       try {
         // Dispatch the sendMessage action with the necessary data
         await dispatch(sendMessage({ ticketData, ticket_id: _id }));
         // Update the chat state with the new message
-      const newMessage = {
-        id: `chat_${chat.length + 1}`, // Generate a unique ID for the new message
-        sender: user._id,
-        message: inputText,
-        date: currentTime(),
-      };
+        const newMessage = {
+          id: `chat_${chat.length + 1}`, // Generate a unique ID for the new message
+          sender: user._id,
+          message: inputText,
+          date: currentTime(),
+        };
 
-      setChat([...chat, newMessage]); // Append the new message to the chat array
-      setInputText(""); // Clear the input field after sending the message
+        setChat([...chat, newMessage]); // Append the new message to the chat array
+        setInputText(""); // Clear the input field after sending the message
       } catch (error) {
-        console.error('Error sending message:', error);
+        console.error("Error sending message:", error);
         // Handle error scenarios here
       }
     }
   };
-  
 
   const onRemoveMessage = (idx, id) => {
     // Find the index of the message to be removed
     const messageIndex = chat.findIndex((item) => item.id === id);
-    
+
     if (messageIndex !== -1) {
       // Make a copy of the chat array
       const updatedChat = [...chat];
       const messageToRemove = updatedChat[messageIndex];
-  
+
       // Remove the message at the found index
       updatedChat.splice(messageIndex, 1);
-  
+
       // Update the chat state with the modified array
       setChat(updatedChat);
-  
+
       // Additional logic based on your requirements after removing the message...
       // For example, you might want to perform further actions or update other state variables.
-  
-      console.log('Message removed:', messageToRemove);
+
+      console.log("Message removed:", messageToRemove);
     }
   };
-  
+
   const TicketchatBodyClass = classNames({
     "nk-chat-body": true,
     "show-chat": mobileView,
@@ -187,7 +186,10 @@ const TicketChatBody = ({ mobileView, setMobileView }) => {
             <ul className="nk-chat-head-tools">
               <li className="d-none d-sm-block">
                 <UncontrolledDropdown>
-                  <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger text-primary">
+                  <DropdownToggle
+                    tag="a"
+                    className="dropdown-toggle btn btn-icon btn-trigger text-primary"
+                  >
                     <Icon name="setting-fill"></Icon>
                   </DropdownToggle>
                 </UncontrolledDropdown>
@@ -207,28 +209,31 @@ const TicketChatBody = ({ mobileView, setMobileView }) => {
             </ul>
           </div>
           {Array.isArray(chat) && (
-          <SimpleBar className="nk-chat-panel" scrollableNodeProps={{ ref: messagesEndRef }}>
-            {chat.map((message, idx) => {
-              const isMe = message.sender === user._id;
+            <SimpleBar
+              className="nk-chat-panel"
+              scrollableNodeProps={{ ref: messagesEndRef }}
+            >
+              {chat.map((message, idx) => {
+                const isMe = message.sender === user._id;
 
-              // Render MeChat for messages sent by the user, and YouChat for others
-              return isMe ? (
-                <MeChat
-                  key={idx}
-                  item={message}
-                  chat={Uchat} // If needed, adjust the props accordingly
-                  onRemoveMessage={onRemoveMessage}
-                />
-              ) : (
-                <YouChat
-                  key={idx}
-                  item={message}
-                  sender={message.sender}
-                  // Pass other necessary props to YouChat
-                />
-              );
-            })}
-          </SimpleBar>
+                // Render MeChat for messages sent by the user, and YouChat for others
+                return isMe ? (
+                  <MeChat
+                    key={idx}
+                    item={message}
+                    chat={Uchat} // If needed, adjust the props accordingly
+                    onRemoveMessage={onRemoveMessage}
+                  />
+                ) : (
+                  <YouChat
+                    key={idx}
+                    item={message}
+                    sender={message.sender}
+                    // Pass other necessary props to YouChat
+                  />
+                );
+              })}
+            </SimpleBar>
           )}
           <div className="nk-chat-editor">
             <div className="nk-chat-editor-form">
@@ -248,7 +253,11 @@ const TicketChatBody = ({ mobileView, setMobileView }) => {
             </div>
             <ul className="nk-chat-editor-tools g-2">
               <li>
-                <Button color="primary" onClick={(e) => onTextSubmit(e)} className="btn-round btn-icon">
+                <Button
+                  color="primary"
+                  onClick={(e) => onTextSubmit(e)}
+                  className="btn-round btn-icon"
+                >
                   <Icon name="send-alt"></Icon>
                 </Button>
               </li>

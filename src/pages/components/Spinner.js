@@ -3,7 +3,14 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 
 import { Spinner, Button } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock } from "../../components/preview/Preview";
 
 const SpinnerPage = () => {
@@ -21,9 +28,17 @@ const SpinnerPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Indicate the loading state of a component or page with Bootstrap spinners. To use it, import it such as{" "}
-                <code>import {`{Spinner}`}from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/spinners"} target="_blank" rel="noreferrer">
+                Indicate the loading state of a component or page with Bootstrap
+                spinners. To use it, import it such as{" "}
+                <code>import {`{Spinner}`}from &ldquo;reactstrap&ldquo;</code>. Visit
+                the{" "}
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/spinners"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -50,9 +65,10 @@ const SpinnerPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Colors</BlockTitle>
               <p>
-                The border spinner uses <code className="highlighter-rouge">color</code> props for its{" "}
-                <code className="highlighter-rouge">border-color</code>, meaning you can customize the color with text
-                color utilities. You can use any of our text color utilities on the standard spinner.
+                The border spinner uses <code className="highlighter-rouge">color</code>{" "}
+                props for its <code className="highlighter-rouge">border-color</code>,
+                meaning you can customize the color with text color utilities. You can
+                use any of our text color utilities on the standard spinner.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -92,8 +108,8 @@ const SpinnerPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Growing spinner</BlockTitle>
               <p>
-                If you don’t fancy a border spinner, switch to the grow spinner. While it doesn’t technically spin, it
-                does repeatedly grow!
+                If you don’t fancy a border spinner, switch to the grow spinner. While
+                it doesn’t technically spin, it does repeatedly grow!
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -138,8 +154,8 @@ const SpinnerPage = () => {
               <BlockTitle tag="h5">Size</BlockTitle>
               <p>
                 Add <code className="highlighter-rouge">size</code> props and{" "}
-                <code className="highlighter-rouge">type=grow</code> to make a smaller spinner that can quickly be
-                used within other components.
+                <code className="highlighter-rouge">type=grow</code> to make a smaller
+                spinner that can quickly be used within other components.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -172,8 +188,9 @@ const SpinnerPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Buttons</BlockTitle>
               <p>
-                Use spinners within buttons to indicate an action is currently processing or taking place. You may also
-                swap the text out of the spinner element and utilize button text as needed.
+                Use spinners within buttons to indicate an action is currently
+                processing or taking place. You may also swap the text out of the
+                spinner element and utilize button text as needed.
               </p>
             </BlockHeadContent>
           </BlockHead>

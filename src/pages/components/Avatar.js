@@ -43,15 +43,17 @@ const Avatar = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Example with Variations</BlockTitle>
               <p>
-                Add any of the below props to the <code>UserAvatar</code> components to change the appearance of a
-                avatar.
+                Add any of the below props to the <code>UserAvatar</code> components to
+                change the appearance of a avatar.
               </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
             <Row className="g-4">
               <Col md="3">
-                <OverlineTitle className="preview-title">Default Styl&apos;</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Default Styl&apos;
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB"></UserAvatar>
@@ -65,7 +67,9 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Status Styl&apos;</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Status Styl&apos;
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB">
@@ -85,21 +89,33 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Square Styl&apos;</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Square Styl&apos;
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB" className="sq"></UserAvatar>
                   </li>
                   <li className="preview-item">
-                    <UserAvatar theme="success" icon="user-alt" className="sq"></UserAvatar>
+                    <UserAvatar
+                      theme="success"
+                      icon="user-alt"
+                      className="sq"
+                    ></UserAvatar>
                   </li>
                   <li className="preview-item">
-                    <UserAvatar theme="primary" image={User} className="sq"></UserAvatar>
+                    <UserAvatar
+                      theme="primary"
+                      image={User}
+                      className="sq"
+                    ></UserAvatar>
                   </li>
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Square Styl&apos;</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Square Styl&apos;
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserAvatar theme="primary" text="AB" className="sq">
@@ -119,7 +135,9 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Group Styl&apos;</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Group Styl&apos;
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <UserGroup>
@@ -142,7 +160,9 @@ const Avatar = () => {
                 </ul>
               </Col>
               <Col md="3">
-                <OverlineTitle className="preview-title">Group Styl&apos; v2</OverlineTitle>
+                <OverlineTitle className="preview-title">
+                  Group Styl&apos; v2
+                </OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
                     <div className="user-avatar user-avatar-multiple">
@@ -214,8 +234,8 @@ const Avatar = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Example with Color Variations</BlockTitle>
               <p>
-                Add any of the below colors to <code>theme</code> props to the <code>UserAvatar</code> component to
-                change the appearence of a avatar.
+                Add any of the below colors to <code>theme</code> props to the{" "}
+                <code>UserAvatar</code> component to change the appearence of a avatar.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -344,8 +364,8 @@ const Avatar = () => {
                 <td>
                   Use <code>{`"color"`}</code> as{" "}
                   <code>
-                    primary, secondary, warning, danger, success, info, azure, blue, pink, indigo, dark, gray, orange,
-                    teal, purple, lighter
+                    primary, secondary, warning, danger, success, info, azure, blue,
+                    pink, indigo, dark, gray, orange, teal, purple, lighter
                   </code>
                 </td>
               </tr>
@@ -356,8 +376,8 @@ const Avatar = () => {
                 <td>
                   Use <code>{`"color"`}</code> as{" "}
                   <code>
-                    primary, secondary, warning, danger, success, info, azure, blue, pink, indigo, dark, gray, orange,
-                    teal, purple, light
+                    primary, secondary, warning, danger, success, info, azure, blue,
+                    pink, indigo, dark, gray, orange, teal, purple, light
                   </code>{" "}
                   <br /> Use <code>light</code> without <code>-dim</code> postfix
                 </td>
@@ -371,8 +391,8 @@ const Avatar = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Example with Size</BlockTitle>
               <p>
-                Add any of the below sizes to <code>className</code> props to the <code>UserAvatar</code> component to
-                change the appearence of a avatar.
+                Add any of the below sizes to <code>className</code> props to the{" "}
+                <code>UserAvatar</code> component to change the appearence of a avatar.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -390,7 +410,11 @@ const Avatar = () => {
                     </UserAvatar>
                   </li>
                   <li className="preview-item">
-                    <UserAvatar image={User} color="primary" className="md"></UserAvatar>
+                    <UserAvatar
+                      image={User}
+                      color="primary"
+                      className="md"
+                    ></UserAvatar>
                   </li>
                   <li className="preview-item">
                     <UserAvatar text="AB" color="primary"></UserAvatar>
@@ -407,7 +431,11 @@ const Avatar = () => {
                 <OverlineTitle>Squared Avatars</OverlineTitle>
                 <ul className="preview-list g-2">
                   <li className="preview-item">
-                    <UserAvatar text="AB" color="primary" className="xl sq"></UserAvatar>
+                    <UserAvatar
+                      text="AB"
+                      color="primary"
+                      className="xl sq"
+                    ></UserAvatar>
                   </li>
                   <li className="preview-item">
                     <UserAvatar text="AB" color="primary" className="lg sq">
@@ -415,13 +443,21 @@ const Avatar = () => {
                     </UserAvatar>
                   </li>
                   <li className="preview-item">
-                    <UserAvatar image={User} color="primary" className="md sq"></UserAvatar>
+                    <UserAvatar
+                      image={User}
+                      color="primary"
+                      className="md sq"
+                    ></UserAvatar>
                   </li>
                   <li className="preview-item">
                     <UserAvatar text="AB" color="primary"></UserAvatar>
                   </li>
                   <li className="preview-item">
-                    <UserAvatar text="AB" color="primary" className="sm sq"></UserAvatar>
+                    <UserAvatar
+                      text="AB"
+                      color="primary"
+                      className="sm sq"
+                    ></UserAvatar>
                   </li>
                   <li className="preview-item">
                     <UserAvatar text="A" color="primary" className="xs sq"></UserAvatar>

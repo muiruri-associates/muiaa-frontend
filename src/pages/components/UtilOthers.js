@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const OthersPage = () => {
@@ -18,7 +25,9 @@ const OthersPage = () => {
               Other Utility Classes
             </BlockTitle>
             <BlockDes>
-              <p className="lead">Here is some other utility classes that use to quickly style an element.</p>
+              <p className="lead">
+                Here is some other utility classes that use to quickly style an element.
+              </p>
             </BlockDes>
           </BlockHeadContent>
         </BlockHead>
@@ -28,7 +37,8 @@ const OthersPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Gaps ClassNames</BlockTitle>
               <p>
-                The <code>.gap</code> utility classNames allow to set specific gap between to section or block.
+                The <code>.gap</code> utility classNames allow to set specific gap
+                between to section or block.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -91,7 +101,8 @@ const OthersPage = () => {
                   <code>.gap-{"{num}"}px</code>
                 </td>
                 <td>
-                  <code>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</code> use as <code>{"{num}"}</code> value
+                  <code>[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]</code> use as{" "}
+                  <code>{"{num}"}</code> value
                 </td>
                 <td>
                   <span className="fs-11px text-soft">Fixed in pixel</span>

@@ -42,12 +42,17 @@ const JsTreePreview = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                React jsTree table is a react wrapper for the jsTree plugin, that provides interactive trees. jsTree is
-                easily extendable, themable and configurable, it supports HTML & JSON data sources and AJAX loading.
+                React jsTree table is a react wrapper for the jsTree plugin, that
+                provides interactive trees. jsTree is easily extendable, themable and
+                configurable, it supports HTML & JSON data sources and AJAX loading.
               </p>
               <p className="lead">
                 For more info please visit{" "}
-                <a href="https://www.npmjs.com/package/react-jstree-table" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.npmjs.com/package/react-jstree-table"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React JsTree Table
                 </a>
                 .
@@ -61,7 +66,8 @@ const JsTreePreview = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic</BlockTitle>
               <BlockDes>
-                Just import <code>TreeView</code> component from <code>react-jstree-table</code> plugin.
+                Just import <code>TreeView</code> component from{" "}
+                <code>react-jstree-table</code> plugin.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -118,8 +124,8 @@ const JsTreePreview = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Custom Icon</BlockTitle>
               <BlockDes>
-                Custom icons can be passed in the <code>json structure</code> with each node, use the <code>icon</code>{" "}
-                property.
+                Custom icons can be passed in the <code>json structure</code> with each
+                node, use the <code>icon</code> property.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
@@ -178,7 +184,8 @@ const JsTreePreview = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Drag and Drop</BlockTitle>
               <BlockDes>
-                Add <code>dnd</code> plugin to the core <code>json structure</code>. Further details can be found{" "}
+                Add <code>dnd</code> plugin to the core <code>json structure</code>.
+                Further details can be found{" "}
                 <a href="https://www.jstree.com/plugins/">here</a>
               </BlockDes>
             </BlockHeadContent>
@@ -241,8 +248,9 @@ const JsTreePreview = () => {
               <BlockTitle tag="h5">CheckBox</BlockTitle>
               <BlockDes>
                 <p>
-                  To activate checkbox option with full row selection, you just need to include <code>wholerow</code>{" "}
-                  and <code>checkbox</code> in plugins option. For more information please check{" "}
+                  To activate checkbox option with full row selection, you just need to
+                  include <code>wholerow</code> and <code>checkbox</code> in plugins
+                  option. For more information please check{" "}
                   <a href="https://www.jstree.com/plugins/">jsTree Plugin Page</a>
                 </p>
               </BlockDes>

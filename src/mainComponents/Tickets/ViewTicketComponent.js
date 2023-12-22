@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import {
   Container,
   Row,
@@ -8,18 +8,17 @@ import {
   Input,
   ListGroup,
   ListGroupItem,
-} from 'reactstrap';
-import {Icon} from "../../components/Component"
-import './style.css'; // Import your CSS file
-
+} from "reactstrap";
+import { Icon } from "../../components/Component";
+import "./style.css"; // Import your CSS file
 
 const ViewTicketComponent = () => {
   const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const listRef = useRef(null);
 
-  const userAvatar = 'user_avatar_url'; // Replace with actual user avatar URL
-  const adminAvatar = 'admin_avatar_url'; // Replace with actual admin avatar URL
+  const userAvatar = "user_avatar_url"; // Replace with actual user avatar URL
+  const adminAvatar = "admin_avatar_url"; // Replace with actual admin avatar URL
 
   const handleInputChange = (e) => {
     setNewMessage(e.target.value);
@@ -27,11 +26,11 @@ const ViewTicketComponent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (newMessage.trim() === '') return;
+    if (newMessage.trim() === "") return;
 
-    const updatedMessages = [...messages, { text: newMessage, sender: 'user' }];
+    const updatedMessages = [...messages, { text: newMessage, sender: "user" }];
     setMessages(updatedMessages);
-    setNewMessage('');
+    setNewMessage("");
     // Here you can send the message to your backend or perform other necessary actions
   };
 
@@ -56,15 +55,21 @@ const ViewTicketComponent = () => {
             </div>
           </div>
           {/* Chat Body */}
-          <div className="chat-window p-3" style={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto' }} ref={listRef}>
+          <div
+            className="chat-window p-3"
+            style={{ maxHeight: "calc(100vh - 150px)", overflowY: "auto" }}
+            ref={listRef}
+          >
             <ListGroup className="chat-list">
               {messages.map((message, index) => (
                 <ListGroupItem
                   key={index}
-                  className={message.sender === 'user' ? 'user-message' : 'admin-message'}
+                  className={
+                    message.sender === "user" ? "user-message" : "admin-message"
+                  }
                 >
                   <div className="message-with-avatar">
-                    {message.sender === 'user' ? (
+                    {message.sender === "user" ? (
                       <img src={userAvatar} alt="User Avatar" className="avatar" />
                     ) : (
                       <img src={adminAvatar} alt="Admin Avatar" className="avatar" />
@@ -77,19 +82,19 @@ const ViewTicketComponent = () => {
           </div>
           {/* Message Input */}
           <Form onSubmit={handleSubmit} className="p-3">
-          <FormGroup className="d-flex">
-            <Input
-              type="text"
-              placeholder="Type a message"
-              value={newMessage}
-              onChange={handleInputChange}
-              className="flex-grow-1 mr-2 border-0 rounded-0" // Adjust classes for border and rounding
-            />
-            <button type="submit" className="btn btn-primary rounded-0">
-              <Icon name="send-alt" />
-            </button>
-          </FormGroup>
-        </Form>
+            <FormGroup className="d-flex">
+              <Input
+                type="text"
+                placeholder="Type a message"
+                value={newMessage}
+                onChange={handleInputChange}
+                className="flex-grow-1 mr-2 border-0 rounded-0" // Adjust classes for border and rounding
+              />
+              <button type="submit" className="btn btn-primary rounded-0">
+                <Icon name="send-alt" />
+              </button>
+            </FormGroup>
+          </Form>
         </Col>
       </Row>
     </Container>

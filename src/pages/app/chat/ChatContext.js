@@ -109,5 +109,5 @@ export const ChatContextProvider = (props) => {
 };
 
 ChatContextProvider.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};

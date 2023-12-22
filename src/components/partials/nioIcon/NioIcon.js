@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Icon from "../../icon/Icon";
 import Button from "../../button/Button";
@@ -18,7 +18,11 @@ const NicoIconCard = ({ iconName, tag }) => {
       <li className="preview-icon-item">
         <div className={`preview-icon-box card ${copy ? "clipboard-success" : ""}`}>
           <CopyToClipboard text={text}>
-            <Button type="button" className="btn-icon btn-clipboard clipboard-init clipboard-text" onClick={handleCopy}>
+            <Button
+              type="button"
+              className="btn-icon btn-clipboard clipboard-init clipboard-text"
+              onClick={handleCopy}
+            >
               <Icon name="copy"></Icon>
             </Button>
           </CopyToClipboard>
@@ -35,6 +39,6 @@ const NicoIconCard = ({ iconName, tag }) => {
 
 NicoIconCard.propTypes = {
   iconName: PropTypes.any,
-  tag: PropTypes.any
-}
+  tag: PropTypes.any,
+};
 export default NicoIconCard;

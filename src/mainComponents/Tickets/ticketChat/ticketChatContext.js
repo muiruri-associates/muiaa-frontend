@@ -1,34 +1,37 @@
 import React, { useState, useEffect, createContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import { getTicketById } from "../../../redux/actions/ticketActions";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const TicketChatContext = createContext();
 
 export const TicketChatContextProvider = (props) => {
   const dispatch = useDispatch();
   const ticket = useSelector((state) => state.ticket.ticket);
-  console.log('Ticket on context>>', ticket)
+  console.log("Ticket on context>>", ticket);
   const { _id } = useParams();
-  console.log('TicketID On context>>', _id)
+  console.log("TicketID On context>>", _id);
 
   const [chat, setChat] = useState([]);
   const [favData, setFavData] = useState([]);
-//   const [userData, setUserData] = useState(addUserData);
- // Access the entire ticket object
+  //   const [userData, setUserData] = useState(addUserData);
+  // Access the entire ticket object
 
- useEffect(() => {
-  if (ticket && ticket.messages && Array.isArray(ticket.messages) && ticket.messages.length > 0) {
-    console.log("Received Ticket Messages:", ticket.messages); // Log received ticket messages
-    setChat(ticket.messages);
-    setFavData(ticket.messages);
-  } else {
-    console.log("No Messages Received or Invalid Data:", ticket); // Log if no messages or invalid data
-  }
-}, [ticket]);
-
-
+  useEffect(() => {
+    if (
+      ticket &&
+      ticket.messages &&
+      Array.isArray(ticket.messages) &&
+      ticket.messages.length > 0
+    ) {
+      console.log("Received Ticket Messages:", ticket.messages); // Log received ticket messages
+      setChat(ticket.messages);
+      setFavData(ticket.messages);
+    } else {
+      console.log("No Messages Received or Invalid Data:", ticket); // Log if no messages or invalid data
+    }
+  }, [ticket]);
 
   useEffect(() => {
     dispatch(getTicketById(_id));
@@ -105,16 +108,16 @@ export const TicketChatContextProvider = (props) => {
   };
 
   // Add a user to a chat
-//   const addUserToChat = (id, object) => {
-//     let data = chat;
-//     const group = data.find((item) => item.id === id);
-//     let newUserGroup = [...group.user, object];
-//     group.user = newUserGroup;
-//     setChat(data);
-//     let newUserData = userData;
-//     let user = newUserData.filter((el) => el.id !== object.id);
-//     setUserData(user);
-//   };
+  //   const addUserToChat = (id, object) => {
+  //     let data = chat;
+  //     const group = data.find((item) => item.id === id);
+  //     let newUserGroup = [...group.user, object];
+  //     group.user = newUserGroup;
+  //     setChat(data);
+  //     let newUserData = userData;
+  //     let user = newUserData.filter((el) => el.id !== object.id);
+  //     setUserData(user);
+  //   };
 
   return (
     <TicketChatContext.Provider
@@ -140,5 +143,5 @@ export const TicketChatContextProvider = (props) => {
 };
 
 TicketChatContextProvider.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};

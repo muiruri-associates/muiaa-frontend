@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext, useState } from "react";
 import CreateFolder from "../../../pages/app/file-manager/modals/CreateFolder";
 import Details from "../../../pages/app/file-manager/modals/Details";
@@ -7,7 +7,13 @@ import Copy from "../../../pages/app/file-manager/modals/Copy";
 import Move from "../../../pages/app/file-manager/modals/Move";
 import { Icon } from "../../Component";
 import { FileManagerContext } from "../../../pages/app/file-manager/FileManagerContext";
-import { DropdownItem, DropdownMenu, DropdownToggle, Modal, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Modal,
+  UncontrolledDropdown,
+} from "reactstrap";
 
 const FileManagerDropdown = ({ file }) => {
   const { deleteFolder, downloadFile } = useContext(FileManagerContext);
@@ -132,7 +138,11 @@ const FileManagerDropdown = ({ file }) => {
       </UncontrolledDropdown>
 
       <Modal isOpen={detailModal} size="md" toggle={toggleDetailModal}>
-        <Details file={file} toggle={toggleDetailModal} toggleShare={toggleShareModal} />
+        <Details
+          file={file}
+          toggle={toggleDetailModal}
+          toggleShare={toggleShareModal}
+        />
       </Modal>
 
       <Modal isOpen={shareModal} size="md" toggle={toggleShareModal}>
@@ -140,11 +150,19 @@ const FileManagerDropdown = ({ file }) => {
       </Modal>
 
       <Modal isOpen={copyModal} size="md" toggle={toggleCopyModal}>
-        <Copy file={file} toggle={toggleCopyModal} toggleCreateModal={toggleCreateModal} />
+        <Copy
+          file={file}
+          toggle={toggleCopyModal}
+          toggleCreateModal={toggleCreateModal}
+        />
       </Modal>
 
       <Modal isOpen={moveModal} size="md" toggle={toggleMoveModal}>
-        <Move file={file} toggle={toggleMoveModal} toggleCreateModal={toggleCreateModal} />
+        <Move
+          file={file}
+          toggle={toggleMoveModal}
+          toggleCreateModal={toggleCreateModal}
+        />
       </Modal>
 
       <Modal isOpen={createModal} size="md" toggle={toggleCreateModal}>
@@ -156,8 +174,8 @@ const FileManagerDropdown = ({ file }) => {
 
 FileManagerDropdown.propTypes = {
   file: PropTypes.shape({
-    id: PropTypes.any
-  })
-}
+    id: PropTypes.any,
+  }),
+};
 
 export default FileManagerDropdown;

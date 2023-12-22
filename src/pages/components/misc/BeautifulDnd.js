@@ -31,9 +31,13 @@ const BeautifulDnd = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                React beautoful Dnd is a pure JavaScript plugin that is beautiful and accessible drag and drop for lists
-                with. Click{" "}
-                <a href="https://react-beautiful-dnd.netlify.app/" target="_blank" rel="noreferrer">
+                React beautoful Dnd is a pure JavaScript plugin that is beautiful and
+                accessible drag and drop for lists with. Click{" "}
+                <a
+                  href="https://react-beautiful-dnd.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   here
                 </a>{" "}
                 for examples and documentation.
@@ -46,7 +50,9 @@ const BeautifulDnd = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Dnd</BlockTitle>
-              <BlockDes>We need to move div options between these two containers.</BlockDes>
+              <BlockDes>
+                We need to move div options between these two containers.
+              </BlockDes>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
@@ -230,7 +236,8 @@ const SingleListDnd = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Drag Handle</BlockTitle>
               <BlockDes>
-                Drag with <strong>handles</strong> to copy option from one container to another.
+                Drag with <strong>handles</strong> to copy option from one container to
+                another.
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>

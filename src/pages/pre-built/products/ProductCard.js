@@ -24,7 +24,14 @@ import {
   PaginationComponent,
 } from "../../../components/Component";
 import { useForm } from "react-hook-form";
-import { Card, DropdownItem, UncontrolledDropdown, DropdownMenu, DropdownToggle, Badge } from "reactstrap";
+import {
+  Card,
+  DropdownItem,
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+  Badge,
+} from "reactstrap";
 import { ProductContext } from "./ProductContext";
 import { productCardData } from "./ProductData";
 
@@ -143,7 +150,10 @@ const ProductCard = () => {
                 >
                   <Icon name="more-v"></Icon>
                 </a>
-                <div className="toggle-expand-content" style={{ display: smOption ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: smOption ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <div className="form-control-wrap">
@@ -170,17 +180,29 @@ const ProductCard = () => {
                         <DropdownMenu right>
                           <ul className="link-list-opt no-bdr">
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>New Items</span>
                               </DropdownItem>
                             </li>
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>Featured</span>
                               </DropdownItem>
                             </li>
                             <li>
-                              <DropdownItem tag="a" href="#dropdownitem" onClick={(ev) => ev.preventDefault()}>
+                              <DropdownItem
+                                tag="a"
+                                href="#dropdownitem"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <span>Out of Stock</span>
                               </DropdownItem>
                             </li>
@@ -189,10 +211,18 @@ const ProductCard = () => {
                       </UncontrolledDropdown>
                     </li>
                     <li className="nk-block-tools-opt">
-                      <Button className="toggle btn-icon d-md-none" color="primary" onClick={toggle}>
+                      <Button
+                        className="toggle btn-icon d-md-none"
+                        color="primary"
+                        onClick={toggle}
+                      >
                         <Icon name="plus"></Icon>
                       </Button>
-                      <Button className="toggle d-none d-md-inline-flex" color="primary" onClick={toggle}>
+                      <Button
+                        className="toggle d-none d-md-inline-flex"
+                        color="primary"
+                        onClick={toggle}
+                      >
                         <Icon name="plus"></Icon>
                         <span>Add Product</span>
                       </Button>
@@ -211,7 +241,9 @@ const ProductCard = () => {
                   <Col xxl={3} lg={4} sm={6} key={item.id}>
                     <Card className="card-bordered product-card">
                       <div className="product-thumb">
-                        <Link to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}>
+                        <Link
+                          to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}
+                        >
                           <img className="card-img-top" src={item.img} alt="" />
                         </Link>
                         <ul className="product-badges">
@@ -242,15 +274,27 @@ const ProductCard = () => {
                       <div className="card-inner text-center">
                         <ul className="product-tags">
                           <li>
-                            <Link to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}>{item.name}</Link>
+                            <Link
+                              to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}
+                            >
+                              {item.name}
+                            </Link>
                           </li>
                         </ul>
                         <h5 className="product-title">
-                          <Link to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}>{item.title}</Link>
+                          <Link
+                            to={`${process.env.PUBLIC_URL}/product-details/${item.id}`}
+                          >
+                            {item.title}
+                          </Link>
                         </h5>
                         <div className="product-price text-primary h5">
-                          {item.prevPrice && <small className="text-muted del fs-13px">${item.prevPrice}</small>} $
-                          {item.newPrice}
+                          {item.prevPrice && (
+                            <small className="text-muted del fs-13px">
+                              ${item.prevPrice}
+                            </small>
+                          )}{" "}
+                          ${item.newPrice}
                         </div>
                       </div>
                     </Card>
@@ -274,7 +318,9 @@ const ProductCard = () => {
         </Block>
 
         <SimpleBar
-          className={`nk-add-product toggle-slide toggle-slide-right toggle-screen-any ${view ? "content-active" : ""}`}
+          className={`nk-add-product toggle-slide toggle-slide-right toggle-screen-any ${
+            view ? "content-active" : ""
+          }`}
         >
           <BlockHead>
             <BlockHeadContent>
@@ -300,7 +346,9 @@ const ProductCard = () => {
                         defaultValue={formData.name}
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.name && <span className="invalid">{errors.name.message}</span>}
+                      {errors.name && (
+                        <span className="invalid">{errors.name.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -317,7 +365,9 @@ const ProductCard = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.title && <span className="invalid">{errors.title.message}</span>}
+                      {errors.title && (
+                        <span className="invalid">{errors.title.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -334,7 +384,9 @@ const ProductCard = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.prevPrice && <span className="invalid">{errors.prevPrice.message}</span>}
+                      {errors.prevPrice && (
+                        <span className="invalid">{errors.prevPrice.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -351,7 +403,9 @@ const ProductCard = () => {
                         ref={register({ required: "This field is required" })}
                         className="form-control"
                       />
-                      {errors.newPrice && <span className="invalid">{errors.newPrice.message}</span>}
+                      {errors.newPrice && (
+                        <span className="invalid">{errors.newPrice.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -368,7 +422,9 @@ const ProductCard = () => {
                         defaultValue={formData.type}
                         ref={register({ required: "This field is required" })}
                       />
-                      {errors.type && <span className="invalid">{errors.type.message}</span>}
+                      {errors.type && (
+                        <span className="invalid">{errors.type.message}</span>
+                      )}
                     </div>
                   </div>
                 </Col>
@@ -376,9 +432,16 @@ const ProductCard = () => {
                   <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
                     {({ getRootProps, getInputProps }) => (
                       <section>
-                        <div {...getRootProps()} className="dropzone upload-zone small bg-lighter my-2 dz-clickable">
+                        <div
+                          {...getRootProps()}
+                          className="dropzone upload-zone small bg-lighter my-2 dz-clickable"
+                        >
                           <input {...getInputProps()} />
-                          {files.length === 0 && <p>Drag and drop some files here, or click to select files</p>}
+                          {files.length === 0 && (
+                            <p>
+                              Drag and drop some files here, or click to select files
+                            </p>
+                          )}
                           {files.map((file) => (
                             <div
                               key={file.name}

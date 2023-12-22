@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 
 const DropzoneContainer = (props) => {
@@ -25,12 +25,12 @@ const DropzoneContainer = (props) => {
 
 DropzoneContainer.propTypes = {
   files: PropTypes.shape({
-    length: PropTypes.number
+    length: PropTypes.number,
   }),
   input: PropTypes.any,
   previews: PropTypes.any,
   submitButton: PropTypes.any,
-  extra: PropTypes.object
-}
+  extra: PropTypes.object,
+};
 
 export default DropzoneContainer;

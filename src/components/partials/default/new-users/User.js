@@ -2,14 +2,23 @@ import React from "react";
 import UserAvatar from "../../../user/UserAvatar";
 import Icon from "../../../icon/Icon";
 import { newUserData } from "./UserData";
-import { DropdownMenu, DropdownToggle, UncontrolledDropdown, CardTitle, DropdownItem } from "reactstrap";
+import {
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+  CardTitle,
+  DropdownItem,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 
 const NewsUsers = () => {
   const DropdownTrans = () => {
     return (
       <UncontrolledDropdown>
-        <DropdownToggle tag="a" className="dropdown-toggle btn btn-icon btn-trigger mr-n1">
+        <DropdownToggle
+          tag="a"
+          className="dropdown-toggle btn btn-icon btn-trigger mr-n1"
+        >
           <Icon name="more-h"></Icon>
         </DropdownToggle>
         <DropdownMenu right>

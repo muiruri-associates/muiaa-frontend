@@ -1,14 +1,19 @@
 import React from "react";
 import UserAvatar from "../../user/UserAvatar";
 import Icon from "../../icon/Icon";
-import { DropdownMenu, DropdownToggle, UncontrolledDropdown, Progress } from "reactstrap";
+import {
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+  Progress,
+} from "reactstrap";
 import { PreviewCard } from "../../Component";
 import { setDeadlineDays } from "../../../utils/Utils";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 ProjectCard.propTypes = {
   children: PropTypes.any,
-}
+};
 
 export const ProjectCard = ({ ...props }) => {
   return (
@@ -86,8 +91,8 @@ ProjectHead.propTypes = {
   color: PropTypes.any,
   initial: PropTypes.any,
   subtitle: PropTypes.any,
-  title: PropTypes.any
-}
+  title: PropTypes.any,
+};
 
 export const ProjectBody = ({ desc, task, percentage, team, date }) => {
   var days = setDeadlineDays(date);
@@ -109,7 +114,12 @@ export const ProjectBody = ({ desc, task, percentage, team, date }) => {
           {team.slice(0, 2).map((item, idx) => {
             return (
               <li key={idx}>
-                <UserAvatar size="sm" text={item.text} theme={item.theme} image={item.image} />
+                <UserAvatar
+                  size="sm"
+                  text={item.text}
+                  theme={item.theme}
+                  image={item.image}
+                />
               </li>
             );
           })}
@@ -121,11 +131,19 @@ export const ProjectBody = ({ desc, task, percentage, team, date }) => {
         </ul>
         <span
           className={`badge badge-dim badge-${
-            days > 10 ? "light" : days <= 10 && days >= 2 ? "warning" : days === 1 ? "danger" : days === 0 && "success"
+            days > 10
+              ? "light"
+              : days <= 10 && days >= 2
+                ? "warning"
+                : days === 1
+                  ? "danger"
+                  : days === 0 && "success"
           }`}
         >
           <Icon name="clock"></Icon>
-          <span>{days === 0 ? "Done" : days === 1 ? "Due Tomorrow" : days + " Days Left"}</span>
+          <span>
+            {days === 0 ? "Done" : days === 1 ? "Due Tomorrow" : days + " Days Left"}
+          </span>
         </span>
       </div>
     </React.Fragment>
@@ -139,6 +157,6 @@ ProjectBody.propTypes = {
   task: PropTypes.any,
   team: PropTypes.shape({
     length: PropTypes.number,
-    slice: PropTypes.func
-  })
-}
+    slice: PropTypes.func,
+  }),
+};

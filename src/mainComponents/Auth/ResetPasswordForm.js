@@ -10,11 +10,11 @@ import {
   BlockHead,
   BlockTitle,
   Button,
-  PreviewCard
+  PreviewCard,
 } from "../../components/Component";
 import { FormGroup } from "reactstrap";
 import { Link, useLocation } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import AuthFooter from "../../pages/auth/AuthFooter";
@@ -22,11 +22,11 @@ import { resetPassword } from "../../redux/actions/authActions";
 
 const ResetPasswordForm = () => {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const token = searchParams.get('token');
+  const token = searchParams.get("token");
 
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -39,15 +39,15 @@ const ResetPasswordForm = () => {
     const newPassCredential = {
       email,
       resetPasswordToken: token,
-      newPassword
-    }
+      newPassword,
+    };
 
     try {
       await dispatch(resetPassword(newPassCredential));
       setEmail("");
       setNewPassword("");
       toast.success("Password changed successfully!");
-      history.push('/auth-login')
+      history.push("/auth-login");
     } catch (error) {
       toast.error("Password reset failed");
     }
@@ -63,7 +63,11 @@ const ResetPasswordForm = () => {
           <div className="brand-logo pb-4 text-center">
             <Link to={"/"} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-              <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+              <img
+                className="logo-dark logo-img logo-img-lg"
+                src={LogoDark}
+                alt="logo-dark"
+              />
             </Link>
           </div>
           <PreviewCard className="card-bordered" bodyClass="card-inner-lg">
@@ -71,7 +75,10 @@ const ResetPasswordForm = () => {
               <BlockContent>
                 <BlockTitle tag="h5">Reset password</BlockTitle>
                 <BlockDes>
-                  <p>If you forgot your password, we&apos;ll send you instructions to reset it.</p>
+                  <p>
+                    If you forgot your password, we&apos;ll send you instructions to
+                    reset it.
+                  </p>
                 </BlockDes>
               </BlockContent>
             </BlockHead>
@@ -115,7 +122,7 @@ const ResetPasswordForm = () => {
                   className="btn-block"
                   disabled={loading}
                 >
-                  {loading ? 'Loading...' : 'Submit'}
+                  {loading ? "Loading..." : "Submit"}
                 </Button>
                 <ToastContainer />
               </FormGroup>

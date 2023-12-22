@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Content = ({ ...props }) => {
   return (
@@ -20,7 +20,7 @@ const Content = ({ ...props }) => {
 
 Content.propTypes = {
   page: PropTypes.string,
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
 export default Content;

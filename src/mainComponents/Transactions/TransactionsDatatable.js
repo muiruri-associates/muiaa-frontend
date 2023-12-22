@@ -10,43 +10,41 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { 
-  TransactionsColumns, TransactionsData
-} from "./TransactionsData";
+import { TransactionsColumns, TransactionsData } from "./TransactionsData";
 
 const TransactionsDatatable = () => {
   return (
     <React.Fragment>
-    <Head title="Transactions" />
-    <Content page="component">
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        {/* First BlockHead */}
-        <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-            <BlockTitle tag="h2" className="fw-normal">
-               Transactions
-            </BlockTitle>
-            <BackTo link="/" icon="arrow-left">
-              Back
-            </BackTo>
-          </BlockHeadContent>
-        </BlockHead>
-      </div>
+      <Head title="Transactions" />
+      <Content page="component">
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          {/* First BlockHead */}
+          <BlockHead size="lg" wide="sm">
+            <BlockHeadContent>
+              <BlockTitle tag="h2" className="fw-normal">
+                Transactions
+              </BlockTitle>
+              <BackTo link="/" icon="arrow-left">
+                Back
+              </BackTo>
+            </BlockHeadContent>
+          </BlockHead>
+        </div>
 
-      <Block size="lg">
-        <PreviewCard>
-          <ReactDataTable
-            data={TransactionsData}
-            columns={TransactionsColumns}
-            expandableRows
-            pagination
-            actions
-          />
-        </PreviewCard>
-      </Block>
-    </Content>
-  </React.Fragment>
-);
-}
+        <Block size="lg">
+          <PreviewCard>
+            <ReactDataTable
+              data={TransactionsData}
+              columns={TransactionsColumns}
+              expandableRows
+              pagination
+              actions
+            />
+          </PreviewCard>
+        </Block>
+      </Content>
+    </React.Fragment>
+  );
+};
 
-export default TransactionsDatatable
+export default TransactionsDatatable;

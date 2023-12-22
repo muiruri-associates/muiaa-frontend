@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
@@ -35,7 +35,11 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
   });
 
   const submitForm = () => {
-    let board = taskToBoard ? taskToBoard : formData.board === null ? boardOptions[0] : formData.board;
+    let board = taskToBoard
+      ? taskToBoard
+      : formData.board === null
+        ? boardOptions[0]
+        : formData.board;
     if (editTask) {
       let defaultTask = {
         task: {
@@ -82,7 +86,11 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
         },
       };
 
-      setData({ columnOrder: data.columnOrder, task: defaultTask.task, columns: defaultColumns.columns });
+      setData({
+        columnOrder: data.columnOrder,
+        task: defaultTask.task,
+        columns: defaultColumns.columns,
+      });
     }
 
     toggle();
@@ -92,9 +100,9 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
     let defaultData = data;
     delete defaultData.task[editTask.id];
 
-    defaultData.columns[taskToBoard.id].tasks = defaultData.columns[taskToBoard.id].tasks.filter(
-      (item) => item !== editTask.id
-    );
+    defaultData.columns[taskToBoard.id].tasks = defaultData.columns[
+      taskToBoard.id
+    ].tasks.filter((item) => item !== editTask.id);
 
     setData({ ...defaultData });
   };
@@ -132,14 +140,20 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
                   className="form-control"
                   ref={register({ required: "This field is required" })}
                 />
-                {errors.title && <span className="invalid">{errors.title.message}</span>}
+                {errors.title && (
+                  <span className="invalid">{errors.title.message}</span>
+                )}
               </FormGroup>
             </Col>
             <Col sm="6">
               <FormGroup>
                 <label className="form-label">Select Board</label>
                 <RSelect
-                  defaultValue={taskToBoard ? boardOptions.find((item) => item.id === taskToBoard.id) : boardOptions[0]}
+                  defaultValue={
+                    taskToBoard
+                      ? boardOptions.find((item) => item.id === taskToBoard.id)
+                      : boardOptions[0]
+                  }
                   isDisabled={taskToBoard ? true : false}
                   options={boardOptions}
                   placeholder="Select a board"
@@ -183,7 +197,9 @@ export const KanbanTaskForm = ({ toggle, data, setData, taskToBoard, editTask })
                   className="form-control"
                   ref={register({ required: "This field is required" })}
                 />
-                {errors.category && <span className="invalid">{errors.category.message}</span>}
+                {errors.category && (
+                  <span className="invalid">{errors.category.message}</span>
+                )}
               </FormGroup>
             </Col>
             <Col sm="6">
@@ -260,7 +276,7 @@ KanbanTaskForm.propTypes = {
   data: PropTypes.shape({
     columnOrder: PropTypes.any,
     columns: PropTypes.any,
-    task: PropTypes.any
+    task: PropTypes.any,
   }),
   editTask: PropTypes.shape({
     desc: PropTypes.any,
@@ -268,23 +284,25 @@ KanbanTaskForm.propTypes = {
     meta: PropTypes.shape({
       category: PropTypes.any,
       tags: PropTypes.any,
-      users: PropTypes.any
+      users: PropTypes.any,
     }),
-    title: PropTypes.any
+    title: PropTypes.any,
   }),
   setData: PropTypes.func,
   taskToBoard: PropTypes.shape({
-    id: PropTypes.any
+    id: PropTypes.any,
   }),
-  toggle: PropTypes.func
-}
+  toggle: PropTypes.func,
+};
 
 export const KanbanBoardForm = ({ toggle, data, setData, editBoard }) => {
   const [formData, setFormData] = useState({
     title: editBoard ? editBoard.text : "",
-    color: editBoard ? themes.find((item) => item.value === editBoard.theme) : themes[0],
+    color: editBoard
+      ? themes.find((item) => item.value === editBoard.theme)
+      : themes[0],
   });
-  
+
   const submitForm = (returnVal) => {
     if (editBoard) {
       let defaultVal = {
@@ -354,7 +372,9 @@ export const KanbanBoardForm = ({ toggle, data, setData, editBoard }) => {
                   className="form-control"
                   ref={register({ required: "This field is required" })}
                 />
-                {errors.title && <span className="invalid">{errors.title.message}</span>}
+                {errors.title && (
+                  <span className="invalid">{errors.title.message}</span>
+                )}
               </FormGroup>
             </Col>
             <Col className="col-12">
@@ -404,14 +424,14 @@ export const KanbanBoardForm = ({ toggle, data, setData, editBoard }) => {
 KanbanBoardForm.propTypes = {
   data: PropTypes.shape({
     columnOrder: PropTypes.any,
-    columns: PropTypes.any
+    columns: PropTypes.any,
   }),
   editBoard: PropTypes.shape({
     id: PropTypes.any,
     tasks: PropTypes.any,
     text: PropTypes.any,
-    theme: PropTypes.any
+    theme: PropTypes.any,
   }),
   setData: PropTypes.func,
-  toggle: PropTypes.func
-}
+  toggle: PropTypes.func,
+};

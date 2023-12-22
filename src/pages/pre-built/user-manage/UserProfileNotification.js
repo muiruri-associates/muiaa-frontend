@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "../../../layout/head/Head";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {
   BlockBetween,
   BlockContent,
@@ -15,7 +15,7 @@ import {
 UserProfileNotificationPage.propTypes = {
   sm: PropTypes.bool,
   updateSm: PropTypes.object,
-}
+};
 const UserProfileNotificationPage = ({ sm, updateSm }) => {
   return (
     <React.Fragment>
@@ -55,12 +55,19 @@ const UserProfileNotificationPage = ({ sm, updateSm }) => {
         <div className="gy-3">
           <div className="g-item">
             <div className="custom-control custom-switch">
-              <InputSwitch id="custom-switch" checked label="Email me whenever encounter unusual activity" />
+              <InputSwitch
+                id="custom-switch"
+                checked
+                label="Email me whenever encounter unusual activity"
+              />
             </div>
           </div>
           <div className="g-item">
             <div className="custom-control custom-switch">
-              <InputSwitch id="custom-switch2" label="Email me if new browser is used to sign in" />
+              <InputSwitch
+                id="custom-switch2"
+                label="Email me if new browser is used to sign in"
+              />
             </div>
           </div>
         </div>
@@ -81,17 +88,28 @@ const UserProfileNotificationPage = ({ sm, updateSm }) => {
         <div className="gy-3">
           <div className="g-item">
             <div className="custom-control custom-switch">
-              <InputSwitch id="custom-switch3" checked label="Notify me by email about sales and latest news" />
+              <InputSwitch
+                id="custom-switch3"
+                checked
+                label="Notify me by email about sales and latest news"
+              />
             </div>
           </div>
           <div className="g-item">
             <div className="custom-control custom-switch">
-              <InputSwitch id="feature-update" label="Email me about new features and updates" />
+              <InputSwitch
+                id="feature-update"
+                label="Email me about new features and updates"
+              />
             </div>
           </div>
           <div className="g-item">
             <div className="custom-control custom-switch">
-              <InputSwitch id="account-tips" checked label="Email me about tips on using account" />
+              <InputSwitch
+                id="account-tips"
+                checked
+                label="Email me about tips on using account"
+              />
             </div>
           </div>
         </div>

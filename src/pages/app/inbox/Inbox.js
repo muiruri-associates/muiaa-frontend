@@ -20,7 +20,11 @@ const Inbox = () => {
 
   // Filters mail list according to tabs
   useEffect(() => {
-    if (currentTab !== "All Mails" && currentTab !== "Trash" && currentTab !== "Archive") {
+    if (
+      currentTab !== "All Mails" &&
+      currentTab !== "Trash" &&
+      currentTab !== "Archive"
+    ) {
       let defaultData = data.filter(
         (item) =>
           item.message.meta[currentTab.toLowerCase()] === true &&
@@ -114,7 +118,9 @@ const Inbox = () => {
             setFilterLabel={setFilterLabel}
             setMessageView={setMessageView}
           />
-          {aside && <div className="toggle-overlay" onClick={() => setAside(!aside)}></div>}
+          {aside && (
+            <div className="toggle-overlay" onClick={() => setAside(!aside)}></div>
+          )}
           <InboxBody
             data={data}
             setData={setData}

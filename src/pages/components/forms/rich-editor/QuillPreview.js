@@ -1,7 +1,10 @@
 import React from "react";
 import Head from "../../../../layout/head/Head";
 import Content from "../../../../layout/content/Content";
-import { QuillComponent, QuillComponentMinimal } from "../../../../components/partials/rich-editor/QuillComponent";
+import {
+  QuillComponent,
+  QuillComponentMinimal,
+} from "../../../../components/partials/rich-editor/QuillComponent";
 import {
   Block,
   BlockHead,
@@ -29,7 +32,11 @@ const QuillPreview = () => {
             <BlockDes>
               <p className="lead">
                 Using the{" "}
-                <a href="https://www.npmjs.com/package/react-quilljs" rel="noreferrer" target="_blank">
+                <a
+                  href="https://www.npmjs.com/package/react-quilljs"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   React Quilljs
                 </a>{" "}
                 plugin, you can simply make some awesome rich text editor.

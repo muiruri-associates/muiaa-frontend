@@ -14,7 +14,10 @@ const RecentActivity = () => {
           </CardTitle>
           <div className="card-tools">
             <ul className="card-tools-nav">
-              <li className={recentUser === "Cancel" ? "active" : ""} onClick={() => setRecentUser("Cancel")}>
+              <li
+                className={recentUser === "Cancel" ? "active" : ""}
+                onClick={() => setRecentUser("Cancel")}
+              >
                 <a
                   href="#cancel"
                   onClick={(ev) => {
@@ -24,7 +27,10 @@ const RecentActivity = () => {
                   <span>Cancel</span>
                 </a>
               </li>
-              <li className={recentUser === "" ? "active" : ""} onClick={() => setRecentUser("")}>
+              <li
+                className={recentUser === "" ? "active" : ""}
+                onClick={() => setRecentUser("")}
+              >
                 <a
                   href="#all"
                   onClick={(ev) => {

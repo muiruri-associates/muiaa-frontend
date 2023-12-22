@@ -55,10 +55,15 @@ const UploadLenderDocument = () => {
             <Col sm="6">
               <label className="form-label">Lender ID</label>
               <input type="text" value={type} hidden defaultValue="ID" />
-              <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
                 {({ getRootProps, getInputProps }) => (
                   <section>
-                    <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
                       <input {...getInputProps()} />
                       {file.length === 0 && (
                         <div className="dz-message">
@@ -68,7 +73,10 @@ const UploadLenderDocument = () => {
                         </div>
                       )}
                       {file.map((file) => (
-                        <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
                           <div className="dz-image">
                             <img src={file.preview} alt="preview" />
                           </div>
@@ -82,10 +90,15 @@ const UploadLenderDocument = () => {
             <Col sm="6">
               <label className="form-label">Payslips</label>
               <input type="text" value={type} hidden defaultValue="Payslips" />
-              <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
                 {({ getRootProps, getInputProps }) => (
                   <section>
-                    <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
                       <input {...getInputProps()} />
                       {file.length === 0 && (
                         <div className="dz-message">
@@ -95,7 +108,10 @@ const UploadLenderDocument = () => {
                         </div>
                       )}
                       {file.map((file) => (
-                        <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
                           <div className="dz-image">
                             <img src={file.preview} alt="preview" />
                           </div>
@@ -112,10 +128,15 @@ const UploadLenderDocument = () => {
             <Col sm="6">
               <label className="form-label">Bank Statements</label>
               <input type="text" value={type} hidden defaultValue="BankStatements" />
-              <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}>
+              <Dropzone
+                onDrop={(acceptedFiles) => handleDropChange(acceptedFiles, setFile)}
+              >
                 {({ getRootProps, getInputProps }) => (
                   <section>
-                    <div {...getRootProps()} className="dropzone upload-zone dz-clickable">
+                    <div
+                      {...getRootProps()}
+                      className="dropzone upload-zone dz-clickable"
+                    >
                       <input {...getInputProps()} />
                       {file.length === 0 && (
                         <div className="dz-message">
@@ -125,7 +146,10 @@ const UploadLenderDocument = () => {
                         </div>
                       )}
                       {file.map((file) => (
-                        <div key={file.name} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
+                        <div
+                          key={file.name}
+                          className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                        >
                           <div className="dz-image">
                             <img src={file.preview} alt="preview" />
                           </div>

@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import { Icon, UserAvatar } from "../../../components/Component";
 import SimpleBar from "simplebar-react";
@@ -62,8 +62,16 @@ export const ChatAsideBody = ({
               user.fav === true && (
                 <li key={idx} onClick={() => setSelectedId(user.id)}>
                   <a href="#dropdown" onClick={(ev) => ev.preventDefault()}>
-                    <UserAvatar image={user.image} theme={user.theme} text={findUpper(user.name)}>
-                      <span className={`status dot dot-lg dot-${user.active === true ? "success" : "gray"}`}></span>
+                    <UserAvatar
+                      image={user.image}
+                      theme={user.theme}
+                      text={findUpper(user.name)}
+                    >
+                      <span
+                        className={`status dot dot-lg dot-${
+                          user.active === true ? "success" : "gray"
+                        }`}
+                      ></span>
                     </UserAvatar>
                   </a>
                 </li>
@@ -225,7 +233,7 @@ ChatAsideBody.propTypes = {
   chatItemClick: PropTypes.any,
   favFilter: PropTypes.shape({
     length: PropTypes.number,
-    map: PropTypes.func
+    map: PropTypes.func,
   }),
   favFilterText: PropTypes.any,
   favInputSearchChange: PropTypes.func,
@@ -233,13 +241,13 @@ ChatAsideBody.propTypes = {
   filterTab: PropTypes.string,
   filteredChatList: PropTypes.shape({
     filter: PropTypes.func,
-    map: PropTypes.func
+    map: PropTypes.func,
   }),
   onInputChange: PropTypes.func,
   selectedId: PropTypes.any,
   setFavState: PropTypes.func,
-  setSelectedId: PropTypes.func
-}
+  setSelectedId: PropTypes.func,
+};
 
 export const ChannelAsideBody = ({
   filteredChatList,
@@ -375,15 +383,21 @@ ChannelAsideBody.propTypes = {
   filterTab: PropTypes.string,
   filteredChatList: PropTypes.shape({
     filter: PropTypes.func,
-    map: PropTypes.func
+    map: PropTypes.func,
   }),
   onInputChange: PropTypes.func,
   selectedId: PropTypes.any,
   setMobileView: PropTypes.func,
-  setSelectedId: PropTypes.func
-}
+  setSelectedId: PropTypes.func,
+};
 
-export const ContactAsideBody = (onInputChange, filterData, filterText, contactData, setSelectedId) => {
+export const ContactAsideBody = (
+  onInputChange,
+  filterData,
+  filterText,
+  contactData,
+  setSelectedId
+) => {
   return (
     <SimpleBar className="nk-chat-aside-body">
       <div className="nk-chat-aside-search">

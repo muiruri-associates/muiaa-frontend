@@ -154,12 +154,22 @@ const ReactToastify = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Every project required to display notification nice way. So in DashLite, we integrated{" "}
-                <a href="https://fkhadra.github.io/react-toastify/" target="_blank" rel="noreferrer">
+                Every project required to display notification nice way. So in DashLite,
+                we integrated{" "}
+                <a
+                  href="https://fkhadra.github.io/react-toastify/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React Toastify
                 </a>{" "}
-                which is beautiful and simple javascript for toast notifications. Visit the{" "}
-                <a href="https://fkhadra.github.io/react-toastify/" target="_blank" rel="noreferrer">
+                which is beautiful and simple javascript for toast notifications. Visit
+                the{" "}
+                <a
+                  href="https://fkhadra.github.io/react-toastify/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React Toastify
                 </a>{" "}
                 plugin for further details.
@@ -177,37 +187,65 @@ const ReactToastify = () => {
           <PreviewCard>
             <ul className="align-center flex-wrap g-2">
               <li>
-                <Button color="primary" className="eg-toastr-default" onClick={() => execToast("bottom-right")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-default"
+                  onClick={() => execToast("bottom-right")}
+                >
                   Default
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-bottom-center" onClick={() => execToast("bottom-center")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-bottom-center"
+                  onClick={() => execToast("bottom-center")}
+                >
                   Bottom Center
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-bottom-left" onClick={() => execToast("bottom-left")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-bottom-left"
+                  onClick={() => execToast("bottom-left")}
+                >
                   Bottom left
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-bottom-right" onClick={() => execToast("bottom-right")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-bottom-right"
+                  onClick={() => execToast("bottom-right")}
+                >
                   Bottom Right
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-top-center" onClick={() => execToast("top-center")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-top-center"
+                  onClick={() => execToast("top-center")}
+                >
                   Top Center
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-top-left" onClick={() => execToast("top-left")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-top-left"
+                  onClick={() => execToast("top-left")}
+                >
                   Top left
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-toastr-top-right" onClick={() => execToast("top-right")}>
+                <Button
+                  color="primary"
+                  className="eg-toastr-top-right"
+                  onClick={() => execToast("top-right")}
+                >
                   Top Right
                 </Button>
               </li>
@@ -242,22 +280,38 @@ const ReactToastify = () => {
           <PreviewCard>
             <ul className="align-center flex-wrap g-2">
               <li>
-                <Button color="success" className="eg-swal-success" onClick={() => successToast()}>
+                <Button
+                  color="success"
+                  className="eg-swal-success"
+                  onClick={() => successToast()}
+                >
                   Success
                 </Button>
               </li>
               <li>
-                <Button color="info" className="eg-swal-info" onClick={() => infoToast()}>
+                <Button
+                  color="info"
+                  className="eg-swal-info"
+                  onClick={() => infoToast()}
+                >
                   Info
                 </Button>
               </li>
               <li>
-                <Button color="warning" className="eg-swal-warning" onClick={() => warningToast()}>
+                <Button
+                  color="warning"
+                  className="eg-swal-warning"
+                  onClick={() => warningToast()}
+                >
                   Warning
                 </Button>
               </li>
               <li>
-                <Button color="danger" className="eg-swal-error" onClick={() => errorToast()}>
+                <Button
+                  color="danger"
+                  className="eg-swal-error"
+                  onClick={() => errorToast()}
+                >
                   Error
                 </Button>
               </li>
@@ -288,24 +342,37 @@ const ReactToastify = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Toast Styles</BlockTitle>
               <BlockDes>
-                You can pass in a custom component in <code>toast</code> function for custom markup
+                You can pass in a custom component in <code>toast</code> function for
+                custom markup
               </BlockDes>
             </BlockHeadContent>
           </BlockHead>
           <PreviewCard>
             <ul className="align-center flex-wrap g-2">
               <li>
-                <Button color="success" className="eg-swal-success" onClick={() => messageToast()}>
+                <Button
+                  color="success"
+                  className="eg-swal-success"
+                  onClick={() => messageToast()}
+                >
                   Message With Title
                 </Button>
               </li>
               <li>
-                <Button color="primary" className="eg-swal-info" onClick={() => noIcon()}>
+                <Button
+                  color="primary"
+                  className="eg-swal-info"
+                  onClick={() => noIcon()}
+                >
                   No Icon Version
                 </Button>
               </li>
               <li>
-                <Button color="dark" className="eg-swal-warning" onClick={() => darkVersion()}>
+                <Button
+                  color="dark"
+                  className="eg-swal-warning"
+                  onClick={() => darkVersion()}
+                >
                   Dark Version
                 </Button>
               </li>

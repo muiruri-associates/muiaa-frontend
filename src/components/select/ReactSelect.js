@@ -15,7 +15,7 @@ const RSelect = ({ ...props }) => {
 };
 
 RSelect.propTypes = {
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+};
 
 export default RSelect;

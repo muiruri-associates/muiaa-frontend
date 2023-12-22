@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { contacts, inboxList } from "./InboxData";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Icon } from "../../../components/Component";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 InboxBodyHead.propTypes = {
   allData: PropTypes.object,
@@ -20,7 +25,7 @@ InboxBodyHead.propTypes = {
   totalItems: PropTypes.object,
   paginate: PropTypes.func,
   currentPage: PropTypes.any,
-}
+};
 const InboxBodyHead = ({
   allData,
   data,
@@ -43,11 +48,19 @@ const InboxBodyHead = ({
 
   useEffect(() => {
     if (searchText !== "") {
-      const filteredUser = contacts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()));
-      const filteredData = inboxList.filter((item) => filteredUser.some((el) => item.userId === el.id));
+      const filteredUser = contacts.filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+      );
+      const filteredData = inboxList.filter((item) =>
+        filteredUser.some((el) => item.userId === el.id)
+      );
       setData([...filteredData]);
     } else {
-      if (currentTab !== "All Mails" && currentTab !== "Trash" && currentTab !== "Archive") {
+      if (
+        currentTab !== "All Mails" &&
+        currentTab !== "Trash" &&
+        currentTab !== "Archive"
+      ) {
         let defaultData = allData.filter(
           (item) =>
             item.message.meta[currentTab.toLowerCase()] === true &&
@@ -156,13 +169,21 @@ const InboxBodyHead = ({
               <DropdownMenu>
                 <ul className="link-list-opt no-bdr">
                   <li onClick={() => selectorDeleteInbox()}>
-                    <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                    <DropdownItem
+                      tag="a"
+                      href="#item"
+                      onClick={(ev) => ev.preventDefault()}
+                    >
                       <Icon name="trash"></Icon>
                       <span>Delete</span>
                     </DropdownItem>
                   </li>
                   <li onClick={() => selectorArchive()}>
-                    <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                    <DropdownItem
+                      tag="a"
+                      href="#item"
+                      onClick={(ev) => ev.preventDefault()}
+                    >
                       <Icon name="archived"></Icon>
                       <span>Archive</span>
                     </DropdownItem>
@@ -182,7 +203,9 @@ const InboxBodyHead = ({
                 ev.preventDefault();
                 prevPage();
               }}
-              className={`btn btn-trigger btn-icon btn-tooltip ${currentPage - 1 === 0 ? "disabled" : ""}`}
+              className={`btn btn-trigger btn-icon btn-tooltip ${
+                currentPage - 1 === 0 ? "disabled" : ""
+              }`}
             >
               <Icon name="arrow-left"></Icon>
             </a>
@@ -195,7 +218,10 @@ const InboxBodyHead = ({
                 nextPage();
               }}
               className={`btn btn-trigger btn-icon btn-tooltip ${
-                pageNumbers[pageNumbers.length - 1] === currentPage || pageNumbers.length === 0 ? "disabled" : ""
+                pageNumbers[pageNumbers.length - 1] === currentPage ||
+                pageNumbers.length === 0
+                  ? "disabled"
+                  : ""
               }`}
             >
               <Icon name="arrow-right"></Icon>

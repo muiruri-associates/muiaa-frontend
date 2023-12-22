@@ -1,11 +1,11 @@
 import React from "react";
 import { Icon } from "../../../components/Component";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 MeChat.propTypes = {
   item: PropTypes.any,
   onRemoveMessage: PropTypes.any,
-}
+};
 export const MeChat = ({ item, onRemoveMessage }) => {
   const { message, date, sender } = item; // Access the message content and date from the item
 
@@ -15,7 +15,9 @@ export const MeChat = ({ item, onRemoveMessage }) => {
         <div className="chat-bubbles">
           <div className="chat-bubble">
             {message === "deleted" ? (
-              <div className="chat-msg border bg-white text-muted">Message has been deleted</div>
+              <div className="chat-msg border bg-white text-muted">
+                Message has been deleted
+              </div>
             ) : (
               <React.Fragment>
                 <div className="chat-msg">{message}</div>
@@ -37,7 +39,10 @@ export const MeChat = ({ item, onRemoveMessage }) => {
             )}
           </div>
           <ul className="chat-meta">
-            <li>{/* Show the sender here */}{sender}</li>
+            <li>
+              {/* Show the sender here */}
+              {sender}
+            </li>
             <li>{date}</li>
           </ul>
         </div>
@@ -46,9 +51,8 @@ export const MeChat = ({ item, onRemoveMessage }) => {
   );
 };
 
-
 export const YouChat = ({ item }) => {
-  if (!item || typeof item !== 'object' || !item.message) {
+  if (!item || typeof item !== "object" || !item.message) {
     // Handle the case when item or item.message is undefined
     return (
       <div className="chat is-you">
@@ -87,11 +91,9 @@ YouChat.propTypes = {
   item: PropTypes.shape({
     created_at: PropTypes.any,
     message: PropTypes.any,
-    sender: PropTypes.any
-  })
-}
-
-
+    sender: PropTypes.any,
+  }),
+};
 
 // export const MetaChat = ({ item }) => {
 //   return (

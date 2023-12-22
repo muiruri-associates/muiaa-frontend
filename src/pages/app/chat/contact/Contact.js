@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
@@ -53,7 +53,14 @@ const AppContact = ({ setTab, setSelectedId }) => {
               <div className="ml-5">No user</div>
             ) : (
               contactData.map((item, idx) => {
-                return <ContactItem key={idx} item={item} setTab={setTab} setSelectedId={setSelectedId}></ContactItem>;
+                return (
+                  <ContactItem
+                    key={idx}
+                    item={item}
+                    setTab={setTab}
+                    setSelectedId={setSelectedId}
+                  ></ContactItem>
+                );
               })
             )
           ) : (
@@ -78,7 +85,9 @@ const AppContact = ({ setTab, setSelectedId }) => {
                           <div className="user-name">{contact.name}</div>
                         </a>
                         <div className="user-actions">
-                          <Link to={`${process.env.PUBLIC_URL}/app-chat`}>Start Chat</Link>
+                          <Link to={`${process.env.PUBLIC_URL}/app-chat`}>
+                            Start Chat
+                          </Link>
                         </div>
                       </div>
                     </li>
@@ -95,6 +104,6 @@ const AppContact = ({ setTab, setSelectedId }) => {
 
 AppContact.propTypes = {
   setSelectedId: PropTypes.func,
-  setTab: PropTypes.func
-}
+  setTab: PropTypes.func,
+};
 export default AppContact;

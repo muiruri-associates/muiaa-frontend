@@ -3,7 +3,14 @@ import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
 import { fileManagerIconData, svgData } from "./NioIconData";
 import { Row, Col } from "reactstrap";
-import { BlockHead, BlockHeadContent, BlockDes, BackTo, BlockTitle, Block } from "../../../components/Component";
+import {
+  BlockHead,
+  BlockHeadContent,
+  BlockDes,
+  BackTo,
+  BlockTitle,
+  Block,
+} from "../../../components/Component";
 
 const SVGIconPage = () => {
   return (
@@ -21,9 +28,10 @@ const SVGIconPage = () => {
               </BlockTitle>
               <BlockDes>
                 <p className="lead">
-                  <strong>Softnio</strong> team design some beautiful and eyecatching custom icons that helps much in
-                  your dashboard. All the icons are in SVG format so it never blury in retina device and you can update
-                  color easily be edit SVG code.
+                  <strong>Softnio</strong> team design some beautiful and eyecatching
+                  custom icons that helps much in your dashboard. All the icons are in
+                  SVG format so it never blury in retina device and you can update color
+                  easily be edit SVG code.
                 </p>
               </BlockDes>
             </BlockHeadContent>

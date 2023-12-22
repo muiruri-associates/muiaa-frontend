@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 import classNames from "classnames";
 import SimpleBar from "simplebar-react";
@@ -31,7 +31,11 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView }) => {
     <div className={classes}>
       <div className="nk-sidebar-element nk-sidebar-head">
         <div className="nk-menu-trigger">
-          <Toggle className="nk-nav-toggle nk-quick-nav-icon d-xl-none mr-n2" icon="arrow-left" click={sidebarToggle} />
+          <Toggle
+            className="nk-nav-toggle nk-quick-nav-icon d-xl-none mr-n2"
+            icon="arrow-left"
+            click={sidebarToggle}
+          />
           <Toggle
             className={`nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex ${
               collapseSidebar ? "compact-active" : ""
@@ -44,9 +48,17 @@ const Sidebar = ({ fixed, theme, className, sidebarToggle, mobileView }) => {
           <Logo />
         </div>
       </div>
-      <div className="nk-sidebar-content" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <div
+        className="nk-sidebar-content"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <SimpleBar className="nk-sidebar-menu">
-          <Menu userRole={userRole} sidebarToggle={sidebarToggle} mobileView={mobileView}/>
+          <Menu
+            userRole={userRole}
+            sidebarToggle={sidebarToggle}
+            mobileView={mobileView}
+          />
         </SimpleBar>
       </div>
     </div>
@@ -59,6 +71,6 @@ Sidebar.propTypes = {
   mobileView: PropTypes.any,
   roles: PropTypes.any,
   sidebarToggle: PropTypes.any,
-  theme: PropTypes.string
-}
+  theme: PropTypes.string,
+};
 export default Sidebar;

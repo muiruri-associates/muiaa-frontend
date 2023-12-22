@@ -1,6 +1,6 @@
-import PropTypes from "prop-types"
-import {Button} from "reactstrap"
-import { useHistory } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { Button } from "reactstrap";
+import { useHistory } from "react-router-dom";
 import React from "react";
 
 // const history = useHistory();
@@ -23,9 +23,9 @@ const ActionsColumn = ({ row }) => {
 
 ActionsColumn.propTypes = {
   row: PropTypes.shape({
-    _id: PropTypes.any
-  })
-}
+    _id: PropTypes.any,
+  }),
+};
 
 export const dataTableColumns = [
   {

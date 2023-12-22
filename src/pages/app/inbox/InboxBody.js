@@ -6,13 +6,20 @@ import InboxDraft, { InboxDraftList } from "./InboxDraft";
 import { contacts } from "./InboxData";
 import { Icon, UserAvatar, TooltipComponent } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
-import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Spinner, UncontrolledDropdown } from "reactstrap";
-import PropTypes from 'prop-types';
+import {
+  Badge,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Spinner,
+  UncontrolledDropdown,
+} from "reactstrap";
+import PropTypes from "prop-types";
 
 InboxBody.propTypes = {
   data: PropTypes.object,
   currentTab: PropTypes.string,
-  aside: PropTypes.string ,
+  aside: PropTypes.string,
   setAside: PropTypes.string,
   setCurrentTab: PropTypes.string,
   setData: PropTypes.func,
@@ -32,7 +39,7 @@ InboxBody.propTypes = {
   totalItems: PropTypes.func,
   paginate: PropTypes.func,
   currentPage: PropTypes.func,
-}
+};
 const InboxBody = ({
   data,
   aside,
@@ -155,7 +162,8 @@ const InboxBody = ({
   const onFavoriteClick = (id) => {
     let defaultData = data;
     let item = defaultData.findIndex((item) => item.id === id);
-    defaultData[item].message.meta.favourite = !defaultData[item].message.meta.favourite;
+    defaultData[item].message.meta.favourite =
+      !defaultData[item].message.meta.favourite;
     setData([...defaultData]);
   };
 
@@ -205,7 +213,7 @@ const InboxBody = ({
       (currentTab === "Trash" && item.message.meta.draft === true) ||
       (currentTab === "Archive" && item.message.meta.draft === true)
     ) {
-      console.log()
+      console.log();
     } else {
       ev.preventDefault();
       toggleMessageView();
@@ -289,7 +297,12 @@ const InboxBody = ({
                       );
                     } else
                       return (
-                        <div className={`nk-ibx-item ${item.message.meta.unread ? "" : "is-unread"}`} key={item.id}>
+                        <div
+                          className={`nk-ibx-item ${
+                            item.message.meta.unread ? "" : "is-unread"
+                          }`}
+                          key={item.id}
+                        >
                           <a
                             href="#item"
                             onClick={(ev) => {
@@ -307,9 +320,14 @@ const InboxBody = ({
                                 className="custom-control-input nk-dt-item-check"
                                 id={`conversionItem${item.id}`}
                                 key={Math.random()}
-                                onChange={(e) => checkMessage(item.id, e.target.checked)}
+                                onChange={(e) =>
+                                  checkMessage(item.id, e.target.checked)
+                                }
                               />
-                              <label className="custom-control-label" htmlFor={`conversionItem${item.id}`}></label>
+                              <label
+                                className="custom-control-label"
+                                htmlFor={`conversionItem${item.id}`}
+                              ></label>
                             </div>
                           </div>
                           <div className="nk-ibx-item-elem nk-ibx-item-star">
@@ -322,7 +340,11 @@ const InboxBody = ({
                                   onFavoriteClick(item.id);
                                 }}
                               >
-                                <Icon name={`${item.message.meta.favourite ? "star-fill" : "star"}`}></Icon>
+                                <Icon
+                                  name={`${
+                                    item.message.meta.favourite ? "star-fill" : "star"
+                                  }`}
+                                ></Icon>
                               </a>
                             </div>
                           </div>
@@ -333,12 +355,16 @@ const InboxBody = ({
                                 {getUser(item.message.reply[0].to.user)
                                   ? getUser(item.message.reply[0].to.user).name
                                   : item.message.reply[0].to.mail.split("@")[0]
-                                  ? item.message.reply[0].to.mail.split("@")[0]
-                                  : item.message.reply[0].to.mail}
+                                    ? item.message.reply[0].to.mail.split("@")[0]
+                                    : item.message.reply[0].to.mail}
                               </p>
                             ) : (
                               <div className="user-card">
-                                <UserAvatar text={findUpper(user.name)} image={user.img} theme={user.theme} />
+                                <UserAvatar
+                                  text={findUpper(user.name)}
+                                  image={user.img}
+                                  theme={user.theme}
+                                />
                                 <div className="user-name">
                                   <div className="lead-text">{user.name}</div>
                                 </div>
@@ -357,22 +383,34 @@ const InboxBody = ({
                               <div className="nk-ibx-context">
                                 <span className="nk-ibx-context-text">
                                   <span className="heading">
-                                    {item.message.subject ? item.message.subject : "(no subject)"}
+                                    {item.message.subject
+                                      ? item.message.subject
+                                      : "(no subject)"}
                                   </span>{" "}
-                                  {item.message.reply[item.message.reply.length - 1].replyMessage[1]}
+                                  {
+                                    item.message.reply[item.message.reply.length - 1]
+                                      .replyMessage[1]
+                                  }
                                 </span>
                               </div>
                             </div>
                           </div>
-                          {item.message.reply[item.message.reply.length - 1].attachment && (
+                          {item.message.reply[item.message.reply.length - 1]
+                            .attachment && (
                             <div className="nk-ibx-item-elem nk-ibx-item-attach">
-                              <a className="link link-light" href="#link" onClick={(ev) => ev.preventDefault()}>
+                              <a
+                                className="link link-light"
+                                href="#link"
+                                onClick={(ev) => ev.preventDefault()}
+                              >
                                 <Icon name="clip-h"></Icon>
                               </a>
                             </div>
                           )}
                           <div className="nk-ibx-item-elem nk-ibx-item-time">
-                            <div className="sub-text">{item.message.reply[item.message.reply.length - 1].time}</div>
+                            <div className="sub-text">
+                              {item.message.reply[item.message.reply.length - 1].time}
+                            </div>
                           </div>
                           <div className="nk-ibx-item-elem nk-ibx-item-tools">
                             <div className="ibx-actions">
@@ -384,7 +422,9 @@ const InboxBody = ({
                                     icon="archived"
                                     direction="top"
                                     id={`archive${item.id}Tooltip`}
-                                    text={`${currentTab === "Archive" ? "Unarchive" : "Archive"}`}
+                                    text={`${
+                                      currentTab === "Archive" ? "Unarchive" : "Archive"
+                                    }`}
                                   ></TooltipComponent>
                                 </li>
                                 <li onClick={() => deleteInbox(item.id)}>
@@ -448,7 +488,11 @@ const InboxBody = ({
                                             }}
                                           >
                                             <Icon name="archived"></Icon>
-                                            <span>{`${currentTab === "Archive" ? "Unarchive" : "Archive"}`}</span>
+                                            <span>{`${
+                                              currentTab === "Archive"
+                                                ? "Unarchive"
+                                                : "Archive"
+                                            }`}</span>
                                           </DropdownItem>
                                         </li>
                                       </ul>

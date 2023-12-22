@@ -4,7 +4,7 @@ import AppMessages from "../../app/messages/Messages";
 const ContactLenderPage = () => {
   return (
     <React.Fragment>
-      <AppMessages/>
+      <AppMessages />
     </React.Fragment>
   );
 };

@@ -3,8 +3,22 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import Icon from "../../components/icon/Icon";
 
-import { Button, UncontrolledDropdown, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Button,
+  UncontrolledDropdown,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewCard, CodeBlock, PreviewTable } from "../../components/preview/Preview";
 import { OverlineTitle } from "../../components/text/Text";
 
@@ -26,10 +40,20 @@ const DropdownsPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin. To
-                use the components, import it such as{" "}
-                <code>import {`{Dropdown, DropdownToggle, DropdownMenu}`} from &ldquo;reactstrap&ldquo;</code>. Visit the{" "}
-                <a href={"https://deploy-preview-2356--reactstrap.netlify.app/components/dropdowns"} target="_blank" rel="noreferrer">
+                Toggle contextual overlays for displaying lists of links and more with
+                the Bootstrap dropdown plugin. To use the components, import it such as{" "}
+                <code>
+                  import {`{Dropdown, DropdownToggle, DropdownMenu}`} from
+                  &ldquo;reactstrap&ldquo;
+                </code>
+                . Visit the{" "}
+                <a
+                  href={
+                    "https://deploy-preview-2356--reactstrap.netlify.app/components/dropdowns"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Reactstrap
                 </a>{" "}
                 library for detailed instructions.
@@ -43,8 +67,9 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5">Basic Example</BlockTitle>
               <p>
-                Any single .btn-action can be turned into a <code>DropdownToggle</code> with some markup changes. Here’s
-                how you can put them to work with either elements:
+                Any single .btn-action can be turned into a <code>DropdownToggle</code>{" "}
+                with some markup changes. Here’s how you can put them to work with
+                either elements:
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -58,22 +83,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -92,22 +133,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -123,22 +180,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -157,22 +230,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -188,22 +277,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -222,22 +327,38 @@ const DropdownsPage = () => {
                   <DropdownMenu>
                     <ul className="link-list-opt">
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Profile Settings</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Notifications</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Another Action</span>
                         </DropdownItem>
                       </li>
                       <li>
-                        <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                        <DropdownItem
+                          tag="a"
+                          href="#links"
+                          onClick={(ev) => ev.preventDefault()}
+                        >
                           <span>Something else here</span>
                         </DropdownItem>
                       </li>
@@ -309,7 +430,8 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5"> Example 1 - Option Style</BlockTitle>
               <p>
-                Use <code>.link-list-opt</code> className on <code>ul</code> to get styles shown in card below.
+                Use <code>.link-list-opt</code> className on <code>ul</code> to get
+                styles shown in card below.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -404,23 +526,37 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-opt">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -437,19 +573,31 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-opt">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -573,23 +721,37 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-opt no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -606,19 +768,31 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-opt no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -745,24 +919,38 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-opt no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li className="divider"></li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -779,20 +967,32 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-opt no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li className="divider"></li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -848,7 +1048,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for no border style
+                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for
+                    no border style
                   </span>
                 </td>
               </tr>
@@ -871,7 +1072,8 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5"> Example 2 - Plain Style</BlockTitle>
               <p>
-                Use <code>.link-list-opt</code> className on <code>ul</code> to get styles shown in card below.
+                Use <code>.link-list-opt</code> className on <code>ul</code> to get
+                styles shown in card below.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -969,23 +1171,37 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-plain">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1002,19 +1218,31 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-plain">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1141,23 +1369,37 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-plain no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1174,19 +1416,31 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-plain no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1316,24 +1570,38 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-plain no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li className="divider"></li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1350,20 +1618,32 @@ const DropdownsPage = () => {
                       <DropdownMenu>
                         <ul className="link-list-plain no-bdr">
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="setting"></Icon>
                               <span>Action Settings</span>
                             </DropdownItem>
                           </li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="notify"></Icon>
                               <span>Push Notification</span>
                             </DropdownItem>
                           </li>
                           <li className="divider"></li>
                           <li>
-                            <DropdownItem tag="a" href="#links" onClick={(ev) => ev.preventDefault()}>
+                            <DropdownItem
+                              tag="a"
+                              href="#links"
+                              onClick={(ev) => ev.preventDefault()}
+                            >
                               <Icon name="activity-alt"></Icon>
                               <span>Login Activity</span>
                             </DropdownItem>
@@ -1549,7 +1829,9 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-plain li-col4x text-center">
                           <li>
@@ -1731,7 +2013,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for no border style
+                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for
+                    no border style
                   </span>
                 </td>
               </tr>
@@ -1741,8 +2024,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>{`{col}`} </code> as <code>col2x, col3x, col4x </code> with{" "}
-                    <code>ul.link-list-plain</code> list for column based list.
+                    Use <code>{`{col}`} </code> as <code>col2x, col3x, col4x </code>{" "}
+                    with <code>ul.link-list-plain</code> list for column based list.
                   </span>
                 </td>
               </tr>
@@ -1765,7 +2048,8 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5"> Example 3 - Tidy Style</BlockTitle>
               <p>
-                Use <code>.link-tidy</code> className on <code>ul</code> to get styles shown in card below.
+                Use <code>.link-tidy</code> className on <code>ul</code> to get styles
+                shown in card below.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -1780,7 +2064,12 @@ const DropdownsPage = () => {
                     <ul className="link-tidy">
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" defaultChecked={true} id="check-bl" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input"
+                            defaultChecked={true}
+                            id="check-bl"
+                          />
                           <label className="custom-control-label" htmlFor="check-bl">
                             Balance
                           </label>
@@ -1788,7 +2077,11 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="check-ph" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input"
+                            id="check-ph"
+                          />
                           <label className="custom-control-label" htmlFor="check-ph">
                             Phone
                           </label>
@@ -1810,7 +2103,12 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-radio">
-                          <input type="radio" className="custom-control-input" name="radio-list" id="radio-ph" />
+                          <input
+                            type="radio"
+                            className="custom-control-input"
+                            name="radio-list"
+                            id="radio-ph"
+                          />
                           <label className="custom-control-label" htmlFor="radio-ph">
                             Phone
                           </label>
@@ -1842,7 +2140,11 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="check-ph-wb" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input"
+                            id="check-ph-wb"
+                          />
                           <label className="custom-control-label" htmlFor="check-ph-wb">
                             Phone
                           </label>
@@ -1864,7 +2166,12 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-radio">
-                          <input type="radio" className="custom-control-input" name="radio-list" id="radio-ph-wb" />
+                          <input
+                            type="radio"
+                            className="custom-control-input"
+                            name="radio-list"
+                            id="radio-ph-wb"
+                          />
                           <label className="custom-control-label" htmlFor="radio-ph-wb">
                             Phone
                           </label>
@@ -1896,7 +2203,11 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-checkbox">
-                          <input type="checkbox" className="custom-control-input" id="check-ph-cm" />
+                          <input
+                            type="checkbox"
+                            className="custom-control-input"
+                            id="check-ph-cm"
+                          />
                           <label className="custom-control-label" htmlFor="check-ph-cm">
                             Phone
                           </label>
@@ -1918,7 +2229,12 @@ const DropdownsPage = () => {
                       </li>
                       <li>
                         <div className="custom-control custom-control-sm custom-radio">
-                          <input type="radio" className="custom-control-input" name="radio-list" id="radio-ph-cm" />
+                          <input
+                            type="radio"
+                            className="custom-control-input"
+                            name="radio-list"
+                            id="radio-ph-cm"
+                          />
                           <label className="custom-control-label" htmlFor="radio-ph-cm">
                             Phone
                           </label>
@@ -1935,7 +2251,9 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-tidy">
                           <li>
@@ -1946,15 +2264,25 @@ const DropdownsPage = () => {
                                 defaultChecked={true}
                                 id="check-bl-pr"
                               />
-                              <label className="custom-control-label" htmlFor="check-bl-pr">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="check-bl-pr"
+                              >
                                 Balance
                               </label>
                             </div>
                           </li>
                           <li>
                             <div className="custom-control custom-control-sm custom-checkbox">
-                              <input type="checkbox" className="custom-control-input" id="check-ph-pr" />
-                              <label className="custom-control-label" htmlFor="check-ph-pr">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                id="check-ph-pr"
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="check-ph-pr"
+                              >
                                 Phone
                               </label>
                             </div>
@@ -1968,15 +2296,26 @@ const DropdownsPage = () => {
                                 name="radio-list"
                                 id="radio-bl-pr"
                               />
-                              <label className="custom-control-label" htmlFor="radio-bl-pr">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="radio-bl-pr"
+                              >
                                 Balance
                               </label>
                             </div>
                           </li>
                           <li>
                             <div className="custom-control custom-control-sm custom-radio">
-                              <input type="radio" className="custom-control-input" name="radio-list" id="radio-ph-pr" />
-                              <label className="custom-control-label" htmlFor="radio-ph-pr">
+                              <input
+                                type="radio"
+                                className="custom-control-input"
+                                name="radio-list"
+                                id="radio-ph-pr"
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="radio-ph-pr"
+                              >
                                 Phone
                               </label>
                             </div>
@@ -2000,15 +2339,25 @@ const DropdownsPage = () => {
                                 defaultChecked={true}
                                 id="check-bl-dd"
                               />
-                              <label className="custom-control-label" htmlFor="check-bl-dd">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="check-bl-dd"
+                              >
                                 Balance
                               </label>
                             </div>
                           </li>
                           <li>
                             <div className="custom-control custom-control-sm custom-checkbox">
-                              <input type="checkbox" className="custom-control-input" id="check-ph-dd" />
-                              <label className="custom-control-label" htmlFor="check-ph-dd">
+                              <input
+                                type="checkbox"
+                                className="custom-control-input"
+                                id="check-ph-dd"
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="check-ph-dd"
+                              >
                                 Phone
                               </label>
                             </div>
@@ -2022,15 +2371,26 @@ const DropdownsPage = () => {
                                 name="radio-list"
                                 id="radio-bl-dd"
                               />
-                              <label className="custom-control-label" htmlFor="radio-bl-dd">
+                              <label
+                                className="custom-control-label"
+                                htmlFor="radio-bl-dd"
+                              >
                                 Balance
                               </label>
                             </div>
                           </li>
                           <li>
                             <div className="custom-control custom-control-sm custom-radio">
-                              <input type="radio" className="custom-control-input" name="radio-list" id="radio-ph-dd" />
-                              <label className="custom-control-label" htmlFor="radio-ph-dd">
+                              <input
+                                type="radio"
+                                className="custom-control-input"
+                                name="radio-list"
+                                id="radio-ph-dd"
+                              />
+                              <label
+                                className="custom-control-label"
+                                htmlFor="radio-ph-dd"
+                              >
                                 Phone
                               </label>
                             </div>
@@ -2086,7 +2446,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for no border style
+                    Use <code>{`no-bdr`}</code> as a className with <code>ul</code> for
+                    no border style
                   </span>
                 </td>
               </tr>
@@ -2109,7 +2470,8 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5"> Example 4 - Menu Style</BlockTitle>
               <p>
-                Use <code>.link-list-menu</code> className on <code>ul</code> to get styles shown in card below.
+                Use <code>.link-list-menu</code> className on <code>ul</code> to get
+                styles shown in card below.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -2201,7 +2563,9 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-list-menu">
                           <li>
@@ -2275,7 +2639,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>active</code> as a className with <code>li</code> for active style
+                    Use <code>active</code> as a className with <code>li</code> for
+                    active style
                   </span>
                 </td>
               </tr>
@@ -2285,7 +2650,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>divider</code> with blank <code>li</code> tag for a divider
+                    Use <code>divider</code> with blank <code>li</code> tag for a
+                    divider
                   </span>
                 </td>
               </tr>
@@ -2298,7 +2664,8 @@ const DropdownsPage = () => {
             <BlockHeadContent>
               <BlockTitle tag="h5"> Example 5 - with Heading</BlockTitle>
               <p>
-                Use <code>.link-check</code> className on <code>ul</code> to get styles shown in card below.
+                Use <code>.link-check</code> className on <code>ul</code> to get styles
+                shown in card below.
               </p>
             </BlockHeadContent>
           </BlockHead>
@@ -2446,7 +2813,9 @@ const DropdownsPage = () => {
                 <ul className="d-flex g-3">
                   <li>
                     <UncontrolledDropdown>
-                      <DropdownToggle className="dropdown-toggle btn btn-light">Click Here</DropdownToggle>
+                      <DropdownToggle className="dropdown-toggle btn btn-light">
+                        Click Here
+                      </DropdownToggle>
                       <DropdownMenu>
                         <ul className="link-check">
                           <li>
@@ -2566,7 +2935,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>active</code> as a className with <code>li</code> for active style
+                    Use <code>active</code> as a className with <code>li</code> for
+                    active style
                   </span>
                 </td>
               </tr>
@@ -2576,7 +2946,8 @@ const DropdownsPage = () => {
                 </td>
                 <td>
                   <span>
-                    Use <code>divider</code> with blank <code>li</code> tag for a divider
+                    Use <code>divider</code> with blank <code>li</code> tag for a
+                    divider
                   </span>
                 </td>
               </tr>

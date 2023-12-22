@@ -38,7 +38,11 @@ const BasicCarousel = () => {
 
   const slides = items.map((item) => {
     return (
-      <CarouselItem onExiting={() => setAnimating(true)} onExited={() => setAnimating(false)} key={item.src}>
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
         <img src={item.src} alt={item.altText} />
       </CarouselItem>
     );

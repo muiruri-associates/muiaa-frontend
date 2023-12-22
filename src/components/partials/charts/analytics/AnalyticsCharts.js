@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import { Line, Bar, Doughnut } from "react-chartjs-2";
 import { VectorMap } from "react-jvectormap";
@@ -101,8 +101,8 @@ export const AudienceLineChart = ({ state }) => {
 };
 
 AudienceLineChart.propTypes = {
-  state: PropTypes.string
-}
+  state: PropTypes.string,
+};
 
 export const ActiveUserBarChart = () => {
   return (
@@ -121,7 +121,9 @@ export const ActiveUserBarChart = () => {
               return false; //data['labels'][tooltipItem[0]['index']];
             },
             label: function (tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex]["data"][tooltipItem["index"]];
+              return data.datasets[tooltipItem.datasetIndex]["data"][
+                tooltipItem["index"]
+              ];
             },
           },
           backgroundColor: "#eff6ff",
@@ -200,7 +202,9 @@ export const WPCharts = ({ data, className }) => {
               return false; //data['labels'][tooltipItem[0]['index']];
             },
             label: function (tooltipItem, data) {
-              return data.datasets[tooltipItem.datasetIndex]["data"][tooltipItem["index"]];
+              return data.datasets[tooltipItem.datasetIndex]["data"][
+                tooltipItem["index"]
+              ];
             },
           },
           backgroundColor: "#eff6ff",
@@ -259,9 +263,9 @@ export const WPCharts = ({ data, className }) => {
 WPCharts.propTypes = {
   className: PropTypes.any,
   data: PropTypes.shape({
-    datasets: PropTypes.any
-  })
-}
+    datasets: PropTypes.any,
+  }),
+};
 
 export const TCDoughnut = ({ state, className }) => {
   const [data, setData] = useState(TrafficChannelDoughnutData);
@@ -308,8 +312,8 @@ export const TCDoughnut = ({ state, className }) => {
 
 TCDoughnut.propTypes = {
   className: PropTypes.any,
-  state: PropTypes.string
-}
+  state: PropTypes.string,
+};
 
 export const SessionDoughnut = ({ state, className }) => {
   const [data, setData] = useState(deviceStatusData);
@@ -358,8 +362,8 @@ export const SessionDoughnut = ({ state, className }) => {
 
 SessionDoughnut.propTypes = {
   className: PropTypes.any,
-  state: PropTypes.string
-}
+  state: PropTypes.string,
+};
 
 export const Map = ({ set }) => {
   return (
@@ -394,7 +398,12 @@ export const Map = ({ set }) => {
       series={{
         regions: [
           {
-            values: set === "30" ? worldMap.data2 : set === "7" ? worldMap.data3 : worldMap.data4,
+            values:
+              set === "30"
+                ? worldMap.data2
+                : set === "7"
+                  ? worldMap.data3
+                  : worldMap.data4,
             scale: ["#ccd7e2", "#798bff"],
             normalizeFunction: "polynomial",
           },
@@ -405,5 +414,5 @@ export const Map = ({ set }) => {
 };
 
 Map.propTypes = {
-  set: PropTypes.string
-}
+  set: PropTypes.string,
+};

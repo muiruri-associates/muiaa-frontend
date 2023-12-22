@@ -1,11 +1,15 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext } from "react";
-import { DropdownToggle, DropdownMenu, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  DropdownToggle,
+  DropdownMenu,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import { Icon, UserAvatar } from "../../../components/Component";
 import { findUpper } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
-
 
 export const MeChat = ({ item, chat, onRemoveMessage }) => {
   return (
@@ -16,7 +20,9 @@ export const MeChat = ({ item, chat, onRemoveMessage }) => {
             return (
               <div className="chat-bubble" key={idx}>
                 {msg === "deleted" ? (
-                  <div className="chat-msg border bg-white text-muted">Message has been deleted</div>
+                  <div className="chat-msg border bg-white text-muted">
+                    Message has been deleted
+                  </div>
                 ) : (
                   <React.Fragment>
                     <div className={`chat-msg bg-${chat.chatTheme}`}>{msg}</div>
@@ -51,24 +57,28 @@ export const MeChat = ({ item, chat, onRemoveMessage }) => {
 
 MeChat.propTypes = {
   chat: PropTypes.shape({
-    chatTheme: PropTypes.any
+    chatTheme: PropTypes.any,
   }),
   item: PropTypes.shape({
     chat: PropTypes.shape({
-      map: PropTypes.func
+      map: PropTypes.func,
     }),
     date: PropTypes.any,
-    id: PropTypes.any
+    id: PropTypes.any,
   }),
-  onRemoveMessage: PropTypes.func
-}
+  onRemoveMessage: PropTypes.func,
+};
 
 export const YouChat = ({ item, chat }) => {
   return (
     <div className="chat is-you">
       <div className="chat-avatar">
         {chat.group ? (
-          <UserAvatar image={item.user.image} theme={item.user.theme} text={findUpper(item.user.name)}>
+          <UserAvatar
+            image={item.user.image}
+            theme={item.user.theme}
+            text={findUpper(item.user.name)}
+          >
             {" "}
             {chat.active === true ? (
               <span className="status dot dot-lg dot-success"></span>
@@ -112,20 +122,20 @@ YouChat.propTypes = {
     group: PropTypes.any,
     image: PropTypes.any,
     name: PropTypes.any,
-    theme: PropTypes.any
+    theme: PropTypes.any,
   }),
   item: PropTypes.shape({
     chat: PropTypes.shape({
-      map: PropTypes.func
+      map: PropTypes.func,
     }),
     date: PropTypes.any,
     user: PropTypes.shape({
       image: PropTypes.any,
       name: PropTypes.any,
-      theme: PropTypes.any
-    })
-  })
-}
+      theme: PropTypes.any,
+    }),
+  }),
+};
 
 export const MetaChat = ({ item }) => {
   return (
@@ -138,8 +148,8 @@ export const MetaChat = ({ item }) => {
 };
 
 MetaChat.propTypes = {
-  item: PropTypes.any
-}
+  item: PropTypes.any,
+};
 
 export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => {
   const { deleteConvo, propAction } = useContext(ChatContext);
@@ -177,8 +187,17 @@ export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => 
             <span className={"status dot dot-lg dot-success"}></span>
           </div>
         ) : (
-          <UserAvatar theme={item.theme} text={findUpper(item.name)} image={item.image} className="chat-media">
-            <span className={`status dot dot-lg dot-${item.active === true ? "success" : "gray"}`}></span>
+          <UserAvatar
+            theme={item.theme}
+            text={findUpper(item.name)}
+            image={item.image}
+            className="chat-media"
+          >
+            <span
+              className={`status dot dot-lg dot-${
+                item.active === true ? "success" : "gray"
+              }`}
+            ></span>
           </UserAvatar>
         )}
         <div className="chat-info">
@@ -188,12 +207,19 @@ export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => 
           </div>
           <div className="chat-context">
             <div className="text">
-              <p>{item.convo.length !== 0 && item.convo[item.convo.length - 1].chat.at(-1)}</p>
+              <p>
+                {item.convo.length !== 0 &&
+                  item.convo[item.convo.length - 1].chat.at(-1)}
+              </p>
             </div>
             <div className="status delivered">
               <Icon
                 name={`${
-                  item.delivered === true ? "check-circle-fill" : item.delivered === "sent" ? "check-circle" : ""
+                  item.delivered === true
+                    ? "check-circle-fill"
+                    : item.delivered === "sent"
+                      ? "check-circle"
+                      : ""
                 }`}
               ></Icon>
             </div>
@@ -202,7 +228,10 @@ export const ChatItem = ({ item, chatItemClick, setSelectedId, selectedId }) => 
       </a>
       <div className="chat-actions">
         <UncontrolledDropdown>
-          <DropdownToggle tag="a" className="btn btn-icon btn-sm btn-trigger dropdown-toggle">
+          <DropdownToggle
+            tag="a"
+            className="btn btn-icon btn-sm btn-trigger dropdown-toggle"
+          >
             <Icon name="more-h"></Icon>
           </DropdownToggle>
           <DropdownMenu right>
@@ -256,7 +285,7 @@ ChatItem.propTypes = {
     active: PropTypes.bool,
     archive: PropTypes.any,
     convo: PropTypes.shape({
-      length: PropTypes.number
+      length: PropTypes.number,
     }),
     date: PropTypes.any,
     delivered: PropTypes.string,
@@ -268,18 +297,20 @@ ChatItem.propTypes = {
     theme: PropTypes.any,
     unread: PropTypes.any,
     user: PropTypes.shape({
-      slice: PropTypes.func
-    })
+      slice: PropTypes.func,
+    }),
   }),
   selectedId: PropTypes.any,
-  setSelectedId: PropTypes.func
-}
+  setSelectedId: PropTypes.func,
+};
 
 export const ContactItem = ({ item, setTab, setSelectedId }) => {
   return (
     <ul className="contacts-list">
       <li>
-        <h6 className="title overline-title-alt">{item.contacts.length > 0 && item.title}</h6>
+        <h6 className="title overline-title-alt">
+          {item.contacts.length > 0 && item.title}
+        </h6>
       </li>
       {item.contacts.map((contact, idx) => {
         return (
@@ -292,7 +323,11 @@ export const ContactItem = ({ item, setTab, setSelectedId }) => {
           >
             <div className="user-card">
               <a href="#card" onClick={(ev) => ev.preventDefault()}>
-                <UserAvatar text={findUpper(contact.name)} theme={contact.theme} image={contact.image}></UserAvatar>
+                <UserAvatar
+                  text={findUpper(contact.name)}
+                  theme={contact.theme}
+                  image={contact.image}
+                ></UserAvatar>
                 <div className="user-name">{contact.name}</div>
               </a>
               <div className="user-actions">
@@ -310,10 +345,10 @@ ContactItem.propTypes = {
   item: PropTypes.shape({
     contacts: PropTypes.shape({
       length: PropTypes.number,
-      map: PropTypes.func
+      map: PropTypes.func,
     }),
-    title: PropTypes.any
+    title: PropTypes.any,
   }),
   setSelectedId: PropTypes.func,
-  setTab: PropTypes.func
-}
+  setTab: PropTypes.func,
+};

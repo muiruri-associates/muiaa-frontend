@@ -1,7 +1,14 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Block, BlockHead, BlockHeadContent, BlockTitle, BlockDes, BackTo } from "../../components/block/Block";
+import {
+  Block,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  BlockDes,
+  BackTo,
+} from "../../components/block/Block";
 import { PreviewTable, CodeBlock } from "../../components/preview/Preview";
 
 const TextPage = () => {
@@ -19,8 +26,8 @@ const TextPage = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                Dashlite includes several predefined button styles, each serving its own semantic purpose, with a few
-                extras thrown in for more control.
+                Dashlite includes several predefined button styles, each serving its own
+                semantic purpose, with a few extras thrown in for more control.
               </p>
             </BlockDes>
           </BlockHeadContent>
@@ -59,10 +66,11 @@ const TextPage = () => {
               <tr>
                 <td colSpan="3">
                   <em className="fs-13px">
-                    Use <code>{"{screen}"}</code> as <code>sm, md, lg, xl, xxl</code>. Please note,{" "}
-                    <code>{"{screen}"}</code> related with breakpoint and will apply from the <code>{"{screen}"}</code>{" "}
-                    to above. For example, <code>.m-sm-2</code> sets padding on <code>sm</code> screen and continue to
-                    above screens.
+                    Use <code>{"{screen}"}</code> as <code>sm, md, lg, xl, xxl</code>.
+                    Please note, <code>{"{screen}"}</code> related with breakpoint and
+                    will apply from the <code>{"{screen}"}</code> to above. For example,{" "}
+                    <code>.m-sm-2</code> sets padding on <code>sm</code> screen and
+                    continue to above screens.
                   </em>
                 </td>
               </tr>
@@ -139,7 +147,10 @@ const TextPage = () => {
           <BlockHead>
             <BlockHeadContent>
               <BlockTitle tag="h5">Font Family &amp; Style</BlockTitle>
-              <p>Quickly change the weight (boldness) of text or italicize text or font family.</p>
+              <p>
+                Quickly change the weight (boldness) of text or italicize text or font
+                family.
+              </p>
             </BlockHeadContent>
           </BlockHead>
           <PreviewTable>
@@ -274,7 +285,9 @@ const TextPage = () => {
                   <code>.text-ellipsis</code>
                 </td>
                 <td>
-                  <p className="text-ellipsis w-150px">Ellipsis text &amp; auto dot end</p>
+                  <p className="text-ellipsis w-150px">
+                    Ellipsis text &amp; auto dot end
+                  </p>
                 </td>
               </tr>
               <tr>

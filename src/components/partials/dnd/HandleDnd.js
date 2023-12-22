@@ -50,7 +50,12 @@ const DragHandleDnd = () => {
         setDndSet2(items);
       }
     } else {
-      const result = move(getList(source.droppableId), getList(destination.droppableId), source, destination);
+      const result = move(
+        getList(source.droppableId),
+        getList(destination.droppableId),
+        source,
+        destination
+      );
       setDndSet1(result.droppable1);
       setDndSet2(result.droppable2);
     }

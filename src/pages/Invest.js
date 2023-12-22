@@ -6,7 +6,13 @@ import InvestPlan from "../components/partials/invest/invest-plan/InvestPlan";
 import RecentInvest from "../components/partials/invest/recent-investment/RecentInvest";
 import RecentActivity from "../components/partials/default/recent-activity/Activity";
 import Notifications from "../components/partials/default/notification/Notification";
-import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  DropdownToggle,
+  DropdownMenu,
+  Card,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import {
   Block,
   BlockDes,
@@ -21,7 +27,11 @@ import {
   PreviewAltCard,
   TooltipComponent,
 } from "../components/Component";
-import { BalanceBarChart, DepositBarChart, WithdrawBarChart } from "../components/partials/charts/invest/InvestChart";
+import {
+  BalanceBarChart,
+  DepositBarChart,
+  WithdrawBarChart,
+} from "../components/partials/charts/invest/InvestChart";
 
 const InvestHomePage = () => {
   const [sm, updateSm] = useState(false);
@@ -40,12 +50,17 @@ const InvestHomePage = () => {
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="more-v"></Icon>
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <Button color="primary" outline className="btn-dim btn-white">
@@ -61,7 +76,10 @@ const InvestHomePage = () => {
                     </li>
                     <li className="nk-block-tools-opt">
                       <UncontrolledDropdown>
-                        <DropdownToggle color="transparent" className="dropdown-toggle btn btn-icon btn-primary">
+                        <DropdownToggle
+                          color="transparent"
+                          className="dropdown-toggle btn btn-icon btn-primary"
+                        >
                           <Icon name="plus"></Icon>
                         </DropdownToggle>
                         <DropdownMenu right>

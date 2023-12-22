@@ -26,7 +26,6 @@
 // //     api.dspatch(login(newResponse.user, newResponse.token))
 // //     let response = await baseQuery(args, api , extraOptions)
 
-
 // //    }
 // //    else api.dispatch(logOut())
 // //    }
@@ -37,4 +36,3 @@
 //   reducerPath: 'authApi',
 //   baseQuery: baseQuery,
 //   endpoints: (builder)=> ({}) })
-    

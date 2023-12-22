@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React from "react";
 import SimpleBar from "simplebar-react";
 
@@ -23,6 +23,6 @@ const Sidebar = ({ toggleState, ...props }) => {
 
 Sidebar.propTypes = {
   toggleState: PropTypes.string,
-  children: PropTypes.any
-}
+  children: PropTypes.any,
+};
 export default Sidebar;

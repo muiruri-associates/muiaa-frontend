@@ -21,12 +21,11 @@ import { useHistory } from "react-router";
 import { currentTime, findUpper, monthNames, todaysDate } from "../../../utils/Utils";
 import { UserContext } from "./UserContext";
 import { notes } from "./UserData";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 UserDetailsPage.propTypes = {
   match: PropTypes.any,
-}
-
+};
 
 const UserDetailsPage = ({ match }) => {
   const { contextData } = useContext(UserContext);
@@ -66,7 +65,9 @@ const UserDetailsPage = ({ match }) => {
     let submitData = {
       id: Math.random(),
       text: addNoteText,
-      date: `${monthNames[todaysDate.getMonth()]} ${todaysDate.getDate()}, ${todaysDate.getFullYear()}`,
+      date: `${
+        monthNames[todaysDate.getMonth()]
+      } ${todaysDate.getDate()}, ${todaysDate.getFullYear()}`,
       time: `${currentTime()}`,
       company: "Softnio",
     };
@@ -92,7 +93,8 @@ const UserDetailsPage = ({ match }) => {
                       User ID: <span className="text-base">UD003054</span>
                     </li>
                     <li>
-                      Last Login: <span className="text-base">{user.lastLogin} 01:02 PM</span>
+                      Last Login:{" "}
+                      <span className="text-base">{user.lastLogin} 01:02 PM</span>
                     </li>
                   </ul>
                 </BlockDes>
@@ -187,7 +189,10 @@ const UserDetailsPage = ({ match }) => {
                       </a>
                     </li>
                     <li className="nav-item nav-item-trigger d-xxl-none">
-                      <Button className={`toggle btn-icon btn-trigger ${sideBar && "active"}`} onClick={toggle}>
+                      <Button
+                        className={`toggle btn-icon btn-trigger ${sideBar && "active"}`}
+                        onClick={toggle}
+                      >
                         <Icon name="user-list-fill"></Icon>
                       </Button>
                     </li>
@@ -197,7 +202,10 @@ const UserDetailsPage = ({ match }) => {
                     <Block>
                       <BlockHead>
                         <BlockTitle tag="h5">Personal Information</BlockTitle>
-                        <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+                        <p>
+                          Basic info, like your name and address, that you use on Nio
+                          Platform.
+                        </p>
                       </BlockHead>
                       <div className="profile-ud-list">
                         <div className="profile-ud-item">
@@ -221,7 +229,9 @@ const UserDetailsPage = ({ match }) => {
                         <div className="profile-ud-item">
                           <div className="profile-ud wider">
                             <span className="profile-ud-label">Surname</span>
-                            <span className="profile-ud-value">{user.name.split(" ")[1]}</span>
+                            <span className="profile-ud-value">
+                              {user.name.split(" ")[1]}
+                            </span>
                           </div>
                         </div>
                         <div className="profile-ud-item">
@@ -353,12 +363,20 @@ const UserDetailsPage = ({ match }) => {
                       </div>
                       <ul className="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                         <li>
-                          <Button color="primary" size="md" type="submit" onClick={submitNote}>
+                          <Button
+                            color="primary"
+                            size="md"
+                            type="submit"
+                            onClick={submitNote}
+                          >
                             Add Note
                           </Button>
                         </li>
                         <li>
-                          <Button onClick={() => setAddNoteModal(false)} className="link link-light">
+                          <Button
+                            onClick={() => setAddNoteModal(false)}
+                            className="link link-light"
+                          >
                             Cancel
                           </Button>
                         </li>
@@ -370,9 +388,15 @@ const UserDetailsPage = ({ match }) => {
                 <Sidebar toggleState={sideBar}>
                   <div className="card-inner">
                     <div className="user-card user-card-s2 mt-5 mt-xxl-0">
-                      <UserAvatar className="lg" theme="primary" text={findUpper(user.name)} />
+                      <UserAvatar
+                        className="lg"
+                        theme="primary"
+                        text={findUpper(user.name)}
+                      />
                       <div className="user-info">
-                        <div className="badge badge-outline-light badge-pill ucap">{user.role}</div>
+                        <div className="badge badge-outline-light badge-pill ucap">
+                          {user.role}
+                        </div>
                         <h5>{user.name}</h5>
                         <span className="sub-text">{user.email}</span>
                       </div>
@@ -444,10 +468,13 @@ const UserDetailsPage = ({ match }) => {
                         <div className="profile-balance-sub">
                           <div className="profile-balance-amount">
                             <div className="number">
-                              2,500.00 <small className="currency currency-usd">USD</small>
+                              2,500.00{" "}
+                              <small className="currency currency-usd">USD</small>
                             </div>
                           </div>
-                          <div className="profile-balance-subtitle">Invested Amount</div>
+                          <div className="profile-balance-subtitle">
+                            Invested Amount
+                          </div>
                         </div>
                         <div className="profile-balance-sub">
                           <span className="profile-balance-plus text-soft">
@@ -501,10 +528,10 @@ const UserDetailsPage = ({ match }) => {
                             user.kycStatus === "success"
                               ? "success"
                               : user.kycStatus === "pending"
-                              ? "info"
-                              : user.kycStatus === "warning"
-                              ? "warning"
-                              : "secondary"
+                                ? "info"
+                                : user.kycStatus === "warning"
+                                  ? "warning"
+                                  : "secondary"
                           }`}
                         >
                           {user.kycStatus.toUpperCase()}
@@ -590,7 +617,9 @@ const UserDetailsPage = ({ match }) => {
                     </ul>
                   </div>
                 </Sidebar>
-                {sideBar && <div className="toggle-overlay" onClick={() => toggle()}></div>}
+                {sideBar && (
+                  <div className="toggle-overlay" onClick={() => toggle()}></div>
+                )}
               </div>
             </Card>
           </Block>

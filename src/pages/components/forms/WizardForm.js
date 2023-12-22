@@ -13,11 +13,11 @@ import {
 import { useForm } from "react-hook-form";
 import { Steps, Step } from "react-step-builder";
 import { Row, Col, FormGroup, Button } from "reactstrap";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 PersonalForm.propTypes = {
-  next: PropTypes.node.isRequired
-}
+  next: PropTypes.node.isRequired,
+};
 
 const PersonalForm = (props) => {
   const [formData, setFormData] = useState({
@@ -57,7 +57,9 @@ const PersonalForm = (props) => {
                 onChange={(e) => onInputChange(e)}
                 defaultValue={formData.firstName}
               />
-              {errors.firstName && <span className="invalid">This field is required</span>}
+              {errors.firstName && (
+                <span className="invalid">This field is required</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -76,7 +78,9 @@ const PersonalForm = (props) => {
                 onChange={(e) => onInputChange(e)}
                 defaultValue={formData.lastName}
               />
-              {errors.lastName && <span className="invalid">This field is required</span>}
+              {errors.lastName && (
+                <span className="invalid">This field is required</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -201,7 +205,9 @@ const UserSettings = (props) => {
                 onChange={(e) => onInputChange(e)}
                 defaultValue={formData.username}
               />
-              {errors.username && <span className="invalid">This field is required</span>}
+              {errors.username && (
+                <span className="invalid">This field is required</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -226,7 +232,9 @@ const UserSettings = (props) => {
                 onChange={(e) => onInputChange(e)}
                 defaultValue={formData.password}
               />
-              {errors.password && <span className="invalid">{errors.password.message}</span>}
+              {errors.password && (
+                <span className="invalid">{errors.password.message}</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -242,13 +250,16 @@ const UserSettings = (props) => {
                 className="form-control"
                 ref={register({
                   required: "This field is required",
-                  validate: (value) => value === password.current || "The passwords do not match",
+                  validate: (value) =>
+                    value === password.current || "The passwords do not match",
                 })}
                 name="rePassword"
                 onChange={(e) => onInputChange(e)}
                 defaultValue={formData.rePassword}
               />
-              {errors.rePassword && <span className="invalid">{errors.rePassword?.message}</span>}
+              {errors.rePassword && (
+                <span className="invalid">{errors.rePassword?.message}</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -290,8 +301,8 @@ const UserSettings = (props) => {
 
 UserSettings.propTypes = {
   next: PropTypes.func,
-  prev: PropTypes.any
-}
+  prev: PropTypes.any,
+};
 
 const PaymentInfo = (props) => {
   const [formData, setFormData] = useState({
@@ -328,7 +339,9 @@ const PaymentInfo = (props) => {
                 ref={register({ required: true })}
                 onChange={(e) => onInputChange(e)}
               />
-              {errors.tokenAddress && <span className="invalid">This field is required</span>}
+              {errors.tokenAddress && (
+                <span className="invalid">This field is required</span>
+              )}
             </div>
           </FormGroup>
         </Col>
@@ -346,7 +359,9 @@ const PaymentInfo = (props) => {
                   checked={formData.contribute === "leEth" ? true : false}
                   onChange={() => setFormData({ ...formData, contribute: "leEth" })}
                 />
-                {errors.ethRadio && <span className="invalid">This field is required</span>}
+                {errors.ethRadio && (
+                  <span className="invalid">This field is required</span>
+                )}
                 <label className="custom-control-label" htmlFor="fw-lt1eth">
                   Less than 1 ETH
                 </label>
@@ -384,7 +399,9 @@ const PaymentInfo = (props) => {
                 name="telegram"
                 onChange={(e) => onInputChange(e)}
               />
-              {errors.telegram && <span className="invalid">This field is required</span>}
+              {errors.telegram && (
+                <span className="invalid">This field is required</span>
+              )}
             </div>
           </div>
         </Col>
@@ -411,7 +428,7 @@ PaymentInfo.propTypes = {
   next: PropTypes.func,
   prev: PropTypes.any,
   current: PropTypes.node,
-}
+};
 
 const Header = (props) => {
   return (
@@ -444,8 +461,8 @@ const Header = (props) => {
   );
 };
 Header.propTypes = {
-  current: PropTypes.node.isRequired
-}
+  current: PropTypes.node.isRequired,
+};
 const Success = (props) => {
   return (
     <div className="d-flex justify-content-center align-items-center p-3">
@@ -476,7 +493,11 @@ const WizardForm = () => {
             <BlockDes>
               <p className="lead">
                 Using the{" "}
-                <a href="https://www.npmjs.com/package/react-step-builder/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.npmjs.com/package/react-step-builder/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   React Step Builder
                 </a>{" "}
                 , you can simply make step based form. It can be combined with{" "}

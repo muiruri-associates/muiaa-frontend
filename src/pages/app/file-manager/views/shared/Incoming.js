@@ -2,14 +2,20 @@ import React, { useContext, useState } from "react";
 import Share from "../../../../../pages/app/file-manager/modals/Share";
 import { Icon } from "../../../../../components/Component";
 import { Link } from "react-router-dom";
-import { DropdownItem, DropdownMenu, Modal, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  Modal,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { FileManagerContext } from "../../FileManagerContext";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 Incoming.propTypes = {
   data: PropTypes.object,
-  setData: PropTypes.func
-}
+  setData: PropTypes.func,
+};
 const Incoming = ({ data }) => {
   const { removeShare } = useContext(FileManagerContext);
   const [shareModal, setShareModal] = useState(false);
@@ -46,7 +52,11 @@ const Incoming = ({ data }) => {
                   <DropdownMenu right>
                     <ul className="link-list-opt no-bdr">
                       <li>
-                        <DropdownItem tag="a" onClick={(ev) => ev.preventDefault()} href="#item">
+                        <DropdownItem
+                          tag="a"
+                          onClick={(ev) => ev.preventDefault()}
+                          href="#item"
+                        >
                           <Icon name="share"></Icon>
                           <span>Share</span>
                         </DropdownItem>
@@ -88,8 +98,15 @@ const Incoming = ({ data }) => {
                     <div className="nk-file-info">
                       <div className="nk-file-title">
                         <div className="custom-control custom-control-sm custom-checkbox notext">
-                          <input type="checkbox" className="custom-control-input" id={`folder-${item.id}`} />
-                          <label className="custom-control-label" htmlFor={`folder-${item.id}`}></label>
+                          <input
+                            type="checkbox"
+                            className="custom-control-input"
+                            id={`folder-${item.id}`}
+                          />
+                          <label
+                            className="custom-control-label"
+                            htmlFor={`folder-${item.id}`}
+                          ></label>
                         </div>
                         <div className="nk-file-icon">
                           <span className="nk-file-icon-type">{item.meta.svg}</span>
@@ -104,7 +121,11 @@ const Incoming = ({ data }) => {
                                 {item.meta.name}
                               </Link>
                             ) : (
-                              <a href="#link" onClick={(ev) => ev.preventDefault()} className="title">
+                              <a
+                                href="#link"
+                                onClick={(ev) => ev.preventDefault()}
+                                className="title"
+                              >
                                 {item.meta.name}
                               </a>
                             )}

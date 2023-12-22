@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ContentAlt = ({ ...props }) => {
   return (
@@ -18,6 +18,6 @@ const ContentAlt = ({ ...props }) => {
 
 ContentAlt.propTypes = {
   page: PropTypes.string,
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 export default ContentAlt;

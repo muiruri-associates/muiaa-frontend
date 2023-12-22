@@ -6,12 +6,12 @@ import { findUpper } from "../../../../utils/Utils";
 import { contacts } from "./ContactData";
 import { chatData } from "../ChatData";
 import { ContactItem } from "../ChatPartials";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 AppContact.propTypes = {
   setTab: PropTypes.any,
   setSelectedId: PropTypes.any,
-}
+};
 
 const AppContact = ({ setTab, setSelectedId }) => {
   const [contactData] = useState(contacts);
@@ -58,7 +58,14 @@ const AppContact = ({ setTab, setSelectedId }) => {
               <div className="ml-5">No user</div>
             ) : (
               contactData.map((item, idx) => {
-                return <ContactItem key={idx} item={item} setTab={setTab} setSelectedId={setSelectedId}></ContactItem>;
+                return (
+                  <ContactItem
+                    key={idx}
+                    item={item}
+                    setTab={setTab}
+                    setSelectedId={setSelectedId}
+                  ></ContactItem>
+                );
               })
             )
           ) : (
@@ -83,7 +90,9 @@ const AppContact = ({ setTab, setSelectedId }) => {
                           <div className="user-name">{contact.name}</div>
                         </a>
                         <div className="user-actions">
-                          <Link to={`${process.env.PUBLIC_URL}/app-chat`}>Start Chat</Link>
+                          <Link to={`${process.env.PUBLIC_URL}/app-chat`}>
+                            Start Chat
+                          </Link>
                         </div>
                       </div>
                     </li>

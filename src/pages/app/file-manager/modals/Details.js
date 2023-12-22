@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import { Icon, UserGroup, UserAvatar } from "../../../../components/Component";
 import { findUpper } from "../../../../utils/Utils";
@@ -71,11 +71,20 @@ const Details = ({ file, toggle, toggleShare }) => {
                           key={index}
                         />
                       ))}
-                      <UserAvatar theme="light" className="xs" text={`+${file.meta.members.length - 3}`} />
+                      <UserAvatar
+                        theme="light"
+                        className="xs"
+                        text={`+${file.meta.members.length - 3}`}
+                      />
                     </React.Fragment>
                   ) : (
                     file.meta.members.map((user, index) => (
-                      <UserAvatar theme={user.theme} text={findUpper(user.user)} className="xs" key={index} />
+                      <UserAvatar
+                        theme={user.theme}
+                        text={findUpper(user.user)}
+                        className="xs"
+                        key={index}
+                      />
                     ))
                   )}
                 </UserGroup>
@@ -99,7 +108,11 @@ const Details = ({ file, toggle, toggleShare }) => {
       <div className="modal-footer modal-footer-stretch bg-light">
         <div className="modal-footer-between">
           <div className="g">
-            <a href="link" onClick={(ev) => ev.preventDefault()} className="link link-primary">
+            <a
+              href="link"
+              onClick={(ev) => ev.preventDefault()}
+              className="link link-primary"
+            >
               View All Activity
             </a>
           </div>
@@ -145,16 +158,16 @@ Details.propTypes = {
       members: PropTypes.shape({
         length: PropTypes.number,
         map: PropTypes.func,
-        slice: PropTypes.func
+        slice: PropTypes.func,
       }),
       name: PropTypes.any,
       size: PropTypes.any,
       svg: PropTypes.any,
-      type: PropTypes.any
-    })
+      type: PropTypes.any,
+    }),
   }),
   toggle: PropTypes.func,
-  toggleShare: PropTypes.func
-}
+  toggleShare: PropTypes.func,
+};
 
 export default Details;

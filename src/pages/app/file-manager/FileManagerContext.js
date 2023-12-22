@@ -1,7 +1,7 @@
 import React, { useState, createContext } from "react";
 import { currentTime, getDateStructured } from "../../../utils/Utils";
 import { folderList } from "./Data";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const FileManagerContext = createContext();
 
@@ -25,7 +25,10 @@ export const FileManagerContextProvider = (props) => {
       subFolder: [],
     };
     let defaultData = data;
-    let folderId = window.location.pathname.split("/")[window.location.pathname.split("/").length - 1];
+    let folderId =
+      window.location.pathname.split("/")[
+        window.location.pathname.split("/").length - 1
+      ];
     let findFolder = defaultData.findIndex((item) => item.id === Number(folderId));
     if (folderId !== "" && defaultData[findFolder] !== undefined) {
       defaultData[findFolder].subFolder.push({ fileId: data.length + 1 });
@@ -39,14 +42,20 @@ export const FileManagerContextProvider = (props) => {
   // Creates a file
   const createFile = (files) => {
     let defaultData = data;
-    let folderId = window.location.pathname.split("/")[window.location.pathname.split("/").length - 1];
+    let folderId =
+      window.location.pathname.split("/")[
+        window.location.pathname.split("/").length - 1
+      ];
     let findFolder = defaultData.findIndex((item) => item.id === Number(folderId));
     if (folderId !== "" && defaultData[findFolder] !== undefined) {
       let fileArray = [];
       files.forEach((item) => {
         fileArray.push({ fileId: item.id });
       });
-      defaultData[findFolder].subFolder = [...defaultData[findFolder].subFolder, ...fileArray];
+      defaultData[findFolder].subFolder = [
+        ...defaultData[findFolder].subFolder,
+        ...fileArray,
+      ];
       defaultData = [...defaultData, ...files];
       setData([...defaultData]);
     } else {
@@ -58,7 +67,8 @@ export const FileManagerContextProvider = (props) => {
   // Download a folder/file
   const downloadFile = (file) => {
     const downloadLink = document.createElement("a");
-    downloadLink.href = "data:" + file.meta.ext + ";charset=utf-8," + encodeURIComponent(file.meta.name);
+    downloadLink.href =
+      "data:" + file.meta.ext + ";charset=utf-8," + encodeURIComponent(file.meta.name);
     downloadLink.download = file.meta.name;
     downloadLink.click();
   };
@@ -101,11 +111,13 @@ export const FileManagerContextProvider = (props) => {
         copyToFolder(file, folder);
       } else {
         let findNewFolderIndex = defaultData.findIndex((item) => item.id === folder);
-        let findPrevFolderIndex = defaultData.findIndex((item) => item.id === Number(currentFolder));
-        defaultData[findNewFolderIndex].subFolder.push({ fileId: file.id });
-        defaultData[findPrevFolderIndex].subFolder = defaultData[findPrevFolderIndex].subFolder.filter(
-          (item) => item.fileId !== file.id
+        let findPrevFolderIndex = defaultData.findIndex(
+          (item) => item.id === Number(currentFolder)
         );
+        defaultData[findNewFolderIndex].subFolder.push({ fileId: file.id });
+        defaultData[findPrevFolderIndex].subFolder = defaultData[
+          findPrevFolderIndex
+        ].subFolder.filter((item) => item.fileId !== file.id);
         setData([...defaultData]);
       }
     }
@@ -245,5 +257,5 @@ export const FileManagerContextProvider = (props) => {
   );
 };
 FileManagerContextProvider.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};

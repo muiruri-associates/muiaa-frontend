@@ -12,11 +12,11 @@ import {
   InputSwitch,
   Button,
 } from "../../../components/Component";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 UserProfileSettingPage.propTypes = {
   sm: PropTypes.bool,
-  updateSm: PropTypes.object
-}
+  updateSm: PropTypes.object,
+};
 const UserProfileSettingPage = ({ sm, updateSm }) => {
   return (
     <React.Fragment>
@@ -48,7 +48,10 @@ const UserProfileSettingPage = ({ sm, updateSm }) => {
               <div className="between-center flex-wrap flex-md-nowrap g-3">
                 <div className="nk-block-text">
                   <h6>Save my Activity Logs</h6>
-                  <p>You can save your all activity logs including unusual activity detected.</p>
+                  <p>
+                    You can save your all activity logs including unusual activity
+                    detected.
+                  </p>
                 </div>
                 <div className="nk-block-actions">
                   <ul className="align-center gx-3">
@@ -85,11 +88,13 @@ const UserProfileSettingPage = ({ sm, updateSm }) => {
               <div className="between-center flex-wrap flex-md-nowrap g-3">
                 <div className="nk-block-text">
                   <h6>
-                    2 Factor Auth &nbsp; <span className="badge badge-success ml-0">Enabled</span>
+                    2 Factor Auth &nbsp;{" "}
+                    <span className="badge badge-success ml-0">Enabled</span>
                   </h6>
                   <p>
-                    Secure your account with 2FA security. When it is activated you will need to enter not only your
-                    password, but also a special code using app. You will receive this code via mobile application.{" "}
+                    Secure your account with 2FA security. When it is activated you will
+                    need to enter not only your password, but also a special code using
+                    app. You will receive this code via mobile application.{" "}
                   </p>
                 </div>
                 <div className="nk-block-actions">

@@ -10,7 +10,13 @@ import RecentActivity from "../components/partials/default/recent-activity/Activ
 import NewsUsers from "../components/partials/default/new-users/User";
 import Support from "../components/partials/default/support-request/Support";
 import Notifications from "../components/partials/default/notification/Notification";
-import { DropdownToggle, DropdownMenu, Card, UncontrolledDropdown, DropdownItem } from "reactstrap";
+import {
+  DropdownToggle,
+  DropdownMenu,
+  Card,
+  UncontrolledDropdown,
+  DropdownItem,
+} from "reactstrap";
 import {
   Block,
   BlockDes,
@@ -45,16 +51,24 @@ const Homepage = () => {
             <BlockHeadContent>
               <div className="toggle-wrap nk-block-tools-toggle">
                 <Button
-                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${sm ? "active" : ""}`}
+                  className={`btn-icon btn-trigger toggle-expand mr-n1 ${
+                    sm ? "active" : ""
+                  }`}
                   onClick={() => updateSm(!sm)}
                 >
                   <Icon name="more-v" />
                 </Button>
-                <div className="toggle-expand-content" style={{ display: sm ? "block" : "none" }}>
+                <div
+                  className="toggle-expand-content"
+                  style={{ display: sm ? "block" : "none" }}
+                >
                   <ul className="nk-block-tools g-3">
                     <li>
                       <UncontrolledDropdown>
-                        <DropdownToggle tag="a" className="dropdown-toggle btn btn-white btn-dim btn-outline-light">
+                        <DropdownToggle
+                          tag="a"
+                          className="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                        >
                           <Icon className="d-none d-sm-inline" name="calender-date" />
                           <span>
                             <span className="d-none d-md-inline">Last</span> 30 Days

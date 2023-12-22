@@ -20,7 +20,7 @@ const UploadDocument = () => {
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -44,7 +44,12 @@ const UploadDocument = () => {
       <Row>
         <Col sm="6">
           <label className="form-label">{type}</label>
-          <input type="text" value={type} onChange={(e) => setType(e.target.value)} hidden />
+          <input
+            type="text"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            hidden
+          />
           <Dropzone onDrop={(acceptedFiles) => handleDropChange(acceptedFiles)}>
             {({ getRootProps, getInputProps }) => (
               <section>
@@ -58,7 +63,10 @@ const UploadDocument = () => {
                     </div>
                   )}
                   {files.map((file, idx) => (
-                    <div key={idx} className="dz-preview dz-processing dz-image-preview dz-error dz-complete">
+                    <div
+                      key={idx}
+                      className="dz-preview dz-processing dz-image-preview dz-error dz-complete"
+                    >
                       <div className="dz-image">
                         <img src={file.preview} alt={`preview-${idx}`} />
                       </div>

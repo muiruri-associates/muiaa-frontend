@@ -38,9 +38,12 @@ const EmailTemplate = () => {
             </BlockTitle>
             <BlockDes>
               <p className="lead">
-                In DashLite, We included 10 clean and minimalist notification email templates that is ready to use for
-                your application to send emails.{" "}
-                <strong className="text-primary">Stand-Alone html files found in packages</strong>.
+                In DashLite, We included 10 clean and minimalist notification email
+                templates that is ready to use for your application to send emails.{" "}
+                <strong className="text-primary">
+                  Stand-Alone html files found in packages
+                </strong>
+                .
               </p>
             </BlockDes>
           </BlockContent>
@@ -48,7 +51,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Basis Style - Simple Email Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Basis Style - Simple Email Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -67,17 +72,18 @@ const EmailTemplate = () => {
                     <strong>Hello User</strong>,
                   </p>
                   <p>
-                    Let&apos;s face it, sometimes you have a simple message that doesn’t need much design—but still needs
-                    flexibility and reliability. Select a basic email template. Write your message. Then send with
+                    Let&apos;s face it, sometimes you have a simple message that doesn’t
+                    need much design—but still needs flexibility and reliability. Select
+                    a basic email template. Write your message. Then send with
                     confidence.
                   </p>
                   <p>
-                    Its clean, minimal and pre-designed email template that is suitable for multiple purposes email
-                    template.
+                    Its clean, minimal and pre-designed email template that is suitable
+                    for multiple purposes email template.
                   </p>
                   <p>
-                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at
-                    info@yourwebsite.com anytime.{" "}
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have
+                    any questions, drop us a line at info@yourwebsite.com anytime.{" "}
                   </p>
                   <p className="mt-4">
                     ---- <br /> Regards
@@ -88,7 +94,8 @@ const EmailTemplate = () => {
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -134,8 +141,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -153,7 +161,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Centered Style - Welcome Type Email Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Centered Style - Welcome Type Email Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -174,18 +184,19 @@ const EmailTemplate = () => {
                     Purchase and get lifetime update!
                   </h5>
                   <p className="fs-16px text-base">
-                    Say hello to version 1.1. Introducing email template with massaging application concept and as
-                    always modern, clean and easier to use.
+                    Say hello to version 1.1. Introducing email template with massaging
+                    application concept and as always modern, clean and easier to use.
                   </p>
                   <p>
-                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at
-                    info@yourwebsite.com anytime.{" "}
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have
+                    any questions, drop us a line at info@yourwebsite.com anytime.{" "}
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -231,8 +242,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -250,7 +262,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - Confirmation Email Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - Confirmation Email Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -270,10 +284,13 @@ const EmailTemplate = () => {
                 <EmailBodyContent className="px-3 px-sm-5 pb-2">
                   <p>Hi Ishtiyak,</p>
                   <p>
-                    Welcome! <br /> You are receiving this email because you have registered on our site.
+                    Welcome! <br /> You are receiving this email because you have
+                    registered on our site.
                   </p>
                   <p>Click the link below to active your DashLite account.</p>
-                  <p className="mb-4">This link will expire in 15 minutes and can only be used once.</p>
+                  <p className="mb-4">
+                    This link will expire in 15 minutes and can only be used once.
+                  </p>
                   <a
                     href="#verify"
                     onClick={(ev) => {
@@ -286,7 +303,10 @@ const EmailTemplate = () => {
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pt-4">
                   <h6 className="email-heading-s2">or</h6>
-                  <p>If the button above does not work, paste this link into your web browser:</p>
+                  <p>
+                    If the button above does not work, paste this link into your web
+                    browser:
+                  </p>
                   <a
                     href="#link"
                     onClick={(ev) => {
@@ -298,16 +318,21 @@ const EmailTemplate = () => {
                   </a>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pt-4 pb-3 pb-sm-5">
-                  <p>If you did not make this request, please contact us or ignore this message.</p>
+                  <p>
+                    If you did not make this request, please contact us or ignore this
+                    message.
+                  </p>
                   <p className="email-note">
-                    This is an automatically generated email please do not reply to this email. If you face any issues,
-                    please contact us at help@dashlite.com
+                    This is an automatically generated email please do not reply to this
+                    email. If you face any issues, please contact us at
+                    help@dashlite.com
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -353,8 +378,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -372,7 +398,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - Welcome Email Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - Welcome Email Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -392,18 +420,22 @@ const EmailTemplate = () => {
                   </p>
                   <p>We are pleased to have you as a member of Dashlite Family.</p>
                   <p>
-                    Your account is now verified and you can purchase tokens for the ICO. Also you can submit your
-                    documents for the KYC from my Account page.
+                    Your account is now verified and you can purchase tokens for the
+                    ICO. Also you can submit your documents for the KYC from my Account
+                    page.
                   </p>
                   <p>
-                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have any questions, drop us a line at{" "}
-                    <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a> anytime.{" "}
+                    Hope you&apos;ll enjoy the experience, we&apos;re here if you have
+                    any questions, drop us a line at{" "}
+                    <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a>{" "}
+                    anytime.{" "}
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -449,8 +481,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -468,7 +501,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - Password Reset Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - Password Reset Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -499,16 +534,21 @@ const EmailTemplate = () => {
                   </a>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pt-4 pb-3 pb-sm-5">
-                  <p>If you did not make this request, please contact us or ignore this message.</p>
+                  <p>
+                    If you did not make this request, please contact us or ignore this
+                    message.
+                  </p>
                   <p className="email-note">
-                    This is an automatically generated email please do not reply to this email. If you face any issues,
-                    please contact us at help@dashlite.com
+                    This is an automatically generated email please do not reply to this
+                    email. If you face any issues, please contact us at
+                    help@dashlite.com
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -554,8 +594,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -573,7 +614,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - Password Changed Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - Password Changed Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -588,22 +631,29 @@ const EmailTemplate = () => {
               </EmailHeader>
               <EmailBody centered>
                 <EmailBodyContent className="px-3 px-sm-5 pt-3 pt-sm-5 pb-3">
-                  <h2 className="email-heading text-success">Password Successfully Changed</h2>
+                  <h2 className="email-heading text-success">
+                    Password Successfully Changed
+                  </h2>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5">
                   <p>Hi Ishtiyak,</p>
-                  <p>You have successfully reseted your password. Thanks for being with us.</p>
+                  <p>
+                    You have successfully reseted your password. Thanks for being with
+                    us.
+                  </p>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pt-4 pb-3 pb-sm-5">
                   <p className="email-note">
-                    This is an automatically generated email please do not reply to this email. If you face any issues,
-                    please contact us at help@dashlite.com
+                    This is an automatically generated email please do not reply to this
+                    email. If you face any issues, please contact us at
+                    help@dashlite.com
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -649,8 +699,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -668,7 +719,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - KYC Submission Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - KYC Submission Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -686,16 +739,20 @@ const EmailTemplate = () => {
                   <img className="w-100px" src={KYCSub} alt="In Process" />
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pb-3 pb-sm-5">
-                  <h5 className="text-primary mb-3">Your application under varification process.</h5>
+                  <h5 className="text-primary mb-3">
+                    Your application under varification process.
+                  </h5>
                   <p>
-                    We are still working on your identity verification. Once our team verified your indentity, you will
-                    be whitelisted and notified by email.
+                    We are still working on your identity verification. Once our team
+                    verified your indentity, you will be whitelisted and notified by
+                    email.
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -741,8 +798,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -760,7 +818,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - KYC Missing Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - KYC Missing Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -779,19 +839,26 @@ const EmailTemplate = () => {
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5">
                   <p>Hi Ishtiyak,</p>
-                  <p>You have successfully reseted your password. Thanks for being with us.</p>
+                  <p>
+                    You have successfully reseted your password. Thanks for being with
+                    us.
+                  </p>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pb-3 pb-sm-5">
-                  <h5 className="text-warning mb-3">We found some information missing in application.</h5>
+                  <h5 className="text-warning mb-3">
+                    We found some information missing in application.
+                  </h5>
                   <p>
-                    In our verification process, we found information are missing. It would great if you resubmit the
-                    form. If face problem in submission please contact us with our best ever excelent support team.
+                    In our verification process, we found information are missing. It
+                    would great if you resubmit the form. If face problem in submission
+                    please contact us with our best ever excelent support team.
                   </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -837,8 +904,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -856,7 +924,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Notification - KYC Approved Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Notification - KYC Approved Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -875,16 +945,23 @@ const EmailTemplate = () => {
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5">
                   <p>Hi Ishtiyak,</p>
-                  <p>You have successfully reseted your password. Thanks for being with us.</p>
+                  <p>
+                    You have successfully reseted your password. Thanks for being with
+                    us.
+                  </p>
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pb-3 pb-sm-5">
                   <h5 className="text-success mb-3">Your Identity Verified.</h5>
-                  <p>One fo our team verified your indentity. You are now in whitelisted for token sale.</p>
+                  <p>
+                    One fo our team verified your indentity. You are now in whitelisted
+                    for token sale.
+                  </p>
                 </EmailBodyContent>
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -930,8 +1007,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {
@@ -949,7 +1027,9 @@ const EmailTemplate = () => {
 
         <Block>
           <PreviewCard>
-            <h6 className="title text-soft mb-4 overline-title">Simple News - Basic Newsletter Template</h6>
+            <h6 className="title text-soft mb-4 overline-title">
+              Simple News - Basic Newsletter Template
+            </h6>
             <EmailWrapper>
               <EmailHeader>
                 <a
@@ -967,10 +1047,13 @@ const EmailTemplate = () => {
                   <img src={SlideA} alt="slide" />
                 </EmailBodyContent>
                 <EmailBodyContent className="text-center px-3 px-sm-5 pb-5">
-                  <h2 className="email-heading email-heading-sm">How to request a payment.</h2>
+                  <h2 className="email-heading email-heading-sm">
+                    How to request a payment.
+                  </h2>
                   <p className="mgb-1-5x">
-                    Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so,
-                    because there were thousands of bad Comma
+                    Lorem Ipsum decided to leave for the far World of Grammar. The Big
+                    Oxmox advised her not to do so, because there were thousands of bad
+                    Comma
                   </p>
                   <a
                     href="#readmore"
@@ -986,22 +1069,28 @@ const EmailTemplate = () => {
                   <img src={SlideB} alt="slide" />
                 </EmailBodyContent>
                 <EmailBodyContent className="text-center px-3 px-sm-5 pb-5">
-                  <h2 className="email-heading email-heading-sm">How to request a payment.</h2>
+                  <h2 className="email-heading email-heading-sm">
+                    How to request a payment.
+                  </h2>
                   <p>Lorem Ipsum decided to leave for the far World of Grammar.</p>
                   <p>
-                    Wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her
-                    seven versalia, put her initial into the belt and made herself on the way
+                    Wild Question Marks and devious Semikoli, but the Little Blind Text
+                    didn’t listen. She packed her seven versalia, put her initial into
+                    the belt and made herself on the way
                   </p>
                   <p>
-                    Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so,
-                    because there were thousands of bad Commans.
+                    Lorem Ipsum decided to leave for the far World of Grammar. The Big
+                    Oxmox advised her not to do so, because there were thousands of bad
+                    Commans.
                   </p>
                 </EmailBodyContent>
                 <EmailBodyContent className="text-center px-3 px-sm-5 pb-4">
                   <img src={SlideC} alt="slide" />
                 </EmailBodyContent>
                 <EmailBodyContent className="px-3 px-sm-5 pb-5">
-                  <h2 className="email-heading email-heading-sm">Our New Update release.</h2>
+                  <h2 className="email-heading email-heading-sm">
+                    Our New Update release.
+                  </h2>
                   <table className="w-100">
                     <tbody>
                       <tr>
@@ -1033,7 +1122,8 @@ const EmailTemplate = () => {
               </EmailBody>
               <EmailFooter>
                 <p className="email-copyright-text">
-                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made By{" "}
+                  Copyright © 2020 DashLite. All rights reserved. <br /> Template Made
+                  By{" "}
                   <a href="https://themeforest.net/user/softnio/portfolio">Softnio</a>.
                 </p>
                 <ul className="email-social">
@@ -1079,8 +1169,9 @@ const EmailTemplate = () => {
                   </li>
                 </ul>
                 <p className="fs-12px pt-4">
-                  This email was sent to you as a registered member of <a href="https://softnio.com">softnio.com</a>. To
-                  update your emails preferences{" "}
+                  This email was sent to you as a registered member of{" "}
+                  <a href="https://softnio.com">softnio.com</a>. To update your emails
+                  preferences{" "}
                   <a
                     href="#click"
                     onClick={(ev) => {

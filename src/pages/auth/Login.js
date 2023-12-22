@@ -58,7 +58,11 @@ const Login = () => {
           <div className="brand-logo pb-4 text-center">
             <Link to={"/"} className="logo-link">
               <img className="logo-light logo-img logo-img-lg" src={Logo} alt="logo" />
-              <img className="logo-dark logo-img logo-img-lg" src={LogoDark} alt="logo-dark" />
+              <img
+                className="logo-dark logo-img logo-img-lg"
+                src={LogoDark}
+                alt="logo-dark"
+              />
             </Link>
           </div>
 
@@ -96,7 +100,9 @@ const Login = () => {
                     placeholder="Enter your email address or username"
                     className="form-control-lg form-control"
                   />
-                  {errors.name && <span className="invalid">{errors.name.message}</span>}
+                  {errors.name && (
+                    <span className="invalid">{errors.name.message}</span>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>
@@ -115,7 +121,9 @@ const Login = () => {
                       ev.preventDefault();
                       setPassState(!passState);
                     }}
-                    className={`form-icon lg form-icon-right passcode-switch ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-icon lg form-icon-right passcode-switch ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   >
                     <Icon name="eye" className="passcode-icon icon-show"></Icon>
 
@@ -128,9 +136,13 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     ref={register({ required: "This field is required" })}
                     placeholder="Enter your password"
-                    className={`form-control-lg form-control ${passState ? "is-hidden" : "is-shown"}`}
+                    className={`form-control-lg form-control ${
+                      passState ? "is-hidden" : "is-shown"
+                    }`}
                   />
-                  {errors.passcode && <span className="invalid">{errors.passcode.message}</span>}
+                  {errors.passcode && (
+                    <span className="invalid">{errors.passcode.message}</span>
+                  )}
                 </div>
               </FormGroup>
               <FormGroup>

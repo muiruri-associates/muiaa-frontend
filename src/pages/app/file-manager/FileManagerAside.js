@@ -1,9 +1,14 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import SimpleBar from "simplebar-react";
 import { asideData, pricingTableDataV2 } from "./Data";
 import { Icon } from "../../../components/Component";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
 import { Link } from "react-router-dom";
 import { FileManagerContext } from "./FileManagerContext";
 
@@ -20,10 +25,16 @@ const FileManagerAside = ({ setScLg }) => {
                 key={item.id}
                 onClick={() => setScLg(false)}
                 className={`${
-                  window.location.pathname === `${process.env.PUBLIC_URL}/app-file-manager${item.link}` ? "active" : ""
+                  window.location.pathname ===
+                  `${process.env.PUBLIC_URL}/app-file-manager${item.link}`
+                    ? "active"
+                    : ""
                 }`}
               >
-                <Link className="nk-fmg-menu-item" to={`${process.env.PUBLIC_URL}/app-file-manager${item.link}`}>
+                <Link
+                  className="nk-fmg-menu-item"
+                  to={`${process.env.PUBLIC_URL}/app-file-manager${item.link}`}
+                >
                   <Icon name={item.icon}></Icon>
                   <span className="nk-fmg-menu-text">{item.text}</span>
                 </Link>
@@ -40,14 +51,22 @@ const FileManagerAside = ({ setScLg }) => {
             <div className="progress progress-md bg-light">
               <div
                 className="progress-bar"
-                style={{ width: `${1200 / pricingTableDataV2.find((item) => item.title === plan).memory}%` }}
+                style={{
+                  width: `${
+                    1200 / pricingTableDataV2.find((item) => item.title === plan).memory
+                  }%`,
+                }}
               ></div>
             </div>
             <div className="nk-fmg-status-info">
-              12.47 GB of {pricingTableDataV2.find((item) => item.title === plan).memory} GB used
+              12.47 GB of{" "}
+              {pricingTableDataV2.find((item) => item.title === plan).memory} GB used
             </div>
             <div className="nk-fmg-status-action">
-              <Link to={`${process.env.PUBLIC_URL}/app-file-manager/pricing`} className="link link-primary link-sm">
+              <Link
+                to={`${process.env.PUBLIC_URL}/app-file-manager/pricing`}
+                className="link link-primary link-sm"
+              >
                 Upgrade Storage
               </Link>
             </div>
@@ -81,7 +100,10 @@ const FileManagerAside = ({ setScLg }) => {
                   ))}
                   <li className="divider"></li>
                   <li>
-                    <Link to={`${process.env.PUBLIC_URL}/app-file-manager/pricing`} className="link">
+                    <Link
+                      to={`${process.env.PUBLIC_URL}/app-file-manager/pricing`}
+                      className="link"
+                    >
                       <span>Upgrade Plan</span>
                     </Link>
                   </li>
@@ -96,7 +118,7 @@ const FileManagerAside = ({ setScLg }) => {
 };
 
 FileManagerAside.propTypes = {
-  setScLg: PropTypes.func
-}
+  setScLg: PropTypes.func,
+};
 
 export default FileManagerAside;

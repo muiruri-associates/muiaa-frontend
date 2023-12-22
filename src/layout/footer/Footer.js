@@ -13,7 +13,10 @@ const Footer = () => {
           <div className="nk-footer-links">
             <ul className="nav nav-sm">
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/pages/terms-policy`} className="nav-link">
+                <Link
+                  to={`${process.env.PUBLIC_URL}/pages/terms-policy`}
+                  className="nav-link"
+                >
                   Terms
                 </Link>
               </li>
@@ -23,7 +26,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to={`${process.env.PUBLIC_URL}/pages/terms-policy`} className="nav-link">
+                <Link
+                  to={`${process.env.PUBLIC_URL}/pages/terms-policy`}
+                  className="nav-link"
+                >
                   Help
                 </Link>
               </li>

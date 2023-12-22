@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Icon, TooltipComponent } from "../../../components/Component";
-import { UncontrolledDropdown, DropdownMenu, DropdownToggle, DropdownItem, UncontrolledTooltip } from "reactstrap";
-import PropTypes from 'prop-types';
+import {
+  UncontrolledDropdown,
+  DropdownMenu,
+  DropdownToggle,
+  DropdownItem,
+  UncontrolledTooltip,
+} from "reactstrap";
+import PropTypes from "prop-types";
 
 InboxMessageHeader.propTypes = {
   msgId: PropTypes.any,
@@ -14,8 +20,7 @@ InboxMessageHeader.propTypes = {
   outerLabels: PropTypes.any,
   mailData: PropTypes.any,
   setMailData: PropTypes.any,
-}
-
+};
 
 const InboxMessageHeader = ({
   msgId,
@@ -74,7 +79,11 @@ const InboxMessageHeader = ({
       <div className="nk-ibx-head-actions">
         <ul className="nk-ibx-head-tools g-1">
           <li className="ml-n2" onClick={() => toggleMessageView()}>
-            <a href="#item" onClick={(ev) => ev.preventDefault()} className="btn btn-icon btn-trigger nk-ibx-hide">
+            <a
+              href="#item"
+              onClick={(ev) => ev.preventDefault()}
+              className="btn btn-icon btn-trigger nk-ibx-hide"
+            >
               <Icon name="arrow-left"></Icon>
             </a>
           </li>
@@ -118,14 +127,20 @@ const InboxMessageHeader = ({
                 id="dropdownToggleLabel"
               >
                 <Icon name="label"></Icon>
-                <UncontrolledTooltip autohide={false} placement="top" target="dropdownToggleLabel">
+                <UncontrolledTooltip
+                  autohide={false}
+                  placement="top"
+                  target="dropdownToggleLabel"
+                >
                   Label
                 </UncontrolledTooltip>
               </DropdownToggle>
               <DropdownMenu>
                 <ul className="link-tidy no-bdr sm">
                   {outerLabels.map((labelItem, index) => {
-                    let findLabel = localLabel.find((item) => item.text === labelItem.text);
+                    let findLabel = localLabel.find(
+                      (item) => item.text === labelItem.text
+                    );
                     return (
                       <li key={index}>
                         <div className="custom-control custom-control-sm custom-checkbox">
@@ -134,10 +149,17 @@ const InboxMessageHeader = ({
                             className="custom-control-input"
                             checked={findLabel ? true : false}
                             id={`check-${labelItem.text}`}
-                            onChange={(e) => changeTagsOnCheck(e.target.checked, labelItem)}
+                            onChange={(e) =>
+                              changeTagsOnCheck(e.target.checked, labelItem)
+                            }
                           />
-                          <label className="custom-control-label" htmlFor={`check-${labelItem.text}`}>
-                            <div className={`dot dot-md dot-${labelItem.color} mr-1`}></div>
+                          <label
+                            className="custom-control-label"
+                            htmlFor={`check-${labelItem.text}`}
+                          >
+                            <div
+                              className={`dot dot-md dot-${labelItem.color} mr-1`}
+                            ></div>
                             {labelItem.text}
                           </label>
                         </div>
@@ -161,19 +183,31 @@ const InboxMessageHeader = ({
               <DropdownMenu>
                 <ul className="link-list-opt no-bdr">
                   <li>
-                    <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                    <DropdownItem
+                      tag="a"
+                      href="#item"
+                      onClick={(ev) => ev.preventDefault()}
+                    >
                       <Icon name="eye"></Icon>
                       <span>Move to</span>
                     </DropdownItem>
                   </li>
                   <li>
-                    <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                    <DropdownItem
+                      tag="a"
+                      href="#item"
+                      onClick={(ev) => ev.preventDefault()}
+                    >
                       <Icon name="trash"></Icon>
                       <span>Delete</span>
                     </DropdownItem>
                   </li>
                   <li>
-                    <DropdownItem tag="a" href="#item" onClick={(ev) => ev.preventDefault()}>
+                    <DropdownItem
+                      tag="a"
+                      href="#item"
+                      onClick={(ev) => ev.preventDefault()}
+                    >
                       <Icon name="archived"></Icon>
                       <span>Archive</span>
                     </DropdownItem>

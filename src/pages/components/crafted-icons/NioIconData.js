@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 
 export const iconData = [
   { "icon-name": "centos" },
@@ -1288,7 +1288,10 @@ export const svgData = [
           strokeWidth="2"
           d="M76.79 72.87L32.22 86.73a6 6 0 01-7.47-4L17 57.71a6 6 0 014-7.51l44.52-13.86a6 6 0 017.48 4l7.73 25.06a6 6 0 01-3.94 7.47z"
         ></path>
-        <path fill="#6576ff" d="M75.27 47.3L19.28 64.71 17.14 57.76 73.12 40.35 75.27 47.3z"></path>
+        <path
+          fill="#6576ff"
+          d="M75.27 47.3L19.28 64.71 17.14 57.76 73.12 40.35 75.27 47.3z"
+        ></path>
         <path
           fill="#c4cefe"
           d="M30 77.65l-1.9-6.79a1 1 0 01.69-1.23l4.59-1.3a1 1 0 011.23.7l1.9 6.78a1 1 0 01-.67 1.19l-4.59 1.3a1 1 0 01-1.25-.65zM41.23 74.48l-1.9-6.78a1 1 0 01.67-1.23l4.58-1.3a1 1 0 011.23.69l1.9 6.78a1 1 0 01-.71 1.24l-4.58 1.29a1 1 0 01-1.19-.69zM52.43 71.32l-1.9-6.79a1 1 0 01.69-1.23l4.59-1.3a1 1 0 011.19.7l1.9 6.78a1 1 0 01-.69 1.23L53.66 72a1 1 0 01-1.23-.68z"
@@ -1536,7 +1539,10 @@ export const svgData = [
           d="M68.33 59h9.34A1.3 1.3 0 0179 60.27v4.46A1.3 1.3 0 0177.67 66h-9.34A1.3 1.3 0 0167 64.73v-4.46A1.3 1.3 0 0168.33 59z"
         ></path>
         <ellipse cx="73" cy="61.74" fill="#fff" rx="1.11" ry="1.12"></ellipse>
-        <path fill="#fff" d="M72.5 62.38h1v1.5a.5.5 0 01-.5.5.5.5 0 01-.5-.5v-1.5z"></path>
+        <path
+          fill="#fff"
+          d="M72.5 62.38h1v1.5a.5.5 0 01-.5.5.5.5 0 01-.5-.5v-1.5z"
+        ></path>
       </svg>
     ),
     name: "Card Secure",
@@ -1583,7 +1589,12 @@ export const svgData = [
           strokeWidth="1.5"
           d="M64 42H68V46H64z"
         ></path>
-        <path fill="none" stroke="#6576ff" strokeWidth="1.5" d="M58 42L56 42 56 44"></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeWidth="1.5"
+          d="M58 42L56 42 56 44"
+        ></path>
         <path fill="#e3e7fe" d="M76 62H46v-9h30a2 2 0 012 2v5a2 2 0 01-2 2z"></path>
         <circle
           cx="70"
@@ -2195,8 +2206,20 @@ export const svgData = [
           strokeWidth="2"
           d="M14.69 76.66L14.69 76.66"
         ></path>
-        <path fill="none" stroke="#6576ff" strokeLinecap="round" strokeLinejoin="round" d="M13.5 49.5L16.5 49.5"></path>
-        <path fill="none" stroke="#6576ff" strokeLinecap="round" strokeLinejoin="round" d="M3.5 73.5L26.5 73.5"></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 49.5L16.5 49.5"
+        ></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.5 73.5L26.5 73.5"
+        ></path>
       </svg>
     ),
     name: "Devices",
@@ -2204,7 +2227,10 @@ export const svgData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
-        <path fill="#fff" d="M64.77 26.89L34.1 48 4.5 26.89 32.84 7.4a2.26 2.26 0 012.53 0z"></path>
+        <path
+          fill="#fff"
+          d="M64.77 26.89L34.1 48 4.5 26.89 32.84 7.4a2.26 2.26 0 012.53 0z"
+        ></path>
         <path
           fill="#fff"
           stroke="#6576ff"
@@ -2934,7 +2960,10 @@ export const svgData = [
           strokeWidth="2"
           rx="2"
         ></rect>
-        <path fill="#e3e7fe" d="M26.5 13h44v58a2 2 0 01-2 2h-40a2 2 0 01-2-2V13z"></path>
+        <path
+          fill="#e3e7fe"
+          d="M26.5 13h44v58a2 2 0 01-2 2h-40a2 2 0 01-2-2V13z"
+        ></path>
         <rect
           width="48"
           height="14"
@@ -2971,8 +3000,17 @@ export const svgData = [
           d="M20 70v-2.53a3.5 3.5 0 017 0V70"
         ></path>
         <circle cx="23.5" cy="73.23" r="1.5" fill="#fff"></circle>
-        <path fill="#fff" d="M22.5 74.23h2v1.24a.76.76 0 01-.76.76h-.47a.76.76 0 01-.76-.76v-1.24h-.01z"></path>
-        <g fill="none" stroke="#6576ff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
+        <path
+          fill="#fff"
+          d="M22.5 74.23h2v1.24a.76.76 0 01-.76.76h-.47a.76.76 0 01-.76-.76v-1.24h-.01z"
+        ></path>
+        <g
+          fill="none"
+          stroke="#6576ff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+        >
           <path d="M48.5 69.5v5M50.5 70.79l-4 2.52M50.5 73.31l-4-2.52M57.17 69.5v5M59.17 70.79l-4 2.52M59.17 73.31l-4-2.52M65.83 69.5v5M67.83 70.79l-4 2.52M67.83 73.31l-4-2.52M74.5 69.5v5M76.5 70.79l-4 2.52M76.5 73.31l-4-2.52"></path>
         </g>
         <path fill="#fff" d="M30.5 36h34v5h-34zM30.5 43.75h34v5h-34z"></path>
@@ -3031,7 +3069,13 @@ export const svgData = [
           rx="7"
           ry="7"
         ></rect>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M15 29L75 29"></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M15 29L75 29"
+        ></path>
         <circle cx="53" cy="23" r="2" fill="#c4cefe"></circle>
         <circle cx="60" cy="23" r="2" fill="#c4cefe"></circle>
         <circle cx="67" cy="23" r="2" fill="#c4cefe"></circle>
@@ -3248,7 +3292,14 @@ export const svgData = [
           strokeWidth="2"
           d="M42 77L58 77"
         ></path>
-        <circle cx="38" cy="77" r="0.5" fill="#c4cefe" stroke="#c4cefe" strokeMiterlimit="10"></circle>
+        <circle
+          cx="38"
+          cy="77"
+          r="0.5"
+          fill="#c4cefe"
+          stroke="#c4cefe"
+          strokeMiterlimit="10"
+        ></circle>
         <path
           fill="none"
           stroke="#c4cefe"
@@ -3257,7 +3308,14 @@ export const svgData = [
           strokeWidth="2"
           d="M42 72L58 72"
         ></path>
-        <circle cx="38" cy="72" r="0.5" fill="#c4cefe" stroke="#c4cefe" strokeMiterlimit="10"></circle>
+        <circle
+          cx="38"
+          cy="72"
+          r="0.5"
+          fill="#c4cefe"
+          stroke="#c4cefe"
+          strokeMiterlimit="10"
+        ></circle>
         <path
           fill="none"
           stroke="#c4cefe"
@@ -3266,7 +3324,14 @@ export const svgData = [
           strokeWidth="2"
           d="M42 66L58 66"
         ></path>
-        <circle cx="38" cy="66" r="0.5" fill="#c4cefe" stroke="#c4cefe" strokeMiterlimit="10"></circle>
+        <circle
+          cx="38"
+          cy="66"
+          r="0.5"
+          fill="#c4cefe"
+          stroke="#c4cefe"
+          strokeMiterlimit="10"
+        ></circle>
         <path
           fill="#e3e7fe"
           stroke="#6576ff"
@@ -3595,7 +3660,10 @@ export const svgData = [
           fill="#6576ff"
           d="M67 40h9a9.59 9.59 0 008 8.32s.89 19-17 27.68c-17.88-8.72-17-27.68-17-27.68A9.59 9.59 0 0058 40z"
         ></path>
-        <path fill="#fff" d="M67 72.51c-14.88-7.16-14.14-22.69-14.14-22.69A7.94 7.94 0 0059.52 43H67z"></path>
+        <path
+          fill="#fff"
+          d="M67 72.51c-14.88-7.16-14.14-22.69-14.14-22.69A7.94 7.94 0 0059.52 43H67z"
+        ></path>
         <path fill="#fff" d="M62 61.77a11.05 11.05 0 0112 0V65H62z"></path>
         <circle cx="68.5" cy="54.5" r="3.5" fill="#fff"></circle>
         <path
@@ -3622,15 +3690,75 @@ export const svgData = [
           fill="#fff"
           d="M61.87 71a6.83 6.83 0 01.39-2.55 6.71 6.71 0 011.51-2.09 11.82 11.82 0 001.44-1.61 2.92 2.92 0 00.47-1.59 2.47 2.47 0 00-.55-1.72 2 2 0 00-1.58-.6 2.22 2.22 0 00-1.61.59 2 2 0 00-.61 1.57H58.5a4.39 4.39 0 011.4-3.37 5.27 5.27 0 013.65-1.24 5.09 5.09 0 013.64 1.23 4.48 4.48 0 011.31 3.43 5.69 5.69 0 01-1.77 3.86l-1.43 1.46a4.08 4.08 0 00-.79 2.63zm-.3 3.17A1.6 1.6 0 0162 73a1.69 1.69 0 013 1.17 1.65 1.65 0 01-.44 1.17 1.67 1.67 0 01-1.26.46 1.62 1.62 0 01-1.3-.46 1.65 1.65 0 01-.43-1.17z"
         ></path>
-        <circle cx="17" cy="21.5" r="4.5" fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2"></circle>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 20L36.5 20"></path>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 24L43.5 24"></path>
-        <circle cx="17" cy="39.5" r="4.5" fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2"></circle>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 37L36.5 37"></path>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 42L43.5 42"></path>
-        <circle cx="17" cy="56.5" r="4.5" fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2"></circle>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 54L36.5 54"></path>
-        <path fill="none" stroke="#6576ff" strokeMiterlimit="10" strokeWidth="2" d="M28.5 59L43.5 59"></path>
+        <circle
+          cx="17"
+          cy="21.5"
+          r="4.5"
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        ></circle>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 20L36.5 20"
+        ></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 24L43.5 24"
+        ></path>
+        <circle
+          cx="17"
+          cy="39.5"
+          r="4.5"
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        ></circle>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 37L36.5 37"
+        ></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 42L43.5 42"
+        ></path>
+        <circle
+          cx="17"
+          cy="56.5"
+          r="4.5"
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+        ></circle>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 54L36.5 54"
+        ></path>
+        <path
+          fill="none"
+          stroke="#6576ff"
+          strokeMiterlimit="10"
+          strokeWidth="2"
+          d="M28.5 59L43.5 59"
+        ></path>
       </svg>
     ),
     name: "Support General",
@@ -3726,7 +3854,10 @@ export const svgData = [
           rx="7"
           ry="7"
         ></rect>
-        <path fill="#e3e7fe" d="M10 13.49h50a6 6 0 016 6v3.9H4v-3.9a6 6 0 016-6z"></path>
+        <path
+          fill="#e3e7fe"
+          d="M10 13.49h50a6 6 0 016 6v3.9H4v-3.9a6 6 0 016-6z"
+        ></path>
         <path fill="#6576ff" d="M3 23.39H67V25.37H3z"></path>
         <path
           fill="#fff"
@@ -3735,19 +3866,40 @@ export const svgData = [
           strokeWidth="2"
           d="M65.37 31.31h11.44A12.24 12.24 0 0087 42s1.12 24.31-21.63 35.5C42.62 66.31 43.75 42 43.75 42a12.23 12.23 0 0010.18-10.69z"
         ></path>
-        <path fill="#e3e7fe" d="M66 72.62c19-9.05 18.1-28.71 18.1-28.71s-7.47-.94-8.52-8.64H66z"></path>
-        <path fill="#010863" d="M56 46.16L55 46.16 55 42.2 59 42.2 59 43.2 56 43.2 56 46.16z"></path>
-        <path fill="#010863" d="M59 65.97L55 65.97 55 62.01 56 62.01 56 64.98 59 64.98 59 65.97z"></path>
-        <path fill="#010863" d="M78 65.97L74 65.97 74 64.98 77 64.98 77 62.01 78 62.01 78 65.97z"></path>
-        <path fill="#010863" d="M78 46.16L77 46.16 77 43.2 74 43.2 74 42.2 78 42.2 78 46.16z"></path>
+        <path
+          fill="#e3e7fe"
+          d="M66 72.62c19-9.05 18.1-28.71 18.1-28.71s-7.47-.94-8.52-8.64H66z"
+        ></path>
+        <path
+          fill="#010863"
+          d="M56 46.16L55 46.16 55 42.2 59 42.2 59 43.2 56 43.2 56 46.16z"
+        ></path>
+        <path
+          fill="#010863"
+          d="M59 65.97L55 65.97 55 62.01 56 62.01 56 64.98 59 64.98 59 65.97z"
+        ></path>
+        <path
+          fill="#010863"
+          d="M78 65.97L74 65.97 74 64.98 77 64.98 77 62.01 78 62.01 78 65.97z"
+        ></path>
+        <path
+          fill="#010863"
+          d="M78 46.16L77 46.16 77 43.2 74 43.2 74 42.2 78 42.2 78 46.16z"
+        ></path>
         <path
           fill="#6576ff"
           d="M70 51.12h-8v-2.26a3.74 3.74 0 013.17-3.57c2.56-.46 4.83 1.28 4.83 3.49zm-7-1h6v-1.56a2.78 2.78 0 00-2-2.63 3 3 0 00-4 2.64z"
         ></path>
-        <path fill="#e5effe" d="M58 57.28v-7.15h16v7.37c0 4.62-4.65 8.26-9.86 7.17A7.63 7.63 0 0158 57.28z"></path>
+        <path
+          fill="#e5effe"
+          d="M58 57.28v-7.15h16v7.37c0 4.62-4.65 8.26-9.86 7.17A7.63 7.63 0 0158 57.28z"
+        ></path>
         <path fill="#6576ff" d="M59 51.12v6.7A7 7 0 0073 58v-6.88z"></path>
         <ellipse cx="66" cy="55.08" fill="#fff" rx="2" ry="1.98"></ellipse>
-        <path fill="#fff" d="M68.91 62.01L63.84 62.01 65.18 56.07 67.57 56.07 68.91 62.01z"></path>
+        <path
+          fill="#fff"
+          d="M68.91 62.01L63.84 62.01 65.18 56.07 67.57 56.07 68.91 62.01z"
+        ></path>
         <path
           fill="#6576ff"
           d="M72 51.12H60v-2.46a5.41 5.41 0 014.06-5.14c4.13-1.14 7.94 1.54 7.94 5zm-11-1h10v-1.63A4.69 4.69 0 0067.08 44c-3.23-.6-6.08 1.58-6.08 4.33z"
@@ -3907,7 +4059,10 @@ export const svgData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
-        <path fill="#e3e7fe" d="M81.8 22.23a2.89 2.89 0 112.89-2.89 2.89 2.89 0 01-2.89 2.89"></path>
+        <path
+          fill="#e3e7fe"
+          d="M81.8 22.23a2.89 2.89 0 112.89-2.89 2.89 2.89 0 01-2.89 2.89"
+        ></path>
         <circle
           cx="72.42"
           cy="73.31"
@@ -3923,14 +4078,38 @@ export const svgData = [
         ></path>
         <path fill="#e3e7fe" d="M6.01 13.19H11.98V15.18H6.01z"></path>
         <path fill="#e3e7fe" d="M8 11.2H9.99V17.169999999999998H8z"></path>
-        <path fill="#e3e7fe" d="M74.3 34.88L68.3 26.12 66.35 15.69 47.16 34.88 74.3 34.88z"></path>
-        <path fill="#e3e7fe" d="M42.54 6.45L33.78 12.44 23.34 14.39 42.54 33.59 42.54 6.45z"></path>
-        <path fill="#e3e7fe" d="M14.16 37.73L20.15 46.49 22.11 56.92 41.3 37.73 14.16 37.73z"></path>
-        <path fill="#e3e7fe" d="M23.34 58.64L33.78 60.59 42.54 66.59 42.54 39.44 23.34 58.64z"></path>
-        <path fill="#e3e7fe" d="M22.11 15.69L20.15 26.12 14.16 34.88 41.3 34.88 22.11 15.69z"></path>
-        <path fill="#e3e7fe" d="M74.3 37.87L47.16 37.87 66.35 57.06 68.3 46.62 74.3 37.87z"></path>
-        <path fill="#e3e7fe" d="M45.52 66.59L54.28 60.59 64.72 58.64 45.52 39.44 45.52 66.59z"></path>
-        <path fill="#e3e7fe" d="M64.72 14.39L54.28 12.44 45.52 6.45 45.52 33.59 64.72 14.39z"></path>
+        <path
+          fill="#e3e7fe"
+          d="M74.3 34.88L68.3 26.12 66.35 15.69 47.16 34.88 74.3 34.88z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M42.54 6.45L33.78 12.44 23.34 14.39 42.54 33.59 42.54 6.45z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M14.16 37.73L20.15 46.49 22.11 56.92 41.3 37.73 14.16 37.73z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M23.34 58.64L33.78 60.59 42.54 66.59 42.54 39.44 23.34 58.64z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M22.11 15.69L20.15 26.12 14.16 34.88 41.3 34.88 22.11 15.69z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M74.3 37.87L47.16 37.87 66.35 57.06 68.3 46.62 74.3 37.87z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M45.52 66.59L54.28 60.59 64.72 58.64 45.52 39.44 45.52 66.59z"
+        ></path>
+        <path
+          fill="#e3e7fe"
+          d="M64.72 14.39L54.28 12.44 45.52 6.45 45.52 33.59 64.72 14.39z"
+        ></path>
         <path
           fill="#e3e7fe"
           d="M53.84 62.75L44.03 69.48 34.22 62.75 30.6 62.75 30.6 85.64 34.22 85.64 44.03 78.91 53.84 85.64 57.47 85.64 57.47 62.75 53.84 62.75z"
@@ -3975,7 +4154,11 @@ export const svgData = [
         <circle cx="83.58" cy="67.84" r="1.84" fill="#e3e7fe"></circle>
         <circle cx="12.04" cy="84.67" r="1.84" fill="#e3e7fe"></circle>
         <path fill="#e3e7fe" d="M3 47.84H9.120000000000001V49.59H3z"></path>
-        <path fill="#e3e7fe" d="M3 47.84H9.120000000000001V49.59H3z" transform="rotate(90 6.06 48.72)"></path>
+        <path
+          fill="#e3e7fe"
+          d="M3 47.84H9.120000000000001V49.59H3z"
+          transform="rotate(90 6.06 48.72)"
+        ></path>
         <circle cx="45.76" cy="64.92" r="19.82" fill="#fff"></circle>
         <circle
           cx="45.76"
@@ -4043,7 +4226,11 @@ export const svgData = [
         <circle cx="79.41" cy="68.42" r="2.87" fill="#e3e7fe"></circle>
         <circle cx="14.98" cy="82.08" r="1.72" fill="#e3e7fe"></circle>
         <path fill="#e3e7fe" d="M5 34.77H11.879999999999999V37.06H5z"></path>
-        <path fill="#e3e7fe" d="M5 34.77H11.879999999999999V37.06H5z" transform="rotate(90 8.445 35.915)"></path>
+        <path
+          fill="#e3e7fe"
+          d="M5 34.77H11.879999999999999V37.06H5z"
+          transform="rotate(90 8.445 35.915)"
+        ></path>
         <path
           fill="#6576ff"
           d="M39.21 4.22L42.89 5.55 45.92 3.33 45.97 7.18 49.17 9.48 45.52 10.53 44.47 14.18 42.16 10.98 38.31 10.94 40.54 7.91 39.21 4.22z"
@@ -4106,8 +4293,24 @@ export const svgData = [
           fill="#c4cefe"
           d="M29.73 103.29L74.66 96a3.41 3.41 0 002.84-3.94L65.4 22.95a3.5 3.5 0 00-4-2.82l-44.96 7.28a3.41 3.41 0 00-2.84 3.94l12.1 69.11a3.52 3.52 0 004.03 2.83z"
         ></path>
-        <rect width="66" height="88" x="22" y="17.9" fill="#6576ff" rx="3" ry="3"></rect>
-        <rect width="48" height="10" x="31" y="85.9" fill="#fff" rx="1.5" ry="1.5"></rect>
+        <rect
+          width="66"
+          height="88"
+          x="22"
+          y="17.9"
+          fill="#6576ff"
+          rx="3"
+          ry="3"
+        ></rect>
+        <rect
+          width="48"
+          height="10"
+          x="31"
+          y="85.9"
+          fill="#fff"
+          rx="1.5"
+          ry="1.5"
+        ></rect>
         <rect width="48" height="5" x="31" y="27.9" fill="#e3e7fe" rx="1" ry="1"></rect>
         <rect width="23" height="3" x="31" y="37.9" fill="#c4cefe" rx="1" ry="1"></rect>
         <rect width="20" height="3" x="59" y="37.9" fill="#c4cefe" rx="1" ry="1"></rect>
@@ -4183,12 +4386,50 @@ export const svgData = [
           strokeWidth="2"
           d="M40 32L50 32"
         ></path>
-        <path fill="none" stroke="#9cabff" strokeLinecap="round" strokeLinejoin="round" d="M30.5 87.5L30.5 91.5"></path>
-        <path fill="none" stroke="#9cabff" strokeLinecap="round" strokeLinejoin="round" d="M28.5 89.5L32.5 89.5"></path>
-        <path fill="none" stroke="#9cabff" strokeLinecap="round" strokeLinejoin="round" d="M79.5 22.5L79.5 26.5"></path>
-        <path fill="none" stroke="#9cabff" strokeLinecap="round" strokeLinejoin="round" d="M77.5 24.5L81.5 24.5"></path>
-        <circle cx="90.5" cy="97.5" r="3" fill="none" stroke="#9cabff" strokeMiterlimit="10"></circle>
-        <circle cx="24" cy="23" r="2.5" fill="none" stroke="#9cabff" strokeMiterlimit="10"></circle>
+        <path
+          fill="none"
+          stroke="#9cabff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M30.5 87.5L30.5 91.5"
+        ></path>
+        <path
+          fill="none"
+          stroke="#9cabff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M28.5 89.5L32.5 89.5"
+        ></path>
+        <path
+          fill="none"
+          stroke="#9cabff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M79.5 22.5L79.5 26.5"
+        ></path>
+        <path
+          fill="none"
+          stroke="#9cabff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M77.5 24.5L81.5 24.5"
+        ></path>
+        <circle
+          cx="90.5"
+          cy="97.5"
+          r="3"
+          fill="none"
+          stroke="#9cabff"
+          strokeMiterlimit="10"
+        ></circle>
+        <circle
+          cx="24"
+          cy="23"
+          r="2.5"
+          fill="none"
+          stroke="#9cabff"
+          strokeMiterlimit="10"
+        ></circle>
       </svg>
     ),
     name: "Help/Support",
@@ -4207,7 +4448,10 @@ export const fileManagerIconData = [
           fill="#8AA3FF"
           d="M59.8 61H12.2C8.8 61 6 58 6 54.4V17.6C6 14 8.8 11 12.2 11h18.5c1.7 0 3.3 1 4.1 2.6L38 24h21.8c3.4 0 6.2 2.4 6.2 6v24.4c0 3.6-2.8 6.6-6.2 6.6z"
         ></path>
-        <path fill="#798BFF" d="M7.7 59c2.2 2.4 4.7 2 6.3 2h45c1.1 0 3.2.1 5.3-2H7.7z"></path>
+        <path
+          fill="#798BFF"
+          d="M7.7 59c2.2 2.4 4.7 2 6.3 2h45c1.1 0 3.2.1 5.3-2H7.7z"
+        ></path>
       </svg>
     ),
     name: "Folder",
@@ -4215,12 +4459,23 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <rect width="28" height="15" x="32" y="16" fill="#6c87fe" rx="2.5" ry="2.5"></rect>
+        <rect
+          width="28"
+          height="15"
+          x="32"
+          y="16"
+          fill="#6c87fe"
+          rx="2.5"
+          ry="2.5"
+        ></rect>
         <path
           fill="#8aa3ff"
           d="M59.778 61H12.222A6.421 6.421 0 016 54.396V17.604A6.421 6.421 0 0112.222 11h18.476a4.671 4.671 0 014.113 2.564L38 24h21.778A5.91 5.91 0 0166 30v24.396A6.421 6.421 0 0159.778 61z"
         ></path>
-        <path fill="#798bff" d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"></path>
+        <path
+          fill="#798bff"
+          d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"
+        ></path>
         <path
           fill="#4b66bc"
           d="M42.223 40H41.5v-2.556a5.5 5.5 0 00-11 0V40h-.723A2.801 2.801 0 0027 42.818v6.364A2.801 2.801 0 0029.777 52h12.446A2.801 2.801 0 0045 49.182v-6.364A2.801 2.801 0 0042.223 40zM36 48a2 2 0 112-2 2.002 2.002 0 01-2 2zm3.5-8h-7v-2.556a3.5 3.5 0 017 0z"
@@ -4232,12 +4487,23 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <rect width="28" height="15" x="32" y="16" fill="#6c87fe" rx="2.5" ry="2.5"></rect>
+        <rect
+          width="28"
+          height="15"
+          x="32"
+          y="16"
+          fill="#6c87fe"
+          rx="2.5"
+          ry="2.5"
+        ></rect>
         <path
           fill="#8aa3ff"
           d="M59.778 61H12.222A6.421 6.421 0 016 54.396V17.604A6.421 6.421 0 0112.222 11h18.476a4.671 4.671 0 014.113 2.564L38 24h21.778A5.91 5.91 0 0166 30v24.396A6.421 6.421 0 0159.778 61z"
         ></path>
-        <path fill="#798bff" d="M7.745 58.98C9.935 61.387 12.488 61.017 14 61h45a6.337 6.337 0 005.256-2.02z"></path>
+        <path
+          fill="#798bff"
+          d="M7.745 58.98C9.935 61.387 12.488 61.017 14 61h45a6.337 6.337 0 005.256-2.02z"
+        ></path>
         <path
           fill="#4b66bc"
           d="M29.63 37.36a3.024 3.024 0 01-.86-2.39A4.375 4.375 0 0132.997 31h.008a4.36 4.36 0 014.22 3.912 3.053 3.053 0 01-.855 2.448 4.416 4.416 0 01-3.139 1.17c-.077 0-.153-.002-.23-.005a4.519 4.519 0 01-3.37-1.165zm13.837 2.755a1 1 0 10-.934 1.77c.72.38 1.466 2.126 1.467 4.39V48a1 1 0 002 0v-1.726c-.001-2.93-.995-5.347-2.533-6.159zm-3.302-2.718c-.144.084-.29.168-.432.254a1 1 0 00.522 1.854.989.989 0 00.52-.147c.129-.078.26-.154.392-.23a4.231 4.231 0 002.146-2.124.984.984 0 00.031-.104 3.841 3.841 0 00-2.844-4.365 1 1 0 00-.492 1.94 1.877 1.877 0 011.4 1.909 2.835 2.835 0 01-1.243 1.013zM36.5 41h-7c-2.523 0-4.5 2.782-4.5 6.333V48.5a.836.836 0 00.059.291.973.973 0 00.35.495C26.466 50.281 29.462 51 33 51s6.535-.719 7.59-1.714a.973.973 0 00.35-.495.836.836 0 00.06-.291v-1.167C41 43.783 39.023 41 36.5 41z"
@@ -4249,12 +4515,23 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <rect width="28" height="15" x="32" y="16" fill="#f29611" rx="2.5" ry="2.5"></rect>
+        <rect
+          width="28"
+          height="15"
+          x="32"
+          y="16"
+          fill="#f29611"
+          rx="2.5"
+          ry="2.5"
+        ></rect>
         <path
           fill="#ffb32c"
           d="M59.778 61H12.222A6.421 6.421 0 016 54.396V17.604A6.421 6.421 0 0112.222 11h18.476a4.671 4.671 0 014.113 2.564L38 24h21.778A5.91 5.91 0 0166 30v24.396A6.421 6.421 0 0159.778 61z"
         ></path>
-        <path fill="#f2a222" d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"></path>
+        <path
+          fill="#f2a222"
+          d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"
+        ></path>
       </svg>
     ),
     name: "Folder Alt",
@@ -4262,12 +4539,23 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <rect width="28" height="15" x="32" y="16" fill="#f29611" rx="2.5" ry="2.5"></rect>
+        <rect
+          width="28"
+          height="15"
+          x="32"
+          y="16"
+          fill="#f29611"
+          rx="2.5"
+          ry="2.5"
+        ></rect>
         <path
           fill="#ffb32c"
           d="M59.778 61H12.222A6.421 6.421 0 016 54.396V17.604A6.421 6.421 0 0112.222 11h18.476a4.671 4.671 0 014.113 2.564L38 24h21.778A5.91 5.91 0 0166 30v24.396A6.421 6.421 0 0159.778 61z"
         ></path>
-        <path fill="#f2a222" d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"></path>
+        <path
+          fill="#f2a222"
+          d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"
+        ></path>
         <path
           fill="#c67424"
           d="M42.223 40H41.5v-2.556a5.5 5.5 0 00-11 0V40h-.723A2.801 2.801 0 0027 42.818v6.364A2.801 2.801 0 0029.777 52h12.446A2.801 2.801 0 0045 49.182v-6.364A2.801 2.801 0 0042.223 40zM36 48a2 2 0 112-2 2.002 2.002 0 01-2 2zm3.5-8h-7v-2.556a3.5 3.5 0 017 0z"
@@ -4279,12 +4567,23 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <rect width="28" height="15" x="32" y="16" fill="#f29611" rx="2.5" ry="2.5"></rect>
+        <rect
+          width="28"
+          height="15"
+          x="32"
+          y="16"
+          fill="#f29611"
+          rx="2.5"
+          ry="2.5"
+        ></rect>
         <path
           fill="#ffb32c"
           d="M59.778 61H12.222A6.421 6.421 0 016 54.396V17.604A6.421 6.421 0 0112.222 11h18.476a4.671 4.671 0 014.113 2.564L38 24h21.778A5.91 5.91 0 0166 30v24.396A6.421 6.421 0 0159.778 61z"
         ></path>
-        <path fill="#f2a222" d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"></path>
+        <path
+          fill="#f2a222"
+          d="M8.015 59c2.169 2.383 4.698 2.016 6.195 2h44.57a6.277 6.277 0 005.207-2z"
+        ></path>
         <path
           fill="#c67424"
           d="M29.63 37.36a3.024 3.024 0 01-.86-2.39A4.375 4.375 0 0132.997 31h.008a4.36 4.36 0 014.22 3.912 3.053 3.053 0 01-.855 2.448 4.416 4.416 0 01-3.139 1.17c-.077 0-.153-.002-.23-.005a4.519 4.519 0 01-3.37-1.165zm13.837 2.74a1 1 0 10-.934 1.77c.72.38 1.466 2.126 1.467 4.39v1.726a1 1 0 002 0V46.26c-.001-2.93-.995-5.348-2.533-6.16zm-3.302-2.718c-.144.084-.29.168-.432.255a1 1 0 00.522 1.853.989.989 0 00.52-.147c.129-.078.26-.154.392-.23a4.231 4.231 0 002.146-2.124.984.984 0 00.031-.104A3.841 3.841 0 0040.5 32.52a1 1 0 10-.492 1.94 1.877 1.877 0 011.4 1.909 2.835 2.835 0 01-1.243 1.013zM36.5 41h-7c-2.523 0-4.5 2.782-4.5 6.333V48.5a.836.836 0 00.059.291.973.973 0 00.35.495C26.466 50.281 29.462 51 33 51s6.535-.719 7.59-1.714a.973.973 0 00.35-.495.836.836 0 00.06-.291v-1.167C41 43.783 39.023 41 36.5 41z"
@@ -4296,7 +4595,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#0089ff" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#0089ff"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#9bd5f9" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#fff"
@@ -4309,7 +4611,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#599def" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#599def"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#c2e1ff" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <rect width="18" height="2" x="27" y="31" fill="#fff" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="36" fill="#fff" rx="1" ry="1"></rect>
@@ -4322,7 +4627,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#755de0" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#755de0"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path
           fill="#fff"
           d="M27.222 43H44.71s2.325-.281.735-1.897l-5.603-5.498s-1.512-1.792-3.336.793L33.56 40.47a.689.689 0 01-1.019.048l-1.9-1.639s-1.329-1.587-2.475 0c-.656.908-2.026 2.849-2.026 2.849S25.427 43 27.222 43z"
@@ -4335,7 +4643,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#f74141" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#f74141"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#ffa9a9" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#fff"
@@ -4348,7 +4659,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#5a5aff" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#5a5aff"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#b8b8ff" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#f3f3f3"
@@ -4361,7 +4675,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#f26b6b" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#f26b6b"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#f4c9c9" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#fff"
@@ -4374,7 +4691,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#f25168" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#f25168"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#ff9fb6" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#fff"
@@ -4395,7 +4715,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#36c684" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#36c684"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#95e5bd" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <path
           fill="#fff"
@@ -4408,7 +4731,10 @@ export const fileManagerIconData = [
   {
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
-        <path fill="#7e95c4" d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"></path>
+        <path
+          fill="#7e95c4"
+          d="M50 61H22a6 6 0 01-6-6V22l9-11h25a6 6 0 016 6v38a6 6 0 01-6 6z"
+        ></path>
         <path fill="#b7ccea" d="M25 20.556A1.444 1.444 0 0123.556 22H16l9-11z"></path>
         <rect width="18" height="2" x="27" y="31" fill="#fff" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="35" fill="#fff" rx="1" ry="1"></rect>
@@ -4448,7 +4774,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#0089ff"
           d="M44.709 39.72a2.007 2.007 0 01-.672-1.13 13.652 13.652 0 01-.177-2.588 20.143 20.143 0 00-.141-2.699 2.831 2.831 0 00-.568-1.365 2.392 2.392 0 00-1.104-.77 4.722 4.722 0 00-1.48-.168h-.583v1.636h.323a2.236 2.236 0 011.328.276 1.395 1.395 0 01.412.974q.052.396.052 2.428a7.437 7.437 0 00.49 3.183 3.521 3.521 0 001.688 1.516 3.246 3.246 0 00-1.417 1.078 4.133 4.133 0 00-.667 1.85q-.094.698-.094 3.303a2.866 2.866 0 01-.354 1.755 1.951 1.951 0 01-1.438.391h-.323v1.636h.584a5.15 5.15 0 001.292-.115 2.326 2.326 0 001.589-1.328 4.334 4.334 0 00.349-1.412q.052-.552.062-2.292a12.642 12.642 0 01.177-2.454 2.007 2.007 0 01.672-1.13 2.078 2.078 0 011.308-.438V40.16a2.078 2.078 0 01-1.308-.438zM30.146 39.94a3.95 3.95 0 00.64-1.72 30.109 30.109 0 00.115-3.448 2.842 2.842 0 01.354-1.745 1.951 1.951 0 011.438-.39h.323V31h-.583a5.635 5.635 0 00-1.292.104 2.315 2.315 0 00-1.59 1.334 4.366 4.366 0 00-.348 1.406q-.052.553-.063 2.293a12.753 12.753 0 01-.177 2.458 1.982 1.982 0 01-.672 1.13 2.096 2.096 0 01-1.308.433v1.698a2.078 2.078 0 011.308.438 2.009 2.009 0 01.672 1.136 13.753 13.753 0 01.177 2.594 20.138 20.138 0 00.141 2.699 2.797 2.797 0 00.568 1.36 2.477 2.477 0 001.104.776 4.712 4.712 0 001.48.167h.584V49.39h-.323a2.203 2.203 0 01-1.329-.281 1.464 1.464 0 01-.422-.99q-.041-.386-.042-2.418a7.392 7.392 0 00-.515-3.224 3.179 3.179 0 00-1.662-1.464 3.813 3.813 0 001.422-1.073z"
@@ -4468,7 +4797,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <rect width="18" height="2" x="27" y="31" fill="#599def" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="36" fill="#599def" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="41" fill="#599def" rx="1" ry="1"></rect>
@@ -4488,7 +4820,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#755de0"
           d="M27.222 43H44.71s2.325-.281.735-1.897l-5.603-5.498s-1.512-1.792-3.336.793L33.56 40.47a.689.689 0 01-1.019.048l-1.9-1.639s-1.329-1.587-2.475 0c-.656.908-2.026 2.849-2.026 2.849S25.427 43 27.222 43z"
@@ -4508,7 +4843,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#f74141"
           d="M46 46.5v-13a3.504 3.504 0 00-3.5-3.5h-13a3.504 3.504 0 00-3.5 3.5v13a3.504 3.504 0 003.5 3.5h13a3.504 3.504 0 003.5-3.5zM40 45v3h-3v-3zm-3-2v-6h7v6zm0-8v-3h3v3zm-2-3v3h-3v-3zm0 5v6h-7v-6zm0 8v3h-3v-3zm7.5 3H42v-3h2v1.5a1.502 1.502 0 01-1.5 1.5zM44 33.5V35h-2v-3h.5a1.502 1.502 0 011.5 1.5zM29.5 32h.5v3h-2v-1.5a1.502 1.502 0 011.5-1.5zM28 46.5V45h2v3h-.5a1.502 1.502 0 01-1.5-1.5z"
@@ -4528,7 +4866,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#5a5aff"
           d="M45.647 30.737a1.006 1.006 0 00-.811-.223l-12 2A1 1 0 0032 33.5v9.556a3.923 3.923 0 00-3.711-.17 3.863 3.863 0 00-2.082 2.313 4.025 4.025 0 005.37 4.997A3.977 3.977 0 0034 46.451V34.347l10-1.666v8.375a3.923 3.923 0 00-3.711-.17 3.863 3.863 0 00-2.082 2.313 4.025 4.025 0 005.37 4.997A3.977 3.977 0 0046 44.451V31.5a.999.999 0 00-.353-.763z"
@@ -4548,7 +4889,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#f26b6b"
           d="M46.334 44.538a4.326 4.326 0 00-2.528-1.429 22.436 22.436 0 00-4.561-.383 19.356 19.356 0 01-3.425-4.772 56.508 56.508 0 001.375-6.086 2.339 2.339 0 00-.462-1.845 1.943 1.943 0 00-1.516-.753h-.001a1.685 1.685 0 00-1.39.697c-1.149 1.526-.363 5.219-.194 5.946a12.612 12.612 0 00.724 2.147 33.322 33.322 0 01-2.49 6.106 20.347 20.347 0 00-5.979 3.44 2.568 2.568 0 00-.886 1.827 1.802 1.802 0 00.634 1.306 2.061 2.061 0 001.395.531 2.244 2.244 0 001.459-.546 20.068 20.068 0 004.29-5.357 20.838 20.838 0 015.938-1.186 33.75 33.75 0 004.243 3.605 2.64 2.64 0 003.416-.236 2.08 2.08 0 00-.042-3.012zM27.62 49.623a.834.834 0 01-1.084.042.42.42 0 01-.167-.27c-.002-.066.027-.315.44-.736a18.038 18.038 0 013.762-2.368 17.26 17.26 0 01-2.95 3.332zm7.283-18.775a.343.343 0 01.315-.151.6.6 0 01.465.239.853.853 0 01.168.672c-.164.92-.424 2.38-.852 4.117l-.037-.151c-.356-1.523-.609-3.996-.059-4.726zm-1.179 12.703a34.973 34.973 0 001.52-3.767 21.248 21.248 0 002.224 3.05 21.857 21.857 0 00-3.744.717zm11.706 2.97a1.308 1.308 0 01-1.695.088 33.203 33.203 0 01-3.004-2.43 20.968 20.968 0 012.835.334 2.97 2.97 0 011.74.965c.533.633.296.87.123 1.043z"
@@ -4568,7 +4912,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#f25168"
           d="M44.14 46H27.86A1.86 1.86 0 0126 44.14v-9.28A1.86 1.86 0 0127.86 33h16.28A1.86 1.86 0 0146 34.86v9.28A1.86 1.86 0 0144.14 46zm-14.995-2h13.71A1.145 1.145 0 0044 42.855v-6.71A1.145 1.145 0 0042.855 35h-13.71A1.145 1.145 0 0028 36.145v6.71A1.145 1.145 0 0029.145 44z"
@@ -4596,7 +4943,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <path
           fill="#36c684"
           d="M42 31H30a3.003 3.003 0 00-3 3v11a3.003 3.003 0 003 3h12a3.003 3.003 0 003-3V34a3.003 3.003 0 00-3-3zm-13 7h6v3h-6zm8 0h6v3h-6zm6-4v2h-6v-3h5a1.001 1.001 0 011 1zm-13-1h5v3h-6v-2a1.001 1.001 0 011-1zm-1 12v-2h6v3h-5a1.001 1.001 0 01-1-1zm13 1h-5v-3h6v2a1.001 1.001 0 01-1 1z"
@@ -4616,7 +4966,10 @@ export const fileManagerIconData = [
           fill="#b7d0ea"
           d="M54 22.111h-9.818a3.303 3.303 0 01-3.273-3.333V11s1.841.208 6.955 4.583C52.84 20.097 54 22.111 54 22.111z"
         ></path>
-        <path fill="#c4dbf2" d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 59A4.984 4.984 0 0023 61h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <rect width="18" height="2" x="27" y="31" fill="#7e95c4" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="35" fill="#7e95c4" rx="1" ry="1"></rect>
         <rect width="18" height="2" x="27" y="39" fill="#7e95c4" rx="1" ry="1"></rect>
@@ -4630,7 +4983,10 @@ export const fileManagerIconData = [
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
         <rect width="36" height="40" x="18" y="16" fill="#e3edfc" rx="5" ry="5"></rect>
-        <path fill="#c4dbf2" d="M19.03 54A4.984 4.984 0 0023 56h26a4.984 4.984 0 003.97-2z"></path>
+        <path
+          fill="#c4dbf2"
+          d="M19.03 54A4.984 4.984 0 0023 56h26a4.984 4.984 0 003.97-2z"
+        ></path>
         <rect width="8" height="2" x="32" y="20" fill="#7e95c4" rx="1" ry="1"></rect>
         <rect width="8" height="2" x="32" y="25" fill="#7e95c4" rx="1" ry="1"></rect>
         <rect width="8" height="2" x="32" y="30" fill="#7e95c4" rx="1" ry="1"></rect>

@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import List from "../views/List";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { Block, BlockBetween, BlockHead, BlockHeadContent, BlockTitle, Icon } from "../../../../components/Component";
-import PropTypes from 'prop-types';
+import {
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  UncontrolledDropdown,
+} from "reactstrap";
+import {
+  Block,
+  BlockBetween,
+  BlockHead,
+  BlockHeadContent,
+  BlockTitle,
+  Icon,
+} from "../../../../components/Component";
+import PropTypes from "prop-types";
 
 Starred.propTypes = {
   data: PropTypes.object,
@@ -12,9 +24,16 @@ Starred.propTypes = {
   toggleCreateModal: PropTypes.func,
   toggleUploadModal: PropTypes.func,
   toggleScreenLg: PropTypes.func,
-  children: PropTypes.object
-}
-const Starred = ({ data, setData, setSearchText, toggleCreateModal, toggleUploadModal, toggleScreenLg }) => {
+  children: PropTypes.object,
+};
+const Starred = ({
+  data,
+  setData,
+  setSearchText,
+  toggleCreateModal,
+  toggleUploadModal,
+  toggleScreenLg,
+}) => {
   const [search, setSearch] = useState(false);
   const toggleSearch = () => {
     setSearch(!search);
@@ -122,7 +141,11 @@ const Starred = ({ data, setData, setSearchText, toggleCreateModal, toggleUpload
         </BlockBetween>
       </BlockHead>
       <Block className="nk-fmg-listing">
-        {data.length > 0 ? <List data={data} setData={setData} starred /> : <div>No files or folders available</div>}
+        {data.length > 0 ? (
+          <List data={data} setData={setData} starred />
+        ) : (
+          <div>No files or folders available</div>
+        )}
       </Block>
     </React.Fragment>
   );
