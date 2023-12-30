@@ -1,10 +1,10 @@
 import {Button} from "reactstrap"
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 // const history = useHistory();
 // Custom component for the "Actions" column
-const ActionsColumn = ({ row }) => {
-  const history = useHistory();
+const ActionsColumn = () => {
+  // const history = useHistory();
 
   // Function to handle the view button click
   const handleView = () => {

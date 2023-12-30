@@ -19,7 +19,7 @@ const CreateLenderUserForm = () => {
   const [phone, setPhone] = useState("");
 
   // State to manage form submission status
-  const [_, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Fetch organizations when the component mounts
@@ -174,7 +174,12 @@ const CreateLenderUserForm = () => {
                   </Col>
                 </Row>
               </Form>
-
+              {isSubmitted && (
+              <div className="text-center pt-4">
+                <p>LenderUser registered successfully!</p>
+                {/* Optionally, add a redirect logic here */}
+              </div>
+            )}
             </Col>
           </Row>
         </PreviewCard>

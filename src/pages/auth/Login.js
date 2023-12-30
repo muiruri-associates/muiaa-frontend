@@ -48,7 +48,7 @@ const Login = () => {
 
       await dispatch(login(loginData));
       history.push(`/`);
-      // setError("Unable to login with credentials");
+      setError("Unable to login with credentials");
 
   };
 

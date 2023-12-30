@@ -36,7 +36,7 @@ const RegisterLender = () => {
   const [phone_number, setPhone_number] = useState('')
   const [password, setPassword] = useState('')
   const [confirm_password, setConfirm_password] = useState('')
-  const [_, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const { errors, register, handleSubmit } = useForm();
@@ -255,6 +255,12 @@ const RegisterLender = () => {
                 </Button>
               </FormGroup>
             </form>
+            {isSubmitted && (
+              <div className="text-center pt-4">
+                <p>User registered successfully!</p>
+                {/* Optionally, add a redirect logic here */}
+              </div>
+            )}
             <div className="form-note-s2 text-center pt-4">
               {" "}
               Already have an account?{" "}

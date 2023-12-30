@@ -2,14 +2,14 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import classNames from "classnames";
 import ChatSideBar from "./ChatSideBar";
 import SimpleBar from "simplebar-react";
-import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+import { DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { UserAvatar, Icon, Button } from "../../../components/Component";
 import { currentTime, findUpper, truncate } from "../../../utils/Utils";
 import { ChatContext } from "./ChatContext";
 
 import { MeChat, YouChat, MetaChat } from "./ChatPartials";
 
-const ChatBody = ({ id, mobileView, setMobileView, setSelectedId }) => {
+const ChatBody = ({ id, mobileView, setMobileView }) => {
   const { chatState } = useContext(ChatContext);
   const [chat, setChat] = chatState;
   const [Uchat, setUchat] = useState({});

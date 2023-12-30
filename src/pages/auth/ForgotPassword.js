@@ -18,10 +18,10 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import { forgotPassword } from "../../redux/actions/authActions";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 const ForgotPassword = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const dispatch = useDispatch()
 
   const [loading, setLoading] = useState(false);

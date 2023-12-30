@@ -29,7 +29,7 @@ const CreateLenderOrgForm = () => {
   const [business_location, setBusiness_Location] = useState("");
 
    // State to manage form submission status
-   const [_, setIsSubmitted] = useState(false);
+   const [isSubmited, setIsSubmitted] = useState(false);
 
   // Function to handle form submission
  const handleSubmit = async (e) => {
@@ -140,6 +140,12 @@ const CreateLenderOrgForm = () => {
               <Button onClick={handleSubmit}>Create</Button>
               <ToastContainer />
             </Form>
+            {isSubmitted && (
+              <div className="text-center pt-4">
+                <p>Lender Organization created successfully!</p>
+                {/* Optionally, add a redirect logic here */}
+              </div>
+            )}
           </Row>
         </PreviewCard>
       </Block>

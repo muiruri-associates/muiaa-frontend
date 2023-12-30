@@ -175,6 +175,12 @@ const CreateTicketForm = () => {
             <Button type="submit">Create Ticket</Button>
             <ToastContainer />
           </Form>
+          {isSubmitted && (
+              <div className="text-center pt-4">
+                <p>Lender Organization created successfully!</p>
+                {/* Optionally, add a redirect logic here */}
+              </div>
+            )}
         </PreviewCard>
       </Block>
     </React.Fragment>

@@ -44,9 +44,9 @@ const UploadBorrowerDocument = () => {
   //   );
   // };
   // Function to handle changes in the document type input
-  const handleTypeChange = (e) => {
-    setType(e.target.value); // Update the type state when the input changes
-  };
+  // const handleTypeChange = (e) => {
+  //   setType(e.target.value); // Update the type state when the input changes
+  // };
   return (
     <div style={{ overflowY: 'auto', maxHeight: '100vh', paddingRight: '17px' }}>
       {isUser && (<>

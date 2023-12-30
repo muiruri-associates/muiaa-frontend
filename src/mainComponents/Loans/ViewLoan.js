@@ -45,12 +45,12 @@ const ViewLoan = () => {
   // }
 
   const [isBlurred, setIsBlurred] = useState(true);
-  const [_, setIsUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
 
-  // const unlockContent = () => {
-  //   setIsBlurred(false);
-  //   setIsUnlocked(true);
-  // };
+  const unlockContent = () => {
+    setIsBlurred(false);
+    setIsUnlocked(true);
+  };
 
   const placeholder = () => (
     <p style={{
@@ -63,6 +63,10 @@ const ViewLoan = () => {
       opacity: 0.7,
     }}>This content is hidden. Unlock it to view.</p>
   )
+
+  const toggleContent = (content) => {
+    return isUnlocked ? content : placeholder();
+  };
 
   return (
     <React.Fragment>
@@ -280,7 +284,7 @@ const ViewLoan = () => {
                     <div className="data-col">
                       <div className="data-label">Bank Statement</div>
                       <div className="data-value">
-                        <a href="#" download>
+                        <a href="bank" download>
                           Bank Statement
                         </a>
                       </div>
@@ -300,7 +304,7 @@ const ViewLoan = () => {
                     <div className="data-col">
                       <div className="data-label">KRA PIN</div>
                       <div className="data-value">
-                        <a href="#" download>
+                        <a href="kra" download>
                           KRA PIN
                         </a>
                       </div>

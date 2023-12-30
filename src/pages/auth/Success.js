@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "../../images/logoMuiaa.png";
-import LogoDark from "../../images/logo-dark.png";
 import PageContainer from "../../layout/page-container/PageContainer";
 import Head from "../../layout/head/Head";
 import AuthFooter from "./AuthFooter";
