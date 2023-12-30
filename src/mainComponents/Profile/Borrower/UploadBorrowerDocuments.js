@@ -32,6 +32,7 @@ const UploadBorrowerDocument = () => {
     /// Dispatch the uploadDocument action to handle file upload
     acceptedFiles.forEach((file) => {
       dispatch(uploadDocument({ type: type, documentData: file }));
+      setType(type);
     });
   };
   // const handleDropChange = (acceptedFiles) => {

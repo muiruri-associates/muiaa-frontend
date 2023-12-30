@@ -32,6 +32,7 @@ const UploadLenderDocument = () => {
     /// Dispatch the uploadDocument action to handle file upload
     acceptedFiles.forEach((file) => {
       dispatch(uploadDocument({ type: type, documentData: file }));
+      setType(type)
     });
   };
   // const handleDropChange = (acceptedFiles) => {
@@ -44,9 +45,9 @@ const UploadLenderDocument = () => {
   //   );
   // };
   // Function to handle changes in the document type input
-  const handleTypeChange = (e) => {
-    setType(e.target.value); // Update the type state when the input changes
-  };
+  // const handleTypeChange = (e) => {
+  //   setType(e.target.value); // Update the type state when the input changes
+  // };
   return (
     <div style={{ overflowY: 'auto', maxHeight: '100vh', paddingRight: '17px' }}>
       {isLender && (<>
