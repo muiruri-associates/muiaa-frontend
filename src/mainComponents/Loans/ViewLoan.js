@@ -53,16 +53,20 @@ const ViewLoan = () => {
   };
 
   const placeholder = () => (
-    <p style={{
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      backgroundColor: "#fff",
-      opacity: 0.7,
-    }}>This content is hidden. Unlock it to view.</p>
-  )
+    <p
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#fff",
+        opacity: 0.7,
+      }}
+    >
+      This content is hidden. Unlock it to view.
+    </p>
+  );
 
   const toggleContent = (content) => {
     return isUnlocked ? content : placeholder();
@@ -148,11 +152,11 @@ const ViewLoan = () => {
 
               <Card
                 style={{
-                  filter: isBlurred ? "blur(5px)" : "none", 
+                  filter: isBlurred ? "blur(5px)" : "none",
                 }}
                 className="card-bordered"
               >
-                {isBlurred ? placeholder (
+                {toggleContent(
                   <ul className="data-list is-compact">
                     <li className="data-item">
                       <div className="data-col">
@@ -175,10 +179,9 @@ const ViewLoan = () => {
                       </div>
                     </li>
                   </ul>
-                ) : (
-                  <p>Content not paid for</p>
                 )}
               </Card>
+
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">Asset Documents</BlockTitle>
@@ -188,35 +191,33 @@ const ViewLoan = () => {
 
               <Card
                 style={{
-                  filter: isBlurred ? "blur(5px)" : "none", 
+                  filter: isBlurred ? "blur(5px)" : "none",
                 }}
                 className="card-bordered"
               >
-                {isBlurred ? (
-                <ul className="data-list is-compact">
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Title Deed</div>
-                      <div className="data-value">
-                        <a href="title" download>
-                          Title Deed
-                        </a>
+                {toggleContent(
+                  <ul className="data-list is-compact">
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Title Deed</div>
+                        <div className="data-value">
+                          <a href="title" download>
+                            Title Deed
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Car Logbook</div>
-                      <div className="data-value">
-                        <a href="car" download>
-                          Car Logbook
-                        </a>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Car Logbook</div>
+                        <div className="data-value">
+                          <a href="car" download>
+                            Car Logbook
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-                 ) : (
-                  <p>Content not paid for</p>
+                    </li>
+                  </ul>
                 )}
               </Card>
             </Col>
@@ -230,41 +231,40 @@ const ViewLoan = () => {
               </BlockHead>
               <Card
                 style={{
-                  filter: isBlurred ? "blur(5px)" : "none", 
+                  filter: isBlurred ? "blur(5px)" : "none",
                 }}
                 className="card-bordered"
               >
-                {isBlurred ? (
-                <ul className="data-list is-compact">
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Loan Type</div>
-                      <div className="data-value">name</div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Loan Amount</div>
-                      <div className="data-value">Ksh. 4,000</div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Applied On</div>
-                      <div className="data-value">email</div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Status</div>
-                      <div className="data-value">Pending</div>
-                    </div>
-                  </li>
-                </ul>
-                ) : (
-                  <p>Content not paid for</p>
+                {toggleContent(
+                  <ul className="data-list is-compact">
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Loan Type</div>
+                        <div className="data-value">name</div>
+                      </div>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Loan Amount</div>
+                        <div className="data-value">Ksh. 4,000</div>
+                      </div>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Applied On</div>
+                        <div className="data-value">email</div>
+                      </div>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Status</div>
+                        <div className="data-value">Pending</div>
+                      </div>
+                    </li>
+                  </ul>
                 )}
               </Card>
+
               <BlockHead>
                 <BlockHeadContent>
                   <BlockTitle tag="h5">Income Documents</BlockTitle>
@@ -274,47 +274,46 @@ const ViewLoan = () => {
 
               <Card
                 style={{
-                  filter: isBlurred ? "blur(5px)" : "none", 
+                  filter: isBlurred ? "blur(5px)" : "none",
                 }}
                 className="card-bordered"
               >
-                {isBlurred ? (
-                <ul className="data-list is-compact">
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">Bank Statement</div>
-                      <div className="data-value">
-                        <a href="bank" download>
-                          Bank Statement
-                        </a>
+                {toggleContent(
+                  <ul className="data-list is-compact">
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">Bank Statement</div>
+                        <div className="data-value">
+                          <a href="bank" download>
+                            Bank Statement
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">M-Pesa Statement</div>
-                      <div className="data-value">
-                        <a href="mpesa" download>
-                          M-Pesa Statement
-                        </a>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">M-Pesa Statement</div>
+                        <div className="data-value">
+                          <a href="mpesa" download>
+                            M-Pesa Statement
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                  <li className="data-item">
-                    <div className="data-col">
-                      <div className="data-label">KRA PIN</div>
-                      <div className="data-value">
-                        <a href="kra" download>
-                          KRA PIN
-                        </a>
+                    </li>
+                    <li className="data-item">
+                      <div className="data-col">
+                        <div className="data-label">KRA PIN</div>
+                        <div className="data-value">
+                          <a href="kra" download>
+                            KRA PIN
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  </li>
-                </ul>
-                ) : (
-                  <p>Content not paid for</p>
+                    </li>
+                  </ul>
                 )}
               </Card>
+              <Button onClick={unlockContent}>Unlock Content</Button>
             </Col>
           </Row>
         </Block>
