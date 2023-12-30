@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Badge, Card } from "reactstrap";
@@ -13,7 +13,6 @@ import {
   Icon,
   Row,
   Col,
-  UserAvatar,
 } from "../../components/Component";
 import { Link,useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';

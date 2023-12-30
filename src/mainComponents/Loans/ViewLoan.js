@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Card } from "reactstrap";
@@ -45,12 +45,12 @@ const ViewLoan = () => {
   // }
 
   const [isBlurred, setIsBlurred] = useState(true);
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [_, setIsUnlocked] = useState(false);
 
-  const unlockContent = () => {
-    setIsBlurred(false);
-    setIsUnlocked(true);
-  };
+  // const unlockContent = () => {
+  //   setIsBlurred(false);
+  //   setIsUnlocked(true);
+  // };
 
   const placeholder = () => (
     <p style={{
@@ -154,7 +154,7 @@ const ViewLoan = () => {
                       <div className="data-col">
                         <div className="data-label">ID Card Front</div>
                         <div className="data-value">
-                          <a href="#" download>
+                          <a href="id front" download>
                             ID Front Side
                           </a>
                         </div>
@@ -164,7 +164,7 @@ const ViewLoan = () => {
                       <div className="data-col">
                         <div className="data-label">ID Card Back</div>
                         <div className="data-value">
-                          <a href="#" download>
+                          <a href="id back" download>
                             ID Back Side
                           </a>
                         </div>
@@ -194,7 +194,7 @@ const ViewLoan = () => {
                     <div className="data-col">
                       <div className="data-label">Title Deed</div>
                       <div className="data-value">
-                        <a href="#" download>
+                        <a href="title" download>
                           Title Deed
                         </a>
                       </div>
@@ -204,7 +204,7 @@ const ViewLoan = () => {
                     <div className="data-col">
                       <div className="data-label">Car Logbook</div>
                       <div className="data-value">
-                        <a href="#" download>
+                        <a href="car" download>
                           Car Logbook
                         </a>
                       </div>
@@ -290,7 +290,7 @@ const ViewLoan = () => {
                     <div className="data-col">
                       <div className="data-label">M-Pesa Statement</div>
                       <div className="data-value">
-                        <a href="#" download>
+                        <a href="mpesa" download>
                           M-Pesa Statement
                         </a>
                       </div>

@@ -7,12 +7,11 @@ import {
   BlockHead,
   BlockHeadContent,
   BlockTitle,
-  BlockDes,
   BackTo,
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { AllLeadsDataTableData, AllLeadsdataTableColumns } from "./AllTableData";
+import { AllLeadsdataTableColumns } from "./AllTableData";
 import { getAllAvailableLeads } from "../../redux/actions/leadsActions"
 
 const AllLeadsAppliedDatatable = () => {

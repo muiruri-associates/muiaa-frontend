@@ -19,7 +19,7 @@ const CreateLenderUserForm = () => {
   const [phone, setPhone] = useState("");
 
   // State to manage form submission status
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [_, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Fetch organizations when the component mounts

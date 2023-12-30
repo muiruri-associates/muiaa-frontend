@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { Button, DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from 'react'
+import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
+// import { useHistory } from "react-router-dom";
 import { Icon } from "../../components/Component";
-import MyLeadsDatatable from './LeadsDatatable';
 
 // const history = useHistory();
 // Custom component for the "Actions" column
@@ -22,7 +21,7 @@ import MyLeadsDatatable from './LeadsDatatable';
 //   );
 // };
 const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableData, MyLeadsDataTableData, setMyLeadsDataTableData }) => {
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleApprove = () => {
     if (AllLeadsDataTableData && AllLeadsDataTableData.length > 0) {
@@ -61,7 +60,7 @@ const LeadsActionsColumn = ({ row, AllLeadsDataTableData, setAllLeadsDataTableDa
           <li>
             <DropdownItem
               tag="a"
-              href={'/loan/${row}.id'}
+              href={`/loan/${row}.id`}
             >
               View
             </DropdownItem>

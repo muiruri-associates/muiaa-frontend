@@ -1,11 +1,10 @@
 import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
-import { useHistory } from "react-router-dom";
 import { Icon } from "../../components/Component";
 
 // const history = useHistory();
 // Custom component for the "Actions" column
 const ActionsColumn = ({ row }) => {
-  const history = useHistory();
+  // const history = useHistory();
 
   return (
     <UncontrolledDropdown>
@@ -17,7 +16,7 @@ const ActionsColumn = ({ row }) => {
             <li>
               <DropdownItem
                 tag="a"
-                href={'/loan/${row}.id'}
+                href={`/loan/${row}.id`}
               >
                 View
               </DropdownItem>

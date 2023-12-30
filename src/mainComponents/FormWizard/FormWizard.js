@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import Head from "../../layout/head/Head";
 import Content from "../../layout/content/Content";
 import {
@@ -43,15 +43,15 @@ const HeaderSteps = () => {
 };
 
 
-const Success = (props) => {
-  return (
-    <div className="d-flex justify-content-center align-items-center p-3">
-      <BlockTitle tag="h6" className="text-center">
-        Thank you for submitting form
-      </BlockTitle>
-    </div>
-  );
-};
+// const Success = (props) => {
+//   return (
+//     <div className="d-flex justify-content-center align-items-center p-3">
+//       <BlockTitle tag="h6" className="text-center">
+//         Thank you for submitting form
+//       </BlockTitle>
+//     </div>
+//   );
+// };
 
 
 const FormWizard = () => {

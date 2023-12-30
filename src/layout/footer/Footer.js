@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="nk-footer-wrap">
           <div className="nk-footer-copyright">
             {" "}
-            &copy; 2023 Copyright. Created With Love by <a href="#">Muiaa</a>
+            &copy; 2023 Copyright. Created With Love by Muiaa
           </div>
           <div className="nk-footer-links">
             <ul className="nav nav-sm">

@@ -29,7 +29,7 @@ const CreateLenderOrgForm = () => {
   const [business_location, setBusiness_Location] = useState("");
 
    // State to manage form submission status
-   const [isSubmitted, setIsSubmitted] = useState(false);
+   const [_, setIsSubmitted] = useState(false);
 
   // Function to handle form submission
  const handleSubmit = async (e) => {
