@@ -33,19 +33,7 @@ export const uploadDocument = createAsyncThunk('document/uploadDocument',async (
       console.log('Uploaded document:', uploadedDocument);
       return uploadedDocument;
     } catch (error) {
-        if (error.response) {
-            // Server responded with a status other than 2xx
-            console.error('Server error:', error.response.data);
-            return rejectWithValue('Server error: ' + error.response.data.message);
-          } else if (error.request) {
-            // The request was made but no response was received
-            console.error('Request made but no response received:', error.request);
-            return rejectWithValue('No response from server');
-          } else {
-            // Something happened in setting up the request
-            console.error('Error setting up the request:', error.message);
-            return rejectWithValue('Request setup error: ' + error.message);
-          }
+      console.error('error', error)
     }
   }
 );
