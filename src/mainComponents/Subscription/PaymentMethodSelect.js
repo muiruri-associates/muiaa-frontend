@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Badge, Button } from "reactstrap";
@@ -19,6 +19,12 @@ import { Card } from "reactstrap";
 // import { PaymentMethodSelectDataV1, PaymentMethodSelectDataV2 } from "./PaymentMethodSelectData";
 
 const PaymentMethodSelect = () => {
+  const [selectedMethod, setSelectedMethod] = useState(null);
+
+  const handleMethodSelect = (method) => {
+    setSelectedMethod(method);
+    localStorage.setItem("selectedPaymentMethod", method);
+  };
   return (
     <React.Fragment>
       <Head title="Pricing Table"></Head>
@@ -36,19 +42,33 @@ const PaymentMethodSelect = () => {
           </BlockHead>
           <Row className="g-gs">
             <Col md={4} xxl={3} key="1">
-              <Card className={`card-bordered pricing text-center "recommend" : ""}`}>
+            <Card
+            className={`card-bordered pricing text-center ${
+              selectedMethod === "CARD" ? "recommend" : ""
+            }`}
+          >
                 <div className="pricing-body">
                   <div className="card">
                     <img src={Card1} alt="#" />
                   </div>
                 </div>
                   <div className="pricing-action">
-                    <Button color="primary" className="w-100">PAY WITH CARD</Button>
+                  <Button
+                color="primary"
+                className="w-100"
+                onClick={() => handleMethodSelect("CARD")}
+              >
+                PAY WITH CARD
+              </Button>
                   </div>
               </Card>
             </Col>
             <Col md={4} xxl={3} key="1">
-              <Card className={`card-bordered pricing text-center "recommend" : ""}`}>
+            <Card
+            className={`card-bordered pricing text-center ${
+              selectedMethod === "MPESA" ? "recommend" : ""
+            }`}
+          >
                 {/* <Badge color="primary" className="pricing-badge">
                   Recommend
                 </Badge> */}
@@ -58,7 +78,13 @@ const PaymentMethodSelect = () => {
                   </div>
                 </div>
                   <div className="pricing-action">
-                    <Button color="primary" className="w-100">LIPA NA M-PESA</Button>
+                  <Button
+                color="primary"
+                className="w-100"
+                onClick={() => handleMethodSelect("MPESA")}
+              >
+                LIPA NA M-PESA
+              </Button>
                   </div>
               </Card>
             </Col>

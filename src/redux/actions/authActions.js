@@ -3,7 +3,7 @@ import axiosInstance from '../../app/api/api';
 
 export const login = createAsyncThunk('auth/login', async(loginData) => {
     try {
-        const response = await axiosInstance.post(`/v1/auth/login`, loginData);
+        const response = await axiosInstance.post(`/auth/login`, loginData);
         const userData = response.data; // Assuming the response contains user data including roles
         console.log('data>>>', userData)
         return userData;
@@ -21,7 +21,7 @@ export const logout = () => {
 
 export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(registerData) => {
     try {
-        const response = await axiosInstance.post(`/v1/lenders/register`, registerData);
+        const response = await axiosInstance.post(`/lenders/register`, registerData);
         const userData = response.data
         return userData
     } catch (error) {
@@ -32,7 +32,7 @@ export const lenderRegister = createAsyncThunk('auth/lenderRegister', async(regi
 
 export const forgotPassword = createAsyncThunk('auth/forgot-password', async(email) => {
     try {
-        const response = await axiosInstance.post(`/v1/auth/forgot-password`, { email });
+        const response = await axiosInstance.post(`/auth/forgot-password`, { email });
         const message = response.data.body.message
         console.log('response', response.data.statusCode)
         console.log('message>>', message)
@@ -44,7 +44,7 @@ export const forgotPassword = createAsyncThunk('auth/forgot-password', async(ema
 
 export const resetPassword = createAsyncThunk('auth/reset-password', async(resetData) => {
     try {
-        const response = await axiosInstance.post(`/v1/auth/reset-password`, resetData);
+        const response = await axiosInstance.post(`/auth/reset-password`, resetData);
         const message = response.data.body.message
         console.log('response>>', response)
         console.log('Status>>', message)
