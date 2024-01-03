@@ -1,27 +1,29 @@
 import parse from "html-react-parser";
-import { UserAvatar } from "../../../components/Component";
-import { findUpper } from "../../../utils/Utils";
+import { UserAvatar } from "../../components/Component";
+import { findUpper } from "../../utils/Utils";
 
 export const ReplyItem = ({ item }) => {
-  const { theme, name, date, replyMarkup, note, replyId, time } = item;
+  const { sender, title, description, note,  message, _id, created_at} = item;
+
+  console.log('item>>>', item)
 
   return (
-    <div className="nk-reply-item" key={replyId}>
+    <div className="nk-reply-item" key={_id}>
       <div className="nk-reply-header">
         <div className="user-card">
-          <UserAvatar size="sm" theme={theme} text={findUpper(name)} />
-          <div className="user-name">{name}</div>
+          <UserAvatar size="sm" text={findUpper(description)} />
+          <div className="user-name">{sender}</div>
         </div>
-        <div className="date-time">{date}</div>
+        <div className="date-time">{created_at}</div>
       </div>
       <div className="nk-reply-body">
         <div className={`nk-reply-entry entry ${note ? "note" : ""}`}>
-          {replyMarkup.map((replyMessage, idx) => {
-            return <p key={idx}>{replyMessage}</p>;
+          {message.map((message, idx) => {
+            return <p key={idx}>{message}</p>;
           })}
         </div>
         <div className="nk-reply-from">
-          {note ? "Private note" : "Replied"} by <span>{name}</span> at {time}
+          {note ? "Private note" : "Replied"} by <span>{sender}</span> at {createdAt}
         </div>
       </div>
     </div>

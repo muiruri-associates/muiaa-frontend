@@ -3,7 +3,6 @@ import Head from "../../layout/head/Head";
 import Content from "../../layout/content/Content";
 import {
   Block,
-  BlockTitle,
   PreviewCard,
   Icon
 } from "../../components/Component";

@@ -30,8 +30,7 @@ const App = () => {
       <Route exact path={`/auth-register`} component={Register}></Route>
       <Route
         exact
-        path={`/
-      lender/register/verify/:token`}
+        path={`/lender/register/verify/:token`}
         component={LenderRegisterPage}
       ></Route>
       <Route exact path={`/auth-login`} component={Login}></Route>

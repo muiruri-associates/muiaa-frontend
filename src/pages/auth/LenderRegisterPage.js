@@ -1,14 +1,15 @@
 import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import RegisterLender from "../../mainComponents/Auth/RegisterLenderForm";
+import FormWizard from '../../mainComponents/FormWizard/FormWizard';
 
-const LenderRegisterPage = ({ ...props }) => {
+const LenderRegisterPage = () => {
   return (
     <React.Fragment>
       <Head title="LenderRegisterPage" />
       <Content>
-        <RegisterLender />
+        {/* <RegisterLender /> */}
+        <FormWizard />
       </Content>
     </React.Fragment>
   );

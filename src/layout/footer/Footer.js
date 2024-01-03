@@ -2,13 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const getCurrentYear = () => {
+    const now = new Date();
+    return now.getFullYear();
+  }
+
+  const currentYear = getCurrentYear()
   return (
     <div className="nk-footer">
       <div className="container-fluid">
         <div className="nk-footer-wrap">
           <div className="nk-footer-copyright">
             {" "}
-            &copy; 2023 Copyright. Created With Love by Muiaa
+            &copy; {currentYear} Copyright. Created With Love by Muiaa
           </div>
           <div className="nk-footer-links">
             <ul className="nav nav-sm">
