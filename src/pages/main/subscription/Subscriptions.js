@@ -1,19 +1,19 @@
 import React from "react";
 import Content from "../../../layout/content/Content";
 import Head from "../../../layout/head/Head";
-import LenderSubscriptions from "../../../mainComponents/Subscription/LenderSubscriptions";
+import AllSubscriptions from "../../../mainComponents/Subscription/AllSubscriptions";
 
-const Subscription = () => {
+const Subscriptions = () => {
   return (
     // <StepsProvider>
       <React.Fragment>
-      <Head title="Subscription" />
+      <Head title="Subscriptions" />
       <Content>
-        <LenderSubscriptions />
+        <AllSubscriptions />
       </Content>
       </React.Fragment>
     // </StepsProvider>
   );
 };
 
-export default Subscription;
+export default Subscriptions;

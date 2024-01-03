@@ -3,6 +3,7 @@ import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Col, Row, Card, CardBody, CardHeader, Button, FormGroup, Label, Input } from "reactstrap";
 import { BlockBetween, BlockDes, Block, BlockContent, BlockHead, BlockTitle } from "../../components/Component";
+import { calculateSubscriptionEndDate, formatToDayMonthYear } from "../../utils/Utils";
 
 const ReviewPayment = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -14,19 +15,6 @@ const ReviewPayment = () => {
   const [mpesaNumber, setMpesaNumber] = useState("");
   const [paybill, setPaybill] = useState("");
   const [account_number, setAccount_Number] = useState("");
-
-  const calculateSubscriptionEndDate = (startDate, months) => {
-    const date = new Date(startDate); // Convert the start date string to a Date object
-    date.setMonth(date.getMonth() + months); // Add the specified number of months
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return date.toLocaleDateString("en-US", options); // Format the date to your desired format
-  };
-
-  const formatToDayMonthYear = (timestamp) => {
-    const date = new Date(timestamp);
-    const options = { day: "numeric", month: "long", year: "numeric" };
-    return date.toLocaleDateString("en-US", options);
-  };
 
   
   const currentDate = Date.now();

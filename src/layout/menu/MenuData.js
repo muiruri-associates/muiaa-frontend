@@ -126,14 +126,28 @@ const menu = [{
         ]
     },
     {
+        icon: 'file-docs',
+        text: 'Subscription',
+        active: false,
+        link: '/subscription',
+        roles: [ROLE.Lender]
+    },
+    {
+        icon: 'file-docs',
+        text: 'Subscriptions',
+        active: false,
+        link: '/subscriptions',
+        roles: [ROLE.Admin]
+    },
+    {
         heading: 'Support',
     },
     {
         icon: 'call',
-        text: 'Contact Borrowers',
+        text: 'Chat',
         active: false,
         link: '/contact-user',
-        roles: [ROLE.Lender],
+        roles: [ROLE.Lender, ROLE.User],
     },
     {
         icon: 'ticket',

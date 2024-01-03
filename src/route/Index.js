@@ -33,6 +33,8 @@ const ContactUserPage = React.lazy(() => import("../pages/main/borrower/ContactU
 const BusinessLoans = React.lazy(() => import("../pages/main/loans/BusinessLoans"));
 const PersonalLoan = React.lazy(() => import("../pages/main/loans/PersonalLoans"));
 const Mortgage = React.lazy(() => import("../pages/main/loans/Mortgage"));
+const Subscriptions = React.lazy(() => import("../pages/main/subscription/Subscriptions"));
+const Subscription = React.lazy(() => import("../pages/main/subscription/Subscription"));
 const AllTickets = React.lazy(() => import("../pages/main/ticket/AllTickets"))
 const Ticket = React.lazy(() => import("../pages/main/ticket/Ticket"));
 const MyTickets = React.lazy(() => import("../pages/main/ticket/MyTickets"));
@@ -81,6 +83,8 @@ const Pages = () => {
         <PrivateRoute exact path={'/ticket'} component={Ticket} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/my-tickets'} component={MyTickets} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/my-ticket/:_id'} component={ViewTicket} allowedRoles={[ROLE.Lender]} />
+        <PrivateRoute exact path={'/subscriptions'} component={Subscriptions} allowedRoles={[ROLE.Admin]} />
+        <PrivateRoute exact path={'/subscription'} component={Subscription} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={`/`} component={Dashboard} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <Route component={RedirectAs404} />
       </Switch>

@@ -110,6 +110,20 @@ export const currentTime = () => {
   return strTime;
 };
 
+
+export const calculateSubscriptionEndDate = (startDate, months) => {
+  const date = new Date(startDate); // Convert the start date string to a Date object
+  date.setMonth(date.getMonth() + months); // Add the specified number of months
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString("en-US", options); // Format the date to your desired format
+};
+
+export const formatToDayMonthYear = (timestamp) => {
+  const date = new Date(timestamp);
+  const options = { day: "numeric", month: "long", year: "numeric" };
+  return date.toLocaleDateString("en-US", options);
+};
+
 //Percentage calculation
 export const calcPercentage = (str1, str2) => {
   let result = Number(str2) / Number(str1);
