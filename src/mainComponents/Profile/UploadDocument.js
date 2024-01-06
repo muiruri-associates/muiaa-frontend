@@ -10,14 +10,14 @@ const UploadDocument = () => {
   console.log("Documents", documents);
 
   const [files, setFiles] = useState([]);
-  const [user, setUser] = useState(null);
+  // const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem("user");
+  //   if (storedUser) {
+  //     setUser(JSON.parse(storedUser));
+  //   }
+  // }, []);
 
   useEffect(() => {
     dispatch(getAllUserUploads());

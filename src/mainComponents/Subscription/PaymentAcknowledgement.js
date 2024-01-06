@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Col, Row, Card, CardBody, CardHeader, Button, FormGroup, Label, Input } from "reactstrap";
+import { Col, Row, Card, CardBody, CardHeader, Button } from "reactstrap";
 import { BlockBetween, BlockDes, Block, BlockContent, BlockHead, BlockTitle } from "../../components/Component";
-import Card1 from "../../images/card.svg";
-import Mpesa from "../../images/mpesa.svg";
-import Logo3 from "../../images/icons/plan-s3.svg";
 // import { PaymentAcknowledDataV1, PaymentAcknowledDataV2 } from "./PaymentAcknowledData";
 
 const PaymentAcknowledgement = () => {
