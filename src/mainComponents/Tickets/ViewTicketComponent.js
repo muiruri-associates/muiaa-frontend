@@ -13,6 +13,7 @@ import {
   ListGroupItem,
 } from 'reactstrap';
 import { Icon, UserAvatar } from "../../components/Component";
+import {formatDateTime} from '../../utils/Utils'
 
 const ViewTicketComponent = () => {
   const listRef = useRef(null);
@@ -88,7 +89,7 @@ const ViewTicketComponent = () => {
                   <UserAvatar size="sm" />
                   <p>{message.sender}</p>
                 </div>
-                <p className="date-time">{message.created_at}</p>
+                <p className="date-time">{formatDateTime(message.created_at)}</p>
               </div>
               <div className="nk-reply-body">
                 <div className="nk-reply-entry entry">

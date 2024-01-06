@@ -11,6 +11,20 @@ if (process.env.NODE_ENV === "development") {
   } else url = process.env.PUBLIC_URL; /// ADD YOUR CPANEL SUB-URL
 }
 
+export function formatDateTime(timestamp) {
+  const date = new Date(timestamp);
+  const options = {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: false,
+  };
+  return date.toLocaleString("en-US", options);
+}
+
 //Function to validate and return errors for a form
 export const checkForm = (formData) => {
   let errorState = {};
