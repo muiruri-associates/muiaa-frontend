@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import { Badge, Button } from "reactstrap";
+import { useWizard } from "react-use-wizard";
 import {
   BlockBetween,
   BlockDes,
@@ -14,16 +15,18 @@ import {
 } from "../../components/Component";
 import Logo1 from "../../images/icons/plan-s1.svg";
 import Logo2 from "../../images/icons/plan-s2.svg";
-import Logo3 from "../../images/icons/plan-s3.svg";
+// import Logo3 from "../../images/icons/plan-s3.svg";
 import { Card } from "reactstrap";
 // import { PlanSelectDataV1, PlanSelectDataV2 } from "./PlanSelectData";
 
 const PlanSelect = () => {
+  const { goToStep } = useWizard();
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   const handlePlanSelect = (planDetails) => {
     setSelectedPlan(planDetails);
     localStorage.setItem("selectedPlan", JSON.stringify(planDetails));
+    goToStep(1)
   };
   return (
     <React.Fragment>
@@ -61,18 +64,18 @@ const PlanSelect = () => {
                     <span className="bill">Billed Monthly</span>
                   </div>
                   <div className="pricing-action">
-                  <Button
-                color="primary"
-                onClick={() =>
-                  handlePlanSelect({
-                    title: "BASIC",
-                    amount: "Ksh. 7,700",
-                    // Other plan details you want to store
-                  })
-                }
-              >
-                Select Plan
-              </Button>
+                    <Button
+                      color="primary"
+                      onClick={() =>
+                        handlePlanSelect({
+                          title: "BASIC",
+                          amount: "Ksh. 7,700",
+                          // Other plan details you want to store
+                        })
+                      }
+                    >
+                      Select Plan
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -97,18 +100,18 @@ const PlanSelect = () => {
                     <span className="bill">Billed Monthly</span>
                   </div>
                   <div className="pricing-action">
-                  <Button
-                color="primary"
-                onClick={() =>
-                  handlePlanSelect({
-                    title: "PREMIUM",
-                    amount: "Ksh. 13,300",
-                    // Other plan details you want to store
-                  })
-                }
-              >
-                Select Plan
-              </Button>
+                    <Button
+                      color="primary"
+                      onClick={() =>
+                        handlePlanSelect({
+                          title: "PREMIUM",
+                          amount: "Ksh. 13,300",
+                          // Other plan details you want to store
+                        })
+                      }
+                    >
+                      Select Plan
+                    </Button>
                   </div>
                 </div>
               </Card>

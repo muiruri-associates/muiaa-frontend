@@ -10,10 +10,9 @@ import {
   TabContent,
   TabPane,
 } from "reactstrap";
-import UploadBorrowerDocuments from "./Borrower/UploadBorrowerDocuments";
 import BorrowersDocumentsTable from "./Borrower/BorrowersDocumentsTable";
 import LendersDocumentsTable from "./Lender/LendersDocumentsTable";
-import UploadLenderDocument from "./Lender/UploadLenderDocuments";
+import UploadDocument from './UploadDocument';
 
 const UserProfileLayout = () => {
   const [sm, updateSm] = useState(false);
@@ -245,9 +244,9 @@ const UserProfileLayout = () => {
                       </div>
                     </Block>
                   </TabPane>
-                  <TabPane tabId="2">{isLender ? <UploadLenderDocument /> : null}</TabPane>
+                  <TabPane tabId="2">{isLender ? <UploadDocument /> : null}</TabPane>
                   <TabPane tabId="3">{isLender ? <LendersDocumentsTable /> : null}</TabPane>
-                  <TabPane tabId="4">{isUser ? <UploadBorrowerDocuments /> : null}</TabPane>
+                  <TabPane tabId="4">{isUser ? <UploadDocument /> : null}</TabPane>
                   <TabPane tabId="5">{isUser ? <BorrowersDocumentsTable /> : null}</TabPane>
                 </TabContent>
               </div>

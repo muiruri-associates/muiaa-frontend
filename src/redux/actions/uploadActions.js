@@ -5,15 +5,7 @@ import axiosInstance from '../../app/api/api';
 export const uploadDocument = createAsyncThunk('document/uploadDocument',async ({documentData, type}, { getState }) => {
     try {
       const accessToken = getState().auth.accessToken; // Replace with your actual access token
-      // const user_id = getState().auth.user._id;
-      const user_id = '6569e894d3bfbc68049f6d0d'
-      // const decodedToken = jwt.decodedToken(accessToken);
-      // if (!decodedToken || !decodedToken.user_id) {
-      //   throw new Error('Invalid access token or user ID missing');
-      // }
-      // const user_id = decodedToken.user_id;
-      // console.log('Decoded userId', user_id)
-
+      const user_id = getState().auth.user.id;
 
       // Set the Authorization header with the access token
       const config = {
@@ -43,7 +35,7 @@ export const getAllUserUploads = createAsyncThunk('document/getAllUserUploads', 
   try {
     // Get the access token from your state or wherever it's stored
     const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
-    const user_id = '6579f6b5d55168e208cda123'
+    const user_id = getState().auth.user.id
 
     // Set the Authorization header with the access token
     const config = {
@@ -53,10 +45,10 @@ export const getAllUserUploads = createAsyncThunk('document/getAllUserUploads', 
     };
     const response = await axiosInstance.get(`/users/uploads/${user_id}`, config);
     const allUserUploads = response.data.body
-    console.log('all available uloads', allUserUploads)
+    console.log('all available uploads', allUserUploads)
     return allUserUploads;
-} catch (error) {
-    // Handle any error that occurred during the API call
-    console.error('error', error)
-}
+  } catch (error) {
+      // Handle any error that occurred during the API call
+      console.error('error', error)
+  }
 })

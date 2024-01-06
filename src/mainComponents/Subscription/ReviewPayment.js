@@ -4,8 +4,10 @@ import Head from "../../layout/head/Head";
 import { Col, Row, Card, CardBody, CardHeader, Button, FormGroup, Label, Input } from "reactstrap";
 import { BlockBetween, BlockDes, Block, BlockContent, BlockHead, BlockTitle } from "../../components/Component";
 import { calculateSubscriptionEndDate, formatToDayMonthYear } from "../../utils/Utils";
+import { useWizard } from 'react-use-wizard';
 
 const ReviewPayment = () => {
+  const {goToStep} = useWizard()
   const [cardNumber, setCardNumber] = useState("");
   const [cardName, setCardName] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
@@ -13,8 +15,6 @@ const ReviewPayment = () => {
   const [agreeTerms, setAgreeTerms] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [mpesaNumber, setMpesaNumber] = useState("");
-  const [paybill, setPaybill] = useState("");
-  const [account_number, setAccount_Number] = useState("");
 
   
   const currentDate = Date.now();
@@ -48,13 +48,6 @@ const ReviewPayment = () => {
     setMpesaNumber(e.target.value)
   }
 
-  const handlePayBillChange = (e) => {
-    setPaybill(e.target.value)
-  }
-
-  const handleAccountNumberChange = (e) => {
-    setAccount_Number(e.target.value)
-  }
 
   useEffect(() => {
     const storedPaymentMethod = localStorage.getItem("selectedPaymentMethod");
@@ -62,6 +55,39 @@ const ReviewPayment = () => {
       setPaymentMethod(storedPaymentMethod);
     }
   }, []);
+
+  const handlePaymentSubmission = () => {
+    if (paymentMethod === "CARD") {
+      // Check if all card details are filled
+      if (cardNumber && cardName && expiryDate && cvc) {
+        // Proceed with payment submission logic (e.g., API call or further actions)
+        console.log("Submitting card payment details:", {
+          cardNumber,
+          cardName,
+          expiryDate,
+          cvc,
+          totalAmountToPay,
+        });
+      } else {
+        // If any card detail is missing, show an error or take appropriate action
+        alert("Please fill in all card details.");
+      }
+    } else if (paymentMethod === "MPESA") {
+      // Check if M-PESA number is filled and terms are agreed
+      if (mpesaNumber && agreeTerms) {
+        // Proceed with payment submission logic (e.g., API call or further actions)
+        console.log("Submitting M-PESA payment details:", {
+          mpesaNumber,
+          totalAmountToPay,
+        });
+      } else {
+        // If M-PESA number is missing or terms are not agreed, show an error or take appropriate action
+        alert("Please fill in M-PESA number and agree to terms.");
+      }
+    }
+    goToStep(3)
+    // You can add more conditions for other payment methods if necessary
+  };
   return (
     <React.Fragment>
       <Head title="Pricing Table"></Head>
@@ -121,14 +147,15 @@ const ReviewPayment = () => {
                   </FormGroup>
                 </Col>
               </Row>
+              <br />
               <Row>
               <Col md={4}>
                   <FormGroup>
-                    <Label for="cardName">M-PESA NUMBER</Label>
+                    <Label for="cardName">Name</Label>
                     <Input
                       type="text"
                       id="cardName"
-                      placeholder="Enter M-PESA NUMBER"
+                      placeholder="Enter Name"
                       value={cardName}
                       onChange={handleCardNameChange}
                     />
@@ -136,7 +163,7 @@ const ReviewPayment = () => {
                 </Col>
                 <Col md={2}>
                   <FormGroup>
-                    <Label for="expiryDate">Expiration Date</Label>
+                    <Label for="expiryDate">Valid Thru</Label>
                     <Input
                       type="text"
                       id="expiryDate"
@@ -149,7 +176,7 @@ const ReviewPayment = () => {
                 <Col md={2}>
                   <FormGroup>
                     <Label for="cvc">CVC</Label>
-                    <Input type="text" id="cvc" placeholder="Enter CVC" value={cvc} onChange={handleCVCChange} />
+                    <Input type="text" id="cvc" placeholder="CVC" value={cvc} onChange={handleCVCChange} />
                   </FormGroup>
                 </Col>
               </Row>
@@ -183,35 +210,9 @@ const ReviewPayment = () => {
                   </FormGroup>
                 </Col>
               </Row>
-              <Row>
-              <Col md={4}>
-                  <FormGroup>
-                    <Label for="paybill">PAYBILL</Label>
-                    <Input
-                      type="text"
-                      id="paybill"
-                      placeholder="Enter Paybill"
-                      value={paybill}
-                      onChange={handlePayBillChange}
-                    />
-                  </FormGroup>
-                </Col>
-                <Col md={4}>
-                  <FormGroup>
-                    <Label for="account_number">ACCOUNT NUMBER</Label>
-                    <Input
-                      type="text"
-                      id="account_number"
-                      placeholder="Account Number"
-                      value={account_number}
-                      onChange={handleAccountNumberChange}
-                    />
-                  </FormGroup>
-                </Col>
-              </Row>
                 <br />
 
-              <Button color="primary" className="w-100 d-flex justify-content-center align-items-center">
+              <Button color="primary" onClick={handlePaymentSubmission} className="w-100 d-flex justify-content-center align-items-center">
                 Pay Now ({totalAmountToPay})
               </Button>
               <hr />

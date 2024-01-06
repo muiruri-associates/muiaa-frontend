@@ -15,7 +15,7 @@ import {
 import { dataTableColumns } from "./AllTableData";
 import { Link } from "react-router-dom";
 
-import {fetchData} from "../../redux/actions/lenderOrgActions";
+import { fetchData } from "../../redux/actions/lenderOrgActions";
 
 const GetAllLenderOrgsDatatable = () => {
   const dispatch = useDispatch();

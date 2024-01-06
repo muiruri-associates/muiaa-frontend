@@ -13,6 +13,7 @@ const initialState = {
   ticket: {},
   tickets: [],
   messages: [],
+  title: '',
   loading: false,
   success: false,
   error: null,
@@ -45,6 +46,7 @@ const ticketSlice = createSlice({
         state.ticket = action.payload;
         state.success = true;
         state.error = "";
+        state.messages = action.payload.body.ticket.messages;
       })
       .addCase(sendMessage.rejected, (state, action) => {
         state.loading = false;
@@ -85,13 +87,16 @@ const ticketSlice = createSlice({
       .addCase(getTicketById.fulfilled, (state, action) => {
         state.loading = false;
         state.ticket = action.payload.ticket; // Update the ticket data if needed
+        state.title = action.payload.ticket.title; 
         console.log('messges on slice', state.ticket.messages)
   
         // Assuming messages are under response.data.body.ticket.messages
-        if (action.payload.body && action.payload.body.ticket && action.payload.body.ticket.messages) {
-          state.messages = action.payload.body.ticket.messages;
+        if (action.payload && action.payload && action.payload.ticket) {
+          const { messages } = action.payload.ticket;
+          console.log('message on slice', messages)
+          state.messages = messages ? messages : [];
         } else {
-          state.messages = []; // Set messages to an empty array if not found in payload
+          state.messages = [];
         }
         state.error = "";
       })

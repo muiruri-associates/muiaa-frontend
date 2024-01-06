@@ -69,7 +69,7 @@ const Pages = () => {
         <PrivateRoute exact path={`/profile`} component={Profile} allowedRoles={[ROLE.Admin, ROLE.Lender, ROLE.User]} />
         <PrivateRoute exact path={`/user-profile-info`} component={UserProfileInfo} allowedRoles={[ROLE.Admin, ROLE.Lender]} />
         <PrivateRoute exact path={'/uploads'} component={UploadsPage} allowedRoles={[ROLE.User]} />
-        <PrivateRoute exact path={'/transactions'} component={TransactionsPage} allowedRoles={[ROLE.User]} />
+        <PrivateRoute exact path={'/transactions'} component={TransactionsPage} allowedRoles={[ROLE.Lender]} />
         <PrivateRoute exact path={'/requested-loans'} component={RequestedLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/borrower-loans'} component={BorrowerLoansPage} allowedRoles={[ROLE.User]} />
         <PrivateRoute exact path={'/approved-loans'} component={ApprovedLoansPage} allowedRoles={[ROLE.User]} />

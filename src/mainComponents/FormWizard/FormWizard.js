@@ -7,7 +7,6 @@ import {
   Icon
 } from "../../components/Component";
 import { Wizard, useWizard } from "react-use-wizard";
-import RegisterLender from "../Auth/RegisterLenderForm";
 import PlanSelect from "../Subscription/PlanSelect";
 import PaymentMethodSelect from "../Subscription/PaymentMethodSelect";
 import ReviewPayment from "../Subscription/ReviewPayment";
@@ -16,7 +15,7 @@ import PaymentAcknowledgement from "../Subscription/PaymentAcknowledgement";
 const HeaderSteps = () => {
   const { activeStep, goToStep } = useWizard();
 
-  const steps = ["Register", "Plan", "Payment Method", "Payment Review", "Payment Acknowledgement"]; // Define your steps here
+  const steps = ["Plan", "Payment Method", "Payment Review", "Payment Acknowledgement"]; // Define your steps here
 
   return (
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -63,7 +62,6 @@ const FormWizard = () => {
           <PreviewCard>
             <div className="nk-wizard nk-wizard-simple is-alter wizard clearfix">
               <Wizard header={<HeaderSteps />}>
-                <RegisterLender />
                 <PlanSelect />
                 <PaymentMethodSelect />
                 <ReviewPayment />

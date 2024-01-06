@@ -34,7 +34,7 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
 export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}, { getState }) => {
     try {
         const accessToken = getState().auth.accessToken; // Replace with your actual access token
-        const sender = "65610ffa2b7ff7ec9290f3dc";
+        const sender = getState().auth.user.id;
 
         // Set the Authorization header with the access token
         const config = {
@@ -48,7 +48,7 @@ export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketD
             sender
         }
 
-        const response = await axiosInstance.post(`/users/${ticket_id}`, ticketDataWithId, config);
+        const response = await axiosInstance.post(`/users/tickets/${ticket_id}/messages`, ticketDataWithId, config);
         const ticketMessage = response.data;
         console.log('send message to ticket >>>', ticketMessage)
         return ticketMessage;

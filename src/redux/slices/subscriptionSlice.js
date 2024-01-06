@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   createSubscription,
+  getAllSubscriptions
 } from "../actions/subscriptionActions";
 
 const initialState = {
@@ -30,7 +31,19 @@ const subscriptionSlice = createSlice({
         state.subscription = null;
         state.error = action.error.message;
       })
-
+      builder.addCase(getAllSubscriptions.pending, state => {
+        state.loading = true
+      })
+      builder.addCase(getAllSubscriptions.fulfilled, (state, action) => {
+        state.loading = false
+        state.subscriptions = action.payload
+        state.error = ''
+      })
+      builder.addCase(getAllSubscriptions.rejected, (state, action) => {
+        state.loading = false
+        state.subscriptions = []
+        state.error = action.error.message
+      })
     },
 });
 

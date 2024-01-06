@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
 import {
@@ -10,10 +11,18 @@ import {
   PreviewCard,
   ReactDataTable,
 } from "../../components/Component";
-import { DataTableData, dataTableColumns } from "./SubscriptionData";
+import { dataTableColumns } from "./SubscriptionData";
+import { getAllSubscriptions } from "../../redux/actions/subscriptionActions";
 
 
 const AllSubscriptions = () => {
+  const dispatch = useDispatch();
+  const subscriptions = useSelector((state) => state.subscription);
+  console.log("data on component", subscriptions);
+
+  useEffect(() => {
+    dispatch(getAllSubscriptions());
+  }, [dispatch]);
   return (
     <React.Fragment>
     <Head title="Lender Users" />
@@ -30,28 +39,19 @@ const AllSubscriptions = () => {
             </BlockTitle>
           </BlockHeadContent>
         </BlockHead>
-
-        {/* Second BlockHead */}
-        {/* <BlockHead size="lg" wide="sm">
-          <BlockHeadContent>
-          <Button>
-          <Link to={`${process.env.PUBLIC_URL}/create-lender-user`}>
-            Create LenderUser
-            </Link>
-          </Button>
-          </BlockHeadContent>
-        </BlockHead> */}
       </div>
 
       <Block size="lg">
         <PreviewCard>
-          <ReactDataTable
-            data={DataTableData}
-            columns={dataTableColumns}
-            expandableRows
-            pagination
-            actions
-          />
+        {subscriptions.loading && <div>Loading...</div>}
+        {!subscriptions.loading && subscriptions.error ? (
+              <div>Error: {subscriptions.error}</div>
+            ) : null}
+        {!subscriptions.loading && subscriptions.subscriptions?.length ? (
+              <ReactDataTable data={subscriptions.subscriptions} columns={dataTableColumns} pagination actions />
+            ) : (
+              <div>No Subscriptions Available.</div>
+            )}
         </PreviewCard>
       </Block>
     </Content>

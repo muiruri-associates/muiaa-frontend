@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getCurrentYear } from "../../utils/Utils";
 
 const Footer = () => {
-  const getCurrentYear = () => {
-    const now = new Date();
-    return now.getFullYear();
-  }
 
   const currentYear = getCurrentYear()
   return (

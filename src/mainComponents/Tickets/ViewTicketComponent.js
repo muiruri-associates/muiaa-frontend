@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getTicketById } from '../../redux/actions/ticketActions';
+import { useParams } from 'react-router-dom';
+import { getTicketById, sendMessage } from '../../redux/actions/ticketActions';
 import {
   Container,
   Row,
@@ -11,24 +12,26 @@ import {
   ListGroup,
   ListGroupItem,
 } from 'reactstrap';
-import { Icon } from "../../components/Component";
+import { Icon, UserAvatar } from "../../components/Component";
 
 const ViewTicketComponent = () => {
-  const [newMessage, setNewMessage] = useState('');
   const listRef = useRef(null);
-  const userAvatar = 'user_avatar_url'; // Replace with actual user avatar URL
-  const adminAvatar = 'admin_avatar_url'; // Replace with actual admin avatar URL
+  const { _id } = useParams(); 
+  const [newMessage, setNewMessage] = useState('');
+  const [key, setKey] = useState(0);
 
   const messages = useSelector((state) => state.ticket.messages);
+  const ticketTitle = useSelector((state) => state.ticket.title); 
   const dispatch = useDispatch();
 
+  console.log('title>>', ticketTitle)
   console.log('Messages>>', messages)
 
   useEffect(() => {
     // Fetch ticket data when component mounts
-    const ticketId = '657a5b276e43c6f0574ef25a'; // Replace with the actual ticket ID
-    dispatch(getTicketById(ticketId));
-  }, [dispatch]);
+    // const _id = '657a5b276e43c6f0574ef25a'; // Replace with the actual ticket ID
+    dispatch(getTicketById(_id));
+  }, [dispatch, _id, key]);
 
   const handleInputChange = (e) => {
     setNewMessage(e.target.value);
@@ -37,9 +40,18 @@ const ViewTicketComponent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (newMessage.trim() === '') return;
-    // Dispatch action to send new message to the server if needed
+
+    // Dispatch action to send message to the server
+    dispatch(sendMessage({
+      ticketData: {
+        message: newMessage, // Assuming your ticketData structure includes a 'message' field
+        // Other fields in ticketData if required
+      },
+      ticket_id: _id, // Pass the ticket ID to the action
+    }));
 
     setNewMessage('');
+    setKey(prevKey => prevKey + 1);
   };
 
   useEffect(() => {
@@ -54,21 +66,38 @@ const ViewTicketComponent = () => {
       <Row>
         <Col sm={8} md={12} className="col-12">
           <div className="chat-window p-3" style={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto' }} ref={listRef}>
+          {/* Display title from Redux state */}
+          {ticketTitle && (
+            <>
+            <div className="nk-msg-head">
+
+            <h4 className="title d-none d-lg-block">Ticket Title: {ticketTitle}</h4>
+            </div>
+            </>
+            )}
             <ListGroup className="chat-list">
               {messages.map((message, index) => (
+                <>
                 <ListGroupItem
                   key={index}
                   className={message.sender === 'user' ? 'user-message' : 'admin-message'}
                 >
-                  <div className="message-with-avatar">
-                    {message.sender === 'user' ? (
-                      <img src={userAvatar} alt="User Avatar" className="avatar" />
-                    ) : (
-                      <img src={adminAvatar} alt="Admin Avatar" className="avatar" />
-                    )}
-                    <span>{message.message}</span>
-                  </div>
+                  <div className="nk-reply-item">
+              <div className="nk-reply-header">
+                <div className="user-card">
+                  <UserAvatar size="sm" />
+                  <p>{message.sender}</p>
+                </div>
+                <p className="date-time">{message.created_at}</p>
+              </div>
+              <div className="nk-reply-body">
+                <div className="nk-reply-entry entry">
+                <span>{message.message}</span>
+                </div>
+              </div>
+            </div>
                 </ListGroupItem>
+                </>
               ))}
             </ListGroup>
           </div>

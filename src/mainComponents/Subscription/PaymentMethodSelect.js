@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Badge, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import {
   BlockBetween,
   BlockDes,
@@ -14,16 +14,18 @@ import {
 } from "../../components/Component";
 import Card1 from "../../images/card.svg";
 import Mpesa from "../../images/mpesa.svg";
-import Logo3 from "../../images/icons/plan-s3.svg";
 import { Card } from "reactstrap";
 // import { PaymentMethodSelectDataV1, PaymentMethodSelectDataV2 } from "./PaymentMethodSelectData";
+import { useWizard } from 'react-use-wizard';
 
 const PaymentMethodSelect = () => {
+  const { goToStep } = useWizard()
   const [selectedMethod, setSelectedMethod] = useState(null);
 
   const handleMethodSelect = (method) => {
     setSelectedMethod(method);
     localStorage.setItem("selectedPaymentMethod", method);
+    goToStep(2)
   };
   return (
     <React.Fragment>

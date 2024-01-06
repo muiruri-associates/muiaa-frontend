@@ -1,7 +1,7 @@
 import React, {} from "react";
 import Content from "../../layout/content/Content";
 import Head from "../../layout/head/Head";
-import { Card} from "reactstrap";
+// import { Card} from "reactstrap";
 import {
   Button,
   Block,
@@ -13,15 +13,20 @@ import {
   Icon,
 } from "../../components/Component";
 // import { useHistory } from "react-router";
-import { calculateSubscriptionEndDate, formatToDayMonthYear } from "../../utils/Utils";
+// import { calculateSubscriptionEndDate, formatToDayMonthYear } from "../../utils/Utils";
+import FormWizard from "../FormWizard/FormWizard";
 
 const LenderSubscription = () => {
 
+  /**
+   * @Todo Check if a lender has a subscription and render the specific ui for both cases(has a subscription, doesn't have a subscription)
+   */
+
   // const history = useHistory();
 
-  const currentDate = Date.now();
-  const subscriptionStart = formatToDayMonthYear(currentDate)
-  const subscriptionEnd = calculateSubscriptionEndDate(subscriptionStart, 1);
+  // const currentDate = Date.now();
+  // const subscriptionStart = formatToDayMonthYear(currentDate)
+  // // const subscriptionEnd = calculateSubscriptionEndDate(subscriptionStart, 1);
 
   return (
     <React.Fragment>
@@ -59,7 +64,7 @@ const LenderSubscription = () => {
           </BlockHead>
 
           <Block>
-            <Card className="card-bordered">
+            {/* <Card className="card-bordered">
               <div className="card-aside-wrap" id="user-detail-block">
                 <div className="card-content">
 
@@ -93,67 +98,13 @@ const LenderSubscription = () => {
                             <span className="profile-ud-value">{subscriptionEnd}</span>
                           </div>
                         </div>
-                        {/* <div className="profile-ud-item">
-                          <div className="profile-ud wider">
-                            <span className="profile-ud-label">Mobile Number</span>
-                            <span className="profile-ud-value">MOBILE</span>
-                          </div>
-                        </div>
-                        <div className="profile-ud-item">
-                          <div className="profile-ud wider">
-                            <span className="profile-ud-label">Email Address</span>
-                            <span className="profile-ud-value">email</span>
-                          </div>
-                        </div> */}
                       </div>
                     </Block>
-                    {/* <div className="nk-divider divider md"></div> */}
                   </div>
                 </div>
-                {/* <Modal
-                  isOpen={addNoteModal}
-                  toggle={() => setAddNoteModal(false)}
-                  className="modal-dialog-centered"
-                  size="lg"
-                >
-                  <ModalBody>
-                    <a
-                      href="#cancel"
-                      onClick={(ev) => {
-                        ev.preventDefault();
-                        setAddNoteModal(false);
-                        setAddNoteText("");
-                      }}
-                      className="close"
-                    >
-                      <Icon name="cross-sm"></Icon>
-                    </a>
-                    <div className="p-2">
-                      <h5 className="title">Add Admin Note</h5>
-                      <div className="mt-4 mb-4">
-                        <textarea
-                          defaultValue={addNoteText}
-                          className="form-control no-resize"
-                          onChange={(e) => setAddNoteText(e.target.value)}
-                        />
-                      </div>
-                      <ul className="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                        <li>
-                          <Button color="primary" size="md" type="submit" onClick={submitNote}>
-                            Add Note
-                          </Button>
-                        </li>
-                        <li>
-                          <Button onClick={() => setAddNoteModal(false)} className="link link-light">
-                            Cancel
-                          </Button>
-                        </li>
-                      </ul>
-                    </div>
-                  </ModalBody>
-                </Modal> */}
               </div>
-            </Card>
+            </Card> */}
+            <FormWizard />
           </Block>
         </Content>
     </React.Fragment>

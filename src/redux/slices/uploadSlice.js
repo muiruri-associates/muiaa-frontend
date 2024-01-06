@@ -33,7 +33,7 @@ const uploadSlice = createSlice({
       })
       .addCase(getAllUserUploads.fulfilled, (state, action) => {
         state.loading = false;
-        state.documents = action.payload;
+        state.documents = action.payload.documentUpload;
         state.success = true;
         state.error = '';
       })

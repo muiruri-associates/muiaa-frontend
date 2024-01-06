@@ -6,8 +6,10 @@ import TurkeyFlag from "../../images/flags/turkey.png";
 import { Row, Col } from "../../components/Component";
 import { DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown } from "reactstrap";
 import { Link } from "react-router-dom";
+import { getCurrentYear } from "../../utils/Utils";
 
 const AuthFooter = () => {
+  const currentYear = getCurrentYear()
   return (
     <div className="nk-footer nk-auth-footer-full">
       <div className="container wide-lg">
@@ -99,7 +101,7 @@ const AuthFooter = () => {
           </Col>
           <Col lg="6">
             <div className="nk-block-content text-center text-lg-left">
-              <p className="text-soft">&copy; 2023 MUIAA. All Rights Reserved.</p>
+              <p className="text-soft">&copy; {currentYear} MUIAA. All Rights Reserved.</p>
             </div>
           </Col>
         </Row>

@@ -118,6 +118,11 @@ export const calculateSubscriptionEndDate = (startDate, months) => {
   return date.toLocaleDateString("en-US", options); // Format the date to your desired format
 };
 
+export const getCurrentYear = () => {
+  const now = new Date();
+  return now.getFullYear();
+}
+
 export const formatToDayMonthYear = (timestamp) => {
   const date = new Date(timestamp);
   const options = { day: "numeric", month: "long", year: "numeric" };

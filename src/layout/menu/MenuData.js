@@ -21,13 +21,6 @@ const menu = [{
         }, ]
     },
     {
-        icon: 'tranx',
-        text: 'Transactions',
-        active: false,
-        link: '/transactions',
-        roles: [ROLE.User],
-    },
-    {
         icon: 'users',
         text: 'Users',
         active: false,
@@ -138,6 +131,13 @@ const menu = [{
         active: false,
         link: '/subscriptions',
         roles: [ROLE.Admin]
+    },
+    {
+        icon: 'tranx',
+        text: 'Transactions',
+        active: false,
+        link: '/transactions',
+        roles: [ROLE.Lender],
     },
     {
         heading: 'Support',
