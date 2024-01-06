@@ -74,7 +74,7 @@ const PlanSelect = () => {
                         })
                       }
                     >
-                      Select Plan
+                      {selectedPlan && selectedPlan.title === "BASIC" ? "Selected" : "Select Plan"}
                     </Button>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ const PlanSelect = () => {
                         })
                       }
                     >
-                      Select Plan
+                      {selectedPlan && selectedPlan.title === "BASIC" ? "Selected" : "Select Plan"}
                     </Button>
                   </div>
                 </div>
