@@ -32,7 +32,7 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
 });
 
 // send message to ticket
-export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}) => {
+export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}, {getState}) => {
     try {
         // const accessToken = getState().auth.accessToken; // Replace with your actual access token
         const accessToken = Cookies.get('accessToken');
