@@ -1,15 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
+import { setTokens } from '../slices/authSlice'; 
+// import { useDispatch } from 'react-redux';
 
-export const login = createAsyncThunk('auth/login', async(loginData) => {
-    try {
+export const login = createAsyncThunk('auth/login', async(loginData, { dispatch }) => {
+    // try {
         const response = await axiosInstance.post(`/auth/login`, loginData);
         const userData = response.data; // Assuming the response contains user data including roles
         console.log('data>>>', userData)
+        // Extract tokens from the response
+        const { accessToken, refreshToken } = userData;
+
+        // Dispatch setTokens action to update the state and cookies
+        dispatch(setTokens({ accessToken, refreshToken }));
         return userData;
-    } catch (error) {
-        throw new Error('Error logging in');
-    }
+    // } catch (error) {
+        // throw new Error('Error logging in');
+    // }
 });
 
 export const logout = () => {

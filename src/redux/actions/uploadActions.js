@@ -1,10 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // import jwt from 'jsonwebtoken';
 import axiosInstance from '../../app/api/api';
+import Cookies from 'js-cookie';
 
 export const uploadDocument = createAsyncThunk('document/uploadDocument',async ({documentData, type}, { getState }) => {
     try {
-      const accessToken = getState().auth.accessToken; // Replace with your actual access token
+      const accessToken = Cookies.get('accessToken'); // Replace with your actual access token
       const user_id = getState().auth.user.id;
 
       // Set the Authorization header with the access token
@@ -34,7 +35,7 @@ export const uploadDocument = createAsyncThunk('document/uploadDocument',async (
 export const getAllUserUploads = createAsyncThunk('document/getAllUserUploads', async(_, { getState }) => {
   try {
     // Get the access token from your state or wherever it's stored
-    const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+    const accessToken = Cookies.get('accessToken'); // Replace with your actual access token retrieval method
     const user_id = getState().auth.user.id
 
     // Set the Authorization header with the access token

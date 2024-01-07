@@ -5,6 +5,7 @@
       resetPassword,
       lenderRegister
   } from '../actions/authActions'
+  import Cookies from 'js-cookie';
 
   const initialState = {
       user: {},
@@ -20,6 +21,25 @@
   const authSlice = createSlice({
       name: 'auth',
       initialState,
+      reducers: {
+        setTokens(state, action) {
+            const { accessToken, refreshToken } = action.payload;
+            state.accessToken = accessToken;
+            state.refreshToken = refreshToken;
+            state.isAuthenticated = true;
+      
+            Cookies.set('accessToken', accessToken, { expires: 7 }); // Set cookie with expiration
+            Cookies.set('refreshToken', refreshToken, { expires: 7 }); // Set cookie with expiration
+        },
+        clearTokens(state) {
+            state.accessToken = null;
+            state.refreshToken = null;
+            state.isAuthenticated = false;
+      
+            Cookies.remove('accessToken');
+            Cookies.remove('refreshToken');
+        },
+      },
       extraReducers: (builder) => {
           builder
               .addCase(login.pending, state => {
@@ -40,7 +60,9 @@
                   console.log('UserRole', action.payload.body.user.role)
                   localStorage.setItem('userRole', JSON.stringify(action.payload.body.user.role));
                   localStorage.setItem('user', JSON.stringify(action.payload.body.user));
-                  localStorage.setItem('accessToken', JSON.stringify(action.payload.accessToken));
+                  // Set tokens in cookies
+                  Cookies.set('accessToken', accessToken, { expires: 7 });
+                  Cookies.set('refreshToken', refreshToken, { expires: 7 });
                   state.error = ''
               })
               .addCase(login.rejected, (state, action) => {
@@ -99,4 +121,6 @@
 
   // export const { setAccessToken } = authSlice.actions; // Exporting the setAccessToken action
 
-  export default authSlice.reducer
+
+export const { setTokens, clearTokens } = authSlice.actions;
+export default authSlice.reducer

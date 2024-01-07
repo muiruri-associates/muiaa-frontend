@@ -1,12 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
+import Cookies from 'js-cookie';
 
 
 // create ticket
 
-export const createTicket = createAsyncThunk('ticket/createTicket', async(ticketData, { getState }) => {
+export const createTicket = createAsyncThunk('ticket/createTicket', async(ticketData) => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token
+        const accessToken = Cookies.get('accessToken'); // Replace with your actual access token
         const createdBy = "65610ffa2b7ff7ec9290f3dc";
 
         // Set the Authorization header with the access token
@@ -31,9 +32,10 @@ export const createTicket = createAsyncThunk('ticket/createTicket', async(ticket
 });
 
 // send message to ticket
-export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}, { getState }) => {
+export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketData, ticket_id}) => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token
+        // const accessToken = getState().auth.accessToken; // Replace with your actual access token
+        const accessToken = Cookies.get('accessToken');
         const sender = getState().auth.user.id;
 
         // Set the Authorization header with the access token
@@ -59,10 +61,10 @@ export const sendMessage = createAsyncThunk('ticket/sendMessage', async({ticketD
 
 
 // Get All Tickets
-export const getAllTickets = createAsyncThunk('ticket/getAllTickets', async(_, { getState }) => {
+export const getAllTickets = createAsyncThunk('ticket/getAllTickets', async(_) => {
     try {
         // Get the access token from your state or wherever it's stored
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken');
 
         // Set the Authorization header with the access token
         const config = {
@@ -81,10 +83,10 @@ export const getAllTickets = createAsyncThunk('ticket/getAllTickets', async(_, {
 });
 
 // Get All User Tickets
-export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', async(_, { getState }) => {
+export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', async() => {
     try {
-        // Get the access token from your state or wherever it's stored
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        // Get the access token from your state or wherever it's stored // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken');
         const user_id = "65610ffa2b7ff7ec9290f3dc";
 
         // Set the Authorization header with the access token
@@ -104,10 +106,11 @@ export const getAllUserTickets = createAsyncThunk('ticket/getAllUserTickets', as
 });
 
 // Define the async thunk for fetching a lender organization by ID
-export const getTicketById = createAsyncThunk('ticket/getTicketById', async(_id, { getState }) => {
+export const getTicketById = createAsyncThunk('ticket/getTicketById', async(_id) => {
     // Check if id is provided before making the API call
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        // const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken');
 
         // Set the Authorization header with the access token
         const config = {
@@ -127,9 +130,10 @@ export const getTicketById = createAsyncThunk('ticket/getTicketById', async(_id,
 
 
 // Update ticket
-export const updateTicket = createAsyncThunk('ticket/updateTicket', async ({ ticket_id, updatedData }, { getState }) => {
+export const updateTicket = createAsyncThunk('ticket/updateTicket', async ({ ticket_id, updatedData }) => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        // const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken');
 
         const config = {
             headers: {
@@ -148,9 +152,9 @@ export const updateTicket = createAsyncThunk('ticket/updateTicket', async ({ tic
 
 
 // Delete ticket
-export const deleteTicket = createAsyncThunk('ticket/deleteTicket', async (ticket_id, { getState }) => {
+export const deleteTicket = createAsyncThunk('ticket/deleteTicket', async (ticket_id) => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken'); // Replace with your actual access token retrieval method
 
         const config = {
             headers: {

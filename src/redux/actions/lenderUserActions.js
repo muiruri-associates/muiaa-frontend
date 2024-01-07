@@ -1,14 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
+import Cookies from 'js-cookie';
 
 
 // create LenderOrg
 
-export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', async(lenderUserData, { getState }) => {
+export const createLenderUser = createAsyncThunk('lenderUser/createLenderUser', async(lenderUserData) => {
 
     // Get the access token from your state or wherever it's stored
     try {
-        const accessToken = getState().auth.accessToken; // Retrieve the accessToken from your state
+        const accessToken = Cookies.get('accessToken'); // Retrieve the accessToken from your state
         console.log('Data lender user>>>', lenderUserData)
 
         if (!accessToken) {

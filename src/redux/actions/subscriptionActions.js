@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
-
+import Cookies from 'js-cookie';
 
 // create subscription
 
 export const createSubscription = createAsyncThunk('subscription/createSubscription', async(subscriptionData, { getState }) => {
     try {
-        const accessToken = getState().auth.accessToken;
+        const accessToken = Cookies.get('accessToken');
         const userId = getState().auth.user._id;
         const plan = localStorage.getItem('plan');
 
@@ -33,10 +33,10 @@ export const createSubscription = createAsyncThunk('subscription/createSubscript
 });
 
 // Get All Subscriptions
-export const getAllSubscriptions = createAsyncThunk('lenders/getAllSubscriptions', async(_, { getState }) => {
+export const getAllSubscriptions = createAsyncThunk('lenders/getAllSubscriptions', async() => {
     try {
         // Get the access token from your state or wherever it's stored
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken'); // Replace with your actual access token retrieval method
 
         // Set the Authorization header with the access token
         const config = {
@@ -55,9 +55,9 @@ export const getAllSubscriptions = createAsyncThunk('lenders/getAllSubscriptions
 });
 
 // Get Subscription By ID
-export const getSubscriptionById = createAsyncThunk('lenders/getSubscriptionById', async(id, { getState }) => {
+export const getSubscriptionById = createAsyncThunk('lenders/getSubscriptionById', async(id) => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access token retrieval method
+        const accessToken = Cookies.get('accessToken'); // Replace with your actual access token retrieval method
 
         // Set the Authorization header with the access token
         const config = {

@@ -1,12 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../app/api/api';
+import Cookies from 'js-cookie';
 
 
 // createAsyncThunk generates pending, fulfilled and rejected action types
 // Define the async thunk for fetching all lender organizations
-export const fetchRoles = createAsyncThunk('roles/fetchRoles', async(_, { getState }) => {
+export const fetchRoles = createAsyncThunk('roles/fetchRoles', async() => {
     try {
-        const accessToken = getState().auth.accessToken; // Replace with your actual access tok
+        const accessToken = Cookies.get('accessToken'); // Replace with your actual access tok
 
         // Set the Authorization header with the access token
         const config = {
